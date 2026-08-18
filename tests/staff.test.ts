@@ -7,13 +7,14 @@
  */
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { resetBackend } from './helpers/mockBackend';
+import type { BackendState } from './helpers/mockBackend';
 
-const h = vi.hoisted(() => ({
+const h = vi.hoisted((): BackendState => ({
   configured: true,
-  responses: {} as Record<string, unknown>,
-  error: null as Error | null,
-  calls: [] as Array<{ path: string; method: string; body?: unknown }>,
-  events: [] as Array<{ name: string; params?: Record<string, unknown> }>,
+  responses: {},
+  error: null,
+  calls: [],
+  events: [],
 }));
 
 vi.mock('@/lib/services/backend', async () => {

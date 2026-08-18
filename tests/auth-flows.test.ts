@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { resetBackend } from './helpers/mockBackend';
+import type { BackendState } from './helpers/mockBackend';
 
 /**
  * The configured (backend-on) branches of the auth surface. The unconfigured
@@ -8,14 +9,16 @@ import { resetBackend } from './helpers/mockBackend';
  * flows are exercised, along with the `onAuthChange` binding and the wire → AuthUser
  * mapping.
  */
-const h = vi.hoisted(() => ({
-  configured: true,
-  responses: {} as Record<string, unknown>,
-  error: null as Error | null,
-  calls: [] as Array<{ path: string; method: string; body?: unknown }>,
-  events: [] as Array<{ name: string; params?: Record<string, unknown> }>,
-  native: false,
-}));
+const h = vi.hoisted(
+  (): BackendState & { native: boolean } => ({
+    configured: true,
+    responses: {},
+    error: null,
+    calls: [],
+    events: [],
+    native: false,
+  }),
+);
 
 vi.mock('@/lib/native/nativeBridge', () => ({ isNative: () => h.native }));
 
@@ -74,6 +77,38 @@ describe('onAuthChange', () => {
     const cb = vi.fn();
     await onAuthChange(cb);
     expect(cb).toHaveBeenCalledWith(null);
+  });
+});
+
+describe('getCurrentUser', () => {
+  it('resolves the signed-in user without opening a subscription', async () => {
+    h.responses['/auth/session'] = { user: USER };
+    const { getCurrentUser } = await load();
+
+    await expect(getCurrentUser()).resolves.toEqual(USER);
+  });
+
+  it('resolves null when signed out', async () => {
+    h.responses['/auth/session'] = { user: null };
+    const { getCurrentUser } = await load();
+
+    await expect(getCurrentUser()).resolves.toBeNull();
+  });
+
+  it('memoizes the session — a second call makes no further request', async () => {
+    h.responses['/auth/session'] = { user: USER };
+    const { getCurrentUser } = await load();
+
+    await getCurrentUser();
+    await getCurrentUser();
+    expect(h.calls.filter((c) => c.path === '/auth/session')).toHaveLength(1);
+  });
+
+  it('resolves null rather than throwing when the backend is unreachable', async () => {
+    h.error = new Error('offline');
+    const { getCurrentUser } = await load();
+
+    await expect(getCurrentUser()).resolves.toBeNull();
   });
 });
 

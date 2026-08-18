@@ -7,17 +7,24 @@
  */
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { resetBackend } from './helpers/mockBackend';
+import type { BackendState } from './helpers/mockBackend';
 
-const h = vi.hoisted(() => ({
-  configured: true,
-  responses: {} as Record<string, unknown>,
-  error: null as Error | null,
-  calls: [] as Array<{ path: string; method: string; body?: unknown }>,
-  events: [] as Array<{ name: string; params?: Record<string, unknown> }>,
-  progressCb: null as null | (() => void),
-  unsubscribe: vi.fn(),
-  summary: { exams: { part91: { pct: 84 } } } as unknown,
-}));
+const h = vi.hoisted(
+  (): BackendState & {
+    progressCb: null | (() => void);
+    unsubscribe: ReturnType<typeof vi.fn>;
+    summary: unknown;
+  } => ({
+    configured: true,
+    responses: {},
+    error: null,
+    calls: [],
+    events: [],
+    progressCb: null,
+    unsubscribe: vi.fn(),
+    summary: { exams: { part91: { pct: 84 } } },
+  }),
+);
 
 vi.mock('@/lib/services/backend', async () => {
   const { makeBackendModule } = await import('./helpers/mockBackend');

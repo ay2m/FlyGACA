@@ -10,7 +10,7 @@
  */
 import { billingChannel, isNative } from '@/lib/native/nativeBridge';
 import { isBackendConfigured, apiFetch } from '@/lib/services/backend';
-import { onAuthChange } from '@/lib/services/auth';
+import { getCurrentUser } from '@/lib/services/auth';
 
 // 'monthly' / 'annual' are the standard Pro cadences; 'student' is the verified
 // student rate and 'pass' the 90-day Exam Season Pass. 'credits' is a one-time
@@ -36,10 +36,7 @@ async function requireCheckoutReady(): Promise<void> {
   }
   if (!isBackendConfigured()) throw new Error('billing-unavailable');
 
-  const signedIn = await new Promise<boolean>((resolve) => {
-    void onAuthChange((user) => resolve(Boolean(user))).then((unsub) => unsub());
-  });
-  if (!signedIn) throw new Error('sign-in-required');
+  if (!(await getCurrentUser())) throw new Error('sign-in-required');
 }
 
 /**

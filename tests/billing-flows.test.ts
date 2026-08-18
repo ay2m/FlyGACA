@@ -9,16 +9,22 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
  * function here that posts to the API. The config-off case for `canCheckout`
  * lives in billing.test.ts.
  */
-const h = vi.hoisted(() => ({
-  configured: true,
-  responses: {} as Record<string, unknown>,
-  error: null as Error | null,
-  calls: [] as Array<{ path: string; method: string; body?: unknown }>,
-  events: [] as Array<{ name: string; params?: Record<string, unknown> }>,
-  native: false,
-  channel: 'moyasar' as 'moyasar' | 'revenuecat',
-  currentUser: null as Record<string, unknown> | null,
-}));
+const h = vi.hoisted(
+  (): BackendState & {
+    native: boolean;
+    channel: 'moyasar' | 'revenuecat';
+    currentUser: Record<string, unknown> | null;
+  } => ({
+    configured: true,
+    responses: {},
+    error: null,
+    calls: [],
+    events: [],
+    native: false,
+    channel: 'moyasar',
+    currentUser: null,
+  }),
+);
 
 vi.mock('@/lib/native/nativeBridge', () => ({
   isNative: () => h.native,
@@ -30,13 +36,10 @@ vi.mock('@/lib/services/backend', async () => {
   return makeBackendModule(h);
 });
 
-// The sign-in guard reads the session through `onAuthChange`, so stub that rather
-// than the whole auth module — the rest of auth is covered in auth-flows.test.ts.
+// The sign-in guard is a one-shot session read, so stub just that rather than the
+// whole auth module — the rest of auth is covered in auth-flows.test.ts.
 vi.mock('@/lib/services/auth', () => ({
-  onAuthChange: (cb: (u: unknown) => void) => {
-    cb(h.currentUser);
-    return Promise.resolve(() => {});
-  },
+  getCurrentUser: () => Promise.resolve(h.currentUser),
 }));
 
 type BillingModule = typeof import('@/lib/services/billing');

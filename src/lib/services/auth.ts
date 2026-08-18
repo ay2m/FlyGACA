@@ -59,6 +59,15 @@ async function fetchSession(force = false): Promise<AuthUser | null> {
 }
 
 /**
+ * The signed-in user right now, or `null`. Reads the memoized session, so callers
+ * that only need a one-shot "is anyone signed in?" answer (the billing guards)
+ * don't have to open a subscription to find out.
+ */
+export async function getCurrentUser(): Promise<AuthUser | null> {
+  return fetchSession();
+}
+
+/**
  * The bearer token for the current session, used by the native shell where a
  * cross-origin cookie is unreliable. Returns `null` on web — there the cookie
  * travels with `credentials: 'include'` and no token is needed.

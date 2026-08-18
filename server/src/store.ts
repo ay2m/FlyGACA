@@ -263,27 +263,52 @@ const FLIGHT_COLUMNS = [
   "remarks",
 ] as const;
 
-/** Wire field name → column name for the two that differ. */
-function flightValue(body: Record<string, unknown>, column: string): string {
-  const key = column === "night_ldg" ? "nightLdg" : column;
-  const v = body[key];
-  return typeof v === "string" ? v : "";
+/**
+ * Upsert one owner-scoped row keyed by `(user_id, id)` — the shape both the logbook
+ * and the pilot-records tables share.
+ *
+ * `table` and `columns` are module constants, never caller input, so the identifiers
+ * interpolated below can't be client-controlled; every VALUE travels as a bound
+ * parameter. Identifiers are always quoted because the logbook has `from` and `to`
+ * columns, which are reserved words — quoting an already-lowercase name is a no-op,
+ * so applying it uniformly costs nothing.
+ *
+ * `columnToField` maps a column name back to its wire field for the few that differ
+ * (the client sends camelCase); it defaults to identity.
+ */
+async function upsertOwnedRow(
+  table: string,
+  columns: readonly string[],
+  userId: string,
+  id: string,
+  body: Record<string, unknown>,
+  columnToField: (column: string) => string = (c) => c,
+): Promise<void> {
+  const cols = columns.map((c) => `"${c}"`).join(", ");
+  const placeholders = columns.map((_, i) => `$${i + 3}`).join(", ");
+  const updates = columns.map((c) => `"${c}" = EXCLUDED."${c}"`).join(", ");
+  const values = columns.map((c) => {
+    const v = body[columnToField(c)];
+    return typeof v === "string" ? v : "";
+  });
+  await query(
+    `INSERT INTO ${table} (user_id, id, ${cols})
+     VALUES ($1, $2, ${placeholders})
+     ON CONFLICT (user_id, id) DO UPDATE SET ${updates}, updated_at = now()`,
+    [userId, id, ...values],
+  );
 }
 
-export async function upsertFlight(
+/** The one logbook column whose wire field name differs from its column name. */
+const flightField = (column: string): string =>
+  column === "night_ldg" ? "nightLdg" : column;
+
+export function upsertFlight(
   userId: string,
   id: string,
   body: Record<string, unknown>,
 ): Promise<void> {
-  const cols = FLIGHT_COLUMNS.map((c) => `"${c}"`).join(", ");
-  const placeholders = FLIGHT_COLUMNS.map((_, i) => `$${i + 3}`).join(", ");
-  const updates = FLIGHT_COLUMNS.map((c) => `"${c}" = EXCLUDED."${c}"`).join(", ");
-  await query(
-    `INSERT INTO flights (user_id, id, ${cols})
-     VALUES ($1, $2, ${placeholders})
-     ON CONFLICT (user_id, id) DO UPDATE SET ${updates}, updated_at = now()`,
-    [userId, id, ...FLIGHT_COLUMNS.map((c) => flightValue(body, c))],
-  );
+  return upsertOwnedRow("flights", FLIGHT_COLUMNS, userId, id, body, flightField);
 }
 
 export async function deleteFlight(userId: string, id: string): Promise<void> {
@@ -292,27 +317,12 @@ export async function deleteFlight(userId: string, id: string): Promise<void> {
 
 const RECORD_COLUMNS = ["category", "title", "ref", "issued", "expires", "remarks"] as const;
 
-export async function upsertRecord(
+export function upsertRecord(
   userId: string,
   id: string,
   body: Record<string, unknown>,
 ): Promise<void> {
-  const cols = RECORD_COLUMNS.join(", ");
-  const placeholders = RECORD_COLUMNS.map((_, i) => `$${i + 3}`).join(", ");
-  const updates = RECORD_COLUMNS.map((c) => `${c} = EXCLUDED.${c}`).join(", ");
-  await query(
-    `INSERT INTO pilot_records (user_id, id, ${cols})
-     VALUES ($1, $2, ${placeholders})
-     ON CONFLICT (user_id, id) DO UPDATE SET ${updates}, updated_at = now()`,
-    [
-      userId,
-      id,
-      ...RECORD_COLUMNS.map((c) => {
-        const v = body[c];
-        return typeof v === "string" ? v : "";
-      }),
-    ],
-  );
+  return upsertOwnedRow("pilot_records", RECORD_COLUMNS, userId, id, body);
 }
 
 export async function deleteRecord(userId: string, id: string): Promise<void> {

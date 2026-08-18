@@ -313,24 +313,33 @@ async function fulfil(row: IntentRow, payment: MoyasarPayment): Promise<boolean>
   return true;
 }
 
-/** Grant `next` without ever shortening or downgrading what `current` already gives. */
-function mergeUpward(current: Entitlement | null, next: Entitlement): Entitlement {
-  if (!current) return next;
-  const activeNow = effectivePlan(current);
-  if (activeNow === "free") return next;
-  const currentExpiry = current.expiresAt ? Date.parse(current.expiresAt) : Infinity;
-  const nextExpiry = next.expiresAt ? Date.parse(next.expiresAt) : Infinity;
-  return {
+/**
+ * Grant `next` without ever shortening or downgrading what `current` already gives.
+ *
+ * Two axes move independently, which is why this isn't simply "take the later one":
+ *  - PLAN — an in-force `school` tier outranks a `pro` purchase, so it stands.
+ *  - EXPIRY — whichever entitlement runs longer wins, and its `source` travels with
+ *    it so the surviving grant stays attributable. An absent `expiresAt` means "no
+ *    expiry" and therefore always wins.
+ *
+ * A lapsed `current` is not a downgrade to protect, so it is simply replaced.
+ * Exported for `tests/entitlement-merge.test.ts` — this is the invariant that stops
+ * a comp from clobbering a paying user.
+ */
+export function mergeUpward(current: Entitlement | null, next: Entitlement): Entitlement {
+  const activeNow = current ? effectivePlan(current) : "free";
+  if (!current || activeNow === "free") return next;
+
+  const expiryOf = (e: Entitlement): number =>
+    e.expiresAt ? Date.parse(e.expiresAt) : Infinity;
+  const longest = expiryOf(current) > expiryOf(next) ? current : next;
+
+  const merged: Entitlement = {
     plan: activeNow === "school" ? "school" : next.plan,
-    source: currentExpiry > nextExpiry ? current.source : next.source,
-    ...(currentExpiry > nextExpiry
-      ? current.expiresAt
-        ? { expiresAt: current.expiresAt }
-        : {}
-      : next.expiresAt
-        ? { expiresAt: next.expiresAt }
-        : {}),
+    source: longest.source,
   };
+  if (longest.expiresAt) merged.expiresAt = longest.expiresAt;
+  return merged;
 }
 
 /** Load the intent a payment refers to, matching on metadata then on our own record. */

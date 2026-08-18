@@ -6,7 +6,7 @@ import { Alert } from '@/components/Alert';
 import { Disclaimer } from '@/components/Disclaimer';
 import { useNoindexMeta } from '@/hooks/usePageMeta';
 import { apiFetch } from '@/lib/services/backend';
-import { onAuthChange } from '@/lib/services/auth';
+import { getCurrentUser } from '@/lib/services/auth';
 import styles from './Checkout.module.css';
 
 const MOYASAR_JS = 'https://cdn.moyasar.com/mpf/1.16.0/moyasar.js';
@@ -133,10 +133,7 @@ export function Checkout() {
     let cancelled = false;
     (async () => {
       try {
-        const signedIn = await new Promise<boolean>((resolve) => {
-          void onAuthChange((user) => resolve(Boolean(user))).then((unsub) => unsub());
-        });
-        if (!signedIn) throw new Error('sign-in-required');
+        if (!(await getCurrentUser())) throw new Error('sign-in-required');
         const publishableKey = import.meta.env.VITE_MOYASAR_PUBLISHABLE_KEY as string | undefined;
         if (!publishableKey) throw new Error('billing-unavailable');
         const cfg = await apiFetch<CheckoutConfig>('/billing/checkout-config', {
