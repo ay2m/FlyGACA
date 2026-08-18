@@ -1,0 +1,123 @@
+/* ── Source citations ── */
+.sourcesWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.sourcesLabel {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+.sources {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+}
+.srcRow {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  max-inline-size: 100%;
+  padding: var(--space-1) var(--space-2);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  transition: var(--transition-color);
+  /* Citations settle in one after another as the answer's sources land. */
+  animation: srcReveal var(--dur) var(--ease-entry) both;
+  animation-delay: calc(var(--i, 0) * var(--dur-stagger));
+}
+.srcRow:hover {
+  border-color: var(--brand-hover);
+  background: color-mix(in srgb, var(--brand) 10%, var(--surface));
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--brand) 15%, transparent);
+  transform: translateY(-1px);
+}
+/* A verbatim citation is a readable, full-width passage on its own row — never a
+   shrunk inline chip that wraps the quoted rule one word per line. */
+.srcRowFull {
+  flex-direction: column;
+  align-items: stretch;
+  inline-size: 100%;
+}
+.srcCite {
+  font-size: var(--fs-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+.srcDetails {
+  min-inline-size: 0;
+  inline-size: 100%;
+}
+.srcDetails summary.srcCite {
+  cursor: pointer;
+  list-style: none;
+  transition: color var(--dur) var(--ease);
+}
+.srcDetails summary.srcCite:hover {
+  color: var(--brand-hover);
+}
+.srcDetails summary.srcCite::before {
+  content: '▸';
+  display: inline-block;
+  margin-inline-end: var(--space-1);
+  color: var(--text-dim);
+}
+.srcDetails[open] summary.srcCite::before {
+  content: '▾';
+}
+/* Small "exact text" hint on a verbatim citation summary. */
+.srcExact {
+  margin-inline-start: var(--space-2);
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--surface-raised);
+  color: var(--text-dim);
+  font-size: var(--fs-2xs, 0.7rem);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+.srcVerbatim {
+  margin-block: var(--space-2) var(--space-1);
+  padding-inline-start: var(--space-3);
+  border-inline-start: 2px solid var(--border-bright);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-inline-size: 100%;
+}
+.srcVer {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+.srcOpen {
+  font-size: var(--fs-xs);
+  color: var(--link);
+  white-space: nowrap;
+}
+
+@keyframes srcReveal {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .srcRow {
+    animation: none;
+  }
+}

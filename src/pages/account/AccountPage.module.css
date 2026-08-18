@@ -1,0 +1,215 @@
+/* Page-local styles for the redesigned Account page (Account.tsx +
+   AccountSignedOut.tsx + SignInForms.tsx). Shared account-area classes that the
+   sibling pages (Logbook/Settings/Currency/Records) also rely on stay in
+   account.module.css; this module owns only the sign-in + identity surfaces. */
+
+/* ── Signed-out split: sign-in card beside the benefits card ── */
+.authLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
+  gap: var(--space-8);
+  align-items: start;
+}
+/* Below 720px the grid collapses; the sign-in card is first in source order so
+   it stacks on top on mobile. */
+@media (max-width: 720px) {
+  .authLayout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+  }
+}
+.authCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-6);
+}
+.benefitsCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+}
+
+.asideEyebrow {
+  margin: 0;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--text-dim);
+}
+.asideTitle {
+  margin: 0;
+  font-size: var(--fs-h3);
+  background: var(--grad-title);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.benefitList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.benefitList li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-inline-start: var(--space-4);
+  border-inline-start: 3px solid var(--brand);
+}
+.benefitList strong {
+  font-size: var(--fs-sm);
+  color: var(--text);
+}
+.benefitList span {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+/* Vertical stack for the auth form fields. */
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* A CTA/submit that fills the sign-in card width. */
+.fullWidth {
+  inline-size: 100%;
+}
+
+/* Google "G" chip — a white rounded square so the brand mark reads on the
+   teal clay-primary button. */
+.googleChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 20px;
+  block-size: 20px;
+  /* The Google mark is specified on white; it must not tint with the theme. */
+  background: var(--pure-white);
+  border-radius: var(--radius-sm);
+}
+
+/* "or" divider — centred label flanked by hairline rules. */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0;
+  color: var(--text-dim);
+  font-size: var(--fs-sm);
+}
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  block-size: 1px;
+  background: var(--border-bright);
+}
+
+.note {
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+  margin: 0;
+}
+
+/* Text link-button (toggle sign-in/up · forgot password · resend · close). */
+.linkBtn {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 44px;
+  align-self: flex-start;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--link);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: color var(--dur) var(--ease);
+}
+.linkBtn:hover {
+  color: var(--brand-hover);
+  text-decoration: underline;
+}
+.linkBtn:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+.linkBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.alertLink {
+  color: var(--link);
+  font-weight: var(--fw-semibold);
+  text-decoration: underline;
+  white-space: nowrap;
+}
+.alertLink:hover {
+  color: var(--brand-hover);
+}
+.signInLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+/* ── Signed-in identity header ── */
+.identityCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+}
+.identityAvatar {
+  flex-shrink: 0;
+}
+.identityCard h1 {
+  font-size: var(--fs-h2);
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+}
+
+/* Email-verification / checkout status banner. */
+.verifyBanner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--warning);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+}
+.verifySent {
+  font-size: var(--fs-sm);
+  color: var(--color-success);
+}
+
+/* ── Sign-in/up form-switch transition ── */
+.fadeTransition {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .fadeTransition {
+    transition:
+      opacity 0.2s ease-in-out,
+      transform 0.2s ease-in-out;
+  }
+}
+.animating {
+  opacity: 0;
+  transform: translateY(4px);
+}

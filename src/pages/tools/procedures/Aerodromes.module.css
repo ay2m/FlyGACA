@@ -1,0 +1,343 @@
+.count {
+  color: var(--text-dim);
+  font-size: var(--fs-sm);
+  margin: 0;
+}
+
+/* Region filter — a wrapping pill group; scrolls horizontally on narrow screens. */
+.regions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block-end: var(--space-2);
+}
+@media (max-width: 640px) {
+  .regions {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-block-end: var(--space-1);
+    scrollbar-width: thin;
+  }
+  .region {
+    flex: 0 0 auto;
+  }
+}
+.region {
+  padding: var(--space-2) var(--space-4);
+  min-block-size: 44px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition:
+    border-color var(--dur) var(--ease),
+    color var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+.region:hover {
+  color: var(--text);
+  border-color: var(--brand-hover);
+  background: color-mix(in srgb, var(--brand) 6%, transparent);
+}
+.regionActive {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: var(--text-on-brand);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-3);
+}
+
+.card {
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  transition:
+    box-shadow var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+.card:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* The whole card is one link to the aerodrome detail page. */
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  color: inherit;
+  text-decoration: none;
+  block-size: 100%;
+}
+.cardLink:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--clay-radius);
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+.cardTypeIcon {
+  color: var(--text-muted);
+}
+.icao {
+  font-weight: var(--fw-bold);
+  color: var(--accent-bright);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+}
+.iata {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  font-weight: var(--fw-semibold);
+}
+.name {
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-snug);
+}
+
+/* Region badge — a small tinted pill, pushed to the inline-end of the header. */
+.badge {
+  margin-inline-start: auto;
+  padding-inline: var(--space-2);
+  padding-block: 1px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--tone, var(--brand));
+  color: var(--tone, var(--brand));
+  background: color-mix(in srgb, var(--tone, var(--brand)) 12%, transparent);
+}
+.badge_saudi {
+  --tone: var(--falcon-sage);
+}
+.badge_gcc {
+  --tone: var(--teal-bright);
+}
+.badge_mena {
+  --tone: var(--falcon-gold);
+}
+.badge_world {
+  --tone: var(--text-dim);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.coords {
+  font-variant-numeric: tabular-nums;
+}
+
+.rowSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.rowLabel {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+}
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.rwy,
+.freq {
+  padding: var(--space-1) var(--space-2);
+  border: var(--clay-border);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--brand) 6%, var(--surface));
+  transition:
+    background var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+.rwy:hover,
+.freq:hover {
+  background: color-mix(in srgb, var(--brand) 12%, var(--surface));
+  color: var(--brand-hover);
+}
+
+.map {
+  align-self: flex-start;
+  margin-block-start: var(--space-1);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--link);
+  text-decoration: none;
+}
+.map:hover {
+  text-decoration: underline;
+}
+
+.loadMore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 44px;
+  margin-block-start: var(--space-4);
+  padding: var(--space-2) var(--space-6);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition:
+    color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+.loadMore:hover {
+  color: var(--brand-hover);
+  border-color: var(--brand-hover);
+}
+
+/* ── Detail page ─────────────────────────────────────────────────────── */
+.detailHead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-block-end: var(--space-4);
+}
+.detailIcao {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h3);
+  color: var(--accent-bright);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+.detailHead .badge {
+  margin-inline-start: 0;
+}
+.detailTypeIcon {
+  color: var(--accent-bright);
+  font-size: var(--fs-h3);
+}
+
+/* Facts grid + position globe side by side; wraps on narrow screens. */
+.overview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  align-items: center;
+  justify-content: space-between;
+}
+.overview .facts {
+  flex: 1 1 220px;
+}
+
+/* Runway diagram next to its tabular list. */
+.rwyLayout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  align-items: center;
+}
+.rwyLayout .rwyList {
+  flex: 1 1 200px;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-4);
+  margin: 0;
+}
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.fact dt {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+}
+.fact dd {
+  margin: 0;
+  font-weight: var(--fw-semibold);
+  color: var(--text);
+}
+
+.detailSection {
+  margin-block-start: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.detailH2 {
+  font-size: var(--fs-h3);
+  margin: 0;
+  padding-block-end: var(--space-2);
+  border-block-end: 1px solid var(--border);
+}
+
+.rwyList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.rwyRow {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.rwyId {
+  font-weight: var(--fw-bold);
+  font-variant-numeric: tabular-nums;
+  min-inline-size: 6ch;
+}
+.rwyMeta {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.back {
+  display: inline-block;
+  margin-block-start: var(--space-4);
+  font-weight: var(--fw-semibold);
+  color: var(--link);
+  text-decoration: none;
+}
+.back:hover {
+  text-decoration: underline;
+}

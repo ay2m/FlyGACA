@@ -1,0 +1,77 @@
+/* ── Type icon ───────────────────────────────────────────────────────── */
+.typeIcon {
+  inline-size: 1.05em;
+  block-size: 1.05em;
+  flex: none;
+  vertical-align: -0.15em;
+}
+
+/* ── Hero banner ─────────────────────────────────────────────────────── */
+.hero {
+  display: block;
+  inline-size: 100%;
+  block-size: clamp(120px, 22vw, 200px);
+  border-radius: var(--clay-radius);
+  border: var(--clay-border);
+  margin-block-end: var(--space-4);
+  background: var(--surface);
+}
+
+/* ── Runway diagram ──────────────────────────────────────────────────── */
+.diagram {
+  inline-size: clamp(200px, 60vw, 280px);
+  block-size: auto;
+  align-self: center;
+}
+.ring {
+  fill: color-mix(in srgb, var(--brand) 5%, var(--surface));
+  stroke: var(--border-bright);
+  stroke-width: 1.5;
+}
+.tick {
+  stroke: var(--text-dim);
+  stroke-width: 2;
+}
+.north {
+  fill: var(--text-muted);
+  font-size: 13px;
+  font-weight: var(--fw-bold);
+}
+.runway {
+  stroke: var(--brand-hover);
+  stroke-width: 9;
+  stroke-linecap: round;
+}
+.rwyLabel {
+  fill: var(--text);
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Position globe ──────────────────────────────────────────────────── */
+.globe {
+  inline-size: 120px;
+  block-size: 120px;
+  flex: none;
+}
+.globeEdge {
+  fill: color-mix(in srgb, var(--brand) 6%, var(--surface));
+  stroke: var(--border-bright);
+  stroke-width: 1.5;
+}
+.grid {
+  fill: none;
+  stroke: var(--border-bright);
+  stroke-width: 1;
+  opacity: 0.7;
+}
+.pinStem {
+  stroke: var(--brand-hover);
+  stroke-width: 2;
+}
+.pin {
+  fill: var(--falcon-clay);
+  stroke: var(--surface);
+  stroke-width: 1.5;
+}

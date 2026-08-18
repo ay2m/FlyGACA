@@ -1,0 +1,231 @@
+.fieldGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-4);
+}
+
+.outputGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.inputRow {
+  display: flex;
+  align-items: stretch;
+  min-height: 44px;
+  /* --border-input clears WCAG 1.4.11 non-text contrast — do not darken. */
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-md);
+  background: var(--surface-sunken); /* inputs read as wells, distinct from cards */
+  overflow: hidden;
+  transition: var(--transition-color);
+}
+.inputRow:focus-within {
+  border-color: var(--brand-hover);
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Error / valid state modifiers — add .fieldInvalid or .fieldValid to the .field */
+.fieldInvalid .inputRow {
+  border-color: var(--color-error);
+  background: var(--color-error-bg);
+}
+.fieldInvalid .inputRow:focus-within {
+  outline-color: var(--color-error);
+}
+.fieldValid .inputRow {
+  border-color: var(--color-success);
+}
+
+.fieldError {
+  font-size: var(--fs-xs);
+  color: var(--color-error);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+.fieldError::before {
+  content: '⚠';
+  font-size: 0.85em;
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  min-inline-size: 0;
+  padding: var(--space-3);
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+.input:focus {
+  outline: none; /* focus ring is on .inputRow:focus-within */
+}
+
+/* Native select sharing the input look (chevron via a tokenised SVG). */
+.select {
+  flex: 1;
+  min-inline-size: 0;
+  padding: var(--space-3);
+  padding-inline-end: var(--space-7);
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%237b8a99' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+}
+:global([dir='rtl']) .select {
+  background-position: left var(--space-3) center;
+  padding-inline-end: var(--space-3);
+  padding-inline-start: var(--space-7);
+}
+.select:focus {
+  outline: none; /* focus ring is on .inputRow:focus-within */
+}
+.select option {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.unit {
+  display: flex;
+  align-items: center;
+  padding-inline: var(--space-3);
+  background: transparent;
+  border-inline-start: var(--hairline); /* a hairline seam, not a solid slab */
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+  white-space: nowrap;
+}
+
+/* Trailing action inside an inputRow (password show/hide) — full-height tap
+   target so it stays usable with gloves/turbulence, not an icon sliver. */
+.revealBtn {
+  display: flex;
+  align-items: center;
+  padding-inline: var(--space-3);
+  border: none;
+  border-inline-start: var(--hairline);
+  background: transparent;
+  color: var(--link);
+  font: inherit;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.revealBtn:hover {
+  color: var(--brand-hover);
+  background: var(--surface-raised);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--elev-1), var(--edge-sheen);
+  transition: var(--transition-interactive);
+}
+.stat:hover {
+  box-shadow: var(--elev-2), var(--edge-sheen);
+  transform: translateY(var(--hover-raise));
+}
+.stat dt {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+.stat dd {
+  margin: 0;
+  /* Mono for the readout value — the design system reserves the mono face for
+     technical data, which gives the result the cockpit-instrument feel. */
+  font-family: var(--font-mono);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  /* Stack the optional sub-text below the value (it now lives inside <dd>). */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.sub {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-regular);
+  color: var(--text-muted);
+}
+
+.seg {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: var(--surface-sunken); /* the control sits in a well */
+}
+.segBtn {
+  padding: var(--space-2) var(--space-4);
+  min-height: 44px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.segBtn:hover {
+  color: var(--text);
+}
+.segActive {
+  background: var(--brand);
+  color: var(--text-on-brand);
+  box-shadow: var(--elev-1);
+}
+
+/* Headline stat — the tool's answer. Accent top edge + a faint top wash. */
+.headline {
+  border-block-start: 3px solid var(--accent-bright);
+  background:
+    linear-gradient(to bottom, color-mix(in srgb, var(--accent) 7%, transparent), transparent 45%),
+    var(--surface);
+}
+.headline dd {
+  color: var(--accent-bright);
+  font-size: clamp(var(--fs-h3), 1rem + 0.9vw, var(--fs-h2));
+}
+
+.hint {
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+}
+.good dd {
+  color: var(--accent);
+}
+.bad dd {
+  color: var(--danger);
+}

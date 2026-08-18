@@ -1,0 +1,227 @@
+/* Shared styles for the personal-dashboard widgets (role picker, study,
+   tools, bookmarks, Adel threads, updates watch). Tokens + logical
+   properties only — RTL mirrors automatically. */
+
+/* ── Role picker card ── */
+.roleCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: var(--hairline-brand);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--elev-1), var(--edge-sheen);
+}
+.roleHead {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.roleTitle {
+  margin: 0;
+  font-size: var(--fs-lg);
+}
+.roleIntro {
+  margin: var(--space-1) 0 0;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.roleDismiss {
+  flex-shrink: 0;
+  min-block-size: 44px;
+  min-inline-size: 44px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.roleDismiss:hover {
+  color: var(--text);
+  background: var(--surface-raised);
+}
+.roleOptions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
+}
+.roleOption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  min-block-size: 44px;
+  border: var(--hairline-bright);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  color: var(--text);
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.roleOption:hover {
+  border-color: var(--brand-hover);
+  transform: translateY(var(--hover-raise));
+  box-shadow: var(--elev-2);
+}
+.roleOption:active {
+  transform: scale(var(--press-scale));
+}
+.roleOption strong {
+  font-size: var(--fs-base);
+}
+.roleOption span {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+/* ── Shared widget internals (used inside BentoCard tiles) ── */
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.head h2 {
+  margin: 0;
+  font-size: var(--fs-h3);
+}
+.headLink {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--link);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.headLink:hover {
+  text-decoration: underline;
+}
+.proTag {
+  margin-inline-start: var(--space-2);
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--gold) 22%, transparent);
+  color: var(--gold);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+.statRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  align-items: baseline;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.statLabel {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+.statValue {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  font-variant-numeric: tabular-nums;
+}
+.statValue[data-dim='true'] {
+  color: var(--text-dim);
+}
+.statGood {
+  color: var(--color-success);
+}
+.statWarn {
+  color: var(--warning);
+}
+
+/* Row list (bookmarks, threads, watched sources). */
+.rowList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.rowList li {
+  border-block-end: 1px solid var(--border);
+}
+.rowList li:last-child {
+  border-block-end: none;
+}
+.rowLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-block-size: 44px;
+  padding-block: var(--space-2);
+  color: var(--text);
+  text-decoration: none;
+  transition: var(--transition-color);
+}
+.rowLink:hover {
+  color: var(--brand-hover);
+}
+.rowTitle {
+  flex: 1;
+  min-inline-size: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--fs-sm);
+}
+.rowMeta {
+  flex-shrink: 0;
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+
+/* Chip cluster (tool shortcuts). */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: 44px;
+  padding: var(--space-2) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: var(--surface-raised);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  text-decoration: none;
+  transition: var(--transition-interactive);
+}
+.chip:hover {
+  border-color: var(--brand-hover);
+  color: var(--brand-hover);
+  transform: translateY(var(--hover-raise));
+}
+.chipIcon {
+  display: inline-flex;
+  color: var(--text-dim);
+}
+
+.empty {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+}
+.emptyCta {
+  color: var(--link);
+  font-weight: var(--fw-semibold);
+}

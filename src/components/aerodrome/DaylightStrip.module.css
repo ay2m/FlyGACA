@@ -1,0 +1,78 @@
+.wrap {
+  margin-block-start: var(--space-3);
+}
+
+.strip {
+  --night: color-mix(in srgb, var(--text) 16%, var(--surface));
+  --twilight: color-mix(in srgb, var(--gold) 30%, var(--surface));
+  --day: color-mix(in srgb, var(--gold) 55%, var(--surface));
+  position: relative;
+  direction: ltr;
+  block-size: 30px;
+  border-radius: var(--radius-sm);
+  border: var(--hairline);
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    var(--night) 0,
+    var(--night) var(--dawn),
+    var(--twilight) var(--dawn),
+    var(--twilight) var(--rise),
+    var(--day) var(--rise),
+    var(--day) var(--set),
+    var(--twilight) var(--set),
+    var(--twilight) var(--dusk),
+    var(--night) var(--dusk),
+    var(--night) 100%
+  );
+  animation: daylightIn var(--dur-entry) var(--ease-entry);
+}
+
+/* Current-time marker. */
+.now {
+  position: absolute;
+  inset-block: -1px;
+  inset-inline-start: var(--now);
+  inline-size: 2px;
+  background: var(--text);
+  box-shadow: 0 0 0 1px var(--surface);
+}
+.now::before {
+  content: '';
+  position: absolute;
+  inset-block-start: -3px;
+  inset-inline-start: -2px;
+  inline-size: 6px;
+  block-size: 6px;
+  border-radius: 50%;
+  background: var(--text);
+}
+
+.caption {
+  display: flex;
+  gap: var(--space-2);
+  margin-block-start: var(--space-1);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.sep {
+  opacity: 0.6;
+}
+
+@keyframes daylightIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strip {
+    animation: none;
+  }
+}

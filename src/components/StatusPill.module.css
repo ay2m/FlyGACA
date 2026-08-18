@@ -1,0 +1,71 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  align-self: flex-start;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--state);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--state) 14%, transparent);
+  color: var(--state);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+}
+
+.toneLive {
+  --state: var(--neon-green);
+}
+.toneData {
+  --state: var(--neon-cyan);
+}
+.toneSuccess {
+  --state: var(--success);
+}
+.toneWarning {
+  --state: var(--warning);
+}
+.toneDanger {
+  --state: var(--danger);
+}
+
+.dot {
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  background: var(--state);
+}
+
+/* Pulsing halo for live/online surfaces. */
+.dotPulse {
+  box-shadow: 0 0 0 0 var(--state);
+  animation: pulse-dot 2.4s var(--ease) infinite;
+}
+
+@keyframes pulse-dot {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--state) 50%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--state) 0%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--state) 0%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dotPulse {
+    animation: none;
+  }
+}
+
+.label {
+  line-height: 1;
+}
+
+/* Trailing citation slot (e.g. a cited rule §number), divided off. */
+.cls {
+  padding-inline-start: var(--space-2);
+  border-inline-start: 1px solid color-mix(in srgb, var(--state) 45%, transparent);
+  font-variant-numeric: tabular-nums;
+}

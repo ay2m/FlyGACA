@@ -1,0 +1,28 @@
+/* Matches the MessageActions `.action` look so it sits cleanly in that row. */
+.speak {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-block-size: 32px;
+  padding: var(--space-1) var(--space-2);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.speak:hover {
+  color: var(--brand-hover);
+  background: var(--surface-raised);
+}
+/* Lit while reading aloud so the active state is obvious. */
+.speak.active {
+  color: var(--brand);
+  background: var(--surface-raised);
+}
+
+.label {
+  line-height: 1;
+}

@@ -1,0 +1,321 @@
+.page {
+  padding-block: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ── Hero / identity ── */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-inline-size: 0;
+}
+.eyebrow {
+  margin: 0;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  color: var(--text-dim);
+}
+.heroText h1 {
+  margin: 0;
+  font-size: var(--fs-h2);
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.sub {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0;
+}
+.planBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  background: var(--surface-raised);
+  color: var(--text-muted);
+}
+.planBadge[data-plan='pro'] {
+  background: color-mix(in srgb, var(--brand) 22%, transparent);
+  color: var(--brand-hover);
+}
+.planBadge[data-plan='school'] {
+  background: color-mix(in srgb, var(--gold) 22%, transparent);
+  color: var(--gold);
+}
+/* Chosen operational role, alongside the plan badge. */
+.roleBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  color: var(--accent);
+}
+.status {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+.statusOk {
+  color: var(--success);
+}
+.statusWarn {
+  color: var(--warning);
+}
+
+/* ── Onboarding banner (full width, above the grid) ── */
+.setupCard {
+  padding: var(--space-5);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: linear-gradient(
+    140deg,
+    color-mix(in srgb, var(--brand) 12%, var(--surface)),
+    var(--surface)
+  );
+  box-shadow: var(--clay-shadow);
+}
+
+/* ── Tile internals (inside BentoCards) ── */
+.tileHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.tileHead h2 {
+  margin: 0;
+  font-size: var(--fs-h3);
+}
+.tileActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.cardLink {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--link);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.cardLink:hover {
+  text-decoration: underline;
+}
+
+.ghostBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.ghostBtn:hover {
+  color: var(--brand-hover);
+  border-color: var(--brand-hover);
+}
+.proTag {
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--gold) 22%, transparent);
+  color: var(--gold);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+/* ── Metric tiles ── */
+.metricLabel {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+.metricValue {
+  font-size: var(--fs-display, 2.6rem);
+  font-size: clamp(2rem, 1.4rem + 2vw, 3rem);
+  font-weight: var(--fw-bold);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  margin-block-start: auto;
+}
+
+/* ── Recent flights ── */
+.recent {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.recentRow {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+  border-block-start: 1px solid var(--border);
+  font-size: var(--fs-sm);
+}
+.recentRow:first-child {
+  border-block-start: none;
+}
+.recentDate {
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.recentRoute {
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.recentHrs {
+  font-weight: var(--fw-semibold);
+  font-variant-numeric: tabular-nums;
+}
+.empty {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: var(--fs-sm);
+}
+
+/* ── Quick actions ── */
+.quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-block-start: auto;
+}
+.quickLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  transition: var(--transition-interactive);
+}
+.quickLink:hover {
+  color: var(--brand-hover);
+  border-color: var(--brand-hover);
+  transform: translateY(-1px);
+}
+
+/* ── Achievement badges ── */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+/* ── Customize disclosure (show/hide widgets) ── */
+.customize {
+  border: var(--hairline-bright);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  padding: var(--space-4) var(--space-5);
+}
+.customize > summary {
+  cursor: pointer;
+  font-weight: var(--fw-semibold);
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+}
+.customizeHint {
+  margin: var(--space-2) 0 0;
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+.customizeList {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.customizeItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-block-size: 40px;
+  padding-block: var(--space-1);
+  border-block-end: 1px solid var(--border);
+}
+.customizeItem:last-child {
+  border-block-end: none;
+}
+.customizeToggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+  min-inline-size: 0;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.customizeToggle input {
+  accent-color: var(--brand);
+  inline-size: 18px;
+  block-size: 18px;
+}
+.reorder {
+  display: flex;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+.reorderBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 32px;
+  min-block-size: 32px;
+  border: var(--hairline-bright);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.reorderBtn:hover:not(:disabled) {
+  border-color: var(--brand-hover);
+  color: var(--brand-hover);
+}
+.reorderBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

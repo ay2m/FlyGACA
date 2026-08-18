@@ -1,0 +1,66 @@
+/* Composed empty / no-results state. Centered glyph + message + optional
+   one-tap recovery. Tokens + logical properties only. */
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  padding-block: var(--space-10);
+  color: var(--text-muted);
+}
+.icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  opacity: 0.7;
+}
+.message {
+  margin: 0;
+  font-size: var(--fs-lg);
+  color: var(--text);
+  text-wrap: pretty;
+  max-inline-size: 40ch;
+}
+
+/* One-tap recovery — mirrors the clay button + .btn:active press precedent. */
+.action {
+  min-height: 44px;
+  padding: var(--space-2) var(--space-5);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface-raised);
+  color: var(--text);
+  font: inherit;
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  box-shadow: var(--clay-shadow);
+  transition:
+    background var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+.action:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-1px);
+}
+.action:active {
+  box-shadow: var(--clay-shadow-press);
+  transform: scale(0.97);
+}
+
+/* Compact — for sidebars / tight panels (e.g. the study-sheets list). */
+.compact {
+  gap: var(--space-2);
+  padding-block: var(--space-5);
+}
+.compact .icon {
+  font-size: 1.6rem;
+}
+.compact .message {
+  font-size: var(--fs-sm);
+}
+.compact .action {
+  min-height: 36px;
+  padding: var(--space-1) var(--space-3);
+}

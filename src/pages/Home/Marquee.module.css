@@ -1,0 +1,84 @@
+.marquee {
+  overflow: hidden;
+  border-block: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 92%, var(--shade));
+  padding-block: var(--space-4);
+}
+
+.track {
+  display: flex;
+  inline-size: max-content;
+  animation: marquee-x 32s linear infinite;
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Two identical groups → shift by exactly one to loop seamlessly. */
+    transform: translateX(-50%);
+  }
+}
+
+/* RTL: scroll the other way so text enters from the correct edge. */
+[dir='rtl'] .track {
+  animation-name: marquee-x-rtl;
+}
+@keyframes marquee-x-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin: 0;
+  padding-inline: var(--space-4);
+  list-style: none;
+  white-space: nowrap;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.code {
+  color: var(--accent-bright);
+  font-weight: var(--fw-bold);
+}
+
+.sep {
+  inline-size: 6px;
+  block-size: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    inline-size: 100%;
+    justify-content: center;
+  }
+  .group {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3) var(--space-5);
+  }
+  /* Drop the duplicate track entirely when not scrolling. */
+  .track > .group:nth-child(2) {
+    display: none;
+  }
+}

@@ -1,0 +1,53 @@
+/* Shared instrument-style neon stat tiles (per-tile --stat-tone glow).
+   Used by the About / Schools pages via <StatStrip>. */
+.strip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+/* Optional kicker above the tiles (e.g. "what every seat includes"). */
+.label {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--accent-bright);
+  font-weight: var(--fw-semibold);
+  margin: 0;
+}
+.stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  min-inline-size: 96px;
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid color-mix(in srgb, var(--stat-tone, var(--neon-cyan)) 35%, transparent);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--bento-surface) 80%, transparent);
+}
+.statValue {
+  font-family: var(--font-mono);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  font-variant-numeric: tabular-nums;
+  color: var(--moon);
+  text-shadow: 0 0 18px color-mix(in srgb, var(--stat-tone, var(--neon-cyan)) 45%, transparent);
+}
+.statLabel {
+  order: 2;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  color: var(--text-muted);
+  text-align: center;
+}

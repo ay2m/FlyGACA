@@ -1,0 +1,125 @@
+.page {
+  padding-block-end: var(--space-8);
+}
+
+.intro,
+.lead {
+  max-inline-size: 65ch;
+  margin-inline: auto;
+  margin-block: var(--space-4);
+  color: var(--text-muted);
+  text-align: center;
+}
+.lead {
+  text-align: start;
+  margin-inline: 0;
+}
+
+/* ── Tiers ── */
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-block: var(--space-4);
+}
+@media (max-width: 720px) {
+  .tiers {
+    grid-template-columns: 1fr;
+  }
+}
+.tier {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  background: var(--surface-raised);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.tierName {
+  margin: 0;
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+}
+.tierPrice {
+  margin: 0;
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-black);
+  font-variant-numeric: tabular-nums;
+  color: var(--accent-bright);
+}
+.tierQuota {
+  margin: 0;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+.tierBlurb {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.note {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  text-align: center;
+  margin-block-start: var(--space-2);
+}
+
+/* ── Endpoint / code ── */
+.exampleLabel {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: var(--fw-bold);
+  color: var(--text-dim);
+  margin-block: var(--space-4) var(--space-1);
+}
+.code {
+  margin: 0;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  overflow-x: auto;
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  /* Code is LTR even in an RTL document. */
+  direction: ltr;
+  text-align: start;
+}
+
+/* ── Get-a-key band ── */
+.ctaBand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-block-start: var(--space-6);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+}
+.ctaHead {
+  margin: 0 0 var(--space-1);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+}
+.ctaLead {
+  margin: 0;
+  color: var(--text-muted);
+  max-inline-size: 55ch;
+}
+.ctaBtn {
+  flex: none;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: var(--text-on-brand);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+}
+.ctaBtn:hover {
+  background: var(--accent-bright);
+}

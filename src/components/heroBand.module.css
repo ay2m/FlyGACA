@@ -1,0 +1,16 @@
+/* Shared hero shell — flat, full-bleed "HUD" treatment (no card).
+   This previously rendered the falcon-stroke gradient card (rounded border, film
+   grain, a breathing gold edge and a sage corner glow). That boxed look has been
+   dropped so the SearchHero/PageHero heroes render bare on the page background with
+   a gradient-clip title, matching the Kingdom Airspace HUD hero (see Hud.module.css).
+   `.band` and `.glow` are kept as hooks so the SearchHero/PageHero markup — including
+   the `.glow` node — needs no change. */
+.band {
+  position: relative;
+  color: var(--moon);
+}
+
+/* Card glow removed for the flat look — the node stays in the DOM but paints nothing. */
+.glow {
+  display: none;
+}

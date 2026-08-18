@@ -1,0 +1,77 @@
+.wrap {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-3);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.svg {
+  inline-size: 100%;
+  block-size: auto;
+  max-block-size: 240px;
+  display: block;
+}
+
+.axis {
+  stroke: var(--border-bright);
+  stroke-width: 1;
+}
+
+.box {
+  fill: color-mix(in srgb, var(--success) 12%, transparent);
+  stroke: color-mix(in srgb, var(--success) 55%, transparent);
+  stroke-width: 1.5;
+}
+
+/* Max-weight line — dashed so it reads as a limit without relying on hue. */
+.limit {
+  stroke: var(--warning);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 3;
+}
+
+.mark {
+  transform: translate(var(--px), var(--py));
+  transition: transform var(--dur-slow) var(--ease-glide);
+}
+.dot {
+  fill: var(--neon-cyan);
+  stroke: var(--surface);
+  stroke-width: 1.5;
+}
+.markIn .dot {
+  fill: var(--success);
+}
+/* Out-of-limits: colour plus a dashed halo, so it stands out in the cockpit
+   theme where the accents collapse to amber. */
+.markOut .dot {
+  fill: var(--danger);
+}
+.ring {
+  fill: none;
+  stroke: var(--danger);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 2.5;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mark {
+    transition: none;
+  }
+}
+
+.caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-block-start: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+}
+.axisLabel {
+  font-weight: var(--fw-medium);
+}
+.legend {
+  font-variant-numeric: tabular-nums;
+}

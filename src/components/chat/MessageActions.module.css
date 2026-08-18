@@ -1,0 +1,45 @@
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-block-start: var(--space-1);
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-block-size: 32px;
+  padding: var(--space-1) var(--space-2);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.action:hover {
+  color: var(--brand-hover);
+  background: var(--surface-raised);
+}
+.action:active {
+  transform: scale(0.97);
+}
+
+/* A selected thumb stays lit so the reader's rating is visible at a glance. */
+.action.active {
+  color: var(--brand);
+  background: var(--surface-raised);
+}
+
+.label {
+  line-height: 1;
+}
+
+.thanks {
+  align-self: center;
+  margin-inline-start: var(--space-1);
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+}

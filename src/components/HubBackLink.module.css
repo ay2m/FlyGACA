@@ -1,0 +1,14 @@
+.back {
+  margin: 0 0 var(--space-4);
+}
+.back a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 36px;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  transition: color var(--dur) var(--ease);
+}
+.back a:hover {
+  color: var(--text);
+}

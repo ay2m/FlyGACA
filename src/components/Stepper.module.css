@@ -1,0 +1,181 @@
+/* Connected three-node "how it works" stepper, shared by Home / About / Schools.
+   The numbered nodes ride a brand-gradient rail (horizontal on desktop, vertical
+   when stacked) so the section reads as one ordered flow rather than three
+   interchangeable cards. */
+.steps {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+  padding-inline: var(--space-3);
+}
+/* Rail segment from this node to the next. Logical properties mirror it in RTL;
+   the last node omits it so the track ends cleanly. */
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  inset-block-start: 22px; /* vertical centre of the 44px node */
+  inset-inline-start: calc(50% + 22px); /* just past this node's edge */
+  inline-size: calc(100% - 44px + var(--space-5)); /* across to the next node */
+  block-size: 2px;
+  background: var(--grad-brand);
+  opacity: 0.55;
+  z-index: 0;
+}
+.stepNum {
+  position: relative;
+  z-index: 1; /* node sits above the rail */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 44px;
+  block-size: 44px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  border: 2px solid color-mix(in srgb, var(--brand) 60%, transparent);
+  /* Ships "ignited": a page-colour halo (first — it masks the rail behind the
+     node), a brand glow bloom, and a top sheen. This is the finished/fallback
+     state; the scroll-timeline ignition below only rewinds it. */
+  box-shadow:
+    0 0 0 6px var(--bg),
+    0 0 16px color-mix(in srgb, var(--brand) 40%, transparent),
+    inset 0 1px 0 var(--sheen-top);
+  color: var(--brand-hover);
+  font-family: var(--font-mono);
+  font-weight: var(--fw-bold);
+  font-variant-numeric: tabular-nums;
+}
+.stepTitle {
+  font-size: var(--fs-lg);
+}
+.stepBody {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  text-wrap: pretty;
+  max-inline-size: 32ch;
+}
+
+/* Stacked: the rail runs vertically from each node down to the next. */
+@media (max-width: 640px) {
+  .steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    justify-items: center;
+  }
+  .step:not(:last-child)::after {
+    inset-block-start: 44px;
+    inset-inline-start: calc(50% - 1px);
+    inline-size: 2px;
+    block-size: calc(100% - 44px + var(--space-6));
+  }
+}
+
+/* Staggered scroll reveal — each step rises and fades in the page's kinetic-
+   entry curve as the stepper scrolls into view, cascading 1 → 2 → 3. Purely
+   additive: gated on BOTH scroll-driven-animation support and no reduced-motion
+   request, so everywhere else the stepper simply shows in its finished state
+   (the base .step rules above) with no layout shift. The cascade comes from
+   per-node animation-range offsets, since a scroll timeline has no time-based
+   delay to hang --dur-stagger on. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .step {
+      animation-name: step-rise;
+      animation-fill-mode: both;
+      animation-timing-function: var(--ease-entry);
+      animation-timeline: view();
+      animation-range: entry 0% entry 80%;
+    }
+    .step:nth-child(2) {
+      animation-range: entry 12% entry 92%;
+    }
+    .step:nth-child(3) {
+      animation-range: entry 24% entry 100%;
+    }
+
+    /* Rail draws itself in behind the nodes as the section enters, so the flow
+       reads left→right (mirrored in RTL because it grows from inset-inline-start).
+       Single-`from` keyframe → the base rule's computed inline-size is the "to". */
+    .step:not(:last-child)::after {
+      animation-name: rail-draw-x;
+      animation-fill-mode: both;
+      animation-timing-function: var(--ease-entry);
+      animation-timeline: view();
+      animation-range: entry 20% entry 100%;
+    }
+
+    /* Nodes "ignite" — border and glow bloom up to the base ignited state as each
+       node's range completes, sequenced after the rise/draw so it reads as a
+       finale rather than noise. */
+    .stepNum {
+      animation-name: node-ignite;
+      animation-fill-mode: both;
+      animation-timing-function: var(--ease-entry);
+      animation-timeline: view();
+      animation-range: entry 40% entry 95%;
+    }
+    .step:nth-child(2) .stepNum {
+      animation-range: entry 52% entry 100%;
+    }
+    .step:nth-child(3) .stepNum {
+      animation-range: entry 64% entry 100%;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      /* Stacked: the rail runs vertically, so it draws top→down instead. */
+      .step:not(:last-child)::after {
+        animation-name: rail-draw-y;
+      }
+    }
+  }
+}
+
+@keyframes step-rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-5));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rail-draw-x {
+  from {
+    inline-size: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes rail-draw-y {
+  from {
+    block-size: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes node-ignite {
+  from {
+    border-color: color-mix(in srgb, var(--brand) 25%, transparent);
+    box-shadow:
+      0 0 0 6px var(--bg),
+      0 0 0 color-mix(in srgb, var(--brand) 0%, transparent),
+      inset 0 1px 0 var(--sheen-top);
+  }
+}

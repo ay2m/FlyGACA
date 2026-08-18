@@ -1,0 +1,43 @@
+.scope {
+  position: relative;
+  flex: 1;
+  inline-size: 100%;
+  min-block-size: 220px;
+  margin-block: var(--space-3);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background:
+    var(--glow-neon-cyan) center / 120% 120% no-repeat,
+    radial-gradient(circle at 50% 50%, var(--surface) 0%, var(--bento-surface) 70%);
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+/* Roving tooltip naming the GACAR Part under the pointer. Positioned via inline
+   left/top in canvas-raster coordinates (the raster isn't direction-mirrored),
+   then pulled up and centred over the contact. */
+.tooltip {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 8px));
+  max-inline-size: 160px;
+  padding-block: var(--space-1);
+  padding-inline: var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  border: var(--hairline-bright);
+  color: var(--text);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-snug);
+  pointer-events: none;
+}
+
+.concept {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  font-style: italic;
+}

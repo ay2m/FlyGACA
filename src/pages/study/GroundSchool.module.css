@@ -1,0 +1,131 @@
+.page {
+  padding-block: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.head {
+  max-inline-size: 60ch;
+}
+.intro {
+  margin-block-start: var(--space-3);
+  color: var(--text-muted);
+}
+
+.module {
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  padding: var(--space-5);
+}
+.moduleTitle {
+  font-size: var(--fs-h3);
+}
+.summary {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  margin-block-start: var(--space-2);
+}
+.progress {
+  font-size: var(--fs-xs);
+  color: var(--accent-bright);
+  margin-block: var(--space-2) var(--space-1);
+}
+
+/* Progress bar track */
+.progressBar {
+  block-size: 4px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  margin-block-end: var(--space-4);
+  overflow: hidden;
+}
+.progressFill {
+  block-size: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--grad-brand);
+  transition: inline-size 0.4s var(--ease-entry);
+}
+
+/* Module-level "test yourself" CTA → the matching quiz bank. */
+.moduleQuiz {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 36px;
+  margin-block-end: var(--space-4);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--brand-hover);
+}
+.moduleQuiz:hover {
+  text-decoration: underline;
+}
+
+.lessons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.lesson {
+  padding: var(--space-3) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  transition: var(--transition-color);
+}
+.lessonDone {
+  border-color: var(--color-success);
+  background: var(--color-success-bg);
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 36px;
+  cursor: pointer;
+}
+.check input {
+  inline-size: 18px;
+  block-size: 18px;
+  accent-color: var(--brand);
+  flex-shrink: 0;
+}
+.lessonTitle {
+  font-weight: var(--fw-semibold);
+}
+
+.objective {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  margin-block: var(--space-2);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: var(--space-1) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  transition: var(--transition-color);
+}
+.action:hover {
+  border-color: var(--brand-hover);
+  color: var(--brand-hover);
+  text-decoration: none;
+}

@@ -1,0 +1,75 @@
+.panel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  margin-block-end: var(--space-4);
+}
+
+.face {
+  inline-size: 92px;
+  block-size: 92px;
+  flex: none;
+}
+
+.bezel {
+  fill: var(--surface-2, transparent);
+  stroke: var(--border-bright);
+  stroke-width: 2;
+}
+
+/* Every tick/hand pivots about the dial centre in view-box units. */
+.tick,
+.tickMajor,
+.hour,
+.min,
+.sec {
+  transform-box: view-box;
+  transform-origin: 60px 60px;
+}
+.tick {
+  stroke: var(--text-dim);
+  stroke-width: 1.5;
+}
+.tickMajor {
+  stroke: var(--text-muted);
+  stroke-width: 2.5;
+}
+
+.hour {
+  stroke: var(--text);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+.min {
+  stroke: var(--text);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.sec {
+  stroke: var(--gold);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+.cap {
+  fill: var(--gold);
+}
+
+.readout {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-variant-numeric: tabular-nums;
+}
+.zulu {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.02em;
+}
+.ksa {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}

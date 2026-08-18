@@ -1,0 +1,30 @@
+/* Grid/list segmented toggle — shared by the browse hubs. */
+.toggle {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 38px;
+  min-height: 38px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.btn:hover {
+  color: var(--text);
+}
+.btnActive {
+  background: var(--surface-raised);
+  color: var(--accent-bright);
+  box-shadow: var(--shadow-sm);
+}

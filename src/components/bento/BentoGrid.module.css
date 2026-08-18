@@ -1,0 +1,28 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(160px, auto);
+  gap: var(--space-4);
+  padding: var(--space-5);
+  /* Ambient corner glows over the near-black gutter give the grid spatial depth. */
+  background:
+    var(--glow-neon-cyan) 0% 0% / 46% 56% no-repeat,
+    var(--glow-teal) 100% 100% / 52% 62% no-repeat,
+    var(--bento-gutter);
+  border-radius: var(--radius-xl);
+  border: var(--hairline);
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    padding: var(--space-4);
+    gap: var(--space-3);
+  }
+}

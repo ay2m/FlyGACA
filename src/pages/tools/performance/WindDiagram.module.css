@@ -1,0 +1,16 @@
+/* The wind arrow is drawn as a canonical north vector and rotated to the
+   reported bearing, so it glides between bearings as the input changes — the
+   diagram's single focal loop. The runway slab stays static as the reference
+   frame. */
+.wind {
+  transform-origin: 110px 110px;
+  transform-box: view-box;
+  transform: rotate(var(--dir));
+  transition: transform var(--dur-slow) var(--ease-glide);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wind {
+    transition: none;
+  }
+}

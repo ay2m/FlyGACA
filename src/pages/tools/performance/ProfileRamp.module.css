@@ -1,0 +1,87 @@
+.wrap {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-3);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.svg {
+  inline-size: 100%;
+  block-size: auto;
+  max-block-size: 168px;
+  display: block;
+}
+
+.ground {
+  stroke: var(--border-bright);
+  stroke-width: 1.5;
+}
+
+/* Vertical extent at the high end — dashed so it reads as a reference. */
+.drop {
+  stroke: var(--border-bright);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.ramp {
+  stroke: var(--link);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  fill: none;
+  /* Draw the path in on mount / re-key (the figure is keyed by its inputs). */
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation: ramp-draw var(--dur-entry) var(--ease-entry) forwards;
+}
+
+.plane {
+  opacity: 0;
+  animation: ramp-plane var(--dur) var(--ease) 0.5s forwards;
+}
+.planeGlyph {
+  fill: none;
+  stroke: var(--neon-cyan);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes ramp-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes ramp-plane {
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ramp {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+  .plane {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+.caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-block-start: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+}
+.mode {
+  font-weight: var(--fw-medium);
+}
+.ends {
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0A0E12" />
+    <!-- No-flash theme init: apply the persisted Cockpit / Night-Ops or Day /
+         reading theme before any paint so the tokens are live for the critical-CSS
+         hero and first React render. Keep the keys + hexes in sync with
+         src/lib/theme.ts (THEME_COLOR). -->
+    <script>
+      try {
+        var t = localStorage.getItem('flygaca:theme');
+        if (t === 'cockpit' || t === 'day') {
+          document.documentElement.setAttribute('data-theme', t);
+          var m = document.querySelector('meta[name="theme-color"]');
+          if (m) m.setAttribute('content', t === 'day' ? '#F5F2ED' : '#121212');
+        }
+      } catch (e) {}
+    </script>
+    <meta
+      name="description"
+      content="Fly GACA — an independent educational reference library of Saudi civil-aviation regulations (GACAR), charts and study tools. Not affiliated with GACA."
+    />
+    <!-- Baseline crawl signals for no-JS crawlers (canonical + hreflang). These
+         are the homepage/x-default defaults; usePageMeta and the prerendered
+         per-route snapshots override them. Keep the origin in sync with
+         SITE_ORIGIN / hreflangAlternates in src/lib/seo.ts. -->
+    <link rel="canonical" href="https://flygaca.com/" />
+    <link rel="alternate" hreflang="en" href="https://flygaca.com/" />
+    <link rel="alternate" hreflang="ar" href="https://flygaca.com/ar" />
+    <link rel="alternate" hreflang="x-default" href="https://flygaca.com/" />
+    <!-- Baseline social tags (usePageMeta refines per route + language at runtime). -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Fly GACA" />
+    <meta property="og:title" content="Fly GACA — Saudi Aviation Library" />
+    <meta
+      property="og:description"
+      content="An independent educational reference library of Saudi civil-aviation regulations (GACAR), charts and study tools. Not affiliated with GACA."
+    />
+    <!-- Absolute URL: OG scrapers reject root-relative image paths. The section
+         cards (og-*.png) are all 1200×630; declaring dimensions lets scrapers
+         render the card without a layout round-trip. -->
+    <meta property="og:image" content="https://flygaca.com/img/og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Fly GACA — Saudi Aviation Library" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fly GACA — Saudi Aviation Library" />
+    <meta
+      name="twitter:description"
+      content="An independent educational reference library of Saudi civil-aviation regulations (GACAR), charts and study tools. Not affiliated with GACA."
+    />
+    <meta name="twitter:image" content="https://flygaca.com/img/og-card.png" />
+    <title>Fly GACA — Saudi Aviation Library</title>
+    <!-- Site-wide structured data (constant; per-route schema is injected by usePageMeta). -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://flygaca.com/#organization",
+            "name": "Fly GACA",
+            "legalName": "BDA Company International",
+            "alternateName": "شركة بدع الدولية",
+            "url": "https://flygaca.com",
+            "logo": "https://flygaca.com/img/icon-512.png",
+            "description": "Fly GACA — an independent educational reference library of Saudi civil-aviation regulations (GACAR). Not affiliated with GACA.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Riyadh",
+              "postalCode": "12965",
+              "addressCountry": "SA"
+            },
+            "identifier": { "@type": "PropertyValue", "propertyID": "SA-CR", "value": "7030976893" },
+            "vatID": "311415259500003",
+            "taxID": "311415259500003",
+            "sameAs": [
+              "https://x.com/flygacax",
+              "https://www.snapchat.com/@flygaca",
+              "https://www.facebook.com/flygaca",
+              "https://www.instagram.com/flygaca",
+              "https://www.linkedin.com/company/flygaca"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "i@flygaca.com",
+              "contactType": "customer support",
+              "availableLanguage": ["en", "ar"]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://flygaca.com/#website",
+            "name": "Fly GACA",
+            "url": "https://flygaca.com",
+            "inLanguage": ["en", "ar"],
+            "publisher": { "@id": "https://flygaca.com/#organization" },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://flygaca.com/library?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          }
+        ]
+      }
+    </script>
+    <!-- Fonts are self-hosted via @fontsource (imported in src/main.tsx) — the
+         @font-face rules ship in the app CSS bundle, so there's no Google Fonts CDN
+         dependency (it 503'd intermittently) and no preconnect to a third party.
+         display:swap (set by @fontsource) paints the fallback immediately, no FOIT. -->
+    <!-- Critical CSS for the static home hero shell below: it paints from the
+         initial HTML at CSS-load time (no JS), so the <h1> becomes the LCP element
+         immediately instead of waiting for the bundle + React. Values mirror
+         src/styles/tokens.css; React replaces #root on boot. -->
+    <style>
+      #app-shell {
+        min-block-size: 62vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0a0e12;
+        padding: clamp(2rem, 8vh, 5rem) 1rem;
+        text-align: center;
+        font-family:
+          'Readex Pro',
+          system-ui,
+          -apple-system,
+          sans-serif;
+      }
+      #app-shell .s-inner {
+        max-inline-size: 64rem;
+        margin-inline: auto;
+      }
+      #app-shell .s-eyebrow {
+        margin: 0;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 600;
+        color: #b5ddc2;
+      }
+      #app-shell h1 {
+        margin: 1rem 0 0;
+        font-size: clamp(2rem, 1.5rem + 2.1vw, 3rem);
+        line-height: 1.15;
+        background: linear-gradient(102deg, #2d6e8a 0%, #8fc9a8 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      #app-shell .s-sub {
+        margin: 1rem auto 0;
+        max-inline-size: 64ch;
+        font-size: 1.15rem;
+        line-height: 1.65;
+        color: #9da9b4;
+      }
+      #app-shell .s-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+        margin-block-start: 2rem;
+      }
+      #app-shell .s-btn {
+        display: inline-flex;
+        align-items: center;
+        min-block-size: 44px;
+        padding: 0.75rem 1.4rem;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-weight: 600;
+        text-decoration: none;
+        color: #e8edf2;
+      }
+      #app-shell .s-btn.primary {
+        background: #2d6e8a;
+        color: #fff;
+      }
+      #app-shell .s-btn.ghost {
+        border-color: rgba(232, 237, 242, 0.25);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Static landing hero (English default) — paints before JS for fast LCP/FCP.
+           Mirrors home.eyebrow/title/subtitle/cta in src/i18n/en.json; keep in sync.
+           Removed immediately on non-home routes (the SPA fallback serves this file
+           for every path); React replaces it on the home route. -->
+      <div id="app-shell">
+        <div class="s-inner">
+          <p class="s-eyebrow">Independent, educational, bilingual</p>
+          <h1>Every Saudi reg. One captain on the answer.</h1>
+          <p class="s-sub">
+            A free library of Saudi civil-aviation regulations, with an AI instructor that cites the
+            exact Part and section.
+          </p>
+          <div class="s-cta">
+            <a class="s-btn primary" href="/library">Open the library</a>
+            <a class="s-btn ghost" href="/chat">Ask Captain Adel</a>
+          </div>
+        </div>
+      </div>
+      <script>
+        // The shell is the home hero; on any other route the SPA fallback still
+        // serves this file, so drop the shell there to avoid a wrong-page flash.
+        // `/ar` + `/ar/` are the Arabic home snapshot (main.tsx folds them onto
+        // `/?lang=ar`), so they keep the hero too.
+        var p = location.pathname;
+        if (p !== '/' && p !== '/index.html' && p !== '/ar' && p !== '/ar/') {
+          var s = document.getElementById('app-shell');
+          if (s) s.remove();
+        }
+      </script>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

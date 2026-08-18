@@ -1,0 +1,81 @@
+.wrap {
+  display: grid;
+  place-items: center;
+  margin-block-start: var(--space-5);
+}
+
+.svg {
+  inline-size: 100%;
+  max-inline-size: 15rem;
+  block-size: auto;
+  overflow: visible;
+}
+
+.ring {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 2;
+}
+.tick {
+  stroke: var(--border-bright);
+  stroke-width: 1.5;
+}
+.cardinal {
+  fill: var(--text-dim);
+  font-size: 11px;
+}
+
+.spoke line {
+  stroke: color-mix(in srgb, var(--link) 55%, transparent);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.spokeBad line {
+  stroke: var(--danger);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.rwyLabel {
+  fill: var(--text-muted);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Reported wind — the one focal loop: glides to its bearing when the wind
+   direction changes. */
+.wind {
+  transform-origin: 110px 110px;
+  transform-box: view-box;
+  transform: rotate(var(--dir));
+  transition: transform var(--dur-slow) var(--ease-glide);
+}
+.windShaft {
+  stroke: var(--gold);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.windHead {
+  fill: var(--gold);
+}
+
+.hub {
+  fill: var(--surface);
+  stroke: var(--border-bright);
+  stroke-width: 1;
+}
+.hubText {
+  fill: var(--text);
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wind {
+    transition: none;
+  }
+}

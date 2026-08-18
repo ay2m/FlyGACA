@@ -1,0 +1,55 @@
+.layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.field {
+  position: absolute;
+  inset: 0;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: hero-drift linear infinite;
+}
+
+@keyframes hero-drift {
+  0% {
+    transform: translateY(20px) translateX(0);
+    opacity: 0;
+  }
+  12% {
+    opacity: var(--p-op, 0.5);
+  }
+  88% {
+    opacity: var(--p-op, 0.5);
+  }
+  100% {
+    transform: translateY(-120px) translateX(var(--p-dx, 14px));
+    opacity: 0;
+  }
+}
+
+.glow {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 460px;
+  block-size: 460px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--teal-bright) 10%, transparent),
+    transparent 62%
+  );
+  mix-blend-mode: screen;
+  will-change: transform;
+}

@@ -1,0 +1,60 @@
+.hint {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2) var(--space-3);
+  margin-block-end: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  border: var(--clay-border);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--brand) 10%, var(--surface));
+  box-shadow: var(--clay-shadow);
+  font-size: var(--fs-sm);
+}
+
+.text {
+  color: var(--text-muted);
+}
+
+.actions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.take {
+  min-height: 44px;
+  padding: var(--space-1) var(--space-4);
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--brand);
+  color: var(--text-on-brand);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.take:hover {
+  background: var(--brand-hover);
+}
+.take:active {
+  transform: scale(var(--press-scale));
+}
+
+.dismiss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: var(--fs-md);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.dismiss:hover {
+  color: var(--text);
+}

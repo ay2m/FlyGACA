@@ -1,0 +1,34 @@
+.wave {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  block-size: 1em;
+  color: inherit;
+}
+
+.bar {
+  inline-size: 3px;
+  block-size: 100%;
+  border-radius: 1px;
+  background: currentColor;
+  transform: scaleY(0.35);
+  animation: waveBar 900ms var(--ease) infinite;
+  animation-delay: calc(var(--i, 0) * 120ms);
+}
+
+@keyframes waveBar {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    animation: none;
+    transform: scaleY(0.6);
+  }
+}

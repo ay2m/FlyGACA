@@ -1,0 +1,74 @@
+{
+ "generated": "2026-05-31",
+ "note": "Manifest for the Tools › PDF Library browser. List only files that are actually deployed (under assets/). Set available:false for documents that are catalogued but not yet uploaded. library/PDFs/ is git-ignored local staging and is NOT deployed.",
+ "categories": [
+  { "id": "guidance", "label": "Guidance & manuals" },
+  { "id": "study-sheets", "label": "Study sheets" }
+ ],
+ "documents": [
+  {
+   "title": "Aeronautical Information Manual (AIM)",
+   "slug": "aeronautical-information-manual-aim",
+   "category": "guidance",
+   "kind": "reader",
+   "link": "library-reader.html?id=aeronautical-information-manual-aim",
+   "note": "No source PDF — opens in the Library Reader (full text, table of contents and in-page search). To offer it as a PDF instead, drop the file at assets/pdfs/ and replace kind/link with file + available:true."
+  },
+  {
+   "title": "Saudi PPL — Study Sheet",
+   "slug": "saudi-ppl-study-sheet",
+   "category": "study-sheets",
+   "file": "assets/study-sheets/saudi-ppl-study-sheet.pdf",
+   "available": true
+  },
+  {
+   "title": "Saudi CPL — Study Sheet",
+   "slug": "saudi-cpl-study-sheet",
+   "category": "study-sheets",
+   "file": "assets/study-sheets/saudi-cpl-study-sheet.pdf",
+   "available": true
+  },
+  {
+   "title": "Saudi IR — Study Sheet",
+   "slug": "saudi-ir-study-sheet",
+   "category": "study-sheets",
+   "file": "assets/study-sheets/saudi-ir-study-sheet.pdf",
+   "available": true
+  },
+  {
+   "title": "GACA Class 1 Medical — Study Sheet",
+   "slug": "gaca-class1-study-sheet",
+   "category": "study-sheets",
+   "file": "assets/study-sheets/gaca-class1-study-sheet.pdf",
+   "available": true
+  },
+  {
+   "title": "Licence Conversion — Study Sheet",
+   "slug": "conversion-study-sheet",
+   "category": "study-sheets",
+   "file": "assets/study-sheets/conversion-study-sheet.pdf",
+   "available": true
+  },
+  {
+   "title": "SAELPT — Study Sheet",
+   "slug": "saelpt-study-sheet",
+   "category": "study-sheets",
+   "file": "assets/study-sheets/saelpt-study-sheet.pdf",
+   "available": true
+  },
+  {
+   "title": "Saudi AIP — Study Guide (EN)",
+   "slug": "saudi-aip-study-sheet-en",
+   "category": "study-sheets",
+   "file": "assets/study-sheets/saudi-aip-study-sheet-en.pdf",
+   "available": true
+  },
+  {
+   "title": "الدليل الدراسي لدليل الطيران (AIP) — عربي",
+   "slug": "saudi-aip-study-sheet-ar",
+   "category": "study-sheets",
+   "file": "assets/study-sheets/saudi-aip-study-sheet-ar.pdf",
+   "available": true
+  }
+ ]
+}

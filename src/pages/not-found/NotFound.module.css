@@ -1,0 +1,99 @@
+.page {
+  padding-block: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+}
+
+.avatar {
+  margin-block-end: var(--space-2);
+}
+
+.eyebrow {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-black);
+  letter-spacing: var(--tracking-eyebrow);
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+}
+.title {
+  font-size: var(--fs-h2);
+  margin: 0;
+}
+.lead {
+  color: var(--text-muted);
+  max-inline-size: 48ch;
+  line-height: var(--lh-body);
+  margin: 0;
+}
+
+.search {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: 44px;
+  margin-block-start: var(--space-2);
+  padding-inline: var(--space-5);
+  border: var(--clay-border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  box-shadow: var(--clay-shadow);
+  transition: var(--transition-interactive);
+}
+.search:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-1px);
+}
+.search:active {
+  transform: scale(0.97);
+}
+.kbd {
+  padding: 1px 5px;
+  border: var(--hairline-bright);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+
+.tiles {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3);
+  inline-size: 100%;
+  max-inline-size: 520px;
+}
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 56px;
+  padding: var(--space-3);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: var(--fw-semibold);
+  box-shadow: var(--clay-shadow);
+  transition: var(--transition-interactive);
+}
+.tile:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-2px);
+  color: var(--brand-hover);
+  text-decoration: none;
+}
+.tile:active {
+  transform: scale(0.97);
+}

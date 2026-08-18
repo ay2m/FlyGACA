@@ -1,0 +1,1190 @@
+{
+ "generated": "2026-06-13",
+ "source": "General Authority of Civil Aviation (GACA) — GACAR",
+ "sourceUrl": "https://gaca.gov.sa/en/Rules-and-Regulations-Category",
+ "count": 74,
+ "categories": [
+  {
+   "id": "general",
+   "label": "General & rulemaking"
+  },
+  {
+   "id": "airworthiness",
+   "label": "Airworthiness & maintenance"
+  },
+  {
+   "id": "licensing",
+   "label": "Personnel licensing"
+  },
+  {
+   "id": "airspace",
+   "label": "Airspace & flight rules"
+  },
+  {
+   "id": "operations",
+   "label": "Air operators & aerodromes"
+  },
+  {
+   "id": "ans",
+   "label": "Air navigation & oversight"
+  }
+ ],
+ "documents": [
+  {
+   "part": "1",
+   "partNum": 1,
+   "title": "Definitions, Abbreviations and Editorial Conventions",
+   "category": "general",
+   "slug": "part-1",
+   "pages": 239,
+   "outline": [
+    "Subpart A — Definitions",
+    "Subpart B — Abbreviations",
+    "Subpart C — Editorial Conventions"
+   ]
+  },
+  {
+   "part": "2",
+   "partNum": 2,
+   "title": "Units of Measurement to Be Used in Air and Ground Operations",
+   "category": "general",
+   "slug": "part-2",
+   "pages": 8,
+   "outline": [
+    "Subpart A — General"
+   ]
+  },
+  {
+   "part": "3",
+   "partNum": 3,
+   "title": "False and Misleading Statements",
+   "category": "general",
+   "slug": "part-3",
+   "pages": 3,
+   "outline": [
+    "Subpart A — General 3"
+   ]
+  },
+  {
+   "part": "4",
+   "partNum": 4,
+   "title": "Occurrence Reporting and Safety Information System",
+   "category": "general",
+   "slug": "part-4",
+   "pages": 56,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Notification and Reporting of Accidents and Incidents",
+    "Subpart C — Reporting Andinvestigation of Defects",
+    "Subpart D — Reporting of Operational Performance and Engneering Stat",
+    "Subpart E — Safety Database Andexchange Ofinformation"
+   ]
+  },
+  {
+   "part": "5",
+   "partNum": 5,
+   "title": "Safety Management Systems",
+   "category": "general",
+   "slug": "part-5",
+   "pages": 37,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Safety Policy",
+    "Subpart C — Safety Risk Management",
+    "Subpart D — Safety Assurance",
+    "Subpart E — Safety Promotion",
+    "Subpart F — Sms Documentation and Recordkeeping"
+   ]
+  },
+  {
+   "part": "7",
+   "partNum": 7,
+   "title": "Problematic Use of Psychoactive Substances; Prevention and Safety Programs",
+   "category": "general",
+   "slug": "part-7",
+   "pages": 6,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Employer Responsibilities",
+    "Subpart C — Individual Responsibilities"
+   ]
+  },
+  {
+   "part": "9",
+   "partNum": 9,
+   "title": "Aircraft Under an Agreement for Transfer of Functions and Duties in Accordance with Article 83 bis of the Convention on International Civil Aviation",
+   "category": "general",
+   "slug": "part-9",
+   "pages": 3,
+   "outline": [
+    "Subpart A — General"
+   ]
+  },
+  {
+   "part": "11",
+   "partNum": 11,
+   "title": "General Rulemaking Procedures",
+   "category": "general",
+   "slug": "part-11",
+   "pages": 5,
+   "outline": [
+    "Subpart A — General"
+   ]
+  },
+  {
+   "part": "13",
+   "partNum": 13,
+   "title": "Compliance Enforcement Procedures, Petitions for Reconsideration, and Appeals",
+   "category": "general",
+   "slug": "part-13",
+   "pages": 22,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Initiating Actions",
+    "Subpart C — Informal Actions and Immunity From Punitive Actions",
+    "Subpart D — Remedial Administrative Actions",
+    "Subpart F — Remedial Certificate Actions and Orders",
+    "Subpart G — Punitive Actions",
+    "Subpart H — Petitions for Reconsideration",
+    "Subpart I — Appeals",
+    "Subpart E — Remedialtraining"
+   ]
+  },
+  {
+   "part": "21",
+   "partNum": 21,
+   "title": "Certification Procedures for Products and Articles",
+   "category": "airworthiness",
+   "slug": "part-21",
+   "pages": 60,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Type Certificates",
+    "Subpart C — Changes to Type Certificates",
+    "Subpart D — Supplemental Type Certificates",
+    "Subpart E — Repair Design Approvals",
+    "Subpart F — Airworthiness Certificates",
+    "Subpart G — Saudi Arabia Parts Manufacturer Approvals",
+    "Subpart H — Export Airworthiness Approvals",
+    "Subpart I — Acceptance of Aircraft Engines, Propellers, and Articles",
+    "Subpart J — Saudi Arabia Technical Standard Order"
+   ]
+  },
+  {
+   "part": "23",
+   "partNum": 23,
+   "title": "Airworthiness Standards: Normal, Utility, Acrobatic, and Commuter Category Airplanes",
+   "category": "airworthiness",
+   "slug": "part-23",
+   "pages": 4,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Exceptions"
+   ]
+  },
+  {
+   "part": "25",
+   "partNum": 25,
+   "title": "Airworthiness Standards: Transport Category Airplanes",
+   "category": "airworthiness",
+   "slug": "part-25",
+   "pages": 3,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Exceptions"
+   ]
+  },
+  {
+   "part": "26",
+   "partNum": 26,
+   "title": "Continued Airworthiness and Safety Improvements for Transport Category Airplanes",
+   "category": "airworthiness",
+   "slug": "part-26",
+   "pages": 23,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Enhanced Airworthiness Program for Airplane Systems",
+    "Subpart C — Aging Airplane Safety",
+    "Subpart E — Agingairplane Safety",
+    "Subpart D — Fuel Tank Flammability"
+   ]
+  },
+  {
+   "part": "27",
+   "partNum": 27,
+   "title": "Airworthiness Standards: Normal Category Rotorcraft",
+   "category": "airworthiness",
+   "slug": "part-27",
+   "pages": 3,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Exceptions"
+   ]
+  },
+  {
+   "part": "29",
+   "partNum": 29,
+   "title": "Airworthiness Standards: Transport Category Rotorcraft",
+   "category": "airworthiness",
+   "slug": "part-29",
+   "pages": 3,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Exceptions"
+   ]
+  },
+  {
+   "part": "31",
+   "partNum": 31,
+   "title": "Airworthiness Standards: Manned Free Balloons",
+   "category": "airworthiness",
+   "slug": "part-31",
+   "pages": 3,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Exceptions"
+   ]
+  },
+  {
+   "part": "33",
+   "partNum": 33,
+   "title": "Airworthiness Standards: Aircraft Engines",
+   "category": "airworthiness",
+   "slug": "part-33",
+   "pages": 3,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Exceptions"
+   ]
+  },
+  {
+   "part": "34",
+   "partNum": 34,
+   "title": "Fuel Venting and Exhaust Emission Requirements for Turbine Engine Powered Airplanes",
+   "category": "airworthiness",
+   "slug": "part-34",
+   "pages": 4,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Prevention of Intentional Fuel Venting",
+    "Subpart C — Emissions Certification Standards"
+   ]
+  },
+  {
+   "part": "35",
+   "partNum": 35,
+   "title": "Airworthiness Standards: Propellers",
+   "category": "airworthiness",
+   "slug": "part-35",
+   "pages": 3,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Exceptions"
+   ]
+  },
+  {
+   "part": "36",
+   "partNum": 36,
+   "title": "Noise Standards: Aircraft Type and Airworthiness Certification",
+   "category": "airworthiness",
+   "slug": "part-36",
+   "pages": 7,
+   "outline": [
+    "Subpart B — Noise Certification Standards",
+    "Subpart C — Documentation, Operating Limitations and Information",
+    "Subpart A — General"
+   ]
+  },
+  {
+   "part": "39",
+   "partNum": 39,
+   "title": "Airworthiness Directives",
+   "category": "airworthiness",
+   "slug": "part-39",
+   "pages": 4,
+   "outline": [
+    "Subpart A — General"
+   ]
+  },
+  {
+   "part": "43",
+   "partNum": 43,
+   "title": "Maintenance, Preventive Maintenance, Rebuilding, and Alteration",
+   "category": "airworthiness",
+   "slug": "part-43",
+   "pages": 41,
+   "outline": [
+    "Subpart A — General"
+   ]
+  },
+  {
+   "part": "45",
+   "partNum": 45,
+   "title": "Identification and Registration Marking",
+   "category": "airworthiness",
+   "slug": "part-45",
+   "pages": 15,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Marking of Saudi Arabia Parts Manufacturer Approval",
+    "Subpart C — Marking of Imported Products and Articles",
+    "Subpart D — Nationality and Registration Marks"
+   ]
+  },
+  {
+   "part": "47",
+   "partNum": 47,
+   "title": "Aircraft Registration",
+   "category": "airworthiness",
+   "slug": "part-47",
+   "pages": 18,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Aircraft Certificates of Registration"
+   ]
+  },
+  {
+   "part": "48",
+   "partNum": 48,
+   "title": "Registration and Marking Requirements for Model Aircraft and Small Unmanned Aircraft",
+   "category": "airworthiness",
+   "slug": "part-48",
+   "pages": 8,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Certificates of Aircraft Registration for Model",
+    "Subpart C — Aircraft Marking"
+   ]
+  },
+  {
+   "part": "60",
+   "partNum": 60,
+   "title": "Flight Simulation Training Devices and Aviation Training Devices",
+   "category": "licensing",
+   "slug": "part-60",
+   "pages": 26,
+   "outline": [
+    "Subpart B — Flight Simulation Training Devices",
+    "Subpart A — General",
+    "Subpart C — Aviationtrainingdevices"
+   ]
+  },
+  {
+   "part": "61",
+   "partNum": 61,
+   "title": "Certification: Pilots, Flight Instructors, Ground Instructors, and Flight Engineers",
+   "category": "licensing",
+   "slug": "part-61",
+   "pages": 203,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Eligibility for, and Issuance of, Certificates",
+    "Subpart E — Privatepilots",
+    "Subpart F — Commercial Pilots Gacar",
+    "Subpart H — Flight Instructors Other Than Flight Instructors",
+    "Subpart I — Ground Instructors",
+    "Subpart J — Sport Pilots",
+    "Subpart K — Flight Instructors with a Sport Pilot Rating",
+    "Subpart L — Flight Engineers",
+    "Subpart C — Aircraft Ratings",
+    "Subpart D — Student Pilots",
+    "Subpart G — Airline Transport Pilots"
+   ]
+  },
+  {
+   "part": "64",
+   "partNum": 64,
+   "title": "Air Traffic Services Personnel Licensing and Ratings",
+   "category": "licensing",
+   "slug": "part-64",
+   "pages": 54,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Issuance of Licenses and Authorizations",
+    "Subpart C — Student Air Trafficcontrollers",
+    "Subpart D — Air Traffic Controllers",
+    "Subpart E — Student Aerodrome Flight Information Servicflicense",
+    "Subpart F — Flight Information Service Licenses Andratings",
+    "Subpart G — Air Traffic Service Instructors",
+    "Subpart H — Requirements for Assessors"
+   ]
+  },
+  {
+   "part": "65",
+   "partNum": 65,
+   "title": "Certification: Aircraft Dispatchers and Cabin Crew Members",
+   "category": "licensing",
+   "slug": "part-65",
+   "pages": 12,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Issuance of Certificates",
+    "Subpart C — Aircraft Dispatchers",
+    "Subpart D — Cabin Crew Members"
+   ]
+  },
+  {
+   "part": "66",
+   "partNum": 66,
+   "title": "Certification: Mechanics and Repairmen",
+   "category": "licensing",
+   "slug": "part-66",
+   "pages": 20,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Issuance of Certificates",
+    "Subpart C — Mechanics",
+    "Subpart D — Repairmen",
+    "Subpart E — Light-Sport Aircraft Repairmen"
+   ]
+  },
+  {
+   "part": "67",
+   "partNum": 67,
+   "title": "Medical Standards and Certification",
+   "category": "licensing",
+   "slug": "part-67",
+   "pages": 32,
+   "outline": [
+    "Subpart A — Medical Assessments",
+    "Subpart B — Class 1 Medical Certification",
+    "Subpart C — Class 2 Medical Certification",
+    "Subpart D — Class 3 Medical Certification",
+    "Subpart E — Certification Procedures Gacar"
+   ]
+  },
+  {
+   "part": "68",
+   "partNum": 68,
+   "title": "Certificated Aerodromes Ground Services Personnel",
+   "category": "licensing",
+   "slug": "part-68",
+   "pages": 110,
+   "outline": [
+    "Subpart A — General"
+   ]
+  },
+  {
+   "part": "71",
+   "partNum": 71,
+   "title": "Designated Airspace, Routes, Points and Minimum Altitudes",
+   "category": "airspace",
+   "slug": "part-71",
+   "pages": 9,
+   "outline": [
+    "Subpart A — General",
+    "Subpart C — Routes",
+    "Subpart D — Points",
+    "Subpart E — Minimum Ifr Altitudes",
+    "Subpart B — Airspaceareas"
+   ]
+  },
+  {
+   "part": "77",
+   "partNum": 77,
+   "title": "Safe, Efficient Use and Preservation of the Navigable Airspace",
+   "category": "airspace",
+   "slug": "part-77",
+   "pages": 17,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Notice Requirements",
+    "Subpart C — Standards for Determining Obstructions to Air Navigation",
+    "Subpart D — Aeronautical Studies Anddeterminations",
+    "Subpart E — Projection of Directedbright Light Sources"
+   ]
+  },
+  {
+   "part": "91",
+   "partNum": 91,
+   "title": "General Operating and Flight Rules",
+   "category": "airspace",
+   "slug": "part-91",
+   "pages": 270,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Flight Rules",
+    "Subpart C — Aircraft Instruments, Equipment, and Certificate",
+    "Subpart D — Special Flight Operations",
+    "Subpart E — Maintenance, Preventive Maintenance,",
+    "Subpart F — Foreign Aircraft Operations and Operations of Saudi",
+    "Subpart G — Environmental Protection",
+    "Subpart H — Waivers",
+    "Subpart I — Search and Rescue"
+   ]
+  },
+  {
+   "part": "93",
+   "partNum": 93,
+   "title": "Special Air Traffic Rules",
+   "category": "airspace",
+   "slug": "part-93",
+   "pages": 5,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Right Hand Traffic Patterns",
+    "Subpart C — Noiseabatementprocedures",
+    "Subpart D — Hajj Operations"
+   ]
+  },
+  {
+   "part": "97",
+   "partNum": 97,
+   "title": "Instrument Flight Procedures",
+   "category": "airspace",
+   "slug": "part-97",
+   "pages": 5,
+   "outline": [
+    "Subpart B — Approvedinstrument Flight Procedures",
+    "Subpart A — General"
+   ]
+  },
+  {
+   "part": "99",
+   "partNum": 99,
+   "title": "Security Control of Air Traffic",
+   "category": "airspace",
+   "slug": "part-99",
+   "pages": 6,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Adiz Operations"
+   ]
+  },
+  {
+   "part": "101",
+   "partNum": 101,
+   "title": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+   "category": "airspace",
+   "slug": "part-101",
+   "pages": 25,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Unmanned Moored Balloons and Kites",
+    "Subpart C — Unmanned Free Balloons",
+    "Subpart D — Amateur Rockets",
+    "Subpart E — Model Aircraft",
+    "Subpart F — Unmanned Aircraft Systems"
+   ]
+  },
+  {
+   "part": "103",
+   "partNum": 103,
+   "title": "Ultralight Vehicles",
+   "category": "airspace",
+   "slug": "part-103",
+   "pages": 7,
+   "outline": [
+    "Subpart B — Operating Rules",
+    "Subpart A — General"
+   ]
+  },
+  {
+   "part": "105",
+   "partNum": 105,
+   "title": "Parachute Operations",
+   "category": "airspace",
+   "slug": "part-105",
+   "pages": 8,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Operating Rules"
+   ]
+  },
+  {
+   "part": "107",
+   "partNum": 107,
+   "title": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+   "category": "airspace",
+   "slug": "part-107",
+   "pages": 54,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Operating Rules",
+    "Subpart C — Remote Pilot Certification",
+    "Subpart D — Waivers",
+    "Subpart E — Certification of Small Unmanned Aircraft System Remote P"
+   ]
+  },
+  {
+   "part": "109",
+   "partNum": 109,
+   "title": "Transportation of Dangerous Goods by Air",
+   "category": "airspace",
+   "slug": "part-109",
+   "pages": 37,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Packing and Shipping Dangerous Goods by Air",
+    "Subpart C — Certification and Authorization",
+    "Subpart D — Operator Responsibilities",
+    "Subpart E — Provision of Information",
+    "Subpart F — Dangerous Goods Training",
+    "Subpart G — Dangerous Goods Manuals",
+    "Subpart H — Reports and Records"
+   ]
+  },
+  {
+   "part": "115",
+   "partNum": 115,
+   "title": "Operations: Commercial Air Operations Manned Balloons",
+   "category": "airspace",
+   "slug": "part-115",
+   "pages": 33,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Certification, Operations Specifications, and Other Requ",
+    "Subpart C — Management Personnel",
+    "Subpart D — Operating Areas",
+    "Subpart E — Manual Requirements",
+    "Subpart F — Balloon Requirements",
+    "Subpart G — Additional Airworthiness Requirements",
+    "Subpart H — Pilot Requirements and Qualifications",
+    "Subpart I — Training Programs",
+    "Subpart J — Flight Operations",
+    "Subpart K — Records and Reports",
+    "Subpart L — Transportation of Dangerous Goods"
+   ]
+  },
+  {
+   "part": "117",
+   "partNum": 117,
+   "title": "Flight and Duty Limitations and Rest Requirements: Flight Crew Members",
+   "category": "operations",
+   "slug": "part-117",
+   "pages": 14,
+   "outline": [
+    "Subpart A — General"
+   ]
+  },
+  {
+   "part": "119",
+   "partNum": 119,
+   "title": "Certification: Saudi Arabian Commercial and Noncommercial Operators",
+   "category": "operations",
+   "slug": "part-119",
+   "pages": 31,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Applicability of Operating Requirements to Differentkind",
+    "Subpart C — Certification, Operations Specifications, and Otherrequi",
+    "Subpart D — Certification, Operations Specifications, and Other",
+    "Subpart E — Other Requirements Applicable to All Operations Conducte"
+   ]
+  },
+  {
+   "part": "121",
+   "partNum": 121,
+   "title": "Operations: Commercial Air Operators Operating Transport Category Aircraft or Commuter Category Airplanes",
+   "category": "operations",
+   "slug": "part-121",
+   "pages": 315,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Management Personnel",
+    "Subpart C — Approval of Routes and Areas",
+    "Subpart D — Manual Requirements",
+    "Subpart E — Aircraft Requirements",
+    "Subpart F — Airplane Performance Operating Limitations",
+    "Subpart G — Rotorcraft Performance Operating Limitations",
+    "Subpart H — Additional Airworthiness Requirements 121",
+    "Subpart I — Instrument and Equipment Requirements",
+    "Subpart J — Maintenance, Preventive Maintenance,",
+    "Subpart K — Crew Member Requirements and Qualifications",
+    "Subpart L — Training Programs",
+    "Subpart M — Aircraft Dispatcher Qualifications",
+    "Subpart N — Fatigue Management Requirements"
+   ]
+  },
+  {
+   "part": "125",
+   "partNum": 125,
+   "title": "Operations: Noncommercial Operators Using Turbojets, Transport Category Aircraft, or Commuter Category Airplanes",
+   "category": "operations",
+   "slug": "part-125",
+   "pages": 84,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Management Personnel",
+    "Subpart C — Routes and Areas",
+    "Subpart D — Manual Requirements",
+    "Subpart E — Aircraft Requirements",
+    "Subpart F — Airplane Performance Operating Limitations",
+    "Subpart G — Rotorcraft Performance Operating Limitations",
+    "Subpart H — Additional Airworthiness Requirements",
+    "Subpart I — Instrument and Equipment Requirements",
+    "Subpart J — Maintenance",
+    "Subpart K — Airman Requirements and Qualifications",
+    "Subpart L — Training Programs",
+    "Subpart M — Aircraft Dispatcher Requirements",
+    "Subpart N — Fatigue Management Requirements"
+   ]
+  },
+  {
+   "part": "129",
+   "partNum": 129,
+   "title": "Operations: Foreign Air Carriers",
+   "category": "operations",
+   "slug": "part-129",
+   "pages": 11,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Requirements for Foreign Air Carriers"
+   ]
+  },
+  {
+   "part": "133",
+   "partNum": 133,
+   "title": "Aerial Work Operations",
+   "category": "operations",
+   "slug": "part-133",
+   "pages": 63,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Certification",
+    "Subpart C — Management Personnel",
+    "Subpart D — Aerodrome Requirements and Low Altitude Operations",
+    "Subpart E — Manual Requirements",
+    "Subpart F — Aircraft Requirements",
+    "Subpart G — Rotorcraft Performance Operating Limitations",
+    "Subpart H — Instrument and Equipment Requirements",
+    "Subpart I — Maintenance",
+    "Subpart J — Flight Crew Member Requirements and Qualifications",
+    "Subpart K — Training Programs",
+    "Subpart L — Fatigue Management Requirements",
+    "Subpart M — Flight Operations",
+    "Subpart N — Flight Release Rules"
+   ]
+  },
+  {
+   "part": "135",
+   "partNum": 135,
+   "title": "Operations: Commercial Air Operators Operating Other Than Transport Category Aircraft or Commuter Category Airplanes",
+   "category": "operations",
+   "slug": "part-135",
+   "pages": 136,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Management Personnel 135",
+    "Subpart D — Manual Requirements",
+    "Subpart E — Aircraft Requirements",
+    "Subpart F — Airplane Performance Operating Limitations",
+    "Subpart G — Rotorcraft Performance Operating Limitations",
+    "Subpart I — Instrument and Equipment Requirements",
+    "Subpart J — Maintenance, Preventive Maintenance, and Alterations",
+    "Subpart K — Pilot Requirements and Qualifications",
+    "Subpart L — Training Programs",
+    "Subpart M — Aircraft Dispatcher Requirements",
+    "Subpart N — Fatigue Management Requirements",
+    "Subpart O — Flight Operations",
+    "Subpart P — Flight Release Rules"
+   ]
+  },
+  {
+   "part": "137",
+   "partNum": 137,
+   "title": "Certification, Authorization and Operation of Water Aerodromes",
+   "category": "operations",
+   "slug": "part-137",
+   "pages": 88,
+   "outline": [
+    "Subpart A — Certification and Authorization",
+    "Subpart B — Certification of Water Aerodromes",
+    "Subpart C — Authorization Ofwater Aerodromes",
+    "Subpart D — Wateraerodromedesignandestablishment",
+    "Subpart E — Water Aerodrome Data",
+    "Subpart F — Physical Characteristics",
+    "Subpart G — Obstacle Restriction Andremoval",
+    "Subpart H — Visual Aids for Navigation",
+    "Subpart I — Visual Aids for Denoting Obstacles",
+    "Subpart J — Wildlifestrikeandsealifehazardreduction",
+    "Subpart L — Rescue Andfire Fighting",
+    "Subpart M — Water Aerodrome Emergency Planning",
+    "Subpart N — Water Aerodrome Operating Requirements"
+   ]
+  },
+  {
+   "part": "138",
+   "partNum": 138,
+   "title": "Certification, Authorization and Operation of Heliports",
+   "category": "operations",
+   "slug": "part-138",
+   "pages": 154,
+   "outline": [
+    "Subpart A — Certification and Authorization",
+    "Subpart B — Certification of Heliports",
+    "Subpart C — Authorization of Heliports",
+    "Subpart D — Heliport Design and Establishment",
+    "Subpart E — Heliport Data",
+    "Subpart F — Physical Characteristics",
+    "Subpart G — Obstacle Enviroment",
+    "Subpart H — Visual Aids",
+    "Subpart I — Heliport Emergency Response",
+    "Subpart J — Electrical Systems",
+    "Subpart L — Heliport Maintenance 124",
+    "Subpart K — Operational Services, Equipment and Installations 138"
+   ]
+  },
+  {
+   "part": "139",
+   "partNum": 139,
+   "title": "Certification, Authorization and Operation of Aerodromes",
+   "category": "operations",
+   "slug": "part-139",
+   "pages": 371,
+   "outline": [
+    "Subpart A — Certification and Authorization",
+    "Subpart C — Authorization of Aerodromes",
+    "Subpart D — Design & Establishment of an Aerodrome 22",
+    "Subpart E — Aerodrome Data 26",
+    "Subpart F — Physical Characteristics",
+    "Subpart G — Obstacle Restriction and Removal",
+    "Subpart I — Visual Aids for Denoting Obstacles",
+    "Subpart K — Electrical Systems",
+    "Subpart L — Aerodrome Operational Services, Equipment Andinstallatio",
+    "Subpart M — Aerodrome Maintenance",
+    "Subpart B — Certification of Aerodromes",
+    "Subpart H — Visual Aids for Navigation",
+    "Subpart J — Visual Aids for Denoting Restricted Use Areas"
+   ]
+  },
+  {
+   "part": "141",
+   "partNum": 141,
+   "title": "Pilot Schools",
+   "category": "operations",
+   "slug": "part-141",
+   "pages": 152,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Personnel, Aircraft, and Facilities Requirements",
+    "Subpart C — Manual Requirements",
+    "Subpart D — Quality Assurance System",
+    "Subpart E — Training Course Outline and Curriculum",
+    "Subpart F — Examining Authority",
+    "Subpart G — Operating Rules",
+    "Subpart H — Records"
+   ]
+  },
+  {
+   "part": "142",
+   "partNum": 142,
+   "title": "Training Centers",
+   "category": "operations",
+   "slug": "part-142",
+   "pages": 34,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Curriculum and Syllabus Requirements",
+    "Subpart C — Personnel and Flight Training Equipment Requirements",
+    "Subpart D — Operating Rules",
+    "Subpart E — Recordkeeping",
+    "Subpart F — Other Approved Courses"
+   ]
+  },
+  {
+   "part": "143",
+   "partNum": 143,
+   "title": "Flight Engineer, Cabin Crew Member, and Aircraft Dispatcher Training Schools",
+   "category": "operations",
+   "slug": "part-143",
+   "pages": 47,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Personnel and Training Equipment Requirements",
+    "Subpart D — Quality Assurance System",
+    "Subpart F — Operating Rules",
+    "Subpart G — Records",
+    "Subpart C — Manual Requirements",
+    "Subpart E — Training Course Outline and Curriculum"
+   ]
+  },
+  {
+   "part": "144",
+   "partNum": 144,
+   "title": "Air Traffic Controller Schools",
+   "category": "operations",
+   "slug": "part-144",
+   "pages": 37,
+   "outline": [
+    "Subpart A — General",
+    "Subpart D — Quality Assurance System",
+    "Subpart F — Operating Rules",
+    "Subpart G — Records",
+    "Subpart C — Manual Requirements 144"
+   ]
+  },
+  {
+   "part": "145",
+   "partNum": 145,
+   "title": "Repair Stations",
+   "category": "operations",
+   "slug": "part-145",
+   "pages": 27,
+   "outline": [
+    "Subpart A — General",
+    "Subpart C — Housing, Facilities, Equipment, Materials, and Data",
+    "Subpart D — Personnel",
+    "Subpart E — Operating Rules",
+    "Subpart B — Certification"
+   ]
+  },
+  {
+   "part": "147",
+   "partNum": 147,
+   "title": "Aviation Maintenance Technician Schools",
+   "category": "operations",
+   "slug": "part-147",
+   "pages": 50,
+   "outline": [
+    "Subpart A — General",
+    "Subpart C — Facilities and Equipment Requirements",
+    "Subpart D — Personnel Requirements",
+    "Subpart E — Quality Assurance System",
+    "Subpart F — Operating Rules",
+    "Subpart G — Recordkeeping",
+    "Subpart B — Curriculum Requiremen"
+   ]
+  },
+  {
+   "part": "149",
+   "partNum": 149,
+   "title": "Aviation Recreation Organizations",
+   "category": "operations",
+   "slug": "part-149",
+   "pages": 18,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Certification",
+    "Subpart C — Personnel & Facility Requirements",
+    "Subpart D — Manualrequirements",
+    "Subpart E — Operating Requirements",
+    "Subpart F — Quality Assurance",
+    "Subpart G — Records and Reports 149"
+   ]
+  },
+  {
+   "part": "151",
+   "partNum": 151,
+   "title": "Ground Service Providers",
+   "category": "operations",
+   "slug": "part-151",
+   "pages": 44,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Certification",
+    "Subpart C — Personnel Requirements",
+    "Subpart D — Ground Operations Manual Requirements",
+    "Subpart E — Training Requirements",
+    "Subpart F — Ground Support Equipment and Facilities",
+    "Subpart G — Fatigue Management",
+    "Subpart H — Quality Assurance/compliance",
+    "Subpart I — Records and Reports"
+   ]
+  },
+  {
+   "part": "156",
+   "partNum": 156,
+   "title": "Environmental Sustainability Regulations",
+   "category": "operations",
+   "slug": "part-156",
+   "pages": 11,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Greenhouse Gas Emissions",
+    "Subpart C — Noise",
+    "Subpart D — Environmental Permits",
+    "Subpart E — Local Air Quality",
+    "Subpart F — Biodiversity Protection",
+    "Subpart G — Waste Management",
+    "Subpart H — Water and Energy Management"
+   ]
+  },
+  {
+   "part": "157",
+   "partNum": 157,
+   "title": "Carbon Offsetting and Reduction Scheme for International Aviation (corsia)",
+   "category": "operations",
+   "slug": "part-157",
+   "pages": 27,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Administration",
+    "Subpart C — Monitoring, Reporting and Verification",
+    "Subpart E — Emissions Units",
+    "Subpart F — Verification Body and Accredition"
+   ]
+  },
+  {
+   "part": "170",
+   "partNum": 170,
+   "title": "Certification: Air Navigation Service Providers",
+   "category": "ans",
+   "slug": "part-170",
+   "pages": 20,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Certification, Operations Specifications, and Other Requ",
+    "Subpart C — Other Requirements Applicable to All Operations Conducte"
+   ]
+  },
+  {
+   "part": "171",
+   "partNum": 171,
+   "title": "Air Traffic Services",
+   "category": "ans",
+   "slug": "part-171",
+   "pages": 232,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Management Personnel",
+    "Subpart C — Manual Requirements",
+    "Subpart D — Air Traffic Controller Qualification Requirements",
+    "Subpart E — Training and Assessment Programs",
+    "Subpart F — Fatigue Management",
+    "Subpart G — Designation, Classification, Registration",
+    "Subpart H — Establishment, Identification, Registration",
+    "Subpart I — Coordination",
+    "Subpart J — Facilities and Equipment",
+    "Subpart K — Capacity and Air Traffic Flow Management",
+    "Subpart L — Air Traffic Control Services",
+    "Subpart M — Aerodrome Air Traffic Service",
+    "Subpart N — Approach Control Service"
+   ]
+  },
+  {
+   "part": "172",
+   "partNum": 172,
+   "title": "Instrument Flight Procedure Services",
+   "category": "ans",
+   "slug": "part-172",
+   "pages": 50,
+   "outline": [
+    "Subpart B — Personnel Requirements",
+    "Subpart C — Manual Requirements",
+    "Subpart D — Development of Instrument Flight Procedures",
+    "Subpart E — Validation of Instrument Flight Procedures",
+    "Subpart F — Approval of Instrument Flight Procedures",
+    "Subpart G — Promulgation of Instrument Flight Procedures",
+    "Subpart H — Maintenance of Instrument Flight Procedures",
+    "Subpart I — Quality Assurance",
+    "Subpart A — General",
+    "Subpart J — Records and Reports"
+   ]
+  },
+  {
+   "part": "173",
+   "partNum": 173,
+   "title": "Aeronautical Telecommunication Services",
+   "category": "ans",
+   "slug": "part-173",
+   "pages": 239,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Personnel",
+    "Subpart C — Manual Requirements",
+    "Subpart D — Facilities",
+    "Subpart E — Operating Requirements",
+    "Subpart F — Quality Assurance",
+    "Subpart G — Records and Reports"
+   ]
+  },
+  {
+   "part": "175",
+   "partNum": 175,
+   "title": "Aeronautical Information Services & Aeronautical Charts",
+   "category": "ans",
+   "slug": "part-175",
+   "pages": 224,
+   "outline": [
+    "Subpart A — Generalspecifications",
+    "Subpart B — Responsibilities and Functions",
+    "Subpart C — Aeronauticalinformationmanagement",
+    "Subpart D — Scope of Aeronautical Data and Aeronautical Information",
+    "Subpart E — Aeronauticalinformationproductsandservices 29",
+    "Subpart F — Aeronauticalinformationupdates 49",
+    "Subpart G — Quality Management",
+    "Subpart H — Aeronautical Data Requirements",
+    "Subpart I — Printed Products"
+   ]
+  },
+  {
+   "part": "177",
+   "partNum": 177,
+   "title": "Search and Rescue Services",
+   "category": "ans",
+   "slug": "part-177",
+   "pages": 30,
+   "outline": [
+    "Subpart A — Organization",
+    "Subpart B — Cooperation",
+    "Subpart C — Preparatory Measures",
+    "Subpart D — Operating Procedures",
+    "Subpart E — Cospas-Sarsat Mission Control Center",
+    "Subpart F — Global Aeronautical Distress and Safety"
+   ]
+  },
+  {
+   "part": "179",
+   "partNum": 179,
+   "title": "Meteorology Services for Air Navigation",
+   "category": "ans",
+   "slug": "part-179",
+   "pages": 47,
+   "outline": [
+    "Subpart B — Personnel",
+    "Subpart C — Manual Requirements",
+    "Subpart D — Worldareaforecastsystemandaerodrome Meteorologicaloffice",
+    "Subpart E — Meteorological Observations and Reports",
+    "Subpart F — Aircraft Observations and Reports",
+    "Subpart G — Forecasts",
+    "Subpart H — Sigmet and Airmet Information, Aerodrome Warnings and Wi",
+    "Subpart I — Aeronauticalclimatologicalinformation",
+    "Subpart J — Service for Operatorsandflight Crew Members",
+    "Subpart K — Information for Air Traffic Services, Search and Rescues",
+    "Subpart M — Quality Assurance",
+    "Subpart N — Records Andreports",
+    "Subpart A — General"
+   ]
+  },
+  {
+   "part": "183",
+   "partNum": 183,
+   "title": "Representatives of the President",
+   "category": "ans",
+   "slug": "part-183",
+   "pages": 22,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Certification of Representatives",
+    "Subpart C — Privileges and Limitations",
+    "Subpart D — Organization Designation Authorization",
+    "Subpart E — Designated English Language Proficiency Testing Center",
+    "Subpart F — Designated Ground Services Inspection Organization"
+   ]
+  },
+  {
+   "part": "193",
+   "partNum": 193,
+   "title": "Protection of Submitted Safety Data and Safety Information",
+   "category": "ans",
+   "slug": "part-193",
+   "pages": 4,
+   "outline": [
+    "Subpart A — General"
+   ]
+  },
+  {
+   "part": "199",
+   "partNum": 199,
+   "title": "Repeals, Coming Into Force and Transitional Provisions",
+   "category": "ans",
+   "slug": "part-199",
+   "pages": 18,
+   "outline": [
+    "Subpart A — General",
+    "Subpart B — Transitional Provisions"
+   ]
+  }
+ ]
+}

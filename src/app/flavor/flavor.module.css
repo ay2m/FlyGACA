@@ -1,0 +1,147 @@
+/* Chrome for the standalone prep-app (flavor) builds — a slim take on the main
+   Header/Footer language: same tokens, logical properties only, RTL-safe. */
+
+.nav {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--z-sticky);
+  block-size: var(--nav-h);
+  padding-block-start: var(--safe-top);
+  display: flex;
+  align-items: center;
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-block-end: 1px solid var(--border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-block-size: 44px;
+  padding-inline-end: var(--space-2);
+  border-radius: var(--radius-md);
+}
+.lockup:hover {
+  opacity: 0.96;
+  text-decoration: none;
+}
+
+.mark {
+  inline-size: 32px;
+  block-size: 32px;
+}
+
+.wordmark {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-black);
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  white-space: nowrap;
+}
+.wmPrimary {
+  color: var(--text);
+}
+.wmSecondary {
+  margin-inline-start: 0.18em;
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.actions {
+  margin-inline-start: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.settingsLink {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 44px;
+  padding-inline: var(--space-3);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+.settingsLink:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.footer {
+  margin-block-start: var(--space-8);
+  padding-block: var(--space-6) calc(var(--space-6) + var(--safe-bottom));
+  border-block-start: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.footerInner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.legalRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-4);
+  font-size: var(--fs-sm);
+}
+.legalRow a {
+  color: var(--text-muted);
+}
+.legalRow a:hover {
+  color: var(--text);
+}
+
+.crossPromo {
+  align-self: flex-start;
+  font-size: var(--fs-sm);
+}
+
+.bottomRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.copyright {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  margin-inline-end: auto;
+}
+
+/* Settings page */
+.settingsPage {
+  padding-block: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.settingsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-3);
+  border-block-end: 1px solid var(--border);
+}
+.settingsLabel {
+  font-weight: var(--fw-semibold);
+}
+.settingsLegal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}

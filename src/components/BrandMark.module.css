@@ -1,0 +1,37 @@
+/* Brand medallion — the Fly GACA falcon on a circular brand-ringed disc. Stands
+   in for an identity portrait on the pilot's own surfaces (dashboard hero, the
+   sign-in aside), so they read as the product's flight deck rather than the AI
+   instructor's face. Matches the lg CaptainAvatar footprint (72px, brand ring +
+   glow) so it keeps the same visual weight. Decorative — the adjacent heading
+   supplies the label. */
+.brandMark {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  inline-size: 72px;
+  block-size: 72px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 35%,
+    color-mix(in srgb, var(--brand) 20%, var(--surface-raised)),
+    var(--surface-raised)
+  );
+  border: 2px solid color-mix(in srgb, var(--brand) 45%, transparent);
+  box-shadow:
+    var(--clay-shadow),
+    0 0 0 3px color-mix(in srgb, var(--brand) 18%, transparent),
+    0 0 26px color-mix(in srgb, var(--brand) 30%, transparent);
+}
+.brandMark img {
+  inline-size: 42px;
+  block-size: 42px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
+}
+
+/* Cockpit / Night-Ops: the falcon raster is a fixed teal/sage, so recolor it to
+   the theme's amber (same treatment as the header lockup, src/app/Header.module.css)
+   to stop it clashing with the amber chrome. Falcon theme is untouched. */
+:global(html[data-theme='cockpit']) .brandMark img {
+  filter: grayscale(1) sepia(1) saturate(5) hue-rotate(5deg) brightness(1.15)
+    drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
+}

@@ -1,0 +1,37 @@
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-block-start: var(--space-2);
+}
+.label {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+.chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 28px;
+  padding: 2px var(--space-2);
+  border: 1px dashed var(--border-bright);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+  transition: var(--transition-color);
+}
+.chip:hover {
+  border-color: var(--brand-hover);
+  color: var(--brand-hover);
+}

@@ -1,0 +1,91 @@
+{
+  "_comment": "Fly GACA — official-source manifest. Single source of truth for where GACAR / AIP / GACA content comes from. Driven by scripts/update-sources.js; refreshed automatically by .github/workflows/update-sources.yml. Do not hand-edit fingerprints — the updater owns them.",
+  "generated": "2026-06-13",
+  "lastChecked": "2026-06-15T11:44:28.766Z",
+  "lastUpdated": "2026-06-13T13:25:17.938Z",
+  "airac": {
+    "anchor": "2026-01-22",
+    "cycleDays": 28,
+    "note": "AIP currency follows the 28-day AIRAC cycle. AIP-derived sources (aerodromes, charts) refresh on each effective date. Anchor is a known AIRAC effective Thursday."
+  },
+  "sources": [
+    {
+      "id": "gacar",
+      "label": "GACAR — Rules & Regulations",
+      "kind": "regulations",
+      "enabled": true,
+      "airacBound": false,
+      "timeSensitive": false,
+      "url": "https://gaca.gov.sa/en/Rules-and-Regulations-Category",
+      "staging": "library/GACA/Regulations",
+      "index": "assets/data/gacar-index.json",
+      "fingerprint": "sha256:afb67621ef2d4165b294e3bd",
+      "discovered": 4
+    },
+    {
+      "id": "aip",
+      "label": "AIP / eAIP — Aeronautical Information",
+      "kind": "aip",
+      "enabled": true,
+      "airacBound": true,
+      "timeSensitive": false,
+      "url": "https://gaca.gov.sa/web/en/aeronautical-information",
+      "staging": "library/GACA/Aerodromes",
+      "index": null,
+      "fingerprint": "sha256:e3b0c44298fc1c149afbf4c8",
+      "discovered": 0
+    },
+    {
+      "id": "aerodromes",
+      "label": "Aerodromes (AIP AD 2) — derived from the AIP",
+      "kind": "aip-derived",
+      "enabled": true,
+      "airacBound": true,
+      "timeSensitive": false,
+      "url": "https://gaca.gov.sa/web/en/aeronautical-information",
+      "staging": "library/GACA/Aerodromes",
+      "index": "assets/data/aerodromes-index.json",
+      "fingerprint": "sha256:e3b0c44298fc1c149afbf4c8",
+      "discovered": 0
+    },
+    {
+      "id": "charts",
+      "label": "VFR / visual charts — derived from the AIP",
+      "kind": "aip-derived",
+      "enabled": true,
+      "airacBound": true,
+      "timeSensitive": false,
+      "url": "https://gaca.gov.sa/web/en/aeronautical-information",
+      "staging": "library/GACA/Visual-Charts",
+      "index": "assets/data/charts-index.json",
+      "fingerprint": "sha256:e3b0c44298fc1c149afbf4c8",
+      "discovered": 0
+    },
+    {
+      "id": "advisory-circulars",
+      "label": "GACA Advisory Circulars (AC-xxx)",
+      "kind": "advisory-circulars",
+      "enabled": true,
+      "airacBound": false,
+      "timeSensitive": false,
+      "url": "https://gaca.gov.sa/web/en/advisory-circulars",
+      "staging": "library/GACA/Advisory-Circulars",
+      "index": "assets/data/reference-index.json",
+      "fingerprint": "sha256:e3b0c44298fc1c149afbf4c8",
+      "discovered": 0
+    },
+    {
+      "id": "notam",
+      "label": "NOTAM / Pre-Flight Information Bulletin",
+      "kind": "notam",
+      "enabled": true,
+      "airacBound": false,
+      "timeSensitive": true,
+      "url": "https://gaca.gov.sa/web/en/notam",
+      "staging": "library/Operational-Snapshots",
+      "index": null,
+      "fingerprint": "sha256:e3b0c44298fc1c149afbf4c8",
+      "discovered": 0
+    }
+  ]
+}

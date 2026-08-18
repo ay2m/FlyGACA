@@ -1,0 +1,20 @@
+.disclaimer {
+  font-size: var(--fs-xs);
+  line-height: var(--lh-snug);
+  color: var(--text-dim);
+  padding: var(--space-4);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+}
+
+.disclaimer strong {
+  color: var(--text-muted);
+}
+
+.compact {
+  padding: var(--space-2) var(--space-3);
+  border: none;
+  background: transparent;
+}

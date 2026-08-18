@@ -1,0 +1,360 @@
+.page {
+  padding-block: var(--space-8);
+}
+
+/* Filters + sort/view controls between the hero and the catalogue. */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-block-end: var(--space-6);
+}
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+.toolbarEnd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-inline-start: auto;
+}
+.searchMeta {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Sticky category nav so it stays reachable while scrolling the long catalogue. */
+.jump {
+  position: sticky;
+  inset-block-start: var(--nav-h);
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block-end: var(--space-6);
+  padding-block: var(--space-3);
+  /* Opaque surface: the catalogue scrolls underneath this sticky nav, so a
+     translucent background let card text (e.g. "Density altitude") bleed
+     through and read as a broken overlap. */
+  background: var(--bg);
+  backdrop-filter: blur(6px);
+}
+.jumpChip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.jumpChip svg {
+  flex: none;
+}
+.jumpChip:hover {
+  color: var(--brand-hover);
+  text-decoration: none;
+  box-shadow: var(--elev-2);
+  border-color: color-mix(in srgb, var(--brand) 65%, transparent);
+}
+.jumpChip:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.category {
+  margin-block-end: var(--space-8);
+  /* Keep the heading clear of the sticky header when jumped to via the nav. */
+  scroll-margin-block-start: calc(var(--nav-h) + var(--space-4));
+}
+.categoryTitle {
+  font-size: var(--fs-h3);
+  margin-block-end: var(--space-4);
+  padding-block-end: var(--space-2);
+  border-block-end: 1px solid var(--border);
+}
+
+/* Accent-toned glyph beside a section heading; inherits the header's --tone. */
+.secTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.secTitle svg {
+  flex: none;
+  color: var(--tone, var(--brand));
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+/* Leading category glyph on a card / row — tinted to the category accent. */
+.cardIcon,
+.rowIcon {
+  flex: none;
+  color: var(--cat-color, var(--brand));
+}
+.badge {
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--brand);
+  color: var(--text-on-brand);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+
+/* No-results state now uses the shared <EmptyState> component
+   (src/components/EmptyState). */
+
+/* ── Compact list row (list view); grid/list container, .rowWrap, .rowBar and
+   .rowStar come from the shared hub/hubList.module.css. ── */
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  padding-inline-start: var(--space-5);
+  padding-inline-end: calc(var(--space-4) + 34px);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: inherit;
+  overflow: hidden;
+  transition: var(--transition-interactive);
+}
+.row:hover {
+  border-color: var(--cat-color, var(--brand));
+  background: var(--surface-raised);
+  text-decoration: none;
+}
+.row:active {
+  transform: scale(0.99);
+}
+.rowTitle {
+  flex: 1;
+  min-inline-size: 0;
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rowCat {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.rowCta {
+  color: var(--link);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  white-space: nowrap;
+}
+/* On small screens drop the category label; keep title + CTA. */
+@media (max-width: 560px) {
+  .rowCat {
+    display: none;
+  }
+}
+
+/* Tool card — the shared Card recipe (hairline + elevation + sheen) with the
+   category accent answering on hover, not just in the edge bar. */
+.card {
+  position: relative;
+  overflow: hidden;
+  border: var(--hairline-bright);
+  border-radius: var(--clay-radius);
+  background:
+    radial-gradient(
+      140px 90px at 100% 0%,
+      color-mix(in srgb, var(--cat-color, var(--brand)) 6%, transparent),
+      transparent 70%
+    ),
+    var(--surface);
+  box-shadow: var(--elev-1), var(--edge-sheen);
+  transition: var(--transition-interactive);
+}
+.card:hover {
+  border-color: color-mix(in srgb, var(--cat-color, var(--brand)) 40%, var(--border-bright));
+  box-shadow: var(--elev-2), var(--edge-sheen);
+  transform: translateY(var(--hover-raise));
+}
+/* Press feedback — mirrors the global .btn:active so a tap on a card reads as a
+   physical press (defined after :hover so it wins the equal-specificity tie). */
+.card:active {
+  transform: translateY(0) scale(0.985);
+}
+/* Left category accent bar — matches the Library cards (Design System §09). */
+.catBar {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  inline-size: 4px;
+  background: var(--cat-color, var(--brand));
+  transition: inline-size var(--dur) var(--ease);
+}
+.card:hover .catBar {
+  inline-size: 6px;
+}
+
+.pending {
+  opacity: 0.55;
+}
+
+/* Favourite toggle — overlaid in the top inline-end corner, a sibling of the
+   card link so we never nest an interactive control inside another. */
+.star {
+  position: absolute;
+  inset-block-start: var(--space-2);
+  inset-inline-end: var(--space-2);
+  z-index: 2;
+  inline-size: 32px;
+  block-size: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: var(--fs-lg);
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+.star:hover {
+  color: var(--gold);
+  background: var(--surface-raised);
+}
+.starOn {
+  color: var(--gold);
+}
+
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  block-size: 100%;
+  padding: var(--space-5);
+  padding-inline-end: calc(var(--space-5) + 28px);
+  color: inherit;
+}
+.cardLink:hover {
+  text-decoration: none;
+}
+
+.cardTitle {
+  font-size: var(--fs-lg);
+}
+.card mark {
+  background: color-mix(in srgb, var(--gold) 35%, transparent);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding-inline: 2px;
+}
+
+.blurb {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  flex: 1;
+}
+
+.cta {
+  margin-block-start: var(--space-2);
+  color: var(--link);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+
+/* ── "Start here" featured row — larger, richer cards above the dense category
+   grids, so the most-reached-for tools have clear visual priority. ── */
+.featuredGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-4);
+}
+.cardFeatured {
+  border-color: color-mix(in srgb, var(--brand) 38%, transparent);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--brand) 8%, transparent), transparent 42%),
+    var(--surface);
+}
+/* A brand top-stripe (replacing the left accent bar) marks the featured tier. */
+.cardFeatured::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  block-size: 3px;
+  background: var(--grad-brand);
+}
+.cardFeatured .catBar {
+  display: none;
+}
+.cardFeatured .cardLink {
+  padding: var(--space-6);
+  padding-inline-end: calc(var(--space-6) + 28px);
+  gap: var(--space-3);
+}
+.cardFeatured .cardTitle {
+  font-size: var(--fs-h3);
+}
+
+.footnote {
+  margin-block-start: var(--space-8);
+}
+
+/* ── Category filter chips (under the hero) ── */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.filterChip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 40px;
+  padding: var(--space-1) var(--space-3);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.filterChip:hover {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--cat-color, var(--brand-hover)) 60%, var(--border-bright));
+}
+.filterChip:active {
+  transform: scale(var(--press-scale));
+}
+/* Selected chip is tinted by its own category accent ("All" falls back to
+   brand); text stays --text for AA over the translucent tint. */
+.filterChipActive {
+  background: color-mix(in srgb, var(--cat-color, var(--brand)) 16%, transparent);
+  border-color: color-mix(in srgb, var(--cat-color, var(--brand)) 55%, var(--border-bright));
+  color: var(--text);
+  font-weight: var(--fw-semibold);
+}

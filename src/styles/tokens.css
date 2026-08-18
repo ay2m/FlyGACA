@@ -1,0 +1,552 @@
+/* ============================================================
+   Fly GACA — Design Tokens
+   The Falcon palette and scales, per the Brand Identity Sheet
+   (Mark v2 — Falcon over Kingdom). Dark-first.
+   Shared by every page; never hard-code a colour outside this file.
+   ============================================================ */
+
+/* Registered so the hero gold-edge highlight can *interpolate* its position — an
+   unregistered custom property would jump discretely mid-cycle. Baseline since
+   mid-2024 (consistent with our already-ungated color-mix() use); the legacy
+   fallback is a static 4px highlight, still a valid design. */
+@property --edge-glint {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 50%;
+}
+
+:root {
+  /* Cockpit view: Fly GACA is always dark. This also tells the UA to paint
+     native controls, scrollbars, and form widgets dark to match. */
+  /* Dark-only app — keep native controls, scrollbars and form widgets dark. */
+  color-scheme: dark;
+
+  /* --- The Falcon palette (sampled from the mark) --- */
+  --falcon-night: #0a0e12; /* primary canvas — the deck the falcon rests on */
+  --falcon-deep: #0f1a24; /* elevated card on dark */
+  --falcon-mist: #1a2a38; /* dividers, subtle borders */
+  --falcon-teal: #2d6e8a; /* primary brand — buttons, fills */
+  --teal-bright: #4a9cb8; /* hover, links on dark, focus rings */
+  --falcon-sage: #8fc9a8; /* secondary accent, success */
+  --sage-bright: #b5ddc2; /* highlight, focus ring */
+  --falcon-gold: #c8a04a; /* heritage accent — used sparingly */
+  --falcon-clay: #cf6b52; /* warm clay — caution / "hold" states */
+  --falcon-mist-2: #243749; /* brighter mist — raised border on dark (Design System) */
+  --falcon-gold-soft: #e0c588; /* softened gold — gold button hover */
+  --ivory: #f5f2ed; /* light reading surface */
+  --pure-white: #fff; /* literal white — third-party brand marks only, never a surface */
+
+  /* --- Light reading surfaces + ink (authored per The-Office Design System;
+     the app ships dark-first, so these seed future light/reading views) --- */
+  --ivory-warm: #fbf8f2; /* elevated light surface */
+  --ivory-edge: #e5dfd3; /* border on light */
+  --ink-soft: #3f4a55; /* secondary text on light */
+  --ink-mute: #7a8590; /* tertiary / metadata on light */
+  --moon: var(--ivory); /* primary text on dark gradient bands */
+  --moon-soft: #a8b5c0; /* secondary text on dark bands */
+  --moon-mute: #5e6c7a; /* tertiary text on dark bands */
+
+  /* --- Semantic surfaces --- */
+  --bg: var(--falcon-night);
+  --surface: var(--falcon-deep);
+  --surface-raised: #13212e; /* hover / raised card */
+  --surface-sunken: color-mix(
+    in srgb,
+    var(--bg) 75%,
+    var(--bento-gutter)
+  ); /* input wells, troughs */
+  --surface-overlay: color-mix(in srgb, var(--surface) 90%, transparent); /* translucent chrome */
+  --border: var(--falcon-mist);
+  --border-bright: #26384a;
+  /* Form-control boundary — lighter than --border-bright so text inputs clear
+     the WCAG 1.4.11 3:1 non-text-contrast bar against --surface and --bg
+     (≈3.2:1 / 3.5:1). Inputs only; cards/pills keep --border-bright. */
+  --border-input: #5a6b7b;
+
+  /* --- Text on dark --- */
+  --text: #e8edf2; /* primary */
+  --text-muted: #9da9b4; /* secondary */
+  --text-dim: #8a95a1; /* tertiary, captions — WCAG AA (≈6:1 on --bg) */
+  --text-on-brand: #ffffff; /* text on a teal fill */
+
+  /* --- Brand roles --- */
+  --brand: var(--falcon-teal);
+  --brand-hover: var(--teal-bright);
+  --link: var(--teal-bright); /* teal is too low-contrast as text on night */
+  --accent: var(--falcon-sage);
+  --accent-bright: var(--sage-bright);
+  --gold: var(--falcon-gold);
+  --success: var(--falcon-sage);
+  --warning: var(--falcon-gold); /* partial / mixed grounding */
+  --danger: var(--falcon-clay); /* refusal / "hold — not grounded" */
+  --focus: var(--sage-bright);
+
+  /* Pure-black mix partner for color-mix() shading of --bg (section bands
+     slightly darker than the canvas). */
+  --shade: #000;
+
+  /* Brand-tinted surfaces — reused by nav/footer pill hover + active states. */
+  --brand-tint: color-mix(in srgb, var(--brand) 12%, transparent);
+  --brand-tint-strong: color-mix(in srgb, var(--brand) 18%, transparent);
+
+  /* --- Form validation state colours (derive from semantic palette) --- */
+  --color-error: var(--danger);
+  --color-error-bg: color-mix(in srgb, var(--danger) 12%, transparent);
+  --color-success: var(--success);
+  --color-success-bg: color-mix(in srgb, var(--success) 12%, transparent);
+  --color-warning: var(--warning);
+  --color-warning-bg: color-mix(in srgb, var(--warning) 12%, transparent);
+
+  /* --- The brand gradient: teal -> sage (wordmark GACA, hairlines) --- */
+  --grad-brand: linear-gradient(102deg, var(--falcon-teal) 0%, var(--falcon-sage) 100%);
+  --grad-wing: linear-gradient(155deg, var(--teal-bright) 0%, var(--falcon-sage) 100%);
+  /* The signature hero band — night deepening into the falcon's teal (Design System) */
+  --falcon-stroke: linear-gradient(135deg, #0a0e12 0%, #1a3548 35%, #2d6e8a 70%, #4a9cb8 100%);
+
+  /* --- Category accent map: cycles the Falcon hues for per-category card bars,
+     section headers and badges. Frontend-only; the corpus carries no colour. --- */
+  --cat-1: var(--teal-bright);
+  --cat-2: var(--falcon-sage);
+  --cat-3: var(--falcon-gold);
+  --cat-4: var(--falcon-teal);
+  --cat-5: var(--falcon-clay);
+
+  /* --- Glow tokens (the only glows allowed on the mark / hero) --- */
+  --glow-teal: radial-gradient(closest-side, rgba(45, 110, 138, 0.55), rgba(45, 110, 138, 0) 70%);
+  --glow-sage: radial-gradient(closest-side, rgba(143, 201, 168, 0.4), rgba(143, 201, 168, 0) 70%);
+
+  /* --- Typography ---
+     One family across the whole app. Readex Pro carries BOTH Latin and Arabic,
+     so EN and AR render in the same face — headings, body and brand all match
+     (no more Cairo/Atkinson split). JetBrains Mono carries the technical/data
+     labels. --font-sans and --font-body are intentionally the same family. */
+  --font-sans:
+    'Readex Pro', system-ui, -apple-system, 'Segoe UI', sans-serif; /* headings, brand, UI */
+  --font-body:
+    'Readex Pro', system-ui, -apple-system, sans-serif; /* body — same face as --font-sans */
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Fluid type scale */
+  --fs-display: clamp(2.6rem, 1.5rem + 4.6vw, 4.6rem);
+  --fs-h1: clamp(2rem, 1.5rem + 2.1vw, 3rem);
+  --fs-h2: clamp(1.55rem, 1.3rem + 1.1vw, 2.15rem);
+  --fs-h3: 1.3rem;
+  --fs-lg: 1.15rem;
+  --fs-base: 1rem;
+  --fs-sm: 0.9rem;
+  --fs-xs: 0.78rem; /* eyebrows / mono labels */
+  --fs-2xs: 0.7rem; /* kbd chips, count badges, micro meta */
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-black: 800;
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-body: 1.65;
+  --lh-heading: 1.08; /* display-size headings only */
+
+  /* Tracking scale — one vocabulary for the hand-rolled 0.04–0.12em spread. */
+  --tracking-eyebrow: 0.14em; /* uppercase eyebrows / section labels */
+  --tracking-caps: 0.06em; /* small uppercase meta (stat labels, badges) */
+  --tracking-tight: -0.02em; /* display / hero headings */
+  --tracking-heading: -0.01em; /* h1–h3 optical tightening */
+
+  /* --- Spacing (4px base) --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem; /* 40px — bridges 6↔8; live consumers reference it (calc, reader, study) */
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 6rem;
+  --space-16: 8rem;
+
+  /* --- Radii (brand tile radius = 0.22 x side) --- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* --- Elevation ---
+     Named 3-tier ladder: layered ambient + key shadows, softer and larger-radius
+     than the former single-shadow values. --shadow-* stay as aliases so every
+     existing consumer inherits the refined depth. */
+  --elev-1: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --elev-2: 0 2px 6px rgba(0, 0, 0, 0.3), 0 10px 32px -8px rgba(0, 0, 0, 0.45);
+  --elev-3: 0 4px 12px rgba(0, 0, 0, 0.35), 0 24px 64px -12px rgba(0, 0, 0, 0.6);
+  --shadow-sm: var(--elev-1);
+  --shadow-card: var(--elev-2);
+  --shadow-pop: var(--elev-3);
+
+  /* --- Hairline / edge strategy (1px edges + top sheen replace chunky borders) --- */
+  --hairline: 1px solid var(--border);
+  --hairline-bright: 1px solid var(--border-bright);
+  --hairline-brand: 1px solid color-mix(in srgb, var(--brand) 45%, var(--border-bright));
+  --edge-sheen: inset 0 1px 0 var(--sheen-top); /* glassy top highlight on raised surfaces */
+  /* Cool, low-spread shadows for light reading surfaces (Design System §06).
+     Dark UI keeps --shadow-card / --shadow-pop above. */
+  --shadow-1: 0 1px 2px rgba(15, 26, 36, 0.04), 0 1px 3px rgba(15, 26, 36, 0.06);
+  --shadow-2: 0 4px 8px -2px rgba(15, 26, 36, 0.08), 0 2px 4px -2px rgba(15, 26, 36, 0.04);
+  --shadow-3: 0 12px 24px -8px rgba(15, 26, 36, 0.14), 0 4px 8px -4px rgba(15, 26, 36, 0.06);
+
+  /* --- Clay (elevated refresh) ---
+     Retuned from the chunky 3px clay of 2026 to a 1px brand hairline over
+     layered depth. Same consumers (.btn-clay*, .card-clay, calc stats, action
+     rows) — the tactile identity now comes from elevation + sheen, not border
+     weight. */
+  --clay-border: 1px solid color-mix(in srgb, var(--brand) 32%, var(--border-bright));
+  --clay-shadow: var(--elev-2), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  --clay-shadow-hover: var(--elev-3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --clay-shadow-press: 0 1px 4px rgba(0, 0, 0, 0.3), inset 0 2px 6px rgba(0, 0, 0, 0.25);
+  --clay-radius: var(--radius-lg); /* 20px — rounded corners */
+
+  /* --- Skeleton shimmer --- */
+  --skeleton-base: color-mix(in srgb, var(--surface) 60%, var(--border));
+  --skeleton-shine: color-mix(in srgb, var(--surface-raised) 80%, var(--border-bright));
+
+  /* --- Layout --- */
+  --container: 1180px;
+  --container-narrow: 760px;
+  /* Safe-area insets are 0 on the web; the native shell overrides them on
+     <html class="is-native"> so the notch / home indicator are respected. The
+     sticky-header height folds in the top inset so every offset stays aligned. */
+  --safe-top: 0px;
+  --safe-bottom: 0px;
+  --nav-content-h: 68px;
+  --nav-h: calc(var(--nav-content-h) + var(--safe-top));
+
+  /* --- Motion --- */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-glide: cubic-bezier(0.2, 0.7, 0.2, 1); /* button / control glide (Design System) */
+  --ease-lift: var(--ease-entry); /* card lift — shares the kinetic-entry curve */
+  --dur: 0.2s;
+  --dur-slow: 0.4s;
+  --dur-fast: 120ms; /* transform-only micro feedback (press, raise) */
+
+  /* --- Interaction tokens — the shared press/hover grammar --- */
+  --press-scale: 0.97;
+  --hover-raise: -2px;
+  --transition-color:
+    color var(--dur) var(--ease), background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+  --transition-interactive:
+    color var(--dur) var(--ease), background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
+    transform var(--dur-fast) var(--ease-glide), opacity var(--dur) var(--ease);
+
+  /* --- Neon functional accents (active status / live data — bento dashboard) ---
+     Used only for accents, hairline borders, iconography and large status text on
+     the navy base; never for body copy. Falcon palette stays the base. */
+  --neon-green: #2bffb0; /* aviation-green: active / live / "ON" status */
+  --neon-cyan: #3fe0ff; /* electric cyan: data tracks, radar plot lines */
+  --bento-gutter: #08090b; /* near-black grid gutter, one step below --bg */
+  --bento-surface: #0c141c; /* bento tile face, between night and deep */
+  --diagram-runway: #3f4a55; /* runway slab in the wind-vector diagram */
+
+  /* Neon glows (radial — hover illumination + radar trails) */
+  --glow-neon-green: radial-gradient(
+    closest-side,
+    rgba(43, 255, 176, 0.35),
+    rgba(43, 255, 176, 0) 70%
+  );
+  --glow-neon-cyan: radial-gradient(
+    closest-side,
+    rgba(63, 224, 255, 0.35),
+    rgba(63, 224, 255, 0) 70%
+  );
+
+  /* --- Z-index scale (never use raw numbers outside this scale) --- */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-dropdown: 20;
+  --z-sticky: 40;
+  --z-popover: 60;
+  --z-overlay: 100;
+  --z-modal: 200;
+  --z-toast: 300;
+  --z-tooltip: 400;
+
+  /* --- 2027 kinetic-entry motion --- */
+  --ease-entry: cubic-bezier(0.16, 1, 0.3, 1); /* ultra-premium dampened deceleration */
+  --dur-entry: 620ms; /* per-card scale + fade settle */
+  --dur-stagger: 70ms; /* delay step between bento items */
+  --lift-hover: 1.015; /* micro scale-lift on hover */
+
+  /* --- Translucent finishes (token-derived — never a raw colour) --- */
+  --sheen-top: color-mix(in srgb, var(--text) 6%, transparent); /* glassy top highlight */
+  --glow-stat-cyan: 0 0 22px color-mix(in srgb, var(--neon-cyan) 40%, transparent);
+  --glow-stat-green: 0 0 22px color-mix(in srgb, var(--neon-green) 40%, transparent);
+
+  /* --- Instrument-glass hero finishes (2026 hero pass) ---
+     Film grain over the falcon band (CSP allows img-src data:), true-glass search
+     field, and a gold hero edge whose bright stop breathes via --edge-glint. All
+     token-derived, so the Cockpit theme inherits them through the semantic layer
+     (only --grain-opacity / --hero-glow-alpha are dimmed there for night vision). */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  --grain-opacity: 0.05;
+  --glass-bg: color-mix(in srgb, var(--falcon-night) 45%, transparent);
+  --glass-bg-strong: color-mix(in srgb, var(--falcon-night) 65%, transparent);
+  --glass-border: color-mix(in srgb, var(--moon) 24%, transparent);
+  --glass-blur: blur(14px) saturate(140%);
+  --hero-glow-alpha: 20%; /* band .glow accent strength (breathing max) */
+  /* Symmetric about the moving --edge-glint centre → RTL mirroring is a no-op. */
+  --edge-gold: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--gold) 30%, transparent) 0%,
+    var(--gold) calc(var(--edge-glint) - 32%),
+    var(--falcon-gold-soft) var(--edge-glint),
+    var(--gold) calc(var(--edge-glint) + 32%),
+    color-mix(in srgb, var(--gold) 30%, transparent) 100%
+  );
+  /* Landing-title gradient with a heritage gold glint threaded between the
+     teal→sage stops. Only ever background-clipped onto the H1; crawler text is
+     unaffected. Cockpit re-authors this with literal amber hexes below. */
+  --grad-title: linear-gradient(
+    102deg,
+    var(--teal-bright) 0%,
+    var(--falcon-sage) 40%,
+    var(--falcon-gold-soft) 55%,
+    var(--falcon-sage) 70%,
+    var(--teal-bright) 100%
+  );
+
+  /* --- UI letter-spacing (tracking) ---
+     Base is 0; the Cockpit / Night-Ops theme nudges this up so amber text holds
+     its open counters at low cockpit brightness (see [data-theme="cockpit"]). */
+  --tracking-ui: 0;
+
+  /* --- Command-palette result-tag hues ---
+     Deliberately brighter than --teal-bright / --gold so the tags clear WCAG AA
+     (4.5:1) over the translucent chip + blurred dialog backdrop. */
+  --tag-regulation: #7cc8dd; /* §-tags — bright teal */
+  --tag-tool: #e8c56d; /* tool tags — bright gold */
+  --tag-guide: #c9a7e8; /* guide tags — lavender */
+}
+
+/* =================================================================
+   Dark-first by default — Fly GACA renders dark on every device
+   regardless of the OS colour-scheme preference: there is intentionally
+   NO `prefers-color-scheme: light` auto-switch. `color-scheme: dark` (set
+   on :root) keeps native controls, scrollbars and form widgets dark.
+
+   There is ONE opt-in light surface: the Day / reading theme
+   (`[data-theme="day"]`, below), for long-form regulation reading. It is
+   explicit and user-selected via the ThemeToggle — never automatic — and
+   re-points `color-scheme: light` for itself. Do not add a
+   `prefers-color-scheme: light` switch; the default stays dark.
+   ================================================================= */
+
+/* =================================================================
+   Cockpit / Night-Ops theme — a SECOND dark variant (opt-in).
+
+   This is NOT a light theme (the rule above still holds — there is no
+   `prefers-color-scheme: light` and no `[data-theme="light"]`). It is a
+   night-vision-friendly DARK skin for use in a dark cockpit: low-wavelength
+   amber accents (#FFB000) with soft red (#FF3333) reserved for danger/hold,
+   over a deep charcoal canvas (#121212). Activated by `src/lib/theme.ts`,
+   which sets `data-theme="cockpit"` on <html> (default 'falcon' = no attr).
+
+   We only re-point the raw Falcon hues + the few semantic tokens that hard-code
+   navy-specific hexes; every component CSS Module reads the semantic layer, so
+   the new palette cascades app-wide with no component edits. `color-scheme:
+   dark` stays correct (both themes are dark).
+   ================================================================= */
+html[data-theme='cockpit'] {
+  /* Slight tracking: keep amber's open counters legible at low brightness. */
+  --tracking-ui: 0.01em;
+
+  /* --- Charcoal ramp (replaces the navy canvas) --- */
+  --falcon-night: #121212; /* --bg inherits this */
+  --falcon-deep: #1a1a1a; /* --surface inherits this */
+  --falcon-mist: #2a2a2a; /* --border inherits this */
+  --falcon-mist-2: #333333; /* raised border on dark */
+  --surface-raised: #222222; /* override: original #13212e is navy */
+  --border-bright: #3a3a3a; /* override: was #26384a */
+  --border-input: #6a6a6a; /* clears WCAG 1.4.11 3:1 vs #121212/#1a1a1a */
+
+  /* --- Amber primary, soft-red alert (low-wavelength, night-vision safe) --- */
+  --falcon-teal: #ffb000; /* primary brand → amber */
+  --teal-bright: #ffc23d; /* hover / links / focus → brighter amber */
+  --falcon-sage: #ffb000; /* secondary accent → amber (near-monochrome) */
+  --sage-bright: #ffd27a; /* highlight / focus ring → pale amber */
+  --falcon-gold: #ffb000; /* heritage gold collapses into amber */
+  --falcon-gold-soft: #ffd27a;
+  --falcon-clay: #ff3333; /* caution / danger → soft red */
+
+  /* --- Text — warm off-white trims blue light --- */
+  --text: #e8e2d6; /* primary */
+  --text-muted: #b3a78f; /* secondary */
+  --text-dim: #9a8e76; /* tertiary / captions */
+  --text-on-brand: #1a1208; /* CRITICAL: near-black on amber fill (~9:1). NOT white. */
+
+  /* Success stays distinguishable from the amber/red field (split palette);
+     warning stays amber (--warning → --falcon-gold), danger stays red. */
+  --success: #7fb069; /* dim desaturated green */
+
+  --focus: #ffd27a; /* pale amber focus ring */
+
+  /* --- Category accents → amber-luminance ramp; red kept for the hold category --- */
+  --cat-1: #ffb000;
+  --cat-2: #ffc23d;
+  --cat-3: #ffd27a;
+  --cat-4: #cc8a00; /* dim amber */
+  --cat-5: #ff3333; /* red reserved for the hold / refusal category */
+
+  /* --- Neutralize high-wavelength neon (destroys dark adaptation) --- */
+  --neon-green: #ffb000; /* "ON" / live status → amber */
+  --neon-cyan: #ffc23d; /* data tracks → amber */
+  --bento-surface: #1a1a1a;
+  --bento-gutter: #0c0c0c;
+  --diagram-runway: #3a3a3a;
+
+  /* --- Gradients re-authored (they literal-hex the navy/teal stops) --- */
+  --grad-brand: linear-gradient(102deg, #cc8a00 0%, #ffb000 100%);
+  --grad-wing: linear-gradient(155deg, #ffb000 0%, #ffd27a 100%);
+  --falcon-stroke: linear-gradient(135deg, #121212 0%, #3a2a00 40%, #8a6000 75%, #ffb000 100%);
+
+  /* --- Glows dimmed — minimal bloom for night vision --- */
+  --glow-teal: radial-gradient(closest-side, rgba(255, 176, 0, 0.18), rgba(255, 176, 0, 0) 70%);
+  --glow-sage: radial-gradient(closest-side, rgba(255, 176, 0, 0.14), rgba(255, 176, 0, 0) 70%);
+  --glow-neon-green: radial-gradient(
+    closest-side,
+    rgba(255, 176, 0, 0.16),
+    rgba(255, 176, 0, 0) 70%
+  );
+  --glow-neon-cyan: radial-gradient(
+    closest-side,
+    rgba(255, 176, 0, 0.16),
+    rgba(255, 176, 0, 0) 70%
+  );
+  --glow-stat-cyan: 0 0 14px color-mix(in srgb, #ffb000 28%, transparent);
+  --glow-stat-green: 0 0 14px color-mix(in srgb, #ffb000 28%, transparent);
+
+  /* --- Palette result tags → amber-luminance ramp (night-vision safe; the
+     default teal/lavender would leak high-wavelength light into the cockpit) --- */
+  --tag-regulation: #ffc23d;
+  --tag-tool: #ffd27a;
+  --tag-guide: #ffe0a3;
+
+  /* --- Instrument-glass hero pass, night-vision tuned ---
+     --edge-gold / --glass-* need no override: they read --gold / --falcon-gold-soft
+     / --falcon-night / --moon, all re-pointed to the amber ramp above, so the edge
+     glint becomes a luminance-only amber breath. Only dim the textures + re-author
+     the clipped title gradient (it literal-hexes its stops, like --grad-brand). */
+  --grain-opacity: 0.03; /* dimmer film — protect dark adaptation */
+  --hero-glow-alpha: 12%; /* dimmer band-glow breath */
+  --grad-title: linear-gradient(
+    102deg,
+    #ffc23d 0%,
+    #ffb000 45%,
+    #ffd27a 55%,
+    #ffb000 65%,
+    #ffc23d 100%
+  );
+}
+
+/* =================================================================
+   Day / reading theme — the ONE opt-in LIGHT surface, for long-form
+   regulation reading (see the note above the Cockpit block). Explicit and
+   user-selected via ThemeToggle; never automatic. It re-points the same raw
+   Falcon hues + semantic tokens the Cockpit block does, onto an ivory canvas
+   with dark ink, and flips `color-scheme: light` so native controls follow.
+
+   The signature hero band stays DARK on the light page: --falcon-stroke /
+   --grad-brand / --grad-title / --glass-* literal-hex the deck navy, so the
+   band renders as the dark falcon strip over ivory with its light --moon text
+   intact — no override needed (and --glass-* are pinned dark below so the hero
+   search glass keeps its dark-on-dark contrast). Brand/accent hues are darkened
+   for AA text-contrast on ivory; elevation switches to the cool light shadows
+   (--shadow-1/2/3), retiring the dual shadow system for this theme.
+   ================================================================= */
+html[data-theme='day'] {
+  color-scheme: light;
+
+  /* --- Ivory canvas ramp (replaces the navy) --- */
+  --falcon-night: #f5f2ed; /* --bg inherits this */
+  --falcon-deep: #fbf8f2; /* --surface inherits this */
+  --falcon-mist: #e5dfd3; /* --border inherits this */
+  --falcon-mist-2: #d8cfbe; /* raised border on light */
+  --surface-raised: #ffffff; /* hover / raised card */
+  --surface-sunken: #ece7db; /* input wells (base color-mix would go dark) */
+  --border-bright: #d8cfbe;
+  --border-input: #7d8894; /* clears WCAG 1.4.11 3:1 vs ivory surfaces */
+
+  /* --- Ink text (dark on ivory) --- */
+  --text: #16212c; /* primary (~13:1 on --bg) */
+  --text-muted: #3f4a55; /* secondary — --ink-soft (~8.5:1) */
+  --text-dim: #5c6873; /* tertiary / captions — AA (~5:1) */
+  --text-on-brand: #ffffff; /* white on the teal fill */
+
+  /* --- Brand roles — darkened for AA text-contrast on ivory --- */
+  --falcon-teal: #2a6580; /* --brand; white text ~4.7:1 */
+  --teal-bright: #1c5a72; /* --brand-hover / --link / focus — darker teal */
+  --falcon-sage: #3f7d5c; /* --accent — deepened green */
+  --sage-bright: #2f6a4a;
+  --falcon-gold: #9a7623; /* heritage gold, readable on light */
+  --falcon-gold-soft: #b8944a;
+  --falcon-clay: #b1442b; /* caution / hold — deepened clay */
+  --link: #1c5a72;
+  --success: #2f7d4f;
+  --warning: #8a5f14;
+  --focus: #1c5a72;
+
+  /* Re-mix the brand tints onto the new (darker) brand hue. */
+  --brand-tint: color-mix(in srgb, var(--brand) 10%, transparent);
+  --brand-tint-strong: color-mix(in srgb, var(--brand) 16%, transparent);
+
+  /* --- Elevation → the cool, low-spread light shadows (retire dual system) --- */
+  --elev-1: var(--shadow-1);
+  --elev-2: var(--shadow-2);
+  --elev-3: var(--shadow-3);
+  /* Top sheen would be a dark smear on ivory — make it a soft white highlight. */
+  --sheen-top: rgba(255, 255, 255, 0.7);
+
+  /* --- Category accents → darker-luminance so bars/borders read on ivory --- */
+  --cat-1: #1c5a72;
+  --cat-2: #3f7d5c;
+  --cat-3: #9a7623;
+  --cat-4: #2a6580;
+  --cat-5: #b1442b;
+
+  /* --- Neon functional accents → darkened (bright neon vanishes on ivory) --- */
+  --neon-green: #2f7d4f;
+  --neon-cyan: #1c6f8a;
+  --bento-surface: #fbf8f2;
+  --bento-gutter: #ece7db;
+  --diagram-runway: #c9c0b0;
+  --glow-neon-green: radial-gradient(
+    closest-side,
+    rgba(47, 125, 79, 0.14),
+    rgba(47, 125, 79, 0) 70%
+  );
+  --glow-neon-cyan: radial-gradient(
+    closest-side,
+    rgba(28, 111, 138, 0.14),
+    rgba(28, 111, 138, 0) 70%
+  );
+  --glow-teal: radial-gradient(closest-side, rgba(42, 101, 128, 0.16), rgba(42, 101, 128, 0) 70%);
+  --glow-sage: radial-gradient(closest-side, rgba(63, 125, 92, 0.14), rgba(63, 125, 92, 0) 70%);
+  --glow-stat-cyan: 0 0 14px color-mix(in srgb, var(--neon-cyan) 22%, transparent);
+  --glow-stat-green: 0 0 14px color-mix(in srgb, var(--neon-green) 22%, transparent);
+
+  /* --- Skeleton shimmer tuned for light --- */
+  --skeleton-base: #e9e3d8;
+  --skeleton-shine: #f6f2ea;
+
+  /* --- Command-palette result tags → darker-luminance for the now-light dialog --- */
+  --tag-regulation: #1c6f8a;
+  --tag-tool: #9a7623;
+  --tag-guide: #7a52a0;
+
+  /* --- Keep the hero instrument-glass DARK over the (still dark) falcon band, so
+     its light --moon text and glass border stay legible on the ivory page. --- */
+  --glass-bg: color-mix(in srgb, #0a0e12 45%, transparent);
+  --glass-bg-strong: color-mix(in srgb, #0a0e12 65%, transparent);
+}

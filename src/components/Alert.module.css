@@ -1,0 +1,64 @@
+/* Composed inline alert / notice band. Tonal bg + accent border driven by the
+   semantic colour tokens; logical properties so it mirrors in RTL. */
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--alert-color, var(--color-error));
+  border-radius: var(--radius-md);
+  background: var(--alert-bg, var(--color-error-bg));
+  color: var(--text);
+  font-size: var(--fs-sm);
+}
+
+.error {
+  --alert-color: var(--color-error);
+  --alert-bg: var(--color-error-bg);
+}
+.success {
+  --alert-color: var(--color-success);
+  --alert-bg: var(--color-success-bg);
+}
+.warning {
+  --alert-color: var(--color-warning);
+  --alert-bg: var(--color-warning-bg);
+}
+
+.icon {
+  flex: none;
+  font-size: var(--fs-lg);
+  line-height: 1;
+  color: var(--alert-color);
+}
+.message {
+  flex: 1;
+  min-inline-size: 0;
+  text-wrap: pretty;
+}
+
+/* Inline action (retry / dismiss) — outlined in the tone colour, with the
+   global .btn:active press feel. */
+.action {
+  flex: none;
+  min-block-size: 36px;
+  padding-inline: var(--space-3);
+  border: 1px solid var(--alert-color);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+.action:hover {
+  background: color-mix(in srgb, var(--alert-color) 14%, transparent);
+}
+.action:active {
+  transform: scale(0.97);
+}

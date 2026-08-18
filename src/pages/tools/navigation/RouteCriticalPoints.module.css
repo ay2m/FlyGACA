@@ -1,0 +1,69 @@
+.wrap {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-3);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.svg {
+  inline-size: 100%;
+  block-size: auto;
+  max-block-size: 120px;
+  display: block;
+}
+
+.route {
+  stroke: var(--border-bright);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.node {
+  fill: var(--text-muted);
+}
+.dest {
+  fill: var(--link);
+}
+
+.marker {
+  transform: translateX(var(--x));
+  transition: transform var(--dur-slow) var(--ease-glide);
+}
+@media (prefers-reduced-motion: reduce) {
+  .marker {
+    transition: none;
+  }
+}
+
+.etpTick {
+  stroke: var(--link);
+  stroke-width: 2;
+}
+.plane {
+  fill: none;
+  stroke: var(--neon-cyan);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* PNR dashed so it reads apart from the ETP by shape, not hue alone. */
+.pnrTick {
+  stroke: var(--warning);
+  stroke-width: 2;
+  stroke-dasharray: 3 2.5;
+}
+
+.tag {
+  fill: var(--text);
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.04em;
+}
+.pnr .tag {
+  fill: var(--warning);
+}
+.dist {
+  fill: var(--text-muted);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}

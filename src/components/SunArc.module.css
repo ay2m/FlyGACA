@@ -1,0 +1,56 @@
+.wrap {
+  inline-size: 100%;
+  max-inline-size: 22rem;
+  margin-inline: auto;
+  margin-block-start: var(--space-4);
+}
+
+.svg {
+  inline-size: 100%;
+  block-size: auto;
+  overflow: visible;
+}
+
+/* Daytime sky wash under the arc. */
+.sky {
+  fill: color-mix(in srgb, var(--gold) 16%, transparent);
+  stroke: none;
+}
+
+.path {
+  fill: none;
+  stroke: color-mix(in srgb, var(--gold) 55%, transparent);
+  stroke-width: 2;
+  stroke-dasharray: 3 4;
+  stroke-linecap: round;
+}
+
+.horizon {
+  stroke: var(--border-bright);
+  stroke-width: 1.5;
+}
+
+.sun {
+  transform: translate(var(--x), var(--y));
+  transition: transform var(--dur-slow) var(--ease-glide);
+}
+.halo {
+  fill: var(--gold);
+  opacity: 0.28;
+}
+.core {
+  fill: var(--gold);
+}
+
+/* A non-today date shows the path with the sun parked at noon — no glide, and
+   dimmed so it doesn't read as a live position. */
+.static .sun {
+  transition: none;
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sun {
+    transition: none;
+  }
+}

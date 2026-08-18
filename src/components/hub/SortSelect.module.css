@@ -1,0 +1,28 @@
+/* Labelled sort dropdown — shared by the browse hubs. */
+.field {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.label {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+}
+.select {
+  min-height: 40px;
+  padding-inline: var(--space-3);
+  padding-block: var(--space-1);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+.select:focus {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}

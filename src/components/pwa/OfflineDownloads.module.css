@@ -1,0 +1,65 @@
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.title {
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+}
+.meta {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+.remove,
+.save {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 36px;
+  padding-inline: var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.remove:hover {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+.save {
+  /* --teal-bright is the "link on dark" token (~5.5:1 on --surface); --brand
+     (#2d6e8a) is only 3.1:1 there and fails WCAG AA color-contrast. */
+  color: var(--teal-bright);
+  font-variant-numeric: tabular-nums;
+}
+.save:hover:not(:disabled) {
+  border-color: var(--brand);
+}
+.save:disabled {
+  cursor: default;
+  opacity: 0.7;
+}

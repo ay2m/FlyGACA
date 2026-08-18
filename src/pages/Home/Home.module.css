@@ -1,0 +1,296 @@
+.hero {
+  position: relative;
+  /* Fluid padding scales from tight mobile to generous desktop. Top stays capped
+     so the split sits high in the viewport rather than floating down. */
+  padding-block: clamp(2rem, 7dvh, 4.5rem) clamp(1.5rem, 4dvh, 3rem);
+  /* clip prevents glow orbs from triggering horizontal scroll on 375px screens */
+  overflow: clip;
+  background:
+    var(--glow-teal) center -120px / 700px 700px no-repeat,
+    var(--glow-neon-cyan) 86% 130% / 44% 60% no-repeat,
+    var(--bg);
+}
+/* Film grain — the same material as the band heroes, tying the landing hero into
+   the family. Paints under HeroAmbient (a later DOM child) and .heroGrid (z-1),
+   contained by the hero's overflow: clip. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  background-size: 160px;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Asymmetric split: value-prop + actions on the start side, the live Captain
+   Adel demo on the end side. Lifts above the ambient particle/glow layer. */
+.heroGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(var(--space-6), 5vw, var(--space-10));
+}
+
+/* Collapse to a single column on tablet/mobile: copy first, demo below. */
+@media (max-width: 980px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+.heroCopy {
+  text-align: start;
+  min-inline-size: 0;
+}
+
+.heroAside {
+  min-inline-size: 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--accent-bright);
+  font-weight: var(--fw-semibold);
+}
+/* Short inline-start rule — the "instrument label" grammar shared with CalcShell. */
+.eyebrow::before {
+  content: '';
+  inline-size: 16px;
+  block-size: 1px;
+  background: var(--accent-bright);
+}
+
+.title {
+  margin-block-start: var(--space-4);
+  /* Scaled for an 8-word headline in a column: reads as two lines on desktop,
+     not the full display token (which would wrap to three). */
+  font-size: clamp(2.2rem, 1.4rem + 3vw, 3.6rem);
+  font-weight: var(--fw-black);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+  /* Brand gradient threaded with a heritage-gold glint stop; the shimmer sweep
+     now flashes gold once per cycle. */
+  background: var(--grad-title);
+  /* Oversize the gradient so it can drift edge-to-edge for the shimmer. */
+  background-size: 180% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: title-shimmer 12s linear infinite;
+}
+
+@keyframes title-shimmer {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: 180% center;
+  }
+}
+
+.subtitle {
+  margin-block-start: var(--space-4);
+  max-inline-size: 52ch;
+  color: var(--text-muted);
+  font-size: var(--fs-lg);
+  text-wrap: pretty;
+}
+
+.heroCta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-block-start: var(--space-6);
+}
+
+/* Proof strip — corpus + product facts, once, between hairlines (deliberately
+   not the clay card the conversion band uses, so the two read as distinct). */
+.proof {
+  margin-block-start: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding-block: var(--space-5);
+  border-block: 1px solid var(--border);
+  /* Quiet instrument panel — a whisper of surface between the hairlines. */
+  background: color-mix(in srgb, var(--surface) 40%, transparent);
+}
+
+.stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4) var(--space-6);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-inline-size: 5.5rem;
+}
+
+.statValue {
+  font-family: var(--font-mono);
+  font-weight: var(--fw-bold);
+  font-size: clamp(var(--fs-h3), 1rem + 1vw, var(--fs-h2));
+  line-height: 1;
+  color: var(--teal-bright);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 18px color-mix(in srgb, var(--brand-hover) 35%, transparent);
+}
+
+.statLabel {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  color: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title {
+    animation: none;
+  }
+}
+
+.dashboardSection {
+  padding-block: var(--space-6) var(--space-10);
+}
+
+/* Reserve the dashboard's real height while its lazy chunk loads, to avoid
+   layout shift. Values are measured wrap heights (max of EN/AR, ~3% under so
+   any residual shift is a small downward one) at 1280 / 820 / 390 px —
+   re-measure if the widget set or spans change. */
+.dashboardFallback {
+  min-block-size: 1240px;
+  contain: layout style;
+}
+
+@media (max-width: 960px) {
+  .dashboardFallback {
+    min-block-size: 1900px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboardFallback {
+    min-block-size: 2380px;
+  }
+}
+
+.notice {
+  margin-block-start: var(--space-6);
+  text-align: center;
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  text-wrap: pretty;
+}
+
+/* ── Funnel sections (How · Why · Convert) ───────────────────────────────────
+   Mirrors the About page patterns so the two pages stay visually consistent. */
+.block {
+  /* One vertical beat for every funnel section (How · Why · Convert). */
+  margin-block-start: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* Scroll-driven reveal for the below-fold funnel sections — progressive: the
+   animation only exists inside the guard, so unsupported browsers never see an
+   initial opacity: 0. Reuses the global fade-up keyframes; block-axis only, so
+   RTL-safe. */
+/* Local copy of the global fade-up — CSS modules scope keyframe names, so a
+   module animation must reference a keyframe defined in the same module. */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .block,
+    .cta {
+      animation: reveal-up var(--ease-entry) both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
+/* Why trust it — bento card text. */
+.featTitle {
+  font-size: var(--fs-lg);
+  margin-block-end: var(--space-1);
+}
+/* The lead pillar's heading reads a step larger to anchor the asymmetric grid. */
+.featLead {
+  font-size: var(--fs-h3);
+  margin-block: var(--space-2) var(--space-1);
+  text-wrap: balance;
+}
+.featBody {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  text-wrap: pretty;
+}
+/* The mark sits at the top of the tall lead pillar; auto end-margin pushes the
+   heading + body to the foot of the tile so the cell never reads as empty. */
+.whyMark {
+  inline-size: 40px;
+  block-size: 40px;
+  margin-block-end: auto;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
+}
+
+/* Conversion band — layout + gold tint over the shared Card accent recipe
+   (Card supplies the hairline, radius, elevation and the gold edge bar). */
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-block-start: var(--space-12);
+  padding: var(--space-6);
+  background: color-mix(in srgb, var(--gold) 5%, var(--surface));
+  box-shadow:
+    var(--elev-2),
+    var(--edge-sheen),
+    0 0 40px color-mix(in srgb, var(--gold) 10%, transparent);
+}
+.ctaTitle {
+  font-size: var(--fs-h3);
+  margin: 0 0 var(--space-1);
+  text-wrap: balance;
+}
+.ctaLead {
+  color: var(--text-muted);
+  margin: 0;
+  max-inline-size: 52ch;
+  text-wrap: pretty;
+}
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}

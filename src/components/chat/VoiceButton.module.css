@@ -1,0 +1,47 @@
+.mic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  inline-size: 40px;
+  block-size: 40px;
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: var(--fs-md);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.mic:hover {
+  color: var(--text);
+  border-color: var(--border-bright);
+}
+.mic:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* While listening the mic glows in the brand accent and pulses gently. */
+.listening {
+  color: var(--brand);
+  border-color: var(--brand);
+  background: color-mix(in srgb, var(--brand) 14%, transparent);
+  animation: mic-pulse 1.6s var(--ease) infinite;
+}
+
+@keyframes mic-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand) 40%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 0%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listening {
+    animation: none;
+  }
+}

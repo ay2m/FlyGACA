@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "esModuleInterop": true,
+    "moduleResolution": "nodenext",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "rootDir": "src",
+    "sourceMap": true,
+    "strict": true,
+    // Skip typechecking of third-party .d.ts files (e.g. genkit's dotprompt →
+    // handlebars, which ships an untyped CJS entry). Standard setting; only our
+    // own source under src/ is still fully typechecked.
+    "skipLibCheck": true,
+    "target": "es2017"
+  },
+  "compileOnSave": true,
+  "include": [
+    "src"
+  ]
+}

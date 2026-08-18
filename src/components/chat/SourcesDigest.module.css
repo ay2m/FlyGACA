@@ -1,0 +1,51 @@
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+.label {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+.chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-block-size: 32px;
+  padding: var(--space-1) var(--space-3);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--fs-xs);
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+  transition: var(--transition-color);
+}
+.chip:hover {
+  border-color: var(--brand-hover);
+  color: var(--brand-hover);
+  background: color-mix(in srgb, var(--brand) 6%, var(--surface));
+}
+.count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 16px;
+  padding-inline: 4px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--brand) 16%, transparent);
+  color: var(--brand-hover);
+  font-size: 0.85em;
+}

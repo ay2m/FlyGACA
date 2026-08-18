@@ -1,0 +1,581 @@
+.page {
+  padding-block: var(--space-8);
+}
+
+/* Reading progress bar — fixed below the nav, full-width */
+.readingTrack {
+  position: fixed;
+  inset-block-start: var(--nav-h);
+  inset-inline: 0;
+  block-size: 3px;
+  background: color-mix(in srgb, var(--brand) 15%, transparent);
+  z-index: var(--z-sticky);
+}
+.readingBar {
+  block-size: 100%;
+  background: var(--grad-brand);
+  transition: inline-size 0.12s var(--ease);
+}
+
+.back {
+  margin: 0 0 var(--space-4);
+}
+.back a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  transition: color var(--dur) var(--ease);
+}
+.back a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.head {
+  margin-block-end: var(--space-6);
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-block-end: var(--space-3);
+}
+.badge {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--brand) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--brand) 35%, transparent);
+  color: var(--accent-bright);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+}
+.pages {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+.verify {
+  margin-block-start: var(--space-3);
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.toc {
+  position: sticky;
+  inset-block-start: calc(var(--nav-h) + var(--space-3));
+  max-block-size: calc(100dvh - var(--nav-h) - var(--space-6));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  padding: var(--space-3);
+  scroll-behavior: smooth;
+}
+/* Mobile: the table of contents collapses behind a toggle to save vertical space. */
+.tocToggle {
+  display: none;
+}
+@media (max-width: 860px) {
+  .tocToggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: 44px;
+    margin-block-end: var(--space-3);
+    padding: var(--space-2) var(--space-4);
+    border: var(--hairline-bright);
+    border-radius: var(--radius-pill);
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-weight: var(--fw-semibold);
+    cursor: pointer;
+  }
+  .tocToggle::before {
+    content: '☰';
+  }
+  .toc {
+    position: static;
+    max-block-size: 320px;
+    display: none;
+  }
+  .tocOpen {
+    display: block;
+  }
+}
+.tocFilter {
+  inline-size: 100%;
+  min-height: 40px;
+  padding: var(--space-2) var(--space-3);
+  margin-block-end: var(--space-3);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: var(--fs-sm);
+  transition: border-color var(--dur) var(--ease);
+}
+.tocFilter:focus {
+  border-color: var(--brand-hover);
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.toc a {
+  display: block;
+  padding: var(--space-1) var(--space-2);
+  /* Transparent accent rail reserved on every row so the active state can fill
+     it without shifting the text (logical, so it sits on the inline-start). */
+  border-inline-start: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-snug);
+  transition: var(--transition-color);
+}
+.toc a:hover {
+  background: color-mix(in srgb, var(--brand) 8%, var(--surface-raised));
+  color: var(--text);
+  text-decoration: none;
+}
+/* Current section (aria-current="location"). Higher specificity than `.toc a`
+   so it wins the colour; the reserved rail turns brand and the row tints. */
+.toc a.tocActive {
+  border-inline-start-color: var(--brand-hover);
+  background: color-mix(in srgb, var(--brand) 12%, var(--surface-raised));
+  color: var(--text);
+  font-weight: var(--fw-semibold);
+}
+
+/* ── Rendered regulation HTML ── */
+.content {
+  min-inline-size: 0;
+  color: var(--text);
+  line-height: var(--lh-body);
+  font-size: 1.02rem;
+  /* Long identifiers / URLs in the regulation text must wrap rather than push
+     the page wider than a phone viewport. */
+  overflow-wrap: break-word;
+}
+
+/* Section headings: teal left-accent, sticky-aware scroll margin */
+.content :global(h3) {
+  font-size: var(--fs-lg);
+  margin-block: var(--space-6) var(--space-2);
+  scroll-margin-block-start: calc(var(--nav-h) + var(--space-5));
+  color: var(--text);
+  padding-inline-start: var(--space-3);
+  border-inline-start: 3px solid var(--brand);
+}
+
+/* Paragraph text at full contrast — regulations must be readable */
+.content :global(p) {
+  color: var(--text);
+  margin-block-end: var(--space-3);
+}
+
+/* Highlighted passage when arriving from a full-text search hit (?q=). */
+.content :global(mark[data-hit]) {
+  background: color-mix(in srgb, var(--gold) 42%, transparent);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding-inline: 2px;
+  scroll-margin-block-start: calc(var(--nav-h) + var(--space-5));
+}
+
+/* Strong / emphasis */
+.content :global(strong) {
+  font-weight: var(--fw-semibold);
+  color: var(--text);
+}
+
+/* Tables — brand-tinted header row, zebra-striped body.
+   A wide regulation table must scroll inside its own box on a phone instead of
+   widening the whole page; `display: block` + overflow-x makes the table the
+   scroll container (the injected HTML carries no wrapper to scroll). */
+.content :global(table) {
+  display: block;
+  max-inline-size: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin-block: var(--space-4);
+  font-size: var(--fs-sm);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-md);
+  -webkit-overflow-scrolling: touch;
+}
+.content :global(th) {
+  background: color-mix(in srgb, var(--brand) 12%, var(--surface));
+  color: var(--text);
+  font-weight: var(--fw-semibold);
+  padding: var(--space-2) var(--space-3);
+  text-align: start;
+  border-block-end: 2px solid color-mix(in srgb, var(--brand) 30%, transparent);
+}
+.content :global(td) {
+  padding: var(--space-2) var(--space-3);
+  text-align: start;
+  border-block-end: 1px solid var(--border);
+  color: var(--text-muted);
+}
+.content :global(tr:last-child td) {
+  border-block-end: none;
+}
+.content :global(tr:nth-child(even) td) {
+  background: color-mix(in srgb, var(--surface-raised) 60%, transparent);
+}
+
+/* Code / pre (section numbers, identifiers) */
+.content :global(code) {
+  font-family: var(--font-mono);
+  font-size: 0.87em;
+  padding: 1px var(--space-1);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  color: var(--accent-bright);
+}
+
+/* Pre-formatted blocks scroll horizontally rather than widen the page. */
+.content :global(pre) {
+  max-inline-size: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Horizontal rule (part dividers) */
+.content :global(hr) {
+  border: none;
+  border-block-start: 1px solid var(--border);
+  margin-block: var(--space-6);
+}
+
+/* ── Reader toolbar pills (bookmark / offline / share) ── */
+.toolPill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 36px;
+  padding: var(--space-2) var(--space-3);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.toolPill:hover {
+  border-color: var(--brand-hover);
+  color: var(--text);
+}
+.toolPillOn {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 12%, transparent);
+}
+
+/* ── TOC rows: title + bookmark star + copy-link ── */
+.tocRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+.tocRow a {
+  flex: 1;
+  min-inline-size: 0;
+}
+.tocStar,
+.tocCopy {
+  flex-shrink: 0;
+  inline-size: 28px;
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: color var(--dur) var(--ease);
+}
+.tocStar:hover,
+.tocCopy:hover {
+  color: var(--brand-hover);
+}
+.tocStarOn {
+  color: var(--gold);
+}
+
+/* ── Annotation highlights (distinct from search marks) ── */
+.content :global(mark[data-annot]) {
+  background: color-mix(in srgb, var(--brand) 28%, transparent);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding-inline: 2px;
+  cursor: pointer;
+  scroll-margin-block-start: calc(var(--nav-h) + var(--space-5));
+}
+
+/* ── Notes panel ── */
+.notes {
+  margin-block-start: var(--space-7);
+  padding: var(--space-5);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+}
+.notesHead {
+  font-size: var(--fs-h3);
+  margin-block-end: var(--space-3);
+}
+.notesList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.noteItem {
+  position: relative;
+  padding: var(--space-3) var(--space-6) var(--space-3) var(--space-4);
+  border-inline-start: 3px solid var(--brand);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+.noteQuote {
+  display: block;
+  inline-size: 100%;
+  text-align: start;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-style: italic;
+  cursor: pointer;
+  padding: 0;
+}
+.noteQuote:hover {
+  color: var(--brand-hover);
+}
+.noteText {
+  margin-block: var(--space-1) 0;
+  color: var(--text);
+  font-size: var(--fs-sm);
+}
+.noteRemove {
+  position: absolute;
+  inset-block-start: var(--space-2);
+  inset-inline-end: var(--space-2);
+  inline-size: 28px;
+  block-size: 28px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: var(--fs-lg);
+  line-height: 1;
+  cursor: pointer;
+}
+.noteRemove:hover {
+  color: var(--danger);
+  background: var(--surface-raised);
+}
+
+/* Shown in the reader when a document isn't cached and the device is offline. */
+.offlineNotice {
+  margin-block: var(--space-6);
+  padding: var(--space-5) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+.offlineNotice h2 {
+  margin-block: 0 var(--space-2);
+  font-size: var(--fs-lg);
+}
+.offlineNotice p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+/* Pro affordance on gated toolbar pills (bookmark / save-offline) for free users. */
+.proTag {
+  margin-inline-start: var(--space-2);
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  background: color-mix(in srgb, var(--gold) 20%, transparent);
+  color: var(--gold);
+}
+
+/* Find-in-page match counter (e.g. "3 / 18") — keep it on one line and use
+   tabular figures so the count doesn't wobble as you cycle matches. */
+.findCount {
+  flex-shrink: 0;
+  padding-inline: var(--space-1);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ── Related documents ── */
+.related {
+  margin-block-start: var(--space-8);
+  padding-block-start: var(--space-6);
+  border-block-start: 1px solid var(--border);
+}
+.relatedHead {
+  font-size: var(--fs-h3);
+  margin: 0 0 var(--space-4);
+}
+.relatedGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-3);
+}
+.relatedCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  block-size: 100%;
+  padding: var(--space-4);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  color: inherit;
+  transition: var(--transition-interactive);
+}
+.relatedCard:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.relatedCard:active {
+  transform: scale(0.99);
+}
+.relatedBadge {
+  align-self: start;
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--brand) 16%, transparent);
+  color: var(--brand-hover);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.relatedTitle {
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  color: var(--text);
+}
+
+/* Related flight tools on a regulation's Part page — reciprocal of the tools'
+   governing-regulation cross-link (src/lib/toolRegulations.ts). */
+.toolLinks {
+  margin-block-start: var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+.toolLinksLabel {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+}
+.toolChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.toolChip {
+  padding: var(--space-1) var(--space-3);
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  transition: var(--transition-color);
+}
+.toolChip:hover {
+  border-color: var(--brand-hover);
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* Clean clause-anchor target injected beside each section heading, so citation
+   deep links (#sec-91-155) resolve even where the corpus heading id is noisy. */
+.anchorTarget {
+  scroll-margin-block-start: calc(var(--nav-h) + var(--space-5));
+}
+/* The trailing copy-link affordance revealed on each section heading. */
+.anchor {
+  margin-inline-start: var(--space-2);
+  border: none;
+  background: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font: inherit;
+  opacity: 0;
+  transition:
+    opacity var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+.content :global(h2):hover .anchor,
+.content :global(h3):hover .anchor,
+.anchor:focus-visible {
+  opacity: 1;
+}
+.anchor:hover {
+  color: var(--link);
+}
+@media (hover: none) {
+  /* No hover to reveal on — keep the affordance visible on touch. */
+  .anchor {
+    opacity: 0.5;
+  }
+}

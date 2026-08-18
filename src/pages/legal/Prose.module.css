@@ -1,0 +1,148 @@
+.prose {
+  padding-block: var(--space-8);
+}
+
+.prose header {
+  margin-block-end: var(--space-6);
+}
+
+.eyebrow {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--accent-bright);
+  font-weight: var(--fw-semibold);
+  margin-block-end: var(--space-2);
+}
+
+/* Cross-document nav — move between the four legal docs without the footer. */
+.docsNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block-end: var(--space-6);
+}
+.docLink {
+  padding: var(--space-1) var(--space-3);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  text-decoration: none;
+  transition: var(--transition-color);
+}
+.docLink:hover {
+  border-color: var(--brand-hover);
+  color: var(--brand-hover);
+}
+.docLinkActive {
+  border-color: var(--brand);
+  background: color-mix(in srgb, var(--brand) 12%, transparent);
+  color: var(--text);
+}
+
+/* "On this page" table of contents. */
+.onThisPage {
+  margin-block: var(--space-5);
+  padding: var(--space-4);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+}
+.onThisPageLabel {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  color: var(--text-dim);
+}
+.onThisPage ol {
+  margin: var(--space-2) 0 0;
+  padding-inline-start: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.onThisPage a {
+  color: var(--link);
+  font-size: var(--fs-sm);
+}
+
+/* Anchored section heading + reveal-on-hover copy-link (mirrors the guides). */
+.sectionH {
+  scroll-margin-block-start: calc(var(--nav-h) + var(--space-4));
+}
+.copyLink {
+  margin-inline-start: var(--space-2);
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  font-size: var(--fs-sm);
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: var(--transition-color);
+}
+.sectionH:hover .copyLink,
+.sectionH:focus-within .copyLink,
+.copyLink:focus-visible {
+  opacity: 1;
+}
+.copyLink:hover {
+  color: var(--brand-hover);
+}
+
+.updated {
+  margin-block-start: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+}
+
+.lead {
+  font-size: var(--fs-lg);
+  color: var(--text-muted);
+  margin-block-end: var(--space-6);
+}
+
+.prose section {
+  margin-block-end: var(--space-6);
+}
+
+.prose h2 {
+  font-size: var(--fs-h3);
+  margin-block-end: var(--space-2);
+  padding-inline-start: var(--space-3);
+  border-inline-start: 3px solid color-mix(in srgb, var(--brand) 50%, transparent);
+}
+
+.prose p {
+  color: var(--text-muted);
+}
+
+.contacts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
+}
+.contacts li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  transition: var(--transition-interactive);
+}
+.contacts li:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-2px);
+}
+.contacts span {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}

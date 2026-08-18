@@ -1,0 +1,514 @@
+.page {
+  padding-block: var(--space-8);
+}
+
+/* Topic + level filter chips. */
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-block-end: var(--space-6);
+}
+
+/* Read-progress + sort/view toolbar (mirrors the Library hub). */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-block-start: var(--space-2);
+}
+.toolbarEnd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-inline-start: auto;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 40px;
+  padding: var(--space-1) var(--space-3);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.chip:hover {
+  color: var(--text);
+  border-color: var(--brand-hover);
+}
+.chipActive {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: var(--text-on-brand);
+}
+
+.group {
+  margin-block-end: var(--space-8);
+}
+
+/* ── Compact list row (list view); grid/list container, .rowWrap and .rowStar
+   come from the shared hub/hubList.module.css. ── */
+.row {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  padding-inline-end: calc(var(--space-4) + 34px);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: inherit;
+  transition: var(--transition-color);
+}
+.row:hover {
+  border-color: var(--brand-hover);
+  background: var(--surface-raised);
+  text-decoration: none;
+}
+.rowLevel {
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  white-space: nowrap;
+}
+.rowLevel[data-level='beginner'] {
+  background: color-mix(in srgb, var(--success) 18%, transparent);
+  color: var(--success);
+}
+.rowLevel[data-level='intermediate'] {
+  background: color-mix(in srgb, var(--gold) 20%, transparent);
+  color: var(--gold);
+}
+.rowLevel[data-level='advanced'] {
+  background: color-mix(in srgb, var(--brand) 20%, transparent);
+  color: var(--brand-hover);
+}
+.rowTitle {
+  min-inline-size: 0;
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rowMeta {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.rowRead {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--success);
+  white-space: nowrap;
+}
+/* On small screens drop the meta columns; keep level + title. */
+@media (max-width: 560px) {
+  .row {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .rowMeta,
+  .rowRead {
+    display: none;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  block-size: 100%;
+  padding: var(--space-5);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  color: inherit;
+  transition: var(--transition-interactive);
+}
+.card:hover {
+  border-color: var(--brand-hover);
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+/* Momentary press, mirroring the global .btn:active convention. */
+.card:active {
+  transform: scale(0.99);
+}
+.cardTitle {
+  font-size: var(--fs-lg);
+  padding-inline-end: var(--space-6);
+}
+
+/* Grid item wraps the card so the bookmark star can sit over its top corner. */
+.cardWrap {
+  position: relative;
+  block-size: 100%;
+}
+.star {
+  position: absolute;
+  inset-block-start: var(--space-2);
+  inset-inline-end: var(--space-2);
+  z-index: 2;
+  inline-size: 32px;
+  block-size: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: var(--fs-lg);
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.star:hover {
+  color: var(--gold);
+  background: var(--surface-raised);
+}
+.starOn {
+  color: var(--gold);
+}
+
+/* Read indicator on a guide card + the library read-count line. */
+.readBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-success-bg);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--success);
+}
+.progress {
+  margin-block-start: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+.blurb {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  /* Clamp to keep card heights even across the grid; `auto` bottom margin keeps
+     the meta row pinned to the card foot the way `flex: 1` did. */
+  margin-block-end: auto;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+/* Card / header metadata: level pill + read time + section count. */
+.metaRow,
+.headMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-block-start: var(--space-2);
+}
+.headMeta {
+  margin-block-end: var(--space-2);
+}
+.metaDim {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+.level {
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+.level[data-level='beginner'] {
+  background: color-mix(in srgb, var(--success) 18%, transparent);
+  color: var(--success);
+}
+.level[data-level='intermediate'] {
+  background: color-mix(in srgb, var(--gold) 20%, transparent);
+  color: var(--gold);
+}
+.level[data-level='advanced'] {
+  background: color-mix(in srgb, var(--brand) 20%, transparent);
+  color: var(--brand-hover);
+}
+.draftBadge {
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  background: color-mix(in srgb, var(--warning) 22%, transparent);
+  color: var(--warning);
+}
+
+/* Reading progress bar — fixed below the nav (mirrors the document reader). */
+.readingTrack {
+  position: fixed;
+  inset-block-start: var(--nav-h);
+  inset-inline: 0;
+  block-size: 3px;
+  background: color-mix(in srgb, var(--brand) 15%, transparent);
+  z-index: var(--z-sticky);
+}
+.readingBar {
+  block-size: 100%;
+  background: var(--grad-brand);
+  transition: inline-size 0.12s var(--ease);
+}
+
+.back {
+  margin: 0 0 var(--space-4);
+}
+.back a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  transition: color var(--dur) var(--ease);
+}
+.back a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* "On this page" mini table of contents. */
+.onThisPage {
+  margin-block: var(--space-5);
+  padding: var(--space-4);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+}
+.onThisPageLabel {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  color: var(--text-dim);
+}
+.onThisPage ol {
+  margin: var(--space-2) 0 0;
+  padding-inline-start: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.onThisPage a {
+  color: var(--link);
+  font-size: var(--fs-sm);
+}
+.sectionH {
+  scroll-margin-block-start: calc(var(--nav-h) + var(--space-4));
+}
+
+/* Related guides + prev/next navigation. */
+.related {
+  margin-block-start: var(--space-8);
+}
+.relatedHead {
+  font-size: var(--fs-h3);
+  margin-block-end: var(--space-4);
+}
+.prevNext {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-block: var(--space-8) var(--space-6);
+  flex-wrap: wrap;
+}
+.prevNextLink {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-inline-size: 48%;
+  padding: var(--space-3) var(--space-4);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  color: inherit;
+}
+.prevNextLink:hover {
+  border-color: var(--brand-hover);
+  box-shadow: var(--clay-shadow-hover);
+  text-decoration: none;
+}
+.prevNextEnd {
+  text-align: end;
+  margin-inline-start: auto;
+}
+.prevNextDir {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+.prevNextName {
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block: var(--space-5) var(--space-6);
+}
+.adel,
+.toolChip {
+  padding: var(--space-2) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.adel {
+  border-color: var(--brand);
+  color: var(--brand-hover);
+}
+.adel:hover,
+.toolChip:hover {
+  border-color: var(--brand-hover);
+  color: var(--brand-hover);
+  text-decoration: none;
+}
+
+.footnote {
+  margin-block-start: var(--space-8);
+}
+
+/* Key-takeaways callout at the top of a guide. */
+.takeaways {
+  margin-block: var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  border: var(--hairline);
+  border-inline-start: 3px solid var(--brand);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--brand) 6%, var(--surface-raised));
+}
+.takeawaysLabel {
+  display: block;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  color: var(--brand-hover);
+  font-weight: var(--fw-bold);
+  margin-block-end: var(--space-2);
+}
+.takeaways ul {
+  margin: 0;
+  padding-inline-start: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.takeaways li {
+  color: var(--text);
+}
+
+/* Copy-link affordance on each section heading. */
+.copyLink {
+  margin-inline-start: var(--space-2);
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  font-size: var(--fs-sm);
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: var(--transition-color);
+}
+.sectionH:hover .copyLink,
+.sectionH:focus-within .copyLink,
+.copyLink:focus-visible {
+  opacity: 1;
+}
+.copyLink:hover {
+  color: var(--brand-hover);
+}
+
+/* "Regulations cited" block — chips deep-link into the library. */
+.regs {
+  margin-block-start: var(--space-6);
+}
+.regsHead {
+  font-size: var(--fs-h3);
+  margin-block-end: var(--space-3);
+}
+.regChip {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--brand);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--brand-hover);
+}
+.regChip:hover {
+  background: color-mix(in srgb, var(--brand) 10%, transparent);
+  text-decoration: none;
+}
+
+/* Bookmark toggle in the guide header + read toggle near prev/next. */
+.bookmarkBtn,
+.readToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 36px;
+  padding: var(--space-1) var(--space-3);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.bookmarkBtn:hover,
+.readToggle:hover {
+  border-color: var(--brand-hover);
+  color: var(--text);
+}
+.bookmarkOn {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.readToggleRow {
+  margin-block-start: var(--space-6);
+}
+.readToggleOn {
+  border-color: var(--success);
+  color: var(--success);
+}

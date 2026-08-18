@@ -1,0 +1,59 @@
+.page {
+  padding-block: var(--space-8);
+}
+
+/* Segmented control (Design System §08) — raised active tab on an inset track.
+   Mirrors the Library hub's corpus tabs. */
+/* Layout-only remainder — the strip itself is the shared ui/Tabs. */
+.tabs {
+  margin-block-end: var(--space-5);
+}
+/* Reference-tools cross-link row — surfaces study-relevant /tools pages as pill
+   chips (mirrors the per-guide "Related tools" chips). /tools stays canonical. */
+.refTools {
+  margin-block-start: var(--space-8);
+}
+/* Clusters of related reference tools, each under a light sub-label — laid out
+   2-up on desktop, stacking on mobile. The section keeps a single glow-bar
+   header above; the per-cluster labels are quiet (no extra accent bars). */
+.refGroups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5) var(--space-6);
+  margin-block-start: var(--space-4);
+}
+@media (max-width: 600px) {
+  .refGroups {
+    grid-template-columns: 1fr;
+  }
+}
+.refGroupLabel {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  font-weight: var(--fw-semibold);
+  color: var(--text-dim);
+}
+.refChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.refChip {
+  padding: var(--space-2) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  transition: var(--transition-color);
+}
+.refChip:hover {
+  border-color: var(--brand-hover);
+  color: var(--brand-hover);
+  text-decoration: none;
+}
+
+.footnote {
+  margin-block-start: var(--space-8);
+}

@@ -1,0 +1,1312 @@
+.page {
+  padding-block: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.head {
+  max-inline-size: 60ch;
+}
+.subtitle {
+  margin-block-start: var(--space-3);
+  color: var(--text-muted);
+}
+
+.modes,
+.banks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+.mode,
+.bank {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  inline-size: 100%;
+  text-align: start;
+  padding: var(--space-5);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  color: inherit;
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.mode::before {
+  content: '';
+  display: block;
+  block-size: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--grad-brand);
+  margin-block-end: var(--space-3);
+  opacity: 0.55;
+  transition: opacity var(--dur) var(--ease);
+}
+.mode:hover::before {
+  opacity: 1;
+}
+.mode:hover,
+.bank:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.mode:active,
+.bank:active {
+  box-shadow: var(--clay-shadow-press);
+  transform: scale(0.97);
+}
+/* Gated pro pack: dim it and replace the hover-lift / press with a gold "upgrade"
+   border hint, so a locked pack doesn't read as a directly-openable one (it routes
+   to /pricing). Placed after .bank:hover/:active so it wins on equal specificity. */
+.bankLocked {
+  opacity: 0.72;
+}
+.bankLocked:hover,
+.bankLocked:active {
+  transform: none;
+  box-shadow: var(--clay-shadow);
+  border-color: var(--gold);
+}
+.lockIcon {
+  margin-inline-end: var(--space-1);
+  font-size: 0.85em;
+}
+.mode h2 {
+  font-size: var(--fs-lg);
+}
+.modeIcon {
+  font-size: 1.25rem;
+  line-height: 1;
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-block-end: var(--space-1);
+}
+.mode p,
+.bankDesc {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  flex: 1;
+}
+.bankTitle {
+  font-weight: var(--fw-semibold);
+}
+.bankMeta {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  margin-block-start: var(--space-1);
+}
+
+.back {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  padding: var(--space-1) 0;
+  transition: color var(--dur) var(--ease);
+}
+.back:hover {
+  color: var(--text);
+}
+
+.qProgress {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  margin: 0;
+}
+.qText {
+  font-size: var(--fs-h3);
+}
+
+.options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  inline-size: 100%;
+  text-align: start;
+  min-height: 44px;
+  padding: var(--space-3) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+/* The A/B/C/D key badge on each option. */
+.optionKey {
+  flex-shrink: 0;
+  inline-size: 24px;
+  block-size: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+}
+.option:hover:enabled {
+  border-color: var(--brand-hover);
+  background: color-mix(in srgb, var(--brand) 6%, var(--surface));
+}
+.option:active:enabled {
+  transform: scale(0.98);
+}
+.correct {
+  border-color: var(--color-success);
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+.incorrect {
+  border-color: var(--color-error);
+  background: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+.explain {
+  border: var(--clay-border);
+  border-inline-start: 3px solid var(--accent);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+.src {
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+}
+
+.primary {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--space-3) var(--space-5);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--brand);
+  color: var(--text-on-brand);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  box-shadow: var(--clay-shadow);
+  transition: var(--transition-interactive);
+}
+.primary:hover {
+  background: var(--brand-hover);
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-1px);
+}
+.primary:active {
+  box-shadow: var(--clay-shadow-press);
+  transform: scale(0.97);
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+  padding-block: var(--space-6);
+}
+.resultPct {
+  font-size: var(--fs-display);
+  font-weight: var(--fw-black);
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+}
+
+/* Post-exam verdict stamp — PASS a solid ring, FAIL dashed, so the state
+   reads by shape as well as colour. Decorative (aria-hidden in the page). */
+.stamp {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border: 3px solid var(--success);
+  border-radius: var(--radius-md);
+  color: var(--success);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-h3);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  rotate: -6deg;
+  animation: stamp-in var(--dur-slow) var(--ease-entry) both;
+}
+.stampFail {
+  border-style: dashed;
+  border-color: var(--danger);
+  color: var(--danger);
+}
+@keyframes stamp-in {
+  from {
+    opacity: 0;
+    scale: 1.7;
+  }
+  60% {
+    opacity: 1;
+    scale: 0.94;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stamp {
+    animation: none;
+  }
+}
+
+/* ── Flashcard — 3D flip ── */
+.cardWrapper {
+  perspective: 900px;
+  inline-size: 100%;
+  cursor: pointer;
+  min-block-size: 220px;
+}
+.cardInner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.55s var(--ease-entry);
+  min-block-size: 220px;
+  border-radius: var(--clay-radius);
+}
+.flippedCard {
+  transform: rotateY(180deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cardInner {
+    transition: none;
+  }
+}
+.cardFront,
+.cardBack {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: var(--space-6);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+}
+.cardBack {
+  transform: rotateY(180deg);
+  background: color-mix(in srgb, var(--brand) 7%, var(--surface));
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+.cardWrapper:hover .cardFront,
+.cardWrapper:hover .cardBack {
+  box-shadow: var(--clay-shadow-hover);
+}
+
+/* ── Flashcard — grade motion ──
+   The graded card flies out toward inline-end (known) / inline-start (again);
+   [dir='rtl'] flips --fly-x so the direction semantics mirror. No local
+   reduced-motion override here on purpose: advancing waits on animationend,
+   and the global reduce reset (global.css) shrinks durations to 0.01ms so the
+   event still fires — `animation: none` would strand the deck instead. */
+.cardEnter {
+  animation: fc-card-in var(--dur-slow) var(--ease-entry) both;
+}
+.cardLeaveKnown,
+.cardLeaveAgain {
+  pointer-events: none;
+}
+.cardLeaveKnown {
+  --fly-x: 1;
+  animation: fc-fly-out var(--dur) var(--ease) forwards;
+}
+.cardLeaveAgain {
+  --fly-x: -1;
+  animation: fc-fly-out var(--dur) var(--ease) forwards;
+}
+:global([dir='rtl']) .cardLeaveKnown {
+  --fly-x: -1;
+}
+:global([dir='rtl']) .cardLeaveAgain {
+  --fly-x: 1;
+}
+.cardLeaveKnown .cardFront,
+.cardLeaveKnown .cardBack {
+  border-color: color-mix(in srgb, var(--success) 55%, transparent);
+}
+.cardLeaveAgain .cardFront,
+.cardLeaveAgain .cardBack {
+  border-color: color-mix(in srgb, var(--warning) 55%, transparent);
+}
+@keyframes fc-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+}
+@keyframes fc-fly-out {
+  to {
+    opacity: 0;
+    transform: translateX(calc(var(--fly-x) * 55%)) rotate(calc(var(--fly-x) * 4deg));
+  }
+}
+
+.cardQ {
+  font-size: var(--fs-lg);
+}
+.cardA {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.cardA strong {
+  font-size: var(--fs-h3);
+  color: var(--accent-bright);
+}
+.cardExplain {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+.markRow {
+  display: flex;
+  gap: var(--space-3);
+}
+.mark {
+  flex: 1;
+  min-height: 44px;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  border: var(--hairline-bright);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  transition: var(--transition-interactive);
+}
+.mark:active {
+  transform: scale(0.97);
+}
+.markKnown:hover {
+  border-color: var(--color-success);
+  color: var(--color-success);
+  background: var(--color-success-bg);
+}
+.markReview:hover {
+  border-color: var(--color-error);
+  color: var(--color-error);
+  background: var(--color-error-bg);
+}
+
+.footnote {
+  margin-block-start: var(--space-6);
+}
+
+/* Study-hub streak milestone nudge — one celebratory entrance per view. */
+.milestone {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+  border-radius: var(--clay-radius);
+  background: color-mix(in srgb, var(--gold) 10%, var(--surface));
+  color: var(--text);
+  font-weight: var(--fw-semibold);
+  text-align: center;
+  animation: milestone-in var(--dur-entry) var(--ease-entry) both;
+}
+@keyframes milestone-in {
+  from {
+    opacity: 0;
+    translate: 0 8px;
+    scale: 0.98;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .milestone {
+    animation: none;
+  }
+}
+
+.examBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.timer {
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--fw-semibold);
+  color: var(--accent-bright);
+}
+/* Timer urgency as time runs low. */
+.timerWarn {
+  color: var(--warning);
+}
+.timerDanger {
+  color: var(--danger);
+  animation: timer-pulse 1s ease-in-out infinite;
+}
+@keyframes timer-pulse {
+  50% {
+    opacity: 0.55;
+  }
+}
+/* Depleting fuel-gauge bar beside the clock; the 1 s linear transition rides
+   the 1 Hz tick so the level drains continuously. */
+.fuelTrack {
+  display: inline-block;
+  inline-size: 64px;
+  block-size: 8px;
+  margin-inline-end: var(--space-2);
+  vertical-align: middle;
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  overflow: hidden;
+}
+.fuelLevel {
+  display: block;
+  block-size: 100%;
+  background: var(--accent);
+  transition: inline-size 1s linear;
+}
+.timerWarn .fuelLevel {
+  background: var(--warning);
+}
+/* Danger reads by pattern (hatching), not hue alone — the cockpit theme
+   collapses the accents to amber. */
+.timerDanger .fuelLevel {
+  background-color: var(--danger);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 4px,
+    color-mix(in srgb, var(--text) 35%, transparent) 4px 8px
+  );
+}
+@media (prefers-reduced-motion: reduce) {
+  .timerDanger {
+    animation: none;
+  }
+  .fuelLevel {
+    transition: none;
+  }
+}
+.examNav {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* Question header with the flag-for-review toggle. */
+.examQHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.flagBtn {
+  flex-shrink: 0;
+  min-height: 36px;
+  padding-inline: var(--space-3);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: var(--fs-xs);
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.flagBtn:active {
+  transform: scale(0.97);
+}
+.flagOn {
+  border-color: var(--warning);
+  color: var(--warning);
+  background: color-mix(in srgb, var(--warning) 12%, transparent);
+}
+
+/* Pre-submit answer-summary grid. */
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: var(--space-2);
+  margin-block: var(--space-4);
+}
+.summaryCell {
+  aspect-ratio: 1;
+  min-block-size: 44px;
+  border: var(--hairline-bright);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--text-muted);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: var(--transition-color);
+  /* Cells cascade in (capped delay so long exams don't crawl). */
+  animation: cell-in var(--dur) var(--ease-entry) both;
+  animation-delay: calc(min(var(--cell-i, 0) * 14ms, 420ms));
+}
+.summaryCell:hover {
+  border-color: var(--brand-hover);
+}
+.summaryDone {
+  background: color-mix(in srgb, var(--brand) 18%, transparent);
+  border-color: color-mix(in srgb, var(--brand) 45%, transparent);
+  color: var(--text);
+}
+.summaryFlag {
+  box-shadow: inset 0 0 0 2px var(--warning);
+  animation:
+    cell-in var(--dur) var(--ease-entry) both,
+    flag-pulse 2s var(--ease) infinite;
+  animation-delay: calc(min(var(--cell-i, 0) * 14ms, 420ms)), 0s;
+}
+@keyframes cell-in {
+  from {
+    opacity: 0;
+    translate: 0 6px;
+  }
+}
+@keyframes flag-pulse {
+  50% {
+    box-shadow: inset 0 0 0 3px var(--warning);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .summaryCell,
+  .summaryFlag {
+    animation: none;
+  }
+}
+
+/* Post-exam per-topic breakdown. */
+.breakdown {
+  margin-block: var(--space-5);
+}
+.breakdownList {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.breakdownRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+.breakdownName {
+  color: var(--text);
+  font-size: var(--fs-sm);
+}
+.breakdownScore {
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--fw-semibold);
+  color: var(--text-muted);
+}
+.picked {
+  border-color: var(--brand);
+  background: color-mix(in srgb, var(--brand) 16%, transparent);
+}
+.passed {
+  color: var(--color-success);
+  font-weight: var(--fw-bold);
+}
+.failed {
+  color: var(--color-error);
+  font-weight: var(--fw-bold);
+}
+
+/* ── Progress hub, error/retry, review & secondary actions ── */
+.modeProgress {
+  margin-block-start: var(--space-1);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--accent-bright);
+}
+
+.errorBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  color: var(--text-muted);
+}
+
+.resultActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.secondary {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--space-3) var(--space-5);
+  border: var(--hairline-bright);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.secondary:hover {
+  border-color: var(--brand-hover);
+  color: var(--brand-hover);
+}
+.secondary:active {
+  transform: scale(0.97);
+}
+
+.lastResult {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.cardFlipHint {
+  margin-block-start: var(--space-3);
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+
+/* Post-session review list (wrong answers / exam answers). */
+.review {
+  margin-block-start: var(--space-4);
+}
+.reviewHead {
+  font-size: var(--fs-lg);
+  margin-block-end: var(--space-3);
+}
+.reviewList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.reviewItem {
+  padding: var(--space-3) var(--space-4);
+  border: var(--hairline);
+  border-inline-start: 3px solid var(--border-bright);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+.reviewOk {
+  border-inline-start-color: var(--color-success);
+}
+.reviewBad {
+  border-inline-start-color: var(--color-error);
+}
+.reviewQ {
+  font-weight: var(--fw-semibold);
+  margin: 0 0 var(--space-2);
+}
+.reviewA {
+  margin: 0;
+  color: var(--color-success);
+  font-size: var(--fs-sm);
+}
+.reviewYours {
+  margin: var(--space-1) 0 0;
+  color: var(--color-error);
+  font-size: var(--fs-sm);
+}
+.reviewExplain {
+  margin: var(--space-2) 0 0;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+/* ── Quiz question header: progress line + flag toggle ── */
+.qHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* ── Prep packs ── */
+.proTag {
+  margin-inline-start: var(--space-2);
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  background: color-mix(in srgb, var(--gold) 20%, transparent);
+  color: var(--gold);
+}
+.packSection {
+  margin-block-start: var(--space-6);
+}
+.packSectionHead {
+  font-size: var(--fs-h3);
+  margin-block-end: var(--space-3);
+}
+.packRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding: var(--space-4) var(--space-5);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+}
+.packRowMain {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-inline-size: 12ch;
+}
+.packActions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+.packChip {
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--brand);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  color: var(--brand-hover);
+}
+.packChip:hover {
+  background: color-mix(in srgb, var(--brand) 10%, transparent);
+  text-decoration: none;
+}
+
+/* ── Pack detail: hero, progress, action row, cards, reading ── */
+.packHero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  position: relative;
+  overflow: hidden;
+}
+.packHero::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  block-size: 4px;
+  background: var(--grad-brand);
+}
+.packHeroTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-3);
+}
+.packHeroTop h1 {
+  margin: 0;
+}
+.packHeroDesc {
+  color: var(--text-muted);
+  margin: 0;
+  max-inline-size: 60ch;
+}
+
+/* Overall mastery meter. */
+.packMeter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.packMeterHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.packMeterLabel {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  color: var(--text-dim);
+}
+.packMeterPct {
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--fw-bold);
+  color: var(--accent-bright);
+}
+
+/* Stat tiles under the meter. */
+.packStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(84px, 1fr));
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.packStat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  text-align: center;
+}
+.packStatNum {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+.packStatLabel {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+
+/* Primary + secondary action row. */
+.packActionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* "What's inside" bank cards. */
+.packCards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+.packCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+}
+.packCardHead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.packCardMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+.packCardBest {
+  color: var(--accent-bright);
+  font-weight: var(--fw-semibold);
+}
+.packCardBar {
+  margin-block: var(--space-1);
+}
+.packFlagChip {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  border: 1px solid color-mix(in srgb, var(--warning) 45%, transparent);
+  background: color-mix(in srgb, var(--warning) 12%, transparent);
+  color: var(--warning);
+}
+.packFlagChip:hover {
+  text-decoration: none;
+  border-color: var(--warning);
+}
+
+/* Reference-reading rows (deeper corpus). */
+.readingList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.readingRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: inherit;
+  transition: var(--transition-interactive);
+}
+.readingRow:hover {
+  border-color: var(--brand-hover);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.readingRow:active {
+  transform: scale(0.99);
+}
+.readingBadge {
+  flex-shrink: 0;
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: var(--accent-bright);
+}
+.readingMain {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-inline-size: 0;
+  flex: 1;
+}
+.readingTitle {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--text);
+}
+.readingMeta {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+.readingArrow {
+  flex-shrink: 0;
+  color: var(--text-dim);
+}
+
+/* ── Hub: quick actions + analytics ── */
+.quickRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block-start: var(--space-4);
+}
+.quickChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: var(--space-2) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  background: var(--surface);
+  transition: var(--transition-interactive);
+}
+.quickChip:hover {
+  border-color: var(--brand-hover);
+  color: var(--text);
+  text-decoration: none;
+}
+.quickChip:active {
+  transform: scale(0.97);
+}
+.analytics {
+  margin-block-start: var(--space-7);
+}
+.analyticsHead {
+  font-size: var(--fs-h3);
+  margin-block-end: var(--space-3);
+}
+.weakList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.weakChip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 40px;
+  padding: var(--space-2) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  background: var(--surface);
+}
+.weakChip:hover {
+  border-color: var(--brand-hover);
+  color: var(--text);
+  text-decoration: none;
+}
+.weakPct {
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--fw-semibold);
+  color: var(--text-dim);
+}
+.topicList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.topicRow {
+  display: grid;
+  grid-template-columns: minmax(12ch, 22ch) 1fr auto;
+  align-items: center;
+  gap: var(--space-3);
+}
+.topicName {
+  font-size: var(--fs-sm);
+  color: var(--text);
+}
+.topicMeta {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.examBars {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-2);
+  block-size: 80px;
+  padding: var(--space-3);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+}
+.examBar {
+  flex: 1;
+  max-inline-size: 28px;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  min-block-size: 8px;
+}
+.examBarPass {
+  background: var(--success);
+}
+.examBarFail {
+  background: var(--danger);
+}
+
+@media (max-width: 560px) {
+  .topicRow {
+    grid-template-columns: 1fr auto;
+  }
+  .topicRow .topicName {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Pro gate on the mock-exam start screen. */
+.examGate {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-block: var(--space-3);
+}
+.examGateNote {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ── Exam-prep storefront: badges, coming-soon cards, buy row, purchase notices ── */
+
+/* Card badges beside a pack name — mirror .proTag's pill shape, tinted per state. */
+.freeTag,
+.ownedTag,
+.includedTag,
+.soonTag {
+  margin-inline-start: var(--space-2);
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+.freeTag {
+  background: color-mix(in srgb, var(--brand) 18%, transparent);
+  color: var(--brand-hover);
+}
+.ownedTag {
+  background: color-mix(in srgb, var(--success) 22%, transparent);
+  color: var(--success);
+}
+.includedTag {
+  background: color-mix(in srgb, var(--gold) 20%, transparent);
+  color: var(--gold);
+}
+.soonTag {
+  background: var(--surface-sunken);
+  color: var(--text-dim);
+}
+
+/* Coming-soon pack: a card that isn't a link — no hover-lift, holds the notify form. */
+.bankSoon {
+  cursor: default;
+  opacity: 0.82;
+}
+.notifyForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block-start: var(--space-2);
+}
+.notifyInput {
+  flex: 1 1 12ch;
+  min-inline-size: 0;
+  padding: var(--space-2) var(--space-3);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface-sunken);
+  color: var(--text);
+  font: inherit;
+}
+.notifyBtn {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--brand);
+  border-radius: var(--radius-pill);
+  background: var(--brand-tint);
+  color: var(--brand-hover);
+  font: inherit;
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.notifyBtn:hover {
+  background: var(--brand-tint-strong);
+}
+.notifyBtn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.notifyDone {
+  margin-block-start: var(--space-2);
+  color: var(--success);
+  font-size: var(--fs-sm);
+}
+.notifyError {
+  margin-block-start: var(--space-2);
+  color: var(--danger);
+  font-size: var(--fs-sm);
+}
+
+/* Product page: "what's inside" summary + one-time price / buy row. */
+.packInsideLine {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+.packBuyRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-block-start: var(--space-2);
+}
+.packBuyPrice {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+}
+.packIncludedWith {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+/* Post-checkout notices on the pack page (mirror Pricing's canceled banner). */
+.purchaseOk,
+.purchaseCancel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--clay-radius);
+  font-size: var(--fs-sm);
+  margin-block-end: var(--space-4);
+}
+.purchaseOk {
+  background: color-mix(in srgb, var(--success) 14%, transparent);
+  color: var(--success);
+}
+.purchaseCancel {
+  background: var(--surface-sunken);
+  color: var(--text-muted);
+}
+.canceledDismiss {
+  padding: var(--space-1) var(--space-3);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface-raised);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+.canceledDismiss:hover {
+  box-shadow: var(--clay-shadow-hover);
+}

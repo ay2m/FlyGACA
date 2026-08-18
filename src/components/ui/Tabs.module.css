@@ -1,0 +1,40 @@
+/* Segmented tablist — a sunken control well; the active segment raises.
+   Shares the grammar of the calc segmented control (calc.module.css .seg). */
+
+.tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 3px;
+  background: var(--surface-sunken);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-md);
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.tab:hover {
+  color: var(--text);
+}
+.tab:active {
+  transform: scale(var(--press-scale));
+}
+
+.active {
+  background: var(--surface-raised);
+  color: var(--accent-bright);
+  box-shadow: var(--elev-1);
+}

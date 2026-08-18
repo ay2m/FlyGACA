@@ -1,0 +1,2069 @@
+{
+ "generated": "2026-06-11",
+ "source": "GACA AIP — Aerodromes (AD 2); major international aerodromes from ICAO/AIP references",
+ "sourceUrl": "https://gaca.gov.sa",
+ "count": 121,
+ "categories": [
+  {
+   "id": "international",
+   "label": "International"
+  },
+  {
+   "id": "domestic",
+   "label": "Domestic"
+  },
+  {
+   "id": "military",
+   "label": "Military & academy"
+  },
+  {
+   "id": "other",
+   "label": "Other"
+  },
+  {
+   "id": "global",
+   "label": "Global hubs"
+  }
+ ],
+ "documents": [
+  {
+   "icao": "OEAB",
+   "name": "Abha",
+   "kind": "domestic",
+   "lat": 18.24028,
+   "lon": 42.65639,
+   "elevation_ft": 6858,
+   "mag_var": "3° E",
+   "runways": [
+    "13",
+    "31"
+   ],
+   "frequencies": {
+    "APP": "124.500",
+    "ATIS": "128.650"
+   }
+  },
+  {
+   "icao": "OEAD",
+   "name": "Aradah",
+   "kind": "domestic",
+   "lat": 21.21861,
+   "lon": 55.26222,
+   "elevation_ft": 262,
+   "mag_var": "2° E",
+   "runways": [
+    "03",
+    "21"
+   ],
+   "frequencies": {
+    "ATIS": "120.300"
+   }
+  },
+  {
+   "icao": "OEAH",
+   "name": "Al Ahsa",
+   "kind": "domestic",
+   "lat": 25.28611,
+   "lon": 49.48611,
+   "elevation_ft": 588,
+   "mag_var": "3° E",
+   "runways": [
+    "16",
+    "34"
+   ],
+   "frequencies": {
+    "AFIS": "118.200",
+    "TWR": "118.200",
+    "ATIS": "128.850"
+   }
+  },
+  {
+   "icao": "OEAO",
+   "name": "Alula International",
+   "kind": "international",
+   "lat": 26.48306,
+   "lon": 38.11861,
+   "elevation_ft": 2045,
+   "mag_var": "4° E",
+   "runways": [
+    "12",
+    "30"
+   ],
+   "frequencies": {
+    "AFIS": "118.000",
+    "ATIS": "126.275"
+   }
+  },
+  {
+   "icao": "OEBA",
+   "name": "Al Baha - King Saud Bin Abdulaziz Airport",
+   "kind": "domestic",
+   "lat": 20.29833,
+   "lon": 41.63583,
+   "elevation_ft": 5459,
+   "mag_var": "3° E",
+   "runways": [
+    "07",
+    "25"
+   ],
+   "frequencies": {
+    "AFIS": "118.800"
+   }
+  },
+  {
+   "icao": "OEBH",
+   "name": "Bisha",
+   "kind": "domestic",
+   "lat": 19.98417,
+   "lon": 42.62306,
+   "elevation_ft": 3887,
+   "mag_var": "3° E",
+   "runways": [
+    "18",
+    "36"
+   ],
+   "frequencies": {
+    "AFIS": "118.300",
+    "ATIS": "127.400"
+   }
+  },
+  {
+   "icao": "OEBN",
+   "name": "Thablotin",
+   "kind": "domestic",
+   "lat": 19.83306,
+   "lon": 54.02083,
+   "elevation_ft": 403,
+   "mag_var": "1° E",
+   "runways": [
+    "17",
+    "35"
+   ],
+   "frequencies": {
+    "ATIS": "126.350",
+    "TWR": "127.000"
+   }
+  },
+  {
+   "icao": "OEBQ",
+   "name": "Abqaiq",
+   "kind": "domestic",
+   "lat": 25.91167,
+   "lon": 49.59167,
+   "elevation_ft": 234,
+   "mag_var": "3° E",
+   "runways": [
+    "15",
+    "33"
+   ]
+  },
+  {
+   "icao": "OEBT",
+   "name": "Batha",
+   "kind": "domestic",
+   "lat": 24.21611,
+   "lon": 51.45,
+   "elevation_ft": 258,
+   "mag_var": "2° E",
+   "runways": [
+    "14",
+    "32"
+   ],
+   "frequencies": {
+    "ATIS": "120.300"
+   }
+  },
+  {
+   "icao": "OEDF",
+   "name": "Dammam - King Fahd International",
+   "kind": "international",
+   "lat": 26.47111,
+   "lon": 49.79778,
+   "elevation_ft": 75,
+   "mag_var": "3° E",
+   "runways": [
+    "16L",
+    "34R",
+    "16R",
+    "34L"
+   ],
+   "frequencies": {
+    "APP": "126.300",
+    "TWR": "124.350",
+    "GND": "121.750"
+   }
+  },
+  {
+   "icao": "OEDM",
+   "name": "Al Dawadmi",
+   "kind": "domestic",
+   "lat": 24.44972,
+   "lon": 44.12111,
+   "elevation_ft": 3031,
+   "mag_var": "3° E",
+   "runways": [
+    "15",
+    "33"
+   ]
+  },
+  {
+   "icao": "OEDR",
+   "name": "Dhahran - King Abdulaziz Air Base",
+   "kind": "military",
+   "lat": 26.26417,
+   "lon": 50.1525,
+   "elevation_ft": 84,
+   "mag_var": "2° E",
+   "runways": [
+    "16L",
+    "34R",
+    "16R",
+    "34L"
+   ],
+   "frequencies": {
+    "RADAR": "121.500",
+    "APP": "124.650",
+    "TWR": "118.400"
+   }
+  },
+  {
+   "icao": "OEGN",
+   "name": "Jazan - King Abdullah Bin Abdulaziz",
+   "kind": "domestic",
+   "lat": 16.90111,
+   "lon": 42.58583,
+   "elevation_ft": 20,
+   "mag_var": "2° E",
+   "runways": [
+    "15",
+    "33"
+   ],
+   "frequencies": {
+    "APP": "124.900",
+    "TWR": "118.000",
+    "ATIS": "127.850"
+   }
+  },
+  {
+   "icao": "OEGS",
+   "name": "Gassim - Prince Naif Bin Abdulaziz",
+   "kind": "domestic",
+   "lat": 26.30278,
+   "lon": 43.77417,
+   "elevation_ft": 2126,
+   "mag_var": "4° E",
+   "runways": [
+    "15",
+    "33"
+   ],
+   "frequencies": {
+    "APP": "119.150",
+    "TWR": "118.000",
+    "ATIS": "128.600"
+   }
+  },
+  {
+   "icao": "OEGT",
+   "name": "Guriat",
+   "kind": "domestic",
+   "lat": 31.41194,
+   "lon": 37.27944,
+   "elevation_ft": 1684,
+   "mag_var": "4° E",
+   "runways": [
+    "10",
+    "28"
+   ]
+  },
+  {
+   "icao": "OEHL",
+   "name": "Hail",
+   "kind": "domestic",
+   "lat": 27.43972,
+   "lon": 41.68639,
+   "elevation_ft": 3305,
+   "mag_var": "4° E",
+   "runways": [
+    "18",
+    "36"
+   ],
+   "frequencies": {
+    "APP": "123.200",
+    "TWR": "118.700",
+    "ATIS": "127.850"
+   }
+  },
+  {
+   "icao": "OEHR",
+   "name": "Harad",
+   "kind": "domestic",
+   "lat": 24.10167,
+   "lon": 49.22333,
+   "elevation_ft": 919,
+   "mag_var": "2° E",
+   "runways": [
+    "16",
+    "34"
+   ]
+  },
+  {
+   "icao": "OEHW",
+   "name": "Al Hawtah",
+   "kind": "domestic",
+   "lat": 22.96667,
+   "lon": 46.9,
+   "elevation_ft": 2091,
+   "mag_var": "3° E",
+   "runways": [
+    "15",
+    "33"
+   ]
+  },
+  {
+   "icao": "OEJB",
+   "name": "Jubail",
+   "kind": "domestic",
+   "lat": 27.03889,
+   "lon": 49.405,
+   "elevation_ft": 26,
+   "mag_var": "3° E",
+   "runways": [
+    "17",
+    "35"
+   ],
+   "frequencies": {
+    "TWR": "120.500",
+    "ATIS": "128.400"
+   }
+  },
+  {
+   "icao": "OEJF",
+   "name": "King Faisal Naval Base",
+   "kind": "military",
+   "lat": 21.34806,
+   "lon": 39.17306,
+   "elevation_ft": 16,
+   "mag_var": "3° E",
+   "runways": [
+    "15",
+    "33"
+   ],
+   "frequencies": {
+    "TWR": "143.350"
+   }
+  },
+  {
+   "icao": "OEJL",
+   "name": "King Abdulaziz Naval Base",
+   "kind": "military",
+   "lat": 26.94167,
+   "lon": 49.70417,
+   "elevation_ft": 8,
+   "mag_var": "3° E",
+   "runways": [
+    "15",
+    "33"
+   ]
+  },
+  {
+   "icao": "OEJN",
+   "name": "Jeddah - King Abdulaziz International",
+   "kind": "international",
+   "lat": 21.68111,
+   "lon": 39.15611,
+   "elevation_ft": 50,
+   "mag_var": "4° E",
+   "runways": [
+    "16C",
+    "34C",
+    "16L",
+    "34R",
+    "16R",
+    "34L"
+   ],
+   "frequencies": {
+    "APP": "345.600",
+    "TWR": "118.200",
+    "GND": "121.700",
+    "ATIS": "126.200"
+   }
+  },
+  {
+   "icao": "OEKA",
+   "name": "Khashm Alan",
+   "kind": "domestic",
+   "lat": 24.62083,
+   "lon": 46.91861,
+   "elevation_ft": 1848,
+   "mag_var": "3° E",
+   "runways": [
+    "16",
+    "34"
+   ],
+   "frequencies": {
+    "TWR": "122.875",
+    "GND": "123.075"
+   }
+  },
+  {
+   "icao": "OEKF",
+   "name": "King Faisal Air Academy",
+   "kind": "military",
+   "lat": 26.08528,
+   "lon": 45.19667,
+   "elevation_ft": 2434,
+   "mag_var": "3° E",
+   "runways": [
+    "15L",
+    "33R",
+    "15R",
+    "33L"
+   ],
+   "frequencies": {
+    "APP": "122.000",
+    "TWR": "123.300",
+    "GND": "124.500",
+    "ATIS": "121.000"
+   }
+  },
+  {
+   "icao": "OEKM",
+   "name": "Khamis Mushait - King Khaled Air Base",
+   "kind": "military",
+   "lat": 18.30111,
+   "lon": 42.80083,
+   "elevation_ft": 6778,
+   "mag_var": "2° E",
+   "runways": [
+    "06",
+    "24",
+    "14",
+    "32"
+   ],
+   "frequencies": {
+    "TWR": "119.300",
+    "ATIS": "376.600"
+   }
+  },
+  {
+   "icao": "OEKN",
+   "name": "Khurais",
+   "kind": "domestic",
+   "lat": 25.26528,
+   "lon": 48.17833,
+   "elevation_ft": 1362,
+   "mag_var": "3° E",
+   "runways": [
+    "16",
+    "34"
+   ]
+  },
+  {
+   "icao": "OEMA",
+   "name": "Madinah - Prince Mohammad Bin Abdulaziz International",
+   "kind": "international",
+   "lat": 24.55028,
+   "lon": 39.70583,
+   "elevation_ft": 2134,
+   "mag_var": "4° E",
+   "runways": [
+    "17",
+    "35",
+    "18",
+    "36"
+   ],
+   "frequencies": {
+    "APP": "125.100",
+    "TWR": "118.300",
+    "ATIS": "126.850"
+   }
+  },
+  {
+   "icao": "OEMD",
+   "name": "Al Mindassah",
+   "kind": "domestic",
+   "lat": 24.62583,
+   "lon": 39.19528,
+   "elevation_ft": 1910,
+   "mag_var": "4° E",
+   "runways": [
+    "09",
+    "27"
+   ]
+  },
+  {
+   "icao": "OENG",
+   "name": "Nejran",
+   "kind": "domestic",
+   "lat": 17.61139,
+   "lon": 44.41917,
+   "elevation_ft": 3983,
+   "mag_var": "3° E",
+   "runways": [
+    "06",
+    "24"
+   ],
+   "frequencies": {
+    "AFIS": "118.500",
+    "TWR": "118.500",
+    "ATIS": "128.800"
+   }
+  },
+  {
+   "icao": "OENN",
+   "name": "Neom Bay Airport",
+   "kind": "domestic",
+   "lat": 27.92389,
+   "lon": 35.29389,
+   "elevation_ft": 32,
+   "mag_var": "5° E",
+   "runways": [
+    "15",
+    "33"
+   ],
+   "frequencies": {
+    "AFIS": "121.775",
+    "TWR": "118.150"
+   }
+  },
+  {
+   "icao": "OEOM",
+   "name": "Um Almelh",
+   "kind": "domestic",
+   "lat": 19.10972,
+   "lon": 50.11944,
+   "elevation_ft": 778,
+   "mag_var": "2° E",
+   "runways": [
+    "05",
+    "23"
+   ],
+   "frequencies": {
+    "ATIS": "120.300"
+   }
+  },
+  {
+   "icao": "OEPA",
+   "name": "Al Qaisumah International",
+   "kind": "international",
+   "lat": 28.33639,
+   "lon": 46.12694,
+   "elevation_ft": 1175,
+   "mag_var": "4° E",
+   "runways": [
+    "16",
+    "34"
+   ]
+  },
+  {
+   "icao": "OEPC",
+   "name": "Pump Station 3",
+   "kind": "other",
+   "lat": 25.175,
+   "lon": 47.48833,
+   "elevation_ft": 1741,
+   "mag_var": "3° E",
+   "runways": [
+    "14",
+    "32"
+   ]
+  },
+  {
+   "icao": "OEPF",
+   "name": "Pump Station 6",
+   "kind": "other",
+   "lat": 24.71,
+   "lon": 44.965,
+   "elevation_ft": 2534,
+   "mag_var": "3° E",
+   "runways": [
+    "17",
+    "35"
+   ]
+  },
+  {
+   "icao": "OEPI",
+   "name": "Pump Station 9",
+   "kind": "other",
+   "lat": 24.27667,
+   "lon": 42.14333,
+   "elevation_ft": 2968,
+   "mag_var": "3° E",
+   "runways": [
+    "17",
+    "35"
+   ]
+  },
+  {
+   "icao": "OEPJ",
+   "name": "Pump Station 10",
+   "kind": "other",
+   "lat": 24.10667,
+   "lon": 41.03667,
+   "elevation_ft": 2841,
+   "mag_var": "3° E",
+   "runways": [
+    "18",
+    "36"
+   ]
+  },
+  {
+   "icao": "OEPS",
+   "name": "Al Kharj - Prince Sultan Air Base",
+   "kind": "military",
+   "lat": 24.07028,
+   "lon": 47.56222,
+   "elevation_ft": 1645,
+   "mag_var": "2° E",
+   "runways": [
+    "17L",
+    "35R",
+    "17R",
+    "35L"
+   ],
+   "frequencies": {
+    "APP": "123.425",
+    "TWR": "126.800",
+    "ATIS": "127.500"
+   }
+  },
+  {
+   "icao": "OERB",
+   "name": "Rabigh",
+   "kind": "domestic",
+   "lat": 22.7025,
+   "lon": 39.07,
+   "elevation_ft": 22,
+   "mag_var": "4° E",
+   "runways": [
+    "15",
+    "33"
+   ]
+  },
+  {
+   "icao": "OERF",
+   "name": "Rafha",
+   "kind": "domestic",
+   "lat": 29.62639,
+   "lon": 43.49056,
+   "elevation_ft": 1474,
+   "mag_var": "4° E",
+   "runways": [
+    "11",
+    "29"
+   ]
+  },
+  {
+   "icao": "OERG",
+   "name": "Alrass",
+   "kind": "domestic",
+   "lat": 25.66917,
+   "lon": 43.54917,
+   "elevation_ft": 2417,
+   "mag_var": "3° E",
+   "runways": [
+    "15",
+    "33"
+   ]
+  },
+  {
+   "icao": "OERK",
+   "name": "Riyadh - King Khaled International",
+   "kind": "international",
+   "lat": 24.96278,
+   "lon": 46.70806,
+   "elevation_ft": 2053,
+   "mag_var": "3° E",
+   "runways": [
+    "15L",
+    "33R",
+    "15R",
+    "33L"
+   ],
+   "frequencies": {
+    "APP": "124.100",
+    "TWR": "118.600",
+    "GND": "121.800",
+    "ATIS": "127.150"
+   }
+  },
+  {
+   "icao": "OERM",
+   "name": "Ras Mishab",
+   "kind": "domestic",
+   "lat": 28.07889,
+   "lon": 48.61111,
+   "elevation_ft": 13,
+   "mag_var": "3° E",
+   "runways": [
+    "16",
+    "34"
+   ]
+  },
+  {
+   "icao": "OERR",
+   "name": "Arar",
+   "kind": "domestic",
+   "lat": 30.90667,
+   "lon": 41.13833,
+   "elevation_ft": 1819,
+   "mag_var": "5° E",
+   "runways": [
+    "10",
+    "28"
+   ]
+  },
+  {
+   "icao": "OERS",
+   "name": "Hanak - Red Sea International",
+   "kind": "international",
+   "lat": 25.62833,
+   "lon": 37.08889,
+   "elevation_ft": 164,
+   "mag_var": "4° E",
+   "runways": [
+    "15L",
+    "33R",
+    "15R",
+    "33L"
+   ],
+   "frequencies": {
+    "TWR": "118.200",
+    "ATIS": "126.550"
+   }
+  },
+  {
+   "icao": "OERT",
+   "name": "Ras Tanura",
+   "kind": "domestic",
+   "lat": 26.72333,
+   "lon": 50.03167,
+   "elevation_ft": 9,
+   "mag_var": "3° E",
+   "runways": [
+    "15",
+    "33"
+   ]
+  },
+  {
+   "icao": "OESB",
+   "name": "Shaibah",
+   "kind": "domestic",
+   "lat": 22.515,
+   "lon": 53.965,
+   "elevation_ft": 274,
+   "mag_var": "2° E",
+   "runways": [
+    "09",
+    "27"
+   ]
+  },
+  {
+   "icao": "OESD",
+   "name": "Hafr Al Batin - King Saud Air Base",
+   "kind": "military",
+   "lat": 27.90083,
+   "lon": 45.52806,
+   "elevation_ft": 1352,
+   "mag_var": "3° E",
+   "runways": [
+    "13",
+    "31"
+   ],
+   "frequencies": {
+    "AFIS": "120.700"
+   }
+  },
+  {
+   "icao": "OESH",
+   "name": "Sharurah",
+   "kind": "domestic",
+   "lat": 17.46694,
+   "lon": 47.12139,
+   "elevation_ft": 2382,
+   "mag_var": "2° E",
+   "runways": [
+    "08",
+    "26"
+   ]
+  },
+  {
+   "icao": "OESK",
+   "name": "Al Jouf",
+   "kind": "domestic",
+   "lat": 29.78528,
+   "lon": 40.09972,
+   "elevation_ft": 2261,
+   "mag_var": "4° E",
+   "runways": [
+    "10",
+    "28"
+   ],
+   "frequencies": {
+    "TWR": "118.650"
+   }
+  },
+  {
+   "icao": "OESN",
+   "name": "King Salman Airbase",
+   "kind": "military",
+   "lat": 24.46833,
+   "lon": 46.65028,
+   "elevation_ft": 2450,
+   "mag_var": "3° E",
+   "runways": [
+    "02L",
+    "20R",
+    "02R",
+    "20L"
+   ],
+   "frequencies": {
+    "TWR": "118.100",
+    "ATIS": "133.500"
+   }
+  },
+  {
+   "icao": "OEST",
+   "name": "Shabitah",
+   "kind": "domestic",
+   "lat": 22.70889,
+   "lon": 53.28472,
+   "elevation_ft": 342,
+   "mag_var": "1° E",
+   "runways": [
+    "13",
+    "31"
+   ],
+   "frequencies": {
+    "TWR": "127.000"
+   }
+  },
+  {
+   "icao": "OETB",
+   "name": "Tabuk - Prince Sultan Bin Abdulaziz",
+   "kind": "domestic",
+   "lat": 28.37306,
+   "lon": 36.62139,
+   "elevation_ft": 2551,
+   "mag_var": "4° E",
+   "runways": [
+    "06",
+    "24",
+    "13",
+    "31"
+   ],
+   "frequencies": {
+    "APP": "119.700",
+    "TWR": "125.900",
+    "GND": "126.300",
+    "ATIS": "128.200"
+   }
+  },
+  {
+   "icao": "OETF",
+   "name": "Taif International Airport",
+   "kind": "international",
+   "lat": 21.48333,
+   "lon": 40.54444,
+   "elevation_ft": 4848,
+   "mag_var": "3° E",
+   "runways": [
+    "07",
+    "25",
+    "17",
+    "35"
+   ],
+   "frequencies": {
+    "APP": "119.700",
+    "TWR": "118.700",
+    "ATIS": "127.050"
+   }
+  },
+  {
+   "icao": "OETH",
+   "name": "Thumamah",
+   "kind": "domestic",
+   "lat": 25.21417,
+   "lon": 46.64083,
+   "elevation_ft": 1870,
+   "mag_var": "3° E",
+   "runways": [
+    "17",
+    "35"
+   ]
+  },
+  {
+   "icao": "OETN",
+   "name": "Ras Tanajib",
+   "kind": "domestic",
+   "lat": 27.86833,
+   "lon": 48.76833,
+   "elevation_ft": 30,
+   "mag_var": "3° E",
+   "runways": [
+    "15",
+    "33"
+   ]
+  },
+  {
+   "icao": "OETR",
+   "name": "Turaif",
+   "kind": "domestic",
+   "lat": 31.69472,
+   "lon": 38.73194,
+   "elevation_ft": 2809,
+   "mag_var": "5° E",
+   "runways": [
+    "10",
+    "28"
+   ]
+  },
+  {
+   "icao": "OEUD",
+   "name": "Udhailiyah",
+   "kind": "domestic",
+   "lat": 25.145,
+   "lon": 49.32833,
+   "elevation_ft": 772,
+   "mag_var": "3° E",
+   "runways": [
+    "18",
+    "36"
+   ]
+  },
+  {
+   "icao": "OEUM",
+   "name": "Ummlejj",
+   "kind": "domestic",
+   "lat": 25.28111,
+   "lon": 37.205,
+   "elevation_ft": 50,
+   "mag_var": "4° E",
+   "runways": [
+    "10",
+    "28"
+   ]
+  },
+  {
+   "icao": "OEWD",
+   "name": "Wadi Al Dawasir",
+   "kind": "domestic",
+   "lat": 20.50417,
+   "lon": 45.19889,
+   "elevation_ft": 2062,
+   "mag_var": "3° E",
+   "runways": [
+    "10",
+    "28"
+   ]
+  },
+  {
+   "icao": "OEWJ",
+   "name": "Wejh",
+   "kind": "domestic",
+   "lat": 26.19861,
+   "lon": 36.47611,
+   "elevation_ft": 66,
+   "mag_var": "4° E",
+   "runways": [
+    "15",
+    "33"
+   ],
+   "frequencies": {
+    "AFIS": "118.700"
+   }
+  },
+  {
+   "icao": "OEYN",
+   "name": "Yenbo - Prince Abdulmohsin Bin Abdulaziz",
+   "kind": "domestic",
+   "lat": 24.14417,
+   "lon": 38.06361,
+   "elevation_ft": 44,
+   "mag_var": "4° E",
+   "runways": [
+    "10",
+    "28"
+   ],
+   "frequencies": {
+    "TWR": "118.100",
+    "ATIS": "127.450"
+   }
+  },
+  {
+   "icao": "OMDB",
+   "name": "Dubai International",
+   "iata": "DXB",
+   "city": "Dubai",
+   "country": "United Arab Emirates",
+   "kind": "global",
+   "lat": 25.2528,
+   "lon": 55.3644,
+   "elevation_ft": 62,
+   "runways": [
+    "12L",
+    "30R",
+    "12R",
+    "30L"
+   ]
+  },
+  {
+   "icao": "OMAA",
+   "name": "Abu Dhabi - Zayed International",
+   "iata": "AUH",
+   "city": "Abu Dhabi",
+   "country": "United Arab Emirates",
+   "kind": "global",
+   "lat": 24.433,
+   "lon": 54.6511,
+   "elevation_ft": 88,
+   "runways": [
+    "13L",
+    "31R",
+    "13R",
+    "31L"
+   ]
+  },
+  {
+   "icao": "OTHH",
+   "name": "Doha - Hamad International",
+   "iata": "DOH",
+   "city": "Doha",
+   "country": "Qatar",
+   "kind": "global",
+   "lat": 25.2731,
+   "lon": 51.6081,
+   "elevation_ft": 13,
+   "runways": [
+    "16L",
+    "34R",
+    "16R",
+    "34L"
+   ]
+  },
+  {
+   "icao": "OBBI",
+   "name": "Bahrain International",
+   "iata": "BAH",
+   "city": "Manama",
+   "country": "Bahrain",
+   "kind": "global",
+   "lat": 26.2708,
+   "lon": 50.6336,
+   "elevation_ft": 6,
+   "runways": [
+    "12L",
+    "30R",
+    "12R",
+    "30L"
+   ]
+  },
+  {
+   "icao": "OKBK",
+   "name": "Kuwait International",
+   "iata": "KWI",
+   "city": "Kuwait City",
+   "country": "Kuwait",
+   "kind": "global",
+   "lat": 29.2266,
+   "lon": 47.9689,
+   "elevation_ft": 206,
+   "runways": [
+    "15L",
+    "33R",
+    "15R",
+    "33L"
+   ]
+  },
+  {
+   "icao": "OOMS",
+   "name": "Muscat International",
+   "iata": "MCT",
+   "city": "Muscat",
+   "country": "Oman",
+   "kind": "global",
+   "lat": 23.5933,
+   "lon": 58.2844,
+   "elevation_ft": 48,
+   "runways": [
+    "08",
+    "26"
+   ]
+  },
+  {
+   "icao": "OJAI",
+   "name": "Amman - Queen Alia International",
+   "iata": "AMM",
+   "city": "Amman",
+   "country": "Jordan",
+   "kind": "global",
+   "lat": 31.7226,
+   "lon": 35.9932,
+   "elevation_ft": 2395,
+   "runways": [
+    "08L",
+    "26R",
+    "08R",
+    "26L"
+   ]
+  },
+  {
+   "icao": "OIIE",
+   "name": "Tehran - Imam Khomeini International",
+   "iata": "IKA",
+   "city": "Tehran",
+   "country": "Iran",
+   "kind": "global",
+   "lat": 35.4161,
+   "lon": 51.1522,
+   "elevation_ft": 3305,
+   "runways": [
+    "11R",
+    "29L",
+    "11L",
+    "29R"
+   ]
+  },
+  {
+   "icao": "HECA",
+   "name": "Cairo International",
+   "iata": "CAI",
+   "city": "Cairo",
+   "country": "Egypt",
+   "kind": "global",
+   "lat": 30.1219,
+   "lon": 31.4056,
+   "elevation_ft": 382,
+   "runways": [
+    "05L",
+    "23R",
+    "05C",
+    "23C",
+    "05R",
+    "23L"
+   ]
+  },
+  {
+   "icao": "FAOR",
+   "name": "Johannesburg - O. R. Tambo International",
+   "iata": "JNB",
+   "city": "Johannesburg",
+   "country": "South Africa",
+   "kind": "global",
+   "lat": -26.1392,
+   "lon": 28.246,
+   "elevation_ft": 5558,
+   "runways": [
+    "03L",
+    "21R",
+    "03R",
+    "21L"
+   ]
+  },
+  {
+   "icao": "HAAB",
+   "name": "Addis Ababa - Bole International",
+   "iata": "ADD",
+   "city": "Addis Ababa",
+   "country": "Ethiopia",
+   "kind": "global",
+   "lat": 8.9779,
+   "lon": 38.7993,
+   "elevation_ft": 7657,
+   "runways": [
+    "07R",
+    "25L",
+    "07L",
+    "25R"
+   ]
+  },
+  {
+   "icao": "GMMN",
+   "name": "Casablanca - Mohammed V International",
+   "iata": "CMN",
+   "city": "Casablanca",
+   "country": "Morocco",
+   "kind": "global",
+   "lat": 33.3675,
+   "lon": -7.5897,
+   "elevation_ft": 656,
+   "runways": [
+    "17L",
+    "35R",
+    "17R",
+    "35L"
+   ]
+  },
+  {
+   "icao": "DNMM",
+   "name": "Lagos - Murtala Muhammed International",
+   "iata": "LOS",
+   "city": "Lagos",
+   "country": "Nigeria",
+   "kind": "global",
+   "lat": 6.5774,
+   "lon": 3.3212,
+   "elevation_ft": 135,
+   "runways": [
+    "18L",
+    "36R",
+    "18R",
+    "36L"
+   ]
+  },
+  {
+   "icao": "EGLL",
+   "name": "London Heathrow",
+   "iata": "LHR",
+   "city": "London",
+   "country": "United Kingdom",
+   "kind": "global",
+   "lat": 51.4706,
+   "lon": -0.4619,
+   "elevation_ft": 83,
+   "runways": [
+    "09L",
+    "27R",
+    "09R",
+    "27L"
+   ]
+  },
+  {
+   "icao": "LFPG",
+   "name": "Paris - Charles de Gaulle",
+   "iata": "CDG",
+   "city": "Paris",
+   "country": "France",
+   "kind": "global",
+   "lat": 49.0097,
+   "lon": 2.5479,
+   "elevation_ft": 392,
+   "runways": [
+    "08L",
+    "26R",
+    "08R",
+    "26L",
+    "09L",
+    "27R",
+    "09R",
+    "27L"
+   ]
+  },
+  {
+   "icao": "EDDF",
+   "name": "Frankfurt",
+   "iata": "FRA",
+   "city": "Frankfurt",
+   "country": "Germany",
+   "kind": "global",
+   "lat": 50.0333,
+   "lon": 8.5706,
+   "elevation_ft": 364,
+   "runways": [
+    "07L",
+    "25R",
+    "07C",
+    "25C",
+    "07R",
+    "25L",
+    "18"
+   ]
+  },
+  {
+   "icao": "EHAM",
+   "name": "Amsterdam Schiphol",
+   "iata": "AMS",
+   "city": "Amsterdam",
+   "country": "Netherlands",
+   "kind": "global",
+   "lat": 52.3086,
+   "lon": 4.7639,
+   "elevation_ft": -11,
+   "runways": [
+    "18R",
+    "36L",
+    "06",
+    "24",
+    "09",
+    "27",
+    "18C",
+    "36C",
+    "18L",
+    "36R"
+   ]
+  },
+  {
+   "icao": "LEMD",
+   "name": "Madrid - Adolfo Suarez Barajas",
+   "iata": "MAD",
+   "city": "Madrid",
+   "country": "Spain",
+   "kind": "global",
+   "lat": 40.4936,
+   "lon": -3.5668,
+   "elevation_ft": 1998,
+   "runways": [
+    "14L",
+    "32R",
+    "14R",
+    "32L",
+    "18L",
+    "36R",
+    "18R",
+    "36L"
+   ]
+  },
+  {
+   "icao": "LIRF",
+   "name": "Rome - Leonardo da Vinci Fiumicino",
+   "iata": "FCO",
+   "city": "Rome",
+   "country": "Italy",
+   "kind": "global",
+   "lat": 41.8003,
+   "lon": 12.2389,
+   "elevation_ft": 13,
+   "runways": [
+    "16L",
+    "34R",
+    "16R",
+    "34L",
+    "07",
+    "25"
+   ]
+  },
+  {
+   "icao": "LTFM",
+   "name": "Istanbul Airport",
+   "iata": "IST",
+   "city": "Istanbul",
+   "country": "Türkiye",
+   "kind": "global",
+   "lat": 41.2619,
+   "lon": 28.7414,
+   "elevation_ft": 325,
+   "runways": [
+    "16L",
+    "34R",
+    "16R",
+    "34L",
+    "17L",
+    "35R",
+    "17R",
+    "35L"
+   ]
+  },
+  {
+   "icao": "EDDM",
+   "name": "Munich",
+   "iata": "MUC",
+   "city": "Munich",
+   "country": "Germany",
+   "kind": "global",
+   "lat": 48.3538,
+   "lon": 11.7861,
+   "elevation_ft": 1487,
+   "runways": [
+    "08R",
+    "26L",
+    "08L",
+    "26R"
+   ]
+  },
+  {
+   "icao": "LSZH",
+   "name": "Zurich",
+   "iata": "ZRH",
+   "city": "Zurich",
+   "country": "Switzerland",
+   "kind": "global",
+   "lat": 47.4647,
+   "lon": 8.5492,
+   "elevation_ft": 1416,
+   "runways": [
+    "16",
+    "34",
+    "14",
+    "32",
+    "10",
+    "28"
+   ]
+  },
+  {
+   "icao": "VIDP",
+   "name": "Delhi - Indira Gandhi International",
+   "iata": "DEL",
+   "city": "Delhi",
+   "country": "India",
+   "kind": "global",
+   "lat": 28.5562,
+   "lon": 77.1,
+   "elevation_ft": 777,
+   "runways": [
+    "09",
+    "27",
+    "10",
+    "28",
+    "11",
+    "29"
+   ]
+  },
+  {
+   "icao": "VABB",
+   "name": "Mumbai - Chhatrapati Shivaji Maharaj",
+   "iata": "BOM",
+   "city": "Mumbai",
+   "country": "India",
+   "kind": "global",
+   "lat": 19.0887,
+   "lon": 72.8679,
+   "elevation_ft": 39,
+   "runways": [
+    "09",
+    "27",
+    "14",
+    "32"
+   ]
+  },
+  {
+   "icao": "VHHH",
+   "name": "Hong Kong International",
+   "iata": "HKG",
+   "city": "Hong Kong",
+   "country": "Hong Kong SAR",
+   "kind": "global",
+   "lat": 22.308,
+   "lon": 113.9185,
+   "elevation_ft": 28,
+   "runways": [
+    "07L",
+    "25R",
+    "07R",
+    "25L"
+   ]
+  },
+  {
+   "icao": "WSSS",
+   "name": "Singapore Changi",
+   "iata": "SIN",
+   "city": "Singapore",
+   "country": "Singapore",
+   "kind": "global",
+   "lat": 1.3502,
+   "lon": 103.9944,
+   "elevation_ft": 22,
+   "runways": [
+    "02L",
+    "20R",
+    "02C",
+    "20C",
+    "02R",
+    "20L"
+   ]
+  },
+  {
+   "icao": "RJTT",
+   "name": "Tokyo Haneda",
+   "iata": "HND",
+   "city": "Tokyo",
+   "country": "Japan",
+   "kind": "global",
+   "lat": 35.5523,
+   "lon": 139.7798,
+   "elevation_ft": 21,
+   "runways": [
+    "16L",
+    "34R",
+    "16R",
+    "34L",
+    "04",
+    "22",
+    "05",
+    "23"
+   ]
+  },
+  {
+   "icao": "RKSI",
+   "name": "Seoul - Incheon International",
+   "iata": "ICN",
+   "city": "Seoul",
+   "country": "South Korea",
+   "kind": "global",
+   "lat": 37.4691,
+   "lon": 126.4505,
+   "elevation_ft": 23,
+   "runways": [
+    "15L",
+    "33R",
+    "15R",
+    "33L",
+    "16",
+    "34"
+   ]
+  },
+  {
+   "icao": "ZBAA",
+   "name": "Beijing Capital International",
+   "iata": "PEK",
+   "city": "Beijing",
+   "country": "China",
+   "kind": "global",
+   "lat": 40.0801,
+   "lon": 116.5846,
+   "elevation_ft": 116,
+   "runways": [
+    "01",
+    "19",
+    "18L",
+    "36R",
+    "18R",
+    "36L"
+   ]
+  },
+  {
+   "icao": "ZSPD",
+   "name": "Shanghai Pudong International",
+   "iata": "PVG",
+   "city": "Shanghai",
+   "country": "China",
+   "kind": "global",
+   "lat": 31.1434,
+   "lon": 121.8052,
+   "elevation_ft": 13,
+   "runways": [
+    "16L",
+    "34R",
+    "16R",
+    "34L",
+    "17L",
+    "35R",
+    "17R",
+    "35L"
+   ]
+  },
+  {
+   "icao": "VTBS",
+   "name": "Bangkok - Suvarnabhumi",
+   "iata": "BKK",
+   "city": "Bangkok",
+   "country": "Thailand",
+   "kind": "global",
+   "lat": 13.69,
+   "lon": 100.7501,
+   "elevation_ft": 5,
+   "runways": [
+    "01L",
+    "19R",
+    "01R",
+    "19L"
+   ]
+  },
+  {
+   "icao": "WMKK",
+   "name": "Kuala Lumpur International",
+   "iata": "KUL",
+   "city": "Kuala Lumpur",
+   "country": "Malaysia",
+   "kind": "global",
+   "lat": 2.7456,
+   "lon": 101.7099,
+   "elevation_ft": 69,
+   "runways": [
+    "14L",
+    "32R",
+    "14R",
+    "32L",
+    "15",
+    "33"
+   ]
+  },
+  {
+   "icao": "KJFK",
+   "name": "New York - John F. Kennedy International",
+   "iata": "JFK",
+   "city": "New York",
+   "country": "United States",
+   "kind": "global",
+   "lat": 40.6398,
+   "lon": -73.7789,
+   "elevation_ft": 13,
+   "runways": [
+    "04L",
+    "22R",
+    "04R",
+    "22L",
+    "13L",
+    "31R",
+    "13R",
+    "31L"
+   ]
+  },
+  {
+   "icao": "KLAX",
+   "name": "Los Angeles International",
+   "iata": "LAX",
+   "city": "Los Angeles",
+   "country": "United States",
+   "kind": "global",
+   "lat": 33.9425,
+   "lon": -118.4081,
+   "elevation_ft": 125,
+   "runways": [
+    "06L",
+    "24R",
+    "06R",
+    "24L",
+    "07L",
+    "25R",
+    "07R",
+    "25L"
+   ]
+  },
+  {
+   "icao": "KORD",
+   "name": "Chicago O’Hare International",
+   "iata": "ORD",
+   "city": "Chicago",
+   "country": "United States",
+   "kind": "global",
+   "lat": 41.9786,
+   "lon": -87.9048,
+   "elevation_ft": 672,
+   "runways": [
+    "10L",
+    "28R",
+    "10C",
+    "28C",
+    "10R",
+    "28L",
+    "09L",
+    "27R",
+    "09R",
+    "27L",
+    "04L",
+    "22R",
+    "04R",
+    "22L"
+   ]
+  },
+  {
+   "icao": "KATL",
+   "name": "Atlanta - Hartsfield-Jackson International",
+   "iata": "ATL",
+   "city": "Atlanta",
+   "country": "United States",
+   "kind": "global",
+   "lat": 33.6367,
+   "lon": -84.4281,
+   "elevation_ft": 1026,
+   "runways": [
+    "08L",
+    "26R",
+    "08R",
+    "26L",
+    "09L",
+    "27R",
+    "09R",
+    "27L",
+    "10",
+    "28"
+   ]
+  },
+  {
+   "icao": "KSFO",
+   "name": "San Francisco International",
+   "iata": "SFO",
+   "city": "San Francisco",
+   "country": "United States",
+   "kind": "global",
+   "lat": 37.6189,
+   "lon": -122.375,
+   "elevation_ft": 13,
+   "runways": [
+    "10L",
+    "28R",
+    "10R",
+    "28L",
+    "01L",
+    "19R",
+    "01R",
+    "19L"
+   ]
+  },
+  {
+   "icao": "KMIA",
+   "name": "Miami International",
+   "iata": "MIA",
+   "city": "Miami",
+   "country": "United States",
+   "kind": "global",
+   "lat": 25.7959,
+   "lon": -80.287,
+   "elevation_ft": 8,
+   "runways": [
+    "08L",
+    "26R",
+    "08R",
+    "26L",
+    "09",
+    "27",
+    "12",
+    "30"
+   ]
+  },
+  {
+   "icao": "CYYZ",
+   "name": "Toronto - Pearson International",
+   "iata": "YYZ",
+   "city": "Toronto",
+   "country": "Canada",
+   "kind": "global",
+   "lat": 43.6772,
+   "lon": -79.6306,
+   "elevation_ft": 569,
+   "runways": [
+    "05",
+    "23",
+    "06L",
+    "24R",
+    "06R",
+    "24L",
+    "15L",
+    "33R",
+    "15R",
+    "33L"
+   ]
+  },
+  {
+   "icao": "YSSY",
+   "name": "Sydney - Kingsford Smith",
+   "iata": "SYD",
+   "city": "Sydney",
+   "country": "Australia",
+   "kind": "global",
+   "lat": -33.9461,
+   "lon": 151.1772,
+   "elevation_ft": 21,
+   "runways": [
+    "16R",
+    "34L",
+    "16L",
+    "34R",
+    "07",
+    "25"
+   ]
+  },
+  {
+   "icao": "OMSJ",
+   "name": "Sharjah International",
+   "iata": "SHJ",
+   "city": "Sharjah",
+   "country": "United Arab Emirates",
+   "kind": "global",
+   "lat": 25.3286,
+   "lon": 55.5172,
+   "elevation_ft": 111,
+   "runways": [
+    "12",
+    "30"
+   ]
+  },
+  {
+   "icao": "OMAL",
+   "name": "Al Ain International",
+   "iata": "AAN",
+   "city": "Al Ain",
+   "country": "United Arab Emirates",
+   "kind": "global",
+   "lat": 24.2617,
+   "lon": 55.6092,
+   "elevation_ft": 869,
+   "runways": [
+    "01",
+    "19"
+   ]
+  },
+  {
+   "icao": "OMRK",
+   "name": "Ras Al Khaimah International",
+   "iata": "RKT",
+   "city": "Ras Al Khaimah",
+   "country": "United Arab Emirates",
+   "kind": "global",
+   "lat": 25.6135,
+   "lon": 55.9388,
+   "elevation_ft": 102,
+   "runways": [
+    "16",
+    "34"
+   ]
+  },
+  {
+   "icao": "OMFJ",
+   "name": "Fujairah International",
+   "iata": "FJR",
+   "city": "Fujairah",
+   "country": "United Arab Emirates",
+   "kind": "global",
+   "lat": 25.1122,
+   "lon": 56.324,
+   "elevation_ft": 152,
+   "runways": [
+    "11",
+    "29"
+   ]
+  },
+  {
+   "icao": "OMDW",
+   "name": "Dubai - Al Maktoum International",
+   "iata": "DWC",
+   "city": "Dubai",
+   "country": "United Arab Emirates",
+   "kind": "global",
+   "lat": 24.8964,
+   "lon": 55.1614,
+   "elevation_ft": 114,
+   "runways": [
+    "12",
+    "30"
+   ]
+  },
+  {
+   "icao": "OOSA",
+   "name": "Salalah",
+   "iata": "SLL",
+   "city": "Salalah",
+   "country": "Oman",
+   "kind": "global",
+   "lat": 17.0387,
+   "lon": 54.0913,
+   "elevation_ft": 73,
+   "runways": [
+    "08",
+    "26"
+   ]
+  },
+  {
+   "icao": "HEGN",
+   "name": "Hurghada International",
+   "iata": "HRG",
+   "city": "Hurghada",
+   "country": "Egypt",
+   "kind": "global",
+   "lat": 27.1783,
+   "lon": 33.7994,
+   "elevation_ft": 52,
+   "runways": [
+    "16",
+    "34"
+   ]
+  },
+  {
+   "icao": "HESH",
+   "name": "Sharm El Sheikh International",
+   "iata": "SSH",
+   "city": "Sharm El Sheikh",
+   "country": "Egypt",
+   "kind": "global",
+   "lat": 27.9773,
+   "lon": 34.395,
+   "elevation_ft": 143,
+   "runways": [
+    "04L",
+    "22R",
+    "04R",
+    "22L"
+   ]
+  },
+  {
+   "icao": "HEMA",
+   "name": "Marsa Alam International",
+   "iata": "RMF",
+   "city": "Marsa Alam",
+   "country": "Egypt",
+   "kind": "global",
+   "lat": 25.5573,
+   "lon": 34.5837,
+   "elevation_ft": 251,
+   "runways": [
+    "04",
+    "22"
+   ]
+  },
+  {
+   "icao": "HEBA",
+   "name": "Alexandria - Borg El Arab International",
+   "iata": "HBE",
+   "city": "Alexandria",
+   "country": "Egypt",
+   "kind": "global",
+   "lat": 30.9177,
+   "lon": 29.6964,
+   "elevation_ft": 177,
+   "runways": [
+    "14",
+    "32"
+   ]
+  },
+  {
+   "icao": "OJAQ",
+   "name": "Aqaba - King Hussein International",
+   "iata": "AQJ",
+   "city": "Aqaba",
+   "country": "Jordan",
+   "kind": "global",
+   "lat": 29.6116,
+   "lon": 35.0181,
+   "elevation_ft": 175,
+   "runways": [
+    "01",
+    "19"
+   ]
+  },
+  {
+   "icao": "ORBI",
+   "name": "Baghdad International",
+   "iata": "BGW",
+   "city": "Baghdad",
+   "country": "Iraq",
+   "kind": "global",
+   "lat": 33.2625,
+   "lon": 44.2346,
+   "elevation_ft": 114,
+   "runways": [
+    "15L",
+    "33R",
+    "15R",
+    "33L"
+   ]
+  },
+  {
+   "icao": "ORMM",
+   "name": "Basra International",
+   "iata": "BSR",
+   "city": "Basra",
+   "country": "Iraq",
+   "kind": "global",
+   "lat": 30.5491,
+   "lon": 47.6621,
+   "elevation_ft": 11,
+   "runways": [
+    "13",
+    "31"
+   ]
+  },
+  {
+   "icao": "OIKB",
+   "name": "Bandar Abbas International",
+   "iata": "BND",
+   "city": "Bandar Abbas",
+   "country": "Iran",
+   "kind": "global",
+   "lat": 27.2183,
+   "lon": 56.3778,
+   "elevation_ft": 22,
+   "runways": [
+    "03",
+    "21"
+   ]
+  },
+  {
+   "icao": "OISS",
+   "name": "Shiraz International",
+   "iata": "SYZ",
+   "city": "Shiraz",
+   "country": "Iran",
+   "kind": "global",
+   "lat": 29.5392,
+   "lon": 52.5898,
+   "elevation_ft": 4920,
+   "runways": [
+    "11L",
+    "29R",
+    "11R",
+    "29L"
+   ]
+  },
+  {
+   "icao": "OIMM",
+   "name": "Mashhad International",
+   "iata": "MHD",
+   "city": "Mashhad",
+   "country": "Iran",
+   "kind": "global",
+   "lat": 36.2351,
+   "lon": 59.641,
+   "elevation_ft": 3263,
+   "runways": [
+    "13",
+    "31"
+   ]
+  },
+  {
+   "icao": "OPLA",
+   "name": "Lahore - Allama Iqbal International",
+   "iata": "LHE",
+   "city": "Lahore",
+   "country": "Pakistan",
+   "kind": "global",
+   "lat": 31.5216,
+   "lon": 74.4036,
+   "elevation_ft": 712,
+   "runways": [
+    "18L",
+    "36R",
+    "18R",
+    "36L"
+   ]
+  },
+  {
+   "icao": "OPIS",
+   "name": "Islamabad International",
+   "iata": "ISB",
+   "city": "Islamabad",
+   "country": "Pakistan",
+   "kind": "global",
+   "lat": 33.5491,
+   "lon": 72.8258,
+   "elevation_ft": 1761,
+   "runways": [
+    "10",
+    "28"
+   ]
+  },
+  {
+   "icao": "LCLK",
+   "name": "Larnaca International",
+   "iata": "LCA",
+   "city": "Larnaca",
+   "country": "Cyprus",
+   "kind": "global",
+   "lat": 34.8751,
+   "lon": 33.6249,
+   "elevation_ft": 8,
+   "runways": [
+    "04",
+    "22"
+   ]
+  },
+  {
+   "icao": "LTAI",
+   "name": "Antalya",
+   "iata": "AYT",
+   "city": "Antalya",
+   "country": "Türkiye",
+   "kind": "global",
+   "lat": 36.8987,
+   "lon": 30.8005,
+   "elevation_ft": 177,
+   "runways": [
+    "18L",
+    "36R",
+    "18R",
+    "36L",
+    "18C",
+    "36C"
+   ]
+  }
+ ]
+}

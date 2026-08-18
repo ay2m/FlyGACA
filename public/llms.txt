@@ -1,0 +1,39 @@
+# Fly GACA
+
+> Fly GACA is an independent, educational platform and open regulatory library for Saudi civil aviation (GACAR). It helps pilots, flight instructors, student pilots and aviation professionals find and study the regulations, with calculators, study tools and an AI flight instructor (Captain Adel) that cites the exact GACAR Part and section. It is bilingual (English/Arabic, RTL) and free to study.
+
+Important: Fly GACA is **not affiliated with GACA** (the General Authority of Civil Aviation). It is a study and reference aid — it never replaces the official source, and every regulatory answer points to the exact Part/section to verify against the official GACA publication.
+
+Operator: Fly GACA is operated by BDA Company International (شركة بدع الدولية), a Saudi limited-liability company — CR 7030976893, VAT 311415259500003, Riyadh, Saudi Arabia.
+
+## Library (GACAR regulations & reference)
+
+- [Reference Library](https://flygaca.com/library): Search all 74 GACAR Parts plus FAA, ICAO and GACA reference handbooks, full-text and deep-linked to the exact section.
+- [GACAR Part 61 — Pilot certification](https://flygaca.com/library/part-61): Licensing, ratings and recency requirements.
+- [GACAR Part 67 — Medical](https://flygaca.com/library/part-67): Aeromedical certification standards.
+- [GACAR Part 91 — General operating & flight rules](https://flygaca.com/library/part-91): VFR/IFR rules, equipment, oxygen, minima.
+- [VFR Charts](https://flygaca.com/library/charts): Saudi visual charts from the GACA AIP.
+
+## Tools (flight calculators)
+
+- [Flight Tools & Calculators](https://flygaca.com/tools): 55 free calculators — crosswind, density altitude, TAS, weight & balance, METAR/TAF decoders, and more.
+- [Kingdom Airspace HUD](https://flygaca.com/hud): An interactive, fully simulated training view of Saudi airspace — animated scenario traffic over real AIP CTR/TMA zones. Not real air traffic.
+
+## Guides
+
+- [Pilot Guides](https://flygaca.com/guides): Plain-language guides to becoming a pilot in Saudi Arabia — PPL/CPL requirements, the GACA medical, licence conversion (FAA/EASA → GACA) and SAELPT, each citing the GACAR Part.
+
+## Study & exam prep
+
+- [Study & Exam Prep](https://flygaca.com/study): GACAR quizzes (12 domains), flashcards, ground school and a timed mock exam — every answer linked to the cited regulation.
+
+## Captain Adel (AI flight instructor)
+
+- [Captain Adel](https://flygaca.com/chat): Ask questions about Saudi GACAR and get answers grounded in the regulation with the exact Part and section cited.
+
+## Optional
+
+- [About](https://flygaca.com/about): What Fly GACA is, and the not-affiliated-with-GACA disclaimer.
+- [Pricing](https://flygaca.com/pricing): Free to study; Pro and flight-school plans.
+- [For Flight Schools](https://flygaca.com/schools): Bulk seat licences and admin dashboard for academies.
+- [Sitemap](https://flygaca.com/sitemap.xml): All indexable pages.

@@ -1,0 +1,57 @@
+.wrap {
+  position: relative;
+  inline-size: 140px;
+  block-size: 140px;
+  margin-block-start: var(--space-4);
+  margin-inline: auto;
+}
+
+.svg {
+  inline-size: 100%;
+  block-size: 100%;
+  /* Start the arc at 12 o'clock. */
+  transform: rotate(-90deg);
+}
+
+.track {
+  fill: none;
+  stroke: var(--border-bright);
+  stroke-width: 8;
+  opacity: 0.5;
+}
+
+.arc {
+  fill: none;
+  stroke: var(--brand);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: var(--circ);
+  stroke-dashoffset: var(--offset);
+  transition: stroke-dashoffset var(--dur-slow) var(--ease-glide);
+}
+
+.center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 2px;
+  text-align: center;
+}
+.id {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.day {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc {
+    transition: none;
+  }
+}

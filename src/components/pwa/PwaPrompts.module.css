@@ -1,0 +1,102 @@
+/* Offline indicator — a small pill pinned top-center under the nav. */
+.offline {
+  position: fixed;
+  inset-block-start: calc(var(--nav-h) + var(--space-2));
+  inset-inline: 0;
+  margin-inline: auto;
+  z-index: var(--z-sticky);
+  inline-size: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--falcon-clay, var(--warning));
+  color: var(--text-on-brand);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  box-shadow: var(--clay-shadow);
+}
+.dot {
+  inline-size: 7px;
+  block-size: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.85;
+}
+
+/* Bottom toast for update / offline-ready. */
+.toast {
+  position: fixed;
+  inset-block-end: calc(var(--space-5) + var(--safe-bottom, 0px));
+  inset-inline: var(--space-4);
+  margin-inline: auto;
+  z-index: var(--z-modal);
+  max-inline-size: 420px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow-hover);
+  animation: toast-rise var(--dur) var(--ease);
+}
+.toastText {
+  font-size: var(--fs-sm);
+  color: var(--text);
+}
+.toastActions {
+  display: flex;
+  gap: var(--space-2);
+}
+.primary {
+  min-height: 36px;
+  padding-inline: var(--space-4);
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--brand);
+  color: var(--text-on-brand);
+  font: inherit;
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+.primary:hover {
+  background: var(--brand-hover);
+}
+.dismiss {
+  min-height: 36px;
+  padding-inline: var(--space-3);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+.dismiss:hover {
+  color: var(--text);
+}
+
+/* On mobile, lift the toast above the floating bottom dock so they don't stack. */
+@media (max-width: 860px) {
+  .toast {
+    inset-block-end: calc(var(--space-3) + var(--safe-bottom) + 84px);
+  }
+}
+
+@keyframes toast-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    animation: none;
+  }
+}

@@ -1,0 +1,330 @@
+{
+ "generated": "2026-05-24",
+ "count": 54,
+ "alerts": [
+  {
+   "slug": "ntsb-safety-alert-sa-006-aircraft-ground-icing",
+   "code": "SA-006",
+   "title": "Aircraft Ground Icing",
+   "snippet": "• Fine particl es of frost or ice, the size of a grain of table salt and distributed as spars ely as one per"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-011-thunderstorm-encounters",
+   "code": "SA-011",
+   "title": "Thunderstorm Encounters",
+   "snippet": "IFR pilots need to actively maintain awareness of"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-013-controlled-flight-into-terrain-in-visual-conditions",
+   "code": "SA-013",
+   "title": "Controlled Flight Into Terrain in Visual Conditions",
+   "snippet": "Controlled Flight Into Terrain in Visual Conditions"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-015-child-passenger-safety-on-aircraft",
+   "code": "SA-015",
+   "title": "Child Passenger Safety on Aircraft",
+   "snippet": "Parents urged to use child restraint systems when"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-016",
+   "code": "SA-016",
+   "title": "NTSB Safety Alert SA-016",
+   "snippet": "Pilots urged to be vigilant for unmarked meteorological"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-017-in-cockpit-nexrad-mosaic-imagery",
+   "code": "SA-017",
+   "title": "In-Cockpit NEXRAD Mosaic Imagery",
+   "snippet": "Actual Age of NEXRAD Data Can Differ Significantly"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-018-preventing-rote-callouts",
+   "code": "SA-018",
+   "title": "Preventing Rote Callouts",
+   "snippet": "Confirm Cockpit Indications Before Making Callouts"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-019-avoiding-aerodynamic-stalls",
+   "code": "SA-019",
+   "title": "Avoiding Aerodynamic Stalls",
+   "snippet": "A void this often deadly scenario through timely"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-020-reduced-visual-references-require-vigilance",
+   "code": "SA-020",
+   "title": "Reduced Visual References Require Vigilance",
+   "snippet": "Preparation and proficiency may help prevent accidents"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-021-is-your-aircraft-talking-to-you-listen",
+   "code": "SA-021",
+   "title": "Is Your Aircraft Talking to You Listen!",
+   "snippet": "Pay attention to signs of potential mechanical problems"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-022-mechanics-manage-risks-to-ensure-safety",
+   "code": "SA-022",
+   "title": "Mechanics Manage Risks to Ensure Safety",
+   "snippet": " Mistakes made while performing aircraft maintenance and inspection procedures"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-023-pilots-manage-risks-to-ensure-safety",
+   "code": "SA-023",
+   "title": "Pilots Manage Risks to Ensure Safety",
+   "snippet": " Although f ew pilots knowingly accept severe risks, accidents can also result when"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-025-avoid-nonoperational-use-of-portable-electronic-devices",
+   "code": "SA-025",
+   "title": "Avoid Nonoperational Use of Portable Electronic Devices",
+   "snippet": "Avoid Nonoperational Use of Portable Electronic"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-026-all-secure-all-clear",
+   "code": "SA-026",
+   "title": "All Secure, All Clear",
+   "snippet": "Be vigilant regarding accountability and security of"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-027-check-your-restraints",
+   "code": "SA-027",
+   "title": "Check Your Restraints",
+   "snippet": "Carefully f ollow restraint system maintenance and"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-028-proper-use-of-fiber-or-nylon-self-locking-nuts",
+   "code": "SA-028",
+   "title": "Proper Use of Fiber or Nylon Self-Locking Nuts",
+   "snippet": "Proper Use of Fiber or Nylon Self-Locking Nuts"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-029-engine-power-loss-due-to-carburetor-icing",
+   "code": "SA-029",
+   "title": "Engine Power Loss Due to Carburetor Icing",
+   "snippet": "Recognizing weather conditions and applying simple"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-030-armed-for-safety-emergency-locator-transmitters",
+   "code": "SA-030",
+   "title": "Armed for Safety Emergency Locator Transmitters",
+   "snippet": "“Armed” for Safety: Emergency Locator Transmitter s"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-031-safety-through-helicopter-simulators",
+   "code": "SA-031",
+   "title": "Safety Through Helicopter Simulators",
+   "snippet": "Use of simulators can prepare helicopter pilots for emergencies"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-032-helicopter-safety-starts-in-the-hangar",
+   "code": "SA-032",
+   "title": "Helicopter Safety Starts in the Hangar",
+   "snippet": "Proper h elicopter maintenance is critical to flight safety"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-033-landing-at-the-wrong-airport",
+   "code": "SA-033",
+   "title": "Landing at the Wrong Airport",
+   "snippet": " Without adequate preparation , robust monitoring , and cross -checking of position using all"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-035-preventing-obstacle-collision-accidents",
+   "code": "SA-035",
+   "title": "Preventing Obstacle Collision Accidents",
+   "snippet": "Both unseen and known obstacles present unique hazards ."
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-037-pilots-understand-impairment-risk",
+   "code": "SA-037",
+   "title": "Pilots Understand Impairment Risk",
+   "snippet": " Toxicology tests of pilots involved in fatal aviation accidents increasingly show"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-039-mastering-mountain-flying",
+   "code": "SA-039",
+   "title": "Mastering Mountain Flying",
+   "snippet": "Training is essential for mountain flying safety"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-040-understanding-flight-experience",
+   "code": "SA-040",
+   "title": "Understanding Flight Experience",
+   "snippet": "A rating alone cannot ensure safety: Training is key"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-041-pilots-perform-advanced-preflight-after-maintenance",
+   "code": "SA-041",
+   "title": "Pilots Perform Advanced Preflight After Maintenance",
+   "snippet": "Pilots: Perform Advanced Preflight After Maintenance"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-042-mechanics-prevent-misrigging-mistakes",
+   "code": "SA-042",
+   "title": "Mechanics Prevent Misrigging Mistakes",
+   "snippet": "Verify correct directional travel of controls and trim"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-045-see-and-be-seen-your-life-depends-on-it",
+   "code": "SA-045",
+   "title": "See and Be Seen Your Life Depends on It",
+   "snippet": "• Accidents have occurred in which pilots operating near one another did not maintain"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-048-flight-control-locks-overlooking-the-obvious",
+   "code": "SA-048",
+   "title": "Flight Control Locks Overlooking the Obvious",
+   "snippet": "Use Checklists to Prevent Procedural Omissions"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-050-pilots-fueling-mistakes",
+   "code": "SA-050",
+   "title": "Pilots Fueling Mistakes",
+   "snippet": "Learn how to detect if your aircraft has been misfueled"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-051-line-personnel-fueling-matters",
+   "code": "SA-051",
+   "title": "Line Personnel Fueling Matters",
+   "snippet": "Prevent misfueling through standardize d procedures for every aircraft"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-052-visual-illusions-the-ground-may-be-closer-than-it-appea",
+   "code": "SA-052",
+   "title": "Visual Illusions The Ground May Be Closer Than It Appears",
+   "snippet": "Visual Illusions : The Ground May Be Closer Than It Appears"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-053-arriving-at-a-major-fly-in-event",
+   "code": "SA-053",
+   "title": "Arriving at a Major Fly-In Event",
+   "snippet": "Arrivals at major fly-in events, such as SUN ‘n FUN and Experimental Aircraft Association (EAA) AirVenture,"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-054-control-foreign-object-debris",
+   "code": "SA-054",
+   "title": "Control Foreign Object Debris",
+   "snippet": "Account for all items after performing maintenance tasks!"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-055-pilots-help-atc-help-you",
+   "code": "SA-055",
+   "title": "Pilots Help ATC Help You",
+   "snippet": "Do not hesitate to tell controllers if you have an emergency"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-056-take-time-to-torque",
+   "code": "SA-056",
+   "title": "Take Time to Torque",
+   "snippet": " From 2009 to 2015, over 45 accidents and incidents have occurred that resulted"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-057-helicopter-landing-sites-free-from-debris",
+   "code": "SA-057",
+   "title": "Helicopter Landing Sites Free from Debris",
+   "snippet": "Foreign object debris can foul rotor systems and cause damage"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-058-prevent-midair-collisions-don-t-depend-on-vision-alone",
+   "code": "SA-058",
+   "title": "Prevent Midair Collisions Don't Depend on Vision Alone",
+   "snippet": "Prevent Midair Collisions: Don’t Depend on Vision Alone"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-060-stay-centered",
+   "code": "SA-060",
+   "title": "Stay Centered",
+   "snippet": " Loss of control during landing is one of the leading causes of general aviation"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-062-loss-of-tail-rotor-effectiveness-in-helicopters",
+   "code": "SA-062",
+   "title": "Loss of Tail Rotor Effectiveness in Helicopters",
+   "snippet": "Loss of Tail Rotor Effectiveness in Helicopters"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-064-pilot-weather-reports-pireps-pay-it-forward",
+   "code": "SA-064",
+   "title": "Pilot Weather Reports (PIREPs) Pay It Forward",
+   "snippet": "Pilot Weather Reports (PIREPs) : Pay It Forward"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-067-flying-on-empty",
+   "code": "SA-067",
+   "title": "Flying on Empty",
+   "snippet": "Within fuel-related accidents, fuel exhaustion and fuel starvation continue to be leading"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-069-pilots-prevent-carbon-monoxide-poisoning",
+   "code": "SA-069",
+   "title": "Pilots Prevent Carbon Monoxide Poisoning",
+   "snippet": "Carbon monoxide (CO) is a colorless, odorless, tasteless gas by-product of internal"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-070-mechanics-prevent-carbon-monoxide-poisoning",
+   "code": "SA-070",
+   "title": "Mechanics Prevent Carbon Monoxide Poisoning",
+   "snippet": "Carbon monoxide (CO) is a colorless, odorless, tasteless gas by-product of internal"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-071-do-your-takeoff-homework",
+   "code": "SA-071",
+   "title": "Do Your Takeoff Homework",
+   "snippet": "Typically used to save time, intersection takeoffs are a common practice in aviation, especially in"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-072-minding-weight-and-balance",
+   "code": "SA-072",
+   "title": "Minding Weight and Balance",
+   "snippet": "Improper or Unperformed Calculations Can be Fatal"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-075-pilots-ensure-your-fuel-selector-works",
+   "code": "SA-075",
+   "title": "Pilots Ensure Your Fuel Selector Works",
+   "snippet": "Worn components can lead to fuel starvation and"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-076-mechanics-be-wary-of-worn-fuel-selectors",
+   "code": "SA-076",
+   "title": "Mechanics Be Wary of Worn Fuel Selectors",
+   "snippet": "Worn components can lead to fuel starvation and"
+  },
+  {
+   "slug": "ntsb-safety-alert-sa-077-stabilized-approaches",
+   "code": "SA-077",
+   "title": "Stabilized Approaches",
+   "snippet": "Failing to establish and maintain a stabilized approach, or continuing an unstabilized approach,"
+  },
+  {
+   "slug": "ntsb-safety-study-airbag-performance-in-ga-restraint-systems-ss1101",
+   "code": "",
+   "title": "NTSB Safety Study - Airbag Performance in GA Restraint Systems (SS1101)",
+   "snippet": "Airbag Performance in General Aviation Restraint Systems"
+  },
+  {
+   "slug": "ntsb-safety-study-glass-cockpit-avionics-in-light-aircraft-ss1001",
+   "code": "",
+   "title": "NTSB Safety Study - Glass Cockpit Avionics in Light Aircraft (SS1001)",
+   "snippet": "Introduction of Glass Cockpit Avionics into Light Aircraft"
+  },
+  {
+   "slug": "ntsb-safety-study-public-and-ga-aircraft-accidents-ss0101",
+   "code": "",
+   "title": "NTSB Safety Study - Public and GA Aircraft Accidents (SS0101)",
+   "snippet": "PB2001-917004 National Transp ortation Safety Board"
+  },
+  {
+   "slug": "ntsb-safety-study-safety-of-experimental-amateur-built-aircraft-ss1201",
+   "code": "",
+   "title": "NTSB Safety Study - Safety of Experimental Amateur-Built Aircraft (SS1201)",
+   "snippet": "The Safety of Experimental Amateur -Built Aircraft"
+  },
+  {
+   "slug": "ntsb-safety-study-weather-related-general-aviation-accidents-ss0501",
+   "code": "",
+   "title": "NTSB Safety Study - Weather-Related General Aviation Accidents (SS0501)",
+   "snippet": "PB2005-917004 National Transp ortation Safety Board"
+  }
+ ]
+}

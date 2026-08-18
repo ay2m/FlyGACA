@@ -1,0 +1,50 @@
+.outputHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.copy {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: var(--space-2) var(--space-4);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  box-shadow: var(--clay-shadow);
+  cursor: pointer;
+  transition:
+    box-shadow var(--dur) var(--ease),
+    color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+.copy:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-1px);
+  color: var(--brand-hover);
+}
+.copy:active {
+  box-shadow: var(--clay-shadow-press);
+  transform: scale(0.97);
+}
+
+.letter {
+  margin: 0;
+  padding: var(--space-4);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  white-space: pre-wrap;
+  overflow-x: auto;
+}

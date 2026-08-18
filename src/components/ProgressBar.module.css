@@ -1,0 +1,20 @@
+.track {
+  inline-size: 100%;
+  block-size: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-raised);
+  overflow: hidden;
+}
+
+.fill {
+  block-size: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--grad-brand);
+  transition: inline-size var(--dur-slow) var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill {
+    transition: none;
+  }
+}

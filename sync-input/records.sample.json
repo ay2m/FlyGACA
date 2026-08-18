@@ -1,0 +1,81 @@
+{
+  "_comment": "SYNTHETIC FIXTURE — not real GACA data. Exercises the sync-gaca diff engine (new/changed/unchanged) across content types. The real bundle (sync-input/records.json) is produced by the Nimble extraction agents. Safe to delete.",
+  "generated": "2026-06-18",
+  "records": [
+    {
+      "kind": "part",
+      "slug": "part-91",
+      "part": "91",
+      "partNum": 91,
+      "title": "General Operating and Flight Rules",
+      "category": "airspace",
+      "sourceUrl": "https://gaca.gov.sa/-/media/Files/PDF/LawsAndRegulation/Aviation-Safety-and-Environmental-Sustainability/GACAR-Safety-Regulations/Part-91--General-Operating-and-Flight-Rules.pdf"
+    },
+    {
+      "kind": "part",
+      "slug": "part-63",
+      "part": "63",
+      "partNum": 63,
+      "title": "[SAMPLE] Flight Crewmember Certification Other Than Pilots",
+      "category": "licensing",
+      "sourceUrl": "https://gaca.gov.sa/-/media/Files/PDF/.../Part-63.pdf",
+      "revision": "Rev 1",
+      "effectiveDate": "2026-06-11",
+      "body": { "format": "pdf", "assetPath": "sync-input/assets/part-63.pdf" }
+    },
+    {
+      "kind": "ac",
+      "slug": "gaca-ac-021-02-parts-acceptable-for-use-on-saudi-registered-aircraft",
+      "title": "Parts Acceptable for Use on Saudi-Registered Aircraft",
+      "category": "gaca-guidance",
+      "badge": "GACA Advisory Circular",
+      "sourceUrl": "https://gaca.gov.sa/rules-and-regulations-category/.../ac-021-02-parts-acceptable-for-use-of-saudi-arabian-registered-aircraft"
+    },
+    {
+      "kind": "ac",
+      "slug": "gaca-ac-091-05-sample-new-circular",
+      "title": "[SAMPLE] A New GACA Advisory Circular",
+      "category": "gaca-guidance",
+      "badge": "GACA Advisory Circular",
+      "date": "2026-05-20",
+      "effectiveDate": "2026-05-20",
+      "sourceUrl": "https://gaca.gov.sa/.../ac-091-05",
+      "body": { "format": "pdf", "assetPath": "sync-input/assets/ac-091-05.pdf" }
+    },
+    {
+      "kind": "chart",
+      "slug": "jeddah-a",
+      "region": "Jeddah",
+      "variant": "A",
+      "label": "Jeddah — A",
+      "date": "09 Jul 2026",
+      "airac": "2607",
+      "body": { "format": "pdf", "assetPath": "sync-input/assets/jeddah-a.pdf" }
+    },
+    {
+      "kind": "chart",
+      "slug": "neom-c",
+      "region": "NEOM",
+      "variant": "C",
+      "label": "[SAMPLE] NEOM — C",
+      "date": "11 Jun 2026",
+      "airac": "2606"
+    },
+    {
+      "kind": "airport",
+      "icao": "OEAB",
+      "iata": "AHB",
+      "name_en": "Abha",
+      "name_ar": "أبها",
+      "effectiveDate": "2026-06-11"
+    },
+    {
+      "kind": "airport",
+      "icao": "OEWJ",
+      "iata": "EJH",
+      "name_en": "[SAMPLE] Al Wajh",
+      "name_ar": "الوجه",
+      "effectiveDate": "2026-06-11"
+    }
+  ]
+}

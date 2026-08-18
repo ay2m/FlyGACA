@@ -1,0 +1,44 @@
+/* The canonical card recipe — hairline edge + layered elevation + top sheen.
+   Every variant composes on the token scale; no raw colours. */
+
+.card {
+  position: relative;
+  background: var(--surface);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-1), var(--edge-sheen);
+}
+
+.raised {
+  background: var(--surface-raised);
+  box-shadow: var(--elev-2), var(--edge-sheen);
+}
+
+.interactive {
+  transition: var(--transition-interactive);
+}
+.interactive:hover {
+  transform: translateY(var(--hover-raise));
+  box-shadow: var(--elev-2), var(--edge-sheen);
+  border-color: color-mix(in srgb, var(--cat-color, var(--brand)) 40%, var(--border-bright));
+}
+.interactive:active {
+  transform: scale(var(--press-scale));
+}
+.interactive:focus-within {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Accent — a 3px inline-start bar in the category colour (mirrors in RTL). */
+.accent {
+  overflow: hidden;
+}
+.accent::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  inline-size: 3px;
+  background: var(--cat-color, var(--brand));
+}

@@ -1,0 +1,21 @@
+# Normalize line endings for every text file. Git stores LF and checks out LF on
+# all platforms, so a contributor on Windows can never introduce a CRLF-vs-LF
+# whole-file merge conflict.
+* text=auto eol=lf
+
+# Generated / machine-maintained files. `linguist-generated` hides them from
+# diff stats and PR review; `-diff` collapses their textual diff. Resolve their
+# conflicts by regenerating (see docs/MERGE-CONFLICTS.md), never by hand-merging.
+package-lock.json           linguist-generated=true -diff
+functions/package-lock.json linguist-generated=true -diff
+public/data/**              linguist-generated=true -diff
+
+# Binary assets — never treat as text (no eol rewriting, no diff).
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.ico  binary
+*.pdf  binary
+*.woff  binary
+*.woff2 binary

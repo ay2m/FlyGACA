@@ -1,0 +1,178 @@
+.card {
+  --glow-x: 50%;
+  --glow-y: -40%;
+  --glow-tint: var(--glow-teal);
+  position: relative;
+  overflow: hidden;
+  display: block;
+  min-block-size: 160px;
+  padding: var(--space-5);
+  /* A glassy top highlight over the tile face for spatial depth. */
+  background: linear-gradient(180deg, var(--sheen-top), transparent 38%), var(--bento-surface);
+  border: var(--hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-2);
+  transition: box-shadow var(--dur) var(--ease);
+}
+
+/* Deepen the drop shadow as the card lifts on hover/focus. Hover halves live
+   behind (hover: hover) so a tap on a touch device never strands the lifted
+   state; the focus-visible halves stay unconditional for keyboard users. */
+@media (hover: hover) {
+  .card:hover {
+    box-shadow: var(--elev-3);
+  }
+}
+
+.link:focus-visible {
+  box-shadow: var(--elev-3);
+}
+
+/* The whole tile is the link — keep it undecorated in every state so the global
+   a:hover underline (global.css) is never drawn across the card's body text.
+   Interactivity is carried by the glow, the hover lift, and the → arrow. */
+.link,
+.link:hover,
+.link:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Cursor-following perimeter illumination. The radial centre tracks the pointer
+   via --glow-x/--glow-y (set in useCardGlow); a faint hairline ring is layered on
+   the border. Hidden until hover, faded in/out with the standard transition. */
+.glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+  background: radial-gradient(
+    260px circle at var(--glow-x) var(--glow-y),
+    var(--glow-tint),
+    transparent 62%
+  );
+}
+
+@media (hover: hover) {
+  .card:hover .glow {
+    opacity: 1;
+  }
+}
+
+.link:focus-visible .glow {
+  opacity: 1;
+}
+
+/* A bright hairline that echoes the tone on hover, so the perimeter reads as a
+   glowing edge rather than a fill. */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  transition: border-color var(--dur) var(--ease);
+}
+
+@media (hover: hover) {
+  .card:hover::after {
+    border-color: var(--glow-edge, var(--border-bright));
+  }
+}
+
+.link:focus-visible::after {
+  border-color: var(--glow-edge, var(--border-bright));
+}
+
+.body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  gap: var(--space-2);
+}
+
+/* --- Tones --- */
+.toneDefault {
+  --glow-tint: var(--glow-teal);
+  --glow-edge: var(--brand-hover);
+}
+
+.toneCyan {
+  --glow-tint: var(--glow-neon-cyan);
+  --glow-edge: var(--neon-cyan);
+}
+
+.toneGreen {
+  --glow-tint: var(--glow-neon-green);
+  --glow-edge: var(--neon-green);
+}
+
+/* --- Spans (12-col desktop grid) --- */
+.spanSm {
+  grid-column: span 3;
+}
+
+.spanMd {
+  grid-column: span 4;
+}
+
+.spanLg {
+  grid-column: span 6;
+  grid-row: span 2;
+}
+
+.spanTall {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+/* Half-width single-row tile — the co-equal feature tiles (Ask / Search). */
+.spanWide {
+  grid-column: span 6;
+}
+
+/* Full-bleed row. `1 / -1` is column-count independent, so no breakpoint
+   overrides are needed — it spans the 12-, 6- and 1-column grids alike. */
+.spanFull {
+  grid-column: 1 / -1;
+}
+
+/* Tablet: 6-col grid — a deliberate 2-up rhythm. The nav/stat tiles pair
+   two-per-row (span 3 of 6); the feature tiles and the coverage radar keep the
+   full width so the primary actions and the data viz stay prominent. */
+@media (max-width: 960px) {
+  .spanSm,
+  .spanMd {
+    grid-column: span 3;
+  }
+  .spanLg,
+  .spanTall,
+  .spanWide {
+    grid-column: span 6;
+  }
+  .spanLg,
+  .spanTall {
+    grid-row: auto;
+  }
+}
+
+/* Mobile: single column */
+@media (max-width: 600px) {
+  .spanSm,
+  .spanMd,
+  .spanLg,
+  .spanTall,
+  .spanWide {
+    grid-column: 1 / -1;
+  }
+}

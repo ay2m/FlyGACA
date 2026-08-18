@@ -1,0 +1,69 @@
+/* App-aware greeting shown when the reader arrives from an app's store listing
+   (`/support?app=<pack-id>`). */
+.appContext {
+  margin-block-start: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--brand) 8%, transparent);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: baseline;
+}
+.appContext a {
+  color: var(--link);
+}
+
+/* FAQ disclosure list — mirrors the About page's claymorphic FAQ. */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.faq {
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  padding: var(--space-3) var(--space-5);
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: var(--fw-semibold);
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+}
+.faq summary:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.faq p {
+  margin-block: var(--space-3) var(--space-1);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+}
+
+/* "More help" — a compact row of pill links to the neighbouring legal docs. */
+.related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.related a {
+  padding: var(--space-1) var(--space-3);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  text-decoration: none;
+  transition: var(--transition-color);
+}
+.related a:hover {
+  border-color: var(--brand-hover);
+  color: var(--brand-hover);
+}

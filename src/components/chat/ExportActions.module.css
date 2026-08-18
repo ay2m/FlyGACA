@@ -1,0 +1,28 @@
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-block-size: 36px;
+  padding: var(--space-1) var(--space-3);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.action:hover {
+  border-color: var(--brand-hover);
+  color: var(--brand-hover);
+}
+
+.label {
+  line-height: 1;
+}

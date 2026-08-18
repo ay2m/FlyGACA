@@ -1,0 +1,138 @@
+{
+ "generated": "2026-06-11",
+ "source": "GACA AIP — VFR (UVR) charts",
+ "sourceUrl": "https://gaca.gov.sa",
+ "count": 13,
+ "documents": [
+  {
+   "region": "Abha",
+   "variant": "A",
+   "date": null,
+   "label": "Abha — A",
+   "slug": "abha-a",
+   "image": "assets/data/charts/abha-a.jpg",
+   "w": 2676,
+   "h": 3000
+  },
+  {
+   "region": "Abha",
+   "variant": "B",
+   "date": null,
+   "label": "Abha — B",
+   "slug": "abha-b",
+   "image": "assets/data/charts/abha-b.jpg",
+   "w": 2676,
+   "h": 3000
+  },
+  {
+   "region": "Abha",
+   "variant": "C",
+   "date": null,
+   "label": "Abha — C",
+   "slug": "abha-c",
+   "image": "assets/data/charts/abha-c.jpg",
+   "w": 2676,
+   "h": 3000
+  },
+  {
+   "region": "Alula, Tabuk and Neom",
+   "variant": "A",
+   "date": "16 Apr 2026",
+   "label": "Alula, Tabuk and Neom — A",
+   "slug": "alula-tabuk-and-neom-a",
+   "image": "assets/data/charts/alula-tabuk-and-neom-a.jpg",
+   "w": 3000,
+   "h": 2090
+  },
+  {
+   "region": "Alula, Tabuk and Neom",
+   "variant": "B",
+   "date": "22 Jan 2026",
+   "label": "Alula, Tabuk and Neom — B",
+   "slug": "alula-tabuk-and-neom-b",
+   "image": "assets/data/charts/alula-tabuk-and-neom-b.jpg",
+   "w": 3000,
+   "h": 2090
+  },
+  {
+   "region": "Dammam and Al Ahsa",
+   "variant": "",
+   "date": "22 Jan 2026",
+   "label": "Dammam and Al Ahsa",
+   "slug": "dammam-and-al-ahsa",
+   "image": "assets/data/charts/dammam-and-al-ahsa.jpg",
+   "w": 3000,
+   "h": 2251
+  },
+  {
+   "region": "Jeddah",
+   "variant": "A",
+   "date": "08 Jan 2026",
+   "label": "Jeddah — A",
+   "slug": "jeddah-a",
+   "image": "assets/data/charts/jeddah-a.jpg",
+   "w": 3000,
+   "h": 2246
+  },
+  {
+   "region": "Jeddah",
+   "variant": "B",
+   "date": "08 Jan 2026",
+   "label": "Jeddah — B",
+   "slug": "jeddah-b",
+   "image": "assets/data/charts/jeddah-b.jpg",
+   "w": 3000,
+   "h": 2246
+  },
+  {
+   "region": "Riyadh",
+   "variant": "250K",
+   "date": "04 Mar 2026",
+   "label": "Riyadh — 250K",
+   "slug": "riyadh-250k",
+   "image": "assets/data/charts/riyadh-250k.jpg",
+   "w": 3000,
+   "h": 1725
+  },
+  {
+   "region": "Riyadh",
+   "variant": "25K Legend",
+   "date": "04 Mar 2026",
+   "label": "Riyadh — 25K Legend",
+   "slug": "riyadh-25k-legend",
+   "image": "assets/data/charts/riyadh-25k-legend.jpg",
+   "w": 3000,
+   "h": 2828
+  },
+  {
+   "region": "Riyadh",
+   "variant": "25K",
+   "date": "04 Mar 2026",
+   "label": "Riyadh — 25K",
+   "slug": "riyadh-25k",
+   "image": "assets/data/charts/riyadh-25k.jpg",
+   "w": 2532,
+   "h": 3000
+  },
+  {
+   "region": "Taif",
+   "variant": "A",
+   "date": "22 Jan 2026",
+   "label": "Taif — A",
+   "slug": "taif-a",
+   "image": "assets/data/charts/taif-a.jpg",
+   "w": 3000,
+   "h": 2383
+  },
+  {
+   "region": "Taif",
+   "variant": "B",
+   "date": "22 Jan 2026",
+   "label": "Taif — B",
+   "slug": "taif-b",
+   "image": "assets/data/charts/taif-b.jpg",
+   "w": 3000,
+   "h": 1974
+  }
+ ]
+}

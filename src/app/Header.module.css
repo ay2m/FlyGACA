@@ -1,0 +1,678 @@
+.nav {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--z-sticky);
+  block-size: var(--nav-h);
+  padding-block-start: var(--safe-top);
+  display: flex;
+  align-items: center;
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-block-end: 1px solid transparent;
+  transition:
+    background var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+/* Elevated state — firmer surface, hairline + a quiet shadow once scrolled. */
+.nav.scrolled {
+  background: var(--surface-overlay);
+  border-block-end-color: var(--border);
+  box-shadow: var(--elev-1);
+}
+/* Brand-gradient hairline along the bottom edge; reveals on scroll. The mask
+   fades it out at both ends so it reads as a jeweled edge, not a stripe. */
+.nav::after {
+  content: '';
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+  block-size: 1px;
+  background: var(--grad-brand);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+}
+.nav.scrolled::after {
+  opacity: 0.6;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  inline-size: 100%;
+}
+
+/* --- Brand lockup: mark + wordmark --- */
+.lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-block-size: 44px;
+  padding-inline-end: var(--space-2);
+  border-radius: var(--radius-md);
+  transition:
+    opacity var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+.lockup:hover {
+  opacity: 0.96;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+.lockup:active {
+  transform: scale(0.98);
+}
+
+.mark {
+  inline-size: 36px;
+  block-size: 36px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
+}
+
+/* Cockpit / Night-Ops: the mark is a fixed teal/sage raster, so recolor it to the
+   theme's amber so it stops clashing with the amber wordmark + chrome. grayscale
+   flattens the teal/green hue split to luminance; sepia + hue-rotate repaint it
+   amber (bright/dim wings ≈ the cockpit amber ramp). Falcon theme is untouched. */
+:global(html[data-theme='cockpit']) .mark {
+  filter: grayscale(1) sepia(1) saturate(5) hue-rotate(5deg) brightness(1.15)
+    drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
+}
+
+.wordmark {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-black);
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  white-space: nowrap;
+}
+.wmFly {
+  color: var(--text);
+}
+.wmGaca {
+  margin-inline-start: 0.1em;
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* --- Primary nav --- */
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-inline: var(--space-3) auto;
+}
+
+.links a {
+  position: relative;
+  color: color-mix(in srgb, var(--text-muted) 35%, var(--text));
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  padding-block: var(--space-2);
+  padding-inline: var(--space-3);
+  min-block-size: 44px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  transition: var(--transition-color);
+}
+.links a:hover {
+  color: var(--text);
+  background: var(--brand-tint);
+  text-decoration: none;
+}
+/* Active state: soft brand-tint pill, semibold (not bold) — mirrors in RTL. */
+.links a.active {
+  color: var(--brand-hover);
+  background: var(--brand-tint);
+  font-weight: var(--fw-semibold);
+}
+/* Glowing underline dot inside the active pill (inset-inline + margin-inline
+   auto centers it in both directions, so no physical transforms). */
+.links a.active::after {
+  content: '';
+  position: absolute;
+  inset-block-end: 5px;
+  inset-inline: 0;
+  margin-inline: auto;
+  inline-size: 14px;
+  block-size: 2px;
+  border-radius: var(--radius-pill);
+  background: var(--brand-hover);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--brand-hover) 70%, transparent);
+}
+
+/* --- Desktop account dropdown (signed-in) --- */
+.accountMenu {
+  position: relative;
+}
+.accountMenu > summary {
+  list-style: none;
+  cursor: pointer;
+  /* Match the sibling nav links' pill affordance. */
+  color: color-mix(in srgb, var(--text-muted) 35%, var(--text));
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  padding-block: var(--space-2);
+  padding-inline: var(--space-3);
+  min-block-size: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border-radius: var(--radius-pill);
+  transition: var(--transition-color);
+}
+.accountMenu > summary::-webkit-details-marker {
+  display: none;
+}
+.accountMenu > summary:hover {
+  color: var(--text);
+  background: var(--brand-tint);
+}
+.accountMenu[open] > summary {
+  color: var(--brand-hover);
+  background: var(--brand-tint);
+}
+.accountCaret {
+  inline-size: 14px;
+  block-size: 14px;
+  transition: transform var(--dur) var(--ease);
+}
+.accountMenu[open] .accountCaret {
+  transform: rotate(180deg);
+}
+
+.accountPanel {
+  position: absolute;
+  inset-block-start: calc(100% + var(--space-1));
+  inset-inline-end: 0;
+  z-index: var(--z-dropdown, 60);
+  min-inline-size: 15rem;
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--surface-overlay);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elev-2);
+  animation: accountMenuIn var(--dur) var(--ease-entry);
+}
+@keyframes accountMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+.accountItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+  padding-inline: var(--space-3);
+  min-block-size: 44px;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  transition: var(--transition-color);
+}
+.accountItem:hover {
+  color: var(--text);
+  background: var(--brand-tint);
+  text-decoration: none;
+}
+.accountItemActive {
+  color: var(--brand-hover);
+  background: var(--brand-tint);
+}
+.accountItemIcon {
+  display: inline-flex;
+  inline-size: 20px;
+  block-size: 20px;
+  color: var(--text-dim);
+}
+.accountItem:hover .accountItemIcon,
+.accountItemActive .accountItemIcon {
+  color: inherit;
+}
+.accountMenuDivider {
+  block-size: 1px;
+  margin-block: var(--space-1);
+  margin-inline: var(--space-2);
+  background: var(--border);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  /* Anchor to the inline-end edge even when the nav is pulled out of flow
+     (mobile drawer is position: fixed, so its margin-end:auto no longer applies). */
+  margin-inline-start: auto;
+}
+
+/* --- Command-palette search trigger --- */
+.search {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: 44px;
+  padding-inline: var(--space-3);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.search:hover {
+  border-color: var(--brand-hover);
+  color: var(--text);
+  background: var(--brand-tint);
+}
+.searchGlyph {
+  font-size: var(--fs-lg);
+  line-height: 1;
+}
+.searchLabel {
+  white-space: nowrap;
+}
+.searchKbd {
+  padding: 1px 5px;
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+/* On small screens collapse to an icon-only button. */
+@media (max-width: 600px) {
+  .searchLabel,
+  .searchKbd {
+    display: none;
+  }
+  .search {
+    inline-size: 44px;
+    justify-content: center;
+    padding-inline: 0;
+  }
+}
+
+/* Flat hairline pill — shares the calm, borderless look of the footer controls. */
+.langToggle {
+  inline-size: 44px;
+  block-size: 44px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-bright);
+  background: transparent;
+  color: var(--text);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.langToggle:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--brand) 60%, transparent);
+  color: var(--brand-hover);
+  background: var(--brand-tint);
+}
+.langToggle:active {
+  transform: scale(0.95);
+  background: var(--brand-tint);
+}
+
+/* --- ⌘K search pill --- */
+.searchPill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  block-size: 44px;
+  padding-inline: var(--space-3);
+  border-radius: var(--radius-pill);
+  border: var(--hairline-bright);
+  background: var(--surface-sunken); /* reads as an input well, not a card */
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.searchPill:hover {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--brand) 60%, transparent);
+  background: var(--brand-tint);
+}
+.searchPill:active {
+  transform: scale(0.97);
+}
+.searchPill svg {
+  inline-size: 16px;
+  block-size: 16px;
+  flex: none;
+}
+/* Go Pro CTA — sparkle glyph sizing (ties the header CTA to the mobile menu's). */
+.cta svg {
+  inline-size: 16px;
+  block-size: 16px;
+  flex: none;
+}
+.searchPillKbd {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  background: color-mix(in srgb, var(--text) 6%, transparent);
+  border: 1px solid var(--border-bright);
+  border-radius: 5px;
+  padding: 1px 5px;
+  color: var(--text-dim);
+}
+
+/* --- Mobile bottom dock + "More" sheet (shown ≤860px; base = hidden) --- */
+.dock,
+.sheet {
+  display: none;
+}
+
+/* Mobile sheet backdrop (off-canvas tap target). */
+.backdrop {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  /* Slightly tighten the wordmark so the lockup never crowds the actions. */
+  .wordmark {
+    font-size: 1.15rem;
+  }
+
+  /* The inline nav gives way to the bottom dock on mobile. */
+  .links {
+    display: none;
+  }
+
+  /* Go Pro moves into the "More" sheet on mobile. */
+  .actions .cta {
+    display: none;
+  }
+
+  /* Collapse the search pill to its icon to save room in the header. */
+  .searchPillText,
+  .searchPillKbd {
+    display: none;
+  }
+  .searchPill {
+    padding-inline: 0;
+    inline-size: 44px;
+    justify-content: center;
+  }
+
+  /* --- Floating bottom dock --- */
+  .dock {
+    position: fixed;
+    inset-block-end: calc(var(--space-3) + var(--safe-bottom));
+    inset-inline: var(--space-4);
+    z-index: var(--z-sticky);
+    display: flex;
+    align-items: stretch;
+    gap: var(--space-1);
+    inline-size: auto;
+    max-inline-size: 30rem;
+    margin-inline: auto;
+    padding: var(--space-2);
+    background: var(--surface-overlay);
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    border: var(--hairline-bright);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--elev-3);
+  }
+
+  .dockItem {
+    position: relative;
+    flex: 1 1 0;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    min-inline-size: 0;
+    min-block-size: 52px;
+    padding-block: var(--space-1);
+    padding-inline: 2px;
+    border: 0;
+    background: transparent;
+    color: color-mix(in srgb, var(--text-muted) 30%, var(--text));
+    font-family: inherit;
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-medium);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-interactive);
+  }
+  /* Spotlight indicator: a small glowing dot above the active tab. The dot row
+     is reserved on every tab so the icon never shifts between states. */
+  .dockItem::before {
+    content: '';
+    inline-size: 5px;
+    block-size: 5px;
+    border-radius: var(--radius-pill);
+    background: transparent;
+    transition:
+      background var(--dur) var(--ease),
+      box-shadow var(--dur) var(--ease);
+  }
+  .dockItem svg {
+    inline-size: 22px;
+    block-size: 22px;
+  }
+  .dockItem span {
+    max-inline-size: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .dockItem:hover {
+    color: var(--text);
+    text-decoration: none;
+  }
+  .dockItem:active {
+    transform: scale(0.94);
+  }
+  .dockActive {
+    color: var(--brand-hover);
+  }
+  .dockActive::before {
+    background: var(--brand-hover);
+    box-shadow: 0 0 10px 1px color-mix(in srgb, var(--brand-hover) 60%, transparent);
+  }
+
+  /* While the sheet is open its backdrop rises above the header (--z-popover),
+     so the dock must sit above the backdrop to stay interactive. */
+  .dockRaised {
+    z-index: var(--z-overlay);
+  }
+
+  /* --- "More" sheet: floats just above the dock --- */
+  .sheet {
+    position: fixed;
+    inset-block-end: calc(var(--space-3) + var(--safe-bottom) + 72px);
+    inset-inline: var(--space-4);
+    z-index: var(--z-overlay);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    inline-size: auto;
+    max-inline-size: 30rem;
+    margin-inline: auto;
+    max-block-size: calc(100dvh - var(--nav-h) - 120px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: var(--space-3);
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    border: var(--hairline-bright);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--elev-3), var(--edge-sheen);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px) scale(0.98);
+    transform-origin: bottom center;
+    transition:
+      opacity var(--dur) var(--ease),
+      transform var(--dur) var(--ease),
+      visibility var(--dur) var(--ease);
+  }
+  .sheet.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+  /* Where discrete transitions are supported, upgrade the sheet to real
+     display:none semantics (out of the a11y tree and tab order when closed)
+     while keeping the same enter/exit motion. The visibility-based rules above
+     stay as the fallback. The 60ms focus defer in Header.tsx covers the
+     display flip exactly as it covered visibility. */
+  @supports (transition-behavior: allow-discrete) {
+    .sheet {
+      display: none;
+      transition-property: opacity, transform, display, overlay;
+      transition-duration: var(--dur);
+      transition-timing-function: var(--ease);
+      transition-behavior: allow-discrete;
+    }
+    .sheet.open {
+      display: flex;
+    }
+    @starting-style {
+      .sheet.open {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+      }
+    }
+  }
+  /* Section label atop the sheet. */
+  .sheetLabel {
+    margin-block: var(--space-1) var(--space-2);
+    margin-inline: var(--space-2);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-eyebrow);
+    color: var(--text-dim);
+  }
+  .sheetList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  /* Icon + label row — mirrors the dock's iconography. */
+  .sheetLink {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    inline-size: 100%;
+    min-block-size: 48px;
+    padding-inline: var(--space-3);
+    border-radius: var(--radius-md);
+    color: color-mix(in srgb, var(--text-muted) 30%, var(--text));
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    transition: var(--transition-color);
+  }
+  .sheetLink:hover {
+    color: var(--text);
+    background: var(--brand-tint);
+    text-decoration: none;
+  }
+  .sheetActive {
+    color: var(--brand-hover);
+    background: var(--brand-tint);
+    font-weight: var(--fw-semibold);
+  }
+  .sheetIcon {
+    display: inline-flex;
+    flex: none;
+    color: var(--brand-hover);
+  }
+  .sheetIcon svg {
+    inline-size: 20px;
+    block-size: 20px;
+  }
+  /* Hairline between the destinations and the upsell. */
+  .sheetDivider {
+    block-size: 1px;
+    margin-block: var(--space-2);
+    margin-inline: var(--space-2);
+    background: var(--border);
+  }
+  /* Go Pro — a gradient pill, not a flat slab. */
+  .sheetCta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    inline-size: 100%;
+    min-block-size: 48px;
+    padding-inline: var(--space-4);
+    border-radius: var(--radius-pill);
+    background: var(--brand);
+    color: var(--text-on-brand);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    box-shadow: var(--clay-shadow);
+    transition: var(--transition-interactive);
+  }
+  .sheetCta svg {
+    inline-size: 18px;
+    block-size: 18px;
+    flex: none;
+  }
+  .sheetCta:hover {
+    box-shadow: var(--clay-shadow-hover);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  .sheetCta:active {
+    transform: scale(0.98);
+  }
+
+  /* Dimmed backdrop behind the sheet — covers the whole page including the
+     header, so no chrome stays clickable under the scrim. */
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-popover);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: color-mix(in srgb, var(--falcon-night) 62%, transparent);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity var(--dur) var(--ease),
+      visibility var(--dur) var(--ease);
+  }
+  .backdropShown {
+    opacity: 1;
+    visibility: visible;
+  }
+}

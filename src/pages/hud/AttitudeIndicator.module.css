@@ -1,0 +1,60 @@
+.adi {
+  position: relative;
+  inline-size: 96px;
+  block-size: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--border-bright);
+  box-shadow: var(--elev-1);
+  flex-shrink: 0;
+}
+
+/* Oversized sky/ground card: rotates with bank, slides with pitch. */
+.horizon {
+  position: absolute;
+  inset: -60%;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent calc(50% - 1px),
+      var(--neon-green) calc(50% - 1px),
+      var(--neon-green) calc(50% + 1px),
+      transparent calc(50% + 1px)
+    ),
+    linear-gradient(
+      to bottom,
+      var(--falcon-teal) 0%,
+      var(--falcon-teal) 50%,
+      var(--falcon-clay) 50%
+    );
+  transition: transform 1s linear;
+}
+
+/* Fixed miniature wings + centre dot (auto margins centre RTL-safely). */
+.wings {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  inline-size: 44px;
+  block-size: 3px;
+  background: var(--text);
+  border-radius: var(--radius-pill);
+  opacity: 0.9;
+}
+
+.wings::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .horizon {
+    transition: none;
+  }
+}

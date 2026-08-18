@@ -1,0 +1,15 @@
+{
+  // markdownlint config for the regulatory Markdown source (content/regulations/**).
+  // See https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+  "default": true,
+  // Prose summaries of long regulatory sections can run wide; don't enforce a hard wrap.
+  "MD013": false,
+  // Allow inline HTML sparingly (e.g. callouts) — keep it minimal.
+  "MD033": false,
+  // First line need not be a top-level heading (files lead with YAML frontmatter).
+  "MD041": false,
+  // Don't treat the frontmatter `title:` as an H1 — the body's `# Part NN` is the only H1.
+  "MD025": { "front_matter_title": "" },
+  // Permit duplicate sibling headings like repeated "Subpart A — General" across files.
+  "MD024": { "siblings_only": true }
+}

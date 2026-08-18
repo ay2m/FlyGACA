@@ -1,0 +1,36 @@
+.ring {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+}
+
+.svg {
+  inline-size: 100%;
+  block-size: 100%;
+  /* Start the arc at 12 o'clock. */
+  transform: rotate(-90deg);
+}
+
+.track {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  opacity: 0.25;
+}
+
+.arc {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: var(--circ);
+  stroke-dashoffset: var(--offset);
+  transition: stroke-dashoffset var(--dur) var(--ease-glide);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc {
+    transition: none;
+  }
+}

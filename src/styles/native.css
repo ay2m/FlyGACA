@@ -1,0 +1,25 @@
+/* ============================================================
+   Native shell adjustments — applied only on <html class="is-native">
+   (set by native-bridge.ts inside the Capacitor app). The web build keeps
+   --safe-* at 0, so none of these rules change anything in a browser.
+   ============================================================ */
+
+html.is-native {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Keep page content clear of the home indicator and the landscape notch. */
+html.is-native body {
+  padding-inline: env(safe-area-inset-left, 0px) env(safe-area-inset-right, 0px);
+}
+html.is-native footer {
+  padding-block-end: calc(var(--space-8, 2rem) + var(--safe-bottom));
+}
+
+/* The native WebView never shows browser chrome, so the app supplies its own
+   selection-disable for chrome elements (mirrors a native feel). */
+html.is-native :is(nav, header, footer) {
+  -webkit-user-select: none;
+  user-select: none;
+}

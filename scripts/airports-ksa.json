@@ -1,0 +1,2562 @@
+{
+ "generated": "2026-05-23",
+ "source": "Fly GACA — derived from AIP-KSA AD 2",
+ "count": 61,
+ "airports": [
+  {
+   "icao": "OEAB",
+   "iata": "",
+   "name_en": "Abha",
+   "name_ar": "Abha",
+   "city_en": "Abha",
+   "city_ar": "Abha",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 18.24028,
+   "lon": 42.65639,
+   "elev_ft": 6858,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "13"
+    },
+    {
+     "id": "31"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "APP",
+     "v": "124.500 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "128.650 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 13 / 31"
+    }
+   ]
+  },
+  {
+   "icao": "OEBQ",
+   "iata": "",
+   "name_en": "Abqaiq",
+   "name_ar": "Abqaiq",
+   "city_en": "Abqaiq",
+   "city_ar": "Abqaiq",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 25.91167,
+   "lon": 49.59167,
+   "elev_ft": 234,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15"
+    },
+    {
+     "id": "33"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 15 / 33"
+    }
+   ]
+  },
+  {
+   "icao": "OEAH",
+   "iata": "",
+   "name_en": "Al Ahsa",
+   "name_ar": "Al Ahsa",
+   "city_en": "Al Ahsa",
+   "city_ar": "Al Ahsa",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 25.28611,
+   "lon": 49.48611,
+   "elev_ft": 588,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "16"
+    },
+    {
+     "id": "34"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "AFIS",
+     "v": "118.200 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "118.200 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "128.850 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 16 / 34"
+    }
+   ]
+  },
+  {
+   "icao": "OEBA",
+   "iata": "",
+   "name_en": "Al Baha - King Saud Bin Abdulaziz Airport",
+   "name_ar": "Al Baha - King Saud Bin Abdulaziz Airport",
+   "city_en": "Al Baha - King Saud Bin Abdulaziz Airport",
+   "city_ar": "Al Baha - King Saud Bin Abdulaziz Airport",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 20.29833,
+   "lon": 41.63583,
+   "elev_ft": 5459,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "07"
+    },
+    {
+     "id": "25"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "AFIS",
+     "v": "118.800 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 07 / 25"
+    }
+   ]
+  },
+  {
+   "icao": "OEDM",
+   "iata": "",
+   "name_en": "Al Dawadmi",
+   "name_ar": "Al Dawadmi",
+   "city_en": "Al Dawadmi",
+   "city_ar": "Al Dawadmi",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 24.44972,
+   "lon": 44.12111,
+   "elev_ft": 3031,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15"
+    },
+    {
+     "id": "33"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 15 / 33"
+    }
+   ]
+  },
+  {
+   "icao": "OEHW",
+   "iata": "",
+   "name_en": "Al Hawtah",
+   "name_ar": "Al Hawtah",
+   "city_en": "Al Hawtah",
+   "city_ar": "Al Hawtah",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 22.96667,
+   "lon": 46.9,
+   "elev_ft": 2091,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15"
+    },
+    {
+     "id": "33"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 15 / 33"
+    }
+   ]
+  },
+  {
+   "icao": "OESK",
+   "iata": "",
+   "name_en": "Al Jouf",
+   "name_ar": "Al Jouf",
+   "city_en": "Al Jouf",
+   "city_ar": "Al Jouf",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 29.78528,
+   "lon": 40.09972,
+   "elev_ft": 2261,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "10"
+    },
+    {
+     "id": "28"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "TWR",
+     "v": "118.650 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 10 / 28"
+    }
+   ]
+  },
+  {
+   "icao": "OEPS",
+   "iata": "",
+   "name_en": "Al Kharj - Prince Sultan Air Base",
+   "name_ar": "Al Kharj - Prince Sultan Air Base",
+   "city_en": "Al Kharj - Prince Sultan Air Base",
+   "city_ar": "Al Kharj - Prince Sultan Air Base",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 24.07028,
+   "lon": 47.56222,
+   "elev_ft": 1645,
+   "mag": "2° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "17L"
+    },
+    {
+     "id": "35R"
+    },
+    {
+     "id": "17R"
+    },
+    {
+     "id": "35L"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "APP",
+     "v": "123.425 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "126.800 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "127.500 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Military / academy"
+    },
+    {
+     "l": "Runways",
+     "v": "4 — 17L / 35R / 17R / 35L"
+    }
+   ]
+  },
+  {
+   "icao": "OEMD",
+   "iata": "",
+   "name_en": "Al Mindassah",
+   "name_ar": "Al Mindassah",
+   "city_en": "Al Mindassah",
+   "city_ar": "Al Mindassah",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 24.62583,
+   "lon": 39.19528,
+   "elev_ft": 1910,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "09"
+    },
+    {
+     "id": "27"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 09 / 27"
+    }
+   ]
+  },
+  {
+   "icao": "OEPA",
+   "iata": "",
+   "name_en": "Al Qaisumah International",
+   "name_ar": "Al Qaisumah International",
+   "city_en": "Al Qaisumah International",
+   "city_ar": "Al Qaisumah International",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 28.33639,
+   "lon": 46.12694,
+   "elev_ft": 1175,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "16"
+    },
+    {
+     "id": "34"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "International"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 16 / 34"
+    }
+   ]
+  },
+  {
+   "icao": "OERG",
+   "iata": "",
+   "name_en": "Alrass",
+   "name_ar": "Alrass",
+   "city_en": "Alrass",
+   "city_ar": "Alrass",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 25.66917,
+   "lon": 43.54917,
+   "elev_ft": 2417,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15"
+    },
+    {
+     "id": "33"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 15 / 33"
+    }
+   ]
+  },
+  {
+   "icao": "OEAO",
+   "iata": "",
+   "name_en": "Alula International",
+   "name_ar": "Alula International",
+   "city_en": "Alula International",
+   "city_ar": "Alula International",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 26.48306,
+   "lon": 38.11861,
+   "elev_ft": 2045,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "12"
+    },
+    {
+     "id": "30"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "AFIS",
+     "v": "118.000 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "126.275 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "International"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 12 / 30"
+    }
+   ]
+  },
+  {
+   "icao": "OEAD",
+   "iata": "",
+   "name_en": "Aradah",
+   "name_ar": "Aradah",
+   "city_en": "Aradah",
+   "city_ar": "Aradah",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 21.21861,
+   "lon": 55.26222,
+   "elev_ft": 262,
+   "mag": "2° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "03"
+    },
+    {
+     "id": "21"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "ATIS",
+     "v": "120.300 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 03 / 21"
+    }
+   ]
+  },
+  {
+   "icao": "OERR",
+   "iata": "",
+   "name_en": "Arar",
+   "name_ar": "Arar",
+   "city_en": "Arar",
+   "city_ar": "Arar",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 30.90667,
+   "lon": 41.13833,
+   "elev_ft": 1819,
+   "mag": "5° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "10"
+    },
+    {
+     "id": "28"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 10 / 28"
+    }
+   ]
+  },
+  {
+   "icao": "OEBT",
+   "iata": "",
+   "name_en": "Batha",
+   "name_ar": "Batha",
+   "city_en": "Batha",
+   "city_ar": "Batha",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 24.21611,
+   "lon": 51.45,
+   "elev_ft": 258,
+   "mag": "2° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "14"
+    },
+    {
+     "id": "32"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "ATIS",
+     "v": "120.300 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 14 / 32"
+    }
+   ]
+  },
+  {
+   "icao": "OEBH",
+   "iata": "",
+   "name_en": "Bisha",
+   "name_ar": "Bisha",
+   "city_en": "Bisha",
+   "city_ar": "Bisha",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 19.98417,
+   "lon": 42.62306,
+   "elev_ft": 3887,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "18"
+    },
+    {
+     "id": "36"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "AFIS",
+     "v": "118.300 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "127.400 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 18 / 36"
+    }
+   ]
+  },
+  {
+   "icao": "OEDF",
+   "iata": "",
+   "name_en": "Dammam - King Fahd International",
+   "name_ar": "Dammam - King Fahd International",
+   "city_en": "Dammam - King Fahd International",
+   "city_ar": "Dammam - King Fahd International",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 26.47111,
+   "lon": 49.79778,
+   "elev_ft": 75,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "16L"
+    },
+    {
+     "id": "34R"
+    },
+    {
+     "id": "16R"
+    },
+    {
+     "id": "34L"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "APP",
+     "v": "126.300 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "124.350 MHz"
+    },
+    {
+     "l": "GND",
+     "v": "121.750 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "International"
+    },
+    {
+     "l": "Runways",
+     "v": "4 — 16L / 34R / 16R / 34L"
+    }
+   ]
+  },
+  {
+   "icao": "OEDR",
+   "iata": "",
+   "name_en": "Dhahran - King Abdulaziz Air Base",
+   "name_ar": "Dhahran - King Abdulaziz Air Base",
+   "city_en": "Dhahran - King Abdulaziz Air Base",
+   "city_ar": "Dhahran - King Abdulaziz Air Base",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 26.26417,
+   "lon": 50.1525,
+   "elev_ft": 84,
+   "mag": "2° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "16L"
+    },
+    {
+     "id": "34R"
+    },
+    {
+     "id": "16R"
+    },
+    {
+     "id": "34L"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "RADAR",
+     "v": "121.500 MHz"
+    },
+    {
+     "l": "APP",
+     "v": "124.650 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "118.400 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Military / academy"
+    },
+    {
+     "l": "Runways",
+     "v": "4 — 16L / 34R / 16R / 34L"
+    }
+   ]
+  },
+  {
+   "icao": "OEGS",
+   "iata": "",
+   "name_en": "Gassim - Prince Naif Bin Abdulaziz",
+   "name_ar": "Gassim - Prince Naif Bin Abdulaziz",
+   "city_en": "Gassim - Prince Naif Bin Abdulaziz",
+   "city_ar": "Gassim - Prince Naif Bin Abdulaziz",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 26.30278,
+   "lon": 43.77417,
+   "elev_ft": 2126,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15"
+    },
+    {
+     "id": "33"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "APP",
+     "v": "119.150 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "118.000 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "128.600 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 15 / 33"
+    }
+   ]
+  },
+  {
+   "icao": "OEGT",
+   "iata": "",
+   "name_en": "Guriat",
+   "name_ar": "Guriat",
+   "city_en": "Guriat",
+   "city_ar": "Guriat",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 31.41194,
+   "lon": 37.27944,
+   "elev_ft": 1684,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "10"
+    },
+    {
+     "id": "28"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 10 / 28"
+    }
+   ]
+  },
+  {
+   "icao": "OESD",
+   "iata": "",
+   "name_en": "Hafr Al Batin - King Saud Air Base",
+   "name_ar": "Hafr Al Batin - King Saud Air Base",
+   "city_en": "Hafr Al Batin - King Saud Air Base",
+   "city_ar": "Hafr Al Batin - King Saud Air Base",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 27.90083,
+   "lon": 45.52806,
+   "elev_ft": 1352,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "13"
+    },
+    {
+     "id": "31"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "AFIS",
+     "v": "120.700 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Military / academy"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 13 / 31"
+    }
+   ]
+  },
+  {
+   "icao": "OEHL",
+   "iata": "",
+   "name_en": "Hail",
+   "name_ar": "Hail",
+   "city_en": "Hail",
+   "city_ar": "Hail",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 27.43972,
+   "lon": 41.68639,
+   "elev_ft": 3305,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "18"
+    },
+    {
+     "id": "36"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "APP",
+     "v": "123.200 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "118.700 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "127.850 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 18 / 36"
+    }
+   ]
+  },
+  {
+   "icao": "OERS",
+   "iata": "",
+   "name_en": "Hanak - Red Sea International",
+   "name_ar": "Hanak - Red Sea International",
+   "city_en": "Hanak - Red Sea International",
+   "city_ar": "Hanak - Red Sea International",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 25.62833,
+   "lon": 37.08889,
+   "elev_ft": 164,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15L"
+    },
+    {
+     "id": "33R"
+    },
+    {
+     "id": "15R"
+    },
+    {
+     "id": "33L"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "TWR",
+     "v": "118.200 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "126.550 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "International"
+    },
+    {
+     "l": "Runways",
+     "v": "4 — 15L / 33R / 15R / 33L"
+    }
+   ]
+  },
+  {
+   "icao": "OEHR",
+   "iata": "",
+   "name_en": "Harad",
+   "name_ar": "Harad",
+   "city_en": "Harad",
+   "city_ar": "Harad",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 24.10167,
+   "lon": 49.22333,
+   "elev_ft": 919,
+   "mag": "2° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "16"
+    },
+    {
+     "id": "34"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 16 / 34"
+    }
+   ]
+  },
+  {
+   "icao": "OEGN",
+   "iata": "",
+   "name_en": "Jazan - King Abdullah Bin Abdulaziz",
+   "name_ar": "Jazan - King Abdullah Bin Abdulaziz",
+   "city_en": "Jazan - King Abdullah Bin Abdulaziz",
+   "city_ar": "Jazan - King Abdullah Bin Abdulaziz",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 16.90111,
+   "lon": 42.58583,
+   "elev_ft": 20,
+   "mag": "2° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15"
+    },
+    {
+     "id": "33"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "APP",
+     "v": "124.900 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "118.000 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "127.850 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 15 / 33"
+    }
+   ]
+  },
+  {
+   "icao": "OEJN",
+   "iata": "",
+   "name_en": "Jeddah - King Abdulaziz International",
+   "name_ar": "Jeddah - King Abdulaziz International",
+   "city_en": "Jeddah - King Abdulaziz International",
+   "city_ar": "Jeddah - King Abdulaziz International",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 21.68111,
+   "lon": 39.15611,
+   "elev_ft": 50,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "16C"
+    },
+    {
+     "id": "34C"
+    },
+    {
+     "id": "16L"
+    },
+    {
+     "id": "34R"
+    },
+    {
+     "id": "16R"
+    },
+    {
+     "id": "34L"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "APP",
+     "v": "345.600 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "118.200 MHz"
+    },
+    {
+     "l": "GND",
+     "v": "121.700 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "126.200 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "International"
+    },
+    {
+     "l": "Runways",
+     "v": "6 — 16C / 34C / 16L / 34R / 16R / 34L"
+    }
+   ]
+  },
+  {
+   "icao": "OEJB",
+   "iata": "",
+   "name_en": "Jubail",
+   "name_ar": "Jubail",
+   "city_en": "Jubail",
+   "city_ar": "Jubail",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 27.03889,
+   "lon": 49.405,
+   "elev_ft": 26,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "17"
+    },
+    {
+     "id": "35"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "TWR",
+     "v": "120.500 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "128.400 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 17 / 35"
+    }
+   ]
+  },
+  {
+   "icao": "OEKM",
+   "iata": "",
+   "name_en": "Khamis Mushait - King Khaled Air Base",
+   "name_ar": "Khamis Mushait - King Khaled Air Base",
+   "city_en": "Khamis Mushait - King Khaled Air Base",
+   "city_ar": "Khamis Mushait - King Khaled Air Base",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 18.30111,
+   "lon": 42.80083,
+   "elev_ft": 6778,
+   "mag": "2° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "06"
+    },
+    {
+     "id": "24"
+    },
+    {
+     "id": "14"
+    },
+    {
+     "id": "32"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "TWR",
+     "v": "119.300 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "376.600 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Military / academy"
+    },
+    {
+     "l": "Runways",
+     "v": "4 — 06 / 24 / 14 / 32"
+    }
+   ]
+  },
+  {
+   "icao": "OEKA",
+   "iata": "",
+   "name_en": "Khashm Alan",
+   "name_ar": "Khashm Alan",
+   "city_en": "Khashm Alan",
+   "city_ar": "Khashm Alan",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 24.62083,
+   "lon": 46.91861,
+   "elev_ft": 1848,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "16"
+    },
+    {
+     "id": "34"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "TWR",
+     "v": "122.875 MHz"
+    },
+    {
+     "l": "GND",
+     "v": "123.075 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 16 / 34"
+    }
+   ]
+  },
+  {
+   "icao": "OEKN",
+   "iata": "",
+   "name_en": "Khurais",
+   "name_ar": "Khurais",
+   "city_en": "Khurais",
+   "city_ar": "Khurais",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 25.26528,
+   "lon": 48.17833,
+   "elev_ft": 1362,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "16"
+    },
+    {
+     "id": "34"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 16 / 34"
+    }
+   ]
+  },
+  {
+   "icao": "OEJL",
+   "iata": "",
+   "name_en": "King Abdulaziz Naval Base",
+   "name_ar": "King Abdulaziz Naval Base",
+   "city_en": "King Abdulaziz Naval Base",
+   "city_ar": "King Abdulaziz Naval Base",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 26.94167,
+   "lon": 49.70417,
+   "elev_ft": 8,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15"
+    },
+    {
+     "id": "33"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Military / academy"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 15 / 33"
+    }
+   ]
+  },
+  {
+   "icao": "OEKF",
+   "iata": "",
+   "name_en": "King Faisal Air Academy",
+   "name_ar": "King Faisal Air Academy",
+   "city_en": "King Faisal Air Academy",
+   "city_ar": "King Faisal Air Academy",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 26.08528,
+   "lon": 45.19667,
+   "elev_ft": 2434,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15L"
+    },
+    {
+     "id": "33R"
+    },
+    {
+     "id": "15R"
+    },
+    {
+     "id": "33L"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "APP",
+     "v": "122.000 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "123.300 MHz"
+    },
+    {
+     "l": "GND",
+     "v": "124.500 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "121.000 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Military / academy"
+    },
+    {
+     "l": "Runways",
+     "v": "4 — 15L / 33R / 15R / 33L"
+    }
+   ]
+  },
+  {
+   "icao": "OEJF",
+   "iata": "",
+   "name_en": "King Faisal Naval Base",
+   "name_ar": "King Faisal Naval Base",
+   "city_en": "King Faisal Naval Base",
+   "city_ar": "King Faisal Naval Base",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 21.34806,
+   "lon": 39.17306,
+   "elev_ft": 16,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15"
+    },
+    {
+     "id": "33"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "TWR",
+     "v": "143.350 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Military / academy"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 15 / 33"
+    }
+   ]
+  },
+  {
+   "icao": "OESN",
+   "iata": "",
+   "name_en": "King Salman Airbase",
+   "name_ar": "King Salman Airbase",
+   "city_en": "King Salman Airbase",
+   "city_ar": "King Salman Airbase",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 24.46833,
+   "lon": 46.65028,
+   "elev_ft": 2450,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "02L"
+    },
+    {
+     "id": "20R"
+    },
+    {
+     "id": "02R"
+    },
+    {
+     "id": "20L"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "TWR",
+     "v": "118.100 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "133.500 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Military / academy"
+    },
+    {
+     "l": "Runways",
+     "v": "4 — 02L / 20R / 02R / 20L"
+    }
+   ]
+  },
+  {
+   "icao": "OEMA",
+   "iata": "",
+   "name_en": "Madinah - Prince Mohammad Bin Abdulaziz International",
+   "name_ar": "Madinah - Prince Mohammad Bin Abdulaziz International",
+   "city_en": "Madinah - Prince Mohammad Bin Abdulaziz International",
+   "city_ar": "Madinah - Prince Mohammad Bin Abdulaziz International",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 24.55028,
+   "lon": 39.70583,
+   "elev_ft": 2134,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "17"
+    },
+    {
+     "id": "35"
+    },
+    {
+     "id": "18"
+    },
+    {
+     "id": "36"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "APP",
+     "v": "125.100 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "118.300 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "126.850 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "International"
+    },
+    {
+     "l": "Runways",
+     "v": "4 — 17 / 35 / 18 / 36"
+    }
+   ]
+  },
+  {
+   "icao": "OENG",
+   "iata": "",
+   "name_en": "Nejran",
+   "name_ar": "Nejran",
+   "city_en": "Nejran",
+   "city_ar": "Nejran",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 17.61139,
+   "lon": 44.41917,
+   "elev_ft": 3983,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "06"
+    },
+    {
+     "id": "24"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "AFIS",
+     "v": "118.500 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "118.500 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "128.800 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 06 / 24"
+    }
+   ]
+  },
+  {
+   "icao": "OENN",
+   "iata": "",
+   "name_en": "Neom Bay Airport",
+   "name_ar": "Neom Bay Airport",
+   "city_en": "Neom Bay Airport",
+   "city_ar": "Neom Bay Airport",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 27.92389,
+   "lon": 35.29389,
+   "elev_ft": 32,
+   "mag": "5° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15"
+    },
+    {
+     "id": "33"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "AFIS",
+     "v": "121.775 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "118.150 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 15 / 33"
+    }
+   ]
+  },
+  {
+   "icao": "OEPJ",
+   "iata": "",
+   "name_en": "Pump Station 10",
+   "name_ar": "Pump Station 10",
+   "city_en": "Pump Station 10",
+   "city_ar": "Pump Station 10",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 24.10667,
+   "lon": 41.03667,
+   "elev_ft": 2841,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "18"
+    },
+    {
+     "id": "36"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Other"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 18 / 36"
+    }
+   ]
+  },
+  {
+   "icao": "OEPC",
+   "iata": "",
+   "name_en": "Pump Station 3",
+   "name_ar": "Pump Station 3",
+   "city_en": "Pump Station 3",
+   "city_ar": "Pump Station 3",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 25.175,
+   "lon": 47.48833,
+   "elev_ft": 1741,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "14"
+    },
+    {
+     "id": "32"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Other"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 14 / 32"
+    }
+   ]
+  },
+  {
+   "icao": "OEPF",
+   "iata": "",
+   "name_en": "Pump Station 6",
+   "name_ar": "Pump Station 6",
+   "city_en": "Pump Station 6",
+   "city_ar": "Pump Station 6",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 24.71,
+   "lon": 44.965,
+   "elev_ft": 2534,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "17"
+    },
+    {
+     "id": "35"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Other"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 17 / 35"
+    }
+   ]
+  },
+  {
+   "icao": "OEPI",
+   "iata": "",
+   "name_en": "Pump Station 9",
+   "name_ar": "Pump Station 9",
+   "city_en": "Pump Station 9",
+   "city_ar": "Pump Station 9",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 24.27667,
+   "lon": 42.14333,
+   "elev_ft": 2968,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "17"
+    },
+    {
+     "id": "35"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Other"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 17 / 35"
+    }
+   ]
+  },
+  {
+   "icao": "OERB",
+   "iata": "",
+   "name_en": "Rabigh",
+   "name_ar": "Rabigh",
+   "city_en": "Rabigh",
+   "city_ar": "Rabigh",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 22.7025,
+   "lon": 39.07,
+   "elev_ft": 22,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15"
+    },
+    {
+     "id": "33"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 15 / 33"
+    }
+   ]
+  },
+  {
+   "icao": "OERF",
+   "iata": "",
+   "name_en": "Rafha",
+   "name_ar": "Rafha",
+   "city_en": "Rafha",
+   "city_ar": "Rafha",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 29.62639,
+   "lon": 43.49056,
+   "elev_ft": 1474,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "11"
+    },
+    {
+     "id": "29"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 11 / 29"
+    }
+   ]
+  },
+  {
+   "icao": "OERM",
+   "iata": "",
+   "name_en": "Ras Mishab",
+   "name_ar": "Ras Mishab",
+   "city_en": "Ras Mishab",
+   "city_ar": "Ras Mishab",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 28.07889,
+   "lon": 48.61111,
+   "elev_ft": 13,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "16"
+    },
+    {
+     "id": "34"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 16 / 34"
+    }
+   ]
+  },
+  {
+   "icao": "OETN",
+   "iata": "",
+   "name_en": "Ras Tanajib",
+   "name_ar": "Ras Tanajib",
+   "city_en": "Ras Tanajib",
+   "city_ar": "Ras Tanajib",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 27.86833,
+   "lon": 48.76833,
+   "elev_ft": 30,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15"
+    },
+    {
+     "id": "33"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 15 / 33"
+    }
+   ]
+  },
+  {
+   "icao": "OERT",
+   "iata": "",
+   "name_en": "Ras Tanura",
+   "name_ar": "Ras Tanura",
+   "city_en": "Ras Tanura",
+   "city_ar": "Ras Tanura",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 26.72333,
+   "lon": 50.03167,
+   "elev_ft": 9,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15"
+    },
+    {
+     "id": "33"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 15 / 33"
+    }
+   ]
+  },
+  {
+   "icao": "OERK",
+   "iata": "",
+   "name_en": "Riyadh - King Khaled International",
+   "name_ar": "Riyadh - King Khaled International",
+   "city_en": "Riyadh - King Khaled International",
+   "city_ar": "Riyadh - King Khaled International",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 24.96278,
+   "lon": 46.70806,
+   "elev_ft": 2053,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15L"
+    },
+    {
+     "id": "33R"
+    },
+    {
+     "id": "15R"
+    },
+    {
+     "id": "33L"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "APP",
+     "v": "124.100 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "118.600 MHz"
+    },
+    {
+     "l": "GND",
+     "v": "121.800 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "127.150 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "International"
+    },
+    {
+     "l": "Runways",
+     "v": "4 — 15L / 33R / 15R / 33L"
+    }
+   ]
+  },
+  {
+   "icao": "OEST",
+   "iata": "",
+   "name_en": "Shabitah",
+   "name_ar": "Shabitah",
+   "city_en": "Shabitah",
+   "city_ar": "Shabitah",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 22.70889,
+   "lon": 53.28472,
+   "elev_ft": 342,
+   "mag": "1° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "13"
+    },
+    {
+     "id": "31"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "TWR",
+     "v": "127.000 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 13 / 31"
+    }
+   ]
+  },
+  {
+   "icao": "OESB",
+   "iata": "",
+   "name_en": "Shaibah",
+   "name_ar": "Shaibah",
+   "city_en": "Shaibah",
+   "city_ar": "Shaibah",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 22.515,
+   "lon": 53.965,
+   "elev_ft": 274,
+   "mag": "2° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "09"
+    },
+    {
+     "id": "27"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 09 / 27"
+    }
+   ]
+  },
+  {
+   "icao": "OESH",
+   "iata": "",
+   "name_en": "Sharurah",
+   "name_ar": "Sharurah",
+   "city_en": "Sharurah",
+   "city_ar": "Sharurah",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 17.46694,
+   "lon": 47.12139,
+   "elev_ft": 2382,
+   "mag": "2° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "08"
+    },
+    {
+     "id": "26"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 08 / 26"
+    }
+   ]
+  },
+  {
+   "icao": "OETB",
+   "iata": "",
+   "name_en": "Tabuk - Prince Sultan Bin Abdulaziz",
+   "name_ar": "Tabuk - Prince Sultan Bin Abdulaziz",
+   "city_en": "Tabuk - Prince Sultan Bin Abdulaziz",
+   "city_ar": "Tabuk - Prince Sultan Bin Abdulaziz",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 28.37306,
+   "lon": 36.62139,
+   "elev_ft": 2551,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "06"
+    },
+    {
+     "id": "24"
+    },
+    {
+     "id": "13"
+    },
+    {
+     "id": "31"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "APP",
+     "v": "119.700 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "125.900 MHz"
+    },
+    {
+     "l": "GND",
+     "v": "126.300 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "128.200 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "4 — 06 / 24 / 13 / 31"
+    }
+   ]
+  },
+  {
+   "icao": "OETF",
+   "iata": "",
+   "name_en": "Taif International Airport",
+   "name_ar": "Taif International Airport",
+   "city_en": "Taif International Airport",
+   "city_ar": "Taif International Airport",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 21.48333,
+   "lon": 40.54444,
+   "elev_ft": 4848,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "07"
+    },
+    {
+     "id": "25"
+    },
+    {
+     "id": "17"
+    },
+    {
+     "id": "35"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "APP",
+     "v": "119.700 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "118.700 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "127.050 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "International"
+    },
+    {
+     "l": "Runways",
+     "v": "4 — 07 / 25 / 17 / 35"
+    }
+   ]
+  },
+  {
+   "icao": "OEBN",
+   "iata": "",
+   "name_en": "Thablotin",
+   "name_ar": "Thablotin",
+   "city_en": "Thablotin",
+   "city_ar": "Thablotin",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 19.83306,
+   "lon": 54.02083,
+   "elev_ft": 403,
+   "mag": "1° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "17"
+    },
+    {
+     "id": "35"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "ATIS",
+     "v": "126.350 MHz"
+    },
+    {
+     "l": "TWR",
+     "v": "127.000 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 17 / 35"
+    }
+   ]
+  },
+  {
+   "icao": "OETH",
+   "iata": "",
+   "name_en": "Thumamah",
+   "name_ar": "Thumamah",
+   "city_en": "Thumamah",
+   "city_ar": "Thumamah",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 25.21417,
+   "lon": 46.64083,
+   "elev_ft": 1870,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "17"
+    },
+    {
+     "id": "35"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 17 / 35"
+    }
+   ]
+  },
+  {
+   "icao": "OETR",
+   "iata": "",
+   "name_en": "Turaif",
+   "name_ar": "Turaif",
+   "city_en": "Turaif",
+   "city_ar": "Turaif",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 31.69472,
+   "lon": 38.73194,
+   "elev_ft": 2809,
+   "mag": "5° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "10"
+    },
+    {
+     "id": "28"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 10 / 28"
+    }
+   ]
+  },
+  {
+   "icao": "OEUD",
+   "iata": "",
+   "name_en": "Udhailiyah",
+   "name_ar": "Udhailiyah",
+   "city_en": "Udhailiyah",
+   "city_ar": "Udhailiyah",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 25.145,
+   "lon": 49.32833,
+   "elev_ft": 772,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "18"
+    },
+    {
+     "id": "36"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 18 / 36"
+    }
+   ]
+  },
+  {
+   "icao": "OEOM",
+   "iata": "",
+   "name_en": "Um Almelh",
+   "name_ar": "Um Almelh",
+   "city_en": "Um Almelh",
+   "city_ar": "Um Almelh",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 19.10972,
+   "lon": 50.11944,
+   "elev_ft": 778,
+   "mag": "2° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "05"
+    },
+    {
+     "id": "23"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "ATIS",
+     "v": "120.300 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 05 / 23"
+    }
+   ]
+  },
+  {
+   "icao": "OEUM",
+   "iata": "",
+   "name_en": "Ummlejj",
+   "name_ar": "Ummlejj",
+   "city_en": "Ummlejj",
+   "city_ar": "Ummlejj",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 25.28111,
+   "lon": 37.205,
+   "elev_ft": 50,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "10"
+    },
+    {
+     "id": "28"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 10 / 28"
+    }
+   ]
+  },
+  {
+   "icao": "OEWD",
+   "iata": "",
+   "name_en": "Wadi Al Dawasir",
+   "name_ar": "Wadi Al Dawasir",
+   "city_en": "Wadi Al Dawasir",
+   "city_ar": "Wadi Al Dawasir",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 20.50417,
+   "lon": 45.19889,
+   "elev_ft": 2062,
+   "mag": "3° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "10"
+    },
+    {
+     "id": "28"
+    }
+   ],
+   "freqs": [],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 10 / 28"
+    }
+   ]
+  },
+  {
+   "icao": "OEWJ",
+   "iata": "",
+   "name_en": "Wejh",
+   "name_ar": "Wejh",
+   "city_en": "Wejh",
+   "city_ar": "Wejh",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 26.19861,
+   "lon": 36.47611,
+   "elev_ft": 66,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "15"
+    },
+    {
+     "id": "33"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "AFIS",
+     "v": "118.700 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 15 / 33"
+    }
+   ]
+  },
+  {
+   "icao": "OEYN",
+   "iata": "",
+   "name_en": "Yenbo - Prince Abdulmohsin Bin Abdulaziz",
+   "name_ar": "Yenbo - Prince Abdulmohsin Bin Abdulaziz",
+   "city_en": "Yenbo - Prince Abdulmohsin Bin Abdulaziz",
+   "city_ar": "Yenbo - Prince Abdulmohsin Bin Abdulaziz",
+   "country_en": "Saudi Arabia",
+   "country_ar": "المملكة العربية السعودية",
+   "region": "KSA",
+   "lat": 24.14417,
+   "lon": 38.06361,
+   "elev_ft": 44,
+   "mag": "4° E",
+   "tz_offset_min": 180,
+   "rwys": [
+    {
+     "id": "10"
+    },
+    {
+     "id": "28"
+    }
+   ],
+   "freqs": [
+    {
+     "l": "TWR",
+     "v": "118.100 MHz"
+    },
+    {
+     "l": "ATIS",
+     "v": "127.450 MHz"
+    }
+   ],
+   "services": [
+    {
+     "l": "Aerodrome type",
+     "v": "Domestic"
+    },
+    {
+     "l": "Runways",
+     "v": "2 — 10 / 28"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+.divider {
+  position: relative;
+  block-size: 88px;
+  overflow: hidden;
+  border-block: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 92%, var(--shade));
+}
+
+.path {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.line {
+  fill: none;
+  stroke: var(--border-bright);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 7;
+  animation: fp-dash 2.4s linear infinite;
+}
+
+@keyframes fp-dash {
+  to {
+    stroke-dashoffset: -26;
+  }
+}
+
+.falcon {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: -40px;
+  inline-size: 26px;
+  block-size: 26px;
+  transform: translateY(-50%);
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--teal-bright) 60%, transparent));
+  animation: fp-fly 9s linear infinite;
+}
+
+@keyframes fp-fly {
+  0% {
+    inset-inline-start: -5%;
+  }
+  100% {
+    inset-inline-start: 105%;
+  }
+}
+
+/* The falcon faces its direction of travel; mirror it under RTL. */
+[dir='rtl'] .falcon {
+  transform: translateY(-50%) scaleX(-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line,
+  .falcon {
+    animation: none;
+  }
+  .falcon {
+    inset-inline-start: 50%;
+  }
+}

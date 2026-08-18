@@ -1,0 +1,273 @@
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: color-mix(in srgb, var(--bg) 68%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-block-start: 12vh;
+  animation: cmdk-fade var(--dur) var(--ease);
+  transition: opacity var(--dur) var(--ease);
+}
+
+@keyframes cmdk-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.box {
+  inline-size: min(560px, 92vw);
+  background: var(--surface-overlay);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-xl);
+  box-shadow:
+    var(--elev-3),
+    var(--edge-sheen),
+    0 0 32px color-mix(in srgb, var(--brand) 15%, transparent);
+  overflow: hidden;
+  animation: cmdk-rise var(--dur) var(--ease);
+  transition:
+    transform var(--dur) var(--ease),
+    opacity var(--dur) var(--ease);
+}
+
+@keyframes cmdk-rise {
+  from {
+    transform: translateY(-14px) scale(0.97);
+    opacity: 0;
+  }
+}
+
+@starting-style {
+  .scrim {
+    opacity: 0;
+  }
+  .box {
+    transform: translateY(-14px) scale(0.97);
+    opacity: 0;
+  }
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-block-end: 1px solid var(--border);
+}
+
+.inputRow svg {
+  inline-size: 18px;
+  block-size: 18px;
+  color: var(--text-muted);
+  flex: none;
+}
+
+.input {
+  flex: 1;
+  min-inline-size: 0;
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+}
+
+.input::placeholder {
+  color: var(--text-dim);
+}
+
+.esc {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  border: var(--hairline-bright);
+  border-radius: 5px;
+  padding: 1px 6px;
+}
+
+.chips {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-block-end: 1px solid var(--border);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  /* Match the app's 44px tap-target standard (WCAG 2.5.5). */
+  min-block-size: 44px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-caps);
+  color: var(--text-muted);
+  background: transparent;
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  padding: 0 var(--space-4);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+
+.chipActive {
+  background: var(--brand);
+  color: var(--text-on-brand);
+  border-color: var(--brand);
+}
+
+.results {
+  max-block-size: 46vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--space-3);
+}
+
+.item {
+  inline-size: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0.6rem 0.7rem;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: start;
+  transition: var(--transition-interactive);
+}
+
+.itemActive {
+  background: color-mix(in srgb, var(--teal-bright) 14%, transparent);
+  border-color: color-mix(in srgb, var(--teal-bright) 24%, transparent);
+  box-shadow: inset 0 0 12px color-mix(in srgb, var(--teal-bright) 10%, transparent);
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-weight: var(--fw-bold);
+  font-size: 0.72rem;
+  /* Brighter teal than --teal-bright so the §-tag clears WCAG AA (4.5:1) over
+     the translucent chip + blurred dialog backdrop. */
+  color: var(--tag-regulation);
+  background: color-mix(in srgb, var(--brand) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tag-regulation) 28%, transparent);
+  border-radius: 6px;
+  padding: 3px 7px;
+  min-inline-size: 56px;
+  text-align: center;
+  flex: none;
+}
+
+/* Per-group accent on the code chip. */
+.aero {
+  color: var(--sage-bright);
+  border-color: color-mix(in srgb, var(--sage-bright) 30%, transparent);
+  background: color-mix(in srgb, var(--success) 14%, transparent);
+}
+.tool {
+  /* Brighter gold than --gold to clear WCAG AA over the translucent chip. */
+  color: var(--tag-tool);
+  border-color: color-mix(in srgb, var(--tag-tool) 30%, transparent);
+  background: color-mix(in srgb, var(--gold) 12%, transparent);
+}
+.guide {
+  color: var(--tag-guide);
+  border-color: color-mix(in srgb, var(--tag-guide) 30%, transparent);
+  background: color-mix(in srgb, var(--tag-guide) 12%, transparent);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-inline-size: 0;
+  flex: 1;
+}
+
+.name {
+  font-size: var(--fs-sm);
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tip {
+  font-size: var(--fs-xs);
+  /* --text-muted (not --text-dim) to clear WCAG AA on the active row. */
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.enter {
+  margin-inline-start: auto;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  opacity: 0;
+  flex: none;
+}
+
+.itemActive .enter {
+  opacity: 1;
+}
+
+.empty {
+  padding: var(--space-6);
+  text-align: center;
+  color: var(--text-dim);
+  font-size: var(--fs-sm);
+}
+
+.foot {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  border-block-start: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-dim);
+}
+
+/* Mount entry via @starting-style where discrete transitions are supported —
+   first-render transitions replace the keyframes (which stay as the base for
+   older engines). Exit still unmounts instantly, matching today. */
+@supports (transition-behavior: allow-discrete) {
+  .scrim {
+    animation: none;
+    transition: opacity var(--dur) var(--ease);
+  }
+  .box {
+    animation: none;
+    transition:
+      opacity var(--dur) var(--ease),
+      transform var(--dur) var(--ease-entry);
+  }
+  @starting-style {
+    .scrim {
+      opacity: 0;
+    }
+    .box {
+      opacity: 0;
+      transform: translateY(-12px) scale(0.98);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrim,
+  .box {
+    animation: none;
+    transition: none;
+  }
+}

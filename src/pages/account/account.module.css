@@ -1,0 +1,295 @@
+.page {
+  padding-block: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ── Page header ── */
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* The signed-out split panel and the signed-in identity header moved to the
+   page-local AccountPage.module.css (Account.tsx / AccountSignedOut.tsx). The
+   classes below are shared with the account sub-pages (Logbook, Settings,
+   Currency, Records) and their forms, so they stay here. */
+.head h1 {
+  font-size: var(--fs-h2);
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+}
+.sub {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  margin: 0;
+}
+.note {
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+  margin: 0;
+}
+.planBadge {
+  display: inline-flex;
+  align-items: center;
+  margin-inline-start: var(--space-2);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  background: var(--surface-raised);
+  color: var(--text-muted);
+  vertical-align: middle;
+}
+.planBadge[data-plan='pro'] {
+  background: color-mix(in srgb, var(--brand) 22%, transparent);
+  color: var(--brand-hover);
+}
+.planBadge[data-plan='school'] {
+  background: color-mix(in srgb, var(--gold) 22%, transparent);
+  color: var(--gold);
+}
+
+/* ── Stat cards grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  transition: var(--transition-interactive);
+}
+.card:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-2px);
+}
+.cardLabel {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+.cardValue {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  font-variant-numeric: tabular-nums;
+}
+.good {
+  color: var(--color-success);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+.bad {
+  color: var(--color-error);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+
+.sectionHead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+.saved {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-success);
+}
+
+.linkRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.inlineLink {
+  color: var(--link);
+  font-weight: var(--fw-semibold);
+}
+
+/* "Pro" tag inside a gated control (e.g. CSV export for free users). */
+.proTag {
+  margin-inline-start: var(--space-2);
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--gold) 22%, transparent);
+  color: var(--gold);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-4);
+  align-items: end;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* ── Buttons ──
+   Delegate to the global .btn recipe (global.css) instead of the hand-rolled
+   clay clone this file used to carry — one source of truth. .btnDanger stays
+   as a small local hover modifier. */
+.btn {
+  composes: btn btn-clay from global;
+}
+.btnPrimary {
+  composes: btn-clay-primary from global;
+}
+.btnDanger:hover {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+/* ── Logbook table ── */
+.tableWrap {
+  overflow-x: auto;
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  box-shadow: var(--clay-shadow);
+}
+.table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+}
+.table th,
+.table td {
+  padding: var(--space-2) var(--space-3);
+  text-align: start;
+  border-block-end: 1px solid var(--border);
+  white-space: nowrap;
+}
+.table th {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  color: var(--text-dim);
+  background: color-mix(in srgb, var(--brand) 8%, var(--surface));
+}
+.table tbody tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--surface-raised) 60%, transparent);
+}
+.totals td {
+  font-weight: var(--fw-bold);
+  border-block-start: 2px solid var(--border-bright);
+  border-block-end: none;
+}
+.rowActions {
+  display: flex;
+  gap: var(--space-1);
+}
+.rowBtn,
+.del {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  min-block-size: 36px;
+  min-inline-size: 36px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-color);
+}
+.rowBtn:hover {
+  color: var(--brand-hover);
+  background: var(--surface-raised);
+}
+.del:hover {
+  color: var(--color-error);
+  background: var(--color-error-bg);
+}
+
+/* ── Logbook filter bar ── */
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-block-end: var(--space-4);
+}
+.filterInput,
+.filterSelect,
+.filterDate {
+  min-height: 40px;
+  padding: var(--space-2) var(--space-3);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: var(--fs-sm);
+}
+.filterInput {
+  flex: 1;
+  min-inline-size: 12ch;
+}
+.filterInput:focus,
+.filterSelect:focus,
+.filterDate:focus {
+  border-color: var(--brand-hover);
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+}
+
+/* Sortable column header button. */
+.sortBtn {
+  inline-size: 100%;
+  text-align: start;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sortBtn:hover {
+  color: var(--brand-hover);
+}
+
+/* ── Logbook breakdown ── */
+.breakdown {
+  margin-block-start: var(--space-5);
+}
+.breakdown > summary {
+  cursor: pointer;
+  font-weight: var(--fw-semibold);
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+}
+.breakdownGrids {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-5);
+  margin-block-start: var(--space-3);
+}
+.breakdownHead {
+  font-size: var(--fs-lg);
+  margin-block-end: var(--space-2);
+}
+.last {
+  white-space: nowrap;
+}

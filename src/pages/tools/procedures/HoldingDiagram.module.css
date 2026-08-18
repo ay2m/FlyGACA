@@ -1,0 +1,82 @@
+.wrap {
+  margin: var(--space-5) 0 0;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-2);
+}
+
+.svg {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+.north {
+  fill: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+/* The entry line draws itself in, then stays. */
+.entry {
+  stroke-dashoffset: 0;
+  animation: hold-entry-draw 1.4s var(--ease-entry) both;
+}
+
+@keyframes hold-entry-draw {
+  from {
+    stroke-dasharray: 0 400;
+  }
+  to {
+    stroke-dasharray: 5 4;
+  }
+}
+
+/* The aircraft rides the entry path on a CSS motion path. */
+.plane {
+  offset-rotate: auto;
+  animation: hold-entry-fly 8s linear 0.4s infinite;
+}
+
+@keyframes hold-entry-fly {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  86% {
+    offset-distance: 100%;
+    opacity: 1;
+  }
+  92% {
+    opacity: 0;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+.caption {
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+  text-align: center;
+  max-inline-size: 40ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entry {
+    animation: none;
+  }
+  .plane {
+    display: none;
+  }
+}
+
+/* Without CSS motion paths the glyph would sit at the group origin — hide it. */
+@supports not (offset-path: path('M 0 0 L 1 1')) {
+  .plane {
+    display: none;
+  }
+}

@@ -1,0 +1,95 @@
+/* Shared content-page hero — sits on the shared `.band` (falcon-stroke + gold edge
+   + grain + glow, see heroBand.module.css), mirroring the hubs' SearchHero. Used by
+   the About / Schools / Pricing pages via <PageHero>. */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: clamp(var(--space-6), 4vw, var(--space-10)) var(--space-6);
+}
+/* Centered variant (no media) — e.g. the Pricing header with its billing toggle. */
+.center {
+  flex-direction: column;
+  text-align: center;
+}
+.center .heroText {
+  align-items: center;
+}
+.heroText {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+/* Instrument-label eyebrow: a leading hairline rule (both sides when centered). */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent-bright);
+}
+.eyebrow::before {
+  content: '';
+  inline-size: 16px;
+  block-size: 1px;
+  background: currentColor;
+  opacity: 0.55;
+}
+.center .eyebrow::after {
+  content: '';
+  inline-size: 16px;
+  block-size: 1px;
+  background: currentColor;
+  opacity: 0.55;
+}
+.title {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-black);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-heading);
+  margin: 0;
+  /* HUD-style gradient-clip title (mirrors Hud.module.css `.title` / --grad-title).
+     The global reduce-motion kill-switch in global.css disables the shimmer. */
+  background: var(--grad-title);
+  background-size: 180% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: hero-title-shimmer 12s linear infinite;
+}
+@keyframes hero-title-shimmer {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: 180% center;
+  }
+}
+.subtitle {
+  color: var(--moon-soft);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+  max-inline-size: 56ch;
+  margin: 0;
+}
+/* Inline-end media slot (e.g. the Captain avatar) — split layout only. */
+.media {
+  position: relative;
+  flex-shrink: 0;
+  margin-inline-start: auto;
+}
+@media (max-width: 720px) {
+  .hero:not(.center) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+  .media {
+    margin-inline-start: 0;
+  }
+}

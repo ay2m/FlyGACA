@@ -1,0 +1,112 @@
+.board {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  padding: var(--space-4);
+  border: var(--clay-border);
+  border-inline-start: 4px solid var(--border-bright);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  transition:
+    box-shadow var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+.row:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-1px);
+}
+.row[data-status='current'] {
+  border-inline-start-color: var(--success);
+}
+.row[data-status='expiring'] {
+  border-inline-start-color: var(--warning);
+}
+.row[data-status='expired'] {
+  border-inline-start-color: var(--danger);
+}
+.row[data-status='unknown'] {
+  border-inline-start-color: var(--text-dim);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-inline-size: 0;
+}
+.label {
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-base);
+}
+.detail {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+/* Landing/approach recency: a visual meter + how-many-more cue. */
+.count {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-block-start: var(--space-1);
+  max-inline-size: 16rem;
+}
+.count > :first-child {
+  flex: 1;
+}
+.moreNeeded {
+  flex: none;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--warning);
+  white-space: nowrap;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-1);
+}
+.days {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  font-variant-numeric: tabular-nums;
+}
+.date {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.fix {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--link);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.fix:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 560px) {
+  .row {
+    grid-template-columns: auto 1fr auto;
+  }
+  .fix {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}

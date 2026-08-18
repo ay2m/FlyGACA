@@ -1,0 +1,72 @@
+.wrap {
+  margin: var(--space-5) 0 0;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-2);
+}
+
+/* Staggered line-draw construction. */
+.v1,
+.v2,
+.v3 {
+  stroke-dasharray: 240;
+  stroke-dashoffset: 0;
+  animation: wt-draw 0.6s var(--ease-entry) both;
+}
+
+.v2 {
+  animation-delay: 0.55s;
+}
+
+.v3 {
+  animation-delay: 1.1s;
+}
+
+@keyframes wt-draw {
+  from {
+    stroke-dashoffset: 240;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.caption {
+  display: flex;
+  gap: var(--space-5);
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+}
+
+.caption span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.caption span::before {
+  content: '';
+  inline-size: 14px;
+  block-size: 0;
+  border-block-start: 3px solid;
+}
+
+.kHdg::before {
+  border-color: var(--link);
+}
+
+.kWind::before {
+  border-color: var(--warning);
+}
+
+.kGs::before {
+  border-color: var(--success);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v1,
+  .v2,
+  .v3 {
+    animation: none;
+  }
+}

@@ -1,0 +1,114 @@
+.strip {
+  inline-size: 100%;
+  margin: 0;
+  padding: var(--space-4);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+.title {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+}
+.summary {
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+}
+
+.track {
+  position: relative;
+  block-size: 34px;
+}
+.slope {
+  inline-size: 100%;
+  block-size: 100%;
+  display: block;
+}
+/* The slope drawing is line art only, so mirroring it wholesale is RTL-safe;
+   the aircraft marker is positioned with logical insets and flips itself. */
+:global([dir='rtl']) .slope {
+  transform: scaleX(-1);
+}
+.slopeLine {
+  stroke: var(--border-bright);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
+  fill: none;
+}
+.runway {
+  stroke: var(--accent);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+}
+
+.plane {
+  position: absolute;
+  inline-size: 16px;
+  block-size: 16px;
+  margin-inline-start: -8px;
+  margin-block-start: -8px;
+  color: var(--neon-cyan);
+  transition:
+    inset-inline-start var(--dur-slow) var(--ease-glide),
+    inset-block-start var(--dur-slow) var(--ease-glide);
+}
+:global([dir='rtl']) .plane {
+  transform: scaleX(-1);
+}
+.planeGlyph {
+  inline-size: 100%;
+  block-size: 100%;
+  fill: currentcolor;
+  filter: drop-shadow(0 0 4px color-mix(in srgb, currentcolor 60%, transparent));
+}
+@media (prefers-reduced-motion: reduce) {
+  .plane {
+    transition: none;
+  }
+}
+
+.stages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding-block-start: var(--space-1);
+}
+/* Mastered zone marked by the border, not hue alone (cockpit theme collapses accents). */
+.stageMastered {
+  border-block-start: 2px solid var(--accent);
+}
+.count {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+}
+.stageLabel {
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+}
+
+.destination {
+  margin: 0;
+  align-self: flex-end;
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+}

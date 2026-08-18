@@ -1,0 +1,275 @@
+/* Search-first hub hero — sits on the shared `.band` (falcon-stroke + gold edge +
+   grain + glow, see heroBand.module.css) and builds a large central search field on
+   top. Shared by the Library, Tools and Learn hubs. */
+.hero {
+  position: relative;
+  margin-block-end: var(--space-6);
+  padding: clamp(var(--space-6), 4vw, var(--space-10)) var(--space-6);
+}
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
+  max-inline-size: 760px;
+}
+
+/* Instrument-label eyebrow: uppercase kicker with a short leading hairline rule
+   (left-aligned, matching PageHero). */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--accent-bright);
+  font-weight: var(--fw-semibold);
+}
+.eyebrow::before {
+  content: '';
+  inline-size: 16px;
+  block-size: 1px;
+  background: currentColor;
+  opacity: 0.55;
+}
+.title {
+  margin-block-start: var(--space-2);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-black);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-heading);
+  /* HUD-style gradient-clip title (mirrors Hud.module.css `.title` / --grad-title).
+     The global reduce-motion kill-switch in global.css disables the shimmer. */
+  background: var(--grad-title);
+  background-size: 180% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: hero-title-shimmer 12s linear infinite;
+}
+@keyframes hero-title-shimmer {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: 180% center;
+  }
+}
+.subtitle {
+  margin-block-start: var(--space-3);
+  max-inline-size: 56ch;
+  color: var(--moon-soft);
+  line-height: var(--lh-snug);
+}
+
+/* ── Centerpiece search field ── */
+.searchForm {
+  position: relative;
+  display: flex;
+  align-items: center;
+  inline-size: 100%;
+  max-inline-size: 560px;
+  margin-block-start: var(--space-5);
+}
+.searchIcon {
+  position: absolute;
+  inset-inline-start: var(--space-4);
+  display: inline-flex;
+  color: var(--moon-mute);
+  pointer-events: none;
+}
+/* True-glass centerpiece: translucent night fill, heavy blur + saturation, and a
+   top sheen — the field reads as a raised pane of instrument glass on the band. */
+.search {
+  inline-size: 100%;
+  min-height: 56px;
+  padding-block: var(--space-3);
+  padding-inline: calc(var(--space-4) + 28px) calc(var(--space-4) + 28px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-pill);
+  background: var(--glass-bg);
+  color: var(--moon);
+  font: inherit;
+  font-size: var(--fs-lg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: inset 0 1px 0 var(--sheen-top);
+  transition: var(--transition-interactive);
+}
+.search::placeholder {
+  color: var(--moon-mute);
+}
+.search:focus {
+  outline: none;
+  border-color: var(--sage-bright);
+  background: var(--glass-bg-strong);
+  box-shadow:
+    inset 0 1px 0 var(--sheen-top),
+    0 0 0 3px color-mix(in srgb, var(--sage-bright) 30%, transparent),
+    0 0 24px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+/* Hide the native search clear so our themed one is the only affordance. */
+.search::-webkit-search-cancel-button {
+  display: none;
+}
+.clear {
+  position: absolute;
+  inset-inline-end: var(--space-2);
+  inline-size: 40px;
+  block-size: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--moon) 12%, transparent);
+  color: var(--moon);
+  font-size: var(--fs-lg);
+  line-height: 1;
+  cursor: pointer;
+  transition: background var(--dur) var(--ease);
+}
+.clear:hover {
+  background: color-mix(in srgb, var(--moon) 22%, transparent);
+}
+
+/* ── Quick-action chips ── */
+.suggest {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-2);
+  margin-block-start: var(--space-4);
+}
+.suggestLabel {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  /* --text-dim is the page-background caption token (AA ~6:1, theme-aware), not
+     --moon-mute — a dark-band token that only hit 3.59:1 once the hero went flat
+     on the page background (WCAG AA needs 4.5:1). */
+  color: var(--text-dim);
+}
+.suggestList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.suggestChip {
+  padding: var(--space-2) var(--space-4);
+  min-height: 40px;
+  border: 1px solid color-mix(in srgb, var(--moon) 22%, transparent);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--moon) 6%, transparent);
+  color: var(--moon-soft);
+  font: inherit;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.suggestChip:hover {
+  color: var(--moon);
+  border-color: var(--sage-bright);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  transform: translateY(var(--hover-raise));
+}
+.suggestChip:active {
+  transform: scale(var(--press-scale));
+}
+.suggestChipActive {
+  color: var(--falcon-night);
+  border-color: var(--sage-bright);
+  background: var(--sage-bright);
+}
+.suggestChipActive:hover {
+  color: var(--falcon-night);
+  background: var(--sage-bright);
+}
+
+/* ── Stats readout + trailing link ── */
+.afterRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-4) var(--space-6);
+  margin-block-start: var(--space-6);
+}
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: var(--space-3);
+  margin: 0;
+}
+.stat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-inline-size: 96px;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid color-mix(in srgb, var(--stat-tone) 28%, transparent);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--bento-surface) 85%, transparent);
+  box-shadow: inset 0 1px 0 var(--sheen-top);
+}
+/* Tone tick — a short accent underline centred on the tile (logical inset, no
+   transform, so it stays centred and RTL-neutral). */
+.stat::after {
+  content: '';
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 30%;
+  block-size: 2px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--stat-tone) 65%, transparent);
+}
+.statValue {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--moon);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 18px color-mix(in srgb, var(--stat-tone) 45%, transparent);
+}
+.statLabel {
+  order: 2;
+  margin-block-start: var(--space-1);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--moon-soft);
+}
+/* Trailing slot — one or more links (e.g. "Browse charts →", "Glossary →"). */
+.trailing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+}
+.trailing a {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--accent-bright);
+  white-space: nowrap;
+}
+.trailing a:hover {
+  color: var(--sage-bright);
+}
+
+@media (max-width: 560px) {
+  .title {
+    font-size: var(--fs-h2);
+  }
+  .search {
+    font-size: var(--fs-base);
+  }
+}

@@ -1,0 +1,69 @@
+.wrap {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-3);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.svg {
+  inline-size: 100%;
+  block-size: auto;
+  max-block-size: 220px;
+}
+
+.tube {
+  fill: var(--bento-surface, var(--surface));
+  stroke: var(--border-bright);
+  stroke-width: 1.5;
+}
+
+.mercury {
+  --fill: 0;
+}
+.col {
+  transform: scaleY(var(--fill));
+  transform-box: fill-box;
+  transform-origin: bottom;
+  transition: transform var(--dur-slow) var(--ease-glide);
+}
+.warm .col,
+.warm .bulb {
+  fill: var(--warning);
+}
+.cold .col,
+.cold .bulb {
+  fill: var(--neon-cyan);
+}
+@media (prefers-reduced-motion: reduce) {
+  .col {
+    transition: none;
+  }
+}
+
+.isaLine {
+  stroke: var(--text-dim);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
+}
+.isaTick {
+  fill: var(--text-muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+.oatTick {
+  fill: var(--text);
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+.caption {
+  margin-block-start: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+  font-variant-numeric: tabular-nums;
+}

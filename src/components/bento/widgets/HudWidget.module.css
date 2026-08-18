@@ -1,0 +1,65 @@
+.strips {
+  display: grid;
+  gap: var(--space-2);
+  margin-block: var(--space-3);
+  margin-inline: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.strip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--bento-gutter) 55%, transparent);
+  padding-block: var(--space-1);
+  padding-inline: var(--space-3);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blip {
+  flex-shrink: 0;
+  inline-size: 6px;
+  block-size: 6px;
+  border-radius: 50%;
+  background: var(--neon-green);
+  animation: hud-widget-blip 2.2s var(--ease) infinite;
+}
+
+.strip:nth-child(2) .blip {
+  background: var(--neon-cyan);
+  animation-delay: 0.6s;
+}
+
+.strip:nth-child(3) .blip {
+  animation-delay: 1.2s;
+}
+
+@keyframes hud-widget-blip {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.note {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: var(--fs-2xs);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blip {
+    animation: none;
+  }
+}

@@ -1,0 +1,32 @@
+# Cloudflare Pages headers (copied verbatim into dist/ by Vite; also honored by
+# Netlify). Mirrored from firebase.json so every front behaves identically.
+# Cloudflare Pages + Netlify are *mirror* fronts (never the canonical
+# flygaca.com, which is on Firebase), so they noindex to avoid being indexed as
+# duplicates. Firebase/Vercel ignore this file and set their own headers.
+/*
+  X-Robots-Tag: noindex, follow
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.googleusercontent.com https://www.googletagmanager.com; font-src 'self'; connect-src 'self' https://www.google-analytics.com; frame-src 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/data/*
+  Cache-Control: public, max-age=3600
+
+/sw.js
+  Cache-Control: no-cache
+
+# Serve the crawl/AI-discovery files as text/xml, never as the SPA HTML fallback.
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8

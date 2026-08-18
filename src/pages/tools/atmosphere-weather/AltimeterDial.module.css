@@ -1,0 +1,64 @@
+.wrap {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-3);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  display: flex;
+  justify-content: center;
+}
+
+.svg {
+  inline-size: 100%;
+  block-size: auto;
+  max-block-size: 220px;
+}
+
+.face {
+  fill: var(--bento-surface, var(--surface));
+  stroke: var(--border-bright);
+  stroke-width: 2;
+}
+.tick {
+  stroke: var(--text-dim);
+}
+.num {
+  fill: var(--text-muted);
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+}
+
+.kollsman {
+  fill: none;
+  stroke: var(--border-bright);
+  stroke-width: 1;
+}
+.setting {
+  fill: var(--text);
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+}
+
+.needle {
+  transform-origin: 60px 60px;
+  transform-box: view-box;
+  transition: transform var(--dur-slow) var(--ease-glide);
+}
+.hand {
+  fill: var(--neon-cyan);
+}
+@media (prefers-reduced-motion: reduce) {
+  .needle {
+    transition: none;
+  }
+}
+
+.hub {
+  fill: var(--text);
+}
+.digital {
+  fill: var(--text);
+  font-size: 13px;
+  font-weight: var(--fw-bold);
+  font-variant-numeric: tabular-nums;
+}

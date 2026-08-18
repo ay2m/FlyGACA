@@ -1,0 +1,10 @@
+.confirm {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--gold) 10%, transparent);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-snug);
+}

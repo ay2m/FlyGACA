@@ -1,0 +1,130 @@
+.page {
+  padding-block: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+.head {
+  max-inline-size: 60ch;
+}
+.subtitle {
+  margin-block-start: var(--space-3);
+  color: var(--text-muted);
+}
+
+.path {
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  padding: var(--space-5);
+}
+.path h2 {
+  font-size: var(--fs-h3);
+}
+.desc {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  margin-block: var(--space-2) var(--space-4);
+}
+
+.pathProgress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-block-end: var(--space-4);
+}
+.pathProgressLabel {
+  flex-shrink: 0;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  counter-increment: step;
+}
+/* Per-step done toggle. */
+.check {
+  flex-shrink: 0;
+  inline-size: 28px;
+  block-size: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--hairline-bright);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--color-success);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+.check:hover {
+  border-color: var(--brand-hover);
+}
+.stepBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-inline-size: 0;
+}
+.stepDone {
+  border-color: color-mix(in srgb, var(--color-success) 45%, transparent);
+  background: var(--color-success-bg);
+}
+.stepDone .check {
+  border-color: var(--color-success);
+  background: color-mix(in srgb, var(--color-success) 16%, transparent);
+}
+.stepDone .stepLabel {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+.stepLabel::before {
+  content: counter(step) '. ';
+  color: var(--accent-bright);
+  font-weight: var(--fw-bold);
+}
+.stepLabel {
+  font-weight: var(--fw-medium);
+}
+.stepNote {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+.open {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: var(--space-1) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  transition: var(--transition-color);
+}
+.open:hover {
+  border-color: var(--brand-hover);
+  color: var(--brand-hover);
+  text-decoration: none;
+}

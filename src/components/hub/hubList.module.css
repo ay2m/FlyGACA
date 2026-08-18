@@ -1,0 +1,65 @@
+/* Shared card-grid + list-row chrome for the browse hubs (Library, Guides, Tools).
+   Each hub composes these structural classes and keeps its own row content-cell
+   classes + `.row` column layout local, since those legitimately differ. */
+
+.grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+/* List view — single dense column of rows (applied alongside .grid). */
+.grid.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Row wrapper — positions the absolute bookmark/favourite star. */
+.rowWrap {
+  position: relative;
+}
+
+/* Left category accent bar inside a row. Colour arrives as --cat-color inline. */
+.rowBar {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  inline-size: 4px;
+  background: var(--cat-color, var(--brand));
+}
+
+/* Bookmark/favourite star, pinned to the row's inline-end edge. */
+.rowStar {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: var(--space-2);
+  transform: translateY(-50%);
+  z-index: 2;
+  inline-size: 30px;
+  block-size: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: var(--fs-md);
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.rowStar:hover {
+  background: var(--surface-raised);
+}
+.rowStar:hover,
+.rowStar.starOn {
+  color: var(--gold);
+}
+/* Keep the vertical-centring translate while adding the press scale. */
+.rowStar:active {
+  transform: translateY(-50%) scale(0.9);
+}

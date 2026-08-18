@@ -1,0 +1,35 @@
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block-end: var(--space-3);
+  margin-block-end: var(--space-4);
+  border-block-end: 1px solid var(--border);
+}
+
+/* Glowing accent bar — tone defaults to the brand hover teal. The glow is a
+   soft mixed halo, not the raw tone at full strength. */
+.bar {
+  flex: none;
+  inline-size: 5px;
+  block-size: 28px;
+  border-radius: var(--radius-sm);
+  background: var(--tone, var(--brand-hover));
+  box-shadow: 0 0 10px color-mix(in srgb, var(--tone, var(--brand-hover)) 60%, transparent);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  text-wrap: balance;
+}
+
+.count {
+  margin-inline-start: auto;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--text-muted);
+  white-space: nowrap;
+}

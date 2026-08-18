@@ -1,0 +1,22 @@
+.track {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  block-size: 3px;
+  z-index: var(--z-sticky);
+  pointer-events: none;
+}
+
+.bar {
+  block-size: 100%;
+  inline-size: 100%;
+  /* Scale from the leading edge so it grows with scroll; RTL flips origin. */
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: var(--grad-brand);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--teal-bright) 60%, transparent);
+}
+
+[dir='rtl'] .bar {
+  transform-origin: right center;
+}

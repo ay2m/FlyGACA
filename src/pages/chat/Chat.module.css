@@ -1,0 +1,465 @@
+.page {
+  padding-block: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-block-size: calc(100dvh - var(--nav-h) - var(--space-12));
+}
+
+/* ── Header ── */
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.head h1 {
+  font-size: var(--fs-h2);
+}
+.status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  margin-block-start: var(--space-1);
+}
+
+/* Neon green "online" pulse dot */
+.statusDot {
+  display: inline-block;
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  background: var(--neon-green);
+  box-shadow: 0 0 6px var(--neon-green);
+  flex-shrink: 0;
+  animation: online-pulse 2.5s ease-in-out infinite;
+}
+@keyframes online-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 6px var(--neon-green);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 14px var(--neon-green);
+  }
+}
+
+/* Header right cluster: export actions + the conversation switcher. */
+.headActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+/* ── Message log ── */
+.logWrap {
+  position: relative;
+  flex: 1;
+  display: flex;
+}
+.log {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: var(--surface);
+  box-shadow: var(--clay-shadow);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  min-block-size: 320px;
+  scroll-behavior: smooth;
+}
+
+/* Floating "jump to newest" affordance when scrolled up the transcript. */
+.scrollDown {
+  position: absolute;
+  inset-block-end: var(--space-4);
+  inset-inline-end: var(--space-4);
+  inline-size: 40px;
+  block-size: 40px;
+  border-radius: 50%;
+  border: var(--clay-border);
+  background: var(--surface-raised);
+  color: var(--brand-hover);
+  font-size: var(--fs-lg);
+  box-shadow: var(--clay-shadow);
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.scrollDown:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-1px);
+}
+.scrollDown:active {
+  transform: scale(0.97);
+}
+
+/* ── Welcome screen ── */
+.welcome {
+  margin: auto 0;
+  text-align: center;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Captain Adel portrait — anchors the empty-state welcome. */
+.welcomeAvatar {
+  margin-block-end: var(--space-1);
+}
+
+.welcomeLead {
+  max-inline-size: 52ch;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+}
+
+/* Capability chips under the welcome lead. */
+.capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+/* Topic-grouped starter prompts on the welcome screen. */
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  inline-size: 100%;
+  max-inline-size: 56ch;
+  margin-block-start: var(--space-2);
+}
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.groupLabel {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  color: var(--text-dim);
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+  margin-block-start: var(--space-1);
+}
+
+.suggestion {
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  border: var(--hairline-bright);
+  border-radius: var(--radius-pill);
+  background: var(--surface-raised);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  text-align: start;
+  transition: var(--transition-interactive);
+}
+.suggestion:hover {
+  border-color: var(--brand-hover);
+  color: var(--brand-hover);
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-1px);
+}
+.suggestion:active {
+  transform: scale(0.97);
+  box-shadow: var(--clay-shadow-press);
+}
+
+/* Welcome footer: "Surprise me" + quick links out to Library / Tools. */
+.welcomeActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  margin-block-start: var(--space-1);
+}
+.surprise {
+  min-height: 40px;
+  padding: var(--space-2) var(--space-5);
+  border: 1px solid var(--brand-hover);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--brand) 10%, transparent);
+  color: var(--brand-hover);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.surprise:hover {
+  background: color-mix(in srgb, var(--brand) 18%, transparent);
+  box-shadow: var(--clay-shadow-hover);
+  transform: translateY(-1px);
+}
+.surprise:active {
+  transform: scale(0.97);
+}
+.welcomeLink {
+  font-size: var(--fs-sm);
+  color: var(--link);
+}
+
+/* ── Message bubbles ── */
+.msg {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  max-inline-size: 85%;
+}
+.user {
+  align-self: flex-end;
+}
+.adel {
+  align-self: flex-start;
+}
+
+/* Captain Adel's portrait leads each of his replies, level with the first line. */
+.msgAvatar {
+  margin-block-start: 2px;
+}
+
+/* The stacked content (grounding badge · bubble · sources) within a message row. */
+.msgBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-inline-size: 0;
+}
+.user .msgBody {
+  align-items: flex-end;
+}
+
+.bubble {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  white-space: pre-wrap;
+  /* A long pasted URL / citation must wrap inside the bubble, not stretch the
+     message row past 85% and force horizontal scroll on a phone. */
+  overflow-wrap: anywhere;
+  line-height: var(--lh-snug);
+}
+
+.user .bubble {
+  background: var(--brand);
+  color: var(--text-on-brand);
+  /* Bubble tail: flatten the bottom-end corner toward the user */
+  border-end-end-radius: var(--radius-sm);
+}
+
+.adel .bubble {
+  background: var(--surface-raised);
+  color: var(--text);
+  border-inline-start: 2px solid color-mix(in srgb, var(--brand) 45%, transparent);
+  border-end-start-radius: var(--radius-sm);
+}
+
+/* Rendered markdown inside an assistant bubble (RichText output). */
+.bubble :is(p, ul, ol) {
+  margin-block: var(--space-2);
+}
+.bubble :is(p, ul, ol):first-child {
+  margin-block-start: 0;
+}
+.bubble :is(p, ul, ol):last-child {
+  margin-block-end: 0;
+}
+.bubble :is(ul, ol) {
+  padding-inline-start: var(--space-5);
+}
+.bubble li {
+  margin-block: 2px;
+}
+.bubble :is(h3, h4, h5, h6) {
+  margin-block: var(--space-2) var(--space-1);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+}
+.bubble code {
+  padding: 0 4px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.92em;
+}
+/* "In practice" takeaway and quoted rule text — a calm, accented callout. */
+.bubble blockquote {
+  margin-block: var(--space-2);
+  margin-inline: 0;
+  padding: var(--space-2) var(--space-3);
+  border-inline-start: 3px solid var(--brand);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-muted);
+}
+.bubble blockquote:first-child {
+  margin-block-start: 0;
+}
+.bubble blockquote:last-child {
+  margin-block-end: 0;
+}
+
+/* Thinking-dots replace the pending bubble text */
+.thinkingDots {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding-block: var(--space-2);
+}
+.thinkingDots span {
+  display: block;
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  background: var(--brand-hover);
+  animation: dot-bounce 1.3s ease-in-out infinite;
+}
+.thinkingDots span:nth-child(1) {
+  animation-delay: 0s;
+}
+.thinkingDots span:nth-child(2) {
+  animation-delay: 0.18s;
+}
+.thinkingDots span:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+@keyframes dot-bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  30% {
+    transform: translateY(-7px);
+    opacity: 1;
+  }
+}
+
+/* Streaming cursor — a soft blink while tokens arrive. */
+.caret {
+  display: inline-block;
+  inline-size: 2px;
+  block-size: 1em;
+  margin-inline-start: 2px;
+  vertical-align: text-bottom;
+  background: var(--brand-hover);
+  animation: caret-blink 1s steps(2, start) infinite;
+}
+@keyframes caret-blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* The composer bar and quota gate moved to components/chat/ChatComposer.module.css
+   and ChatGate.module.css alongside their components. */
+
+.note {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+}
+
+/* Contextual follow-up chips under the latest grounded answer. */
+.followups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-self: flex-start;
+}
+.followup {
+  min-height: 32px;
+  padding: var(--space-1) var(--space-3);
+  border: 1px dashed var(--border-bright);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+.followup:hover {
+  border-color: var(--brand-hover);
+  color: var(--brand-hover);
+}
+.followup:active {
+  transform: scale(0.97);
+}
+
+/* Free-tier quota readout under the composer. */
+.quota {
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  text-align: center;
+  margin: 0;
+}
+
+/* "Pro model" toggle shown to Pro/School plans under the composer. */
+.proToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.proToggle input {
+  accent-color: var(--brand);
+  cursor: pointer;
+}
+.proHint {
+  color: var(--text-dim);
+}
+
+/* ── Mobile ── give answers (and their sources) the full column ── */
+@media (max-width: 640px) {
+  .page {
+    padding-block: var(--space-5);
+  }
+  .log {
+    padding: var(--space-3);
+  }
+  .msg {
+    max-inline-size: 92%;
+  }
+  /* Captain Adel's replies carry long answers + citations — let them breathe. */
+  .adel {
+    max-inline-size: 100%;
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .caret,
+  .statusDot,
+  .thinkingDots span {
+    animation: none !important;
+  }
+  .statusDot {
+    box-shadow: 0 0 6px var(--neon-green);
+  }
+  .thinkingDots span {
+    opacity: 0.7;
+  }
+}

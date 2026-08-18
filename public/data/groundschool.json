@@ -1,0 +1,443 @@
+{
+  "generated": "2026-05-23",
+  "title": "PPL Ground School",
+  "intro": "The full theoretical-knowledge path for the Saudi Private Pilot Licence — nine subjects, taught lesson by lesson by Captain Adel, ending at the written-exam mock test.",
+  "modules": [
+    {
+      "id": "air-law",
+      "title": "Air Law & Regulations",
+      "summary": "The GACARs, airspace, the rules of the air and the route to a licence.",
+      "quiz": "air-law",
+      "lessons": [
+        {
+          "id": "al-1",
+          "title": "How Saudi aviation is regulated",
+          "objective": "What GACA is, what the GACARs are, and how ICAO fits in.",
+          "adel": "Captain, I'm starting PPL ground school. Teach me how civil aviation in Saudi Arabia is regulated — what GACA is, what the GACARs are, how they are numbered, and how they relate to ICAO. Keep it at student-pilot level.",
+          "read": {
+            "label": "GACAR Foreword",
+            "kind": "handbook",
+            "id": "foreword"
+          }
+        },
+        {
+          "id": "al-2",
+          "title": "Airspace classes and the Jeddah FIR",
+          "objective": "The ICAO classes A–G and how Saudi airspace is structured.",
+          "adel": "Captain, teach me the ICAO airspace classes A to G as adopted by GACAR — what each class requires of a VFR pilot — and how Saudi airspace is organised within the Jeddah FIR.",
+          "read": {
+            "label": "Airspace Structure tool",
+            "route": "/tools/airspace"
+          }
+        },
+        {
+          "id": "al-3",
+          "title": "VFR rules — minima, altitudes, day/night",
+          "objective": "VMC minima, cruising altitudes and the VFR limits of GACAR Part 91.",
+          "adel": "Captain, teach me the VFR rules a Saudi PPL student must know — the VMC weather minima by airspace class, VFR cruising altitudes, and the rules on night and special VFR — with the GACAR Part 91 sections.",
+          "read": {
+            "label": "VFR minima tool",
+            "route": "/tools/vfr-minima"
+          }
+        },
+        {
+          "id": "al-4",
+          "title": "Licensing — the path to a PPL",
+          "objective": "Age, medical, hours, exams and the skills test under GACAR Part 61.",
+          "adel": "Captain, walk me through exactly what GACAR Part 61 requires to be issued a Private Pilot Licence — the age, the medical, the flight hours, the theoretical exams and the skills test.",
+          "read": {
+            "label": "Saudi PPL Requirements guide",
+            "route": "/guides/saudi-ppl-requirements"
+          }
+        }
+      ]
+    },
+    {
+      "id": "meteorology",
+      "title": "Meteorology",
+      "summary": "The atmosphere, weather, the hazards of flight and how to read a forecast.",
+      "quiz": "weather",
+      "lessons": [
+        {
+          "id": "met-1",
+          "title": "The atmosphere & the ISA",
+          "objective": "Structure of the atmosphere and the International Standard Atmosphere.",
+          "adel": "Captain, teach me the basics of the atmosphere for PPL ground school — its layers, temperature and pressure with height, and the International Standard Atmosphere I'll use for performance.",
+          "read": {
+            "label": "FAA Aviation Weather Handbook",
+            "kind": "reference",
+            "id": "aviation-weather-handbook-faa-h-8083-28b"
+          }
+        },
+        {
+          "id": "met-2",
+          "title": "Pressure, wind and altimetry",
+          "objective": "How pressure drives wind, and QNH / QFE / standard settings.",
+          "adel": "Captain, teach me pressure and wind for a student pilot — how pressure systems create wind, and altimetry: QNH, QFE, the standard setting and the transition altitude.",
+          "read": {
+            "label": "FAA Aviation Weather Handbook",
+            "kind": "reference",
+            "id": "aviation-weather-handbook-faa-h-8083-28b"
+          }
+        },
+        {
+          "id": "met-3",
+          "title": "Cloud, visibility and flight hazards",
+          "objective": "Cloud types, fog, thunderstorms, turbulence, icing and wind shear.",
+          "adel": "Captain, teach me the weather hazards a VFR pilot in Saudi Arabia must respect — cloud types, reduced visibility and fog, thunderstorms, turbulence, icing, and low-level wind shear.",
+          "read": {
+            "label": "FAA Aviation Weather Handbook",
+            "kind": "reference",
+            "id": "aviation-weather-handbook-faa-h-8083-28b"
+          }
+        },
+        {
+          "id": "met-4",
+          "title": "Reading METAR and TAF",
+          "objective": "Decode an actual aviation weather report and forecast.",
+          "adel": "Captain, teach me how to read a METAR and a TAF, field by field, using a Saudi aerodrome as an example.",
+          "read": {
+            "label": "METAR decoder tool",
+            "route": "/tools/metar"
+          }
+        }
+      ]
+    },
+    {
+      "id": "navigation",
+      "title": "Navigation",
+      "summary": "Charts, dead reckoning, the flight computer and radio navigation.",
+      "quiz": "navigation",
+      "lessons": [
+        {
+          "id": "nav-1",
+          "title": "Charts, projections and symbology",
+          "objective": "How aeronautical charts work and how to read their symbols.",
+          "adel": "Captain, teach me aeronautical chart basics for PPL ground school — chart projections, scale, latitude and longitude, and the common chart symbols.",
+          "read": {
+            "label": "Chart Symbols Trainer",
+            "route": "/tools/chart-symbols"
+          }
+        },
+        {
+          "id": "nav-2",
+          "title": "Dead reckoning & the 1-in-60 rule",
+          "objective": "Track, heading, drift and correcting with the 1-in-60 rule.",
+          "adel": "Captain, teach me dead-reckoning navigation — track and heading, the wind triangle, drift, and how to use the 1-in-60 rule to correct a heading.",
+          "read": {
+            "label": "FAA Pilot's Handbook",
+            "kind": "reference",
+            "id": "pilots-handbook-of-aeronautical-knowledge-faa-h-8083-25c"
+          }
+        },
+        {
+          "id": "nav-3",
+          "title": "The flight computer (E6B)",
+          "objective": "Wind triangle, true airspeed and time–speed–distance on the E6B.",
+          "adel": "Captain, teach me how to use the E6B flight computer — the wind triangle for heading and groundspeed, true airspeed, and time–speed–distance problems.",
+          "read": {
+            "label": "E6B Flight Computer",
+            "route": "/tools/e6b"
+          }
+        },
+        {
+          "id": "nav-4",
+          "title": "Radio navigation and GNSS",
+          "objective": "VOR, NDB, DME and satellite navigation in plain terms.",
+          "adel": "Captain, teach me the basics of radio navigation for a PPL — VOR, NDB and DME — and how GNSS / GPS navigation works.",
+          "read": {
+            "label": "FAA Pilot's Handbook",
+            "kind": "reference",
+            "id": "pilots-handbook-of-aeronautical-knowledge-faa-h-8083-25c"
+          }
+        }
+      ]
+    },
+    {
+      "id": "aircraft",
+      "title": "Aircraft General Knowledge",
+      "summary": "The airframe, the engine, the systems and the instruments.",
+      "quiz": "aircraft-equipment",
+      "lessons": [
+        {
+          "id": "agk-1",
+          "title": "Airframe and flight controls",
+          "objective": "The structure of the aeroplane and how the controls work.",
+          "adel": "Captain, teach me aircraft general knowledge for a PPL student — the airframe structure of a light aeroplane and how the primary and secondary flight controls work.",
+          "read": {
+            "label": "FAA Pilot's Handbook",
+            "kind": "reference",
+            "id": "pilots-handbook-of-aeronautical-knowledge-faa-h-8083-25c"
+          }
+        },
+        {
+          "id": "agk-2",
+          "title": "The piston engine and propeller",
+          "objective": "The four-stroke engine, mixture, carburettor icing and the propeller.",
+          "adel": "Captain, teach me how a light-aircraft piston engine works — the four-stroke cycle, the mixture control, carburettor icing, and how the propeller produces thrust.",
+          "read": {
+            "label": "FAA Pilot's Handbook",
+            "kind": "reference",
+            "id": "pilots-handbook-of-aeronautical-knowledge-faa-h-8083-25c"
+          }
+        },
+        {
+          "id": "agk-3",
+          "title": "Aircraft systems",
+          "objective": "Fuel, electrical, vacuum and pitot-static systems.",
+          "adel": "Captain, teach me the main systems of a training aeroplane — the fuel system, the electrical system, the vacuum system and the pitot-static system.",
+          "read": {
+            "label": "FAA Pilot's Handbook",
+            "kind": "reference",
+            "id": "pilots-handbook-of-aeronautical-knowledge-faa-h-8083-25c"
+          }
+        },
+        {
+          "id": "agk-4",
+          "title": "Flight instruments",
+          "objective": "The six-pack — how each instrument works and how it can fail.",
+          "adel": "Captain, teach me the flight instruments — the six basic instruments, how each one works, and the typical errors and failures of each.",
+          "read": {
+            "label": "FAA Advanced Avionics Handbook",
+            "kind": "reference",
+            "id": "advanced-avionics-handbook-faa-h-8083-6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "principles",
+      "title": "Principles of Flight",
+      "summary": "Why an aeroplane flies — lift, drag, stability and the stall.",
+      "quiz": "aerodynamics",
+      "lessons": [
+        {
+          "id": "pof-1",
+          "title": "The four forces and lift",
+          "objective": "Lift, weight, thrust and drag — and how a wing makes lift.",
+          "adel": "Captain, teach me the principles of flight for a PPL — the four forces, and how a wing produces lift, including angle of attack.",
+          "read": {
+            "label": "FAA Pilot's Handbook",
+            "kind": "reference",
+            "id": "pilots-handbook-of-aeronautical-knowledge-faa-h-8083-25c"
+          }
+        },
+        {
+          "id": "pof-2",
+          "title": "Drag and the power curve",
+          "objective": "Induced and parasite drag, and the speeds that matter.",
+          "adel": "Captain, teach me drag and the power curve — induced versus parasite drag, the region of reversed command, and the key speeds like best glide and best climb.",
+          "read": {
+            "label": "FAA Pilot's Handbook",
+            "kind": "reference",
+            "id": "pilots-handbook-of-aeronautical-knowledge-faa-h-8083-25c"
+          }
+        },
+        {
+          "id": "pof-3",
+          "title": "Stability and control",
+          "objective": "Longitudinal, lateral and directional stability.",
+          "adel": "Captain, teach me aircraft stability and control — longitudinal, lateral and directional stability, and how the centre of gravity affects them.",
+          "read": {
+            "label": "FAA Pilot's Handbook",
+            "kind": "reference",
+            "id": "pilots-handbook-of-aeronautical-knowledge-faa-h-8083-25c"
+          }
+        },
+        {
+          "id": "pof-4",
+          "title": "Stalls, spins and angle of attack",
+          "objective": "Why an aeroplane stalls, and how a stall becomes a spin.",
+          "adel": "Captain, teach me about the stall — what really causes it (angle of attack), the symptoms and recovery, and how a stall can develop into a spin.",
+          "read": {
+            "label": "FAA Airplane Flying Handbook",
+            "kind": "reference",
+            "id": "airplane-flying-handbook-faa-h-8083-3c"
+          }
+        }
+      ]
+    },
+    {
+      "id": "performance",
+      "title": "Flight Performance & Planning",
+      "summary": "Weight & balance, performance, fuel and the flight plan.",
+      "quiz": "flight-planning",
+      "lessons": [
+        {
+          "id": "fpp-1",
+          "title": "Weight and balance",
+          "objective": "Why CG matters, and how to compute it.",
+          "adel": "Captain, teach me weight and balance for a PPL — why the centre of gravity matters, how to calculate weight and CG, and what happens if loading is outside the envelope.",
+          "read": {
+            "label": "Weight & Balance tool",
+            "route": "/tools/weight-balance"
+          }
+        },
+        {
+          "id": "fpp-2",
+          "title": "Performance & density altitude",
+          "objective": "Take-off and landing performance, and the effect of density altitude.",
+          "adel": "Captain, teach me aircraft performance for a student pilot — take-off and landing distance, the factors that affect them, and how density altitude degrades performance on a hot Saudi day.",
+          "read": {
+            "label": "Density Altitude tool",
+            "route": "/tools/density-altitude"
+          }
+        },
+        {
+          "id": "fpp-3",
+          "title": "Fuel planning and reserves",
+          "objective": "Trip fuel, contingency and the reserves a VFR flight needs.",
+          "adel": "Captain, teach me fuel planning for a VFR flight — trip fuel, contingency, alternate and reserve fuel, and how to be sure I have enough.",
+          "read": {
+            "label": "GACAR Part 91",
+            "kind": "regulations",
+            "id": "part-91"
+          }
+        },
+        {
+          "id": "fpp-4",
+          "title": "Route planning and the flight plan",
+          "objective": "Planning a cross-country and filing an ICAO flight plan.",
+          "adel": "Captain, teach me how to plan a VFR cross-country flight in Saudi Arabia and complete an ICAO flight plan form.",
+          "read": {
+            "label": "Aeronautical Information Manual",
+            "kind": "reference",
+            "id": "aeronautical-information-manual-aim"
+          }
+        }
+      ]
+    },
+    {
+      "id": "human",
+      "title": "Human Performance & Limitations",
+      "summary": "The pilot as a system — physiology, health and decision-making.",
+      "quiz": "human-factors",
+      "lessons": [
+        {
+          "id": "hpl-1",
+          "title": "Aviation physiology",
+          "objective": "Hypoxia, hyperventilation, vision, hearing and disorientation.",
+          "adel": "Captain, teach me aviation physiology for a PPL student — hypoxia, hyperventilation, vision and night vision, the ear and spatial disorientation.",
+          "read": {
+            "label": "FAA Pilot's Handbook",
+            "kind": "reference",
+            "id": "pilots-handbook-of-aeronautical-knowledge-faa-h-8083-25c"
+          }
+        },
+        {
+          "id": "hpl-2",
+          "title": "Health, fitness and the medical",
+          "objective": "Fitness to fly and the GACA medical certificate.",
+          "adel": "Captain, teach me about fitness to fly and the GACA medical — what affects fitness to fly, common pitfalls like medication and fatigue, and what the medical certificate involves.",
+          "read": {
+            "label": "GACA Class 1 Medical guide",
+            "route": "/guides/gaca-medical-class-1"
+          }
+        },
+        {
+          "id": "hpl-3",
+          "title": "Decision-making and error management",
+          "objective": "Airmanship, threat & error management and avoiding the traps.",
+          "adel": "Captain, teach me aeronautical decision-making and threat & error management for a student pilot — the common hazardous attitudes and how to manage threats and errors.",
+          "read": {
+            "label": "FAA Aeronautical Decision-Making (AC 60-22)",
+            "kind": "reference",
+            "id": "ac-60-22-aeronautical-decision-making"
+          }
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "Operational Procedures",
+      "summary": "Normal, abnormal and emergency operations, and the aerodrome.",
+      "quiz": "vfr-flight-rules",
+      "lessons": [
+        {
+          "id": "op-1",
+          "title": "Normal procedures and airmanship",
+          "objective": "Checklists, the traffic pattern and good operating practice.",
+          "adel": "Captain, teach me normal operating procedures for a PPL — the use of checklists, the standard traffic pattern, and what good airmanship looks like.",
+          "read": {
+            "label": "GACAR Part 91",
+            "kind": "regulations",
+            "id": "part-91"
+          }
+        },
+        {
+          "id": "op-2",
+          "title": "Abnormal and emergency procedures",
+          "objective": "Engine failure, fire, and handling an emergency.",
+          "adel": "Captain, teach me how a PPL pilot handles emergencies — engine failure, fire, and the general principle of aviate, navigate, communicate.",
+          "read": {
+            "label": "GACAR Part 91",
+            "kind": "regulations",
+            "id": "part-91"
+          }
+        },
+        {
+          "id": "op-3",
+          "title": "Wake turbulence and wind shear",
+          "objective": "Recognising and avoiding wake turbulence and wind shear.",
+          "adel": "Captain, teach me about wake turbulence and low-level wind shear — how they form, where I'll meet them, and how to avoid or handle them.",
+          "read": {
+            "label": "FAA Aviation Weather Handbook",
+            "kind": "reference",
+            "id": "aviation-weather-handbook-faa-h-8083-28b"
+          }
+        },
+        {
+          "id": "op-4",
+          "title": "Aerodrome operations and markings",
+          "objective": "Runway and taxiway markings, signs, lighting and light signals.",
+          "adel": "Captain, teach me aerodrome operations for a student pilot — runway and taxiway markings, signs, lighting, and the ATC light-gun signals.",
+          "read": {
+            "label": "Aeronautical Information Manual",
+            "kind": "reference",
+            "id": "aeronautical-information-manual-aim"
+          }
+        }
+      ]
+    },
+    {
+      "id": "communications",
+      "title": "Communications",
+      "summary": "The radio, standard phraseology and language proficiency.",
+      "quiz": "radio-elpt",
+      "lessons": [
+        {
+          "id": "com-1",
+          "title": "The radio and the phonetic alphabet",
+          "objective": "How the radio works, frequencies and the ICAO alphabet.",
+          "adel": "Captain, teach me aviation radio basics for a PPL — how VHF radio works, frequencies, the phonetic alphabet and how numbers are spoken.",
+          "read": {
+            "label": "Aeronautical Information Manual",
+            "kind": "reference",
+            "id": "aeronautical-information-manual-aim"
+          }
+        },
+        {
+          "id": "com-2",
+          "title": "Standard phraseology and the flight call",
+          "objective": "Standard calls from start-up to shut-down.",
+          "adel": "Captain, teach me standard radiotelephony phraseology — the typical calls a VFR flight makes from start-up, taxi and departure through to landing and shut-down.",
+          "read": {
+            "label": "Aeronautical Information Manual",
+            "kind": "reference",
+            "id": "aeronautical-information-manual-aim"
+          }
+        },
+        {
+          "id": "com-3",
+          "title": "English language proficiency (ELPT)",
+          "objective": "The ICAO language requirement and the SAELPT.",
+          "adel": "Captain, teach me about the ICAO English language proficiency requirement — the rating scale, the operational Level 4, and how the Saudi SAELPT test works.",
+          "read": {
+            "label": "ICAO English & SAELPT guide",
+            "route": "/guides/icao-english-saelpt"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+# Netlify config for the Fly GACA frontend — a static mirror of the canonical
+# Cloud Run / GCS front. Same Vite build (dist/); the /api/* gateway is proxied
+# back to the Cloud Run service so chat/account keep working and the strict CSP
+# (connect-src 'self') stays unchanged. See docs/RUNBOOK-deploy.md.
+#
+# SET THE API ORIGIN BELOW before deploying this mirror — it must point at your
+# Cloud Run service URL (or the load balancer in front of it).
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Proxy the API to the Cloud Run gateway. status = 200 + force = true makes
+# this a same-origin rewrite (the browser only ever sees /api on this host), so no
+# CORS and no CSP change. Must precede the SPA fallback.
+[[redirects]]
+  from = "/api/*"
+  to = "https://api.flygaca.com/api/:splat"
+  status = 200
+  force = true
+
+# SPA fallback — serve index.html for client-side routes (static files win first).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security headers + CSP, mirrored across fronts so all of them behave alike.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=(), usb=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.moyasar.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdn.moyasar.com; img-src 'self' data: blob: https://*.googleusercontent.com https://cdn.moyasar.com https://www.googletagmanager.com; font-src 'self'; connect-src 'self' https://api.moyasar.com https://www.google-analytics.com; frame-src 'self' https://api.moyasar.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"

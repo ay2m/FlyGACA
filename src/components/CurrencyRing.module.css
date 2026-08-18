@@ -1,0 +1,77 @@
+.ring {
+  position: relative;
+  inline-size: 44px;
+  block-size: 44px;
+  flex: none;
+}
+
+.svg {
+  inline-size: 100%;
+  block-size: 100%;
+  /* Start the arc at 12 o'clock. */
+  transform: rotate(-90deg);
+}
+
+.track {
+  fill: none;
+  stroke: var(--border-bright);
+  stroke-width: 4;
+  opacity: 0.5;
+}
+
+.arc {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: var(--circ);
+  stroke-dashoffset: var(--offset);
+  transition: stroke-dashoffset var(--dur-slow) var(--ease-glide);
+}
+
+.glyph {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  line-height: 1;
+}
+
+.current .arc {
+  stroke: var(--success);
+}
+.current .glyph {
+  color: var(--success);
+}
+.expiring .arc {
+  stroke: var(--warning);
+}
+.expiring .glyph {
+  color: var(--warning);
+}
+/* Expired: the arc is empty, so a danger-tinted full track + the ✕ glyph carry
+   the state by shape and colour together. */
+.expired .arc {
+  stroke: var(--danger);
+}
+.expired .track {
+  stroke: color-mix(in srgb, var(--danger) 45%, transparent);
+  opacity: 1;
+}
+.expired .glyph {
+  color: var(--danger);
+}
+/* Unknown: a dashed track reads as "not assessed" without a value. */
+.unknown .track {
+  stroke-dasharray: 3 3;
+}
+.unknown .glyph {
+  color: var(--text-dim);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc {
+    transition: none;
+  }
+}

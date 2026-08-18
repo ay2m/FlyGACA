@@ -1,0 +1,61 @@
+.wrap {
+  inline-size: 100%;
+  max-inline-size: 15rem;
+  margin-inline: auto;
+  margin-block-start: var(--space-5);
+}
+
+.svg {
+  inline-size: 100%;
+  block-size: auto;
+  overflow: visible;
+}
+
+.path {
+  fill: none;
+  stroke: color-mix(in srgb, var(--link) 45%, transparent);
+  stroke-width: 2;
+  stroke-dasharray: 4 5;
+  stroke-linecap: round;
+}
+
+.spoke {
+  stroke: var(--border-bright);
+  stroke-width: 1.5;
+}
+
+.centre {
+  fill: var(--text-dim);
+}
+
+.radiusLabel {
+  fill: var(--text-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.craft {
+  fill: var(--link);
+}
+
+/* One focal loop: the aircraft orbits the turn path. transform-box lets the
+   view-box coordinates own the rotation centre. */
+.orbit {
+  transform-origin: 100px 100px;
+  transform-box: view-box;
+  animation: tc-orbit var(--period, 9s) linear infinite;
+}
+
+@keyframes tc-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit {
+    animation: none;
+  }
+}
