@@ -212,13 +212,121 @@ interface MoyasarPayment {
   metadata?: { checkoutId?: string };
 }
 
+/** Arm (or re-arm) auto-renewal against the card the buyer just saved. */
+async function armRenewal(
+  uid: string,
+  cadence: Cadence,
+  cardToken: string | null,
+  expiresAt: Date,
+): Promise<void> {
+  await query(
+    `INSERT INTO subscriptions (user_id, plan, cadence, auto_renew, card_token,
+                                next_renewal_at, last_renewal_at, failure_count, updated_at)
+     VALUES ($1, 'pro', $2, true, $3, $4, now(), 0, now())
+     ON CONFLICT (user_id) DO UPDATE SET
+       cadence = EXCLUDED.cadence, auto_renew = true,
+       card_token = COALESCE(EXCLUDED.card_token, subscriptions.card_token),
+       next_renewal_at = EXCLUDED.next_renewal_at,
+       last_renewal_at = now(), failure_count = 0, updated_at = now()`,
+    [uid, cadence, cardToken, nextChargeAt(expiresAt)],
+  );
+}
+
 /**
- * Apply a paid intent: grant the entitlement/packs/credits, arm auto-renewal,
- * count the promo redemption and pay out any referral reward. Idempotent — the
- * `status = 'pending'` guard on the intent update is the lock, so the confirm leg
- * and the webhook can both run without double-granting.
+ * Deliver what the buyer actually paid for. One case per `CheckoutKind`; the
+ * entitlement-bearing kinds go through `mergeUpward` so a purchase can never
+ * shorten an expiry an earlier purchase or grant already set.
+ */
+async function deliver(
+  intent: CheckoutIntent,
+  payment: MoyasarPayment,
+  now: Date,
+): Promise<void> {
+  const current = await getEntitlement(intent.uid);
+
+  switch (intent.kind) {
+  case "pro":
+  case "student": {
+    const cadence = (intent.cadence ?? "annual") as Cadence;
+    const ent = entitlementFromCheckout(cadence, now);
+    await setEntitlement(intent.uid, mergeUpward(current, ent));
+    await armRenewal(
+      intent.uid,
+      cadence,
+      payment.source?.token ?? null,
+      new Date(ent.expiresAt ?? now.toISOString()),
+    );
+    return;
+  }
+  case "pass":
+    await setEntitlement(intent.uid, mergeUpward(current, entitlementFromPass(now, current)));
+    return;
+  case "credits":
+    await addChatCredits(intent.uid, CREDIT_PACK_SIZE);
+    return;
+  case "pack":
+    if (intent.packId) await grantPacks(intent.uid, [intent.packId]);
+    return;
+  case "bundle":
+    await grantPacks(intent.uid, SELLABLE_PACK_IDS);
+    return;
+  case "cohort": {
+    const org = await queryOne<{ id: string }>(
+      "INSERT INTO orgs (name, owner_user_id, seat_limit) VALUES ($1, $2, $3) RETURNING id",
+      [intent.orgName ?? "Cohort", intent.uid, COHORT_SEAT_LIMIT],
+    );
+    console.info("funnel", { event: "cohort_provisioned", orgId: org?.id, uid: intent.uid });
+    return;
+  }
+  }
+}
+
+/**
+ * Pay out a referral on the referred account's FIRST conversion: both sides get
+ * credits, once ever, and only when the code resolves to somebody other than the
+ * buyer. `recordReferralConversion` is the one-time lock.
+ */
+async function payReferralReward(intent: CheckoutIntent): Promise<void> {
+  if (!intent.ref) return;
+  const owner = await findReferralOwner(intent.ref);
+  if (!owner || owner.user_id === intent.uid) return;
+  if (!(await recordReferralConversion(intent.ref, intent.uid))) return;
+
+  await addChatCredits(owner.user_id, REFERRAL_REWARD_CREDITS);
+  await addChatCredits(intent.uid, REFERRAL_REWARD_CREDITS);
+}
+
+/** Record the settled payment for reconciliation. Idempotent on the payment id. */
+async function recordPayment(
+  intent: CheckoutIntent,
+  intentId: string,
+  payment: MoyasarPayment,
+): Promise<void> {
+  await query(
+    `INSERT INTO payments (id, user_id, intent_id, amount, currency, status, kind, raw)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+     ON CONFLICT (id) DO NOTHING`,
+    [
+      payment.id,
+      intent.uid,
+      intentId,
+      payment.amount,
+      payment.currency,
+      payment.status,
+      intent.kind,
+      JSON.stringify(payment),
+    ],
+  );
+}
+
+/**
+ * Apply a paid intent: deliver the purchase, count the promo redemption, pay out
+ * any referral reward and record the payment. Idempotent, and returns false when
+ * another caller already fulfilled this intent.
  */
 async function fulfil(row: IntentRow, payment: MoyasarPayment): Promise<boolean> {
+  // The status guard IS the idempotency lock: the confirm leg and the webhook can
+  // both arrive, and only the one that flips pending → paid proceeds.
   const claimed = await queryOne<{ id: string }>(
     `UPDATE checkout_intents SET status = 'paid', payment_id = $2, updated_at = now()
       WHERE id = $1 AND status = 'pending'
@@ -228,87 +336,14 @@ async function fulfil(row: IntentRow, payment: MoyasarPayment): Promise<boolean>
   if (!claimed) return false;
 
   const intent = toIntent(row);
-  const now = new Date();
-  const current = await getEntitlement(intent.uid);
 
-  switch (intent.kind) {
-  case "pro":
-  case "student": {
-    const cadence = (intent.cadence ?? "annual") as Cadence;
-    const ent = entitlementFromCheckout(cadence, now);
-    // Upgrade-only: never shorten an expiry a grant or earlier purchase set.
-    await setEntitlement(intent.uid, mergeUpward(current, ent));
-    await query(
-      `INSERT INTO subscriptions (user_id, plan, cadence, auto_renew, card_token,
-                                    next_renewal_at, last_renewal_at, failure_count, updated_at)
-         VALUES ($1, 'pro', $2, true, $3, $4, now(), 0, now())
-         ON CONFLICT (user_id) DO UPDATE SET
-           cadence = EXCLUDED.cadence, auto_renew = true,
-           card_token = COALESCE(EXCLUDED.card_token, subscriptions.card_token),
-           next_renewal_at = EXCLUDED.next_renewal_at,
-           last_renewal_at = now(), failure_count = 0, updated_at = now()`,
-      [
-        intent.uid,
-        cadence,
-        payment.source?.token ?? null,
-        nextChargeAt(new Date(ent.expiresAt ?? now.toISOString())),
-      ],
-    );
-    break;
-  }
-  case "pass":
-    await setEntitlement(intent.uid, mergeUpward(current, entitlementFromPass(now, current)));
-    break;
-  case "credits":
-    await addChatCredits(intent.uid, CREDIT_PACK_SIZE);
-    break;
-  case "pack":
-    if (intent.packId) await grantPacks(intent.uid, [intent.packId]);
-    break;
-  case "bundle":
-    await grantPacks(intent.uid, SELLABLE_PACK_IDS);
-    break;
-  case "cohort": {
-    const org = await queryOne<{ id: string }>(
-      "INSERT INTO orgs (name, owner_user_id, seat_limit) VALUES ($1, $2, $3) RETURNING id",
-      [intent.orgName ?? "Cohort", intent.uid, COHORT_SEAT_LIMIT],
-    );
-    console.info("funnel", { event: "cohort_provisioned", orgId: org?.id, uid: intent.uid });
-    break;
-  }
-  }
+  await deliver(intent, payment, new Date());
 
   if (intent.promo) {
     await query("UPDATE promo_codes SET redeemed = redeemed + 1 WHERE code = $1", [intent.promo]);
   }
-
-  // Referral reward — both sides get credits, once per referred account, and only
-  // when the code resolves to somebody other than the buyer.
-  if (intent.ref) {
-    const owner = await findReferralOwner(intent.ref);
-    if (owner && owner.user_id !== intent.uid) {
-      if (await recordReferralConversion(intent.ref, intent.uid)) {
-        await addChatCredits(owner.user_id, REFERRAL_REWARD_CREDITS);
-        await addChatCredits(intent.uid, REFERRAL_REWARD_CREDITS);
-      }
-    }
-  }
-
-  await query(
-    `INSERT INTO payments (id, user_id, intent_id, amount, currency, status, kind, raw)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
-     ON CONFLICT (id) DO NOTHING`,
-    [
-      payment.id,
-      intent.uid,
-      row.id,
-      payment.amount,
-      payment.currency,
-      payment.status,
-      intent.kind,
-      JSON.stringify(payment),
-    ],
-  );
+  await payReferralReward(intent);
+  await recordPayment(intent, row.id, payment);
 
   return true;
 }
