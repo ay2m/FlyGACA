@@ -185,7 +185,7 @@
     "synced": "synced {{mins}} min ago with GACA",
     "marquee": [
       {
-        "code": "§61.57",
+        "code": "§61.17",
         "text": "recency of experience"
       },
       {
@@ -221,8 +221,8 @@
           "a": "To carry passengers at night you need 3 takeoffs and 3 landings to a full stop within the preceding 90 days, in the same category and class.",
           "cites": [
             {
-              "code": "61.57(b)",
-              "tip": "GACAR §61.57(b). Recent flight experience at night: 3 takeoffs and 3 landings to a full stop in the preceding 90 days to carry passengers at night."
+              "code": "61.17(a)(2)",
+              "tip": "GACAR §61.17(a)(2). Recent flight experience at night: 3 takeoffs and 3 landings to a full stop in the preceding 90 days to carry passengers at night."
             }
           ]
         },
@@ -231,8 +231,8 @@
           "a": "In controlled airspace below 10,000 ft you need 3 SM flight visibility and the 1-2-1 cloud clearance: 500 ft below, 1,000 ft above, 2,000 ft horizontal.",
           "cites": [
             {
-              "code": "91.155",
-              "tip": "GACAR §91.155. Basic VFR weather minimums: visibility and distance-from-cloud by airspace class and altitude."
+              "code": "91.165",
+              "tip": "GACAR §91.165. Basic VFR weather minimums: visibility and distance-from-cloud by airspace class and altitude."
             }
           ]
         },
@@ -241,8 +241,8 @@
           "a": "Yes, approved FFS or FTD time is creditable toward the instrument rating, up to the limit in the aeronautical-experience table.",
           "cites": [
             {
-              "code": "61.65",
-              "tip": "GACAR §61.65. Instrument rating requirements, including credit for approved flight-simulation training device time."
+              "code": "61.89",
+              "tip": "GACAR §61.89. Instrument Rating Requirements, including the aeronautical-experience credit for approved flight-simulation training device time."
             }
           ]
         }
@@ -1922,16 +1922,12 @@
     "trustBanner": "The full regulatory library is free, forever. Fly GACA is independent and not affiliated with GACA. Always verify against the official source.",
     "trial": "7-day free trial, no card",
     "moneyBack": "30-day money-back guarantee",
-    "studentToggle": "Studying full-time? Get student pricing",
-    "studentNote": "verified at checkout",
-    "studentCta": "Get the student rate",
-    "studentVerifyNeeded": "Sign in with your verified academic (.edu) email to unlock the student rate.",
     "passHead": "Exam Season Pass",
     "passLead": "Just need it until your checkride? Full Pro access for 90 days, no subscription.",
     "passCta": "Get the pass",
     "passComingSoon": "Available at launch",
     "prepHead": "Exam Prep packs",
-    "prepLead": "Prefer to pay once? Buy the prep pack for your certificate — question banks, a timed mock exam and study sheets. Certificate packs SAR {{cert}}, single subjects SAR {{subject}}; every pack is included with Pro & School.",
+    "prepLead": "Prefer to pay once? Buy the prep pack for your certificate — question banks, a timed mock exam and study sheets. Packs run SAR {{from}}–{{top}}, priced by how much material each one carries; every pack is included with Pro & School.",
     "prepPer": "from SAR {{n}} / pack · one-time",
     "prepCta": "Browse exam prep",
     "bundleHead": "All-Access Exam Bundle",
@@ -2016,14 +2012,20 @@
       {
         "name": "Starter",
         "price": "SAR 499 / mo",
-        "quota": "5,000 answers / month",
+        "quota": "1,000 answers / month",
         "blurb": "For a single product or a pilot integration."
       },
       {
         "name": "Growth",
         "price": "SAR 1,999 / mo",
-        "quota": "25,000 answers / month",
+        "quota": "5,000 answers / month",
         "blurb": "For a scaling product or a school LMS."
+      },
+      {
+        "name": "Scale",
+        "price": "SAR 6,999 / mo",
+        "quota": "25,000 answers / month",
+        "blurb": "For a platform serving a whole training network."
       },
       {
         "name": "Enterprise",
@@ -2327,7 +2329,6 @@
       "unknown-checkout-kind": "That checkout isn't recognized. Please start again from Pricing.",
       "unknown-pack": "That pack isn't available for purchase.",
       "org-name-required": "Enter your organisation or school name to continue.",
-      "student-verification-required": "Verify your student email to use the student rate.",
       "widget-load-failed": "Couldn't load the payment form. Please check your connection and try again."
     }
   },
@@ -2655,7 +2656,7 @@
         "sections": [
           {
             "h": "What VFR minimums are",
-            "p": "Under visual flight rules you navigate by outside visual reference, so the rules require a minimum flight visibility and a minimum distance from cloud, measured below, above and horizontally, so you can see and avoid other aircraft. These basic VFR weather minimums live in GACAR Part 91 (§91.155). Meeting them is a condition of flying VFR, not a recommendation."
+            "p": "Under visual flight rules you navigate by outside visual reference, so the rules require a minimum flight visibility and a minimum distance from cloud, measured below, above and horizontally, so you can see and avoid other aircraft. These basic VFR weather minimums live in GACAR Part 91 (§91.165). Meeting them is a condition of flying VFR, not a recommendation."
           },
           {
             "h": "They change with airspace and altitude",
@@ -2676,7 +2677,7 @@
         ],
         "adel": "What are the GACAR Part 91 basic VFR weather minimums, and how do the visibility and cloud-clearance requirements change with airspace class?",
         "takeaways": [
-          "VFR requires a minimum flight visibility and a set distance from cloud, from GACAR Part 91 (§91.155).",
+          "VFR requires a minimum flight visibility and a set distance from cloud, from GACAR Part 91 (§91.165).",
           "The exact figures change with airspace class (defined in Part 71) and your altitude.",
           "Controlled airspace generally needs more; Class G near the surface needs less; VFR is barred in Class A.",
           "Special VFR is an ATC clearance for reduced minimums in a control zone, not an entitlement.",
@@ -2686,12 +2687,12 @@
           {
             "label": "Governing rule",
             "value": "Basic VFR weather minimums are set in GACAR Part 91.",
-            "ref": "GACAR §91.155"
+            "ref": "GACAR §91.165"
           },
           {
             "label": "What is required",
             "value": "A minimum flight visibility and a minimum distance from cloud (below, above, horizontal).",
-            "ref": "GACAR §91.155"
+            "ref": "GACAR §91.165"
           },
           {
             "label": "Varies by",
@@ -2717,7 +2718,7 @@
         "faqs": [
           {
             "q": "What are the VFR weather minimums in Saudi Arabia?",
-            "a": "Under GACAR Part 91 basic VFR weather minimums (§91.155), flying under visual flight rules requires a minimum flight visibility and a minimum distance from cloud, measured below, above and horizontally. The exact figures depend on the class of airspace and your altitude. Because the numbers can change, confirm the current values in GACAR Part 91 at gaca.gov.sa rather than relying on a summary."
+            "a": "Under GACAR Part 91 basic VFR weather minimums (§91.165), flying under visual flight rules requires a minimum flight visibility and a minimum distance from cloud, measured below, above and horizontally. The exact figures depend on the class of airspace and your altitude. Because the numbers can change, confirm the current values in GACAR Part 91 at gaca.gov.sa rather than relying on a summary."
           },
           {
             "q": "How much visibility do I need to fly VFR?",
@@ -2725,7 +2726,7 @@
           },
           {
             "q": "How far from clouds do I have to stay under VFR?",
-            "a": "VFR requires a minimum distance from cloud, expressed as a distance below, above and horizontally from cloud, so you can see and avoid other traffic. The exact distances depend on the airspace class and altitude and are set in GACAR Part 91 (§91.155). Verify the current figures at source."
+            "a": "VFR requires a minimum distance from cloud, expressed as a distance below, above and horizontally from cloud, so you can see and avoid other traffic. The exact distances depend on the airspace class and altitude and are set in GACAR Part 91 (§91.165). Verify the current figures at source."
           },
           {
             "q": "What is Special VFR?",
@@ -2748,7 +2749,7 @@
           },
           {
             "h": "Recent experience to carry passengers",
-            "p": "Before carrying passengers you must have completed a set number of takeoffs and landings within a preceding period, in the same category and class of aircraft, under GACAR Part 61 recent flight experience (§61.57). The exact count and the length of the window are set by the regulation and can change, so read them at source rather than from a summary."
+            "p": "Before carrying passengers you must have completed a set number of takeoffs and landings within a preceding period, in the same category and class of aircraft, under GACAR Part 61 recent flight experience (§61.17). The exact count and the length of the window are set by the regulation and can change, so read them at source rather than from a summary."
           },
           {
             "h": "Night currency is separate",
@@ -2784,12 +2785,12 @@
           {
             "label": "Passenger currency",
             "value": "Recent takeoffs and landings in the same category and class before carrying passengers.",
-            "ref": "GACAR §61.57"
+            "ref": "GACAR §61.17"
           },
           {
             "label": "Night currency",
             "value": "A separate set of night takeoffs and landings to a full stop to carry passengers at night.",
-            "ref": "GACAR §61.57"
+            "ref": "GACAR §61.17"
           },
           {
             "label": "Instrument recency",
@@ -2814,7 +2815,7 @@
           },
           {
             "q": "How many takeoffs and landings do I need to carry passengers?",
-            "a": "GACAR Part 61 recent flight experience (§61.57) requires a set number of takeoffs and landings within a preceding period, in the same category and class of aircraft, before you may carry passengers, with a separate requirement for night. Because the exact figures and time window can change, verify them in the current GACAR Part 61 rather than relying on a summary."
+            "a": "GACAR Part 61 recent flight experience (§61.17) requires a set number of takeoffs and landings within a preceding period, in the same category and class of aircraft, before you may carry passengers, with a separate requirement for night. Because the exact figures and time window can change, verify them in the current GACAR Part 61 rather than relying on a summary."
           },
           {
             "q": "What is night currency and how is it different?",
@@ -2879,7 +2880,7 @@
           },
           {
             "h": "Finding a rule",
-            "p": "Identify the subject, open the matching Part, then drill to the subpart and section. A reference like \"§61.57\" means Part 61, section 57. The library search and Captain Adel both return the exact Part and section so you can verify the wording at source."
+            "p": "Identify the subject, open the matching Part, then drill to the subpart and section. A reference like \"§61.17\" means Part 61, section 17. The library search and Captain Adel both return the exact Part and section so you can verify the wording at source."
           },
           {
             "h": "Reading it safely",
@@ -2890,7 +2891,7 @@
         "takeaways": [
           "GACAR is Saudi Arabia's civil-aviation regulation, organised into numbered Parts.",
           "Each Part covers one subject, e.g. Part 1 definitions, Part 61 licensing, Part 91 operations.",
-          "A citation like §61.57 means Part 61, section 57.",
+          "A citation like §61.17 means Part 61, section 17.",
           "Start with Part 1 definitions, and always read the current text at source."
         ]
       },

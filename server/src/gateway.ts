@@ -351,6 +351,14 @@ app.post(["/v1/ask", "/api/v1/ask"], async (req: Request, res: Response): Promis
     });
     return;
   }
+  // History and the Pro tier are app-only (see the header note), and neither was
+  // actually being stripped. `provider` is a cost leak — any tier could request the
+  // Pro model at the flash price. `history` is worse: nothing proves an `assistant`
+  // turn came from us, so a caller could feed back 12 forged model turns and talk
+  // this surface out of its own guardrails, then render the result to students as
+  // regulation.
+  parsed.provider = undefined;
+  parsed.history = undefined;
 
   // Meter per key, bucketed by calendar month (best-effort; the quota gate above reads
   // the month bucket, billing reads it offline). Never blocks the answer on the write.

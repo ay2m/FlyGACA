@@ -126,7 +126,14 @@ describe("isAllowedOrigin", () => {
 
   it("allows https project-scoped preview suffixes", () => {
     expect(isAllowedOrigin("https://staging.flygaca.com")).toBe(true);
-    expect(isAllowedOrigin("https://flygaca-api-abc123-uc.a.run.app")).toBe(true);
+  });
+
+  // `.a.run.app` is the shared Cloud Run suffix for every GCP project, so matching
+  // it would reflect `Access-Control-Allow-Credentials` back to any host an attacker
+  // can deploy. Our own revision URLs go through EXTRA_ALLOWED_ORIGINS instead.
+  it("rejects any *.a.run.app origin, including our own naming shape", () => {
+    expect(isAllowedOrigin("https://flygaca-api-abc123-uc.a.run.app")).toBe(false);
+    expect(isAllowedOrigin("https://evil-svc-xyz789-uc.a.run.app")).toBe(false);
   });
 
   it("rejects look-alike hosts that only end with a bare domain", () => {

@@ -1,7 +1,7 @@
 /**
  * Pure billing logic shared by the Moyasar functions — no Moyasar SDK/Admin imports
  * so it is unit-testable. Moyasar (unlike Stripe) has no native subscription object:
- * `pro`/`student` are "recurring" only in the sense that a saved card token is
+ * `pro` is "recurring" only in the sense that a saved card token is
  * re-charged by a scheduled function (see ./billing.ts renewMoyasarSubscriptions) and
  * each successful charge EXTENDS `expiresAt` by one cadence period — the same
  * expiry-extension shape already used for the one-time Exam Season Pass
@@ -20,20 +20,24 @@ export interface Entitlement {
 
 export type Cadence = "monthly" | "annual";
 
-/** What a checkout is for. `pro`/`student` are recurring (token-renewed); the rest
- * are one-time purchases. `bundle` is the All-Access Exam Bundle — one payment that
- * permanently grants every sellable pack. `cohort` is the self-serve B2B Starter tier —
- * one payment creates a 25-seat, 90-day-intake org (see org-core.buildCohortOrg). */
-export type CheckoutKind = "pro" | "student" | "pass" | "credits" | "pack" | "bundle" | "cohort";
+/** What a checkout is for. `pro` is recurring (token-renewed); the rest are one-time
+ * purchases. `bundle` is the All-Access Exam Bundle — one payment that permanently
+ * grants every sellable pack. `cohort` is the self-serve B2B Starter tier — one payment
+ * creates a 25-seat, 90-day-intake org (see org-core.buildCohortOrg).
+ *
+ * There was also a `student` kind. It charged less than `pro` and granted exactly the
+ * same entitlement, and the eligibility check (`isStudentEmail`) was never wired to any
+ * route — so it was strictly the better buy for everyone and `pro`'s price was
+ * decorative. Removed rather than gated. */
+export type CheckoutKind = "pro" | "pass" | "credits" | "pack" | "bundle" | "cohort";
 
 export function isRecurringKind(kind: CheckoutKind): boolean {
-  return kind === "pro" || kind === "student";
+  return kind === "pro";
 }
 
 /** The set of accepted checkout kinds — the allow-list `checkoutKind` narrows to. */
 export const CHECKOUT_KINDS = new Set<CheckoutKind>([
   "pro",
-  "student",
   "pass",
   "credits",
   "pack",
@@ -56,8 +60,6 @@ export function describeCheckout(kind: CheckoutKind, packId?: string): string {
   switch (kind) {
   case "pro":
     return "Fly GACA Pro";
-  case "student":
-    return "Fly GACA Pro (Student)";
   case "pass":
     return "Fly GACA Exam Season Pass";
   case "credits":
@@ -78,17 +80,17 @@ export function describeCheckout(kind: CheckoutKind, packId?: string): string {
 export interface PriceEnv {
   proMonthly: string;
   proAnnual: string;
-  studentMonthly: string;
-  studentAnnual: string;
   pass: string;
   credits: string;
-  /** Legacy flat prep-pack price — the fallback when a per-kind tier below is unset,
-   * so an existing deploy keeps pricing packs until the tiered env vars are set. */
+  /** Legacy flat prep-pack price — the fallback when a band below is unset, so an
+   * existing deploy keeps pricing packs until the banded env vars are set. */
   prepPack: string;
-  /** Certificate packs (a full licence's material: PPL/CPL/IR/ATPL/ELP/Conversion). */
-  prepPackCert: string;
-  /** Single-subject packs (Medical, AIP). */
-  prepPackSubject: string;
+  /** Entry band — a focused bank (Conversion, Medical, AIP). */
+  prepPackEssential: string;
+  /** Mid band — a full topic spread (ELP, ATPL, IR). */
+  prepPackStandard: string;
+  /** Top band — deepest banks plus ground school and a reading path (CPL, PPL). */
+  prepPackComplete: string;
   /** All-Access Exam Bundle — every sellable pack, permanent, one payment. */
   bundle: string;
   /** Self-serve B2B Starter ("Cohort") tier — up to 25 seats, one 90-day intake. */
@@ -107,8 +109,8 @@ export function sarToHalalas(sar: string | undefined): number {
 }
 
 /** The halalas amount for a checkout, from the configured SAR price table. `cadence`
- * only matters for the recurring kinds (`pro`/`student`); `packId` selects the
- * certificate-vs-subject tier for a `pack` checkout (ignored by every other kind). */
+ * only matters for the recurring kind (`pro`); `packId` selects the content band for
+ * a `pack` checkout (ignored by every other kind). */
 export function amountForCheckout(
   kind: CheckoutKind,
   cadence: Cadence | undefined,
@@ -118,17 +120,18 @@ export function amountForCheckout(
   switch (kind) {
   case "pro":
     return sarToHalalas(cadence === "monthly" ? env.proMonthly : env.proAnnual);
-  case "student":
-    return sarToHalalas(cadence === "monthly" ? env.studentMonthly : env.studentAnnual);
   case "pass":
     return sarToHalalas(env.pass);
   case "credits":
     return sarToHalalas(env.credits);
   case "pack": {
-    // Certificate packs (a full licence's material) price above single-subject
-    // packs; fall back to the legacy flat `prepPack` price if a tier is unset.
-    const tier = packId && isCertificatePack(packId) ? env.prepPackCert : env.prepPackSubject;
-    return sarToHalalas(tier || env.prepPack);
+    // Priced by content band; falls back to the legacy flat price if a band is unset.
+    const band = {
+      essential: env.prepPackEssential,
+      standard: env.prepPackStandard,
+      complete: env.prepPackComplete,
+    }[packTier(packId)];
+    return sarToHalalas(band || env.prepPack);
   }
   case "bundle":
     return sarToHalalas(env.bundle);
@@ -208,22 +211,35 @@ export function sellablePackId(v: unknown): string | null {
 }
 
 /**
- * Sellable packs that bundle a full licence's material (banks + ground school + path +
- * study sheet) and so price at the higher certificate tier. The remaining sellable
- * packs are single-subject. MUST mirror `kind: 'certificate'` in src/lib/prepCatalog.ts.
+ * Price band for a sellable pack, set by how much material the pack actually carries
+ * rather than by its certificate/subject label.
+ *
+ * The label was the wrong axis: `conversion` (76 questions) and `ppl-exam` (514, plus
+ * nine ground-school modules) are both "certificate" packs and used to cost the same,
+ * which over-charged the thin ones and under-charged the deep ones by ~7x of content.
+ * Bands are declared, not computed, because the server has to price a checkout without
+ * loading the question corpus — `tests/pricing-server-parity.test.ts` is what keeps
+ * this map honest against `src/lib/prepCatalog.ts`.
  */
-export const CERTIFICATE_PACK_IDS = [
-  "ppl-exam",
-  "elp",
-  "conversion",
-  "cpl",
-  "ir",
-  "atpl",
-] as const;
+export type PackTier = "essential" | "standard" | "complete";
 
-/** Whether a sellable pack id is a certificate pack (higher price tier). */
-export function isCertificatePack(id: string): boolean {
-  return (CERTIFICATE_PACK_IDS as readonly string[]).includes(id);
+export const PACK_TIERS: Record<string, PackTier> = {
+  // Essential — a focused bank, under ~150 questions.
+  conversion: "essential",
+  medical: "essential",
+  aip: "essential",
+  // Standard — a full topic spread.
+  elp: "standard",
+  atpl: "standard",
+  ir: "standard",
+  // Complete — the deepest banks, with ground school and a reading path.
+  cpl: "complete",
+  "ppl-exam": "complete",
+};
+
+/** The price band a sellable pack falls in; unknown ids price at the entry band. */
+export function packTier(id: string | undefined): PackTier {
+  return (id && PACK_TIERS[id]) || "essential";
 }
 
 /** Days one successful (initial or renewal) charge buys, by cadence. */
@@ -252,10 +268,9 @@ export function extendExpiry(expiresAt: Date, cadence: Cadence): Date {
 }
 
 /**
- * Entitlement to persist after a paid `pro`/`student` charge — a NEW purchase passes
- * `now` as `from`; a renewal charge passes the current `expiresAt` so the fresh period
- * is appended rather than measured from the (early) charge date. Both grant `plan:
- * 'pro'` — the discounted student rate carries the same entitlement as full-price Pro.
+ * Entitlement to persist after a paid `pro` charge — a NEW purchase passes `now` as
+ * `from`; a renewal charge passes the current `expiresAt` so the fresh period is
+ * appended rather than measured from the (early) charge date.
  */
 export function entitlementFromCheckout(cadence: Cadence, from: Date): Entitlement {
   return { plan: "pro", source: "moyasar", expiresAt: extendExpiry(from, cadence).toISOString() };
@@ -384,4 +399,34 @@ export function renewalFailureOutcome(
  */
 export function renewalBaseDate(currentExpiresAt: string | undefined, now: Date): Date {
   return currentExpiresAt ? new Date(currentExpiresAt) : now;
+}
+
+/**
+ * Grant `next` without ever shortening or downgrading what `current` already gives.
+ *
+ * Two axes move independently, which is why this isn't simply "take the later one":
+ *  - PLAN — an in-force `school` tier outranks a `pro` purchase, so it stands.
+ *  - EXPIRY — whichever entitlement runs longer wins, and its `source` travels with
+ *    it so the surviving grant stays attributable. An absent `expiresAt` means "no
+ *    expiry" and therefore always wins.
+ *
+ * A lapsed `current` is not a downgrade to protect, so it is simply replaced.
+ * This is the invariant that stops a comp from clobbering a paying user, so it
+ * lives here rather than in a route: every writer of `entitlements` — billing
+ * fulfilment and the grant routes alike — has to be able to reach it.
+ */
+export function mergeUpward(current: Entitlement | null, next: Entitlement): Entitlement {
+  const activeNow = current ? effectivePlan(current) : "free";
+  if (!current || activeNow === "free") return next;
+
+  const expiryOf = (e: Entitlement): number =>
+    e.expiresAt ? Date.parse(e.expiresAt) : Infinity;
+  const longest = expiryOf(current) > expiryOf(next) ? current : next;
+
+  const merged: Entitlement = {
+    plan: activeNow === "school" ? "school" : next.plan,
+    source: longest.source,
+  };
+  if (longest.expiresAt) merged.expiresAt = longest.expiresAt;
+  return merged;
 }

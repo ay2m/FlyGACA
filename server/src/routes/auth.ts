@@ -322,7 +322,7 @@ authRouter.get(
     let row =
       (await findUserByGoogleSub(info.sub)) ??
       (await findUserByEmail(email).then((existing) =>
-        existing ? linkGoogleAccount(existing.id, info.sub) : null,
+        existing ? linkGoogleAccount(existing.id, info.sub, info.email_verified === true) : null,
       ));
 
     row ??= await createUser({

@@ -11,7 +11,7 @@ import { BentoGrid } from '@/components/bento/BentoGrid';
 import { BentoCard, type BentoTone } from '@/components/bento/BentoCard';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import { faqLd, breadcrumbLd } from '@/lib/seo/jsonld';
-import { COHORT_PRICE_SAR } from '@/lib/services/pricing';
+import { COHORT_PRICE_SAR, formatSar } from '@/lib/services/pricing';
 import styles from './Schools.module.css';
 
 interface Section {
@@ -133,7 +133,7 @@ export function Schools() {
               </ul>
               {i === 0 && (
                 <Link className="btn btn-clay-primary" to="/business/admin">
-                  {t('schools.packages.buyNow', { price: COHORT_PRICE_SAR })}
+                  {t('schools.packages.buyNow', { price: formatSar(COHORT_PRICE_SAR) })}
                 </Link>
               )}
               <a className="btn btn-clay" href="#schools-form-head">

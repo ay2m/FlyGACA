@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { startCohortCheckout } from '@/lib/services/billing';
-import { COHORT_PRICE_SAR } from '@/lib/services/pricing';
+import { COHORT_PRICE_SAR, formatSar } from '@/lib/services/pricing';
 import styles from './admin.module.css';
 
 /**
@@ -43,7 +43,7 @@ export function BuyCohortPanel() {
     <div className={styles.buyCohort}>
       <h2>{t('business.admin.buyCohort.title')}</h2>
       <p className={styles.muted}>
-        {t('business.admin.buyCohort.lead', { price: COHORT_PRICE_SAR })}
+        {t('business.admin.buyCohort.lead', { price: formatSar(COHORT_PRICE_SAR) })}
       </p>
       <form onSubmit={submit} className={styles.formGroup}>
         <label htmlFor="cohort-org-name">{t('business.admin.buyCohort.orgNameLabel')}</label>
@@ -59,7 +59,7 @@ export function BuyCohortPanel() {
         <button type="submit" className="btn btn-primary" disabled={busy || !orgName.trim()}>
           {busy
             ? t('business.admin.buyCohort.busy')
-            : t('business.admin.buyCohort.cta', { price: COHORT_PRICE_SAR })}
+            : t('business.admin.buyCohort.cta', { price: formatSar(COHORT_PRICE_SAR) })}
         </button>
       </form>
     </div>

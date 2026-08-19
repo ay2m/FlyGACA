@@ -11,7 +11,7 @@
  * self-grant.
  */
 import { Router } from "express";
-import { effectivePlan } from "../billing-core.js";
+import { effectivePlan, mergeUpward } from "../billing-core.js";
 import { isStaffEmail, staffEntitlement } from "../staff-core.js";
 import { schoolEntitlement, inviteKeyForEmail } from "../school-core.js";
 import { foundingEntitlement, isFoundingEligible } from "../founding-core.js";
@@ -125,7 +125,11 @@ grantsRouter.post(
     if (!seat) return res.json({ granted: false });
 
     await seat.claim();
-    await setEntitlement(user.uid, schoolEntitlement(seat.expiresAt));
+    // Merge rather than overwrite: a seat is often shorter than a plan the member
+    // already bought, so a bare write would trade months of paid Pro for a 30-day
+    // seat and relabel the row `source: "school"`, destroying the refund trail.
+    const current = await getEntitlement(user.uid);
+    await setEntitlement(user.uid, mergeUpward(current, schoolEntitlement(seat.expiresAt)));
     return res.json({ granted: true, plan: "school" });
   }),
 );

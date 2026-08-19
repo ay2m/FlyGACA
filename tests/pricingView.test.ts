@@ -12,13 +12,11 @@ describe('pricingCheckoutOutcome', () => {
     expect(pricingCheckoutOutcome('sign-in-required')).toBe('navigate-account');
   });
 
-  it('maps the student-verification code to the student-verify notice', () => {
-    expect(pricingCheckoutOutcome('student-verification-required')).toBe('student-verify');
-  });
-
   it('falls back to generic for any other code', () => {
     expect(pricingCheckoutOutcome('network-error')).toBe('generic');
     expect(pricingCheckoutOutcome('')).toBe('generic');
+    // The student rate is gone, so its code is no longer special-cased.
+    expect(pricingCheckoutOutcome('student-verification-required')).toBe('generic');
   });
 });
 

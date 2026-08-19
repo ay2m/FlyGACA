@@ -91,14 +91,8 @@ describe('usePricingCheckout', () => {
     expect(result.current.errorKind).toBeNull();
   });
 
-  it('surfaces the student-verify and generic error kinds', async () => {
+  it('surfaces a generic error kind for any non-routing failure', async () => {
     const { result } = renderHook(() => usePricingCheckout(), { wrapper: wrapper() });
-
-    vi.mocked(startProCheckout).mockRejectedValueOnce(new Error('student-verification-required'));
-    await act(async () => {
-      await result.current.checkout('student');
-    });
-    expect(result.current.errorKind).toBe('student-verify');
 
     vi.mocked(startProCheckout).mockRejectedValueOnce(new Error('boom'));
     await act(async () => {
@@ -107,7 +101,7 @@ describe('usePricingCheckout', () => {
     expect(result.current.errorKind).toBe('generic');
   });
 
-  it('buyBundle routes on sign-in and is otherwise always generic (never student-verify)', async () => {
+  it('buyBundle routes on sign-in and is otherwise always generic', async () => {
     const { result } = renderHook(() => usePricingCheckout(), { wrapper: wrapper() });
 
     vi.mocked(startBundleCheckout).mockRejectedValueOnce(new Error('sign-in-required'));
@@ -116,10 +110,7 @@ describe('usePricingCheckout', () => {
     });
     expect(navigateSpy).toHaveBeenCalledWith('/account');
 
-    // Even a student-verification code can't put the bundle into the student-verify state.
-    vi.mocked(startBundleCheckout).mockRejectedValueOnce(
-      new Error('student-verification-required'),
-    );
+    vi.mocked(startBundleCheckout).mockRejectedValueOnce(new Error('nope'));
     await act(async () => {
       await result.current.buyBundle();
     });

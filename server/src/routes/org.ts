@@ -8,7 +8,12 @@
  * agree by construction.
  */
 import { Router } from "express";
-import { parseProvisionInput, checkSeatLimit, DEFAULT_ORG_BANKS } from "../org-core.js";
+import {
+  parseProvisionInput,
+  checkSeatLimit,
+  seatExpiry,
+  DEFAULT_ORG_BANKS,
+} from "../org-core.js";
 import { cohortRow, inviteKeyForEmail, type ProgressSummaryLike } from "../school-core.js";
 import type { Entitlement } from "../billing-core.js";
 import { query, queryOne } from "../db.js";
@@ -153,7 +158,7 @@ orgRouter.post(
             `INSERT INTO org_seats (org_id, email, status, source, expires_at)
              VALUES ($1, $2, 'invited', 'invite', $3)
              ON CONFLICT (org_id, email) DO UPDATE SET expires_at = EXCLUDED.expires_at`,
-            [org.id, email, parsed.value.expiresAt ?? null],
+            [org.id, email, seatExpiry(parsed.value.expiresAt)],
           );
           return { email, success: true };
         } catch (err) {

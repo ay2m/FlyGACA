@@ -50,30 +50,69 @@ export interface Pack {
   exam?: { questions?: number; minutes?: number; passMark?: number };
 }
 
-/**
- * One-time pack prices, in SAR. Certificate packs bundle a full licence's material
- * (topic banks + ground-school modules + a reading path + study sheet + its own timed
- * mock exam), so they price above single-subject packs. Mirror of the server price env
- * (`MOYASAR_PRICE_PREP_PACK_CERT_SAR` / `_SUBJECT_SAR`) and `amountForCheckout` in
- * functions/src/billing-core.ts.
- */
-export const PREP_PACK_PRICE_CERT = 79;
-export const PREP_PACK_PRICE_SUBJECT = 49;
+/** Price band for a paid pack — see {@link PACK_TIERS}. */
+export type PackTier = 'essential' | 'standard' | 'complete';
 
-/** Back-compat alias: the base (single-subject) one-time price. Some copy shows a
- * single "from" figure. Prefer {@link packPrice} for a specific pack. */
-export const PREP_PACK_PRICE = PREP_PACK_PRICE_SUBJECT;
+/**
+ * Which band each sellable pack falls in, set by how much material it carries rather
+ * than by its certificate/subject label.
+ *
+ * The label was the wrong axis: `conversion` and `ppl-exam` are both certificate packs
+ * but carry 76 and 514 questions respectively, and used to cost the same.
+ *
+ * MUST mirror `PACK_TIERS` in server/src/billing-core.ts — the server prices the
+ * checkout and this only renders it, so a drift here advertises a price the card is
+ * never charged. `tests/pricing-server-parity.test.ts` enforces the mirror.
+ */
+export const PACK_TIERS: Record<string, PackTier> = {
+  conversion: 'essential',
+  medical: 'essential',
+  aip: 'essential',
+  elp: 'standard',
+  atpl: 'standard',
+  ir: 'standard',
+  cpl: 'complete',
+  'ppl-exam': 'complete',
+};
+
+/**
+ * One-time SAR prices per band, VAT-inclusive as ZATCA requires for a consumer-facing
+ * published price.
+ *
+ * Anchored on the international question-bank floor (a single written prep is SAR
+ * 188-244 at ASA/Dauntless/Sheppard; a full-year EASA bank is SAR 860-960) and on the
+ * Saudi one-time edtech band (SAR 199-400), not on a local rival — there is no GACAR
+ * competitor at any price.
+ */
+export const PACK_TIER_PRICE: Record<PackTier, number> = {
+  essential: 249,
+  standard: 399,
+  complete: 499,
+};
+
+/** The band a pack prices in; unknown ids fall to the entry band, as on the server. */
+export function packTier(id: string): PackTier {
+  return PACK_TIERS[id] ?? 'essential';
+}
+
+/** The lowest and highest pack prices — for the "from …" and range copy on /pricing. */
+export const PREP_PACK_PRICE_FROM = PACK_TIER_PRICE.essential;
+export const PREP_PACK_PRICE_TOP = PACK_TIER_PRICE.complete;
+
+/** Back-compat alias: the entry one-time price. Prefer {@link packPrice} for a pack. */
+export const PREP_PACK_PRICE = PREP_PACK_PRICE_FROM;
 
 /**
  * All-Access Exam Bundle — every paid pack, permanent, one payment. Sold as its own
- * checkout kind (`bundle`) that grants ownership of all sellable packs. Mirror of the
- * server `MOYASAR_PRICE_BUNDLE_SAR`.
+ * checkout kind (`bundle`) that grants ownership of all sellable packs. Priced under
+ * half the sum of the eight packs bought separately, so the bundle is the obvious buy
+ * for anyone taking more than three. Mirror of the server `PRICE_BUNDLE`.
  */
-export const EXAM_BUNDLE_PRICE = 199;
+export const EXAM_BUNDLE_PRICE = 1499;
 
-/** The one-time SAR price for a specific pack, by its kind. */
+/** The one-time SAR price for a specific pack, by its content band. */
 export function packPrice(pack: Pack): number {
-  return pack.kind === 'certificate' ? PREP_PACK_PRICE_CERT : PREP_PACK_PRICE_SUBJECT;
+  return PACK_TIER_PRICE[packTier(pack.id)];
 }
 
 export const PACKS: Pack[] = [
