@@ -28,6 +28,13 @@ export default defineConfig({
       // i18n bundles are exercised by the Playwright E2E suite / the parity
       // test, not measured here.
       include: ['src/calc/**', 'src/hooks/**', 'src/lib/**', 'src/components/**'],
+      // Measure every file under those globs, not just the ones a test happens to
+      // import, so an entirely-untested new module counts as 0% instead of being
+      // invisible to the ratchet. (This is what server/vitest.config.ts already
+      // does and claims this file does.) It changes nothing today — the two
+      // smoke specs pull in the whole tree — but a service reachable only from a
+      // page outside those specs would otherwise never be counted.
+      all: true,
       // PwaPrompts imports the build-only `virtual:pwa-register/react` module,
       // which the Vitest config (no vite-plugin-pwa) can't resolve, so v8 fails
       // to instrument it as an uncovered file. It's app chrome covered by E2E.
