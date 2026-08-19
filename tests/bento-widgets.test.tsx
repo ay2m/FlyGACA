@@ -12,7 +12,6 @@ import { renderWithRouter } from './helpers/render';
 import { StatValue } from '@/components/bento/widgets/StatValue';
 import { ToolsWidget } from '@/components/bento/widgets/ToolsWidget';
 import { LearnWidget } from '@/components/bento/widgets/LearnWidget';
-import { HudWidget } from '@/components/bento/widgets/HudWidget';
 import { RegStreamWidget } from '@/components/bento/widgets/RegStreamWidget';
 import { ComplianceWidget } from '@/components/bento/widgets/ComplianceWidget';
 import { RadarWidget } from '@/components/bento/widgets/RadarWidget';
@@ -92,23 +91,6 @@ describe('LearnWidget', () => {
   });
 });
 
-describe('HudWidget', () => {
-  it('links to /hud and keeps the simulated-scenario framing visible', () => {
-    renderWithRouter(<HudWidget />);
-    expect(screen.getByRole('link')).toHaveAttribute('href', '/hud');
-    // The SIM note is the honesty guard — the teaser must never read as live.
-    expect(screen.getByText(/simulated training scenario/i)).toBeInTheDocument();
-    expect(screen.getByText(/FALCON-07/)).toBeInTheDocument();
-  });
-
-  it('names the link from its heading', () => {
-    renderWithRouter(<HudWidget />);
-    expect(
-      screen.getByRole('link', { name: "Watch the Kingdom's airspace come alive" }),
-    ).toBeInTheDocument();
-  });
-});
-
 describe('RegStreamWidget', () => {
   it('names the link from its heading and shows a skeleton while the index loads', () => {
     pendingFetch();
@@ -149,6 +131,6 @@ describe('HomeDashboard', () => {
     renderWithRouter(<HomeDashboard />);
     expect(screen.getByRole('region', { name: 'Fly GACA dashboard' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
-    expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(8);
+    expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(7);
   });
 });

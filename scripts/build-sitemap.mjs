@@ -33,7 +33,8 @@ const PRIVATE = new Set([
 // The former Guides + Study hubs now redirect to /learn — don't index the redirects
 // (their content + leaf pages live on, and `/learn` carries the hub priority).
 // /signin and /signup redirect to /account — the same treatment.
-const REDIRECTS = new Set(['/guides', '/study', '/signin', '/signup']);
+// /hud redirects to /tools now the Airspace HUD is retired (docs/DESIGN-airspace-hud-v2.md).
+const REDIRECTS = new Set(['/guides', '/study', '/signin', '/signup', '/hud']);
 const norm = (p) => (p === '/' ? '/' : `/${p.replace(/^\//, '')}`);
 
 const today = new Date().toISOString().slice(0, 10);

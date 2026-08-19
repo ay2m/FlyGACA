@@ -53,7 +53,7 @@
   letter-spacing: var(--tracking-tight);
   line-height: var(--lh-heading);
   margin: 0;
-  /* HUD-style gradient-clip title (mirrors Hud.module.css `.title` / --grad-title).
+  /* Gradient-clip title (`.title` / --grad-title).
      The global reduce-motion kill-switch in global.css disables the shimmer. */
   background: var(--grad-title);
   background-size: 180% auto;

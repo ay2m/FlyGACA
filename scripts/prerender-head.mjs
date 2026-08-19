@@ -159,7 +159,9 @@ const PRIVATE = new Set([
   '/checkout/return',
 ]);
 // /signin and /signup redirect to /account — keep them out of the snapshots too.
-const REDIRECTS = new Set(['/guides', '/study', '/signin', '/signup']);
+// /hud redirects to /tools now the Airspace HUD is retired (docs/DESIGN-airspace-hud-v2.md);
+// the hosts' SPA fallback still serves it, so the client router does the redirect.
+const REDIRECTS = new Set(['/guides', '/study', '/signin', '/signup', '/hud']);
 
 // Static pages: route → i18n meta key (under <bundle>.meta / .metaDesc). Routes
 // not listed still get canonical/hreflang/og injected, just keep the default title.
@@ -175,7 +177,6 @@ const STATIC_META = {
   '/pricing': 'pricing',
   '/schools': 'schools',
   '/developers': 'developers',
-  '/hud': 'hud',
   '/about': 'about',
   '/support': 'support',
   '/study/quiz': 'quiz',
