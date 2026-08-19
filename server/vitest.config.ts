@@ -23,18 +23,21 @@ export default defineConfig({
       // (`npm run test:coverage` prints the live figures.)
       //
       // These were 80 across, which the suite has never actually met — the real
-      // figures are 65.52 / 63.79 / 61.05 / 64.85, so `test:coverage` exited 1.
+      // figures were 65.52 / 63.79 / 61.05 / 64.85, so `test:coverage` exited 1.
       // Nothing ran it (the repo had no CI), so the 80 was aspirational rather
-      // than protective. Now that the CI `server` job runs it on every PR, the
-      // numbers are set just under today's run, per the rule above — an enforced
-      // floor beats an ignored target. The uncovered weight is gateway.ts (0% of
-      // 160 statements), store.ts (4%), session.ts (7%) and http.ts (15%); raise
-      // these as each lands.
+      // than protective. Now that the CI `server` job runs it on every PR they
+      // sit just under the live run, per the rule above — an enforced floor
+      // beats an ignored target.
+      //
+      // 71.82 / 69.06 / 70.19 / 70.78 today, after session.ts (7% → 96.7%) and
+      // http.ts (15% → 100%). The remaining weight is gateway.ts (0% of 160
+      // statements), store.ts (4%), school-core.ts (74%) and config.ts (55%);
+      // raise these as each lands.
       thresholds: {
-        statements: 65,
-        branches: 63,
-        functions: 60,
-        lines: 64,
+        statements: 71,
+        branches: 68,
+        functions: 70,
+        lines: 70,
       },
     },
   },
