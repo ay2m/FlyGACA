@@ -52,8 +52,13 @@ manifest of the HTTP surface, mounting one router per feature under `/api`:
 progress), `grants` (staff / school-seat / founding), `billing` (Moyasar checkout, confirm, webhook,
 renewal job), `org` (the B2B cohort dashboard), `waitlist`, plus the Captain Adel gateway
 (`/api/chat`, `/api/feedback`) and the licensed `/v1/ask` surface (tiered, API-key-authenticated,
-see `docs/LICENSED-API.md`). The RAG flow itself is Genkit + Gemini (see
-`docs/DESIGN-genkit-rag-backend.md`). `server/` is its own npm package with its own CI gate — run
+see `docs/LICENSED-API.md`). The RAG flow retrieves with BM25 in-process and generates
+with **ALLaM** (SDAIA's Arabic foundation model) over an OpenAI-compatible endpoint —
+`server/src/model-core.ts` (pure wire format) + `model.ts` (fetch/SSE), configured by
+`MODEL_BASE_URL`. **There is no Gemini and no model SDK**: the generation hop was the one
+call that left the Kingdom, so it now points at Saudi-hosted inference and the provider is
+config, not code. Genkit remains only as the flow/streaming harness. `docs/DESIGN-genkit-rag-backend.md`
+describes the retrieval design, but predates the provider change — its Gemini references are history. `server/` is its own npm package with its own CI gate — run
 `npm run lint && npm test && npm run build` inside `server/` when you touch it (root
 `npm run verify` does not cover it). Deploy region is `me-central2` (Dammam, in-Kingdom / PDPL);
 there is no region constant to keep in sync any more — the Cloud Run service and its Cloud SQL
@@ -191,7 +196,7 @@ service for `/api/*`:
 - **Google Cloud is the canonical origin**: the SPA is published to a Cloud Storage bucket behind an
   HTTPS load balancer, which routes `/api/*` to the **Cloud Run** service built from `server/`
   (region `me-central2`, Dammam — in-Kingdom / PDPL), backed by a **Cloud SQL** Postgres instance in
-  the same region. Secrets (session key, Moyasar keys, Gemini key, mail key) come from Secret
+  the same region. Secrets (session key, Moyasar keys, model key, mail key) come from Secret
   Manager; the renewal job is a Cloud Scheduler POST to `/api/billing/renew` carrying `CRON_SECRET`.
 - **Cloudflare Worker** (`worker/index.ts` + `wrangler.toml`) and the **Netlify** / **Vercel**
   mirrors each serve `dist/` and **proxy `/api/*` back to the Cloud Run origin** as a same-origin

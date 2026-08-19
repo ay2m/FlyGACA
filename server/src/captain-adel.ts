@@ -1,5 +1,8 @@
 /**
- * The Captain Adel RAG flow (DESIGN §3, §6.2). Powered by Gemini via Genkit.
+ * The Captain Adel RAG flow (DESIGN §3, §6.2). Powered by ALLaM — SDAIA's Arabic
+ * foundation model — over an OpenAI-compatible endpoint (`model.ts`), so the
+ * generation step stays in-Kingdom alongside Cloud Run and Cloud SQL. Genkit is
+ * still the flow/streaming harness; it no longer supplies the model.
  * It is PROTOCOL-AGNOSTIC: it streams token deltas via `sendChunk` and returns
  * a typed final object. The gateway maps that to the legacy SSE frames or
  * buffered JSON — Genkit's own wire format never reaches the public edge.
@@ -10,19 +13,17 @@
  * GACAR figure. This is the server-side twin of the site-wide <Disclaimer/>.
  */
 import { genkit, z } from "genkit";
-import { googleAI } from "@genkit-ai/google-genai";
 import { config } from "./config.js";
 import { getIndex, toChatSource } from "./corpus.js";
 import { buildSystem } from "./captain-adel-prompt.js";
+import { modelFor } from "./model-core.js";
+import { streamChat } from "./model.js";
 import type { ChatTurn, GroundingKind } from "./contract.js";
 
-// The plugin only reads GEMINI_API_KEY / GOOGLE_API_KEY on its own, so
-// GOOGLE_GENAI_API_KEY — the name .env.example and the deploy runbook use — has
-// to be handed over explicitly. Omit the option when unset so the plugin's own
-// env-var fallback still applies.
-const ai = genkit({
-  plugins: [googleAI(config.genaiApiKey ? { apiKey: config.genaiApiKey } : {})],
-});
+// No model plugin. Genkit is kept only for `defineFlow` — the typed, streamable
+// flow wrapper `gateway.ts` calls — while generation goes through model.ts to a
+// configurable in-Kingdom endpoint.
+const ai = genkit({});
 
 /** Read a numeric tuning knob from the environment, falling back to its default. */
 function tune(name: string, fallback: number): number {
@@ -76,12 +77,6 @@ const OUTPUT_SCHEMA = z.object({
 
 export type CaptainAdelOutput = z.infer<typeof OUTPUT_SCHEMA>;
 
-/** Map the request's `provider` (Gemini tier) to a concrete model id. */
-function modelFor(provider: string | undefined): string {
-  const tier = (provider ?? "flash").toLowerCase();
-  return tier === "pro" ? "gemini-2.5-pro" : "gemini-2.5-flash";
-}
-
 function refusalMessage(): string {
   return (
     "I couldn't find this in the GACAR regulatory corpus I have access to. " +
@@ -92,10 +87,10 @@ function refusalMessage(): string {
   );
 }
 
-function toGenkitMessages(history: ChatTurn[] | undefined) {
+function toChatHistory(history: ChatTurn[] | undefined) {
   return (history ?? []).map((t) => ({
-    role: t.role === "assistant" ? ("model" as const) : ("user" as const),
-    content: [{ text: t.content }],
+    role: t.role === "assistant" ? ("assistant" as const) : ("user" as const),
+    content: t.content,
   }));
 }
 
@@ -111,7 +106,7 @@ export const captainAdelFlow = ai.defineFlow(
     streamSchema: z.string(),
   },
   async (req, { sendChunk }): Promise<CaptainAdelOutput> => {
-    const provider = modelFor(req.provider);
+    const provider = modelFor(req.provider, config.model.tiers);
     const index = await getIndex();
     const hits = index.search(req.message, TOP_K);
     const corpusVersion = `Rev ${index.generated}`;
@@ -139,18 +134,20 @@ export const captainAdelFlow = ai.defineFlow(
       })
       .join("\n\n");
 
-    const { response, stream } = ai.generateStream({
-      model: googleAI.model(provider),
+    // Accumulate while forwarding: the client sees deltas as they land, and the
+    // flow's typed output needs the whole answer. One source of truth for both,
+    // so a dropped delta can no longer make the streamed and returned answers
+    // disagree.
+    let answer = "";
+    for await (const delta of streamChat({
+      model: provider,
       system: buildSystem(contextBlock),
-      messages: toGenkitMessages(req.history),
-      prompt: req.message,
-      config: { temperature: 0.2 },
-    });
-
-    for await (const chunk of stream) {
-      if (chunk.text) sendChunk(chunk.text);
+      history: toChatHistory(req.history),
+      message: req.message,
+    })) {
+      answer += delta;
+      sendChunk(delta);
     }
-    const answer = (await response).text;
 
     const kind: GroundingKind = top >= GROUNDED_SCORE ? "grounded" : "partial";
     return {

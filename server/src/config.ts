@@ -66,8 +66,24 @@ export const config = {
     clientSecret: str("GOOGLE_OAUTH_CLIENT_SECRET"),
   },
 
-  /** Google GenAI key for the Captain Adel flow (genkit `googleAI()`). */
-  genaiApiKey: str("GOOGLE_GENAI_API_KEY"),
+  /**
+   * The Captain Adel model endpoint. OpenAI chat-completions shape, so it can be
+   * pointed at any in-Kingdom provider — HUMAIN's ALLaM service (Groq inference
+   * in Dammam) or a self-hosted ALLaM behind vLLM — without a code change.
+   *
+   * Deliberately has no default base URL. A wrong-but-plausible default would
+   * send regulatory questions to whatever answered, and the whole reason this
+   * replaced Gemini is that the destination must be a decision, not an accident.
+   * The model ids must match the provider's own catalog.
+   */
+  model: {
+    baseUrl: str("MODEL_BASE_URL"),
+    apiKey: str("MODEL_API_KEY"),
+    tiers: {
+      fast: str("MODEL_ID_FAST", "allam-7b-instruct"),
+      pro: str("MODEL_ID_PRO", "allam-34b-instruct"),
+    },
+  },
 
   mail: {
     /** Transactional email API key. When absent, mails are logged, not sent. */

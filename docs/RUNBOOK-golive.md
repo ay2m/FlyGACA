@@ -133,14 +133,36 @@ The deploy runs the full body prerender with `PRERENDER_MAX=0`. The default cap 
 Cloud Run, Cloud SQL and both buckets sit in `me-central2`. The load balancer terminates TLS at
 Google's edge, but storage and processing stay in-region and never leave Google's own network.
 
-**One exception, and you should know about it:** Captain Adel calls the Gemini API, which is not
-in-Kingdom. Reading `server/src/captain-adel.ts`, the request carries the system prompt (retrieved
-corpus text), the chat history and the user's question — **no identity, email or profile is
-attached**. What leaves the Kingdom is unattributed user-typed text; the database never moves.
+**The model call used to be the exception. It no longer is.** Captain Adel ran on Gemini, which
+meant every question left the Kingdom even though the database never did. Generation now goes
+through `server/src/model.ts` — plain OpenAI chat-completions over `fetch`, no vendor SDK — so the
+endpoint is `MODEL_BASE_URL` and nothing else. Point it at Saudi-hosted inference and the whole
+request path stays in-Kingdom.
 
-Disclose Gemini as a sub-processor in the privacy policy. If a school contract later demands strict
-residency for prompt content as well, the migration path is Vertex AI — check Gemini model
-availability in `me-central2` before committing to that in writing.
+Two options, both in-Kingdom:
+
+| Option | What it is | Trade-off |
+| --- | --- | --- |
+| **HUMAIN / ALLaM** (intended) | SDAIA's Arabic foundation model, served by HUMAIN on Groq inference in **Dammam**. | Managed and cheap per token. Access is via HUMAIN's developer platform — as of this writing its public API docs, pricing and self-serve signup are **not published**, so getting credentials means contacting them. |
+| **Self-hosted ALLaM** | ALLaM weights from Hugging Face behind vLLM on a GPU in `me-central2`. | Fully under your control and definitely in-region, but an always-on GPU costs several hundred dollars a month — an order of magnitude above the rest of this stack. |
+
+**What will *not* work, despite being the obvious search results:** ALLaM is also offered on IBM
+watsonx and Azure AI Foundry, and neither has a Saudi region — Azure's nearest is UAE North. Running
+ALLaM there is in-Kingdom in branding only, and strictly worse than what we replaced: a weaker model
+*and* the data still leaves. If you cannot get in-Kingdom inference, that is a reason to revisit the
+residency requirement openly, not to pick a Saudi-flavoured endpoint abroad.
+
+### Quality note
+
+ALLaM is a smaller, Arabic-first model; Gemini 2.5 Pro was neither. For this workload that matters
+less than it sounds, because the safety-critical part is not the model's: `captain-adel.ts` decides
+grounding from the **BM25 retrieval score** and returns a deterministic refusal *without calling the
+model at all* when confidence is low. The model only rephrases passages that were already retrieved
+and cited. So the "never invent a GACAR figure" guarantee is structural.
+
+What does depend on the model is answer fluency and citation discipline on the English corpus.
+Budget an evaluation pass against `REFUSE_SCORE` / `GROUNDED_SCORE` (`docs/DESIGN-genkit-rag-backend.md`
+§10) after switching, and tune those thresholds up if answers get loose.
 
 ---
 

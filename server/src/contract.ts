@@ -36,7 +36,7 @@ export interface ChatRequest {
   history?: ChatTurn[];
   /** Defaults to "flygaca". */
   product?: string;
-  /** Gemini model tier: "flash" (default) | "pro". */
+  /** Model tier: "fast"/"flash" (default) | "pro". Resolved by MODEL_ID_*. */
   provider?: string;
   session?: string;
 }

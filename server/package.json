@@ -20,7 +20,6 @@
     "postinstall": "node scripts/link-lint-typescript.mjs"
   },
   "dependencies": {
-    "@genkit-ai/google-genai": "^1.40.1",
     "cookie": "^1.0.2",
     "express": "^5.2.1",
     "express-rate-limit": "^8.6.2",

@@ -24,7 +24,7 @@ export const FREE_DAILY_LIMIT = 5;
 /**
  * Free questions an ANONYMOUS (not-signed-in) visitor may ask per UTC day before
  * being nudged to sign in. Deliberately smaller than FREE_DAILY_LIMIT: it's a
- * low-friction "taste" of Captain Adel that still caps the per-question Gemini
+ * low-friction "taste" of Captain Adel that still caps the per-question model
  * cost, and creating an account is the reward for more. Must match
  * src/calc/chat/chatQuota.ts (pinned by the root tests/integrity/client-server-mirrors.test.ts).
  *
