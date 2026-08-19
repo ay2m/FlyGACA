@@ -17,7 +17,21 @@ export default defineConfig({
       include: ["src/**"],
       // Wiring and I/O edges, exercised end to end rather than by unit tests:
       // the route manifest, the pg pool, and the outbound mail transport.
-      exclude: ["src/index.ts", "src/db.ts", "src/mail.ts", "src/routes/**"],
+      //
+      // `src/routes/**` used to be excluded wholesale, which hid ~1,300 lines
+      // carrying rules that live nowhere else — grants.ts and billing.ts are the
+      // only writers of `entitlements`. Routes are now listed individually and
+      // struck off as each gains a test, so the ones still uncovered stay
+      // visible here rather than silently omitted.
+      exclude: [
+        "src/index.ts",
+        "src/db.ts",
+        "src/mail.ts",
+        "src/routes/auth.ts",
+        "src/routes/billing.ts",
+        "src/routes/org.ts",
+        "src/routes/account.ts",
+      ],
       // A ratchet, not a target: set just below the current numbers so coverage can't
       // silently regress, while today's run passes. Raise as cover grows.
       // (`npm run test:coverage` prints the live figures.)
@@ -29,15 +43,16 @@ export default defineConfig({
       // sit just under the live run, per the rule above — an enforced floor
       // beats an ignored target.
       //
-      // 71.82 / 69.06 / 70.19 / 70.78 today, after session.ts (7% → 96.7%) and
-      // http.ts (15% → 100%). The remaining weight is gateway.ts (0% of 160
-      // statements), store.ts (4%), school-core.ts (74%) and config.ts (55%);
-      // raise these as each lands.
+      // 73.22 / 69.92 / 71.29 / 72.22 today, after session.ts (7% → 96.7%),
+      // http.ts (15% → 100%) and routes/grants.ts (excluded → 98.1%). The
+      // remaining weight is gateway.ts (0% of 160 statements), store.ts (4%),
+      // school-core.ts (74%) and config.ts (55%), plus the four routes still
+      // on the exclude list above; raise these as each lands.
       thresholds: {
-        statements: 71,
-        branches: 68,
-        functions: 70,
-        lines: 70,
+        statements: 73,
+        branches: 69,
+        functions: 71,
+        lines: 72,
       },
     },
   },
