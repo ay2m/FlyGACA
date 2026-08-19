@@ -57,9 +57,11 @@ renewal job), `org` (the B2B cohort dashboard), `waitlist`, plus the Captain Ade
 see `docs/LICENSED-API.md`). The RAG flow itself is Genkit + Gemini (see
 `docs/DESIGN-genkit-rag-backend.md`). `server/` is its own npm package with its own CI gate — run
 `npm run lint && npm test && npm run build` inside `server/` when you touch it (root
-`npm run verify` does not cover it). Deploy region is `me-central2` (Dammam, in-Kingdom / PDPL);
-there is no region constant to keep in sync any more — the Cloud Run service and its Cloud SQL
-instance are both regional resources set at deploy time (see `docs/RUNBOOK-deploy.md`).
+`npm run verify` does not cover it). The *intended* deploy region is `me-central2` (Dammam, in-Kingdom /
+PDPL), but see the caution in "Hosting & deploy" below — that region is not yet available to
+this account and nothing is deployed there. There is no region constant to keep in sync — the
+Cloud Run service and its Cloud SQL instance are both regional resources set at deploy time
+(see `docs/RUNBOOK-deploy.md`).
 
 ## Architecture
 
@@ -184,6 +186,28 @@ instance are both regional resources set at deploy time (see `docs/RUNBOOK-deplo
   design).
 
 ## Hosting & deploy
+
+> [!CAUTION]
+> **Everything in this section is the TARGET architecture. It is not deployed.**
+> Verified against `gcloud` on 2026-08-19:
+>
+> - The Express service in `server/` has **never been deployed**. There is no `flygaca-api`
+>   Cloud Run service in any project.
+> - Production is still the **previous Firebase Functions stack**, running as 14 individual
+>   Cloud Run services in project `flygaca-sa` (`createcheckoutconfig`, `confirmpayment`,
+>   `moyasarwebhook`, `chat`, `provisionseats`, `renewmoyasarsubscriptions`, `claimschoolseat`,
+>   …) — **all in `me-central1`, which is Doha, Qatar.**
+> - Persistence is Cloud SQL `flygaca-sa-instance` (Postgres 18) in **`us-east4` — Northern
+>   Virginia**. A second instance, `flygaca-fdc`, sits in `me-west1` (Tel Aviv).
+> - **`me-central2` is not available to this account.** `gcloud` returns *"Permission denied on
+>   'locations/me-central2' … Access to the region is unavailable. Please contact our sales
+>   team."* The migration is blocked on a Google region grant, not on our code.
+> - The live price table is the old one, under the old `MOYASAR_PRICE_*_SAR` names — Pro 59/349,
+>   **Student 39/299 (tier still active)**, Pass 149, packs 49/79, bundle 199.
+>
+> **So: data is not in-Kingdom today.** Any PDPL or data-residency claim that says otherwise —
+> in this repo, in `ay2m/Office`, or in the investor decks — is aspirational until the region
+> grant lands and this service is actually deployed. Do not repeat the in-Kingdom claim as fact.
 
 The single Vite build (`dist/`) is served from several fronts, all pointing at the **same** Cloud Run
 service for `/api/*`:

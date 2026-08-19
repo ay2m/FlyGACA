@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/Vite-8-646CFF?style=flat-square&logo=vite&logoColor=white&labelColor=0a0e12" alt="Vite 8" />
   <img src="https://img.shields.io/badge/TypeScript-strict-3178C6?style=flat-square&logo=typescript&logoColor=white&labelColor=0a0e12" alt="TypeScript strict" />
   <img src="https://img.shields.io/badge/Express-5-000000?style=flat-square&logo=express&logoColor=white&labelColor=0a0e12" alt="Express 5" />
-  <img src="https://img.shields.io/badge/Cloud%20Run-me--central2-4285F4?style=flat-square&logo=googlecloud&logoColor=white&labelColor=0a0e12" alt="Cloud Run me-central2" />
+  <img src="https://img.shields.io/badge/Cloud%20Run-target%3A%20me--central2-4285F4?style=flat-square&logo=googlecloud&logoColor=white&labelColor=0a0e12" alt="Cloud Run, target region me-central2" />
   <img src="https://img.shields.io/badge/Gemini-Genkit-8E75B2?style=flat-square&logo=googlegemini&logoColor=white&labelColor=0a0e12" alt="Gemini via Genkit" />
 </p>
 
@@ -102,7 +102,7 @@ flowchart TB
         DATA["Corpus bucket<br/>network-first"]
     end
 
-    subgraph api["☁️ Cloud Run · me-central2"]
+    subgraph api["☁️ Cloud Run · me-central2 — TARGET, not deployed"]
         EXP["Express 5<br/>auth · account · grants<br/>billing · org · waitlist"]
         ADEL["Captain Adel gateway<br/>/api/chat · /v1/ask"]
     end
@@ -127,7 +127,11 @@ flowchart TB
 
 **The shape of it.** Business rules live in pure, dependency-free `*-core.ts` modules so policy is unit-testable in isolation; the Express routes stay thin and all SQL sits in one file. Calculator math is DOM-free in `src/calc/`, one module per tool. The heavy corpus (64 MB) never enters the JS bundle — it's fetched at runtime and served network-first from a bucket. Entitlements are server-owned: there is simply no route that lets a client write its own plan.
 
-In-Kingdom by design — Cloud Run and Cloud SQL both sit in `me-central2` (Dammam) for PDPL data residency.
+In-Kingdom **by design, not yet in fact.** The target is Cloud Run and Cloud SQL both in
+`me-central2` (Dammam) for PDPL data residency. As of 2026-08-19 none of it is deployed: the
+live stack is still the previous Firebase Functions services in **`me-central1` (Doha, Qatar)**
+with Cloud SQL in **`us-east4` (Northern Virginia)**, and `me-central2` has not been granted to
+the account. See the caution in [`CLAUDE.md`](CLAUDE.md#hosting--deploy).
 
 ---
 
@@ -151,8 +155,12 @@ Run `npm run verify` before committing — it's the same chain CI would run.
 
 ## Deploy
 
+> [!WARNING]
+> Not yet runnable. `me-central2` is not available to the account, and this service has never
+> been deployed — see [`docs/RUNBOOK-deploy.md`](docs/RUNBOOK-deploy.md).
+
 ```bash
-# Google Cloud — the canonical origin. Full sequence in docs/RUNBOOK-deploy.md
+# Google Cloud — the intended origin. Full sequence in docs/RUNBOOK-deploy.md
 gcloud run deploy flygaca-api --source server/ --region me-central2
 gcloud storage rsync dist/ gs://<bucket> --recursive --delete-unmatched-destination-objects
 ```

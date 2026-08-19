@@ -1,5 +1,21 @@
 # Deploy runbook — provisioning Fly GACA on a fresh Google Cloud project
 
+> [!CAUTION]
+> **This runbook has never been executed. It provisions a target architecture, not the one
+> that is running.** Verified with `gcloud` on 2026-08-19:
+>
+> - There is no `flygaca-api` Cloud Run service in any project. The Express service in
+>   `server/` has never been deployed.
+> - Production is the **previous Firebase Functions stack** — 14 Cloud Run services in project
+>   `flygaca-sa`, all in **`me-central1` (Doha, Qatar)**.
+> - Cloud SQL `flygaca-sa-instance` (Postgres 18) is in **`us-east4` (Northern Virginia)**.
+> - **`me-central2` is not available to this account**: *"Access to the region is unavailable.
+>   Please contact our sales team."* Step 1 below will fail until Google grants the region.
+>
+> Getting the region grant is therefore step zero. Until then the in-Kingdom / PDPL posture
+> this runbook assumes does not hold, and the live prices remain the pre-2026-08-19 card with
+> the Student tier active.
+
 This repository has **no Firebase**. Auth, the datastore, the API and hosting are all first-party
 or plain GCP:
 
