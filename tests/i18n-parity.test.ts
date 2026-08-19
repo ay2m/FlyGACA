@@ -1,3 +1,5 @@
+import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import en from '@/i18n/en.json';
 import ar from '@/i18n/ar.json';
@@ -56,5 +58,53 @@ describe('i18n parity (EN ⇄ AR)', () => {
         return a.join('|') !== b.join('|');
       });
     expect(mismatched, `Placeholder mismatch in: ${mismatched.join(', ')}`).toEqual([]);
+  });
+});
+
+/** Every `.ts`/`.tsx` file under `src/`. */
+function sourceFiles(dir: string): string[] {
+  return readdirSync(dir).flatMap((name) => {
+    const path = join(dir, name);
+    if (statSync(path).isDirectory()) return sourceFiles(path);
+    return /\.tsx?$/.test(path) ? [path] : [];
+  });
+}
+
+/**
+ * Keys referenced from the app but present in NEITHER bundle.
+ *
+ * Parity alone cannot see these: a key missing from both languages is perfectly
+ * symmetric, so the checks above pass while i18next falls back to rendering the
+ * key itself — `nav.logbook` and `study.prev` both shipped as visible literal
+ * text that way.
+ *
+ * Only files that pull `t` from react-i18next are scanned. `src/lib/tools.ts`
+ * defines its own local `t()` catalog-entry factory whose first argument is a
+ * tool id, not a translation key.
+ */
+describe('i18n coverage (referenced keys exist)', () => {
+  it("resolves every t('literal') key used in src/", () => {
+    const resolves = (key: string): boolean =>
+      key
+        .split('.')
+        .reduce<unknown>(
+          (node, part) =>
+            typeof node === 'object' && node !== null
+              ? (node as Record<string, unknown>)[part]
+              : undefined,
+          en,
+        ) !== undefined;
+
+    const missing = sourceFiles('src')
+      .map((file) => ({ file, source: readFileSync(file, 'utf8') }))
+      .filter(({ source }) => source.includes('react-i18next'))
+      .flatMap(({ file, source }) =>
+        [...source.matchAll(/\bt\(\s*'([a-zA-Z0-9_.]+)'/g)]
+          .map((m) => m[1])
+          .filter((key) => !resolves(key))
+          .map((key) => `${key} (${file})`),
+      );
+
+    expect(missing, `Keys referenced but never defined: ${missing.join(', ')}`).toEqual([]);
   });
 });

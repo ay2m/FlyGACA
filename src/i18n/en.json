@@ -3617,6 +3617,7 @@
     "pickBank": "Choose a bank",
     "questions": "{{n}} questions",
     "question": "Question {{n}} of {{total}}",
+    "prev": "Previous",
     "next": "Next",
     "finish": "See result",
     "source": "Source",

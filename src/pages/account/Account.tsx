@@ -130,7 +130,7 @@ export function Account() {
           {t('account.dashboard')}
         </ButtonLink>
         <ButtonLink to="/logbook" variant="clay">
-          {t('nav.logbook')}
+          {t('account.logbook')}
         </ButtonLink>
         <ButtonLink to="/tools" variant="clay">
           {t('nav.tools')}
