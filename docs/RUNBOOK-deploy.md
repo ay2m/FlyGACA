@@ -159,7 +159,21 @@ until `MAX_RENEWAL_ATTEMPTS`, then switches auto-renew off so the plan simply la
 ## 8. Moyasar webhook
 
 Dashboard → Webhooks → add `https://api.flygaca.com/api/billing/webhook/moyasar` and copy the shared
-secret into `MOYASAR_WEBHOOK_SECRET`. The signature is verified over the raw request body.
+secret into `MOYASAR_WEBHOOK_SECRET`.
+
+Prefer the **`api.` origin** over `https://flygaca.com/api/...`. Both resolve — the Netlify/Vercel/
+Worker fronts rewrite `/api/*` to this same service — but the direct origin skips a proxy hop, and
+one of the two accepted auth schemes is an HMAC over the *raw request bytes*, which only stays valid
+if every hop forwards the body untouched.
+
+`verifyMoyasarWebhook` accepts either scheme, constant-time: a `secret_token` field in the JSON body
+holding the shared secret (what Moyasar's own webhook docs describe), or an `x-moyasar-signature`
+header carrying an HMAC-SHA256 hex digest over the raw body (what its newer SDKs send). An unset
+`MOYASAR_WEBHOOK_SECRET` fails closed. Subscribing to all event types is safe — `payout_*` and
+`balance_transferred` deliveries are acked and dropped, since their ids are not payment ids.
+
+The old Firebase path `/api/moyasar-webhook` is **dead** — it was a `firebase.json` rewrite, and a
+webhook still pointed at it 404s silently on every delivery.
 
 The webhook is **defence in depth**, not the primary path: the browser's return leg calls
 `POST /api/billing/confirm`, which fetches the payment server-to-server by id. Both funnel into the
