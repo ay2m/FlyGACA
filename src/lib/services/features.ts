@@ -2,7 +2,7 @@
  * Feature gating — the single source of truth for which premium features a plan
  * unlocks. The entitlement record is written SERVER-ONLY (Cloud Functions, via the
  * Moyasar billing functions) and read here only to gate UI presentation, never to
- * grant access; true enforcement for gated content/AI stays in the Firebase gateway.
+ * grant access; true enforcement for gated content/AI stays in the server gateway.
  *
  * `hasFeature` is a pure predicate (mirrors the style of `entitlements.ts`) so it
  * is unit-testable without a backend; `useFeature` is the React-side convenience

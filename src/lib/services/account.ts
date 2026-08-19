@@ -1,8 +1,9 @@
 /**
  * Local-first account store: profile, logbook and a lightweight "session", all
- * persisted to localStorage. This stands in for the Firebase Auth + Firestore
- * service layer (Stage 3) so the account surfaces are fully functional offline;
- * the same component API will map onto Firestore when the backend is wired.
+ * persisted to localStorage, so the account surfaces are fully functional with no
+ * backend at all. When the API *is* configured (`VITE_API_BASE_URL`), the same
+ * component API write-throughs to it via `sync.ts` — local stays the source of
+ * truth and the server is a backup.
  *
  * Exposed via useSyncExternalStore so components re-render on any change.
  */
@@ -83,9 +84,9 @@ export interface PilotRecord {
 
 interface State {
   session: string | null;
-  /** Firebase uid when signed in through Firebase; null for a local session. */
+  /** Server user id when signed in through the API; null for a local session. */
   uid: string | null;
-  /** Whether the Firebase user's email is verified (false for local sessions). */
+  /** Whether the server has verified the account's email (false for local sessions). */
   emailVerified: boolean;
   profile: Profile;
   flights: Flight[];
@@ -96,7 +97,7 @@ interface State {
   chatCredits: number;
   /** Purchased exam-prep pack ids (server-written, owner-readable); [] when none. */
   ownedPacks: string[];
-  /** True when the last Firestore write-through failed — local is ahead of server. */
+  /** True when the last write-through to the API failed — local is ahead of server. */
   syncError: boolean;
 }
 
@@ -184,7 +185,7 @@ export function signOut(): void {
 }
 
 /**
- * Outcome handlers for best-effort Firestore write-through: clear/raise the
+ * Outcome handlers for the best-effort write-through to the API: clear/raise the
  * `syncError` flag so the UI can warn that local data is ahead of the server,
  * instead of silently swallowing the failure.
  */
@@ -277,10 +278,10 @@ export function sumHours(flights: Flight[], key: keyof Flight): number {
 }
 
 /**
- * Bind the store to Firebase auth — only when Firebase is configured. A signed-in
- * user adopts their uid, then hydrates profile/logbook/entitlement from Firestore
+ * Bind the store to server auth — only when the API is configured. A signed-in
+ * user adopts their uid, then hydrates profile/logbook/entitlement from the API
  * (server data wins, falling back to the local cache); sign-out clears the
- * Firebase session. When Firebase is off this never runs, so the store stays
+ * session cookie. With no API configured this never runs, so the store stays
  * purely local-first.
  */
 let stopProgressSync: (() => void) | null = null;
@@ -328,7 +329,7 @@ function connectAuth(): void {
           const granted = await claimFoundingAccessIfEligible(user.emailVerified);
           if (granted && state.uid === user.uid) loaded = await loadAccount();
         }
-        // The Firestore round-trip can outlive the session: if the user signed
+        // The account round-trip can outlive the session: if the user signed
         // out or switched accounts while it was in flight, do NOT re-apply this
         // user's profile/entitlement onto the now-different session.
         if (loaded && state.uid === user.uid) {
@@ -366,9 +367,9 @@ function connectAuth(): void {
 if (isAuthAvailable()) connectAuth();
 
 /**
- * Re-hydrate the signed-in user's profile/logbook/records/entitlement from
- * Firestore. Used after a checkout returns so a freshly-granted plan shows
- * without a reload (the entitlement is written by the billing functions).
+ * Re-hydrate the signed-in user's profile/logbook/records/entitlement from the
+ * API. Used after a checkout returns so a freshly-granted plan shows without a
+ * reload (the entitlement is written by the billing routes).
  * No-ops for local-only sessions.
  */
 export async function refreshAccount(): Promise<void> {

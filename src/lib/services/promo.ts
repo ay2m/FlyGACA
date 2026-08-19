@@ -1,7 +1,7 @@
 /**
  * Promo-code client helpers: capture an inbound `?promo=` code and carry it into
  * checkout. The server validates the code and computes the discount — this module only
- * transports the string (mirrors `referral.ts`). Inert without Firebase.
+ * transports the string (mirrors `referral.ts`). Inert without a configured API.
  */
 const PROMO_KEY = 'flygaca:promo';
 

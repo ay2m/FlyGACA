@@ -6,7 +6,7 @@ import { isNative } from '@/lib/native/nativeBridge';
  * True only where the Vercel beacon endpoints (`/_vercel/insights/*`,
  * `/_vercel/speed-insights/*`) actually exist: a `*.vercel.app` host, or any
  * host when explicitly opted in via `VITE_VERCEL_ANALYTICS=1` (e.g. a custom
- * domain served by Vercel). On Firebase/Netlify/etc. those endpoints are the
+ * domain served by Vercel). On the Cloud Run / Netlify / Cloudflare fronts those endpoints are the
  * SPA fallback — the scripts would 404 with MIME-type console errors and every
  * `track()` call would fire a dead request.
  */

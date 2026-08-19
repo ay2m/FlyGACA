@@ -8,8 +8,8 @@ import styles from './dashboard-widgets.module.css';
 
 /**
  * Offline & sync health: how many regulations are cached for offline reading
- * (from the `flygaca:offline:saved` manifest) and whether the last Firestore
- * write-through succeeded (the account `syncError` flag). The library page owns
+ * (from the `flygaca:offline:saved` manifest) and whether the last write-through
+ * to the API succeeded (the account `syncError` flag). The library page owns
  * the saved manifest, so we read it once on mount; `syncError` is reactive
  * through the account store.
  */

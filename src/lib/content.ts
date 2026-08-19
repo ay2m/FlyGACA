@@ -12,8 +12,8 @@ export * from './content.types';
  * Where the ~130 MB `/data` corpus is served from. Defaults to same-origin
  * `/data` (dev, tests, and any host that ships the corpus alongside the app).
  * Set `VITE_DATA_BASE_URL` (e.g. a Cloud Storage bucket origin) to serve the
- * corpus off the app host — this keeps each Firebase Hosting release small so
- * it can't exhaust the Hosting storage quota. Every `/data/*` fetch and asset
+ * corpus off the app host — this keeps each release small so it can't exhaust
+ * the host's storage quota. Every `/data/*` fetch and asset
  * URL funnels through {@link dataUrl}, so flipping the origin is a single
  * build-env change with no call-site edits.
  */
@@ -24,7 +24,7 @@ export * from './content.types';
  * `||` not `??`: the deploy workflow sets `VITE_DATA_BASE_URL` to
  * `${{ vars.DATA_BASE_URL }}`, which expands to an EMPTY STRING when that repo var is
  * unset (the default). `??` only falls back on null/undefined, so `''` would slip
- * through and strip the `/data` prefix off every fetch (→ Firebase's SPA catch-all
+ * through and strip the `/data` prefix off every fetch (→ the host's SPA catch-all
  * returns index.html at HTTP 200 → `res.json()` fails on HTML → "Could not load this
  * content"). An empty value must fall back to same-origin `/data`. Trailing slashes
  * are trimmed so a bucket origin like `…/data/` + `/x.json` never doubles up.

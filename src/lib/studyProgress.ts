@@ -170,7 +170,7 @@ export function getStudyState(): StudyState {
  * Compact, server-syncable readiness projection of the study state — the SCORES +
  * COMPLETION a B2B readiness report needs, and nothing more (no answers, no flashcard
  * SRS, no flagged questions). See docs/b2b/DESIGN-study-progress-sync.md. Pure so the
- * local→doc mapping is unit-testable without Firestore.
+ * local→doc mapping is unit-testable without a backend.
  */
 export interface ProgressSummary {
   /** bankId → best quiz % (0–100). */

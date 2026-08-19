@@ -44,8 +44,8 @@ export function stripArPrefix(pathname: string): string {
 
 /**
  * Root-relative path for a logical `path` in `lang`. Arabic lives under a real
- * `/ar` prefix (`/` → `/ar`, `/library` → `/ar/library`) so Firebase — which
- * routes by path, never by `?lang=` query — can serve a distinct Arabic document
+ * `/ar` prefix (`/` → `/ar`, `/library` → `/ar/library`) so the static host —
+ * which routes by path, never by `?lang=` query — can serve a distinct Arabic document
  * the AI crawlers actually read; English/x-default stay on the clean path. `path`
  * may be logical or already `/ar`-prefixed — the prefix is normalized away first.
  */

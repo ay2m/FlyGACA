@@ -14,9 +14,7 @@ export default defineConfig({
     // Unit tests live in tests/; the Playwright E2E specs in e2e/ run under a
     // separate runner, so keep Vitest from trying to execute them.
     include: ['tests/**/*.{test,spec}.{ts,tsx}'],
-    // The Firestore security-rules tests need the emulator + a node environment,
-    // so they run under their own config (`npm run test:rules`), never here.
-    exclude: ['tests/rules/**', 'node_modules/**'],
+    exclude: ['node_modules/**'],
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./tests/setup.ts'],

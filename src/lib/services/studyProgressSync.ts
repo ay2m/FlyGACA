@@ -34,7 +34,7 @@ async function writeSummary(): Promise<void> {
 /**
  * Begin syncing the signed-in user's progress projection. Writes once now, then on
  * every progress change (debounced). Returns a stop function; call it on sign-out or
- * account switch. No-op (returns a noop) when the flag is off, Firebase isn't
+ * account switch. No-op (returns a noop) when the flag is off, the API isn't
  * configured, or there's no uid — so callers can wire it unconditionally.
  */
 export function startStudyProgressSync(uid: string | null | undefined): () => void {

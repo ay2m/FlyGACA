@@ -226,9 +226,9 @@ pgvector), `build:sitemap`, `gen:og`, `gen:aip-sheet` (build the AIP study sheet
 (Captain Adel imagery), `audit:ai` (the AI-search visibility audit behind `SEO-PLAN.md`),
 `optimize:img`, and `new:guide` (scaffold a guide — see `GUIDE_AUTHORING.md`). Shared script
 helpers live in `scripts/lib/` (flavor slicing, markdown splitting, regulations parsing, sync
-merge) and `scripts/native/` (iOS build/signing helpers). Deploy slices exist as
-`deploy:rules` / `deploy:functions` / `deploy:all` — `npm run deploy` alone does **not** deploy
-`functions/`.
+merge) and `scripts/native/` (iOS build/signing helpers). There is no deploy script: `npm run
+deploy` deliberately fails with a pointer to `docs/RUNBOOK-deploy.md`, since deploying means
+`gcloud run deploy` plus a bucket sync, not one command.
 
 ## Where to look
 
@@ -236,8 +236,7 @@ merge) and `scripts/native/` (iOS build/signing helpers). Deploy slices exist as
 
 `MIGRATION.md` (rebuild log), `ROADMAP.md` (what's next), `README.md` (getting started),
 `GUIDE_AUTHORING.md` (learn content), `FIGMA_DESIGN_SYSTEM.md` (design system),
-`SEO-PLAN.md` + the `flygaca-seo` skill (search/AI-search visibility; vendored skills live under
-`.claude/skills/`, pinned by `skills-lock.json`), `docs/ARCHITECTURE-BLUEPRINT.md`
+`SEO-PLAN.md` (search/AI-search visibility), `docs/ARCHITECTURE-BLUEPRINT.md`
 (platform-wide technical blueprint), root `SECURITY.md`, and `docs/` generally (design, billing,
 `RUNBOOK-deploy.md` / `DATA-HOSTING.md`, the `RUNBOOK-ios-*.md` set,
 `LICENSED-API.md`, `PRICING-REVENUE-STRATEGY.md`, `RUNBOOK-native.md` /

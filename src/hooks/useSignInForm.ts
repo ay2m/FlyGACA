@@ -1,5 +1,5 @@
 /**
- * All of the Firebase sign-in / sign-up form state and choreography in one hook:
+ * All of the sign-in / sign-up form state and choreography in one hook:
  * the in↔up mode toggle, both `useForm` instances (with validation), the shared
  * auth-call runner (`run` — dismiss handling, error-code → field/general mapping,
  * the mirror-host "use the main site" link), and forgot-password. The page keeps
@@ -64,8 +64,8 @@ export function useSignInForm(): SignInForm {
   const [errors, setErrors] = useState<FieldErrors>({});
   const [notice, setNotice] = useState('');
   const [busy, setBusy] = useState(false);
-  // Set when a sign-in fails because *this* host isn't an authorized Firebase
-  // origin (a preview/mirror deploy). The remedy is to sign in on the canonical
+  // Set when a sign-in fails because *this* host isn't an allowed origin (a
+  // preview/mirror deploy the API's CORS allowlist doesn't cover). The remedy is to sign in on the canonical
   // site, so we surface a real click-through link on the error alert.
   const [mainSiteHref, setMainSiteHref] = useState<string | null>(null);
 
@@ -91,10 +91,10 @@ export function useSignInForm(): SignInForm {
     setErrors({});
     setNotice('');
     setMainSiteHref(null);
-    // Watchdog: when the App Check / reCAPTCHA Enterprise token can't be minted,
-    // the Firebase SDK promise never settles — without this race the button spins
-    // forever with no feedback. Reject with a synthetic Firebase-shaped code so
-    // the standard mapping below surfaces the timeout message.
+    // Watchdog: a request that never settles (a hung fetch, a proxy swallowing
+    // the response) would leave the button spinning forever with no feedback.
+    // Reject with a synthetic `auth/*`-shaped code so the standard mapping below
+    // surfaces the timeout message.
     let timeoutId: ReturnType<typeof setTimeout> | undefined;
     try {
       await Promise.race([
@@ -114,9 +114,8 @@ export function useSignInForm(): SignInForm {
 
       let errorMessage = t(key);
       // For deployment/config/unknown failures (never credential ones), append the
-      // raw Firebase code so the exact cause is visible and copyable from the page —
-      // it maps 1:1 to the triage steps in docs/RUNBOOK-firebase.md and ends the
-      // "still broken but which error?" guessing loop.
+      // raw code so the exact cause is visible and copyable from the page, ending
+      // the "still broken but which error?" guessing loop.
       if (field === 'general' && code) {
         errorMessage = `${errorMessage} ${t('account.errors.technicalDetail', { code })}`;
       }

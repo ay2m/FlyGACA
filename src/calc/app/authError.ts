@@ -1,6 +1,8 @@
 /**
- * Maps a Firebase Auth error code to the form field it belongs to and the i18n
- * key for its message. Pure (no DOM / no Firebase import) so the sign-in form can
+ * Maps an `auth/*` error code to the form field it belongs to and the i18n key
+ * for its message. The API deliberately emits the same codes the Firebase Auth
+ * SDK used, so this table and its i18n keys carried over unchanged. Pure (no DOM,
+ * no SDK) so the sign-in form can
  * show inline, field-level errors instead of one generic line — and so the
  * mapping is unit-testable. Unknown codes fall back to a general message.
  */
@@ -57,9 +59,8 @@ const MAP: Record<string, AuthErrorInfo> = {
   [AUTH_TIMEOUT_CODE]: { field: 'general', key: 'account.errors.network' },
   // Deployment/config failures — these have nothing to do with the user's
   // credentials, so they must NOT read as "check your details". They typically
-  // surface on an unauthorized origin (e.g. a preview domain not registered in
-  // Firebase Auth authorized domains / the reCAPTCHA Enterprise key / the API
-  // key's HTTP-referrer allowlist). See docs/RUNBOOK-firebase.md.
+  // surface on an unauthorized origin (e.g. a preview domain the API's CORS
+  // allowlist doesn't cover).
   'auth/operation-not-allowed': { field: 'general', key: 'account.errors.providerDisabled' },
   'auth/unauthorized-domain': { field: 'general', key: 'account.errors.unauthorizedDomain' },
   'auth/requests-from-referer-are-blocked': {
@@ -69,9 +70,8 @@ const MAP: Record<string, AuthErrorInfo> = {
   'auth/api-key-not-valid': { field: 'general', key: 'account.errors.config' },
   'auth/invalid-api-key': { field: 'general', key: 'account.errors.config' },
   'auth/firebase-app-check-token-is-invalid': { field: 'general', key: 'account.errors.config' },
-  // The reCAPTCHA/App Check token couldn't be minted — usually the serving origin
-  // isn't registered on the reCAPTCHA Enterprise key. Same class as the config
-  // errors above (see the "all auth failing" triage in docs/RUNBOOK-firebase.md).
+  // App Check codes, retained so a native shell still on the old SDK maps them.
+  // The first-party API never emits them; same class as the config errors above.
   'auth/firebase-app-check-token-is-invalid.': { field: 'general', key: 'account.errors.config' },
   'auth/missing-app-check-token': { field: 'general', key: 'account.errors.config' },
   // A popup the user (or the browser) blocked/closed. Not a credential problem —
