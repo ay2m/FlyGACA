@@ -130,7 +130,17 @@ if (wh) {
   const tampered = createHmac('sha256', `${wh}x`).update(rawBody).digest('hex');
   if (tampered !== signature) pass('a wrong secret produces a different signature (forgery is rejected).');
   else fail('a wrong secret produced the same signature.');
+  console.log('    The server also accepts the shared secret as a `secret_token` body field,');
+  console.log('    which is the scheme Moyasar\'s own docs describe — either will authenticate.');
 } else fail('skipped — no webhook secret.');
+
+// --- 5. webhook endpoint path -----------------------------------------------
+// The Firebase build served /api/moyasar-webhook via a hosting rewrite. That rewrite
+// is gone; a webhook still pointed at it 404s silently on every delivery.
+console.log('\nWebhook endpoint');
+console.log(`  Register this URL in the Moyasar dashboard → Webhooks:`);
+console.log(`    ${(env.APP_ORIGIN || 'https://flygaca.com').replace(/\/$/, '')}/api/billing/webhook/moyasar`);
+console.log('  NOT /api/moyasar-webhook — that was the retired Firebase path and now 404s.');
 
 // --- summary ---------------------------------------------------------------
 console.log('');

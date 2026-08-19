@@ -26,6 +26,7 @@ import {
   sarToHalalas,
   sellablePackId,
   verifyMoyasarSignature,
+  verifyMoyasarWebhook,
   webhookPaymentId,
   type PriceEnv,
 } from "../src/billing-core.js";
@@ -385,6 +386,38 @@ describe("renewalBaseDate", () => {
   it("pins the from-past-expiry behavior (extends from the old expiry, not from now)", () => {
     const past = "2026-01-01T00:00:00Z";
     expect(renewalBaseDate(past, now).toISOString()).toBe("2026-01-01T00:00:00.000Z");
+  });
+});
+
+describe("verifyMoyasarWebhook", () => {
+  const secret = "whsec_test";
+  const body = JSON.stringify({ id: "evt_1", type: "payment_paid" });
+  const validSig = createHmac("sha256", secret).update(body).digest("hex");
+
+  it("accepts the shared secret sent as a secret_token body field", () => {
+    // Moyasar's documented scheme, and what the pre-Cloud-Run implementation used.
+    expect(verifyMoyasarWebhook(body, undefined, secret, secret)).toBe(true);
+  });
+
+  it("still accepts an HMAC x-moyasar-signature header", () => {
+    expect(verifyMoyasarWebhook(body, validSig, undefined, secret)).toBe(true);
+  });
+
+  it("rejects a wrong secret_token, and a non-string one", () => {
+    expect(verifyMoyasarWebhook(body, undefined, "not-the-secret", secret)).toBe(false);
+    expect(verifyMoyasarWebhook(body, undefined, { evil: true }, secret)).toBe(false);
+    expect(verifyMoyasarWebhook(body, undefined, "", secret)).toBe(false);
+  });
+
+  it("rejects when neither scheme is present", () => {
+    expect(verifyMoyasarWebhook(body, undefined, undefined, secret)).toBe(false);
+  });
+
+  it("fails closed when no webhook secret is configured", () => {
+    // An unset MOYASAR_WEBHOOK_SECRET must never make an unsigned POST authentic.
+    expect(verifyMoyasarWebhook(body, undefined, "", "")).toBe(false);
+    expect(verifyMoyasarWebhook(body, validSig, undefined, "")).toBe(false);
+    expect(verifyMoyasarWebhook(body, undefined, undefined, "")).toBe(false);
   });
 });
 
