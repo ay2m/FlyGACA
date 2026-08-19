@@ -330,12 +330,6 @@
         "concept": "{{parts}} GACAR Parts across {{domains}} domains",
         "cta": "Open the regulations"
       },
-      "hud": {
-        "eyebrow": "Airspace HUD",
-        "heading": "Watch the Kingdom's airspace come alive",
-        "note": "Simulated training scenario — not real traffic",
-        "cta": "Open the HUD"
-      },
       "reg": {
         "live": "Live",
         "heading": "GACAR regulations",
@@ -879,62 +873,230 @@
     "searchPlaceholder": "Search a term or abbreviation…",
     "empty": "No terms match that search.",
     "terms": [
-      { "term": "GACAR", "def": "The General Authority of Civil Aviation Regulations: the body of Saudi civil-aviation rules, organized into numbered Parts." },
-      { "term": "GACA", "def": "The General Authority of Civil Aviation: Saudi Arabia's civil-aviation regulator, and the authority Fly GACA cites and defers to." },
-      { "term": "AIP", "def": "Aeronautical Information Publication: the official manual of a state's aeronautical information — aerodromes, airspace and procedures — issued by GACA for Saudi Arabia." },
-      { "term": "NOTAM", "def": "Notice to Air Missions: a time-critical notice of a hazard or change (a closed runway, an unserviceable navaid) that crews must check before flight." },
-      { "term": "METAR", "def": "A routine, coded observation of the actual weather at an aerodrome, issued at regular intervals." },
-      { "term": "TAF", "def": "Terminal Aerodrome Forecast: a coded forecast of the expected weather at an aerodrome over a set period." },
-      { "term": "ATIS", "def": "Automatic Terminal Information Service: a continuous recorded broadcast of essential aerodrome and weather information." },
-      { "term": "VFR", "def": "Visual Flight Rules: the rules for flying by outside visual reference, permitted only in visual meteorological conditions." },
-      { "term": "IFR", "def": "Instrument Flight Rules: the rules for flying by reference to instruments, required in instrument meteorological conditions." },
-      { "term": "VMC", "def": "Visual Meteorological Conditions: weather — visibility and distance from cloud — good enough to fly under Visual Flight Rules." },
-      { "term": "IMC", "def": "Instrument Meteorological Conditions: weather below the VMC minima, requiring Instrument Flight Rules." },
-      { "term": "QNH", "def": "The altimeter pressure setting that makes the altimeter read altitude above mean sea level, so it shows aerodrome elevation on the ground." },
-      { "term": "QFE", "def": "The altimeter pressure setting that makes the altimeter read height above a chosen datum, typically the aerodrome — zero on the runway." },
-      { "term": "QNE", "def": "The standard altimeter setting of 1013.25 hPa (29.92 inHg), used at and above the transition altitude so every aircraft shares one datum." },
-      { "term": "Transition altitude", "def": "The altitude at or below which vertical position is expressed as an altitude referenced to QNH." },
-      { "term": "Transition level", "def": "The lowest flight level available above the transition altitude; above it, level is expressed as a flight level on the standard setting." },
-      { "term": "Flight level (FL)", "def": "An altitude referenced to the standard pressure setting (1013.25 hPa), expressed in hundreds of feet — FL350 is 35,000 ft." },
-      { "term": "TAS", "def": "True Airspeed: the aircraft's speed through the air mass, corrected for air density (altitude and temperature)." },
-      { "term": "IAS", "def": "Indicated Airspeed: the speed read directly from the airspeed indicator, uncorrected." },
-      { "term": "Ground speed", "def": "The aircraft's speed relative to the ground: true airspeed adjusted for the wind." },
-      { "term": "Mach number", "def": "The ratio of true airspeed to the local speed of sound; Mach 1 is the speed of sound." },
-      { "term": "ISA", "def": "International Standard Atmosphere: an agreed model atmosphere (15 °C and 1013.25 hPa at sea level) used to calibrate instruments and compare performance." },
-      { "term": "Density altitude", "def": "Pressure altitude corrected for temperature — the altitude the air 'feels' like to the aircraft. High density altitude degrades performance." },
-      { "term": "Pressure altitude", "def": "The altitude indicated when the altimeter is set to the standard pressure of 1013.25 hPa." },
-      { "term": "MSL", "def": "Mean Sea Level: the reference datum for altitude and elevation." },
-      { "term": "AGL", "def": "Above Ground Level: height measured from the surface directly below the aircraft." },
-      { "term": "Aerodrome", "def": "Any defined area of land or water used for the arrival, departure and surface movement of aircraft; 'airport' usually implies added facilities." },
-      { "term": "Crosswind component", "def": "The part of the wind blowing across the runway, at right angles to the direction of travel — the part that pushes the aircraft sideways." },
-      { "term": "Headwind component", "def": "The part of the wind blowing straight down the runway against the direction of travel, which shortens the ground run." },
-      { "term": "Ceiling", "def": "The height above the ground of the lowest cloud layer reported as broken or overcast." },
-      { "term": "Visibility", "def": "The greatest horizontal distance at which prominent objects can be seen and identified." },
-      { "term": "Controlled airspace", "def": "Airspace of defined dimensions within which an air traffic control service is provided." },
-      { "term": "Airspace class", "def": "The ICAO classification (A to G) that sets which flight rules, services and clearances apply within a block of airspace." },
-      { "term": "TMA", "def": "Terminal Control Area: controlled airspace established at the confluence of routes around one or more major aerodromes." },
-      { "term": "CTR", "def": "Control Zone: controlled airspace extending upward from the surface around an aerodrome." },
-      { "term": "FIR", "def": "Flight Information Region: an area within which flight information and alerting services are provided." },
-      { "term": "MSA", "def": "Minimum Sector Altitude: the lowest altitude that gives a safe obstacle clearance within a specified sector around a navigation aid or aerodrome." },
-      { "term": "Squawk", "def": "The four-digit transponder code assigned by air traffic control to identify an aircraft on radar." },
-      { "term": "Runway designator", "def": "The number painted on a runway: its magnetic alignment rounded to the nearest ten degrees, with the final zero dropped — 340° becomes 34." },
-      { "term": "Threshold", "def": "The beginning of the portion of a runway usable for landing." },
-      { "term": "Displaced threshold", "def": "A landing threshold set back from the physical start of the runway; the paved area before it is not available for landing." },
-      { "term": "Taxiway", "def": "A defined path on an aerodrome connecting runways with aprons, hangars and other facilities." },
-      { "term": "Apron", "def": "The paved area where aircraft park for boarding, loading, refuelling or maintenance." },
-      { "term": "PIC", "def": "Pilot in Command: the pilot responsible for the operation and safety of the aircraft during flight time." },
-      { "term": "PPL", "def": "Private Pilot Licence: permits flight as pilot in command for non-commercial purposes." },
-      { "term": "CPL", "def": "Commercial Pilot Licence: permits flight for hire or reward, subject to its ratings and limitations." },
-      { "term": "ATPL", "def": "Airline Transport Pilot Licence: the highest pilot licence, required to command large multi-crew aircraft in airline operations." },
-      { "term": "IR", "def": "Instrument Rating: an added qualification permitting flight under Instrument Flight Rules in instrument conditions." },
-      { "term": "Medical certificate", "def": "An aeromedical fitness certificate, issued by class, that a pilot must hold; the class required depends on the licence exercised." },
-      { "term": "Logbook", "def": "The pilot's personal record of flights, hours and experience, used to prove currency and meet licensing requirements." },
-      { "term": "Recency", "def": "The recent-experience requirements — such as a number of take-offs and landings in a period — a pilot must meet to carry passengers or act as pilot in command." },
-      { "term": "SAELPT", "def": "Saudi Aviation English Language Proficiency Test: the assessment of aviation-English proficiency against the ICAO language rating scale." },
-      { "term": "DME", "def": "Distance Measuring Equipment: a system that shows the aircraft's slant distance from a ground station." },
-      { "term": "VOR", "def": "VHF Omnidirectional Range: a ground navigation aid that defines radials an aircraft can track to or from the station." },
-      { "term": "ILS", "def": "Instrument Landing System: a precision approach aid giving lateral (localizer) and vertical (glideslope) guidance to a runway." },
-      { "term": "RNAV", "def": "Area Navigation: a method that lets an aircraft fly any chosen path within the coverage of navigation aids or self-contained systems, not just station to station." }
+      {
+        "term": "GACAR",
+        "def": "The General Authority of Civil Aviation Regulations: the body of Saudi civil-aviation rules, organized into numbered Parts."
+      },
+      {
+        "term": "GACA",
+        "def": "The General Authority of Civil Aviation: Saudi Arabia's civil-aviation regulator, and the authority Fly GACA cites and defers to."
+      },
+      {
+        "term": "AIP",
+        "def": "Aeronautical Information Publication: the official manual of a state's aeronautical information — aerodromes, airspace and procedures — issued by GACA for Saudi Arabia."
+      },
+      {
+        "term": "NOTAM",
+        "def": "Notice to Air Missions: a time-critical notice of a hazard or change (a closed runway, an unserviceable navaid) that crews must check before flight."
+      },
+      {
+        "term": "METAR",
+        "def": "A routine, coded observation of the actual weather at an aerodrome, issued at regular intervals."
+      },
+      {
+        "term": "TAF",
+        "def": "Terminal Aerodrome Forecast: a coded forecast of the expected weather at an aerodrome over a set period."
+      },
+      {
+        "term": "ATIS",
+        "def": "Automatic Terminal Information Service: a continuous recorded broadcast of essential aerodrome and weather information."
+      },
+      {
+        "term": "VFR",
+        "def": "Visual Flight Rules: the rules for flying by outside visual reference, permitted only in visual meteorological conditions."
+      },
+      {
+        "term": "IFR",
+        "def": "Instrument Flight Rules: the rules for flying by reference to instruments, required in instrument meteorological conditions."
+      },
+      {
+        "term": "VMC",
+        "def": "Visual Meteorological Conditions: weather — visibility and distance from cloud — good enough to fly under Visual Flight Rules."
+      },
+      {
+        "term": "IMC",
+        "def": "Instrument Meteorological Conditions: weather below the VMC minima, requiring Instrument Flight Rules."
+      },
+      {
+        "term": "QNH",
+        "def": "The altimeter pressure setting that makes the altimeter read altitude above mean sea level, so it shows aerodrome elevation on the ground."
+      },
+      {
+        "term": "QFE",
+        "def": "The altimeter pressure setting that makes the altimeter read height above a chosen datum, typically the aerodrome — zero on the runway."
+      },
+      {
+        "term": "QNE",
+        "def": "The standard altimeter setting of 1013.25 hPa (29.92 inHg), used at and above the transition altitude so every aircraft shares one datum."
+      },
+      {
+        "term": "Transition altitude",
+        "def": "The altitude at or below which vertical position is expressed as an altitude referenced to QNH."
+      },
+      {
+        "term": "Transition level",
+        "def": "The lowest flight level available above the transition altitude; above it, level is expressed as a flight level on the standard setting."
+      },
+      {
+        "term": "Flight level (FL)",
+        "def": "An altitude referenced to the standard pressure setting (1013.25 hPa), expressed in hundreds of feet — FL350 is 35,000 ft."
+      },
+      {
+        "term": "TAS",
+        "def": "True Airspeed: the aircraft's speed through the air mass, corrected for air density (altitude and temperature)."
+      },
+      {
+        "term": "IAS",
+        "def": "Indicated Airspeed: the speed read directly from the airspeed indicator, uncorrected."
+      },
+      {
+        "term": "Ground speed",
+        "def": "The aircraft's speed relative to the ground: true airspeed adjusted for the wind."
+      },
+      {
+        "term": "Mach number",
+        "def": "The ratio of true airspeed to the local speed of sound; Mach 1 is the speed of sound."
+      },
+      {
+        "term": "ISA",
+        "def": "International Standard Atmosphere: an agreed model atmosphere (15 °C and 1013.25 hPa at sea level) used to calibrate instruments and compare performance."
+      },
+      {
+        "term": "Density altitude",
+        "def": "Pressure altitude corrected for temperature — the altitude the air 'feels' like to the aircraft. High density altitude degrades performance."
+      },
+      {
+        "term": "Pressure altitude",
+        "def": "The altitude indicated when the altimeter is set to the standard pressure of 1013.25 hPa."
+      },
+      {
+        "term": "MSL",
+        "def": "Mean Sea Level: the reference datum for altitude and elevation."
+      },
+      {
+        "term": "AGL",
+        "def": "Above Ground Level: height measured from the surface directly below the aircraft."
+      },
+      {
+        "term": "Aerodrome",
+        "def": "Any defined area of land or water used for the arrival, departure and surface movement of aircraft; 'airport' usually implies added facilities."
+      },
+      {
+        "term": "Crosswind component",
+        "def": "The part of the wind blowing across the runway, at right angles to the direction of travel — the part that pushes the aircraft sideways."
+      },
+      {
+        "term": "Headwind component",
+        "def": "The part of the wind blowing straight down the runway against the direction of travel, which shortens the ground run."
+      },
+      {
+        "term": "Ceiling",
+        "def": "The height above the ground of the lowest cloud layer reported as broken or overcast."
+      },
+      {
+        "term": "Visibility",
+        "def": "The greatest horizontal distance at which prominent objects can be seen and identified."
+      },
+      {
+        "term": "Controlled airspace",
+        "def": "Airspace of defined dimensions within which an air traffic control service is provided."
+      },
+      {
+        "term": "Airspace class",
+        "def": "The ICAO classification (A to G) that sets which flight rules, services and clearances apply within a block of airspace."
+      },
+      {
+        "term": "TMA",
+        "def": "Terminal Control Area: controlled airspace established at the confluence of routes around one or more major aerodromes."
+      },
+      {
+        "term": "CTR",
+        "def": "Control Zone: controlled airspace extending upward from the surface around an aerodrome."
+      },
+      {
+        "term": "FIR",
+        "def": "Flight Information Region: an area within which flight information and alerting services are provided."
+      },
+      {
+        "term": "MSA",
+        "def": "Minimum Sector Altitude: the lowest altitude that gives a safe obstacle clearance within a specified sector around a navigation aid or aerodrome."
+      },
+      {
+        "term": "Squawk",
+        "def": "The four-digit transponder code assigned by air traffic control to identify an aircraft on radar."
+      },
+      {
+        "term": "Runway designator",
+        "def": "The number painted on a runway: its magnetic alignment rounded to the nearest ten degrees, with the final zero dropped — 340° becomes 34."
+      },
+      {
+        "term": "Threshold",
+        "def": "The beginning of the portion of a runway usable for landing."
+      },
+      {
+        "term": "Displaced threshold",
+        "def": "A landing threshold set back from the physical start of the runway; the paved area before it is not available for landing."
+      },
+      {
+        "term": "Taxiway",
+        "def": "A defined path on an aerodrome connecting runways with aprons, hangars and other facilities."
+      },
+      {
+        "term": "Apron",
+        "def": "The paved area where aircraft park for boarding, loading, refuelling or maintenance."
+      },
+      {
+        "term": "PIC",
+        "def": "Pilot in Command: the pilot responsible for the operation and safety of the aircraft during flight time."
+      },
+      {
+        "term": "PPL",
+        "def": "Private Pilot Licence: permits flight as pilot in command for non-commercial purposes."
+      },
+      {
+        "term": "CPL",
+        "def": "Commercial Pilot Licence: permits flight for hire or reward, subject to its ratings and limitations."
+      },
+      {
+        "term": "ATPL",
+        "def": "Airline Transport Pilot Licence: the highest pilot licence, required to command large multi-crew aircraft in airline operations."
+      },
+      {
+        "term": "IR",
+        "def": "Instrument Rating: an added qualification permitting flight under Instrument Flight Rules in instrument conditions."
+      },
+      {
+        "term": "Medical certificate",
+        "def": "An aeromedical fitness certificate, issued by class, that a pilot must hold; the class required depends on the licence exercised."
+      },
+      {
+        "term": "Logbook",
+        "def": "The pilot's personal record of flights, hours and experience, used to prove currency and meet licensing requirements."
+      },
+      {
+        "term": "Recency",
+        "def": "The recent-experience requirements — such as a number of take-offs and landings in a period — a pilot must meet to carry passengers or act as pilot in command."
+      },
+      {
+        "term": "SAELPT",
+        "def": "Saudi Aviation English Language Proficiency Test: the assessment of aviation-English proficiency against the ICAO language rating scale."
+      },
+      {
+        "term": "DME",
+        "def": "Distance Measuring Equipment: a system that shows the aircraft's slant distance from a ground station."
+      },
+      {
+        "term": "VOR",
+        "def": "VHF Omnidirectional Range: a ground navigation aid that defines radials an aircraft can track to or from the station."
+      },
+      {
+        "term": "ILS",
+        "def": "Instrument Landing System: a precision approach aid giving lateral (localizer) and vertical (glideslope) guidance to a runway."
+      },
+      {
+        "term": "RNAV",
+        "def": "Area Navigation: a method that lets an aircraft fly any chosen path within the coverage of navigation aids or self-contained systems, not just station to station."
+      }
     ]
   },
   "document": {
@@ -1637,7 +1799,7 @@
   },
   "aerodromesTool": {
     "scopeTitle": "{{icao}} area scope — simulated",
-    "scopeNote": "Training-scenario traffic from the Airspace HUD simulation, with the field's nearby control zones. Not real air traffic.",
+    "scopeNote": "Training-scenario traffic with the field's nearby control zones. Not real air traffic.",
     "search": "Search by ICAO, name, city or country",
     "runways": "Runways",
     "daylight": "Daylight (UTC)",
@@ -1667,7 +1829,8 @@
     "services": "Services",
     "runwayDiagram": "Runway orientation diagram",
     "position": "Approximate position on the globe",
-    "formula": "Saudi aerodrome data derived from the AIP-KSA; worldwide data, runways and frequencies included, from OurAirports. Not for operational use, always use the current AIP and NOTAMs."
+    "formula": "Saudi aerodrome data derived from the AIP-KSA; worldwide data, runways and frequencies included, from OurAirports. Not for operational use, always use the current AIP and NOTAMs.",
+    "simTag": "SIM"
   },
   "definitionsTool": {
     "search": "Search the GACAR Part 1 glossary",
@@ -1908,7 +2071,11 @@
       "pro": "You're on Pro, thank you. Manage your subscription anytime.",
       "school": "Your school plan is active across your seats."
     },
-    "schoolsPoints": ["Bulk seat licences", "Admin dashboard & usage", "Syllabus-aligned study"],
+    "schoolsPoints": [
+      "Bulk seat licences",
+      "Admin dashboard & usage",
+      "Syllabus-aligned study"
+    ],
     "perMo": "SAR {{n}} / mo",
     "perYr": "SAR {{n}} / yr · ≈ {{eq}} / mo",
     "perSeat": "from SAR {{n}} / seat / yr",
@@ -2050,119 +2217,6 @@
     "subtitle": "Every Part is a star in its domain's sector, sized by how often other Parts cite it — and the lines are the corpus's real cross-references. Hover to name a Part, click to open it.",
     "hint": "Hover to explore · click a star to open the Part",
     "summary": "A visual map of {{count}} GACAR Parts. Use the library index for the full accessible list."
-  },
-  "hud": {
-    "badge": "Training scenario · SIM data",
-    "eyebrow": "Simulated flight information region",
-    "title": "Kingdom Airspace HUD",
-    "subtitle": "A deterministic training scenario over Saudi Arabia — watch simulated traffic flow between the Kingdom's aerodromes, inspect each flight, and learn how controlled airspace fits together.",
-    "simNote": "Simulated training scenario — not real air traffic. Not for operational use.",
-    "utcLabel": "UTC",
-    "filters": {
-      "label": "Traffic filter",
-      "all": "All aircraft ({{count}})",
-      "commercial": "Commercial",
-      "drone": "Drone / eVTOL"
-    },
-    "mode": {
-      "label": "Display mode",
-      "globe": "3D globe",
-      "radar": "Radar scope"
-    },
-    "ticker": {
-      "label": "Simulated station weather",
-      "sim": "SIM"
-    },
-    "stats": {
-      "active": "Active flights",
-      "trend": "vs {{min}} sim-minutes ago",
-      "capacity": "Fleet capacity: {{n}}",
-      "density": "{{pct}}% density"
-    },
-    "sectors": {
-      "alpha": "RUH Sector Alpha",
-      "bravo": "JED Sector Bravo",
-      "charlie": "DMM Sector Charlie",
-      "safe": "Airspace safe",
-      "busy": "Sector at capacity"
-    },
-    "legend": {
-      "ctr": "Control zone (CTR)",
-      "tma": "Terminal area (TMA)",
-      "corridor": "UAS corridor (simulated)"
-    },
-    "phase": {
-      "climb": "Climb",
-      "cruise": "Cruise",
-      "descent": "Descent",
-      "approach": "Approach"
-    },
-    "fleet": {
-      "jet": "Airliner",
-      "ga": "Trainer",
-      "heli": "Helicopter",
-      "drone": "Drone"
-    },
-    "flight": {
-      "title": "Flight details",
-      "empty": "Select a contact on the display or a row in the vector list to inspect it.",
-      "altitude": "Altitude",
-      "groundSpeed": "Ground speed",
-      "type": "Aircraft type",
-      "squawk": "Squawk code",
-      "recenter": "Re-center radar target",
-      "attitude": "Attitude indicator (simulated): pitch {{pitch}}°, bank {{bank}}°",
-      "pitch": "Pitch",
-      "roll": "Roll"
-    },
-    "list": {
-      "title": "Airspace vector list",
-      "note": "Simulated — updates every second.",
-      "empty": "No aircraft match this filter right now.",
-      "select": "Select {{callsign}}, {{from}} to {{to}}",
-      "route": "{{from}} → {{to}}"
-    },
-    "units": {
-      "ft": "FT",
-      "kts": "KTS"
-    },
-    "canvas": {
-      "summary": "Simulated map of {{count}} training flights over Saudi Arabia. Use the vector list to inspect each flight.",
-      "drag": "Drag to rotate · scroll to zoom",
-      "zoomIn": "Zoom in",
-      "zoomOut": "Zoom out"
-    },
-    "corridor": {
-      "a": "Zone A",
-      "b": "Zone B"
-    },
-    "pads": {
-      "PAD-RUH": "Riyadh helipad",
-      "PAD-JED": "Jeddah helipad",
-      "PAD-DMM": "Dammam helipad"
-    },
-    "airports": {
-      "OERK": "Riyadh",
-      "OEJN": "Jeddah",
-      "OEDF": "Dammam",
-      "OEMA": "Madinah",
-      "OEAB": "Abha",
-      "OETB": "Tabuk",
-      "OEGN": "Jazan",
-      "OETF": "Taif",
-      "OEAH": "Al-Ahsa",
-      "OEGS": "Gassim",
-      "OEHL": "Hail",
-      "OEYN": "Yanbu",
-      "OENN": "NEOM Bay",
-      "OEBA": "Al-Baha"
-    },
-    "permit": {
-      "title": "Planning a real drone flight or operation?",
-      "body": "Real permits and approvals come from GACA, the authority — this HUD is a study aid only. Learn how the airspace fits together here, then apply through the official portal.",
-      "cta": "Apply on GACA's portal",
-      "study": "Study airspace classes"
-    }
   },
   "schools": {
     "title": "Fly GACA for schools",
@@ -4176,7 +4230,6 @@
     "contact": "Contact",
     "support": "Support",
     "flightTools": "Flight tools",
-    "airspaceHud": "Airspace HUD (simulated)",
     "disclaimerLink": "Disclaimer",
     "terms": "Terms of Use",
     "privacy": "Privacy Notice",
@@ -4235,7 +4288,6 @@
     "pricing": "Pricing",
     "schools": "For Flight Schools",
     "developers": "Captain Adel API",
-    "hud": "Kingdom Airspace HUD — Simulated",
     "libraryMap": "GACAR Constellation Map",
     "glossary": "Aviation Glossary",
     "about": "About",
@@ -4268,7 +4320,6 @@
     "pricing": "Fly GACA is free to study the Saudi GACAR; go Pro for offline access, exports and prep packs, or equip a whole flight school. Simple monthly or annual plans.",
     "schools": "Equip your cadets with the Saudi GACAR library, 55 flight tools and Captain Adel, bulk Pro seat licences, an admin dashboard and syllabus-aligned study.",
     "developers": "Add a source-citing Saudi GACAR assistant to your product — the Captain Adel API returns grounded answers with exact Part and section citations.",
-    "hud": "A mission-control style, fully simulated view of Saudi airspace for education: animated training traffic, sector density and real AIP airspace zones. Not real air traffic, and not affiliated with GACA.",
     "libraryMap": "An interactive constellation of all GACAR Parts connected by their real cross-references — hover to identify a Part, click to read it. Part of Fly GACA's independent aviation library.",
     "glossary": "A bilingual glossary of Saudi aviation: plain-language definitions of the GACAR, AIP, airspace, weather and licensing terms and abbreviations pilots meet — METAR, QNH, VFR, PPL and more. Independent; verify against GACA.",
     "about": "Fly GACA is an independent, educational platform and open regulatory library for Saudi civil aviation (GACAR). Not affiliated with GACA, it helps you find and study the rules.",

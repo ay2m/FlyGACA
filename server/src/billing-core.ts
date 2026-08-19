@@ -277,14 +277,18 @@ export function entitlementFromCheckout(cadence: Cadence, from: Date): Entitleme
 }
 
 /**
- * Verify the `x-moyasar-signature` header against the raw webhook body using the
- * shared secret configured for the endpoint (Moyasar dashboard → Webhooks →
- * `shared_secret`). Defense-in-depth only: `confirmPayment` (the callable, which
- * fetches the payment server-to-server by id with the secret key) is the PRIMARY,
- * trusted fulfilment path, so an incorrect signature recipe here would make the
- * webhook path inert rather than insecure. Re-verify this against Moyasar's current
- * webhook docs before depending on the webhook alone (docs.moyasar.com blocked
- * automated fetches during authoring of this integration).
+ * Constant-time compare of two short secrets. Length is not itself secret here
+ * (both sides are operator-configured), but the comparison must not short-circuit.
+ */
+function secretEquals(a: string, b: string): boolean {
+  const x = Buffer.from(a, "utf8");
+  const y = Buffer.from(b, "utf8");
+  return x.length === y.length && timingSafeEqual(x, y);
+}
+
+/**
+ * Verify the `x-moyasar-signature` header as an HMAC-SHA256 hex digest over the raw
+ * webhook body. One of the two schemes `verifyMoyasarWebhook` accepts — see there.
  */
 export function verifyMoyasarSignature(
   rawBody: string,
@@ -292,10 +296,36 @@ export function verifyMoyasarSignature(
   secret: string,
 ): boolean {
   if (!signature || Array.isArray(signature)) return false;
-  const expected = createHmac("sha256", secret).update(rawBody).digest("hex");
-  const a = Buffer.from(expected, "utf8");
-  const b = Buffer.from(signature, "utf8");
-  return a.length === b.length && timingSafeEqual(a, b);
+  return secretEquals(createHmac("sha256", secret).update(rawBody).digest("hex"), signature);
+}
+
+/**
+ * Authenticate a Moyasar webhook delivery, accepting EITHER scheme:
+ *
+ *   1. a `secret_token` field in the JSON body carrying the endpoint's shared secret
+ *      verbatim — this is what Moyasar's own webhook documentation describes, and what
+ *      the pre-Cloud-Run implementation compared against (see docs/BILLING.md); or
+ *   2. an `x-moyasar-signature` header holding an HMAC-SHA256 hex digest over the raw
+ *      body, keyed by the same shared secret — the scheme Moyasar's newer SDKs use.
+ *
+ * Accepting both is deliberate. We could not confirm from primary source which one a
+ * given account is sent (docs.moyasar.com blocks automated fetches), and honouring one
+ * scheme alone makes the webhook silently inert against an account using the other —
+ * exactly the failure this integration hit. Neither branch weakens the other: both
+ * require possession of the shared secret and compare in constant time.
+ *
+ * An empty `secret` never authenticates, so a missing MOYASAR_WEBHOOK_SECRET fails
+ * closed rather than accepting an unsigned POST.
+ */
+export function verifyMoyasarWebhook(
+  rawBody: string,
+  signature: string | string[] | undefined,
+  bodyToken: unknown,
+  secret: string,
+): boolean {
+  if (!secret) return false;
+  if (typeof bodyToken === "string" && bodyToken && secretEquals(bodyToken, secret)) return true;
+  return verifyMoyasarSignature(rawBody, signature, secret);
 }
 
 // ---- Checkout intent + fulfilment (pure) ----------------------------------------
@@ -362,6 +392,24 @@ export function webhookPaymentId(
   body: { id?: string; data?: { id?: string } } | undefined,
 ): string | undefined {
   return body?.data?.id ?? body?.id;
+}
+
+/**
+ * True when a webhook event could carry a payment object worth looking up.
+ *
+ * A webhook subscribed to every event type (the dashboard's default) also delivers
+ * `payout_*` and `balance_transferred`, whose `data.id` is a payout/transfer id — not
+ * a payment id. Fetching it from `/payments/{id}` 404s, which the gateway surfaces as
+ * a 502 and Moyasar then retries, so an unfiltered endpoint turns every settlement
+ * into a retry storm. Gate on the event type instead of narrowing the subscription,
+ * so the endpoint stays correct whatever the dashboard is set to.
+ *
+ * A payload with no `type` at all is treated as fulfillable: older deliveries omit it,
+ * and the payment lookup plus `status === "paid"` check still gate what is granted.
+ */
+export function webhookMayCarryPayment(type: unknown): boolean {
+  if (typeof type !== "string" || !type) return true;
+  return type.toLowerCase().startsWith("payment");
 }
 
 /** The subscription state after a failed renewal charge (pure — the wrapper writes it). */

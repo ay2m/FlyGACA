@@ -86,15 +86,6 @@ export function CommandPalette() {
         tip: t(`tools.items.${tool.id}.blurb`),
         to: tool.route,
       })),
-      // The Airspace HUD is a standalone page, not a registry tool, but the
-      // palette is how people reach surfaces — file it with the tools.
-      {
-        group: 'tool' as const,
-        code: 'HUD',
-        name: t('hud.title'),
-        tip: t('home.dashboard.hud.note'),
-        to: '/hud',
-      },
     ],
     [t],
   );

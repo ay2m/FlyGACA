@@ -154,7 +154,7 @@ src/
   app/          Header, Footer, Layout, RouteFallback
   components/
     bento/      BentoCard, BentoGrid, HomeDashboard, useCardGlow, motion
-                widgets/  (AdelFeature, Compliance, Hud, Learn, Radar, RegStream,
+                widgets/  (AdelFeature, Compliance, Learn, Radar, RegStream,
                             Search, Tools, StatValue, CardCta)
     calc/       NumberField, TextField, ResultStat, Grids — calc primitives
     CalcShell           shared frame for every calculator page

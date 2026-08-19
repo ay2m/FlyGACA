@@ -44,7 +44,7 @@ The Saudi regulatory corpus, made searchable — plus the tools you'd otherwise 
 | 🧮 **55 flight tools** | Crosswind, ISA, TAS, holding entries, runway performance, weight & balance, METAR/TAF decoding — pure, tested math, state in the URL so any result is a link. |
 | 🎓 **Study** | 1,000 questions across 26 banks, flashcards with spaced repetition, ground school, timed mock exams, and per-certificate prep packs. |
 | 🛩️ **Logbook & currency** | Flights, landings, ratings and medicals — with the calendar-month maths the regulation actually specifies. |
-| 🗺️ **Airspace HUD** | A simulated-traffic globe over Saudi airspace. Pure sim logic, no live data. |
+| 🗺️ **Aerodrome radar scope** | A per-aerodrome scope with the field's nearby control zones, drawn from a deterministic training scenario. Pure sim logic, no live data. |
 | 🌐 **Bilingual, RTL-first** | English ⇄ Arabic across every surface, with the whole route tree mirrored under `/ar`. |
 
 <div align="center">

@@ -56,7 +56,9 @@ is granted server-side and read-only on the client.
     with the secret key, cross-checks its amount/currency/uid against the stored `checkoutIntent`
     (not the payment's own metadata, which the browser could have altered before submitting to
     Moyasar), then grants.
-  - `moyasarWebhook` (HTTP, `/api/moyasar-webhook`) — an async backstop for the same fulfilment
+  - `moyasarWebhook` (HTTP, `/api/moyasar-webhook` — **the Cloud Run route is
+    `/api/billing/webhook/moyasar`**; the old path was a Firebase Hosting rewrite that no longer
+    exists) — an async backstop for the same fulfilment
     path (`fulfillPayment`, shared with `confirmPayment`). A `moyasarPayments/{id}` idempotency
     marker means whichever of the two lands first does the actual grant.
   - `cancelAutoRenew` (callable) — turns off the renewal engine for a subscriber; the plan stays
@@ -217,13 +219,25 @@ Variables*; `deploy.yml`'s Build step injects it as `VITE_MOYASAR_PUBLISHABLE_KE
 "billing-unavailable" if the variable is unset). It's public and rotatable, so it lives as a
 variable, not a Secret-Manager secret (that's only `MOYASAR_SECRET_KEY` / `MOYASAR_WEBHOOK_SECRET`).
 
-**1. Create the webhook** — Moyasar dashboard → *Webhooks* → add `https://<host>/api/moyasar-webhook`,
-subscribed to `payment_paid` (and, if you want faster renewal-failure visibility, `payment_failed`).
-Set a `shared_secret` and copy it into `MOYASAR_WEBHOOK_SECRET`.
+**1. Create the webhook** — Moyasar dashboard → *Webhooks* → add
+`https://<host>/api/billing/webhook/moyasar`, subscribed to `payment_paid` (and, if you want faster
+renewal-failure visibility, `payment_failed`). Set a `shared_secret` and copy it into
+`MOYASAR_WEBHOOK_SECRET`.
+
+Subscribing to every event type is safe: the handler ignores `payout_*` and
+`balance_transferred` deliveries, whose ids are payout ids rather than payment ids and would
+otherwise 404 the payment lookup and make Moyasar retry.
+
+> ⚠️ **The URL changed with the Cloud Run rebuild.** The Firebase build served
+> `/api/moyasar-webhook` via a `firebase.json` rewrite. That rewrite is gone: the Express route is
+> mounted at `/api/billing` + `/webhook/moyasar`. A webhook still pointed at the old path 404s on
+> every delivery, silently, leaving `/api/billing/confirm` as the only fulfilment path.
 
 **How deliveries authenticate:** Moyasar posts the shared secret back as a **`secret_token` field
-in the JSON body**. `verifyMoyasarWebhook` in `functions/src/billing-core.ts` constant-time
-compares it against `MOYASAR_WEBHOOK_SECRET`.
+in the JSON body**. Newer Moyasar SDKs instead send an HMAC-SHA256 hex digest over the raw body in
+an **`x-moyasar-signature`** header. `verifyMoyasarWebhook` in `server/src/billing-core.ts` accepts
+either, constant-time, and fails closed when `MOYASAR_WEBHOOK_SECRET` is unset — so the endpoint
+works whichever scheme your account is sent.
 
 > This was wrong until 2026-08-13. The function previously implemented HMAC‑SHA256 over the raw
 > body against an `x-moyasar-signature` header — an assumption made while `docs.moyasar.com` was
@@ -263,7 +277,9 @@ not showing it. Work through 1–4, then flip the param to `true` and redeploy t
 > Region note: the billing callables, `moyasarWebhook` and `renewMoyasarSubscriptions` deploy to
 > **me-central1** (the source of truth is `functions/src/region.ts`; the `/api/moyasar-webhook`
 > rewrite in `firebase.json` and the client's `FUNCTIONS_REGION` in
-> `src/lib/services/firebase.ts` must all match it). The chat gateway (`/api/chat`) is reached by
+> `src/lib/services/firebase.ts` must all match it). **History — none of that exists now:** the
+> service is one Cloud Run deployment in `me-central2` with no per-function regions and no
+> hosting rewrites. The chat gateway (`/api/chat`) is reached by
 > the same-region hosting fetch — it does not use the callable region.
 
 > CSP note: the hosted widget is cross-origin by design (the browser talks to Moyasar directly), so
