@@ -256,22 +256,32 @@ deploy` deliberately fails with a pointer to `docs/RUNBOOK-deploy.md`, since dep
 
 ## Where to look
 
-**What is actually in this repo:** `MIGRATION.md` (rebuild log), `ROADMAP.md`,
-`README.md` (getting started), `GUIDE_AUTHORING.md` (learn content),
-`FIGMA_DESIGN_SYSTEM.md` (design system), `SEO-PLAN.md`, `CONTRIBUTING.md`, `SECURITY.md`,
-and **`docs/RUNBOOK-deploy.md` — the only file under `docs/`**.
+Root: `MIGRATION.md` (rebuild log), `ROADMAP.md`, `README.md` (getting started),
+`GUIDE_AUTHORING.md` (learn content), `FIGMA_DESIGN_SYSTEM.md` (design system),
+`SEO-PLAN.md`, `CONTRIBUTING.md`, `SECURITY.md`.
 
-> ⚠️ **Most documents this file used to cite do not exist here.** `docs/` holds exactly one
-> file. `ARCHITECTURE-BLUEPRINT.md`, `DATA-HOSTING.md`, `BILLING.md`, `LICENSED-API.md`,
-> `DESIGN-genkit-rag-backend.md`, `PRICING-REVENUE-STRATEGY.md`, `MERGE-CONFLICTS.md`,
-> `corpus-link-shape.md`, `STORE-SUITE.md`, `RUNBOOK-native.md`, the `RUNBOOK-ios-*` set,
-> `APPS-FAMILY-ROADMAP.md`, `STUDY-CONTENT-REVIEW.md`, `TESTING-ROADMAP.md`, `docs/b2b/`,
-> `docs/seo/`, `THE-BOOK-OF-FLY-GACA.md`, and `archive/` are **all absent** — several are
-> still cited from source comments (`server/src/api-tier-core.ts`, `src/lib/services/pricing.ts`,
-> `src/pages/pricing/Pricing.tsx`) as though they were authoritative. `content/regulations/`
-> is absent too, which makes `parse:regulations` and `lint:md` dead scripts. Don't go
-> looking; either write the doc or stop citing it. Sibling repos (`ay2m/FlyGACA-app`,
-> `ay2m/FlyGACA-ios`) are separate checkouts, not subtrees of this one.
+`docs/` holds the engineering documentation: `RUNBOOK-deploy.md` (provisioning + the deploy
+sequence — written for THIS stack, keep it current), `ARCHITECTURE-BLUEPRINT.md`,
+`DATA-HOSTING.md`, `BILLING.md`, `DESIGN-genkit-rag-backend.md`, `LICENSED-API.md`,
+`PRICING-REVENUE-STRATEGY.md`, `MERGE-CONFLICTS.md`, `corpus-link-shape.md`,
+`STORE-SUITE.md`, `RUNBOOK-native.md`, `RUNBOOK-openseo.md`, `APPS-FAMILY-ROADMAP.md`,
+`STUDY-CONTENT-REVIEW.md`, `TESTING-ROADMAP.md`, plus `docs/b2b/` (8 files — the cohort
+dashboard, study-progress-sync design, curriculum and sales material) and `docs/seo/`.
+`docs/screenshots/review-2026-07/` holds the images the README embeds.
+
+> ⚠️ **Everything under `docs/` except `RUNBOOK-deploy.md` was restored from
+> `ay2m/FlyGACA-app` history and predates the Cloud Run rebuild.** Each restored file that
+> still describes Firebase, Firestore, App Check or Stripe carries a banner saying so.
+> Read them for intent and design rationale, not for current architecture — `CLAUDE.md` is
+> the authority on how the system works today. Two were deliberately NOT restored
+> (`RUNBOOK-firebase.md`, `APP-CHECK-BACKEND.md`): they document a stack that no longer
+> exists.
+
+Still genuinely absent, and cited nowhere any more: `archive/` (parked material — vendored
+references, finished-work docs, investor material — it lives only in `ay2m/FlyGACA-app`),
+the `RUNBOOK-ios-*` set, and `THE-BOOK-OF-FLY-GACA.md`. Sibling repos
+(`ay2m/FlyGACA-app` — the 1,005-commit predecessor, and `ay2m/FlyGACA-ios`) are separate
+checkouts, not subtrees of this one.
 
 The legacy source (the original vanilla Fly GACA site) remains the reference for anything
 still ported from the old site.
