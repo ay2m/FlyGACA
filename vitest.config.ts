@@ -36,14 +36,15 @@ export default defineConfig({
       // can't silently regress, while today's run still passes. Raise as cover
       // grows. (`npm run test:coverage` prints the live figures.)
       //
-      // 84.42 / 78.89 / 87.73 / 85.43 today. The last jump came from the HUD sim
-      // engine — projection.ts and kinematics.ts went from 0% branch and function
-      // coverage (reached only transitively through a component render) to 100%
-      // of their functions.
+      // 84.89 / 79.86 / 88.04 / 85.92 today. The recent jumps: the HUD sim engine
+      // (projection.ts and kinematics.ts went from 0% branch and function coverage,
+      // reached only transitively through a component render, to 100% of their
+      // functions) and services/backend.ts (30% → 97%, previously unreachable
+      // because every service spec mocks that module).
       thresholds: {
         statements: 84,
-        branches: 78,
-        functions: 87,
+        branches: 79,
+        functions: 88,
         lines: 85,
       },
     },
