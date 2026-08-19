@@ -42,6 +42,16 @@ gcloud services enable \
   compute.googleapis.com
 ```
 
+## 1b. Artifact Registry
+
+`cloudbuild.yaml` pushes the API image to `$REGION-docker.pkg.dev/$PROJECT_ID/flygaca/…`, so the
+repository has to exist before the first build:
+
+```bash
+gcloud artifacts repositories create flygaca \
+  --repository-format=docker --location="$REGION"
+```
+
 ## 2. Cloud SQL (Postgres)
 
 ```bash
@@ -97,12 +107,28 @@ Grant the Cloud Run service account `roles/secretmanager.secretAccessor` and
 
 ## 5. Deploy the API
 
-Build from the **repo root** — the Dockerfile copies `public/data/rag-chunks.json` in so the
-BM25 index needs no cold-start fetch.
+Two steps, and **not** `gcloud run deploy --source`. Cloud Run's source builds only honour a
+Dockerfile at the root of the source directory; ours is `server/Dockerfile`, because it copies
+`public/data/rag-chunks.json` in so the BM25 index needs no cold-start fetch. `--source .` finds no
+Dockerfile and falls back to buildpacks on the *frontend* `package.json` (which has no `start`
+script), and `--source server/` puts the corpus outside the build context so the `COPY` fails.
+Either way you get a build failure, or an image with nothing listening on `$PORT`.
+
+`cloudbuild.yaml` does the build the repo's own `.dockerignore` already assumes:
 
 ```bash
+gcloud builds submit --config cloudbuild.yaml --region="$REGION" \
+  --substitutions="_REGION=$REGION,_TAG=$(git rev-parse --short HEAD)" .
+```
+
+Then create the service against that image. This first deploy is the one that sets env and secrets;
+later rollouts are just `npm run deploy:api`, which reuses whatever the previous revision had.
+
+```bash
+IMAGE="$REGION-docker.pkg.dev/$PROJECT_ID/flygaca/flygaca-api:$(git rev-parse --short HEAD)"
+
 gcloud run deploy flygaca-api \
-  --source . --region="$REGION" \
+  --image="$IMAGE" --region="$REGION" \
   --add-cloudsql-instances="$PROJECT_ID:$REGION:$INSTANCE" \
   --allow-unauthenticated \
   --memory=1Gi --timeout=300 --max-instances=10 \

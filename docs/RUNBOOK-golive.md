@@ -179,7 +179,52 @@ availability in `me-central2` before committing to that in writing.
 
 ---
 
-## 7. Rollback
+## 7. Troubleshooting
+
+### "The user-provided container failed to start and listen on the port defined by PORT=8080"
+
+Two independent causes produce this identical message. Check both — fixing one still leaves the
+other.
+
+**a) The image has no server in it.** This is what the Cloud Run console's *"Deploy from
+repository"* wizard produces. It looks for a Dockerfile at the repo root, finds none (ours is
+`server/Dockerfile`), and falls back to buildpacks on the root `package.json` — which is the **Vite
+frontend** and has no `start` script. The build fails, and nothing binds `$PORT`.
+
+Do not use that wizard. Build with `cloudbuild.yaml` (`npm run deploy:api`, or `RUNBOOK-deploy.md`
+§5 for a first deploy). If the wizard already ran, it also created a **Cloud Build trigger** that
+will re-run the same broken build on every push — delete it:
+
+```bash
+gcloud builds triggers list --region="$REGION"
+gcloud builds triggers delete TRIGGER_NAME --region="$REGION"
+```
+
+**b) The config check rejected the revision.** `server/src/index.ts` calls
+`assertRequiredConfig()` *before* `app.listen()`, deliberately, so a misconfigured revision dies at
+boot instead of 500-ing on live traffic. It throws when `DATABASE_URL` is missing or
+`SESSION_SECRET` is shorter than 32 characters — and a service created by the console wizard has
+neither. Confirm in the logs:
+
+```bash
+gcloud run services logs read flygaca-api --region="$REGION" --limit=50
+```
+
+A line reading `Missing required environment variable: DATABASE_URL` is this case, not a port
+problem. Fix it with the `--set-env-vars` / `--set-secrets` from `RUNBOOK-deploy.md` §5.
+
+Related: `GET /healthz` returns **503 until the database answers**, so a revision that starts but
+cannot reach Cloud SQL will also fail its health check. Check that
+`--add-cloudsql-instances` is set and `DATABASE_URL` uses the unix socket form
+(`...@/flygaca?host=/cloudsql/PROJECT:REGION:INSTANCE`).
+
+### The build succeeds but the image is enormous, or the build uploads for minutes
+
+`.gcloudignore` is missing or was edited. Without it gcloud falls back to `.gitignore`, which does
+not exclude `public/` — so all 64 MB of corpus is uploaded to reach the one 14 MB file the image
+needs.
+
+## 8. Rollback
 
 ```bash
 gcloud run revisions list --service flygaca-api --region me-central2
