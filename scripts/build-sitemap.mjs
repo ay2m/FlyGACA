@@ -122,9 +122,30 @@ for (const slug of guideSlugs) {
 
 // Aerodrome directory → one detail page per curated ICAO (the /tools/aerodromes/:icao
 // route resolves each from airports.json). Dated from the index's generated date.
+const LABEL = 'sitemap';
+// Only ICAOs the runtime can actually resolve: AerodromeDetail looks the code up
+// in airports.json, then airports-extra.json, and renders a noindex "not found"
+// page when neither has it. A curated ICAO missing from both would otherwise be
+// advertised in the sitemap and snapshotted as a dead URL, so drop it here —
+// loudly, since it means the aerodrome index and the airport data have drifted.
+function resolvableIcaos() {
+  const known = new Set(
+    ['public/data/airports.json', 'public/data/airports-extra.json'].flatMap((f) =>
+      readJson(f).airports.map((a) => a.icao),
+    ),
+  );
+  const all = readJson('public/data/aerodromes-index.json').documents;
+  const missing = all.filter((d) => !known.has(d.icao)).map((d) => d.icao);
+  if (missing.length)
+    console.warn(
+      `${LABEL}: ${missing.length} curated aerodrome(s) not in airports data — skipped: ${missing.join(', ')}`,
+    );
+  return all.filter((d) => known.has(d.icao));
+}
+
 const aero = readJson('public/data/aerodromes-index.json');
 const aeroDate = isDate(aero.generated) ? aero.generated.slice(0, 10) : today;
-for (const d of aero.documents) urls.set(`/tools/aerodromes/${d.icao}`, aeroDate);
+for (const d of resolvableIcaos()) urls.set(`/tools/aerodromes/${d.icao}`, aeroDate);
 
 // Prep packs → one detail page per LIVE pack id (src/lib/prepCatalog.ts). Each pack
 // literal declares `id: '<id>'` then `status: '<live|soon>'`; `soon` packs have no

@@ -98,8 +98,28 @@ for (const [seg, file] of [
 ]) {
   for (const d of readJson(file).documents) corpus.push(`${seg}/${d.slug}`);
 }
-for (const d of readJson('public/data/aerodromes-index.json').documents)
-  corpus.push(`/tools/aerodromes/${d.icao}`);
+const LABEL = 'prerender';
+// Only ICAOs the runtime can actually resolve: AerodromeDetail looks the code up
+// in airports.json, then airports-extra.json, and renders a noindex "not found"
+// page when neither has it. A curated ICAO missing from both would otherwise be
+// advertised in the sitemap and snapshotted as a dead URL, so drop it here —
+// loudly, since it means the aerodrome index and the airport data have drifted.
+function resolvableIcaos() {
+  const known = new Set(
+    ['public/data/airports.json', 'public/data/airports-extra.json'].flatMap((f) =>
+      readJson(f).airports.map((a) => a.icao),
+    ),
+  );
+  const all = readJson('public/data/aerodromes-index.json').documents;
+  const missing = all.filter((d) => !known.has(d.icao)).map((d) => d.icao);
+  if (missing.length)
+    console.warn(
+      `${LABEL}: ${missing.length} curated aerodrome(s) not in airports data — skipped: ${missing.join(', ')}`,
+    );
+  return all.filter((d) => known.has(d.icao));
+}
+
+for (const d of resolvableIcaos()) corpus.push(`/tools/aerodromes/${d.icao}`);
 // LIVE packs only — `soon` packs have no detail route (see build-sitemap.mjs).
 const packRoutes = [
   ...read('src/lib/prepCatalog.ts').matchAll(/\bid:\s*'([^']+)'[\s\S]*?status:\s*'([^']+)'/g),

@@ -562,6 +562,27 @@ function corpusDescriptors(bundle, lang) {
   return map;
 }
 
+const LABEL = 'prerender-head';
+// Only ICAOs the runtime can actually resolve: AerodromeDetail looks the code up
+// in airports.json, then airports-extra.json, and renders a noindex "not found"
+// page when neither has it. A curated ICAO missing from both would otherwise be
+// advertised in the sitemap and snapshotted as a dead URL, so drop it here —
+// loudly, since it means the aerodrome index and the airport data have drifted.
+function resolvableIcaos() {
+  const known = new Set(
+    ['public/data/airports.json', 'public/data/airports-extra.json'].flatMap((f) =>
+      readJson(f).airports.map((a) => a.icao),
+    ),
+  );
+  const all = readJson('public/data/aerodromes-index.json').documents;
+  const missing = all.filter((d) => !known.has(d.icao)).map((d) => d.icao);
+  if (missing.length)
+    console.warn(
+      `${LABEL}: ${missing.length} curated aerodrome(s) not in airports data — skipped: ${missing.join(', ')}`,
+    );
+  return all.filter((d) => known.has(d.icao));
+}
+
 /**
  * Aerodrome detail pages (English only, like the sitemap's en/x-default-only
  * entries for them). Copy mirrors src/pages/tools/procedures/AerodromeDetail.tsx:
@@ -572,7 +593,7 @@ function corpusDescriptors(bundle, lang) {
 function aerodromeDescriptors() {
   const map = new Map();
   const byIcao = new Map(readJson('public/data/airports.json').airports.map((a) => [a.icao, a]));
-  for (const d of readJson('public/data/aerodromes-index.json').documents) {
+  for (const d of resolvableIcaos()) {
     const a = byIcao.get(d.icao);
     const name = a?.name_en ?? d.name;
     const city = a?.city_en ?? d.city;
