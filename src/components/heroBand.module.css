@@ -2,7 +2,7 @@
    This previously rendered the falcon-stroke gradient card (rounded border, film
    grain, a breathing gold edge and a sage corner glow). That boxed look has been
    dropped so the SearchHero/PageHero heroes render bare on the page background with
-   a gradient-clip title, matching the Kingdom Airspace HUD hero (see Hud.module.css).
+   a gradient-clip title.
    `.band` and `.glow` are kept as hooks so the SearchHero/PageHero markup — including
    the `.glow` node — needs no change. */
 .band {

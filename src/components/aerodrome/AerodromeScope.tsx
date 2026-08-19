@@ -197,7 +197,7 @@ export function AerodromeScope({ center, icao, zones = [], rangeNm = 120 }: Aero
         <h2 id="aero-scope-head" className={styles.title}>
           {t('aerodromesTool.scopeTitle', { icao })}
         </h2>
-        <span className={styles.sim}>{t('hud.ticker.sim')}</span>
+        <span className={styles.sim}>{t('aerodromesTool.simTag')}</span>
       </div>
       <div className={styles.frame}>
         <canvas ref={canvasRef} className={styles.canvas} aria-hidden="true" />

@@ -301,7 +301,9 @@ const PRIVATE = new Set([
   '/business/admin',
 ]);
 // /signin and /signup redirect to /account — keep them out of the snapshots too.
-const REDIRECTS = new Set(['/guides', '/study', '/signin', '/signup']);
+// /hud redirects to /tools now the Airspace HUD is retired (docs/DESIGN-airspace-hud-v2.md);
+// the hosts' SPA fallback still serves it, so the client router does the redirect.
+const REDIRECTS = new Set(['/guides', '/study', '/signin', '/signup', '/hud']);
 
 // Static pages: route → the i18n keys its copy comes from. A bare string is the
 // common case — the key under `<bundle>.meta` / `<bundle>.metaDesc`. Pages whose
@@ -322,7 +324,6 @@ const STATIC_META = {
   '/pricing': 'pricing',
   '/schools': 'schools',
   '/developers': 'developers',
-  '/hud': 'hud',
   '/about': 'about',
   '/updates': 'updates',
   '/offline': 'offline',

@@ -12,7 +12,6 @@ import { cleanup, screen } from '@testing-library/react';
 import type { ComponentType } from 'react';
 import { renderWithRouter } from './helpers/render';
 import { About } from '@/pages/about/About';
-import { Hud } from '@/pages/hud/Hud';
 import { NotFound } from '@/pages/not-found/NotFound';
 import { Offline } from '@/pages/offline/Offline';
 import { DisclaimerPage, TermsPage, PrivacyPage, SafetyPage } from '@/pages/legal/LegalPage';
@@ -20,9 +19,6 @@ import { SupportPage } from '@/pages/support/SupportPage';
 
 const PAGES: Record<string, ComponentType> = {
   About,
-  // Hud fetches its airspace overlay, but is built to render fully (heading,
-  // controls, simulated data) with the fetch unresolved or failed.
-  Hud,
   NotFound,
   Offline,
   DisclaimerPage,

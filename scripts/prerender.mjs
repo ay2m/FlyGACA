@@ -58,6 +58,8 @@ const PRIVATE = new Set([
   '/signup',
   '/guides',
   '/study',
+  // /hud is retired and now redirects to /tools (see src/router.tsx).
+  '/hud',
   '/dashboard',
   '/currency',
   '/logbook',

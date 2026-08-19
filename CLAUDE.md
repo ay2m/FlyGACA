@@ -14,8 +14,7 @@ assistant cites the exact Part/section.
 The app is more than calculators. Live surfaces (see `src/router.tsx`) include the **regulatory
 library** (`/library`, documents + charts, plus `/library/map` — a Leaflet aerodrome map — and the
 `/updates` corpus change feed), **Captain Adel** chat (`/chat`), the **flight-tools catalog**
-(`/tools/*`), the interactive **Kingdom Airspace HUD** (`/hud` — a simulated-traffic globe/HUD,
-pure sim logic in `src/calc/hud/`), a **learn/guides** hub (`/learn`, `/guides/:slug`), **study**
+(`/tools/*`), a **learn/guides** hub (`/learn`, `/guides/:slug`), **study**
 tools (`/study/*` — quiz, flashcards, ground school, mock exam, paths, exam-prep **packs**, study
 sheets), an authenticated **account** area (`/account`, `/dashboard`, `/currency`, `/logbook`,
 `/records`, `/settings`), **pricing/schools/checkout** (`/pricing`, `/schools`, `/checkout`,
@@ -105,7 +104,9 @@ instance are both regional resources set at deploy time (see `docs/RUNBOOK-deplo
   (`anchor`, `corpusNav`, `changeTracking`, `offlineManifest`, `libraryFilter`, `constellation`),
   `calc/study/` (`srs` — the contract the iOS Swift port mirrors, though that port is in the
   sibling repo, so nothing here can detect drift — `shuffle`, and
-  `glidePath`), `calc/hud/` (the airspace-sim engine: `scenario`, `kinematics`, `projection`,
+  `glidePath`), `calc/hud/` (the airspace-sim engine behind the per-aerodrome radar scope —
+  the `/hud` page it was built for is retired, see `docs/DESIGN-airspace-hud-v2.md`:
+  `scenario`, `kinematics`, `projection`,
   `sectors`, `geoKsa`, `callsigns`, `simMetar`, seeded `rng`), `calc/app/`
   (`authError`, `dashboardLayout`, `emailShape`, `passwordPolicy`, `pricingView`, `toolPresets`),
   and `calc/analytics/` (`healthScore`, `passProbability`, `cohortSummary`) — which is tested

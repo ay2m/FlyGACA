@@ -55,14 +55,16 @@ Captain Adel RAG brain live in `functions/` (deployed to `me-central1`; Firestor
   density-altitude outputs, staggered wind-triangle vector construction, the GACAR constellation
   map at `/library/map` (`src/calc/library/constellation.ts` — Parts as stars sized by real
   inbound cross-references), and a per-aerodrome radar scope
-  (`src/components/aerodrome/AerodromeScope.tsx`) sharing the HUD's training scenario.
-- **Kingdom Airspace HUD (`/hud`)**
+  (`src/components/aerodrome/AerodromeScope.tsx`) sharing the `src/calc/hud/` training scenario.
+- **Kingdom Airspace HUD (`/hud`) — since REMOVED**
   ([#432](https://github.com/FlyGACA/FlyGACA-app/pull/432)): a deterministic, SIM-labelled
   Kingdom airspace simulation — pure engine under `src/calc/hud/` (seeded scenario, closed-form
   kinematics, day/night terminator via `src/calc/sun.ts`), canvas globe, vector list + flight
-  detail card, and a home bento teaser. Honesty posture throughout: training-only callsigns,
-  "simulation — not real air traffic" labelling, and the permit CTA links out to GACA's own
-  portal.
+  detail card, and a home bento teaser. **The page was retired**: it showed invented traffic and
+  answered no question a pilot or student actually had, while costing ~80 bilingual i18n keys and
+  a prerendered route to maintain. `/hud` now redirects to `/tools`; the sim engine stays, since
+  the per-aerodrome radar scope uses it. See `docs/DESIGN-airspace-hud-v2.md` for the reasoning
+  and the bar a v2 would have to clear.
 - **Role-aware dashboard + sign-in redesign**
   ([#254](https://github.com/FlyGACA/FlyGACA-app/pull/254)): an operational role
   (pilot / student / instructor) on the profile — synced via `PROFILE_FIELDS` and accepted by the
@@ -231,6 +233,14 @@ the findings are not re-derived.
   server-side student↔instructor relationships that don't exist yet, so it was deliberately left
   out of the frontend-only dashboard redesign (whose instructor view centres on the CFI's own
   records/references instead).
+- **[product]** **Airspace HUD v2 — parked, needs a better idea.** v1 shipped and was removed
+  (see **Recently shipped**): a simulated-traffic globe that looked impressive and taught nothing.
+  The surviving half is the per-aerodrome radar scope, which works precisely because it is
+  anchored to a real aerodrome and its real control zones. Any v2 must be anchored in real
+  airspace data, answer a question somebody actually has, cite the governing GACAR reference,
+  and be worth its bilingual maintenance cost — the two candidate directions (an airspace
+  explorer along a route, or a published-procedure visualiser) are written up in
+  `docs/DESIGN-airspace-hud-v2.md`. Doing nothing is an acceptable outcome.
 - **[platform]** Push notifications and native polish once the mobile shells ship.
 - **[platform]** **Observability.** Client error monitoring (e.g. Sentry) and privacy-respecting
   usage analytics (page + tool usage only, no PII) to learn which of the 55 tools earn their
