@@ -152,15 +152,20 @@ Run `npm run verify` before committing — it's the same chain CI would run.
 ## Deploy
 
 ```bash
-# Google Cloud — the canonical origin. Full sequence in docs/RUNBOOK-deploy.md
-gcloud run deploy flygaca-api --source server/ --region me-central2
-gcloud storage rsync dist/ gs://<bucket> --recursive --delete-unmatched-destination-objects
+# Google Cloud — the canonical origin. Full sequence in docs/RUNBOOK-golive.md
+npm run deploy:api                                     # build the image, roll out a Cloud Run revision
+WEB_BUCKET=gs://… DATA_BUCKET=gs://… URL_MAP=… \
+  npm run deploy:web                                   # publish dist/ + the corpus, stamp Cache-Control
 ```
 
-`npm run deploy` deliberately fails with a pointer to the runbook — deploying is `gcloud run deploy` plus a bucket sync, not one command.
+`npm run deploy` deliberately fails with a pointer to the runbook — deploying is two commands, not one.
+
+> [!NOTE]
+> Neither `--source .` nor `--source server/` can build the API. Cloud Run's source deploys only honour a Dockerfile at the **root** of the source directory, and ours is `server/Dockerfile` — which copies `public/data/rag-chunks.json` in, so it must build from the repo root with the corpus in context. `cloudbuild.yaml` does exactly that (`docker build -f server/Dockerfile .`) and `npm run deploy:api` drives it.
 
 > [!WARNING]
 > Prices come from `PRICE_*` env on the Cloud Run revision and have **no code defaults**. Change a price in the repo and you must update that revision in the same breath, or the site advertises one number and charges another. `tests/pricing-server-parity.test.ts` guards the repo half.
+
 
 ---
 

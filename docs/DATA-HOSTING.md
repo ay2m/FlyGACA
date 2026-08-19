@@ -1,78 +1,85 @@
-# Serving the `/data` corpus off Firebase Hosting
+# Serving the `/data` corpus from a Cloud Storage bucket
 
-> ⚠️ **Restored from `ay2m/FlyGACA-app` history, predating the Cloud Run rebuild.**
-> Parts of this document still describe the retired Firebase / Firestore / App Check /
-> Stripe stack. The live architecture is an Express service on **Cloud Run** backed by
-> **Cloud SQL**, billed through **Moyasar** — see `CLAUDE.md`. Anything Firebase- or
-> Stripe-specific below is history, not the system. The `apple/` tree it may reference
-> was retired; the iOS family lives in `ay2m/FlyGACA-ios`.
+The regulatory corpus under `public/data` is ~64 MB (`airports-extra.json` 21 MB,
+`library-search.json` 19 MB, `rag-chunks.json` 14 MB, plus `parts/`, the indexes and, once the
+full library ships, the reference HTML, charts and ebooks). Shipping it inside `dist/` makes every
+web deploy carry the whole corpus even when not a byte of it changed. Serving it from its own
+bucket keeps a deploy around 12 MB.
 
-The regulatory corpus under `public/data` is ~115 MB (`airports-extra/` 21 MB across 9 region
-shards, `library-search.json` 19 MB, the `library/` reference HTML 40 MB, `charts/` 15 MB,
-`ebooks/` 11 MB, `parts/` 7 MB, …). Firebase Hosting stores this in **every release**, so a
-burst of deploys can exhaust the Hosting storage quota (`HTTP 429 … exceeded the Hosting storage
-quota`). Serving the corpus from a bucket keeps each Hosting release ~12 MB.
+Two notes on what is *not* in the client's copy:
 
-Two notes on what is *not* here:
-
-- **`rag-chunks.json` lives at `data/` in the repo root, not under `public/`.** It is a backend
-  retriever input (`functions/src/corpus.ts`), no client code reads it, and the gateway's
-  `CORPUS_URL` points at `library-search.json` — so serving it and mirroring it into the bucket
-  cost 14 MB raw / 1.7 MB gz for nothing. `tests/integrity/data-shape.test.ts` pins the split.
-- **The long-tail aerodrome tier is region-sharded** (`public/data/airports-extra/<REGION>.json`
-  + `_manifest.json`) so a page fetches one shard instead of the whole 20.8 MB / 2.8 MB gz tier.
-  Same total bytes in the bucket, far fewer per visit. See `scripts/lib/airport-shards.mjs`.
+- **`rag-chunks.json` is a backend input, not client data.** The Cloud Run image bakes it in
+  (`server/Dockerfile` sets `CORPUS_URL=/app/data/rag-chunks.json`) so the BM25 index needs no
+  cold-start fetch. No client code reads it. It still lives under `public/data/` in the repo, so
+  the corpus bucket does carry a copy — 14 MB of dead weight there, and worth excluding if the
+  bucket's egress ever matters.
+- **The long-tail aerodrome tier is region-sharded** (`public/data/airports-extra/<REGION>.json` +
+  `_manifest.json`) so a page fetches one shard instead of the whole tier. Same total bytes in the
+  bucket, far fewer per visit. See `scripts/lib/airport-shards.mjs`.
 
 ## How the app finds the corpus
 
 Every `/data/*` fetch and asset URL funnels through **`dataUrl()`** in `src/lib/content.ts`:
 
-```
+```ts
 const DATA_BASE = import.meta.env.VITE_DATA_BASE_URL ?? '/data';
 export const dataUrl = (p) => (p.startsWith('/data/') ? DATA_BASE + p.slice('/data'.length) : p);
 ```
 
 Applied at the four fetch/asset points — `fetchJson` (all JSON), `useFetchText` (reader HTML),
 `chartSrc` (chart images), and `offlineCache.saveDoc/removeDoc` (offline cache keys). Call sites
-keep their `'/data/...'` literals unchanged. When `VITE_DATA_BASE_URL` is unset the corpus is
-fetched same-origin from `/data` exactly as before.
+keep their `'/data/...'` literals unchanged. With `VITE_DATA_BASE_URL` unset the corpus is fetched
+same-origin from `/data` exactly as before, which is what local development and CI use.
 
-## Cutover (owner steps)
+## Cutover
 
-1. **Create a public bucket** in the `flygaca-app` project, e.g. `gs://flygaca-data`.
-   - Grant `roles/storage.objectViewer` to `allUsers` on the bucket (public read).
-   - Set **CORS** allowing the app origin:
-     ```json
-     [
-       {
-         "origin": ["https://flygaca.com"],
-         "method": ["GET"],
-         "responseHeader": ["*"],
-         "maxAgeSeconds": 3600
-       }
-     ]
-     ```
-   - Confirm the deploy service account (`FIREBASE_SERVICE_ACCOUNT`) has
-     `roles/storage.objectAdmin` on the bucket (the `Offload data corpus` step authenticates with it).
-2. **Set two repo variables** (Settings → Secrets and variables → Actions → Variables):
-   - `DATA_BASE_URL` = `https://storage.googleapis.com/flygaca-data/data` (public read URL; the
-     build inlines it as `VITE_DATA_BASE_URL`).
-   - `DATA_BUCKET` = `gs://flygaca-data` (rsync target for the `Offload data corpus` step).
-3. **Deploy** (`deploy.yml`). With both vars set, CI mirrors `public/data` → the bucket, strips
-   `dist/data` from the Hosting release, and the built app fetches the corpus from the bucket. The
-   Hosting release drops from ~141 MB to ~12 MB.
+**1. Create a public bucket** in the same project and region as everything else:
+
+```bash
+gcloud storage buckets create gs://flygaca-data --location=me-central2
+gcloud storage buckets add-iam-policy-binding gs://flygaca-data \
+  --member=allUsers --role=roles/storage.objectViewer
+```
+
+CORS is only needed if you serve the corpus from a different origin than the SPA. Reading it
+cross-origin from `storage.googleapis.com` does need it:
+
+```bash
+echo '[{"origin":["https://flygaca.com"],"method":["GET"],"responseHeader":["*"],"maxAgeSeconds":3600}]' > /tmp/cors.json
+gcloud storage buckets update gs://flygaca-data --cors-file=/tmp/cors.json
+```
+
+**2. Build with the base URL.** In CI this is the `DATA_BASE_URL` repository variable, written into
+`.env.local` by `.github/workflows/deploy.yml`:
+
+```
+VITE_DATA_BASE_URL=https://storage.googleapis.com/flygaca-data/data
+```
+
+The trailing `/data` is load-bearing. `dataUrl()` replaces the `/data` prefix of each path with this
+base, and `scripts/deploy-web.mjs` uploads under a matching `data/` prefix in the bucket. Point it
+at the bucket root instead and every corpus fetch 404s — in production only, since local builds
+leave it unset.
+
+**3. Deploy.** With `DATA_BUCKET` set, `npm run deploy:web`:
+
+- excludes `dist/data` from the web bucket (`--exclude=^data/`), so the corpus is not uploaded twice
+- rsyncs `public/data` → `gs://flygaca-data/data`
+- stamps `Cache-Control: public, max-age=3600` on the corpus from `config/headers.json`
 
 Already in place, no action needed:
 
-- CSP `img-src` includes `storage.googleapis.com` / `firebasestorage.googleapis.com` (chart
-  images); `connect-src` already allows `*.googleapis.com` (JSON/HTML fetches).
+- The CSP allows `https://storage.googleapis.com` in both `connect-src` (JSON and HTML fetches) and
+  `img-src` (chart images). It lives in `config/headers.json`; `tests/headers-parity.test.ts`
+  asserts both directives so a future CSP edit cannot quietly break the corpus.
 - The service-worker `NetworkFirst` rules match `/data/` anywhere in the path, so offline caching
   works whether the corpus is same-origin or on the bucket.
-- `rag-chunks.json` (RAG-backend-only, never fetched by the app) is excluded from the Hosting
-  release via `firebase.json` `ignore`.
 
 ## Alternative host
 
-Any public object store works — point `DATA_BASE_URL` at it and adjust the `Offload data corpus`
-step. Add its origin to the CSP `img-src`/`connect-src` in `firebase.json` if it isn't a
-`*.googleapis.com` host.
+Any public object store works — point `VITE_DATA_BASE_URL` at it and change the rsync target in
+`scripts/deploy-web.mjs`. Add its origin to `connect-src` and `img-src` in `config/headers.json`
+if it is not `storage.googleapis.com`, then re-apply the headers to the load balancer
+(`docs/RUNBOOK-golive.md` §2). Note that moving the corpus off Google is a residency decision as
+well as a hosting one — the corpus itself is public regulatory text, so it is a much softer call
+than moving the database, but it is still a call.

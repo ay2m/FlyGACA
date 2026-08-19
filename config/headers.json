@@ -1,0 +1,57 @@
+{
+  "$comment": [
+    "Single source of truth for the HTTP response headers every Fly GACA front serves.",
+    "",
+    "Production is Google Cloud: a Cloud Storage backend bucket (the SPA) and a Cloud Run",
+    "backend service (the API), both behind one HTTPS load balancer. GCP applies custom",
+    "response headers per BACKEND, not per path, so the split here is deliberate:",
+    "",
+    "  security  -> identical on every response; emitted as --custom-response-headers by",
+    "               scripts/lib/headers.mjs and applied with `gcloud compute backend-buckets",
+    "               update` / `backend-services update`. See docs/RUNBOOK-golive.md.",
+    "  cache     -> per path, so it CANNOT be a backend header. Set as Cloud Storage object",
+    "               metadata at upload time by scripts/deploy-web.mjs.",
+    "",
+    "vercel.json and netlify.toml are dormant mirrors, not production, but they must not rot:",
+    "tests/headers-parity.test.ts fails the build when either drifts from this file."
+  ],
+  "security": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "geolocation=(), camera=(), microphone=(), payment=(), usb=()",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.moyasar.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdn.moyasar.com; img-src 'self' data: blob: https://*.googleusercontent.com https://cdn.moyasar.com https://www.googletagmanager.com https://storage.googleapis.com; font-src 'self'; connect-src 'self' https://api.moyasar.com https://www.google-analytics.com https://storage.googleapis.com; frame-src 'self' https://api.moyasar.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests"
+  },
+  "cache": [
+    {
+      "match": "/sw.js",
+      "value": "no-cache",
+      "why": "The service worker must be revalidated every load or a stale one pins users to an old build forever.",
+      "vercel": "/sw.js",
+      "netlify": "/sw.js"
+    },
+    {
+      "match": "**/index.html",
+      "value": "no-cache",
+      "why": "index.html names the hashed entry chunks. Cache it and a deploy is invisible until the TTL expires. Vercel and Netlify serve the SPA fallback themselves and declare no rule, so the mirrors map to null.",
+      "vercel": null,
+      "netlify": null
+    },
+    {
+      "match": "/assets/**",
+      "value": "public, max-age=31536000, immutable",
+      "why": "Vite content-hashes every filename here, so a changed file is a changed URL.",
+      "vercel": "/assets/(.*)",
+      "netlify": "/assets/*"
+    },
+    {
+      "match": "/data/**",
+      "value": "public, max-age=3600",
+      "why": "The regulatory corpus changes on a sync cadence, not per deploy; the SW serves it network-first.",
+      "vercel": "/data/(.*)",
+      "netlify": "/data/*"
+    }
+  ],
+  "defaultCacheControl": "public, max-age=3600"
+}
