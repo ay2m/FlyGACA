@@ -224,6 +224,10 @@ variable, not a Secret-Manager secret (that's only `MOYASAR_SECRET_KEY` / `MOYAS
 renewal-failure visibility, `payment_failed`). Set a `shared_secret` and copy it into
 `MOYASAR_WEBHOOK_SECRET`.
 
+Subscribing to every event type is safe: the handler ignores `payout_*` and
+`balance_transferred` deliveries, whose ids are payout ids rather than payment ids and would
+otherwise 404 the payment lookup and make Moyasar retry.
+
 > ⚠️ **The URL changed with the Cloud Run rebuild.** The Firebase build served
 > `/api/moyasar-webhook` via a `firebase.json` rewrite. That rewrite is gone: the Express route is
 > mounted at `/api/billing` + `/webhook/moyasar`. A webhook still pointed at the old path 404s on

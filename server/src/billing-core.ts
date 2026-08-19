@@ -394,6 +394,24 @@ export function webhookPaymentId(
   return body?.data?.id ?? body?.id;
 }
 
+/**
+ * True when a webhook event could carry a payment object worth looking up.
+ *
+ * A webhook subscribed to every event type (the dashboard's default) also delivers
+ * `payout_*` and `balance_transferred`, whose `data.id` is a payout/transfer id — not
+ * a payment id. Fetching it from `/payments/{id}` 404s, which the gateway surfaces as
+ * a 502 and Moyasar then retries, so an unfiltered endpoint turns every settlement
+ * into a retry storm. Gate on the event type instead of narrowing the subscription,
+ * so the endpoint stays correct whatever the dashboard is set to.
+ *
+ * A payload with no `type` at all is treated as fulfillable: older deliveries omit it,
+ * and the payment lookup plus `status === "paid"` check still gate what is granted.
+ */
+export function webhookMayCarryPayment(type: unknown): boolean {
+  if (typeof type !== "string" || !type) return true;
+  return type.toLowerCase().startsWith("payment");
+}
+
 /** The subscription state after a failed renewal charge (pure — the wrapper writes it). */
 export interface RenewalFailureOutcome {
   /** The incremented failed-attempt count to persist. */

@@ -28,6 +28,7 @@ import {
   redirectForIntent,
   paymentMatchesIntent,
   webhookPaymentId,
+  webhookMayCarryPayment,
   verifyMoyasarWebhook,
   renewalFailureOutcome,
   renewalBaseDate,
@@ -396,7 +397,12 @@ billingRouter.post(
     // `rawBody` is stashed by the json parser's verify hook (see index.ts) — the HMAC
     // is over the exact bytes Moyasar sent, not a re-serialization.
     const raw = req.rawBody ?? "";
-    const body = req.body as { id?: string; data?: { id?: string }; secret_token?: unknown };
+    const body = req.body as {
+      id?: string;
+      type?: unknown;
+      data?: { id?: string };
+      secret_token?: unknown;
+    };
     // Either scheme authenticates — see verifyMoyasarWebhook for why both are honoured.
     if (
       !verifyMoyasarWebhook(
@@ -408,6 +414,10 @@ billingRouter.post(
     ) {
       throw new HttpError(401, "bad-signature");
     }
+
+    // Payout and balance events ride the same endpoint when the webhook subscribes to
+    // every type; their ids are not payment ids. Ack and drop them.
+    if (!webhookMayCarryPayment(body?.type)) return res.json({ ok: true });
 
     const paymentId = webhookPaymentId(body);
     if (!paymentId) return res.json({ ok: true });

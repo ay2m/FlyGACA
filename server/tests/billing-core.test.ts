@@ -28,6 +28,7 @@ import {
   verifyMoyasarSignature,
   verifyMoyasarWebhook,
   webhookPaymentId,
+  webhookMayCarryPayment,
   type PriceEnv,
 } from "../src/billing-core.js";
 
@@ -386,6 +387,39 @@ describe("renewalBaseDate", () => {
   it("pins the from-past-expiry behavior (extends from the old expiry, not from now)", () => {
     const past = "2026-01-01T00:00:00Z";
     expect(renewalBaseDate(past, now).toISOString()).toBe("2026-01-01T00:00:00.000Z");
+  });
+});
+
+describe("webhookMayCarryPayment", () => {
+  it("accepts every payment_* event the dashboard can subscribe to", () => {
+    for (const t of [
+      "payment_paid", "payment_failed", "payment_voided", "payment_authorized",
+      "payment_captured", "payment_refunded", "payment_abandoned", "payment_verified",
+      "payment_canceled", "payment_expired",
+    ]) {
+      expect(webhookMayCarryPayment(t)).toBe(true);
+    }
+  });
+
+  it("drops payout and balance events, whose ids are not payment ids", () => {
+    for (const t of [
+      "payout_initiated", "payout_paid", "payout_failed", "payout_canceled",
+      "payout_returned", "balance_transferred",
+    ]) {
+      expect(webhookMayCarryPayment(t)).toBe(false);
+    }
+  });
+
+  it("is case-insensitive (the dashboard displays them upper-cased)", () => {
+    expect(webhookMayCarryPayment("PAYMENT_PAID")).toBe(true);
+    expect(webhookMayCarryPayment("PAYOUT_PAID")).toBe(false);
+  });
+
+  it("treats a missing or non-string type as fulfillable", () => {
+    // Older deliveries omit `type`; the payment lookup still gates what is granted.
+    expect(webhookMayCarryPayment(undefined)).toBe(true);
+    expect(webhookMayCarryPayment("")).toBe(true);
+    expect(webhookMayCarryPayment(42)).toBe(true);
   });
 });
 
