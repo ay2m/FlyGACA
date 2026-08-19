@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "dev": "node --env-file=../.env --watch --experimental-strip-types src/index.ts",
+    "dev": "node scripts/dev.mjs",
     "start": "node lib/index.js",
     "migrate": "node scripts/migrate.mjs",
     "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\"",
