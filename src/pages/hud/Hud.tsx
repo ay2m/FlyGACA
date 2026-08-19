@@ -57,7 +57,7 @@ const FILTERS: FleetFilter[] = ['all', 'commercial', 'drone'];
  * the ticker, stats, vector list and flight card.
  */
 export function Hud() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const scenario = useMemo(() => buildScenario(DEFAULT_SEED), []);
   const { data: airspaces } = useFetchJson<AirspacesIndex>('/data/airspaces-index.json');
 
@@ -68,10 +68,13 @@ export function Hud() {
   const [snap, setSnap] = useState<Snap>(() => makeSnap(scenario));
 
   usePageMeta(t('meta.hud'), t('metaDesc.hud'), [
-    breadcrumbLd([
-      { name: t('nav.breadcrumbHome'), path: '/' },
-      { name: t('hud.title'), path: '/hud' },
-    ]),
+    breadcrumbLd(
+      [
+        { name: t('nav.breadcrumbHome'), path: '/' },
+        { name: t('hud.title'), path: '/hud' },
+      ],
+      i18n.language,
+    ),
   ]);
 
   // The 1 Hz world clock — wall-anchored sim time means pausing while hidden

@@ -43,6 +43,17 @@ describe('breadcrumbLd', () => {
     expect(items.map((i) => i.position)).toEqual([1, 2, 3]);
     expect(items[2].item).toBe(`${SITE_ORIGIN}/library/part-91`);
   });
+  it('keeps an Arabic trail inside the /ar tree', () => {
+    const ld = breadcrumbLd(
+      [
+        { name: 'الرئيسية', path: '/' },
+        { name: 'المكتبة', path: '/library' },
+      ],
+      'ar',
+    );
+    const items = ld.itemListElement as Array<{ item: string }>;
+    expect(items.map((i) => i.item)).toEqual([`${SITE_ORIGIN}/ar`, `${SITE_ORIGIN}/ar/library`]);
+  });
 });
 
 describe('itemListLd', () => {
@@ -56,6 +67,11 @@ describe('itemListLd', () => {
     const items = ld.itemListElement as Array<{ position: number; name: string; url: string }>;
     expect(items.map((i) => i.position)).toEqual([1, 2]);
     expect(items[0].url).toBe(`${SITE_ORIGIN}/tools/crosswind`);
+  });
+  it('lists the Arabic documents when rendering Arabic', () => {
+    const ld = itemListLd([{ name: 'الرياح المتقاطعة', path: '/tools/crosswind' }], 'ar');
+    const items = ld.itemListElement as Array<{ url: string }>;
+    expect(items[0].url).toBe(`${SITE_ORIGIN}/ar/tools/crosswind`);
   });
 });
 
@@ -71,7 +87,10 @@ describe('article builders', () => {
     expect(ld['@type']).toBe('TechArticle');
     expect(ld.headline).toBe('Part 91');
     expect(ld.inLanguage).toBe('ar');
-    expect(ld.url).toBe(`${SITE_ORIGIN}/library/part-91`);
+    // The Arabic rendering points at its own /ar document, so url/mainEntityOfPage
+    // agree with inLanguage (and with the canonical the head declares).
+    expect(ld.url).toBe(`${SITE_ORIGIN}/ar/library/part-91`);
+    expect(ld.mainEntityOfPage).toBe(`${SITE_ORIGIN}/ar/library/part-91`);
     expect(ld.isPartOf).toEqual({ '@id': SITE_ID });
     // author + publisher are self-contained Organization nodes (not bare @id refs)
     // so a per-item validator resolves them without the site-wide graph.
@@ -117,6 +136,11 @@ describe('course + faq + software', () => {
     expect(ld.isAccessibleForFree).toBe(true);
     expect(ld.offers).toEqual({ '@type': 'Offer', price: '0', priceCurrency: 'SAR' });
     expect(ld.url).toBe(`${SITE_ORIGIN}/tools/crosswind`);
+  });
+  it('courseLd on an Arabic page points at the /ar document', () => {
+    const ld = courseLd({ title: 'مدرسة أرضية', path: '/study/groundschool', lang: 'ar' });
+    expect(ld.url).toBe(`${SITE_ORIGIN}/ar/study/groundschool`);
+    expect(ld.inLanguage).toBe('ar');
   });
 });
 

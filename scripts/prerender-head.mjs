@@ -121,6 +121,145 @@ const courseLd = ({ title, description, path, lang = 'en' }) => ({
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'SAR' },
   hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'online' },
 });
+const airportLd = ({ name, icao, iata, path, lat, lon, elevationFt, country }) => ({
+  '@context': CTX,
+  '@type': 'Airport',
+  name,
+  icaoCode: icao,
+  ...(iata ? { iataCode: iata } : {}),
+  url: canonicalUrl(path),
+  ...(typeof lat === 'number' && typeof lon === 'number'
+    ? {
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: lat,
+          longitude: lon,
+          ...(typeof elevationFt === 'number' ? { elevation: `${elevationFt} ft` } : {}),
+        },
+      }
+    : {}),
+  ...(country ? { address: { '@type': 'PostalAddress', addressCountry: country } } : {}),
+});
+// The full Organization node (About.tsx emits this alongside the AboutPage, so
+// the entity is complete on the page that is *about* the publisher). Localized
+// description; everything else is stable identity.
+const organizationLd = (bundle) => ({
+  '@context': CTX,
+  '@type': 'Organization',
+  '@id': ORG_ID,
+  name: 'Fly GACA',
+  legalName: 'BDA Company International',
+  alternateName: 'شركة بدع الدولية',
+  url: SITE,
+  logo: `${SITE}/img/icon-512.png`,
+  description: tIn(bundle, 'metaDesc.about'),
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Riyadh',
+    postalCode: '12965',
+    addressCountry: 'SA',
+  },
+  areaServed: { '@type': 'Country', name: 'Saudi Arabia' },
+  identifier: { '@type': 'PropertyValue', propertyID: 'SA-CR', value: '7030976893' },
+  vatID: '311415259500003',
+  taxID: '311415259500003',
+  sameAs: [
+    'https://x.com/flygacax',
+    'https://www.snapchat.com/@flygaca',
+    'https://www.facebook.com/flygaca',
+    'https://www.instagram.com/flygaca',
+    'https://www.linkedin.com/company/flygaca',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'i@flygaca.com',
+    contactType: 'customer support',
+    availableLanguage: ['en', 'ar'],
+  },
+});
+const breadcrumbLd = (items, lang = 'en') => ({
+  '@context': CTX,
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.name,
+    item: canonicalUrl(c.path, lang),
+  })),
+});
+const itemListLd = (items, lang = 'en') => ({
+  '@context': CTX,
+  '@type': 'ItemList',
+  numberOfItems: items.length,
+  itemListElement: items.map((it, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: it.name,
+    url: canonicalUrl(it.path, lang),
+  })),
+});
+const faqLd = (items) => ({
+  '@context': CTX,
+  '@type': 'FAQPage',
+  mainEntity: items.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+});
+const definedTermSetLd = ({ name, description, path, terms, lang = 'en' }) => {
+  const url = canonicalUrl(path, lang);
+  return {
+    '@context': CTX,
+    '@type': 'DefinedTermSet',
+    name,
+    ...(description ? { description } : {}),
+    url,
+    inLanguage: lang,
+    hasDefinedTerm: terms.map((tm) => ({
+      '@type': 'DefinedTerm',
+      name: tm.term,
+      description: tm.def,
+      inDefinedTermSet: url,
+    })),
+  };
+};
+const aboutPageLd = ({ title, description, path, lang = 'en' }) => ({
+  '@context': CTX,
+  '@type': 'AboutPage',
+  name: title,
+  ...(description ? { description } : {}),
+  url: canonicalUrl(path, lang),
+  inLanguage: lang,
+  isPartOf: { '@id': SITE_ID },
+  mainEntity: { '@id': ORG_ID },
+  publisher: orgNode(),
+});
+
+/**
+ * The crumb trail for a static route, mirroring what the page renders. Library
+ * leaves sit under the Library hub; everything else is Home → page. Kept in step
+ * with the visible <Breadcrumbs/> so the structured trail and the on-page one
+ * never disagree.
+ */
+function crumbsFor(norm, title, bundle) {
+  const home = { name: tIn(bundle, 'nav.breadcrumbHome'), path: '/' };
+  if (norm.startsWith('/library/'))
+    return [home, { name: tIn(bundle, 'nav.library'), path: '/library' }, { name: title, path: norm }];
+  return [home, { name: title, path: norm }];
+}
+
+// Pages whose visible copy is a genuine Q&A block (mirrors the runtime call
+// sites). The FAQPage node must quote the same text the page shows, so each key
+// points at the exact array the component renders.
+const FAQ_KEYS = {
+  '/': 'home.adel.demos',
+  '/about': 'about.faq',
+  '/pricing': 'pricing.faq',
+  '/schools': 'schools.faq',
+  '/support': 'support.faq',
+};
+
 // The self-paced, GACAR-grounded study modes are Courses (mirrors src/pages/study/*).
 const COURSE_ROUTES = new Set([
   '/study/quiz',
@@ -157,12 +296,20 @@ const PRIVATE = new Set([
   '/settings',
   '/checkout',
   '/checkout/return',
+  // Cohort dashboard for school admins — the page itself calls useNoindexMeta,
+  // so snapshotting it would ship a crawlable copy of a noindex route.
+  '/business/admin',
 ]);
 // /signin and /signup redirect to /account — keep them out of the snapshots too.
 const REDIRECTS = new Set(['/guides', '/study', '/signin', '/signup']);
 
-// Static pages: route → i18n meta key (under <bundle>.meta / .metaDesc). Routes
-// not listed still get canonical/hreflang/og injected, just keep the default title.
+// Static pages: route → the i18n keys its copy comes from. A bare string is the
+// common case — the key under `<bundle>.meta` / `<bundle>.metaDesc`. Pages whose
+// runtime copy lives elsewhere (legal, support) name their keys explicitly so the
+// snapshot ships the SAME strings usePageMeta sets after hydration.
+const LEGAL_DOCS = ['disclaimer', 'terms', 'privacy', 'refund', 'safety'];
+// Mirrors LAST_UPDATED in src/pages/legal/LegalPage.tsx.
+const LEGAL_UPDATED = '2026-07-27';
 const STATIC_META = {
   '/': 'home',
   '/library': 'library',
@@ -177,7 +324,10 @@ const STATIC_META = {
   '/developers': 'developers',
   '/hud': 'hud',
   '/about': 'about',
-  '/support': 'support',
+  '/updates': 'updates',
+  '/offline': 'offline',
+  // SupportPage renders `support.intro` as its description, not metaDesc.support.
+  '/support': { titleKey: 'support.title', descKey: 'support.intro' },
   '/study/quiz': 'quiz',
   '/study/flashcards': 'flashcards',
   '/study/groundschool': 'groundschool',
@@ -185,6 +335,12 @@ const STATIC_META = {
   '/study/paths': 'paths',
   '/study/packs': 'packs',
   '/study/sheets': 'sheets',
+  ...Object.fromEntries(
+    LEGAL_DOCS.map((doc) => [
+      `/${doc}`,
+      { titleKey: `legal.${doc}.title`, descKey: `legal.${doc}.intro`, dateModified: LEGAL_UPDATED },
+    ]),
+  ),
 };
 
 // Route sources are enumerated once — the *routes* are identical across languages;
@@ -202,6 +358,22 @@ const draftGuides = new Set(
     (m) => m[1],
   ),
 );
+// LIVE packs only — `soon` packs have no detail route (mirrors build-sitemap.mjs).
+const livePackIds = [
+  ...read('src/lib/prepCatalog.ts').matchAll(/\bid:\s*'([^']+)'[\s\S]*?status:\s*'([^']+)'/g),
+]
+  .filter((m) => m[2] === 'live')
+  .map((m) => m[1]);
+// Review dates from GUIDE_UPDATED (src/pages/guides/guides.ts) — same table the
+// sitemap reads for <lastmod>, so freshness signals agree across the two.
+const guideUpdated = Object.fromEntries(
+  [
+    ...(guidesSrc.match(/GUIDE_UPDATED[^{]*\{([\s\S]*?)\n\};/)?.[1] ?? '').matchAll(
+      /'([^']+)':\s*'(\d{4}-\d{2}-\d{2})'/g,
+    ),
+  ].map((m) => [m[1], m[2]]),
+);
+
 /**
  * Content/UI descriptors (static pages + tools + guides) for one language bundle.
  * Titles/descriptions come from `bundle`; JSON-LD url + inLanguage from `lang`.
@@ -217,23 +389,83 @@ function contentDescriptors(bundle, lang) {
     if (p.includes(':') || p === '*') continue;
     const norm = normalizePath(p === '/' ? '/' : `/${p.replace(/^\//, '')}`);
     if (PRIVATE.has(norm) || REDIRECTS.has(norm)) continue;
-    const key = STATIC_META[norm];
-    const title = key ? tIn(bundle.meta, key) : undefined;
-    const description = key ? tIn(bundle.metaDesc, key) : undefined;
-    put(norm, {
-      title,
-      description,
-      ...(COURSE_ROUTES.has(norm)
-        ? { jsonLd: courseLd({ title, description, path: norm, lang }) }
-        : {}),
-    });
+    const entry = STATIC_META[norm];
+    const spec = typeof entry === 'string' ? { titleKey: `meta.${entry}`, descKey: `metaDesc.${entry}` } : entry;
+    const title = spec ? tIn(bundle, spec.titleKey) : undefined;
+    const description = spec ? tIn(bundle, spec.descKey) : undefined;
+
+    // Every node the runtime emits for this route, so the no-JS floor carries the
+    // same graph a JS client gets — breadcrumbs and FAQs especially, which used
+    // to exist only after hydration (i.e. never, for the crawlers that matter).
+    const ld = [];
+    if (COURSE_ROUTES.has(norm)) ld.push(courseLd({ title, description, path: norm, lang }));
+    if (spec?.dateModified)
+      ld.push(articleLd('Article', { title, description, path: norm, lang, dateModified: spec.dateModified }));
+    if (norm === '/about') {
+      ld.push(aboutPageLd({ title, description, path: norm, lang }));
+      ld.push(organizationLd(bundle));
+    }
+    const faqItems = FAQ_KEYS[norm] ? tIn(bundle, FAQ_KEYS[norm]) : undefined;
+    if (Array.isArray(faqItems) && faqItems.length && faqItems.every((x) => x?.q && x?.a))
+      ld.push(faqLd(faqItems));
+    if (norm === '/library/glossary') {
+      const terms = tIn(bundle, 'glossary.terms');
+      if (Array.isArray(terms) && terms.length)
+        ld.push(
+          definedTermSetLd({
+            name: tIn(bundle, 'glossary.title'),
+            description,
+            path: norm,
+            terms,
+            lang,
+          }),
+        );
+    }
+    // Hub pages enumerate their leaves, so a crawler reads them as a catalog
+    // rather than a wall of links (mirrors ToolsIndex/LearnHub at runtime).
+    if (norm === '/tools')
+      ld.push(
+        itemListLd(
+          toolIds.map((id) => ({ name: tIn(bundle, `tools.items.${id}.name`), path: `/tools/${id}` })),
+          lang,
+        ),
+      );
+    if (norm === '/learn')
+      ld.push(
+        itemListLd(
+          guideSlugs
+            .filter((slug) => !draftGuides.has(slug))
+            .map((slug) => ({
+              name: tIn(bundle, `guides.items.${slug}.name`),
+              path: `/guides/${slug}`,
+            })),
+          lang,
+        ),
+      );
+    if (norm !== '/' && title) ld.push(breadcrumbLd(crumbsFor(norm, title, bundle), lang));
+
+    put(norm, { title, description, ...(ld.length ? { jsonLd: ld } : {}) });
   }
 
   for (const id of toolIds) {
     const path = `/tools/${id}`;
     const title = tIn(bundle, `tools.items.${id}.name`);
     const description = tIn(bundle, `tools.items.${id}.blurb`);
-    put(path, { title, description, jsonLd: softwareAppLd({ title, description, path, lang }) });
+    put(path, {
+      title,
+      description,
+      jsonLd: [
+        softwareAppLd({ title, description, path, lang }),
+        breadcrumbLd(
+          [
+            { name: tIn(bundle, 'nav.breadcrumbHome'), path: '/' },
+            { name: tIn(bundle, 'nav.tools'), path: '/tools' },
+            { name: title, path },
+          ],
+          lang,
+        ),
+      ],
+    });
   }
 
   for (const slug of guideSlugs) {
@@ -241,20 +473,66 @@ function contentDescriptors(bundle, lang) {
     const path = `/guides/${slug}`;
     const title = tIn(bundle, `guides.items.${slug}.name`);
     const description = tIn(bundle, `guides.items.${slug}.blurb`);
+    const faqs = tIn(bundle, `guides.items.${slug}.faqs`);
     put(path, {
       title,
       description,
-      jsonLd: articleLd('Article', { title, description, path, lang }),
+      jsonLd: [
+        articleLd('Article', { title, description, path, lang, dateModified: guideUpdated[slug] }),
+        breadcrumbLd(
+          [
+            { name: tIn(bundle, 'nav.breadcrumbHome'), path: '/' },
+            { name: tIn(bundle, 'nav.learn'), path: '/learn' },
+            { name: title, path },
+          ],
+          lang,
+        ),
+        ...(Array.isArray(faqs) && faqs.length ? [faqLd(faqs)] : []),
+      ],
       ogType: 'article',
     });
+  }
+
+  // Exam-prep pack detail pages. Their copy is authored in both bundles
+  // (study.packCatalog.<id>), so unlike the aerodromes these are bilingual —
+  // mirrors src/pages/study/PackDetail.tsx.
+  for (const id of livePackIds) {
+    const path = `/study/packs/${id}`;
+    const title = tIn(bundle, `study.packCatalog.${id}.name`);
+    const description = tIn(bundle, `study.packCatalog.${id}.desc`);
+    put(path, { title, description, jsonLd: courseLd({ title, description, path, lang }) });
+  }
+
+  // Every indexable route must resolve real copy. One that doesn't would ship the
+  // homepage title + description on its own URL — duplicate meta across the site,
+  // invisible unless someone opens the snapshot. Checked after every source has
+  // contributed (tools/guides/packs supply their own titles), so this only fires
+  // for a route nothing covers.
+  const missing = [...map].filter(([, d]) => !d.title).map(([path]) => path);
+  if (missing.length) {
+    console.error(
+      `prerender-head: no ${lang} title for ${missing.length} route(s): ${missing.join(', ')}\n` +
+        '  Add a STATIC_META entry (and the i18n keys in BOTH bundles), or list the route as PRIVATE/REDIRECT.',
+    );
+    process.exit(1);
   }
   return map;
 }
 
-/** Library reader corpus (English only) → title (+ revision date) + TechArticle. */
-function corpusDescriptors() {
+/**
+ * Library reader corpus → title, per-doc description + TechArticle, for one
+ * language. The regulation *bodies* are English either way, but the Arabic
+ * snapshot must still self-describe as Arabic: its own `/ar` URL, `inLanguage:
+ * 'ar'` and the Arabic verify-at-GACA line — otherwise dist/ar/library/* ships
+ * English JSON-LD under an `<html lang="ar">` document.
+ */
+function corpusDescriptors(bundle, lang) {
   const map = new Map();
   const isDate = (v) => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}/.test(v);
+  // Same template src/pages/library/Document.tsx feeds usePageMeta, so the
+  // snapshot description matches the hydrated one byte for byte (and every doc
+  // gets its own, instead of them all sharing the site default).
+  const verify = tIn(bundle, 'document.verifyAtGaca');
   for (const [base, file] of [
     ['/library', 'public/data/gacar-index.json'],
     ['/library/reference', 'public/data/reference-index.json'],
@@ -271,12 +549,48 @@ function corpusDescriptors() {
         : isDate(d.revision)
           ? d.revision.slice(0, 10)
           : fallback;
+      const description = `${d.title} — ${verify}`;
       map.set(normalizePath(path), {
         title: d.title,
-        jsonLd: articleLd('TechArticle', { title: d.title, path, dateModified }),
+        description,
+        jsonLd: articleLd('TechArticle', { title: d.title, description, path, lang, dateModified }),
         ogType: 'article',
       });
     }
+  }
+  return map;
+}
+
+/**
+ * Aerodrome detail pages (English only, like the sitemap's en/x-default-only
+ * entries for them). Copy mirrors src/pages/tools/procedures/AerodromeDetail.tsx:
+ * the CalcShell title is `ICAO — name` and its `intro` (the description) is
+ * "city, country". Facts come from airports.json, falling back to the curated
+ * index for the handful of fields it alone carries.
+ */
+function aerodromeDescriptors() {
+  const map = new Map();
+  const byIcao = new Map(readJson('public/data/airports.json').airports.map((a) => [a.icao, a]));
+  for (const d of readJson('public/data/aerodromes-index.json').documents) {
+    const a = byIcao.get(d.icao);
+    const name = a?.name_en ?? d.name;
+    const city = a?.city_en ?? d.city;
+    const country = a?.country_en ?? d.country;
+    const path = `/tools/aerodromes/${d.icao}`;
+    map.set(normalizePath(path), {
+      title: `${d.icao} — ${name}`,
+      description: [city, country].filter(Boolean).join(', ') || undefined,
+      jsonLd: airportLd({
+        name,
+        icao: d.icao,
+        iata: a?.iata || d.iata,
+        path,
+        lat: a?.lat ?? d.lat,
+        lon: a?.lon ?? d.lon,
+        elevationFt: a?.elev_ft ?? d.elevation_ft,
+        country,
+      }),
+    });
   }
   return map;
 }
@@ -285,11 +599,12 @@ function corpusDescriptors() {
 // AR_CORPUS_MAX corpus docs, in the same parts→reference→handbook order — matching
 // exactly the hreflang=ar set scripts/build-sitemap.mjs emits (the Arabic snapshot
 // wraps the English GACAR text in Arabic chrome + RTL; check-prerender.mjs gates it).
-const corpus = corpusDescriptors();
-const enSeo = new Map([...contentDescriptors(en, 'en'), ...corpus]);
+const corpusEn = corpusDescriptors(en, 'en');
+const corpusAr = corpusDescriptors(ar, 'ar');
+const enSeo = new Map([...contentDescriptors(en, 'en'), ...corpusEn, ...aerodromeDescriptors()]);
 const arSeo = contentDescriptors(ar, 'ar');
 let arCorpusCount = 0;
-for (const [path, desc] of corpus) {
+for (const [path, desc] of corpusAr) {
   if (arCorpusCount >= AR_CORPUS_MAX) break;
   arSeo.set(path, desc);
   arCorpusCount++;
@@ -347,6 +662,9 @@ function render(path, d, lang = 'en') {
   for (const [hreflang, href] of [
     ['en', canonicalUrl(path, 'en')],
     ['ar', canonicalUrl(path, 'ar')],
+    // Saudi Arabia is the primary market; bare `ar` stays for Arabic speakers
+    // elsewhere (mirrors hreflangAlternates in src/lib/seo/seo.ts).
+    ['ar-SA', canonicalUrl(path, 'ar')],
     ['x-default', canonicalUrl(path, 'en')],
   ]) {
     html = setTag(
@@ -361,9 +679,10 @@ function render(path, d, lang = 'en') {
   html = setTag(html, /<meta\s+property="og:description"[^>]*>/, `<meta property="og:description" content="${esc(desc)}" />`);
   html = setTag(html, /<meta\s+property="og:url"[^>]*>/, `<meta property="og:url" content="${canonical}" />`);
   html = setTag(html, /<meta\s+property="og:image"[^>]*>/, `<meta property="og:image" content="${image}" />`);
-  // The Arabic snapshot declares its locale so scrapers file it under ar_SA (the
-  // English default already omits og:locale; usePageMeta sets it at runtime).
-  if (isAr) html = setTag(html, /<meta\s+property="og:locale"[^>]*>/, `<meta property="og:locale" content="${ogLocale(lang)}" />`);
+  // Both languages declare their locale, matching what usePageMeta sets at
+  // runtime — so a scraper files the Arabic document under ar_SA and the English
+  // one under en_US instead of guessing.
+  html = setTag(html, /<meta\s+property="og:locale"[^>]*>/, `<meta property="og:locale" content="${ogLocale(lang)}" />`);
   // Explicit Twitter tags mirror the Open Graph values (see usePageMeta).
   html = setTag(html, /<meta\s+name="twitter:title"[^>]*>/, `<meta name="twitter:title" content="${esc(fullTitle)}" />`);
   html = setTag(html, /<meta\s+name="twitter:description"[^>]*>/, `<meta name="twitter:description" content="${esc(desc)}" />`);

@@ -24,7 +24,7 @@
  * is what turns head-only or missing sitemap URLs into a failed deploy.
  */
 import { spawn } from 'node:child_process';
-import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import { readFileSync, mkdirSync, writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { get } from 'node:http';
@@ -52,9 +52,12 @@ function warn(msg) {
 const PRIVATE = new Set([
   '/account',
   // /signin and /signup redirect to /account — snapshotting them just captures
-  // the redirect target, so skip them like the other auth pages.
+  // the redirect target, so skip them like the other auth pages. /guides and
+  // /study redirect to /learn, which the sitemap already excludes.
   '/signin',
   '/signup',
+  '/guides',
+  '/study',
   '/dashboard',
   '/currency',
   '/logbook',
@@ -62,6 +65,8 @@ const PRIVATE = new Set([
   '/settings',
   '/checkout',
   '/checkout/return',
+  // Noindexed by the page itself (useNoindexMeta) — don't ship a crawlable body.
+  '/business/admin',
 ]);
 const routerPaths = [...read('src/router.tsx').matchAll(/path:\s*'([^']+)'/g)].map((m) => m[1]);
 const guideSlugs = [
@@ -94,8 +99,12 @@ for (const [seg, file] of [
 for (const d of readJson('public/data/aerodromes-index.json').documents)
   corpus.push(`/tools/aerodromes/${d.icao}`);
 // LIVE packs only — `soon` packs have no detail route (see build-sitemap.mjs).
-for (const m of read('src/lib/prepCatalog.ts').matchAll(/\bid:\s*'([^']+)'[\s\S]*?status:\s*'([^']+)'/g))
-  if (m[2] === 'live') corpus.push(`/study/packs/${m[1]}`);
+const packRoutes = [
+  ...read('src/lib/prepCatalog.ts').matchAll(/\bid:\s*'([^']+)'[\s\S]*?status:\s*'([^']+)'/g),
+]
+  .filter((m) => m[2] === 'live')
+  .map((m) => `/study/packs/${m[1]}`);
+corpus.push(...packRoutes);
 
 // Cap total snapshots so the build stays bounded; base routes are never dropped,
 // the cap only trims the corpus tail. A trimmed tail is NOT silently fine — those
@@ -118,12 +127,16 @@ if (skipped > 0) {
 const routeList = [...new Set([...baseList, ...corpusIncluded])].sort();
 
 // Arabic full-body set mirrors scripts/prerender-head.mjs's covered set: every
-// base route + the top AR_CORPUS_MAX corpus docs (same parts→reference→handbook
-// order). Each is rendered by visiting its `?lang=ar` variant — a real browser
-// honours the param — and written to the distinct dist/ar/<route>/index.html the
-// host can route to. Keep AR_CORPUS_MAX in sync with the other two scripts.
+// base route + the live prep packs (their copy is authored in both bundles) + the
+// top AR_CORPUS_MAX library docs (same parts→reference→handbook order). Each is
+// rendered by visiting its real `/ar<route>` document and written to
+// dist/ar/<route>/index.html. Keep AR_CORPUS_MAX in sync with the other two
+// scripts, and the pack set in sync with build-sitemap.mjs's `arCovered` — the
+// sitemap's hreflang=ar links and these files must describe the same set.
 const AR_CORPUS_MAX = Number(process.env.AR_CORPUS_MAX ?? 60);
-const arRouteList = [...new Set([...baseList, ...corpus.slice(0, AR_CORPUS_MAX)])].sort();
+const arRouteList = [
+  ...new Set([...baseList, ...packRoutes, ...corpus.slice(0, AR_CORPUS_MAX)]),
+].sort();
 
 // --- Helpers -------------------------------------------------------------------
 function waitForServer(timeoutMs = 20000) {
@@ -185,10 +198,23 @@ function sanitizeSnapshot(html) {
     .replace(/<link\b[^>]*\bhref\s*=\s*["']\s*(?:localhost|127\.0\.0\.1)[^"']*["'][^>]*>/gi, '');
 }
 
-// Launch Chromium; on a fresh CI image the browser binary may be absent, so try
-// a one-off `playwright install chromium` and retry once. A still-failing launch
-// throws up to the non-fatal catch, which ships the SPA/shell HTML as before.
+// Launch Chromium. Order: an explicitly provided binary, then Playwright's own
+// managed download, then a one-off `playwright install chromium` retry.
+//
+// PLAYWRIGHT_CHROMIUM_EXECUTABLE exists because build machines and CI images
+// often ship their own Chromium whose build number doesn't match the pinned
+// @playwright/test — Playwright then looks for a revision that isn't there and
+// the prerender silently degrades to head-only. Pointing at the real binary is
+// cheaper and more reliable than re-downloading one per build.
 async function launchChromium(chromium) {
+  const executablePath = (process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE ?? '').trim();
+  if (executablePath) {
+    if (!existsSync(executablePath)) {
+      warn(`PLAYWRIGHT_CHROMIUM_EXECUTABLE=${executablePath} does not exist — falling back.`);
+    } else {
+      return chromium.launch({ executablePath });
+    }
+  }
   try {
     return await chromium.launch();
   } catch (err) {

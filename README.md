@@ -137,6 +137,7 @@ In-Kingdom by design — Cloud Run and Cloud SQL both sit in `me-central2` (Damm
 |---|---|
 | `npm run dev` | Vite dev server, HMR |
 | `npm run build` | sitemap → `tsc -b` → vite → prerender `<head>` → SEO gates |
+| `npm run build:deploy` | **what a deploy runs**: `build` + full-body prerender + coverage gate + IndexNow |
 | `npm run verify` | **the gate**: typecheck · lint · format · test · build · bundle + perf budgets |
 | `npm test` / `npm run server:test` | 1,497 frontend · 243 server |
 | `npm run test:e2e` | Playwright smoke + axe accessibility |
@@ -154,8 +155,14 @@ Run `npm run verify` before committing — it's the same chain CI would run.
 ```bash
 # Google Cloud — the canonical origin. Full sequence in docs/RUNBOOK-deploy.md
 gcloud run deploy flygaca-api --source server/ --region me-central2
+npm run build:deploy   # NOT plain `build` — see below
 gcloud storage rsync dist/ gs://<bucket> --recursive --delete-unmatched-destination-objects
 ```
+
+Build the SPA with `npm run build:deploy`, not `npm run build`. Plain `build` stops at the
+per-route `<head>` floor; `build:deploy` also renders each route's **body** (Playwright) and fails
+if any sitemap URL is missing one. AI crawlers — the ones that decide who gets cited — mostly don't
+execute JavaScript, so a head-only deploy is invisible to them below the `<head>`.
 
 `npm run deploy` deliberately fails with a pointer to the runbook — deploying is `gcloud run deploy` plus a bucket sync, not one command.
 

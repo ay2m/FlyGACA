@@ -1,0 +1,15 @@
+/**
+ * Shared HUD chrome — the bits used across the HUD page and its panels, kept
+ * apart from Hud.module.css (which scopes the page's own hero/board/legend
+ * classes). Imported as `shared` by Hud.tsx and the panel components.
+ */
+
+/* Wrapper for the global <Disclaimer /> at the foot of the HUD page. The HUD is
+   a simulation, so the not-affiliated / verify-against-GACA notice gets its own
+   breathing room and a readable measure rather than stretching the full grid. */
+.disclaimerSlot {
+  inline-size: 100%;
+  max-inline-size: 68ch;
+  margin-inline: auto;
+  padding-block-start: var(--space-2);
+}

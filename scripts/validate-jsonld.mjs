@@ -37,7 +37,8 @@ export function nodesFromLd(parsed) {
 // a non-empty @type.
 const REQUIRED = {
   Organization: ['name', 'url'],
-  WebSite: ['name', 'url'],
+  WebSite: ['name', 'url', 'potentialAction'],
+  AboutPage: ['name', 'url', 'mainEntity'],
   BreadcrumbList: ['itemListElement'],
   ItemList: ['itemListElement'],
   Article: ['headline', 'url'],
@@ -90,6 +91,22 @@ export function validateNode(node, where = '') {
       if (!isNonEmptyStr(qa?.acceptedAnswer?.text)) problems.push(at(`faq[${i}] missing acceptedAnswer.text`));
     });
   }
+  // The site-search contract: engines (and AI crawlers reading the graph) need a
+  // SearchAction whose EntryPoint template carries the {search_term_string}
+  // placeholder named by query-input. A half-built action is worse than none —
+  // it looks declared but resolves to nothing.
+  if (type === 'WebSite' && node.potentialAction != null) {
+    const action = Array.isArray(node.potentialAction) ? node.potentialAction[0] : node.potentialAction;
+    if (action?.['@type'] !== 'SearchAction') problems.push(at('WebSite.potentialAction is not a SearchAction'));
+    else {
+      const tmpl = action.target?.urlTemplate ?? action.target;
+      if (!isAbsUrl(tmpl)) problems.push(at('SearchAction target.urlTemplate is not an absolute URL'));
+      else if (!tmpl.includes('{search_term_string}'))
+        problems.push(at('SearchAction target.urlTemplate has no {search_term_string} placeholder'));
+      if (!isNonEmptyStr(action['query-input']))
+        problems.push(at('SearchAction missing "query-input"'));
+    }
+  }
   if (type === 'DefinedTermSet' && Array.isArray(node.hasDefinedTerm)) {
     if (node.hasDefinedTerm.length === 0) problems.push(at('DefinedTermSet has no terms'));
     node.hasDefinedTerm.forEach((term, i) => {
@@ -106,6 +123,32 @@ export function validateNode(node, where = '') {
   if (node.url != null && !isAbsUrl(node.url)) problems.push(at(`"url" is not an absolute URL (${node.url})`));
 
   return problems;
+}
+
+/**
+ * True when a dist-relative path is a *content* route — one whose whole job is to
+ * be found and cited, so it must carry its own per-route structured data. The
+ * static Organization/WebSite `@graph` is copied into every page from the shell,
+ * so "has some ld+json" is not evidence of anything: only the managed node
+ * (`data-managed-ld`, written by prerender-head.mjs and by usePageMeta at
+ * runtime) describes the actual document. Classified by path alone — no route
+ * table import — so it keeps working as routes are added.
+ */
+export function isContentRoute(relPath) {
+  const p = relPath.replace(/\\/g, '/').replace(/^dist\//, '').replace(/(^|\/)index\.html$/, '');
+  const segs = p.replace(/^ar\//, '').split('/').filter(Boolean);
+  if (segs.length < 2) return false; // hubs and the home page are not leaf content
+  const [head, ...rest] = segs;
+  if (head === 'guides') return rest.length === 1;
+  if (head === 'library') return rest.length >= 1 && !['charts', 'map', 'glossary'].includes(rest[0]);
+  if (head === 'tools') return rest.length >= 1;
+  if (head === 'study') return rest[0] === 'packs' && rest.length === 2;
+  return false;
+}
+
+/** True if the HTML carries a per-route managed JSON-LD node. */
+export function hasManagedLd(html) {
+  return /<script[^>]*data-managed-ld[^>]*>/.test(html);
 }
 
 /** Validate every ld+json block in one HTML document; returns problem strings. */
@@ -155,12 +198,21 @@ if (isMain()) {
   walk(distDir);
 
   let totalBlocks = 0;
+  let uncovered = 0;
   const allProblems = [];
   for (const file of htmlFiles) {
     const rel = file.slice(root.length + 1);
-    const { blockCount, problems } = validateHtml(readFileSync(file, 'utf8'), rel);
+    const html = readFileSync(file, 'utf8');
+    const { blockCount, problems } = validateHtml(html, rel);
     totalBlocks += blockCount;
     allProblems.push(...problems);
+    // A content page with no managed node ships only the site-wide graph — it
+    // describes the publisher, never the document. Catch that here; the old gate
+    // happily passed a page carrying no per-route schema at all.
+    if (isContentRoute(rel) && !hasManagedLd(html)) {
+      allProblems.push(`${rel}: content route has no per-route JSON-LD (data-managed-ld)`);
+      uncovered++;
+    }
   }
 
   if (allProblems.length) {
@@ -171,6 +223,7 @@ if (isMain()) {
   }
 
   console.log(
-    `validate-jsonld: OK — ${totalBlocks} JSON-LD block(s) across ${htmlFiles.length} page(s) valid.`,
+    `validate-jsonld: OK — ${totalBlocks} JSON-LD block(s) across ${htmlFiles.length} page(s) valid; ` +
+      'every content route carries its own schema.',
   );
 }

@@ -30,7 +30,7 @@ const CAT_TOKENS = ['--cat-1', '--cat-2', '--cat-3', '--cat-4', '--cat-5', '--ne
  * accessible path.
  */
 export function LibraryMap() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const reduce = usePrefersReducedMotion();
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -42,11 +42,14 @@ export function LibraryMap() {
   const layout = useMemo(() => buildConstellation(Object.values(data?.parts ?? {})), [data]);
 
   usePageMeta(t('meta.libraryMap'), t('metaDesc.libraryMap'), [
-    breadcrumbLd([
-      { name: t('nav.breadcrumbHome'), path: '/' },
-      { name: t('nav.library'), path: '/library' },
-      { name: t('libraryMap.title'), path: '/library/map' },
-    ]),
+    breadcrumbLd(
+      [
+        { name: t('nav.breadcrumbHome'), path: '/' },
+        { name: t('nav.library'), path: '/library' },
+        { name: t('libraryMap.title'), path: '/library/map' },
+      ],
+      i18n.language,
+    ),
   ]);
 
   useEffect(() => {

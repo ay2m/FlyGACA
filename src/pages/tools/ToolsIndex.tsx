@@ -61,7 +61,7 @@ const SORTS: SortKey[] = ['category', 'name'];
 const VIEW_KEY = 'flygaca:tools-view';
 
 export function ToolsIndex() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   // Expose the live tools as an ItemList so the hub reads as a catalog of its
   // leaf pages for crawlers (the names resolve from i18n by id).
   const toolListLd = useMemo(
@@ -71,8 +71,9 @@ export function ToolsIndex() {
           name: t(`tools.items.${x.id}.name`),
           path: x.route,
         })),
+        i18n.language,
       ),
-    [t],
+    [t, i18n.language],
   );
   usePageMeta(t('meta.tools'), t('metaDesc.tools'), toolListLd);
   const [query, setQuery] = useState('');
