@@ -22,17 +22,10 @@ export default defineConfig({
       //
       // `src/routes/**` used to be excluded wholesale, which hid ~1,300 lines
       // carrying rules that live nowhere else — grants.ts and billing.ts are the
-      // only writers of `entitlements`. Routes are now listed individually and
-      // struck off as each gains a test, so the ones still uncovered stay
-      // visible here rather than silently omitted.
-      exclude: [
-        "src/index.ts",
-        "src/db.ts",
-        "src/mail.ts",
-        "src/routes/auth.ts",
-        "src/routes/org.ts",
-        "src/routes/account.ts",
-      ],
+      // only writers of `entitlements`, account.ts is where owner-scoping lives,
+      // and auth.ts holds the anti-enumeration posture. Every route now has a
+      // spec and none is excluded; keep it that way rather than re-adding one.
+      exclude: ["src/index.ts", "src/db.ts", "src/mail.ts"],
       // A ratchet, not a target: set just below the current numbers so coverage can't
       // silently regress, while today's run passes. Raise as cover grows.
       // (`npm run test:coverage` prints the live figures.)
@@ -44,17 +37,16 @@ export default defineConfig({
       // sit just under the live run, per the rule above — an enforced floor
       // beats an ignored target.
       //
-      // 89.35 / 80.59 / 79.65 / 89.84 today, after session.ts (7% → 96.7%),
-      // http.ts (15% → 100%), routes/grants.ts (excluded → 98.1%),
-      // routes/billing.ts (excluded → 96.4%), gateway.ts (0% → 86.9%) and
-      // school-core.ts (74% → 100%). Every metric is now at or past the 80 this
-      // file used to claim. The remaining drag is store.ts (4% — all SQL) and
-      // config.ts, plus the three routes still on the exclude list above.
+      // 90.77 / 81.13 / 82.52 / 91.34 today, with every route now measured
+      // (routes/** was excluded wholesale at the start) and session.ts, http.ts,
+      // gateway.ts and school-core.ts covered. All four metrics are past the 80
+      // this file used to claim. The remaining drag is store.ts (4% — all SQL,
+      // exercised against a real database rather than unit-tested) and config.ts.
       thresholds: {
-        statements: 89,
-        branches: 80,
-        functions: 79,
-        lines: 89,
+        statements: 90,
+        branches: 81,
+        functions: 82,
+        lines: 91,
       },
     },
   },
