@@ -20,6 +20,12 @@ export default defineConfig({
     // Audit the settled UI: entry animations (stagger-grid fade-up) transiently
     // dim text below contrast mid-flight, which is exactly what reduced-motion
     // users skip. axe should evaluate the resting state, not an animation frame.
+    //
+    // Declared intent only — @playwright/test 1.62.1 does NOT apply this option
+    // (inside the page `matchMedia('(prefers-reduced-motion: reduce)')` stays
+    // false, whether set here or via `test.use`). e2e/a11y.spec.ts therefore
+    // calls `page.emulateMedia()` itself and waits for `document.getAnimations()`
+    // to drain. Keep both until this option is verified working again.
     reducedMotion: 'reduce',
   },
   projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
