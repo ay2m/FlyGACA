@@ -28,7 +28,6 @@ export default defineConfig({
         "src/db.ts",
         "src/mail.ts",
         "src/routes/auth.ts",
-        "src/routes/billing.ts",
         "src/routes/org.ts",
         "src/routes/account.ts",
       ],
@@ -43,16 +42,17 @@ export default defineConfig({
       // sit just under the live run, per the rule above — an enforced floor
       // beats an ignored target.
       //
-      // 73.22 / 69.92 / 71.29 / 72.22 today, after session.ts (7% → 96.7%),
-      // http.ts (15% → 100%) and routes/grants.ts (excluded → 98.1%). The
-      // remaining weight is gateway.ts (0% of 160 statements), store.ts (4%),
-      // school-core.ts (74%) and config.ts (55%), plus the four routes still
-      // on the exclude list above; raise these as each lands.
+      // 76.12 / 72.63 / 73.59 / 75.44 today, after session.ts (7% → 96.7%),
+      // http.ts (15% → 100%), routes/grants.ts (excluded → 98.1%) and
+      // routes/billing.ts (excluded → 96.4%). The remaining weight is
+      // gateway.ts (0% of 160 statements), store.ts (4%), school-core.ts (74%)
+      // and config.ts, plus the three routes still on the exclude list above;
+      // raise these as each lands.
       thresholds: {
-        statements: 73,
-        branches: 69,
-        functions: 71,
-        lines: 72,
+        statements: 76,
+        branches: 72,
+        functions: 73,
+        lines: 75,
       },
     },
   },
