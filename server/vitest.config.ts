@@ -10,10 +10,12 @@ export default defineConfig({
       // below gates merges (same wiring as the app's root vitest.config.ts).
       provider: "v8",
       reporter: ["text", "html"],
-      // Measure the whole backend source, not just what the tests happen to import,
-      // so an entirely-untested new module counts against coverage (same posture as
-      // the app's root vitest.config.ts).
-      all: true,
+      // Naming `include` explicitly measures the whole backend source rather than
+      // only what the tests import, so an entirely-untested module counts against
+      // coverage (same posture as the app's root vitest.config.ts). `all: true`
+      // used to be needed for this and was still set here; Vitest 4 removed the
+      // option, so it was dead config — and invalid, which the root file's
+      // typecheck catches but this package's tsconfig does not.
       include: ["src/**"],
       // Wiring and I/O edges, exercised end to end rather than by unit tests:
       // the route manifest, the pg pool, and the outbound mail transport.
