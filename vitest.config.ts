@@ -35,11 +35,16 @@ export default defineConfig({
       // A ratchet, not a target: set just below the current numbers so coverage
       // can't silently regress, while today's run still passes. Raise as cover
       // grows. (`npm run test:coverage` prints the live figures.)
+      //
+      // 84.42 / 78.89 / 87.73 / 85.43 today. The last jump came from the HUD sim
+      // engine — projection.ts and kinematics.ts went from 0% branch and function
+      // coverage (reached only transitively through a component render) to 100%
+      // of their functions.
       thresholds: {
-        statements: 76,
-        branches: 73,
-        functions: 79,
-        lines: 77,
+        statements: 84,
+        branches: 78,
+        functions: 87,
+        lines: 85,
       },
     },
   },
