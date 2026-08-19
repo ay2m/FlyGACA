@@ -107,7 +107,7 @@ gcloud run deploy flygaca-api \
   --allow-unauthenticated \
   --memory=1Gi --timeout=300 --max-instances=10 \
   --set-env-vars="NODE_ENV=production,APP_ORIGIN=https://flygaca.com,API_ORIGIN=https://api.flygaca.com,GOOGLE_OAUTH_CLIENT_ID=<client-id>,MAIL_FROM=Fly GACA <no-reply@flygaca.com>" \
-  --set-env-vars="PRICE_PRO_MONTHLY=39,PRICE_PRO_ANNUAL=349,PRICE_STUDENT_MONTHLY=19,PRICE_STUDENT_ANNUAL=169,PRICE_PASS=99,PRICE_CREDITS=29,PRICE_PREP_PACK=79,PRICE_PREP_PACK_CERT=129,PRICE_PREP_PACK_SUBJECT=79,PRICE_BUNDLE=399,PRICE_COHORT=2499" \
+  --set-env-vars="PRICE_PRO_MONTHLY=79,PRICE_PRO_ANNUAL=649,PRICE_PASS=299,PRICE_CREDITS=39,PRICE_PREP_PACK=249,PRICE_PREP_PACK_ESSENTIAL=249,PRICE_PREP_PACK_STANDARD=399,PRICE_PREP_PACK_COMPLETE=499,PRICE_BUNDLE=1499,PRICE_COHORT=12000" \
   --set-secrets="DATABASE_URL=database-url:latest,SESSION_SECRET=session-secret:latest,GOOGLE_OAUTH_CLIENT_SECRET=google-oauth-secret:latest,GOOGLE_GENAI_API_KEY=genai-api-key:latest,MOYASAR_SECRET_KEY=moyasar-secret-key:latest,MOYASAR_WEBHOOK_SECRET=moyasar-webhook:latest,MAIL_API_KEY=mail-api-key:latest,CRON_SECRET=cron-secret:latest"
 ```
 

@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import { formatSar } from '@/lib/services/pricing';
 import styles from './Pricing.module.css';
 
 /** B2B band — routes the highest-value buyer to the schools sales path. */
@@ -28,13 +29,9 @@ export function SchoolsBand({
         </ul>
         <p className={styles.eyebrow}>{t('pricing.tiersLabel')}</p>
         <ul className={styles.schoolsPoints}>
-          <li>{t('pricing.tierCohort', { n: tiers.cohort.toLocaleString('en-US') })}</li>
-          <li>{t('pricing.tierAcademy', { n: tiers.academy.toLocaleString('en-US') })}</li>
-          <li>
-            {t('pricing.tierInstitution', {
-              n: tiers.institution.toLocaleString('en-US'),
-            })}
-          </li>
+          <li>{t('pricing.tierCohort', { n: formatSar(tiers.cohort) })}</li>
+          <li>{t('pricing.tierAcademy', { n: formatSar(tiers.academy) })}</li>
+          <li>{t('pricing.tierInstitution', { n: formatSar(tiers.institution) })}</li>
         </ul>
         <p className={styles.schoolsPrice}>
           <bdi dir="ltr">{t('pricing.perSeat', { n: seatFrom })}</bdi> · {t('pricing.schoolsMin')}

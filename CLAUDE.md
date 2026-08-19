@@ -26,16 +26,29 @@ grid, card glow, and a widgets/ family — lazy-loaded off the hero's critical p
 **command palette** (`src/components/CommandPalette/`) jumps between all of these. `/learn` is the
 canonical hub — `/study` and `/guides` redirect into it (`/study` → `/learn?tab=practice`); don't
 relink them to the old paths.
-Beyond the web app, `apple/` is a native iOS app family (one shared Swift package,
-`apple/FlyGACAKit`, one App Store app per exam-prep pack) built from a **flavor** switch
-(`src/flavors/`, `src/app/flavor/`; `IS_FLAVOR_APP` is defined in `src/flavors/current.ts` and
-consumed by `src/router.tsx`) that swaps in a reduced, single-pack route tree;
-`scripts/build-flavor.mjs` slices content per flavor. See
-`apple/ARCHITECTURE.md`, `docs/RUNBOOK-native.md`, and `docs/STORE-SUITE.md`.
+Beyond the web app there is a native iOS app family (one App Store app per exam-prep pack),
+driven from a **flavor** switch that lives here: `src/flavors/`, `src/app/flavor/`,
+`IS_FLAVOR_APP` in `src/flavors/current.ts` consumed by `src/router.tsx` to swap in a
+reduced, single-pack route tree, with `scripts/build-flavor.mjs` slicing content per flavor.
+The route that actually works from this repo is **Capacitor** (`capacitor.config.ts` →
+`build:flavor` → `flavor:ios` → `cap add ios`).
+
+> ⚠️ **`apple/` is NOT in this repo** — no Swift package, no Xcode project, in any commit.
+> The `ios:build:*` / `ios:test` / `screenshots:*` npm scripts and `scripts/native/*` all
+> target `apple/…` paths that do not resolve here, so they fail (or, in the case of
+> `ios:test` and `ensure-firebase-plists.sh`, exit 0 while doing nothing). The Swift side
+> lives in the sibling repo `ay2m/FlyGACA-ios`. Treat any claim in this file about
+> `apple/FlyGACAKit` — including the SRS "cross-platform contract" — as describing that
+> repo, not this one: there is nothing here to diff a port against.
 
 The repo also contains the **backend**: `server/` is a single Express service for **Cloud Run**,
-backed by **Cloud SQL (Postgres)**. There is no Firebase anywhere in this project — auth, the
-datastore, the API and hosting are all first-party or plain GCP. `server/src/index.ts` is the single
+backed by **Cloud SQL (Postgres)**. No Firebase is used at runtime — auth, the datastore, the
+API and hosting are all first-party or plain GCP, and there is no Firebase dependency, config
+or import anywhere in `src/` or `server/`. Two stale leftovers survived the port and are
+misleading rather than live: `scripts/native/ensure-firebase-plists.sh` (writes
+`GoogleService-Info.plist` for iOS targets that aren't in this repo) and the header comment
+in `worker/index.ts`, which still describes a Firebase-hosted gateway and Stripe functions
+that no longer exist. Delete or rewrite them; don't take either as evidence of the architecture. `server/src/index.ts` is the single
 manifest of the HTTP surface, mounting one router per feature under `/api`:
 `auth` (sessions, Google OAuth, verification, reset), `account` (profile, logbook, records, study
 progress), `grants` (staff / school-seat / founding), `billing` (Moyasar checkout, confirm, webhook,
@@ -51,15 +64,23 @@ instance are both regional resources set at deploy time (see `docs/RUNBOOK-deplo
 ## Architecture
 
 - **Build:** Vite + TypeScript (strict). `npm run build` runs
-  `build:sitemap → tsc -b → vite build → prerender-head → check:prerender` → `dist/`, which is both
+  `build:sitemap → tsc -b → vite build → prerender-head → check:prerender → check:jsonld` →
+  `dist/`, which is both
   the static-host payload and the Capacitor `webDir`. `prerender-head.mjs` stamps per-route
   `<head>` meta (titles, descriptions, canonical, OG, JSON-LD) into the shipped HTML for SEO/AI
-  search; `check:prerender` asserts coverage. A fuller static-HTML prerender (`npm run prerender`)
-  runs in the deploy pipeline.
+  search. A fuller static-HTML prerender (`npm run prerender`) runs in the deploy pipeline.
+  Note both build gates are weaker than they read: `check:prerender` only inspects routes that
+  already have an `hreflang="ar"` alternate — i.e. exactly the ones `prerender-head` wrote — so
+  a route with no snapshot is invisible to it, and `check:jsonld` reports no problem for a page
+  carrying no JSON-LD at all. `check:prerender:coverage` is the honest one and nothing runs it.
 - **Routing:** `src/router.tsx` is the single route table (routes are lazy-loaded per page). Pages
   live one-per-folder under `src/pages/`. The shared chrome (`src/app/Layout|Header|Footer`, plus
   `MobileDock`, `AccountMenu`, and the `src/app/nav.ts` nav registry)
   replaces the legacy `build-chrome.js` stamper — chrome is now a component, never copied.
+  **Arabic lives at its own URLs.** The same route tree is re-mounted under
+  `basename: '/ar'` (`src/router.tsx:212-217, 381-387`), so every page has an `/ar/…` twin and
+  the site has roughly twice the URLs the route table appears to list. Anything touching
+  canonicals, hreflang, sitemaps, prerendering or link-building must account for both trees.
 - **i18n / RTL:** `src/i18n/index.ts` boots i18next from `en.json` / `ar.json` and mirrors the
   choice onto `<html lang/dir>` so RTL flips document-wide. `LangToggle` switches languages.
 - **Styling:** `src/styles/tokens.css` is the design-token source of truth (the Falcon palette);
@@ -82,10 +103,13 @@ instance are both regional resources set at deploy time (see `docs/RUNBOOK-deplo
   `calc/pilot/` (`currency`, `logbook`, `achievements`, `onboarding`, `ics`, plus the shared
   `flightFields` readers for the free-text `Flight` columns), `calc/library/`
   (`anchor`, `corpusNav`, `changeTracking`, `offlineManifest`, `libraryFilter`, `constellation`),
-  `calc/study/` (`srs` — the cross-platform contract the apple/ Swift port mirrors — `shuffle`, and
+  `calc/study/` (`srs` — the contract the iOS Swift port mirrors, though that port is in the
+  sibling repo, so nothing here can detect drift — `shuffle`, and
   `glidePath`), `calc/hud/` (the airspace-sim engine: `scenario`, `kinematics`, `projection`,
-  `sectors`, `geoKsa`, `callsigns`, `simMetar`, seeded `rng`), and `calc/app/`
-  (`authError`, `dashboardLayout`, `emailShape`, `passwordPolicy`, `pricingView`, `toolPresets`).
+  `sectors`, `geoKsa`, `callsigns`, `simMetar`, seeded `rng`), `calc/app/`
+  (`authError`, `dashboardLayout`, `emailShape`, `passwordPolicy`, `pricingView`, `toolPresets`),
+  and `calc/analytics/` (`healthScore`, `passProbability`, `cohortSummary`) — which is tested
+  but imported by no page; the shipping equivalent is `server/src/analytics-core.ts`.
   Subfolders may import the flat core
   (`@/calc/recency`), never each other sideways. The
   `CalcShell` component provides the shared frame (copy-link · try-an-example · ask-Captain-Adel ·
@@ -232,21 +256,22 @@ deploy` deliberately fails with a pointer to `docs/RUNBOOK-deploy.md`, since dep
 
 ## Where to look
 
-> 📖 **Family context:** [The Book of Fly GACA](https://github.com/ay2m/FlyGACA/blob/main/THE-BOOK-OF-FLY-GACA.md) is the whole-family reference — all ten repos, the shared tenets, and the glossary in one place.
+**What is actually in this repo:** `MIGRATION.md` (rebuild log), `ROADMAP.md`,
+`README.md` (getting started), `GUIDE_AUTHORING.md` (learn content),
+`FIGMA_DESIGN_SYSTEM.md` (design system), `SEO-PLAN.md`, `CONTRIBUTING.md`, `SECURITY.md`,
+and **`docs/RUNBOOK-deploy.md` — the only file under `docs/`**.
 
-`MIGRATION.md` (rebuild log), `ROADMAP.md` (what's next), `README.md` (getting started),
-`GUIDE_AUTHORING.md` (learn content), `FIGMA_DESIGN_SYSTEM.md` (design system),
-`SEO-PLAN.md` (search/AI-search visibility), `docs/ARCHITECTURE-BLUEPRINT.md`
-(platform-wide technical blueprint), root `SECURITY.md`, and `docs/` generally (design, billing,
-`RUNBOOK-deploy.md` / `DATA-HOSTING.md`, the `RUNBOOK-ios-*.md` set,
-`LICENSED-API.md`, `PRICING-REVENUE-STRATEGY.md`, `RUNBOOK-native.md` /
-`STORE-SUITE.md` (the iOS app family), `APPS-FAMILY-ROADMAP.md`, `STUDY-CONTENT-REVIEW.md`,
-`TESTING-ROADMAP.md`, `corpus-link-shape.md`, `docs/seo/`, `b2b/` designs). The legacy source (the
-original vanilla Fly GACA site) remains the reference for anything still ported from the old site.
+> ⚠️ **Most documents this file used to cite do not exist here.** `docs/` holds exactly one
+> file. `ARCHITECTURE-BLUEPRINT.md`, `DATA-HOSTING.md`, `BILLING.md`, `LICENSED-API.md`,
+> `DESIGN-genkit-rag-backend.md`, `PRICING-REVENUE-STRATEGY.md`, `MERGE-CONFLICTS.md`,
+> `corpus-link-shape.md`, `STORE-SUITE.md`, `RUNBOOK-native.md`, the `RUNBOOK-ios-*` set,
+> `APPS-FAMILY-ROADMAP.md`, `STUDY-CONTENT-REVIEW.md`, `TESTING-ROADMAP.md`, `docs/b2b/`,
+> `docs/seo/`, `THE-BOOK-OF-FLY-GACA.md`, and `archive/` are **all absent** — several are
+> still cited from source comments (`server/src/api-tier-core.ts`, `src/lib/services/pricing.ts`,
+> `src/pages/pricing/Pricing.tsx`) as though they were authoritative. `content/regulations/`
+> is absent too, which makes `parse:regulations` and `lint:md` dead scripts. Don't go
+> looking; either write the doc or stop citing it. Sibling repos (`ay2m/FlyGACA-app`,
+> `ay2m/FlyGACA-ios`) are separate checkouts, not subtrees of this one.
 
-`archive/` is parked non-app material — vendored third-party reference collections, the per-tool
-agent-config folders, scripts nothing calls, finished-work docs (completed audits, the legacy-PWA
-cutover runbook), and the investor material. Nothing there is imported, built, or linted; see
-`archive/README.md` before assuming something is missing. `docs/` is live engineering
-documentation, plus two point-in-time subtrees (`docs/seo/archive/`,
-`docs/screenshots/review-2026-07/`).
+The legacy source (the original vanilla Fly GACA site) remains the reference for anything
+still ported from the old site.

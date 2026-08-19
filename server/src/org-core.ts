@@ -40,6 +40,21 @@ export const MAX_PROVISION_EMAILS = 100;
  * `emails` a non-empty array of at most MAX_PROVISION_EMAILS addresses, and
  * `expiresAt` — when present — a string.
  */
+/** A parseable ISO instant no further out than one intake window from `now`. */
+export function isSeatExpiry(value: unknown, now: Date = new Date()): value is string {
+  if (typeof value !== "string") return false;
+  const t = Date.parse(value);
+  if (!Number.isFinite(t)) return false;
+  return t <= now.getTime() + COHORT_INTAKE_DAYS * 24 * 60 * 60 * 1000;
+}
+
+/** The seat expiry to persist: the owner's value when sound, else the intake window. */
+export function seatExpiry(requested: string | undefined, now: Date = new Date()): string {
+  return isSeatExpiry(requested, now)
+    ? requested
+    : new Date(now.getTime() + COHORT_INTAKE_DAYS * 24 * 60 * 60 * 1000).toISOString();
+}
+
 export function parseProvisionInput(data: unknown): ParseResult {
   const d = (data ?? {}) as { orgId?: unknown; emails?: unknown; expiresAt?: unknown };
   if (typeof d.orgId !== "string" || !d.orgId) {
@@ -48,7 +63,12 @@ export function parseProvisionInput(data: unknown): ParseResult {
   if (!Array.isArray(d.emails) || d.emails.length === 0 || d.emails.length > MAX_PROVISION_EMAILS) {
     return { ok: false, code: "emails-required" };
   }
-  if (d.expiresAt !== undefined && typeof d.expiresAt !== "string") {
+  // A seat is a dated contract line, so the date has to be real. `typeof === "string"`
+  // alone let an owner post `"9999-12-31"` — or omit it entirely, which reaches
+  // `schoolEntitlement(undefined)` and mints a NON-EXPIRING top-tier grant. One 90-day
+  // cohort purchase then converts into permanent `school` accounts, so the intake
+  // window is the ceiling and the default.
+  if (d.expiresAt !== undefined && !isSeatExpiry(d.expiresAt)) {
     return { ok: false, code: "expiresAt-must-be-ISO-string" };
   }
   return {

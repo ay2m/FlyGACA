@@ -6,15 +6,13 @@
 
 /**
  * What a failed checkout should do, mapped from the thrown error code:
- * `sign-in-required` → route to the account page; `student-verification-required`
- * → show the student-verify notice; anything else → the generic error notice.
+ * `sign-in-required` → route to the account page; anything else → the generic
+ * error notice.
  */
-export type PricingCheckoutOutcome = 'navigate-account' | 'student-verify' | 'generic';
+export type PricingCheckoutOutcome = 'navigate-account' | 'generic';
 
 export function pricingCheckoutOutcome(code: string): PricingCheckoutOutcome {
-  if (code === 'sign-in-required') return 'navigate-account';
-  if (code === 'student-verification-required') return 'student-verify';
-  return 'generic';
+  return code === 'sign-in-required' ? 'navigate-account' : 'generic';
 }
 
 /** The error string thrown by a checkout call, or '' when it wasn't an Error. */

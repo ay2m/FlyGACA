@@ -12,13 +12,12 @@ export function priceEnv(): PriceEnv {
   return {
     proMonthly: process.env.PRICE_PRO_MONTHLY ?? "",
     proAnnual: process.env.PRICE_PRO_ANNUAL ?? "",
-    studentMonthly: process.env.PRICE_STUDENT_MONTHLY ?? "",
-    studentAnnual: process.env.PRICE_STUDENT_ANNUAL ?? "",
     pass: process.env.PRICE_PASS ?? "",
     credits: process.env.PRICE_CREDITS ?? "",
     prepPack: process.env.PRICE_PREP_PACK ?? "",
-    prepPackCert: process.env.PRICE_PREP_PACK_CERT ?? "",
-    prepPackSubject: process.env.PRICE_PREP_PACK_SUBJECT ?? "",
+    prepPackEssential: process.env.PRICE_PREP_PACK_ESSENTIAL ?? "",
+    prepPackStandard: process.env.PRICE_PREP_PACK_STANDARD ?? "",
+    prepPackComplete: process.env.PRICE_PREP_PACK_COMPLETE ?? "",
     bundle: process.env.PRICE_BUNDLE ?? "",
     cohort: process.env.PRICE_COHORT ?? "",
   };

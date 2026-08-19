@@ -1,10 +1,9 @@
 /**
  * The pricing page's checkout orchestration in one hook: the billing-cycle
- * toggle, the Pro/student/pass and All-Access-bundle checkout calls, the
- * error/busy state, the `?checkout=cancel` acknowledgement, and the caller's
- * current plan. The page keeps only layout + `t()` copy. Error outcomes are
- * reported as a stable kind (`'student-verify' | 'generic'`) so the hook stays
- * i18n-free and the page maps it to a message. Pure decisions live in
+ * toggle, the Pro/pass and All-Access-bundle checkout calls, the error/busy
+ * state, the `?checkout=cancel` acknowledgement, and the caller's current plan.
+ * The page keeps only layout + `t()` copy. Error outcomes are reported as a
+ * stable kind so the hook stays i18n-free and the page maps it to a message. Pure decisions live in
  * `@/calc/app/pricingView`; the checkout side effects in `@/lib/services/billing`.
  */
 import { useEffect, useState } from 'react';
@@ -17,7 +16,7 @@ import { capturePromoFromUrl, getStoredPromo } from '@/lib/services/promo';
 import { checkoutErrorCode, pricingCheckoutOutcome } from '@/calc/app/pricingView';
 
 /** The kind of error notice to show under the plans, or null for none. */
-export type PricingErrorKind = 'student-verify' | 'generic';
+export type PricingErrorKind = 'generic';
 
 export interface PricingCheckout {
   annual: boolean;
@@ -27,7 +26,7 @@ export interface PricingCheckout {
   /** True when the user returned from an abandoned/failed checkout. */
   showCanceled: boolean;
   dismissCanceled: () => void;
-  /** Start a Pro/student checkout for the given variant. */
+  /** Start a Pro/pass/credits checkout for the given variant. */
   checkout: (variant: ProPlan) => Promise<void>;
   /** Start the one-time All-Access Exam Bundle checkout. */
   buyBundle: () => Promise<void>;
@@ -85,7 +84,7 @@ export function usePricingCheckout(): PricingCheckout {
     try {
       await startBundleCheckout({ ref: getStoredRef(), promo: getStoredPromo() });
     } catch (e) {
-      // The bundle is not a student SKU, so any non-sign-in failure is generic.
+      // Any non-sign-in failure on the bundle is generic.
       if (pricingCheckoutOutcome(checkoutErrorCode(e)) === 'navigate-account') {
         navigate('/account');
         return;

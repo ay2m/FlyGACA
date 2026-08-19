@@ -7,6 +7,7 @@ import {
   buildInvite,
   checkSeatLimit,
   parseProvisionInput,
+  seatExpiry,
 } from "../src/org-core.js";
 
 describe("parseProvisionInput", () => {
@@ -15,10 +16,32 @@ describe("parseProvisionInput", () => {
     expect(r).toEqual({ ok: true, value: { orgId: "acme", emails: ["a@b.com"], expiresAt: undefined } });
   });
 
-  it("accepts a valid payload with an expiresAt string", () => {
-    const r = parseProvisionInput({ orgId: "acme", emails: ["a@b.com"], expiresAt: "2027-01-01" });
+  it("accepts an expiresAt inside the intake window", () => {
+    const soon = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString();
+    const r = parseProvisionInput({ orgId: "acme", emails: ["a@b.com"], expiresAt: soon });
     expect(r.ok).toBe(true);
-    if (r.ok) expect(r.value.expiresAt).toBe("2027-01-01");
+    if (r.ok) expect(r.value.expiresAt).toBe(soon);
+  });
+
+  // A seat is the 90-day cohort contract. Accepting a far-future date (or none at
+  // all, which reaches `schoolEntitlement(undefined)`) turns one cohort purchase
+  // into permanent top-tier accounts, so the window is the ceiling.
+  it("rejects an expiresAt beyond the intake window or unparseable", () => {
+    for (const expiresAt of ["9999-12-31", "2099-01-01", "not-a-date", ""]) {
+      expect(parseProvisionInput({ orgId: "acme", emails: ["a@b.com"], expiresAt })).toEqual({
+        ok: false,
+        code: "expiresAt-must-be-ISO-string",
+      });
+    }
+  });
+
+  it("seatExpiry falls back to the intake window when absent or out of bounds", () => {
+    const now = new Date("2026-08-19T00:00:00.000Z");
+    const bound = new Date(now.getTime() + COHORT_INTAKE_DAYS * 24 * 60 * 60 * 1000).toISOString();
+    expect(seatExpiry(undefined, now)).toBe(bound);
+    expect(seatExpiry("9999-12-31", now)).toBe(bound);
+    const ok = new Date(now.getTime() + 10 * 24 * 60 * 60 * 1000).toISOString();
+    expect(seatExpiry(ok, now)).toBe(ok);
   });
 
   it("rejects a missing or blank orgId", () => {

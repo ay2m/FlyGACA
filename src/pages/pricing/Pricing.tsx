@@ -5,14 +5,15 @@ import { PageHero } from '@/components/PageHero';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import { faqLd } from '@/lib/seo/jsonld';
 import { canCheckout } from '@/lib/services/billing';
-import { COHORT_PRICE_SAR, annualSavingsPct, monthlyEquivalent } from '@/lib/services/pricing';
+import {
+  COHORT_PRICE_SAR,
+  annualSavingsPct,
+  formatSar,
+  monthlyEquivalent,
+} from '@/lib/services/pricing';
 import { foundingAnnualPrice, showFoundingStrike } from '@/calc/app/pricingView';
 import { usePricingCheckout } from '@/hooks/usePricingCheckout';
-import {
-  EXAM_BUNDLE_PRICE,
-  PREP_PACK_PRICE_CERT,
-  PREP_PACK_PRICE_SUBJECT,
-} from '@/lib/prepCatalog';
+import { EXAM_BUNDLE_PRICE, PREP_PACK_PRICE_FROM, PREP_PACK_PRICE_TOP } from '@/lib/prepCatalog';
 import { PricingPlanCard } from './PricingPlanCard';
 import { BillingToggle } from './BillingToggle';
 import { PriceBand } from './PriceBand';
@@ -26,23 +27,26 @@ import styles from './Pricing.module.css';
  * templated from these numbers so they can never drift. Reading the regulatory
  * library is always free; these gate acceleration, AI depth, proof and ops.
  */
-const PRO_PRICE = { monthly: 59, annual: 449 };
-const STUDENT_PRICE = { monthly: 39, annual: 299 };
-const PASS_PRICE = 149;
+const PRO_PRICE = { monthly: 79, annual: 649 };
+const PASS_PRICE = 299;
 // One-time exam-prep prices, sourced from the catalog so the page can't drift from the
-// server price table: certificate packs price above single-subject packs, and the
-// All-Access bundle unlocks every pack in one payment.
-const PREP_FROM = PREP_PACK_PRICE_SUBJECT;
-const PREP_CERT = PREP_PACK_PRICE_CERT;
+// rest of the app. Packs price in three content bands (see prepCatalog PACK_TIERS), and
+// the All-Access bundle unlocks every pack in one payment. `tests/pricing-server-parity`
+// ties these to the server price table.
+const PREP_FROM = PREP_PACK_PRICE_FROM;
+const PREP_TOP = PREP_PACK_PRICE_TOP;
 const BUNDLE_PRICE = EXAM_BUNDLE_PRICE;
-const SCHOOL_FROM = 250;
-// Published B2B tier anchors (indicative, SAR) — validated with design partners; see
-// docs/b2b/PLAN.md §5. Surfacing them shortens the sales cycle for the smaller tiers.
-const SCHOOL_TIERS = { cohort: COHORT_PRICE_SAR, academy: 22000, institution: 40000 };
+const SCHOOL_FROM = 480;
+// Published B2B tier anchors (indicative, SAR). Publishing them is deliberate: in this
+// segment almost every vendor is quote-only, so a visible price is an acquisition edge.
+// Cohort is 25 seats, i.e. SCHOOL_FROM per seat per year.
+const SCHOOL_TIERS = { cohort: COHORT_PRICE_SAR, academy: 39000, institution: 72000 };
 // Time-boxed founding launch: Pro annual at a lower intro price to seed the first paying
-// cohort + reviews, then ratchet the list price up. Flip off when the launch window ends.
-const FOUNDING_OFFER = true;
-const FOUNDING_ANNUAL = 349;
+// cohort + reviews, then ratchet the list price up. Off — the list price below is set
+// deliberately rather than discounted from a higher anchor. Note this flag carries no
+// date logic; if it is switched on it stays on until switched off by hand.
+const FOUNDING_OFFER = false;
+const FOUNDING_ANNUAL = 549;
 
 interface Faq {
   q: string;
@@ -81,13 +85,7 @@ export function Pricing() {
   const proStrike = showFoundingStrike(FOUNDING_OFFER, annual)
     ? t('pricing.wasYr', { n: PRO_PRICE.annual })
     : undefined;
-  const studentPrice = annual
-    ? t('pricing.perYr', { n: STUDENT_PRICE.annual, eq: monthlyEquivalent(STUDENT_PRICE.annual) })
-    : t('pricing.perMo', { n: STUDENT_PRICE.monthly });
-
-  const errorText = errorKind
-    ? t(errorKind === 'student-verify' ? 'pricing.studentVerifyNeeded' : 'pricing.checkoutError')
-    : '';
+  const errorText = errorKind ? t('pricing.checkoutError') : '';
 
   return (
     <section className={`container ${styles.page}`}>
@@ -148,22 +146,6 @@ export function Pricing() {
                   <span>{t('pricing.trial')}</span>
                   <span>{t('pricing.moneyBack')}</span>
                 </p>
-                <details className={styles.studentDisc}>
-                  <summary>{t('pricing.studentToggle')}</summary>
-                  <p>
-                    <bdi dir="ltr">{studentPrice}</bdi> · {t('pricing.studentNote')}
-                  </p>
-                  {canCheckout() && (
-                    <button
-                      type="button"
-                      className="btn"
-                      disabled={busy}
-                      onClick={() => void checkout('student')}
-                    >
-                      {t('pricing.studentCta')}
-                    </button>
-                  )}
-                </details>
               </>
             )
           }
@@ -224,7 +206,7 @@ export function Pricing() {
       <PriceBand
         id="prep-head"
         head={t('pricing.prepHead')}
-        lead={t('pricing.prepLead', { cert: PREP_CERT, subject: PREP_FROM })}
+        lead={t('pricing.prepLead', { from: PREP_FROM, top: PREP_TOP })}
         price={t('pricing.prepPer', { n: PREP_FROM })}
         action={
           <Link to="/study/packs" className={styles.passCta}>
@@ -239,7 +221,7 @@ export function Pricing() {
         id="bundle-head"
         head={t('pricing.bundleHead')}
         lead={t('pricing.bundleLead')}
-        price={t('pricing.bundlePrice', { n: BUNDLE_PRICE })}
+        price={t('pricing.bundlePrice', { n: formatSar(BUNDLE_PRICE) })}
         action={
           canCheckout() ? (
             <button

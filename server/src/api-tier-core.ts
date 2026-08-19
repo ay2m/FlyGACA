@@ -10,7 +10,7 @@
 
 /** Sold API plans. `enterprise` is uncapped/custom (negotiated), so it's also the
  * safe default for a legacy key minted before tiers existed. */
-export type ApiTier = "starter" | "growth" | "enterprise";
+export type ApiTier = "starter" | "growth" | "scale" | "enterprise";
 
 export interface ApiTierSpec {
   /** Answers included per calendar month; `null` = uncapped (enterprise/custom). */
@@ -19,17 +19,31 @@ export interface ApiTierSpec {
   priceSar: number | null;
 }
 
-/** Indicative pricing — mirrors docs/PRICING-REVENUE-STRATEGY.md and docs/LICENSED-API.md. */
+/**
+ * Indicative pricing. The ladder steps ~4x in price and ~5x in quota, which is the
+ * shape every comparable metered API uses (SerpApi, Algolia, Pinecone) before handing
+ * off to "contact sales".
+ *
+ * A cited answer costs roughly SAR 0.02 to serve on a Flash-class model and SAR 0.09
+ * on Pro, so the entry band prices at ~24x cost. The previous quotas (5,000 on starter,
+ * 25,000 on growth) were set far too generously against that: 5,000 Pro-model answers
+ * alone cost ~SAR 470 against a SAR 499 tier, i.e. a ~6% gross margin. Retiering here
+ * also leaves headroom to absorb the announced Gemini 3.x price increase without
+ * repricing partners.
+ */
 export const API_TIERS: Record<ApiTier, ApiTierSpec> = {
-  starter: { monthlyQuota: 5000, priceSar: 499 },
-  growth: { monthlyQuota: 25000, priceSar: 1999 },
+  starter: { monthlyQuota: 1000, priceSar: 499 },
+  growth: { monthlyQuota: 5000, priceSar: 1999 },
+  scale: { monthlyQuota: 25000, priceSar: 6999 },
   enterprise: { monthlyQuota: null, priceSar: null },
 };
 
 /** Narrow untrusted input (a key doc's `tier` field) to a valid tier, defaulting to
  * `enterprise` (uncapped) so a key minted before tiers existed is never throttled. */
 export function apiTier(v: unknown): ApiTier {
-  return v === "starter" || v === "growth" || v === "enterprise" ? v : "enterprise";
+  return v === "starter" || v === "growth" || v === "scale" || v === "enterprise"
+    ? v
+    : "enterprise";
 }
 
 /** Calendar-month bucket key in UTC, e.g. "2026-07" — the field usage is counted under. */

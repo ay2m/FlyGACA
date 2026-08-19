@@ -73,14 +73,17 @@ export const ALLOWED_ORIGINS = new Set([
 ]);
 
 /**
- * Project-scoped preview/deploy hosts (https only). The leading '.'/'-' in each
- * suffix is what prevents a look-alike (e.g. `evil-flygaca.a.run.app`) from
- * matching a host we actually control.
+ * Project-scoped preview/deploy hosts (https only). Only suffixes of a domain we
+ * actually own belong here, and the leading '.' is what stops a look-alike
+ * (e.g. `evilflygaca.com`) from matching.
+ *
+ * `.a.run.app` deliberately is NOT listed: it is the shared Cloud Run hostname
+ * suffix for every Google Cloud project, so allowlisting it would let any host
+ * anyone can provision in a minute read a credentialed response. Cloud Run
+ * revision/tag URLs that genuinely need CORS go in EXTRA_ALLOWED_ORIGINS as
+ * exact origins.
  */
-export const ALLOWED_ORIGIN_SUFFIXES = [
-  ".flygaca.com",
-  ".a.run.app", // Cloud Run revision + tag URLs
-];
+export const ALLOWED_ORIGIN_SUFFIXES = [".flygaca.com"];
 
 export function isAllowedOrigin(origin: string): boolean {
   if (ALLOWED_ORIGINS.has(origin)) return true;

@@ -114,17 +114,6 @@ describe('startProCheckout', () => {
     expect(assign).toHaveBeenCalledWith('/checkout?kind=pro&cadence=annual');
   });
 
-  it('navigates to /checkout with kind=student and the cadence from opts.annual', async () => {
-    h.currentUser = { uid: 'u1' };
-    let assign = stubAssign();
-    await (await load()).startProCheckout('student');
-    expect(assign).toHaveBeenCalledWith('/checkout?kind=student&cadence=monthly');
-
-    assign = stubAssign();
-    await (await load()).startProCheckout('student', { annual: true });
-    expect(assign).toHaveBeenCalledWith('/checkout?kind=student&cadence=annual');
-  });
-
   it('navigates to /checkout with kind=pass / kind=credits and no cadence', async () => {
     h.currentUser = { uid: 'u1' };
     let assign = stubAssign();

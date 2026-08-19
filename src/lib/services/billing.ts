@@ -12,12 +12,11 @@ import { billingChannel, isNative } from '@/lib/native/nativeBridge';
 import { isBackendConfigured, apiFetch } from '@/lib/services/backend';
 import { getCurrentUser } from '@/lib/services/auth';
 
-// 'monthly' / 'annual' are the standard Pro cadences; 'student' is the verified
-// student rate and 'pass' the 90-day Exam Season Pass. 'credits' is a one-time
-// Captain Adel question pack. The checkout page maps each variant to a Moyasar
-// checkout kind — 'pro' (subsuming monthly/annual) for the cadence variants,
-// unchanged for the rest — and a cadence for the recurring ones.
-export type ProPlan = 'monthly' | 'annual' | 'student' | 'pass' | 'credits';
+// 'monthly' / 'annual' are the Pro cadences and 'pass' the 90-day Exam Season Pass.
+// 'credits' is a one-time Captain Adel question pack. The checkout page maps each
+// variant to a Moyasar checkout kind — 'pro' (subsuming monthly/annual) for the cadence
+// variants, unchanged for the rest — and a cadence for the recurring one.
+export type ProPlan = 'monthly' | 'annual' | 'pass' | 'credits';
 
 /** Questions per purchased credit pack. Mirror of server/src/chat-quota-core.ts. */
 export const CREDIT_PACK_SIZE = 50;
@@ -53,8 +52,7 @@ export async function startProCheckout(
 ): Promise<void> {
   await requireCheckoutReady();
   const kind = plan === 'monthly' || plan === 'annual' ? 'pro' : plan;
-  const cadence =
-    kind === 'pro' ? plan : kind === 'student' ? (opts?.annual ? 'annual' : 'monthly') : undefined;
+  const cadence = kind === 'pro' ? plan : undefined;
   const qs = new URLSearchParams({ kind });
   if (cadence) qs.set('cadence', cadence);
   if (opts?.ref) qs.set('ref', opts.ref);

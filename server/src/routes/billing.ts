@@ -23,7 +23,6 @@ import {
   SELLABLE_PACK_IDS,
   entitlementFromCheckout,
   entitlementFromPass,
-  effectivePlan,
   extendExpiry,
   nextChargeAt,
   redirectForIntent,
@@ -32,10 +31,10 @@ import {
   verifyMoyasarSignature,
   renewalFailureOutcome,
   renewalBaseDate,
+  mergeUpward,
   type CheckoutIntent,
   type CheckoutKind,
   type Cadence,
-  type Entitlement,
 } from "../billing-core.js";
 import { CREDIT_PACK_SIZE } from "../chat-quota-core.js";
 import { normalizePromoCode, priceAfterPromo, type PromoCode } from "../promo-core.js";
@@ -245,8 +244,7 @@ async function deliver(
   const current = await getEntitlement(intent.uid);
 
   switch (intent.kind) {
-  case "pro":
-  case "student": {
+  case "pro": {
     const cadence = (intent.cadence ?? "annual") as Cadence;
     const ent = entitlementFromCheckout(cadence, now);
     await setEntitlement(intent.uid, mergeUpward(current, ent));
@@ -348,34 +346,9 @@ async function fulfil(row: IntentRow, payment: MoyasarPayment): Promise<boolean>
   return true;
 }
 
-/**
- * Grant `next` without ever shortening or downgrading what `current` already gives.
- *
- * Two axes move independently, which is why this isn't simply "take the later one":
- *  - PLAN — an in-force `school` tier outranks a `pro` purchase, so it stands.
- *  - EXPIRY — whichever entitlement runs longer wins, and its `source` travels with
- *    it so the surviving grant stays attributable. An absent `expiresAt` means "no
- *    expiry" and therefore always wins.
- *
- * A lapsed `current` is not a downgrade to protect, so it is simply replaced.
- * Exported for `tests/entitlement-merge.test.ts` — this is the invariant that stops
- * a comp from clobbering a paying user.
- */
-export function mergeUpward(current: Entitlement | null, next: Entitlement): Entitlement {
-  const activeNow = current ? effectivePlan(current) : "free";
-  if (!current || activeNow === "free") return next;
-
-  const expiryOf = (e: Entitlement): number =>
-    e.expiresAt ? Date.parse(e.expiresAt) : Infinity;
-  const longest = expiryOf(current) > expiryOf(next) ? current : next;
-
-  const merged: Entitlement = {
-    plan: activeNow === "school" ? "school" : next.plan,
-    source: longest.source,
-  };
-  if (longest.expiresAt) merged.expiresAt = longest.expiresAt;
-  return merged;
-}
+// Re-exported for `tests/entitlement-merge.test.ts`, which has always reached for it
+// here; the rule itself now lives in `billing-core.ts` so the grant routes share it.
+export { mergeUpward };
 
 /** Load the intent a payment refers to, matching on metadata then on our own record. */
 async function intentForPayment(payment: MoyasarPayment): Promise<IntentRow | null> {

@@ -1,7 +1,7 @@
 import { createHmac } from "node:crypto";
 import { describe, expect, it } from "vitest";
 import {
-  CERTIFICATE_PACK_IDS,
+  PACK_TIERS,
   MAX_RENEWAL_ATTEMPTS,
   PASS_DAYS,
   RENEWAL_LEAD_DAYS,
@@ -10,7 +10,7 @@ import {
   cadenceOf,
   checkoutKind,
   describeCheckout,
-  isCertificatePack,
+  packTier,
   cadenceDays,
   effectivePlan,
   entitlementFromCheckout,
@@ -33,13 +33,12 @@ import {
 const env: PriceEnv = {
   proMonthly: "59",
   proAnnual: "449",
-  studentMonthly: "39",
-  studentAnnual: "299",
   pass: "149",
   credits: "19",
   prepPack: "49",
-  prepPackCert: "79",
-  prepPackSubject: "49",
+  prepPackEssential: "249",
+  prepPackStandard: "399",
+  prepPackComplete: "499",
   bundle: "199",
   cohort: "6000",
 };
@@ -66,11 +65,6 @@ describe("amountForCheckout", () => {
     expect(amountForCheckout("pro", "annual", env)).toBe(44900);
   });
 
-  it("prices the discounted student rate by cadence", () => {
-    expect(amountForCheckout("student", "monthly", env)).toBe(3900);
-    expect(amountForCheckout("student", "annual", env)).toBe(29900);
-  });
-
   it("prices the one-time SKUs regardless of cadence", () => {
     expect(amountForCheckout("pass", undefined, env)).toBe(14900);
     expect(amountForCheckout("credits", undefined, env)).toBe(1900);
@@ -78,22 +72,26 @@ describe("amountForCheckout", () => {
     expect(amountForCheckout("cohort", undefined, env)).toBe(600000);
   });
 
-  it("prices exam-prep packs by kind (certificate above subject)", () => {
-    // Certificate packs (a full licence's material) price at the higher tier.
-    expect(amountForCheckout("pack", undefined, env, "ppl-exam")).toBe(7900);
-    expect(amountForCheckout("pack", undefined, env, "cpl")).toBe(7900);
-    // Single-subject packs at the lower tier.
-    expect(amountForCheckout("pack", undefined, env, "medical")).toBe(4900);
-    expect(amountForCheckout("pack", undefined, env, "aip")).toBe(4900);
-    // No packId → subject tier (falls back to the legacy flat price if a tier is unset).
-    expect(amountForCheckout("pack", undefined, env)).toBe(4900);
+  it("prices exam-prep packs by content band", () => {
+    // Deepest banks (plus ground school / a reading path) at the top band.
+    expect(amountForCheckout("pack", undefined, env, "ppl-exam")).toBe(49900);
+    expect(amountForCheckout("pack", undefined, env, "cpl")).toBe(49900);
+    // A full topic spread at the mid band.
+    expect(amountForCheckout("pack", undefined, env, "ir")).toBe(39900);
+    expect(amountForCheckout("pack", undefined, env, "atpl")).toBe(39900);
+    // Focused banks at the entry band — `conversion` is a certificate pack but carries
+    // only 76 questions, which is exactly why the band replaced the cert/subject split.
+    expect(amountForCheckout("pack", undefined, env, "conversion")).toBe(24900);
+    expect(amountForCheckout("pack", undefined, env, "medical")).toBe(24900);
+    expect(amountForCheckout("pack", undefined, env, "aip")).toBe(24900);
+    // No packId → entry band (falls back to the legacy flat price if a band is unset).
+    expect(amountForCheckout("pack", undefined, env)).toBe(24900);
   });
 });
 
 describe("isRecurringKind", () => {
-  it("is true only for pro/student", () => {
+  it("is true only for pro", () => {
     expect(isRecurringKind("pro")).toBe(true);
-    expect(isRecurringKind("student")).toBe(true);
     expect(isRecurringKind("pass")).toBe(false);
     expect(isRecurringKind("credits")).toBe(false);
     expect(isRecurringKind("pack")).toBe(false);
@@ -165,14 +163,15 @@ describe("sellablePackId", () => {
     expect(sellablePackId({ id: "ppl-exam" })).toBeNull();
   });
 
-  it("partitions sellable packs into certificate vs subject (pricing tiers)", () => {
-    // Every certificate id must be sellable; the rest are subject packs. This guards
-    // the cert-vs-subject price split in amountForCheckout against catalog drift.
-    for (const id of CERTIFICATE_PACK_IDS) expect(sellablePackId(id)).toBe(id);
-    expect(isCertificatePack("ppl-exam")).toBe(true);
-    expect(isCertificatePack("medical")).toBe(false);
-    expect(isCertificatePack("aip")).toBe(false);
-    expect(isCertificatePack("nope")).toBe(false);
+  it("assigns every sellable pack a price band", () => {
+    // A sellable pack with no band would silently fall to the entry price, so the map
+    // must cover the catalog exactly.
+    for (const id of SELLABLE_PACK_IDS) expect(PACK_TIERS[id]).toBeTruthy();
+    expect(packTier("ppl-exam")).toBe("complete");
+    expect(packTier("ir")).toBe("standard");
+    expect(packTier("conversion")).toBe("essential");
+    expect(packTier("nope")).toBe("essential");
+    expect(packTier(undefined)).toBe("essential");
   });
 
   it("mirrors the paid+live packs (guards against catalog drift)", () => {
@@ -278,7 +277,7 @@ describe("cadence/renewal math", () => {
 
 describe("checkoutKind", () => {
   it("narrows every known kind and rejects the rest", () => {
-    for (const k of ["pro", "student", "pass", "credits", "pack", "bundle", "cohort"]) {
+    for (const k of ["pro", "pass", "credits", "pack", "bundle", "cohort"]) {
       expect(checkoutKind(k)).toBe(k);
     }
     expect(checkoutKind("gift")).toBeNull();
@@ -302,7 +301,6 @@ describe("cadenceOf", () => {
 describe("describeCheckout", () => {
   it("names each product line; pack interpolates the packId", () => {
     expect(describeCheckout("pro")).toBe("Fly GACA Pro");
-    expect(describeCheckout("student")).toBe("Fly GACA Pro (Student)");
     expect(describeCheckout("pass")).toBe("Fly GACA Exam Season Pass");
     expect(describeCheckout("credits")).toBe("Fly GACA Captain Adel credit pack");
     expect(describeCheckout("pack", "ppl-exam")).toBe("Fly GACA Exam Prep Pack — ppl-exam");

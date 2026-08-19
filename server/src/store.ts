@@ -79,14 +79,26 @@ export async function createUser(input: {
   return row;
 }
 
-/** Link a Google subject to an existing account and mark its email verified. */
-export function linkGoogleAccount(userId: string, googleSub: string): Promise<UserRow | null> {
+/**
+ * Link a Google subject to an existing account.
+ *
+ * `emailVerified` is Google's own `email_verified` assertion and only ever adds
+ * verification (`OR`), never removes it. It must not be forced to `true`: a
+ * verified email is the sole ownership proof behind the staff / school-seat /
+ * founding grants, so an unverified assertion that flipped the flag would hand
+ * an attacker both the victim's session and every email-gated entitlement.
+ */
+export function linkGoogleAccount(
+  userId: string,
+  googleSub: string,
+  emailVerified: boolean,
+): Promise<UserRow | null> {
   return queryOne<UserRow>(
     `UPDATE users
-        SET google_sub = $2, email_verified = true, updated_at = now()
+        SET google_sub = $2, email_verified = email_verified OR $3, updated_at = now()
       WHERE id = $1
       RETURNING *`,
-    [userId, googleSub],
+    [userId, googleSub, emailVerified],
   );
 }
 

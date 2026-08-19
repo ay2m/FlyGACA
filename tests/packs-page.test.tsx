@@ -26,8 +26,8 @@ describe('<Packs /> storefront', () => {
     renderWithRouter(<Packs />);
     const link = screen.getByRole('link', { name: /Aviation medical/ });
     expect(link).toHaveAttribute('href', '/study/packs/medical');
-    // Medical is a single-subject pack → the lower price tier.
-    expect(within(link).getByText(/SAR 49 · one-time/)).toBeInTheDocument();
+    // Medical carries a focused bank (80 questions) → the entry price band.
+    expect(within(link).getByText(/SAR 249 · one-time/)).toBeInTheDocument();
   });
 
   it('marks the free sampler pack as Free', () => {
@@ -41,8 +41,8 @@ describe('<Packs /> storefront', () => {
     // CPL/IR/ATPL are now live: linked cards with the one-time price, not coming-soon.
     const link = screen.getByRole('link', { name: /CPL exam prep/ });
     expect(link).toHaveAttribute('href', '/study/packs/cpl');
-    // CPL is a certificate pack → the higher price tier.
-    expect(within(link).getByText(/SAR 79 · one-time/)).toBeInTheDocument();
+    // CPL carries one of the deepest banks (470 questions) → the top price band.
+    expect(within(link).getByText(/SAR 499 · one-time/)).toBeInTheDocument();
     // No coming-soon cards remain, so no notify-me capture is rendered.
     expect(screen.queryAllByPlaceholderText('you@example.com')).toHaveLength(0);
   });
