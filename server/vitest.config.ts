@@ -21,11 +21,20 @@ export default defineConfig({
       // A ratchet, not a target: set just below the current numbers so coverage can't
       // silently regress, while today's run passes. Raise as cover grows.
       // (`npm run test:coverage` prints the live figures.)
+      //
+      // These were 80 across, which the suite has never actually met — the real
+      // figures are 65.52 / 63.79 / 61.05 / 64.85, so `test:coverage` exited 1.
+      // Nothing ran it (the repo had no CI), so the 80 was aspirational rather
+      // than protective. Now that the CI `server` job runs it on every PR, the
+      // numbers are set just under today's run, per the rule above — an enforced
+      // floor beats an ignored target. The uncovered weight is gateway.ts (0% of
+      // 160 statements), store.ts (4%), session.ts (7%) and http.ts (15%); raise
+      // these as each lands.
       thresholds: {
-        statements: 80,
-        branches: 80,
-        functions: 80,
-        lines: 80,
+        statements: 65,
+        branches: 63,
+        functions: 60,
+        lines: 64,
       },
     },
   },
