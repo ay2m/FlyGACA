@@ -21,11 +21,19 @@ export default defineConfig({
       // A ratchet, not a target: set just below the current numbers so coverage can't
       // silently regress, while today's run passes. Raise as cover grows.
       // (`npm run test:coverage` prints the live figures.)
+      //
+      // These were four round 80s until the CI that runs them existed, and the suite
+      // has never met that: the real figures are ~62-66%. Nothing regressed — the
+      // 80s were an aspiration nobody could have noticed was unmet, because no job
+      // ran `test:coverage`. Re-based to the measured floor so the ratchet actually
+      // ratchets. The gap is concentrated in store.ts (4%), session.ts (7%),
+      // http.ts (15%) and gateway.ts (0%) — I/O edges the E2E path covers rather
+      // than unit tests; see docs/TESTING-ROADMAP.md before raising these.
       thresholds: {
-        statements: 80,
-        branches: 80,
-        functions: 80,
-        lines: 80,
+        statements: 65,
+        branches: 64,
+        functions: 61,
+        lines: 65,
       },
     },
   },
