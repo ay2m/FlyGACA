@@ -42,18 +42,17 @@ export default defineConfig({
       // sit just under the live run, per the rule above — an enforced floor
       // beats an ignored target.
       //
-      // 88.14 / 77.91 / 78.35 / 88.75 today, after session.ts (7% → 96.7%),
+      // 89.35 / 80.59 / 79.65 / 89.84 today, after session.ts (7% → 96.7%),
       // http.ts (15% → 100%), routes/grants.ts (excluded → 98.1%),
-      // routes/billing.ts (excluded → 96.4%) and gateway.ts (0% → 86.9%).
-      // Statements and lines are now past the 80 this file used to claim; the
-      // remaining drag on branches/functions is store.ts (4% — all SQL),
-      // school-core.ts (74%) and config.ts, plus the three routes still on the
-      // exclude list above. Raise these as each lands.
+      // routes/billing.ts (excluded → 96.4%), gateway.ts (0% → 86.9%) and
+      // school-core.ts (74% → 100%). Every metric is now at or past the 80 this
+      // file used to claim. The remaining drag is store.ts (4% — all SQL) and
+      // config.ts, plus the three routes still on the exclude list above.
       thresholds: {
-        statements: 88,
-        branches: 77,
-        functions: 78,
-        lines: 88,
+        statements: 89,
+        branches: 80,
+        functions: 79,
+        lines: 89,
       },
     },
   },
