@@ -11,11 +11,18 @@
  */
 import { genkit, z } from "genkit";
 import { googleAI } from "@genkit-ai/google-genai";
+import { config } from "./config.js";
 import { getIndex, toChatSource } from "./corpus.js";
 import { buildSystem } from "./captain-adel-prompt.js";
 import type { ChatTurn, GroundingKind } from "./contract.js";
 
-const ai = genkit({ plugins: [googleAI()] });
+// The plugin only reads GEMINI_API_KEY / GOOGLE_API_KEY on its own, so
+// GOOGLE_GENAI_API_KEY — the name .env.example and the deploy runbook use — has
+// to be handed over explicitly. Omit the option when unset so the plugin's own
+// env-var fallback still applies.
+const ai = genkit({
+  plugins: [googleAI(config.genaiApiKey ? { apiKey: config.genaiApiKey } : {})],
+});
 
 /** Read a numeric tuning knob from the environment, falling back to its default. */
 function tune(name: string, fallback: number): number {

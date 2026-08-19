@@ -1,0 +1,34 @@
+# Build context for server/Dockerfile, which builds from the REPO ROOT (it needs
+# public/data/rag-chunks.json). Docker only reads a .dockerignore at the context
+# root, so server/.dockerignore never applies to that build — without this file
+# the whole 440 MB node_modules and an 81 MB dist/ get uploaded as context.
+node_modules
+*/node_modules
+server/lib
+server/tests
+server/coverage
+dist
+dev-dist
+coverage
+test-results
+playwright-report
+.git
+.github
+.claude
+android
+ios
+apple
+archive
+e2e
+src
+tests
+scripts
+docs
+screenshots
+supabase
+worker
+*.log
+
+# public/ is 64 MB and only one file is needed; re-include it explicitly.
+public
+!public/data/rag-chunks.json

@@ -9,7 +9,11 @@
 FROM node:24-slim AS build
 WORKDIR /app
 
-COPY server/package*.json ./
+# .npmrc carries `legacy-peer-deps`, without which `npm ci` fails ERESOLVE on the
+# dev tree; scripts/ has to land before the install because package.json's
+# `postinstall` runs one of them.
+COPY server/package*.json server/.npmrc ./
+COPY server/scripts ./scripts
 RUN npm ci
 
 COPY server/tsconfig.json ./
@@ -20,17 +24,17 @@ FROM node:24-slim AS runtime
 WORKDIR /app
 ENV NODE_ENV=production
 
-COPY server/package*.json ./
+COPY server/package*.json server/.npmrc ./
+COPY server/scripts ./scripts
 RUN npm ci --omit=dev && npm cache clean --force
 
 COPY --from=build /app/lib ./lib
 COPY server/migrations ./migrations
-COPY server/scripts ./scripts
 
 # The BM25 index is built from this at boot. Baking it in avoids a cold-start
 # fetch; set CORPUS_URL to an https bucket URL instead to keep the image small.
-COPY public/data/library-search.json ./data/library-search.json
-ENV CORPUS_URL=/app/data/library-search.json
+COPY public/data/rag-chunks.json ./data/rag-chunks.json
+ENV CORPUS_URL=/app/data/rag-chunks.json
 
 # Cloud Run injects PORT; 8080 is its default contract.
 EXPOSE 8080

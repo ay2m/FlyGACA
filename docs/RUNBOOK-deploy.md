@@ -97,7 +97,7 @@ Grant the Cloud Run service account `roles/secretmanager.secretAccessor` and
 
 ## 5. Deploy the API
 
-Build from the **repo root** — the Dockerfile copies `public/data/library-search.json` in so the
+Build from the **repo root** — the Dockerfile copies `public/data/rag-chunks.json` in so the
 BM25 index needs no cold-start fetch.
 
 ```bash

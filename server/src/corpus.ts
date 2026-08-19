@@ -1,8 +1,8 @@
 /**
  * Retrieval over the GACAR corpus (DESIGN §3 D2 / §6.3). v1 is a static,
- * deterministic lexical/BM25 index over the same `library-search.json` the app
- * already ships — no vector store, no extra infra. The retriever's interface is
- * the seam a future vector/hybrid swap happens behind.
+ * deterministic lexical/BM25 index over `rag-chunks.json` — no vector store, no
+ * extra infra. The retriever's interface is the seam a future vector/hybrid swap
+ * happens behind.
  *
  * Each corpus entry is `{ d: heading, b: "Part N" badge, u: legacy URL+anchor,
  * x: passage text }`. We map every retrieved passage to a `ChatSource` carrying
@@ -24,10 +24,13 @@ export interface Lineage {
 }
 
 /**
- * Raw entry shape. `library-search.json` ships `{d,b,u,x}`; `rag-chunks.json`
- * adds an optional `lineage` block. Both flow through the same index. Only
- * library-search.json is web-served today (the CORPUS_URL default); pointing
- * CORPUS_URL at rag-chunks means uploading `data/rag-chunks.json` deliberately.
+ * Raw entry shape: `{d,b,u,x}` plus an optional `lineage` block, which is what
+ * `scripts/build-rag-chunks.mjs` emits into `data/rag-chunks.json`.
+ *
+ * NOT `library-search.json` — that is the browser's search index, and
+ * `scripts/normalize-corpus-data.mjs` has since replaced its `u` with structured
+ * `{kind,id,anchor}` fields. Pointing CORPUS_URL at it throws
+ * `corpus: entry 0 is missing a string d/b/u field` at the first question.
  */
 interface SearchEntry {
   d: string;
@@ -55,7 +58,7 @@ export interface Retrieved {
  * bucket or CDN serving `/data`); anything else is read from disk (local dev,
  * tests, or a copy baked into the container image).
  */
-const CORPUS_URL = process.env.CORPUS_URL ?? "/data/library-search.json";
+const CORPUS_URL = process.env.CORPUS_URL ?? "/data/rag-chunks.json";
 
 // ----------------------------------------------------------------------------
 // Tokenization
