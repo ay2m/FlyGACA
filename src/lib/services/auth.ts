@@ -133,9 +133,7 @@ export async function signInWithGoogle(): Promise<AuthUser | null> {
 export async function signInWithApple(): Promise<AuthUser | null> {
   requireBackend();
   const returnTo = typeof window !== 'undefined' ? window.location.href : '/';
-  window.location.assign(
-    `${apiUrl('/auth/apple/start')}?returnTo=${encodeURIComponent(returnTo)}`,
-  );
+  window.location.assign(`${apiUrl('/auth/apple/start')}?returnTo=${encodeURIComponent(returnTo)}`);
   return null;
 }
 
