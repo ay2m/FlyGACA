@@ -280,7 +280,10 @@ Root: `MIGRATION.md` (rebuild log), `ROADMAP.md`, `README.md` (getting started),
 `SEO-PLAN.md`, `CONTRIBUTING.md`, `SECURITY.md`.
 
 `docs/` holds the engineering documentation: `RUNBOOK-deploy.md` (provisioning + the deploy
-sequence — written for THIS stack, keep it current), `RUNBOOK-golive.md` (go-live: load-balancer
+sequence — written for THIS stack, keep it current), `RUNBOOK-infra.md` (the load balancer, DNS,
+the managed certificate, Workload Identity Federation and the IAM roles for the runtime and deploy
+service accounts — the step that sits between the two, and which nothing else in the repo creates),
+`RUNBOOK-golive.md` (go-live: load-balancer
 headers, corpus offload, CI/CD, launch checklist, rollback), `ARCHITECTURE-BLUEPRINT.md`,
 `DATA-HOSTING.md`, `BILLING.md`, `DESIGN-genkit-rag-backend.md`, `LICENSED-API.md`,
 `PRICING-REVENUE-STRATEGY.md`, `MERGE-CONFLICTS.md`, `corpus-link-shape.md`,
@@ -289,7 +292,7 @@ headers, corpus offload, CI/CD, launch checklist, rollback), `ARCHITECTURE-BLUEP
 dashboard, study-progress-sync design, curriculum and sales material) and `docs/seo/`.
 `docs/screenshots/review-2026-07/` holds the images the README embeds.
 
-> ⚠️ **Everything under `docs/` except `RUNBOOK-deploy.md`, `RUNBOOK-golive.md` and
+> ⚠️ **Everything under `docs/` except `RUNBOOK-deploy.md`, `RUNBOOK-infra.md`, `RUNBOOK-golive.md` and
 > `DATA-HOSTING.md` was restored from `ay2m/FlyGACA-app` history and predates the Cloud Run
 > rebuild.** Each restored file that
 > still describes Firebase, Firestore, App Check or Stripe carries a banner saying so.

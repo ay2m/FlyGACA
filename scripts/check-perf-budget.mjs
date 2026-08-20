@@ -22,15 +22,19 @@ import { join } from 'node:path';
 
 const ASSETS = 'dist/assets';
 
-// Gzipped ceiling for any single JS chunk. The heaviest today is the Firebase
-// vendor chunk at ~127 kB gz (loaded only on the auth/account/chat routes); 140
-// gives it headroom while still catching a new heavyweight import on any one route.
-const PER_CHUNK_KB = 140;
+// Gzipped ceiling for any single JS chunk. Re-measured after the Firebase port:
+// this used to be sized around a ~127 kB Firebase vendor chunk that no longer
+// exists, which left the ceiling at roughly twice the real heaviest chunk — a
+// gate that could not fail. Today's heaviest is vendor-react at ~84 kB gz, so 100
+// keeps ~20% headroom while again catching a new heavyweight import on one route.
+const PER_CHUNK_KB = 100;
 // Gzipped ceiling for the sum of ALL chunks — a coarse guard on the app's total
 // JS footprint. No user downloads all of it (the en/ar language bundles are
 // mutually exclusive and route chunks load on demand), so this only trips on
-// broad creep. ~10% over today's ~744 kB.
-const TOTAL_KB = 820;
+// broad creep. Also re-measured: the old 820 was ~10% over a 744 kB figure that
+// included the Firebase tree. Today's total is ~575 kB, so 660 restores the same
+// ~15% margin.
+const TOTAL_KB = 660;
 
 let files;
 try {

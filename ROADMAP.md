@@ -7,10 +7,17 @@ study hub, account/commerce, and guides are shipped and deploying to production 
 stage-by-stage rebuild history lives in [`MIGRATION.md`](./MIGRATION.md) (history only — no open
 items are tracked there).
 
-Scope note: this repo now carries the **backend too** — the Firebase Functions gateway and the
-Captain Adel RAG brain live in `functions/` (deployed to `me-central1`; Firestore in
-`me-central2`). The app calls them via the same `/api/chat` / `/api/feedback` endpoints on the
-`flygaca-app` Firebase project.
+> ⚠️ **The platform/infrastructure items below predate the Cloud Run rebuild and describe a stack
+> that no longer exists.** There is no Firebase, no Firestore, no App Check and no Stripe anywhere in
+> this repo — auth, the datastore, the API and hosting are Cloud Run + Cloud SQL + Cloud Storage, and
+> payments are Moyasar. Treat those bullets as intent, not instructions; `CLAUDE.md` is the authority
+> on how the system works today, and `docs/RUNBOOK-deploy.md` → `docs/RUNBOOK-infra.md` →
+> `docs/RUNBOOK-golive.md` are the current deployment path. Product and content items are unaffected.
+
+Scope note: this repo now carries the **backend too** — `server/` is a single Express service
+deployed to **Cloud Run** in `me-central2` (Dammam, in-Kingdom / PDPL), backed by **Cloud SQL**
+Postgres in the same region. The app calls it via `/api/chat` / `/api/feedback`, same-origin
+through the load balancer.
 
 ## How to read this
 
@@ -106,11 +113,15 @@ Captain Adel RAG brain live in `functions/` (deployed to `me-central1`; Firestor
 
 ## Now — production hardening & go-live confidence
 
-The app already auto-deploys to **Firebase Hosting** (canonical) and the Vercel/Cloudflare/Netlify
-mirrors on every merge to `main`. "Now" is about making that production footprint fully trustworthy.
+The app auto-deploys to **Google Cloud** (canonical) on every merge to `main` — the SPA to a Cloud
+Storage bucket behind the HTTPS load balancer, the API to Cloud Run. The Vercel/Cloudflare/Netlify
+configs are dormant mirrors; nothing is deployed to them. "Now" is about making that production
+footprint fully trustworthy.
 
-- **[platform]** Flip and verify the production secrets — Firebase config · App Check key · Stripe
-  price IDs — and deploy `firestore.rules`. See `archive/docs/RUNBOOK-cutover.md` and `docs/BILLING.md`.
+- **[platform]** Flip and verify the production secrets in Secret Manager — session key · Moyasar
+  secret + webhook · model API key · mail key · cron secret — and set every `PRICE_*` you intend to
+  sell. Entitlement writes are structural rather than rule-based now: no route lets a client write
+  its own plan, so there is no rules file to deploy. See `docs/RUNBOOK-deploy.md` §4–5.
 - **[platform]** ~~Close the backend money-path test gap.~~ **Done.** The entitlement-granting
   `claimFoundingAccess` callable, the Moyasar billing callables (`confirmPayment` /
   `cancelAutoRenew` / `createCheckoutConfig` / `getReferralCode`), the scheduled auto-renewal charge
@@ -128,8 +139,10 @@ mirrors on every merge to `main`. "Now" is about making that production footprin
     Admin; the Firebase deploy SA stays **without** `datastore.indexAdmin` (see the note in `deploy.yml`).
     Separately, periodically review the operator-account **claude.ai MCP connector** consent grants
     (Airtable, Gmail, Drive, etc.) — third-party delegated grants that live outside this repo.
-- **[platform]** Enable **App Check enforcement** on the backend Functions once real traffic is
-  sending valid tokens. See `docs/APP-CHECK-BACKEND.md`.
+- **[platform]** Close the raw Cloud Run side door once the load balancer is serving —
+  `--ingress=internal-and-cloud-load-balancing`, so the `*.run.app` URL stops being a header-less,
+  CDN-less alternate front door to the payments API. See `docs/RUNBOOK-infra.md` §8. (This replaces
+  the old App Check enforcement item; App Check was a Firebase control and is gone with it.)
 - **[product]** Regenerate the **social/OG card** PNG in the new typeface. The share-card template
   now renders in **Readex Pro** (the Cairo→Readex swap shipped); only the PNG re-render remains — it
   needs Google Fonts (`fonts.gstatic.com`) network access:

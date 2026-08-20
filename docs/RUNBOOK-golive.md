@@ -34,6 +34,12 @@ Build the SPA with `VITE_API_SAME_ORIGIN=1`, not `VITE_API_BASE_URL`.
 
 ## 2. Security headers on the load balancer
 
+> **Prerequisite:** the two commands below update a backend bucket and a backend service *by
+> name*. Neither exists until the load balancer has been built, and nothing in
+> `RUNBOOK-deploy.md` builds it — see **[RUNBOOK-infra.md](RUNBOOK-infra.md)**, which also
+> covers DNS, the certificate, Workload Identity Federation and the IAM roles the deploy
+> workflow needs. Run that first or these fail with `NOT_FOUND`.
+
 **This is the step most likely to be skipped, and skipping it ships a payments site with no CSP and
 no HSTS.** Those headers live in `config/headers.json`. `helmet()` in the API covers API responses
 only — nothing sets them for the static SPA unless you do it here.

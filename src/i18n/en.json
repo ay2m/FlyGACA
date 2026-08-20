@@ -4242,7 +4242,7 @@
         },
         {
           "h": "Where your data is stored",
-          "p": "Your account data is personal data and is stored in-Kingdom on Google Cloud in Dammam (me-central2), in line with the PDPL. Chat questions are processed in a nearby Google Cloud region (me-central1)."
+          "p": "Your account data is personal data and is stored in-Kingdom on Google Cloud in Dammam (me-central2), in line with the PDPL. Chat questions are answered by ALLaM, Saudi Arabia's Arabic foundation model, served from an in-Kingdom endpoint \u2014 so they are processed inside the Kingdom too."
         },
         {
           "h": "Sharing your data",

@@ -120,9 +120,8 @@ generate_project() {
   local project_yml="$PROJECT_ROOT/apple/project.yml"
   local xcode_project="$PROJECT_ROOT/apple/FlyGACA.xcodeproj"
 
-  # Placeholder GoogleService-Info.plist per target when the real Firebase config is
-  # absent, so the resource xcodebuild copies always exists (see ensure-firebase-plists.sh).
-  bash "$SCRIPT_DIR/ensure-firebase-plists.sh"
+  # (Removed: a step that wrote placeholder GoogleService-Info.plist files. This project
+  # has no Firebase; see CLAUDE.md.)
 
   if [ -f "$project_yml" ] && command -v xcodegen &> /dev/null; then
     log_info "Generating Xcode project from project.yml..."

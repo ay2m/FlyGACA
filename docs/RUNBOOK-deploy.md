@@ -147,36 +147,95 @@ loudly. Set every price you intend to sell.
 ## 6. Publish the SPA
 
 ```bash
-# Point the build at the API. If the load balancer serves both from one origin,
-# use VITE_API_SAME_ORIGIN=1 instead of a base URL.
-echo 'VITE_API_BASE_URL=https://api.flygaca.com' >> .env.local
-echo 'VITE_MOYASAR_PUBLISHABLE_KEY=pk_live_…'    >> .env.local
+# Build-time client config. Use `>` not `>>` — repeating `>>` on a second run
+# leaves duplicate keys in the file.
+#
+# VITE_API_SAME_ORIGIN=1, NOT VITE_API_BASE_URL=https://api.flygaca.com. The load
+# balancer serves the SPA and /api from one origin, and the CSP in
+# config/headers.json pins `connect-src 'self'`. `'self'` is an exact origin, so a
+# build pointed at a separate api. host has every API call blocked by the browser
+# — sign-in, sync and billing all fail with nothing in the server logs.
+printf '%s\n' \
+  'VITE_API_SAME_ORIGIN=1' \
+  'VITE_DATA_BASE_URL=https://storage.googleapis.com/flygaca-data/data' \
+  'VITE_MOYASAR_PUBLISHABLE_KEY=pk_live_…' > .env.local
 
 # build:deploy = build + the full-body prerender + the honest coverage gate.
 # Plain `npm run build` only writes the per-route <head> floor; the AI crawlers
 # that decide citations do not run JS, so a deploy built that way ships bodies
 # they can't read. Needs a Chromium for Playwright on the build machine.
+#
+# PRERENDER_MAX=0 means "the whole corpus". The script's default cap sits just
+# above today's corpus, so without this the coverage gate at the end of
+# build:deploy can fail on its own trimmed output.
+#
 # Optional: export INDEXNOW_KEY=<key> first to ping Bing/Copilot and drop the
 # ownership file (dist/<key>.txt) into the same upload.
-npm run build:deploy
-gcloud storage buckets create "gs://$BUCKET" --location="$REGION"
-gcloud storage rsync -r -d dist "gs://$BUCKET"
-gcloud storage buckets update "gs://$BUCKET" --web-main-page-suffix=index.html --web-error-page=index.html
+PRERENDER_MAX=0 npm run build:deploy
+
+gcloud storage buckets create "gs://$BUCKET" --location="$REGION" \
+  --uniform-bucket-level-access
+
+# A backend bucket serves objects to anonymous users through the load balancer.
+# There is no other reader, so without this grant the LB returns 403 for
+# everything and the site is simply down.
+gcloud storage buckets add-iam-policy-binding "gs://$BUCKET" \
+  --member=allUsers --role=roles/storage.objectViewer
+
+# Upload via the script, never a raw rsync. `gcloud storage rsync` sets NO
+# Cache-Control, so a hand-upload leaves index.html and sw.js on the default TTL
+# and users stay pinned to the previous build. deploy-web.mjs stamps each path
+# class from config/headers.json, keeps the 65 MB corpus out of the web bucket,
+# and invalidates the CDN. (`-d` in the old form was a gsutil flag anyway;
+# gcloud storage spells it --delete-unmatched-destination-objects.)
+WEB_BUCKET="gs://$BUCKET" DATA_BUCKET=gs://flygaca-data URL_MAP=flygaca-lb \
+  npm run deploy:web
 ```
+
+> **SPA deep links need a fallback, and the bucket's own website config will not
+> give you one.** `--web-main-page-suffix` / `--web-error-page` are honoured only by
+> the direct `storage.googleapis.com` website endpoint — an external Application
+> Load Balancer with a backend bucket ignores them. The prerender writes
+> `dist/<route>/index.html`, so prerendered routes resolve, but every route that is
+> deliberately NOT prerendered 404s: `/account`, `/settings`, `/dashboard`, and —
+> the expensive one — `/checkout/return`, where Moyasar sends a customer whose card
+> has just been charged. Configure the fallback on the load balancer instead; see
+> [RUNBOOK-infra.md](RUNBOOK-infra.md) §5. Verify before launch with:
+>
+> ```bash
+> curl -sI https://flygaca.com/checkout/return | head -1   # expect 200, not 404
+> ```
 
 `check:prerender:coverage` fails the build if any sitemap URL lacks a rendered body — raise
 `PRERENDER_MAX` (or set it to `0` for the whole corpus) rather than shipping past it. On a machine
 with no browser, `npm run build` still produces a deployable `dist/`, but say so: that deploy is
 head-only.
 
-Then put an HTTPS load balancer in front with two backends: the bucket for `/*`, and a serverless
-NEG for the Cloud Run service on `/api/*`. Routing both through one origin is the simplest option —
-it keeps the session cookie same-site and lets the CSP stay `connect-src 'self'`.
+## 7. Load balancer, DNS and the CI identity
 
-If instead the API lives on its own hostname, leave `SESSION_COOKIE_DOMAIN` unset (the cookie then
-uses `SameSite=None; Secure`) and make sure the SPA origin is in the CORS allowlist —
-`server/src/gateway-core.ts` covers `flygaca.com`, `*.flygaca.com` and `*.a.run.app`; anything else
-goes in `EXTRA_ALLOWED_ORIGINS`.
+Everything above creates *services*. None of it puts them on `flygaca.com`, and none of it
+lets GitHub Actions deploy. That is a separate, substantial piece of provisioning — a global
+IP, a serverless NEG, a backend service, a backend bucket, the url-map and its path rules,
+a managed certificate, the HTTP→HTTPS redirect, DNS records, Workload Identity Federation
+and the IAM roles for two service accounts.
+
+**See [RUNBOOK-infra.md](RUNBOOK-infra.md)** — it is the missing middle of this document, and
+`npm run headers:gcloud` (RUNBOOK-golive.md §2) cannot run until it is done, because the
+backend bucket and backend service it updates do not exist before then.
+
+Route the SPA and `/api` through **one origin**. It keeps the session cookie same-site, lets
+the CSP stay `connect-src 'self'`, and avoids the split-origin cookie problem where the
+email-verification link lands a session on the API host that the SPA never sees.
+
+If you nonetheless put the API on its own hostname, set `SESSION_COOKIE_SAMESITE=none`
+explicitly (it defaults to `lax`, which will not be sent cross-site) together with
+`SESSION_COOKIE_DOMAIN=.flygaca.com`, and make sure the SPA origin is in the CORS allowlist.
+`server/src/gateway-core.ts` covers `flygaca.com`, `www.flygaca.com` and `*.flygaca.com`.
+
+> `*.a.run.app` is **not** allowlisted, and that is deliberate — it is a suffix shared by
+> every Cloud Run service on the platform, so allowlisting it would let any Google Cloud
+> project read credentialed responses from this API. If you need a revision URL for testing,
+> put that exact origin in `EXTRA_ALLOWED_ORIGINS`; do not widen the suffix.
 
 ## 7. Renewal job
 

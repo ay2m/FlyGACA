@@ -56,10 +56,9 @@ ensure_xcodegen() {
 
 ensure_xcodegen || exit 1
 
-# Guarantee every app target has a GoogleService-Info.plist (placeholder when the real
-# Firebase config is absent) so the referenced resource always exists — see the script
-# header and docs/RUNBOOK-ios-firebase.md.
-bash "$SCRIPT_DIR/ensure-firebase-plists.sh"
+# (Removed: a step that wrote placeholder GoogleService-Info.plist files. There is no
+# Firebase anywhere in this project — auth, the datastore and the API are Cloud Run +
+# Cloud SQL — and it pointed at docs/RUNBOOK-ios-firebase.md, which does not exist.)
 
 log_info "Generating apple/FlyGACA.xcodeproj from apple/project.yml…"
 if (cd "$APPLE_DIR" && xcodegen generate); then
