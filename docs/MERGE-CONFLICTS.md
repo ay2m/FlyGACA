@@ -22,16 +22,32 @@ Most conflicts we saw came from three things: **stale branches**, **committed ge
 
 ## Resolve
 
-- **`package-lock.json` / `functions/package-lock.json`** — never hand-edit. Resolve `package.json`
-  first (keep both sides' dependency additions), then regenerate the lockfile:
+- **`package-lock.json` / `server/package-lock.json`** — never hand-edit. Resolve `package.json`
+  first (keep both sides' dependency additions), then **reconcile** the lockfile — do not delete
+  and rebuild it:
 
   ```sh
-  git checkout --theirs package-lock.json   # or --ours; contents get replaced anyway
-  rm package-lock.json && npm install       # regenerates a consistent lockfile
+  git checkout --theirs package-lock.json   # start from a COMPLETE lockfile, either side
+  npm install --package-lock-only           # reconcile it against the merged package.json
+  npm ci                                    # must succeed — this is what CI runs
   git add package.json package-lock.json
   ```
 
-  (Run inside `functions/` too if that lockfile conflicted.)
+  (Run inside `server/` too if that lockfile conflicted.)
+
+  Two traps, both of which produce a lockfile that installs fine locally and fails CI with
+  `npm error EUSAGE … Missing: <pkg> from lock file`:
+
+  **Do not `rm package-lock.json` first.** Rebuilding from nothing drops the
+  `optionalDependencies` for every platform except the one you are on — the `lightningcss-*`,
+  `@rolldown/binding-*` and `@typescript/typescript-*` binaries that come in transitively via
+  Vite and Vitest. Your `npm ci` passes because it only needs your own platform's; the next
+  person's, and CI's, does not.
+
+  **Match CI's npm major.** `server/package.json` pins `engines.node` to 24, which CI honours,
+  and npm 11 and npm 10 disagree about lockfile contents. Regenerating on npm 10 yields a file
+  npm 11 rejects. Check with `npm -v`, and if it is behind, prefix the commands with
+  `npx npm@11` rather than trusting the install to be equivalent.
 
 - **`src/i18n/en.json` / `src/i18n/ar.json`** — these are append-heavy, so two branches adding copy
   almost always collide. The changes are **additive**: keep **both** sides' new keys. Afterward
