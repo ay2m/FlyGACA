@@ -81,7 +81,8 @@
     "server:build": "npm --prefix server run build",
     "server:test": "npm --prefix server run test",
     "db:migrate": "node --env-file=.env server/scripts/migrate.mjs",
-    "postinstall": "node scripts/link-lint-typescript.mjs"
+    "postinstall": "node scripts/link-lint-typescript.mjs",
+    "deploy:firebase": "node scripts/deploy-firebase.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^8.5.0",
