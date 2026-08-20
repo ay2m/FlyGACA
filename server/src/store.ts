@@ -9,7 +9,7 @@
  *   - Reads are scoped by `user_id` at the query level, never filtered in JS.
  */
 import type { PoolClient } from "pg";
-import { query, queryOne, tx } from "./db.js";
+import { query, queryOne, tx, execFor } from "./db.js";
 import type { Entitlement, Plan } from "./billing-core.js";
 
 export interface UserRow {
@@ -358,7 +358,11 @@ interface EntitlementRow {
   source: Entitlement["source"] | null;
 }
 
-export async function getEntitlement(userId: string): Promise<Entitlement | null> {
+export async function getEntitlement(
+  userId: string,
+  client?: PoolClient,
+): Promise<Entitlement | null> {
+  const { queryOne } = execFor(client);
   const row = await queryOne<EntitlementRow>(
     "SELECT plan, expires_at, source FROM entitlements WHERE user_id = $1",
     [userId],
@@ -372,7 +376,12 @@ export async function getEntitlement(userId: string): Promise<Entitlement | null
 }
 
 /** SERVER-ONLY write. Every caller must be a grant/billing path, never a client body. */
-export async function setEntitlement(userId: string, ent: Entitlement): Promise<void> {
+export async function setEntitlement(
+  userId: string,
+  ent: Entitlement,
+  client?: PoolClient,
+): Promise<void> {
+  const { query } = execFor(client);
   await query(
     `INSERT INTO entitlements (user_id, plan, expires_at, source, updated_at)
      VALUES ($1, $2, $3, $4, now())
@@ -395,7 +404,12 @@ export async function getChatCredits(userId: string): Promise<number> {
   return row?.balance ?? 0;
 }
 
-export async function addChatCredits(userId: string, delta: number): Promise<number> {
+export async function addChatCredits(
+  userId: string,
+  delta: number,
+  client?: PoolClient,
+): Promise<number> {
+  const { queryOne } = execFor(client);
   const row = await queryOne<{ balance: number }>(
     `INSERT INTO chat_credits (user_id, balance, updated_at)
      VALUES ($1, GREATEST(0, $2), now())
@@ -421,8 +435,13 @@ export async function spendOneChatCredit(userId: string): Promise<boolean> {
   return row !== null;
 }
 
-export async function grantPacks(userId: string, packIds: readonly string[]): Promise<void> {
+export async function grantPacks(
+  userId: string,
+  packIds: readonly string[],
+  client?: PoolClient,
+): Promise<void> {
   if (packIds.length === 0) return;
+  const { query } = execFor(client);
   await query(
     `INSERT INTO pack_entitlements (user_id, pack_id)
      SELECT $1, unnest($2::text[])

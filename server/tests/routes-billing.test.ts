@@ -52,9 +52,22 @@ const ensureReferralCode = vi.fn();
 const findReferralOwner = vi.fn();
 const recordReferralConversion = vi.fn();
 
+// `tx` emulates the real thing where it matters for these tests: the callback runs,
+// and a throw propagates (the real implementation ROLLBACKs first). `execFor`
+// returns the same mocked helpers, so every statement issued inside a transaction
+// is still visible on `query`/`queryOne`.
+const txSpy = vi.fn();
 vi.mock("../src/db.js", () => ({
   query: (...a: unknown[]) => query(...a),
   queryOne: (...a: unknown[]) => queryOne(...a),
+  execFor: () => ({
+    query: (...a: unknown[]) => query(...a),
+    queryOne: (...a: unknown[]) => queryOne(...a),
+  }),
+  tx: async (fn: (c: unknown) => Promise<unknown>) => {
+    txSpy();
+    return fn({});
+  },
 }));
 vi.mock("../src/store.js", () => ({
   getEntitlement: (...a: unknown[]) => getEntitlement(...(a as [string])),
@@ -306,7 +319,7 @@ describe("POST /confirm — fulfilment re-derives from the stored intent", () =>
 
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ redirectTo: "/account?checkout=success" });
-    expect(setEntitlement).toHaveBeenCalledWith("u1", expect.objectContaining({ plan: "pro" }));
+    expect(setEntitlement).toHaveBeenCalledWith("u1", expect.objectContaining({ plan: "pro" }), expect.anything());
     expect(query).toHaveBeenCalledWith(
       expect.stringContaining("INSERT INTO subscriptions"),
       expect.arrayContaining(["u1", "annual", "card_tok"]),
@@ -416,7 +429,7 @@ describe("fulfilment delivers what was bought", () => {
 
   it("credits a credit-pack purchase instead of touching the entitlement", async () => {
     await fulfilIntent({ kind: "credits", cadence: null, amount: 1900 }, { amount: 1900 });
-    expect(addChatCredits).toHaveBeenCalledWith("u1", expect.any(Number));
+    expect(addChatCredits).toHaveBeenCalledWith("u1", expect.any(Number), expect.anything());
     expect(setEntitlement).not.toHaveBeenCalled();
   });
 
@@ -426,13 +439,13 @@ describe("fulfilment delivers what was bought", () => {
       { kind: "pack", cadence: null, pack_id: packId, amount: 5900 },
       { amount: 5900 },
     );
-    expect(grantPacks).toHaveBeenCalledWith("u1", [packId]);
+    expect(grantPacks).toHaveBeenCalledWith("u1", [packId], expect.anything());
     expect(res.body.redirectTo).toBe(`/study/packs/${packId}?checkout=success`);
   });
 
   it("grants every sellable pack for the bundle", async () => {
     const res = await fulfilIntent({ kind: "bundle", cadence: null, amount: 19900 }, { amount: 19900 });
-    expect(grantPacks).toHaveBeenCalledWith("u1", SELLABLE_PACK_IDS);
+    expect(grantPacks).toHaveBeenCalledWith("u1", SELLABLE_PACK_IDS, expect.anything());
     expect(res.body.redirectTo).toBe("/study/packs?checkout=success");
   });
 
@@ -518,14 +531,20 @@ describe("POST /webhook/moyasar — the signature is the only gate", () => {
     const res = await post(body, sign(JSON.stringify(body)));
 
     expect(res.status).toBe(200);
-    expect(setEntitlement).toHaveBeenCalledWith("u1", expect.objectContaining({ plan: "pro" }));
+    expect(setEntitlement).toHaveBeenCalledWith("u1", expect.objectContaining({ plan: "pro" }), expect.anything());
   });
 
-  it("releases the claim when delivery fails, so the retry can re-deliver", async () => {
-    // The claim commits on its own connection, so a throw from deliver() used to
-    // leave the intent `paid` with nothing granted — permanently. The next retry
-    // would fail the status guard and answer 200, so the customer stayed charged
+  it("rolls the claim back with the delivery, in one transaction", async () => {
+    // The claim used to commit on its own connection, so a throw from deliver()
+    // left the intent `paid` with nothing granted — permanently, because the next
+    // retry failed the status guard and answered 200. The customer stayed charged
     // with no product and nothing surfaced anywhere.
+    //
+    // Claiming and delivering in one transaction removes the window rather than
+    // compensating after it: there is no separate release statement to issue,
+    // because ROLLBACK is the release. That also covers the case a compensating
+    // write cannot — the process being killed mid-delivery, which on Cloud Run is
+    // routine rather than exotic.
     const spy = vi.spyOn(console, "error").mockImplementation(() => {});
     const body = { id: "evt_1", data: { id: "pay_1" } };
     stubMoyasar(payment());
@@ -535,14 +554,12 @@ describe("POST /webhook/moyasar — the signature is the only gate", () => {
     const res = await post(body, sign(JSON.stringify(body)));
 
     expect(res.status).toBe(500);
+    expect(txSpy, "claim + deliver must run inside a transaction").toHaveBeenCalled();
+    // No compensating write: the rollback IS the release.
     const release = query.mock.calls.find(([sql]) =>
       /UPDATE checkout_intents/.test(String(sql)) && /'pending'/.test(String(sql)),
     );
-    expect(release, "the intent must be released back to pending").toBeDefined();
-    // Guarded so a release cannot clobber an intent some other caller has since
-    // legitimately fulfilled.
-    expect(String(release?.[0])).toMatch(/status = 'paid'/);
-    expect(release?.[1]).toEqual(["intent-1"]);
+    expect(release).toBeUndefined();
     spy.mockRestore();
   });
 
@@ -638,7 +655,7 @@ describe("POST /webhook/moyasar — the signature is the only gate", () => {
     const res = await post(body, sign(JSON.stringify(body)));
 
     expect(res.status).toBe(200);
-    expect(setEntitlement).toHaveBeenCalledWith("u1", expect.objectContaining({ plan: "pro" }));
+    expect(setEntitlement).toHaveBeenCalledWith("u1", expect.objectContaining({ plan: "pro" }), expect.anything());
   });
 
   it("acknowledges but does not fulfil an unpaid payment", async () => {

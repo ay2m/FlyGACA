@@ -70,6 +70,29 @@ export async function tx<T>(fn: (client: pg.PoolClient) => Promise<T>): Promise<
   }
 }
 
+/**
+ * The two query helpers, bound either to the pool or to one transaction's client.
+ *
+ * This is what lets a store function participate in a caller's transaction without
+ * every call site growing a client argument. Pass no client and you get the pool,
+ * exactly as before; pass one and the statements join that transaction and roll
+ * back with it.
+ */
+export interface Exec {
+  query: typeof query;
+  queryOne: typeof queryOne;
+}
+
+/** Bind {@link Exec} to a transaction client, or to the pool when none is given. */
+export function execFor(client?: pg.PoolClient): Exec {
+  if (!client) return { query, queryOne };
+  const q = (async (text: string, params: readonly unknown[] = []) =>
+    (await client.query(text, params as unknown[])).rows) as typeof query;
+  const one = (async (text: string, params: readonly unknown[] = []) =>
+    (await q(text, params))[0] ?? null) as typeof queryOne;
+  return { query: q, queryOne: one };
+}
+
 /** Liveness probe for `/healthz` — cheap and connection-validating. */
 export async function ping(): Promise<boolean> {
   try {

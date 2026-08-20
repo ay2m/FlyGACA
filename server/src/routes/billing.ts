@@ -44,7 +44,8 @@ import { referralCode, normalizeCode, REFERRAL_REWARD_CREDITS } from "../referra
 import { buildCohortOrg } from "../org-core.js";
 import { config } from "../config.js";
 import { priceEnv } from "../prices.js";
-import { query, queryOne } from "../db.js";
+import type { PoolClient } from "pg";
+import { query, queryOne, tx, execFor } from "../db.js";
 import {
   getEntitlement,
   setEntitlement,
@@ -219,7 +220,9 @@ async function armRenewal(
   cadence: Cadence,
   cardToken: string | null,
   expiresAt: Date,
+  client?: PoolClient,
 ): Promise<void> {
+  const { query } = execFor(client);
   await query(
     `INSERT INTO subscriptions (user_id, plan, cadence, auto_renew, card_token,
                                 next_renewal_at, last_renewal_at, failure_count, updated_at)
@@ -242,33 +245,40 @@ async function deliver(
   intent: CheckoutIntent,
   payment: MoyasarPayment,
   now: Date,
+  client?: PoolClient,
 ): Promise<void> {
-  const current = await getEntitlement(intent.uid);
+  const { queryOne } = execFor(client);
+  const current = await getEntitlement(intent.uid, client);
 
   switch (intent.kind) {
   case "pro": {
     const cadence = (intent.cadence ?? "annual") as Cadence;
     const ent = entitlementFromCheckout(cadence, now);
-    await setEntitlement(intent.uid, mergeUpward(current, ent));
+    await setEntitlement(intent.uid, mergeUpward(current, ent), client);
     await armRenewal(
       intent.uid,
       cadence,
       payment.source?.token ?? null,
       new Date(ent.expiresAt ?? now.toISOString()),
+      client,
     );
     return;
   }
   case "pass":
-    await setEntitlement(intent.uid, mergeUpward(current, entitlementFromPass(now, current)));
+    await setEntitlement(
+      intent.uid,
+      mergeUpward(current, entitlementFromPass(now, current)),
+      client,
+    );
     return;
   case "credits":
-    await addChatCredits(intent.uid, CREDIT_PACK_SIZE);
+    await addChatCredits(intent.uid, CREDIT_PACK_SIZE, client);
     return;
   case "pack":
-    if (intent.packId) await grantPacks(intent.uid, [intent.packId]);
+    if (intent.packId) await grantPacks(intent.uid, [intent.packId], client);
     return;
   case "bundle":
-    await grantPacks(intent.uid, SELLABLE_PACK_IDS);
+    await grantPacks(intent.uid, SELLABLE_PACK_IDS, client);
     return;
   case "cohort": {
     // Use the pure builder rather than hand-rolling the row: it is what carries the
@@ -329,42 +339,36 @@ async function recordPayment(
  * another caller already fulfilled this intent.
  */
 async function fulfil(row: IntentRow, payment: MoyasarPayment): Promise<boolean> {
-  // The status guard IS the idempotency lock: the confirm leg and the webhook can
-  // both arrive, and only the one that flips pending → paid proceeds.
-  const claimed = await queryOne<{ id: string }>(
-    `UPDATE checkout_intents SET status = 'paid', payment_id = $2, updated_at = now()
-      WHERE id = $1 AND status = 'pending'
-      RETURNING id`,
-    [row.id, payment.id],
-  );
-  if (!claimed) return false;
-
   const intent = toIntent(row);
 
-  // The claim above commits on its own connection, so a throw from here on used to
-  // leave the intent `paid` with nothing granted — and unrecoverable, because the
-  // next webhook retry would re-run this, fail the status guard, and answer 200.
-  // The customer's card is charged, they have no product, and nothing surfaces.
+  // The claim and the delivery are ONE transaction.
   //
-  // So release the claim and let Moyasar's retry genuinely re-attempt. Deliberately
-  // narrow: ONLY `deliver()` is covered. Each kind is a single grant, so a throw
-  // from it means the grant did not happen; whereas the bookkeeping below runs
-  // AFTER the customer already has their product, and releasing for that would
-  // re-deliver on retry — double credits, a second org.
-  try {
-    await deliver(intent, payment, new Date());
-  } catch (err) {
-    await query(
-      `UPDATE checkout_intents SET status = 'pending', payment_id = NULL, updated_at = now()
-        WHERE id = $1 AND status = 'paid'`,
-      [row.id],
-    ).catch((releaseErr) => {
-      // Now it really is stuck: charged, undelivered, still claimed. Say so loudly
-      // — this is the one case that needs a human.
-      console.error("fulfil: could not release claim", row.id, releaseErr);
-    });
-    throw err;
-  }
+  // The status guard is still the idempotency lock — the confirm leg and the
+  // webhook can both arrive, and only the one that flips pending → paid proceeds.
+  // What changed is that the flip no longer commits on its own connection. It used
+  // to, which meant a throw from deliver() left the intent `paid` with nothing
+  // granted, and left it that way permanently: the next webhook retry re-ran this,
+  // failed the status guard, and answered 200. The customer's card was charged,
+  // they had no product, and nothing surfaced anywhere.
+  //
+  // Rolling back together removes the window entirely rather than compensating for
+  // it after the fact — a process killed mid-delivery (Cloud Run evicting an
+  // instance is routine) leaves the intent `pending`, so Moyasar's retry genuinely
+  // re-delivers. Nothing here makes a network call; the Moyasar round-trip already
+  // happened, so the transaction is short.
+  const claimed = await tx(async (client) => {
+    const { queryOne } = execFor(client);
+    const got = await queryOne<{ id: string }>(
+      `UPDATE checkout_intents SET status = 'paid', payment_id = $2, updated_at = now()
+        WHERE id = $1 AND status = 'pending'
+        RETURNING id`,
+      [row.id, payment.id],
+    );
+    if (!got) return false;
+    await deliver(intent, payment, new Date(), client);
+    return true;
+  });
+  if (!claimed) return false;
 
   // Past this point the product is delivered. These are counters and records: a
   // failure costs reconciliation accuracy, not the customer's purchase, so it must
