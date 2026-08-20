@@ -42,7 +42,7 @@ vi.mock("genkit", () => ({
   }),
 }));
 
-// The model client stands in for the in-Kingdom ALLaM endpoint. It yields the
+// The model client stands in for the configured model endpoint. It yields the
 // deltas the flow must both forward and accumulate, and records the model id it
 // was asked for so tier selection stays pinned.
 vi.mock("../src/model.js", () => ({
@@ -161,14 +161,14 @@ describe("captainAdelFlow — model selection", () => {
   it("defaults to the fast tier", async () => {
     h.hits = [hit(5.0)];
     const out = await captainAdelFlow({ message: "q" });
-    expect(out.meta.provider).toBe("allam-7b-instruct");
-    expect(h.lastModel).toBe("allam-7b-instruct");
+    expect(out.meta.provider).toBe("gemini-2.5-flash");
+    expect(h.lastModel).toBe("gemini-2.5-flash");
   });
 
   it("selects the pro model when the request asks for the pro tier", async () => {
     h.hits = [hit(5.0)];
     const out = await captainAdelFlow({ message: "q", provider: "pro" });
-    expect(out.meta.provider).toBe("allam-34b-instruct");
-    expect(h.lastModel).toBe("allam-34b-instruct");
+    expect(out.meta.provider).toBe("gemini-2.5-pro");
+    expect(h.lastModel).toBe("gemini-2.5-pro");
   });
 });

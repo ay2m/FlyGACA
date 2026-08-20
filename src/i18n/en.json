@@ -682,7 +682,7 @@
     "send": "Send",
     "thinking": "Captain Adel is checking the GACAR…",
     "notReady": "I couldn't reach my engine just now, Captain. Give it a moment and try again. Verify any regulation against the official GACA source at gaca.gov.sa.",
-    "unavailable": "Captain Adel is being connected to a new model hosted inside the Kingdom, so I can't answer just yet. The regulatory library, the flight tools and the study decks are all working in the meantime — and always verify against the official GACA source at gaca.gov.sa.",
+    "unavailable": "Captain Adel is being connected to its answering engine, so I can't answer just yet. The regulatory library, the flight tools and the study decks are all working in the meantime — and always verify against the official GACA source at gaca.gov.sa.",
     "signInRequired": "Sign in to keep asking Captain Adel.",
     "disclaimer": "Captain Adel is an educational AI and can be wrong. Always verify against the official GACA source, not for operational use.",
     "clear": "Clear chat",
@@ -4242,11 +4242,11 @@
         },
         {
           "h": "Where your data is stored",
-          "p": "Your account data is personal data and is stored in-Kingdom on Google Cloud in Dammam (me-central2), in line with the PDPL. Chat questions are processed in a nearby Google Cloud region (me-central1)."
+          "p": "Your account data is personal data and is stored in-Kingdom on Google Cloud in Dammam (me-central2), in line with the PDPL. Your questions to Captain Adel are sent to Google's Gemini API to generate an answer and may be processed outside the Kingdom; they are not linked to your account, and carry only your question and the regulatory passages used to answer it."
         },
         {
           "h": "Sharing your data",
-          "p": "We do not sell your data. We use processors (Google Cloud, Cloudflare) to operate the service, and disclose data only if required by law."
+          "p": "We do not sell your data. We use processors to operate the service — Google Cloud (hosting and database), Google's Gemini API (generating Captain Adel's answers, without your account identity), and Cloudflare — and disclose data only if required by law."
         },
         {
           "h": "Your rights under the PDPL",

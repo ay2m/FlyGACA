@@ -1,7 +1,9 @@
 /**
- * The Captain Adel RAG flow (DESIGN §3, §6.2). Powered by ALLaM — SDAIA's Arabic
- * foundation model — over an OpenAI-compatible endpoint (`model.ts`), so the
- * generation step stays in-Kingdom alongside Cloud Run and Cloud SQL. Genkit is
+ * The Captain Adel RAG flow (DESIGN §3, §6.2). Generation runs over an
+ * OpenAI-compatible endpoint (`model.ts`) chosen by `MODEL_BASE_URL` — Google
+ * Gemini by default. Personal data stays in-Kingdom (Cloud Run + Cloud SQL in
+ * me-central2); this hop carries no account identity, only the question and the
+ * retrieved passages, so it need not (see docs/RUNBOOK-golive.md §5). Genkit is
  * still the flow/streaming harness; it no longer supplies the model.
  * It is PROTOCOL-AGNOSTIC: it streams token deltas via `sendChunk` and returns
  * a typed final object. The gateway maps that to the legacy SSE frames or

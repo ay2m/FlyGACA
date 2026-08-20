@@ -28,7 +28,7 @@ const EXAMPLE_RESPONSE = `{
   "sources": [{ "part": "91", "section": "91.155", "title": "…" }],
   "kind": "grounded",
   "refusalClass": null,
-  "meta": { "provider": "allam-34b-instruct" }
+  "meta": { "provider": "gemini-2.5-pro" }
 }`;
 
 export function Developers() {

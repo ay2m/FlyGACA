@@ -68,8 +68,9 @@ export const config = {
 
   /**
    * The Captain Adel model endpoint. OpenAI chat-completions shape, so it can be
-   * pointed at any in-Kingdom provider — HUMAIN's ALLaM service (Groq inference
-   * in Dammam) or a self-hosted ALLaM behind vLLM — without a code change.
+   * pointed at any compatible provider without a code change — Google Gemini by
+   * default (its OpenAI-compatible endpoint), or HUMAIN's ALLaM / a self-hosted
+   * ALLaM behind vLLM for a fully in-Kingdom generation hop.
    *
    * Deliberately has no default base URL. A wrong-but-plausible default would
    * send regulatory questions to whatever answered, and the whole reason this
@@ -79,9 +80,15 @@ export const config = {
   model: {
     baseUrl: str("MODEL_BASE_URL"),
     apiKey: str("MODEL_API_KEY"),
+    // Defaults track the configured provider (Google Gemini via its
+    // OpenAI-compatible endpoint). They are only a fallback — production sets
+    // MODEL_ID_* explicitly — but keeping them aligned with MODEL_BASE_URL means
+    // a deploy that sets the endpoint and key, but forgets the ids, still works
+    // instead of 404ing on a stale model name. Verify against
+    // ai.google.dev/gemini-api/docs/models; Google rotates version strings.
     tiers: {
-      fast: str("MODEL_ID_FAST", "allam-7b-instruct"),
-      pro: str("MODEL_ID_PRO", "allam-34b-instruct"),
+      fast: str("MODEL_ID_FAST", "gemini-2.5-flash"),
+      pro: str("MODEL_ID_PRO", "gemini-2.5-pro"),
     },
   },
 
