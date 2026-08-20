@@ -30,12 +30,72 @@ env:
   REGION: me-central2
 
 jobs:
+  # The whole CI gate — frontend (typecheck · lint · format · coverage · build ·
+  # bundle · perf), the server package (lint · coverage · build), and Playwright
+  # e2e/a11y. Without this, `push: main` started CI and Deploy in PARALLEL and
+  # nothing stopped a red run from reaching production: the deploy path's only
+  # verification was the `tsc -b` inside `npm run build`, so no test in either
+  # package ran before a revision went live.
+  verify:
+    uses: ./.github/workflows/ci.yml
+
   deploy:
     name: build + deploy
+    needs: verify
     runs-on: ubuntu-latest
     environment: production
+    # The prerender step drives headless Chromium over ~700 URLs and is the one
+    # step that can hang. Without a cap it inherits GitHub's 360-minute default
+    # while holding a `cancel-in-progress: false` lock, which would block every
+    # subsequent production deploy for six hours.
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
+        with:
+          # Needed by the migration guard below, which diffs against the previous
+          # deployed commit.
+          fetch-depth: 0
+
+      # Nothing in this pipeline applies database migrations — not this workflow,
+      # not scripts/deploy-api.mjs, not the container's CMD. `npm run db:migrate`
+      # is an operator command run by hand against Cloud SQL. That is a defensible
+      # choice, but combined with deploy-on-push it has a silent failure mode: add
+      # a migration, merge, and CI ships code that queries a column production does
+      # not have. The revision passes its health check (which only pings the DB) and
+      # then 500s the affected routes until a human notices.
+      #
+      # So make it loud. If this push touched server/migrations/, stop and require
+      # an explicit acknowledgement that the SQL has been applied — a
+      # `Migrations-Applied:` trailer on the head commit, which leaves the record in
+      # git history rather than in a toggled repo variable.
+      - name: Guard — unapplied database migrations
+        if: github.event_name == 'push'
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          if [ -z "${BEFORE:-}" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            echo "No previous commit to diff against; skipping."
+            exit 0
+          fi
+          changed="$(git diff --name-only "$BEFORE" "${{ github.sha }}" -- server/migrations/ || true)"
+          if [ -z "$changed" ]; then
+            echo "No migration files changed in this push."
+            exit 0
+          fi
+          echo "Migration files changed in this push:"
+          echo "$changed" | sed 's/^/  /'
+          if git log -1 --format=%B "${{ github.sha }}" | grep -qiE '^Migrations-Applied:[[:space:]]*(yes|true)'; then
+            echo "Head commit carries a Migrations-Applied trailer — proceeding."
+            exit 0
+          fi
+          echo "::error::This push changes server/migrations/ but nothing here applies them."
+          echo "Apply the schema first, then re-run this workflow:"
+          echo '  cloud-sql-proxy "$PROJECT:$REGION:$INSTANCE" &'
+          echo "  DATABASE_URL=postgresql://... npm run db:migrate"
+          echo "See docs/RUNBOOK-deploy.md. Add a 'Migrations-Applied: yes' trailer"
+          echo "to the head commit once the SQL is live to let the deploy through."
+          exit 1
 
       - uses: actions/setup-node@v5
         with:
@@ -101,6 +161,22 @@ jobs:
           TAG: ${{ github.sha }}
         run: npm run deploy:api
 
+      # BEFORE the upload, not after. `scripts/indexnow.mjs` writes the ownership
+      # key file to `dist/<key>.txt`, and IndexNow only accepts a submission when
+      # that file is reachable on the site. Running it after `deploy:web` wrote the
+      # key onto the runner once the rsync had already finished, so it never
+      # shipped, every submission failed verification — and the step still logged
+      # HTTP 200 and exited 0, so it looked like it was working. Worse, the next
+      # deploy's `--delete-unmatched-destination-objects` would have pruned it
+      # anyway, since it is not part of a fresh build.
+      #
+      # Dark by default: with no INDEXNOW_KEY it logs and exits 0, and it is
+      # fail-open besides, so a search ping can never fail a deploy.
+      - name: Ping IndexNow
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: npm run indexnow
+
       # Uploads dist/ and the corpus, then stamps Cache-Control per path class from
       # config/headers.json — without which index.html and sw.js get cached and
       # users stay on the previous build.
@@ -111,9 +187,3 @@ jobs:
           URL_MAP: ${{ vars.URL_MAP }}
         run: npm run deploy:web
 
-      # Dark by default: with no INDEXNOW_KEY it logs and exits 0, and it is
-      # fail-open besides, so a search ping can never fail a deploy.
-      - name: Ping IndexNow
-        env:
-          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
-        run: npm run indexnow
