@@ -25,9 +25,20 @@ import type { ChatTurn, GroundingKind } from "./contract.js";
 // configurable in-Kingdom endpoint.
 const ai = genkit({});
 
-/** Read a numeric tuning knob from the environment, falling back to its default. */
+/**
+ * Read a numeric tuning knob from the environment, falling back to its default.
+ *
+ * An UNSET var and an EMPTY var both mean "use the default". That distinction is
+ * load-bearing: `Number("")` is `0`, not `NaN`, and `gcloud run deploy
+ * --set-env-vars=REFUSE_SCORE=` sets exactly an empty string. Reading that as 0
+ * would drive MIN_SCORE to 0 and silently disable the grounding refusal gate this
+ * file exists to enforce — the model would answer instead of declining when
+ * retrieval found nothing relevant.
+ */
 function tune(name: string, fallback: number): number {
-  const n = Number(process.env[name]);
+  const raw = process.env[name];
+  if (raw === undefined || raw.trim() === "") return fallback;
+  const n = Number(raw);
   return Number.isFinite(n) ? n : fallback;
 }
 

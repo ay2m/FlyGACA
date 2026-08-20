@@ -16,7 +16,7 @@
  */
 import express from "express";
 import helmet from "helmet";
-import { config, assertRequiredConfig } from "./config.js";
+import { config, assertRequiredConfig, missingProductionConfig } from "./config.js";
 import { isAllowedOrigin } from "./gateway-core.js";
 import { withSession, errorMiddleware, handler } from "./http.js";
 import { ping } from "./db.js";
@@ -39,11 +39,23 @@ declare module "express-serve-static-core" {
 export const app = express();
 
 app.use(helmet());
-// req.ip = the client address one hop back. Trusting only the LAST hop (the Cloud
-// Run / Google edge proxy) means a client-supplied X-Forwarded-For is ignored —
-// leftmost-XFF would let a forger mint unlimited fresh per-IP buckets for the
-// anonymous chat quota and the rate limiters.
-app.set("trust proxy", 1);
+// How many proxy hops sit in front of us, counted from the socket inwards. This
+// decides what `req.ip` resolves to, and every rate limiter and the anonymous
+// chat quota key off it.
+//
+// Production is client -> GCP HTTPS load balancer -> Cloud Run, which arrives as
+// `X-Forwarded-For: <client>, <lb>`. Express counts the socket peer as hop 0, so
+// the LB is hop 1 and the real client is hop 2 -- `trust proxy` must be 2 here.
+// With 1 (the value this used to carry, correct only for a direct *.run.app hit)
+// req.ip resolved to the LOAD BALANCER on every request, collapsing every limiter
+// into a single global bucket: 20 failed logins per 15 minutes for the entire
+// internet, and one shared 3-question/day anonymous chat allowance worldwide.
+//
+// 2 also degrades correctly on a direct *.run.app request (XFF is just `<client>`,
+// and Express returns the leftmost entry when the chain is shorter than the hop
+// count), and it still ignores a client-forged XFF prefix. Never use `true` --
+// that trusts whatever the client sends.
+app.set("trust proxy", config.trustProxyHops);
 
 // The webhook signature is computed over the exact bytes Moyasar sent, so stash
 // them before the parser discards the stream.
@@ -135,6 +147,14 @@ if (config.nodeEnv !== "test") {
       "MODEL_BASE_URL is not set — Captain Adel will decline every question. " +
         "Everything else serves normally. See docs/RUNBOOK-golive.md.",
     );
+  }
+  // Same reasoning, applied to the rest of the fail-closed-but-quiet config. Each
+  // of these breaks a whole feature at the point of use with nothing surfacing to
+  // an operator — undelivered mail, rejected webhooks, a renewal sweep that 401s
+  // itself into silently lapsed subscriptions. One loud line at boot turns "a user
+  // reported it three weeks later" into "it is in the first page of the logs".
+  for (const gap of missingProductionConfig()) {
+    console.warn(`[config] ${gap}`);
   }
   app.listen(config.port, () => {
     console.info(`Fly GACA API listening on :${config.port} (${config.nodeEnv})`);

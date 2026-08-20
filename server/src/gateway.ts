@@ -24,7 +24,7 @@ import { isUnconfigured } from "./model.js";
 import { MODEL_UNCONFIGURED, QUOTA_EXCEEDED, RATE_LIMITED, STREAM_FAILED } from "./contract.js";
 import { frame, doneFrame, pingFrame, SSE_HEADERS } from "./sse.js";
 import { parseCookies, parseRequest, MESSAGE_MAX_CHARS } from "./gateway-core.js";
-import { config } from "./config.js";
+import { config, envInt } from "./config.js";
 import { verifySession } from "./session.js";
 import {
   findUserById,
@@ -39,7 +39,10 @@ import { query, queryOne } from "./db.js";
 // client); CHAT_FREE_DAILY_LIMIT / ANON_DAILY_LIMIT tune them per revision without
 // a code change, exactly as the Firebase params did.
 const FREE_DAILY_LIMIT_ENFORCED = config.chat.freeDailyLimit;
-const ANON_DAILY_LIMIT_ENFORCED = Number(process.env.ANON_DAILY_LIMIT ?? ANON_DAILY_LIMIT);
+// `??` only catches undefined, not the empty string an unset `--set-env-vars=
+// ANON_DAILY_LIMIT=` produces — and `Number("")` is 0, which would switch
+// anonymous chat off entirely. envInt() treats unset and empty alike.
+const ANON_DAILY_LIMIT_ENFORCED = envInt("ANON_DAILY_LIMIT", ANON_DAILY_LIMIT);
 
 /** Thrown by `authenticate` when an enforced check fails → mapped to 403. */
 export class AuthError extends Error {}

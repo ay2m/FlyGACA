@@ -7,33 +7,55 @@
 # Keep in step with .dockerignore: this decides what leaves the machine, that
 # decides what the Docker daemon sees. Anything dropped here can never be COPYed,
 # so the rag-chunks re-include below is load-bearing.
+#
+# IMPORTANT — this file does NOT share .dockerignore's matching rules, and the
+# difference has bitten this build before:
+#
+#   * .dockerignore anchors every pattern at the context root, so a bare
+#     `src` there means only the SPA's `/src`.
+#   * .gcloudignore uses .gitignore syntax (`gcloud topic gcloudignore`), where a
+#     pattern with NO slash matches at ANY depth — so a bare `src` here would
+#     also swallow `server/src`, and `server/Dockerfile`'s `COPY server/src`
+#     would fail with "file not found in build context".
+#
+# Hence the leading `/` on every root-only entry below. Do not remove them, and
+# do not "simplify" this file to match .dockerignore's shorter forms.
 
 .git
 .gitignore
 node_modules
 */node_modules
-server/lib
-server/tests
-server/coverage
-dist
-dev-dist
-coverage
-test-results
-playwright-report
-.github
-.claude
-android
-ios
-apple
-archive
-e2e
-src
-tests
-screenshots
-supabase
-worker
 *.log
 
+/server/lib
+/server/tests
+/server/coverage
+
+/dist
+/dev-dist
+/coverage
+/test-results
+/playwright-report
+/.github
+/.claude
+/android
+/ios
+/apple
+/archive
+/e2e
+/src
+/tests
+/screenshots
+/supabase
+/worker
+
 # public/ is 64 MB and the image needs exactly one file from it.
-public
-!public/data/rag-chunks.json
+#
+# gitignore semantics cannot re-include a file whose parent directory is
+# excluded — gcloud prunes an excluded directory from its walk, so a bare
+# `public` + `!public/data/rag-chunks.json` silently drops the corpus and the
+# image build fails on COPY. Each level has to be re-included on the way down.
+/public/*
+!/public/data/
+/public/data/*
+!/public/data/rag-chunks.json

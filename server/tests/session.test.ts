@@ -220,14 +220,27 @@ describe("sessionCookieOptions", () => {
     expect(opts.domain).toBeUndefined();
   });
 
-  it("goes Secure + SameSite=None in production when the SPA is cross-site", async () => {
-    // No SESSION_COOKIE_DOMAIN => the API and SPA are on different registrable
-    // domains, so the cookie has to be sent cross-site.
+  it("stays SameSite=Lax in production even with no cookie domain set", async () => {
+    // Regression guard. This used to yield SameSite=None, because "no
+    // SESSION_COOKIE_DOMAIN" was read as "the SPA must be cross-site". On the
+    // single-origin load-balancer deployment that silently handed every
+    // cross-site request the session cookie, and SameSite is the only CSRF
+    // control this codebase has.
     const { sessionCookieOptions } = await loadSession({ NODE_ENV: "production" });
     const opts = sessionCookieOptions();
     expect(opts.secure).toBe(true);
-    expect(opts.sameSite).toBe("none");
+    expect(opts.sameSite).toBe("lax");
     expect(opts.domain).toBeUndefined();
+  });
+
+  it("goes SameSite=None only when explicitly asked to", async () => {
+    const { sessionCookieOptions } = await loadSession({
+      NODE_ENV: "production",
+      SESSION_COOKIE_SAMESITE: "none",
+    });
+    const opts = sessionCookieOptions();
+    expect(opts.secure).toBe(true);
+    expect(opts.sameSite).toBe("none");
   });
 
   it("keeps the stricter SameSite=Lax in production on a shared parent domain", async () => {

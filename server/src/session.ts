@@ -87,13 +87,16 @@ export function sessionCookieOptions(): {
   maxAge: number;
   domain?: string;
   } {
-  // A cross-site SPA (different registrable domain from the API) needs
-  // SameSite=None; a shared parent domain can keep the stricter Lax default.
-  const crossSite = !config.session.cookieDomain;
+  // SameSite comes from explicit config, never inferred from the cookie domain:
+  // "does this cookie need a Domain attribute" and "is the SPA cross-site from the
+  // API" are independent questions, and answering the second with the first
+  // defaulted production to SameSite=None. On the single-origin load-balancer
+  // deployment that is the whole CSRF surface — there are no CSRF tokens — so the
+  // default is Lax and going wider has to be a deliberate act.
   return {
     httpOnly: true,
     secure: config.isProduction,
-    sameSite: crossSite && config.isProduction ? "none" : "lax",
+    sameSite: config.session.sameSite,
     path: "/",
     maxAge: config.session.ttlDays * 24 * 60 * 60 * 1000,
     ...(config.session.cookieDomain ? { domain: config.session.cookieDomain } : {}),

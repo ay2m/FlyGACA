@@ -319,11 +319,22 @@ authRouter.get(
     // Match on the Google subject first (stable across email changes), then fall
     // back to the address so an existing password account links rather than
     // colliding on the UNIQUE email constraint.
-    let row =
-      (await findUserByGoogleSub(info.sub)) ??
-      (await findUserByEmail(email).then((existing) =>
-        existing ? linkGoogleAccount(existing.id, info.sub, info.email_verified === true) : null,
-      ));
+    let row = await findUserByGoogleSub(info.sub);
+    if (!row) {
+      const existing = await findUserByEmail(email);
+      if (existing) {
+        // Linking by address hands the caller an existing account, so Google must
+        // actually attest that they own it. `email` in a Google profile is NOT
+        // proof on its own — an account can carry an unverified address, including
+        // someone else's. Without this check, registering a Google account with a
+        // victim's Fly GACA address and signing in yields their logbook, records,
+        // purchases and billing surface.
+        if (info.email_verified !== true) {
+          return res.redirect(`${config.appOrigin}/account?signin=failed`);
+        }
+        row = await linkGoogleAccount(existing.id, info.sub, true);
+      }
+    }
 
     row ??= await createUser({
       email,
