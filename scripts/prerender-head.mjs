@@ -662,7 +662,7 @@ function arHero() {
       </div>`;
 }
 
-function render(path, d, lang = 'en') {
+function render(path, d, lang = 'en', { noindex = false } = {}) {
   const isAr = lang === 'ar';
   const fullTitle = d.title
     ? `${d.title} — ${SUFFIX}`
@@ -694,7 +694,7 @@ function render(path, d, lang = 'en') {
   // when the return tags don't resolve — including the ~170 pages where it is
   // correct. This must stay byte-identical to alternates() in build-sitemap.mjs,
   // which has always gated on the same set.
-  const hasAr = arSeo.has(path);
+  const hasAr = !noindex && arSeo.has(path);
   for (const [hreflang, href] of [
     ['en', canonicalUrl(path, 'en')],
     // Saudi Arabia is the primary market; bare `ar` stays for Arabic speakers
@@ -717,6 +717,14 @@ function render(path, d, lang = 'en') {
   // uncovered route inherits it unless it is removed — setTag only rewrites tags,
   // it never deletes them.
   if (!hasAr) html = html.replace(AR_ALTERNATE_RE, '');
+
+  if (noindex) {
+    html = setTag(
+      html,
+      /<meta\s+name="robots"[^>]*>/,
+      '<meta name="robots" content="noindex, follow" />',
+    );
+  }
 
   const image = ogImageFor(path);
   html = setTag(html, /<meta\s+property="og:type"[^>]*>/, `<meta property="og:type" content="${d.ogType ?? 'website'}" />`);
@@ -751,9 +759,9 @@ function render(path, d, lang = 'en') {
   return html;
 }
 
-// Arabic siblings live at dist/ar/<path>/index.html — the real per-language
-// documents Firebase can route to (it strips `?lang=`, so the query variant can
-// never be a distinct file). These are the crawler-facing Arabic bodies;
+// Arabic siblings live at dist/ar/<path>/index.html — real per-language documents
+// with their own object in the bucket, rather than a `?lang=` query variant that
+// could never be a distinct file. These are the crawler-facing Arabic bodies;
 // scripts/prerender.mjs later overwrites them with hydrated content where a
 // browser is available.
 /** Write a descriptor map to dist, under /ar for Arabic. Returns the count. */
@@ -777,8 +785,41 @@ function writeSnapshots(map, lang) {
   return n;
 }
 
+/**
+ * Session-gated routes get a real file whose only job is to say `noindex`.
+ *
+ * They used to be skipped entirely, which left the guarantee resting on one
+ * unwritten hosting detail. Cloud Storage has no object for `/account`, so what a
+ * crawler receives is whatever the load balancer's 404 policy returns — and that
+ * policy is the SPA fallback (docs/RUNBOOK-infra.md §5), which serves
+ * `/index.html` at **HTTP 200**. The homepage, at the account URL, carrying the
+ * homepage's canonical. `useNoindexMeta` does not help: it runs in React, and the
+ * AI crawlers this repo's prerender exists for do not execute JS.
+ *
+ * A stub costs one small file per route and makes the answer explicit. It is
+ * deliberately NOT paired with a robots.txt Disallow — a disallowed URL cannot be
+ * crawled, so the noindex on it would never be read.
+ */
+function writeNoindexStubs() {
+  let n = 0;
+  for (const path of PRIVATE) {
+    for (const lang of ['en', 'ar']) {
+      const rel = path.replace(/^\//, '');
+      const file = lang === 'ar'
+        ? join(root, 'dist/ar', rel, 'index.html')
+        : join(root, 'dist', rel, 'index.html');
+      mkdirSync(dirname(file), { recursive: true });
+      writeFileSync(file, render(path, {}, lang, { noindex: true }));
+      n++;
+    }
+  }
+  return n;
+}
+
 const enWritten = writeSnapshots(enSeo, 'en');
 const arWritten = writeSnapshots(arSeo, 'ar');
+const stubs = writeNoindexStubs();
 console.log(
-  `prerender-head: wrote ${enWritten} en + ${arWritten} ar route snapshots (origin ${SITE})`,
+  `prerender-head: wrote ${enWritten} en + ${arWritten} ar route snapshots ` +
+    `+ ${stubs} noindex stubs (origin ${SITE})`,
 );

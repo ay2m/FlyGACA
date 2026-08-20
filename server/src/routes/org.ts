@@ -30,9 +30,14 @@ function param(v: string | string[] | undefined): string {
 async function ownedOrg(
   orgId: string,
   uid: string,
-): Promise<{ id: string; name: string; seat_limit: number | null }> {
-  const org = await queryOne<{ id: string; name: string; seat_limit: number | null }>(
-    "SELECT id, name, seat_limit FROM orgs WHERE id = $1 AND owner_user_id = $2",
+): Promise<{ id: string; name: string; seat_limit: number | null; expires_at: Date | string | null }> {
+  const org = await queryOne<{
+    id: string;
+    name: string;
+    seat_limit: number | null;
+    expires_at: Date | string | null;
+  }>(
+    "SELECT id, name, seat_limit, expires_at FROM orgs WHERE id = $1 AND owner_user_id = $2",
     [orgId, uid],
   );
   if (!org) throw forbidden();
@@ -135,6 +140,18 @@ orgRouter.post(
     if (!parsed.ok) throw badRequest(parsed.code);
 
     const org = await ownedOrg(parsed.value.orgId, user.uid);
+
+    // The seat cap counts rows, and this route re-dates any seat it touches, so
+    // without this an owner could recycle the same 25 seats indefinitely — turning
+    // one 90-day purchase into permanent `school` accounts. NULL expiry means an
+    // operator-granted, open-ended org and is left alone.
+    // Absent (NULL, or simply not selected) means an operator-granted, open-ended
+    // org and is left alone. Parsed through Date so a driver returning a string
+    // rather than a Date cannot turn this into a 500 on a paid customer's request.
+    const closesAt = org.expires_at ? new Date(org.expires_at).getTime() : null;
+    if (closesAt !== null && Number.isFinite(closesAt) && closesAt <= Date.now()) {
+      throw new HttpError(403, "cohort-expired", "This cohort's intake window has closed.");
+    }
 
     if (org.seat_limit !== null) {
       const used = await queryOne<{ count: number }>(

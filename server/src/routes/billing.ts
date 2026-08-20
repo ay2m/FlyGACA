@@ -41,7 +41,7 @@ import {
 import { CREDIT_PACK_SIZE } from "../chat-quota-core.js";
 import { normalizePromoCode, priceAfterPromo, type PromoCode } from "../promo-core.js";
 import { referralCode, normalizeCode, REFERRAL_REWARD_CREDITS } from "../referral-core.js";
-import { COHORT_SEAT_LIMIT } from "../org-core.js";
+import { buildCohortOrg } from "../org-core.js";
 import { config } from "../config.js";
 import { priceEnv } from "../prices.js";
 import { query, queryOne } from "../db.js";
@@ -271,9 +271,13 @@ async function deliver(
     await grantPacks(intent.uid, SELLABLE_PACK_IDS);
     return;
   case "cohort": {
+    // Use the pure builder rather than hand-rolling the row: it is what carries the
+    // intake window, and ignoring it is how a 90-day product became perpetual.
+    const spec = buildCohortOrg(intent.uid, intent.orgName, now);
     const org = await queryOne<{ id: string }>(
-      "INSERT INTO orgs (name, owner_user_id, seat_limit) VALUES ($1, $2, $3) RETURNING id",
-      [intent.orgName ?? "Cohort", intent.uid, COHORT_SEAT_LIMIT],
+      `INSERT INTO orgs (name, owner_user_id, seat_limit, expires_at)
+       VALUES ($1, $2, $3, $4) RETURNING id`,
+      [spec.name, intent.uid, spec.seatLimit, spec.expiresAt],
     );
     console.info("funnel", { event: "cohort_provisioned", orgId: org?.id, uid: intent.uid });
     return;
@@ -454,6 +458,46 @@ billingRouter.post(
     if (!paymentId) return res.json({ ok: true });
 
     const payment = await moyasar<MoyasarPayment>(`/payments/${encodeURIComponent(paymentId)}`);
+
+    // A refund or a void used to fall into the `status !== "paid"` drop below and
+    // vanish: nothing recorded, nothing revoked, no signal anywhere. A buyer could
+    // take the All-Access Bundle, refund it, and keep every pack permanently.
+    //
+    // Automatic revocation is deliberately NOT done here, and the reason is the
+    // data model rather than caution for its own sake: `pack_entitlements` records
+    // no source, so a pack owned both directly and via a bundle is
+    // indistinguishable, and revoking would silently strip access somebody still
+    // paid for. Entitlements have the same problem once a grant has merged upward.
+    // So do the two things that are unambiguous — stop future charges, and make the
+    // refund impossible to miss — and leave the revocation decision to a human with
+    // everything they need to make it.
+    if (payment.status === "refunded" || payment.status === "voided") {
+      const refunded = await intentForPayment(payment);
+      if (refunded) {
+        await query(
+          "UPDATE checkout_intents SET status = 'failed', updated_at = now() WHERE id = $1",
+          [refunded.id],
+        );
+        // Never keep charging a card whose purchase was handed back.
+        await query(
+          "UPDATE subscriptions SET auto_renew = false, updated_at = now() WHERE user_id = $1",
+          [refunded.user_id],
+        );
+      }
+      console.error("funnel", {
+        event: "payment_refunded",
+        paymentId: payment.id,
+        status: payment.status,
+        intentId: refunded?.id ?? null,
+        uid: refunded?.user_id ?? null,
+        kind: refunded?.kind ?? null,
+        packId: refunded?.pack_id ?? null,
+        amount: payment.amount,
+        action: "revoke the granted entitlement/packs by hand — see docs/BILLING.md",
+      });
+      return res.json({ ok: true });
+    }
+
     if (payment.status !== "paid") return res.json({ ok: true });
 
     const row = await intentForPayment(payment);

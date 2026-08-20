@@ -358,6 +358,54 @@ describe("POST /org/:orgId/provision-seats", () => {
     expect(query).not.toHaveBeenCalled();
   });
 
+  it("refuses to provision seats once the paid intake window has closed", async () => {
+    // The Cohort sells ONE 90-day intake, but the seat cap counts rows and this
+    // route re-dates every seat it touches — so without an expiry check an owner
+    // could recycle the same 25 seats forever, turning one purchase into permanent
+    // `school` accounts.
+    queryOne.mockResolvedValueOnce({
+      id: "o1",
+      name: "Riyadh Wings",
+      seat_limit: 25,
+      expires_at: new Date(Date.now() - 24 * 60 * 60 * 1000),
+    });
+
+    const res = await request(app)
+      .post("/api/org/o1/provision-seats")
+      .send({ emails: ["a@example.com"] });
+
+    expect(res.status).toBe(403);
+    expect(res.body.error).toBe("cohort-expired");
+    expect(query).not.toHaveBeenCalled();
+  });
+
+  it("still provisions for an open-ended org, and for one inside its window", async () => {
+    // NULL expiry is an operator-granted contract (scripts/grant-org.mjs) and must
+    // not be swept up by the check above.
+    queryOne
+      .mockResolvedValueOnce({ id: "o1", name: "Riyadh Wings", seat_limit: null, expires_at: null })
+      .mockResolvedValue(null);
+
+    const open = await request(app)
+      .post("/api/org/o1/provision-seats")
+      .send({ emails: ["a@example.com"] });
+    expect(open.status).toBe(200);
+
+    queryOne
+      .mockResolvedValueOnce({
+        id: "o1",
+        name: "Riyadh Wings",
+        seat_limit: null,
+        expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+      })
+      .mockResolvedValue(null);
+
+    const inWindow = await request(app)
+      .post("/api/org/o1/provision-seats")
+      .send({ emails: ["b@example.com"] });
+    expect(inWindow.status).toBe(200);
+  });
+
   it("reports a per-address failure without failing the whole batch", async () => {
     queryOne
       .mockResolvedValueOnce({ id: "o1", name: "Riyadh Wings", seat_limit: null })

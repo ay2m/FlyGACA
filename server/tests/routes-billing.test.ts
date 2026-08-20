@@ -452,6 +452,17 @@ describe("fulfilment delivers what was bought", () => {
       expect.arrayContaining(["Riyadh Wings", "u1"]),
     );
     expect(res.body.redirectTo).toBe("/business/admin?checkout=success");
+
+    // The Cohort sells ONE 90-day intake. The insert must persist that window, or
+    // the seat route has nothing to enforce and the purchase becomes perpetual.
+    const insert = queryOne.mock.calls.find(([sql]) =>
+      String(sql).includes("INSERT INTO orgs"),
+    );
+    expect(String(insert?.[0])).toMatch(/expires_at/);
+    const expiresAt = (insert?.[1] as unknown[])[3] as string;
+    const days = (Date.parse(expiresAt) - Date.now()) / 86_400_000;
+    expect(days).toBeGreaterThan(89);
+    expect(days).toBeLessThan(91);
   });
 
   it("counts the promo redemption once fulfilled", async () => {
@@ -558,6 +569,31 @@ describe("POST /webhook/moyasar — the signature is the only gate", () => {
       /UPDATE checkout_intents/.test(String(sql)) && /'pending'/.test(String(sql)),
     );
     expect(release, "a delivered order must not be released").toBeUndefined();
+    spy.mockRestore();
+  });
+
+  it("surfaces a refund and stops future charges instead of dropping it", async () => {
+    // A refund used to fall through the `status !== "paid"` drop: nothing recorded,
+    // nothing revoked, no signal. Buy the bundle, refund it, keep every pack.
+    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+    const body = { id: "evt_1", type: "payment_refunded", data: { id: "pay_1" } };
+    stubMoyasar(payment({ status: "refunded" }));
+    queryOne.mockResolvedValueOnce(intentRow({ kind: "bundle", status: "paid" }));
+
+    const res = await post(body, sign(JSON.stringify(body)));
+
+    expect(res.status).toBe(200);
+    const sql = query.mock.calls.map(([q]) => String(q));
+    expect(sql.some((q) => /checkout_intents/.test(q) && /'failed'/.test(q))).toBe(true);
+    expect(sql.some((q) => /subscriptions/.test(q) && /auto_renew = false/.test(q))).toBe(true);
+    // Nothing is granted, and nothing is silently revoked either.
+    expect(setEntitlement).not.toHaveBeenCalled();
+    expect(grantPacks).not.toHaveBeenCalled();
+    // It must be findable in the logs — that is the whole mechanism.
+    expect(spy).toHaveBeenCalledWith(
+      "funnel",
+      expect.objectContaining({ event: "payment_refunded", paymentId: "pay_1" }),
+    );
     spy.mockRestore();
   });
 
