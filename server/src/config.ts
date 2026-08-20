@@ -66,6 +66,11 @@ export const config = {
     clientSecret: str("GOOGLE_OAUTH_CLIENT_SECRET"),
   },
 
+  apple: {
+    clientId: str("APPLE_OAUTH_CLIENT_ID"),
+    clientSecret: str("APPLE_OAUTH_CLIENT_SECRET"),
+  },
+
   /**
    * The Captain Adel model endpoint. OpenAI chat-completions shape, so it can be
    * pointed at any compatible provider without a code change — Google Gemini by

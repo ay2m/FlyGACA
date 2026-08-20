@@ -55,22 +55,28 @@ export function findUserByGoogleSub(sub: string): Promise<UserRow | null> {
   return queryOne<UserRow>("SELECT * FROM users WHERE google_sub = $1", [sub]);
 }
 
+export function findUserByAppleSub(sub: string): Promise<UserRow | null> {
+  return queryOne<UserRow>("SELECT * FROM users WHERE apple_sub = $1", [sub]);
+}
+
 export async function createUser(input: {
   email: string;
   passwordHash?: string | null;
   displayName?: string;
   googleSub?: string | null;
+  appleSub?: string | null;
   emailVerified?: boolean;
 }): Promise<UserRow> {
   const row = await queryOne<UserRow>(
-    `INSERT INTO users (email, password_hash, display_name, google_sub, email_verified)
-     VALUES ($1, $2, $3, $4, $5)
+    `INSERT INTO users (email, password_hash, display_name, google_sub, apple_sub, email_verified)
+     VALUES ($1, $2, $3, $4, $5, $6)
      RETURNING *`,
     [
       input.email,
       input.passwordHash ?? null,
       input.displayName ?? "",
       input.googleSub ?? null,
+      input.appleSub ?? null,
       input.emailVerified ?? false,
     ],
   );
@@ -99,6 +105,20 @@ export function linkGoogleAccount(
       WHERE id = $1
       RETURNING *`,
     [userId, googleSub, emailVerified],
+  );
+}
+
+export function linkAppleAccount(
+  userId: string,
+  appleSub: string,
+  emailVerified: boolean,
+): Promise<UserRow | null> {
+  return queryOne<UserRow>(
+    `UPDATE users
+        SET apple_sub = $2, email_verified = email_verified OR $3, updated_at = now()
+      WHERE id = $1
+      RETURNING *`,
+    [userId, appleSub, emailVerified],
   );
 }
 

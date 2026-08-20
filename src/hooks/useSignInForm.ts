@@ -14,6 +14,7 @@ import {
   sendPasswordReset,
   signInWithEmail,
   signInWithGoogle,
+  signInWithApple,
 } from '@/lib/services/auth';
 import {
   AUTH_TIMEOUT_CODE,
@@ -55,6 +56,8 @@ export interface SignInForm {
   signupForm: SignupForm;
   /** Continue-with-Google, wrapped in the shared runner. */
   runGoogle: () => void;
+  /** Continue-with-Apple, wrapped in the shared runner. */
+  runApple: () => void;
 }
 
 export function useSignInForm(): SignInForm {
@@ -221,5 +224,6 @@ export function useSignInForm(): SignInForm {
     loginForm,
     signupForm,
     runGoogle: () => void run(signInWithGoogle),
+    runApple: () => void run(signInWithApple),
   };
 }
