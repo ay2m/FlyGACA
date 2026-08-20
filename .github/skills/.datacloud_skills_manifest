@@ -1,5 +1,5 @@
 {
-  "bundleChecksum": "",
+  "bundleChecksum": "418cbe48d976680f96c0f0ad3e4dab2c351869297faefbdf3e829c6d6ca4be0e",
   "skills": {
     "accidental-data-loss-prevention": {
       "status": "installed",
@@ -29,17 +29,17 @@
       "status": "installed",
       "checksum": "84fe4db0d4100f6644d4041c293c4fbcbf9a49d2a79743626c721d3634e9f46f"
     },
-    "dbt-bigquery": {
+    "data-autocleaning": {
       "status": "installed",
-      "checksum": "3c4b221e6bf3414e656f1e1e0b0a4dd2763879d1fa69dfc82d663a84e548364f"
+      "checksum": "14a97cd0a785e9ff334c385c4dc8f83599e9a6420200547d78fd5de6f84983a5"
     },
     "dataform-bigquery": {
       "status": "installed",
       "checksum": "d3d45288ced26c093a6676834a1263d4a8c1b80f59f58a508e52a1ccf4b10339"
     },
-    "data-autocleaning": {
+    "dbt-bigquery": {
       "status": "installed",
-      "checksum": "14a97cd0a785e9ff334c385c4dc8f83599e9a6420200547d78fd5de6f84983a5"
+      "checksum": "3c4b221e6bf3414e656f1e1e0b0a4dd2763879d1fa69dfc82d663a84e548364f"
     },
     "discovering-gcp-data-assets": {
       "status": "installed",
@@ -53,13 +53,13 @@
       "status": "installed",
       "checksum": "c1e071ca3d8c9eaa42ae814f2d4ae2e5e12f3e0f289367c74ced4d87ccf157d3"
     },
-    "gcp-composer-troubleshooting": {
-      "status": "installed",
-      "checksum": "9128f016ece2b9dbde8a62af809685b152048694be672c93152ffc34e81dbe49"
-    },
     "gcloud-auth-verification": {
       "status": "installed",
       "checksum": "b4a6f58394290ad1c22de6e14e211b08b21ec015053929101e725dbccc0b6b09"
+    },
+    "gcp-composer-troubleshooting": {
+      "status": "installed",
+      "checksum": "9128f016ece2b9dbde8a62af809685b152048694be672c93152ffc34e81dbe49"
     },
     "gcp-data-pipelines": {
       "status": "installed",
@@ -68,38 +68,6 @@
     "gcp-dataflow": {
       "status": "installed",
       "checksum": "88603a6022611decbc0507b20892478ffd7368aeee0e9a0ae9b99de0d700dfac"
-    },
-    "skill-repair": {
-      "status": "installed",
-      "checksum": "276efcab0cdeb25cb412644bcf0fd5fb827f4873b44a6ba24f4e49e035d25c3e"
-    },
-    "notebook-guidance": {
-      "status": "installed",
-      "checksum": "b7ef387087342eaa4a6db2bec83b7ade8fd9fdf096951266737709a3199debe3"
-    },
-    "ml-best-practices": {
-      "status": "installed",
-      "checksum": "d3f2134aed8ce5865776363a5e0d704de0166970bca121ace8bdfaa28c8cf213"
-    },
-    "managing-python-dependencies": {
-      "status": "installed",
-      "checksum": "04a1ab128e1167a02a605d6b1459d9512c4a58cfeb81a8f5303e814eafe089ef"
-    },
-    "google-cloud-storage-basics": {
-      "status": "installed",
-      "checksum": "51446180b881702e569ba2c19684d0e99a5872a8429b063940ca8f9d020cd394"
-    },
-    "gcs-security-assessment": {
-      "status": "installed",
-      "checksum": "70ea75d8831fd8d7c1d31037579f615718d5a76d1e09178a9096d43543f913ba"
-    },
-    "gcp-spark": {
-      "status": "installed",
-      "checksum": "ff6bee528bff3eae67b52e200b026dbaf10196d1455023e42f77aea21ad91ccd"
-    },
-    "gcp-pipeline-resource-provisioning": {
-      "status": "installed",
-      "checksum": "c7d31d4e4f5da4d7f3c79c717e8213a402085f5a9e6ecc2cebf6821cb8e02400"
     },
     "gcp-managed-airflow-dag-authoring": {
       "status": "installed",
@@ -116,6 +84,38 @@
     "gcp-pipeline-orchestration": {
       "status": "installed",
       "checksum": "8a9d06dfebee2b4b8a706ff63b9a136252d1906dc2c1726a0b7bf7ab2dd3a576"
+    },
+    "gcp-pipeline-resource-provisioning": {
+      "status": "installed",
+      "checksum": "c7d31d4e4f5da4d7f3c79c717e8213a402085f5a9e6ecc2cebf6821cb8e02400"
+    },
+    "gcp-spark": {
+      "status": "installed",
+      "checksum": "ff6bee528bff3eae67b52e200b026dbaf10196d1455023e42f77aea21ad91ccd"
+    },
+    "gcs-security-assessment": {
+      "status": "installed",
+      "checksum": "70ea75d8831fd8d7c1d31037579f615718d5a76d1e09178a9096d43543f913ba"
+    },
+    "google-cloud-storage-basics": {
+      "status": "installed",
+      "checksum": "51446180b881702e569ba2c19684d0e99a5872a8429b063940ca8f9d020cd394"
+    },
+    "managing-python-dependencies": {
+      "status": "installed",
+      "checksum": "04a1ab128e1167a02a605d6b1459d9512c4a58cfeb81a8f5303e814eafe089ef"
+    },
+    "ml-best-practices": {
+      "status": "installed",
+      "checksum": "d3f2134aed8ce5865776363a5e0d704de0166970bca121ace8bdfaa28c8cf213"
+    },
+    "notebook-guidance": {
+      "status": "installed",
+      "checksum": "b7ef387087342eaa4a6db2bec83b7ade8fd9fdf096951266737709a3199debe3"
+    },
+    "skill-repair": {
+      "status": "installed",
+      "checksum": "276efcab0cdeb25cb412644bcf0fd5fb827f4873b44a6ba24f4e49e035d25c3e"
     }
   }
 }
