@@ -32,7 +32,8 @@ function run(cmd, args = [], opts = {}) {
     shell: process.platform === 'win32',
     env: {
       ...process.env,
-      PRERENDER_MAX: '0', // Full corpus, not 560
+      PRERENDER_MAX: '0', // Full English corpus
+      AR_CORPUS_MAX: '0', // Full Arabic corpus (default 60)
       NODE_EXTRA_CA_CERTS: process.env.NODE_EXTRA_CA_CERTS || '',
     },
   });
