@@ -636,6 +636,10 @@ for (const [path, desc] of corpusAr) {
 
 // --- Head transform ------------------------------------------------------------
 /** Replace a tag matching `re` with `tag`, or insert `tag` before </head> if absent. */
+// Matches the `ar` and `ar-SA` alternates (and any leading whitespace), so an
+// uncovered route ships no Arabic alternate at all rather than the shell's.
+const AR_ALTERNATE_RE = /\s*<link\s+rel="alternate"\s+hreflang="ar(?:-SA)?"[^>]*>/g;
+
 function setTag(html, re, tag) {
   return re.test(html) ? html.replace(re, tag) : html.replace('</head>', `    ${tag}\n  </head>`);
 }
@@ -681,14 +685,26 @@ function render(path, d, lang = 'en') {
     `<meta name="description" content="${esc(desc)}" />`,
   );
   html = setTag(html, /<link\s+rel="canonical"[^>]*>/, `<link rel="canonical" href="${canonical}" />`);
-  // The same hreflang cluster on every language variant: en (clean), ar (/ar),
-  // x-default (clean). Mirrors src/lib/seo/seo.ts hreflangAlternates.
+  // The hreflang cluster, gated on whether an Arabic document actually exists.
+  //
+  // Arabic covers the hubs, guides, tools and the top AR_CORPUS_MAX corpus docs;
+  // the long tail and the aerodrome pages are English-only by design. Advertising
+  // hreflang="ar" for a document that was never written points crawlers at a URL
+  // with no object behind it, and Google discards the WHOLE cluster for the site
+  // when the return tags don't resolve — including the ~170 pages where it is
+  // correct. This must stay byte-identical to alternates() in build-sitemap.mjs,
+  // which has always gated on the same set.
+  const hasAr = arSeo.has(path);
   for (const [hreflang, href] of [
     ['en', canonicalUrl(path, 'en')],
-    ['ar', canonicalUrl(path, 'ar')],
     // Saudi Arabia is the primary market; bare `ar` stays for Arabic speakers
     // elsewhere (mirrors hreflangAlternates in src/lib/seo/seo.ts).
-    ['ar-SA', canonicalUrl(path, 'ar')],
+    ...(hasAr
+      ? [
+        ['ar', canonicalUrl(path, 'ar')],
+        ['ar-SA', canonicalUrl(path, 'ar')],
+      ]
+      : []),
     ['x-default', canonicalUrl(path, 'en')],
   ]) {
     html = setTag(
@@ -697,6 +713,11 @@ function render(path, d, lang = 'en') {
       `<link rel="alternate" hreflang="${hreflang}" href="${href}" />`,
     );
   }
+  // index.html ships a baseline `ar`/`ar-SA` pair for the home route, so an
+  // uncovered route inherits it unless it is removed — setTag only rewrites tags,
+  // it never deletes them.
+  if (!hasAr) html = html.replace(AR_ALTERNATE_RE, '');
+
   const image = ogImageFor(path);
   html = setTag(html, /<meta\s+property="og:type"[^>]*>/, `<meta property="og:type" content="${d.ogType ?? 'website'}" />`);
   html = setTag(html, /<meta\s+property="og:title"[^>]*>/, `<meta property="og:title" content="${esc(fullTitle)}" />`);

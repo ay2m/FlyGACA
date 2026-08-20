@@ -209,8 +209,22 @@ function outPathAr(route) {
 // back to root-relative (so the bundle script, modulepreloads and in-body links
 // keep working on any host), and finally drop any link/script still pointing at
 // the preview origin (safety net — the rewrite should have caught them all).
-function sanitizeSnapshot(html) {
-  return html
+// The set of routes that actually get an Arabic document, so an English snapshot
+// for a route with no Arabic twin does not advertise one. Mirrors arSeo in
+// prerender-head.mjs and arCovered in build-sitemap.mjs.
+const arCovered = new Set(arRouteList);
+
+// `ar` / `ar-SA` alternates, with any leading whitespace.
+const AR_ALTERNATE_RE = /\s*<link\b[^>]*\bhreflang\s*=\s*["']ar(?:-SA)?["'][^>]*>/gi;
+
+function sanitizeSnapshot(html, { hasAr = true } = {}) {
+  // The runtime emits the hreflang cluster unconditionally (usePageMeta ->
+  // hreflangAlternates), and this pass serialises the hydrated DOM over the
+  // head-only file — so without this strip the Playwright layer would silently
+  // undo the gating prerender-head.mjs applies, and ~366 English pages would go
+  // back to advertising an Arabic twin that was never written.
+  const gated = hasAr ? html : html.replace(AR_ALTERNATE_RE, '');
+  return gated
     .replace(
       /<script\b[^>]*\bsrc\s*=\s*["'][^"']*(?:recaptcha|_vercel|vercel-scripts|googletagmanager|gtag)[^"']*["'][^>]*>\s*<\/script>/gi,
       '',
@@ -284,7 +298,7 @@ try {
   // *different* route each run (ar/tools/vfr-minima, ar/library/part-138), the
   // signature of a race rather than a broken page. Waiting for the language to
   // land removes the race at its source.
-  async function snapshot(url, file, lang = 'en') {
+  async function snapshot(url, file, lang = 'en', hasAr = true) {
     await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
     await page.waitForSelector('footer', { timeout: 15000 });
     await page.waitForFunction(
@@ -297,6 +311,7 @@ try {
     );
     const html = sanitizeSnapshot(
       `<!doctype html>\n${await page.evaluate(() => document.documentElement.outerHTML)}`,
+      { hasAr },
     );
     mkdirSync(dirname(file), { recursive: true });
     writeFileSync(file, html);
@@ -305,7 +320,7 @@ try {
   let done = 0;
   for (const route of routeList) {
     try {
-      await snapshot(`${BASE}${route}`, outPath(route));
+      await snapshot(`${BASE}${route}`, outPath(route), 'en', arCovered.has(route));
       done++;
     } catch (err) {
       console.warn(`  prerender: skipped ${route} — ${err.message}`);
