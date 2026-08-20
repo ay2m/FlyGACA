@@ -27,6 +27,11 @@ node_modules
 */node_modules
 *.log
 
+# The deploy workflow writes .env.local before building; it has no business
+# in a Cloud Build source tarball even when it holds only publishable keys.
+.env
+.env.*
+
 /server/lib
 /server/tests
 /server/coverage

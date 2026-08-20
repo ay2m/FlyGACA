@@ -46,10 +46,14 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: 22
+          # 24 everywhere. server/package.json pins engines.node to 24 and the
+          # Dockerfile builds on node:24-slim; this workflow was the only surface
+          # exercising the sitemap -> prerender -> coverage pipeline on a runtime
+          # production never runs.
+          node-version: 24
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
@@ -57,5 +61,14 @@ jobs:
       - run: npm run build
       # Overwrites those with hydrated HTML. Non-fatal by design — the gate below
       # is what turns any shortfall into a failure.
+      #
+      # PRERENDER_MAX=0 ("no cap") to match .github/workflows/deploy.yml. Without
+      # it this ran under the script's default cap while the gate compared against
+      # the *full* sitemap, so this job validated a run production never performs.
+      # The default currently sits ~20 URLs above the corpus, so the next couple of
+      # dozen documents would have turned this red for a reason the real deploy
+      # does not have — the fastest way to teach everyone to ignore a gate.
       - run: npm run prerender
+        env:
+          PRERENDER_MAX: '0'
       - run: npm run check:prerender:coverage

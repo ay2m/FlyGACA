@@ -34,6 +34,55 @@ function projectId() {
   return id;
 }
 
+/**
+ * The `gcloud` call that proves the service already exists.
+ *
+ * Separate from the plan because it is a check, not a step: it must run before
+ * anything is built, and it must not appear in the printed rollout.
+ */
+export function describeArgv(project) {
+  return [
+    'run',
+    'services',
+    'describe',
+    SERVICE,
+    `--region=${REGION}`,
+    `--project=${project}`,
+    '--format=value(name)',
+  ];
+}
+
+/**
+ * Refuse to roll out to a service that does not exist yet.
+ *
+ * `gcloud run deploy` CREATES a service when one is missing, and in CI it does so
+ * non-interactively with only the flags this script passes — which are
+ * deliberately just --region and --image. No --set-secrets, no
+ * --add-cloudsql-instances, no --service-account, no --max-instances. The step
+ * would exit 0 and the deploy would be reported green, while the service boots
+ * without DATABASE_URL, fails assertRequiredConfig() and serves nothing.
+ *
+ * The first deploy is a runbook operation precisely because it is the one that
+ * establishes that configuration; every later deploy inherits it. So this asserts
+ * the inheritance is actually available rather than silently starting from
+ * nothing.
+ */
+function assertServiceExists(project) {
+  const res = spawnSync('gcloud', describeArgv(project), { encoding: 'utf8' });
+  if (res.error?.code === 'ENOENT') return; // reported with a better message below
+  if (res.status !== 0) {
+    console.error(
+      `\n${SERVICE} does not exist in ${project} (${REGION}), or is not readable.\n` +
+        'This script only rolls out a NEW IMAGE to an EXISTING service — it does not\n' +
+        'carry the env vars, secrets, Cloud SQL connection or service account that a\n' +
+        'first deploy establishes. Letting it through would create a service that\n' +
+        'cannot reach its database.\n\n' +
+        'Run the first deploy by hand from docs/RUNBOOK-deploy.md §5, then re-run this.',
+    );
+    process.exit(1);
+  }
+}
+
 /** The ordered command plan. Pure given a project id, so it can be printed first. */
 export function buildPlan(project) {
   const image = `${REGION}-docker.pkg.dev/${project}/${REPO}/${SERVICE}:${TAG}`;
@@ -60,6 +109,7 @@ function main() {
   const dryRun = process.argv.includes('--dry-run');
   // In a dry run, never shell out just to discover the project id.
   const project = dryRun ? (process.env.PROJECT_ID ?? '<project>') : projectId();
+  if (!dryRun) assertServiceExists(project);
 
   for (const { label, argv } of buildPlan(project)) {
     console.log(`\n▸ ${label}`);
