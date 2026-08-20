@@ -2,19 +2,38 @@
 
 > [!CAUTION]
 > **This runbook has never been executed. It provisions a target architecture, not the one
-> that is running.** Verified with `gcloud` on 2026-08-19:
+> that is running.** Verified with `gcloud` on 2026-08-20:
 >
 > - There is no `flygaca-api` Cloud Run service in any project. The Express service in
 >   `server/` has never been deployed.
 > - Production is the **previous Firebase Functions stack** — 14 Cloud Run services in project
 >   `flygaca-sa`, all in **`me-central1` (Doha, Qatar)**.
-> - Cloud SQL `flygaca-sa-instance` (Postgres 18) is in **`us-east4` (Northern Virginia)**.
-> - **`me-central2` is not available to this account**: *"Access to the region is unavailable.
->   Please contact our sales team."* Step 1 below will fail until Google grants the region.
+> - Cloud SQL `flygaca-sa-instance` (Postgres 18) is in **`us-east4` (Northern Virginia)**, but
+>   it is Firebase Data Connect scaffolding — `server/migrations/0001_init.sql` has never been
+>   applied anywhere. The nominal datastore is **Firestore**, and it holds nothing: the billed
+>   `flygaca-sa` database (`us-central1`, Iowa) is empty — zero collections, and a `runQuery` on
+>   `users` returns no documents — while the older `flygaca-app` database in `me-central2`
+>   (Dammam) has been **deleted** and cannot serve requests. There is no user data to migrate,
+>   and no usable Dammam resource.
+> - **`me-central2` is not available to this account** (re-confirmed 2026-08-20). Cloud Run
+>   returns HTTP 403 `LOCATION_POLICY_VIOLATED`: *"Access to the region is unavailable. Please
+>   contact our sales team."* Step 1 below will fail until Google grants the region.
 >
-> Getting the region grant is therefore step zero. Until then the in-Kingdom / PDPL posture
-> this runbook assumes does not hold, and the live prices remain the pre-2026-08-19 card with
-> the Student tier active.
+> **The region grant is not a support ticket, and it is step zero.** Dammam is sold **only
+> through CNTXT**, Google's exclusive KSA reseller, to **registered organizations** on
+> **Invoiced Billing**; individuals get an open-ended waiting list. This account is a personal
+> Gmail with **no GCP Organization** and self-serve billing, so it is in the individual bucket.
+> Unblocking needs a KSA legal entity (CR + VAT), an application at <https://cloud.cntxt.com>,
+> and migrating billing to CNTXT — a corporate blocker, not an engineering one, with no ETA.
+> See <https://docs.cloud.google.com/docs/dammam-region-access>.
+>
+> The block is **account-wide, not per-project**: identical `LOCATION_POLICY_VIOLATED` in
+> `flygaca-sa`, `flygaca-app` and `flygaca-dev`, including the one with billing disabled.
+> Creating a fresh project will not dodge it. No customer-side `gcp.resourceLocations` policy
+> exists — this is Google's own region gate.
+>
+> Until the grant lands the in-Kingdom / PDPL posture this runbook assumes does not hold, and
+> the live prices remain the pre-2026-08-19 card with the Student tier active.
 
 This repository has **no Firebase**. Auth, the datastore, the API and hosting are all first-party
 or plain GCP:
@@ -33,6 +52,28 @@ or plain GCP:
 
 `me-central2` (Dammam) keeps user data in-Kingdom for PDPL. Use whatever region you prefer, but keep
 Cloud Run and Cloud SQL in the **same** one — the unix-socket connection below requires it.
+
+**Picking a fallback region.** Until Dammam is granted, measured from Riyadh/STC (min TCP connect
+to in-region endpoints, 2026-08-20):
+
+| Region | | RTT | Cloud Run · SQL · Secrets · Scheduler · Artifacts |
+| --- | --- | --- | --- |
+| `me-central2` | Dammam | 17 ms | **Cloud Run denied** |
+| `europe-west8` | Milan | **83 ms** | all supported |
+| `europe-west4` | Netherlands | 91 ms | all supported |
+| `me-west1` | Tel Aviv | 119 ms | all supported |
+| `me-central1` | Doha — *current prod* | **158 ms** | all supported |
+
+Counter-intuitively **Doha is the slowest realistic option** — Saudi↔Qatar traffic backhauls the
+long way, confirmed against the live `chat` service (TTFB floor 169 ms, median ~350–400 ms). So
+`europe-west8` is the fastest region actually available today, ~1.7× better than the incumbent.
+Avoid `europe-west12` (Turin) and `europe-southwest1` (Madrid): **neither has Cloud Scheduler**,
+which the renewal job in step 7 requires.
+
+No fallback is in-Kingdom, so **the PDPL / data-residency claim cannot be made in any of them.**
+And the region grant alone would not make it true: `server/src/captain-adel.ts` calls `googleAI()`
+— the **global** Gemini Developer API, not regional Vertex AI — so every Captain Adel prompt
+leaves the region regardless, and RAG embeddings live in Supabase, outside GCP entirely.
 
 ---
 
@@ -63,11 +104,26 @@ gcloud services enable \
 ```bash
 gcloud sql instances create "$INSTANCE" \
   --database-version=POSTGRES_16 --region="$REGION" \
-  --tier=db-g1-small --storage-auto-increase
+  --tier=db-g1-small --storage-auto-increase \
+  --availability-type=REGIONAL \
+  --backup-start-time=23:00 --retained-backups-count=14 \
+  --enable-point-in-time-recovery \
+  --deletion-protection \
+  --no-assign-ip \
+  --ssl-mode=ENCRYPTED_ONLY \
+  --maintenance-window-day=FRI --maintenance-window-hour=1
 
 gcloud sql databases create flygaca --instance="$INSTANCE"
 gcloud sql users set-password postgres --instance="$INSTANCE" --password='<choose-one>'
 ```
+
+Those flags are not optional polish. Without `--backup-start-time`, `--enable-point-in-time-recovery`
+and `--deletion-protection` you get exactly what the two existing Firebase Data Connect instances
+already are: zero backups, no PITR, and deletable with one unguarded command. `--no-assign-ip` is
+safe because Cloud Run connects over the unix socket below, not over IP.
+
+`--availability-type=REGIONAL` and `db-g1-small` both cost real money; drop to `ZONAL` only if you
+accept that a zone outage is a full outage. Note `db-f1-micro` carries no SLA and cannot be made HA.
 
 The connection name is `PROJECT_ID:REGION:INSTANCE`. Cloud Run reaches it over a unix socket, so
 there is no IP allowlist and no proxy sidecar:
@@ -113,12 +169,18 @@ Grant the Cloud Run service account `roles/secretmanager.secretAccessor` and
 
 ## 5. Deploy the API
 
-Build from the **repo root** — the Dockerfile copies `public/data/rag-chunks.json` in so the
-BM25 index needs no cold-start fetch.
+Build from the **repo root** — `./Dockerfile` copies `public/data/rag-chunks.json` in so the
+BM25 index needs no cold-start fetch. The Dockerfile must stay at the root: `--source .`
+auto-detects only `./Dockerfile`, and when it lived under `server/` this step silently fell
+back to buildpacks and tried to build the Vite SPA instead.
+
+Pass `--service-account` explicitly. Without it the revision runs as the default compute SA,
+which holds `roles/editor` — see step 4.
 
 ```bash
 gcloud run deploy flygaca-api \
   --source . --region="$REGION" \
+  --service-account="$SA_EMAIL" \
   --add-cloudsql-instances="$PROJECT_ID:$REGION:$INSTANCE" \
   --allow-unauthenticated \
   --memory=1Gi --timeout=300 --max-instances=10 \
@@ -143,7 +205,20 @@ echo 'VITE_API_BASE_URL=https://api.flygaca.com' >> .env.local
 echo 'VITE_MOYASAR_PUBLISHABLE_KEY=pk_live_…'    >> .env.local
 
 npm run build
-gcloud storage buckets create "gs://$BUCKET" --location="$REGION"
+
+# The canonical origin is the ONLY front where the body prerender matters: the
+# Vercel/Netlify/Cloudflare mirrors all serve X-Robots-Tag: noindex, so a crawler
+# never reads them. `npm run build` alone writes head-only snapshots, which leaves
+# 130 of the 710 sitemap URLs (the /study/packs/* and /tools/aerodromes/* sets)
+# serving the root shell — i.e. the homepage canonical and OG card — to every
+# non-JS crawler and every social scraper. Budget ~40 min for this step.
+npm run prerender
+npm run check:prerender:coverage    # the honest gate; fails on any un-snapshotted URL
+
+gcloud storage buckets create "gs://$BUCKET" --location="$REGION" --uniform-bucket-level-access
+# Without this the backend bucket serves 403 to the load balancer.
+gcloud storage buckets add-iam-policy-binding "gs://$BUCKET" \
+  --member=allUsers --role=roles/storage.objectViewer
 gcloud storage rsync -r -d dist "gs://$BUCKET"
 gcloud storage buckets update "gs://$BUCKET" --web-main-page-suffix=index.html --web-error-page=index.html
 ```
@@ -154,12 +229,29 @@ it keeps the session cookie same-site and lets the CSP stay `connect-src 'self'`
 
 If instead the API lives on its own hostname, leave `SESSION_COOKIE_DOMAIN` unset (the cookie then
 uses `SameSite=None; Secure`) and make sure the SPA origin is in the CORS allowlist —
-`server/src/gateway-core.ts` covers `flygaca.com`, `*.flygaca.com` and `*.a.run.app`; anything else
+Smoke-test through the load balancer host, not the raw Cloud Run URL: `gateway-core.ts` sets
+`ALLOWED_ORIGIN_SUFFIXES = [".flygaca.com"]` and **deliberately does not list `.a.run.app`**, so a
+browser request straight to the `*.run.app` origin is rejected by CORS by design.
 goes in `EXTRA_ALLOWED_ORIGINS`.
 
 ## 7. Renewal job
 
-Moyasar has no hosted billing portal, so renewals are ours to drive:
+Moyasar has no hosted billing portal, so renewals are ours to drive.
+
+> [!WARNING]
+> **Pause the legacy renewal job first.** `firebase-schedule-renewMoyasarSubscriptions-me-central1`
+> in `flygaca-sa` is still ENABLED and fires every 24 hours against the same Moyasar merchant.
+> Creating the job below without pausing it puts two renewal engines on the same live cards.
+>
+> ```bash
+> gcloud scheduler jobs pause firebase-schedule-renewMoyasarSubscriptions-me-central1 \
+>   --location=me-central1 --project=flygaca-sa
+> ```
+>
+> Separately, that legacy job has been returning HTTP 500 nightly since 2026-08-16 —
+> `FAILED_PRECONDITION: The query requires an index` on `subscriptions`
+> (`autoRenew`+`status`+`nextChargeAt`). Creating that Firestore composite index would make it
+> start charging again, so pause it before you fix the index, not after.
 
 ```bash
 gcloud scheduler jobs create http flygaca-renewals \

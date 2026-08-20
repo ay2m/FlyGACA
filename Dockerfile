@@ -3,8 +3,11 @@
 # Two stages so the runtime image carries no TypeScript toolchain and no dev
 # dependencies. Node 24 matches `engines.node` and Cloud Run's supported runtimes.
 #
-# Build from the REPO ROOT so the corpus can be copied in:
-#   docker build -f server/Dockerfile -t flygaca-api .
+# This lives at the REPO ROOT, not in server/, for two reasons: the build needs
+# public/data/rag-chunks.json (outside server/), and both `gcloud run deploy
+# --source .` and the Cloud Build trigger only auto-detect ./Dockerfile — with it
+# under server/ they silently fell back to buildpacks and built the Vite SPA.
+#   docker build -t flygaca-api .
 
 FROM node:24-slim AS build
 WORKDIR /app

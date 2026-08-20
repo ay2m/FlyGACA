@@ -7,8 +7,11 @@
  *
  * This is the OPTIONAL full-body enhancement layer that overwrites the head-only
  * snapshots from scripts/prerender-head.mjs (which `npm run build` always runs)
- * with hydrated HTML, on hosts that have a browser — the Vercel buildCommand and
- * `npm run deploy`. It is **non-fatal**: any failure (Chromium missing and
+ * with hydrated HTML, on hosts that have a browser. NOTE: nothing runs this
+ * automatically today — `vercel.json`'s buildCommand and `netlify.toml`'s command
+ * are both plain `npm run build`, and `npm run deploy` only exit(1)s with a pointer
+ * to docs/RUNBOOK-deploy.md. It is invoked by hand as part of publishing the
+ * canonical origin (RUNBOOK §6); the mirrors are noindex so they do not need it. It is **non-fatal**: any failure (Chromium missing and
  * un-installable, a route timing out) logs a warning and exits 0, leaving the
  * head-prerendered HTML in place, so it can never break a deploy. It is NOT in
  * `npm run build` on purpose — Firebase App Hosting's buildpack can't run

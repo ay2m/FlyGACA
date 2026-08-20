@@ -2006,7 +2006,7 @@
     "eyebrow": "Developers",
     "title": "Captain Adel API",
     "subtitle": "Add a source-citing Saudi GACAR assistant to your own product.",
-    "intro": "The same retrieve-and-cite engine that powers Fly GACA, exposed as a simple HTTP API. Send a question, get a grounded answer with exact GACAR Part and section citations. Hosted in-Kingdom.",
+    "intro": "The same retrieve-and-cite engine that powers Fly GACA, exposed as a simple HTTP API. Send a question, get a grounded answer with exact GACAR Part and section citations.",
     "tiersHead": "Plans",
     "tiers": [
       {
@@ -3862,7 +3862,7 @@
         },
         {
           "h": "Where your data is stored",
-          "p": "Your account data is personal data and is stored in-Kingdom on Google Cloud in Dammam (me-central2), in line with the PDPL. Chat questions are processed in a nearby Google Cloud region (me-central1)."
+          "p": "Your account data is personal data. Fly GACA is established in Saudi Arabia, so the PDPL applies to it wherever that data is held. Today it is hosted on Google Cloud outside the Kingdom: the servers are in Doha, Qatar (me-central1) and the database is Google Firestore in Iowa, United States (us-central1). Chat questions are additionally processed by Google’s Gemini API, a global service. We intend to move to Google Cloud’s Dammam region (me-central2) so that your data is stored in-Kingdom, but that has not happened yet, and we will update this notice when it does."
         },
         {
           "h": "Sharing your data",

@@ -128,10 +128,19 @@ flowchart TB
 **The shape of it.** Business rules live in pure, dependency-free `*-core.ts` modules so policy is unit-testable in isolation; the Express routes stay thin and all SQL sits in one file. Calculator math is DOM-free in `src/calc/`, one module per tool. The heavy corpus (64 MB) never enters the JS bundle — it's fetched at runtime and served network-first from a bucket. Entitlements are server-owned: there is simply no route that lets a client write its own plan.
 
 In-Kingdom **by design, not yet in fact.** The target is Cloud Run and Cloud SQL both in
-`me-central2` (Dammam) for PDPL data residency. As of 2026-08-19 none of it is deployed: the
-live stack is still the previous Firebase Functions services in **`me-central1` (Doha, Qatar)**
-with Cloud SQL in **`us-east4` (Northern Virginia)**, and `me-central2` has not been granted to
-the account. See the caution in [`CLAUDE.md`](CLAUDE.md#hosting--deploy).
+`me-central2` (Dammam) for PDPL data residency. As of 2026-08-20 none of it is deployed: the
+live stack is still the previous Firebase Functions services in **`me-central1` (Doha, Qatar)**,
+with the billed stack's Firestore in **`us-central1` (Iowa)** and Cloud SQL in **`us-east4`
+(Northern Virginia)**.
+
+`me-central2` has not been granted to the account, and the blocker is commercial rather than
+technical: Dammam is sold **only through CNTXT**, Google's exclusive KSA reseller, to registered
+**organizations** on Invoiced Billing — individuals get an open-ended waiting list. Measured from
+Riyadh, Dammam would be 17 ms away; the fastest region actually available is Milan at 83 ms, and
+today's Doha stack is the slowest realistic option at 158 ms. No available fallback is
+in-Kingdom, **so the in-Kingdom claim is made nowhere in the product** — the privacy notice
+states the opposite, correctly, and names the actual regions. See the caution in
+[`CLAUDE.md`](CLAUDE.md#hosting--deploy).
 
 ---
 
