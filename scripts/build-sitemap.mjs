@@ -29,6 +29,10 @@ const PRIVATE = new Set([
   '/settings',
   '/checkout',
   '/checkout/return',
+  // Noindexed in-page (Admin.tsx useNoindexMeta) and the PWA offline stub —
+  // both were being submitted while telling crawlers not to index them.
+  '/business/admin',
+  '/offline',
 ]);
 // The former Guides + Study hubs now redirect to /learn — don't index the redirects
 // (their content + leaf pages live on, and `/learn` carries the hub priority).

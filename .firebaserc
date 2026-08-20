@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "flygaca-sa"
+    "default": "flygaca-prod"
   },
   "targets": {},
   "etags": {}

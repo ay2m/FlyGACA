@@ -344,9 +344,13 @@ function render(path, d, lang = 'en') {
   html = setTag(html, /<link\s+rel="canonical"[^>]*>/, `<link rel="canonical" href="${canonical}" />`);
   // The same hreflang cluster on every language variant: en (clean), ar (/ar),
   // x-default (clean). Mirrors src/lib/seo/seo.ts hreflangAlternates.
+  // Only claim an ar alternate where an Arabic snapshot exists (arSeo is capped by
+  // AR_CORPUS_MAX) — the same gate build-sitemap.mjs applies. A non-reciprocal
+  // hreflang makes Google discard the whole cluster.
+  const hasAr = arSeo.has(path);
   for (const [hreflang, href] of [
     ['en', canonicalUrl(path, 'en')],
-    ['ar', canonicalUrl(path, 'ar')],
+    ...(hasAr ? [['ar', canonicalUrl(path, 'ar')]] : []),
     ['x-default', canonicalUrl(path, 'en')],
   ]) {
     html = setTag(
@@ -355,6 +359,8 @@ function render(path, d, lang = 'en') {
       `<link rel="alternate" hreflang="${hreflang}" href="${href}" />`,
     );
   }
+  // The shell ships a placeholder ar alternate; drop it when unmatched.
+  if (!hasAr) html = html.replace(/\s*<link\s+rel="alternate"\s+hreflang="ar"[^>]*>/, '');
   const image = ogImageFor(path);
   html = setTag(html, /<meta\s+property="og:type"[^>]*>/, `<meta property="og:type" content="${d.ogType ?? 'website'}" />`);
   html = setTag(html, /<meta\s+property="og:title"[^>]*>/, `<meta property="og:title" content="${esc(fullTitle)}" />`);
