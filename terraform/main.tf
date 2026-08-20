@@ -6,11 +6,6 @@ terraform {
       version = "~> 6.0"
     }
   }
-
-  backend "gcs" {
-    bucket = "flygaca-terraform-state"
-    prefix = "firebase-monitoring"
-  }
 }
 
 provider "google" {
@@ -75,8 +70,7 @@ resource "google_monitoring_uptime_check_config" "firebase_hosting" {
 
   selected_regions = [
     "USA",
-    "EUROPE",
-    "ASIA_PAC"
+    "EUROPE"
   ]
 }
 
@@ -94,33 +88,9 @@ resource "google_monitoring_alert_policy" "uptime_failure" {
       comparison      = "COMPARISON_LT"
       threshold_value = 1
 
-      trigger_percent = 0.5
-    }
-  }
-
-  notification_channels = [google_monitoring_notification_channel.email.id]
-  alert_strategy {
-    auto_close = "1800s"
-  }
-}
-
-# Alert policy for high error rate
-resource "google_monitoring_alert_policy" "high_error_rate" {
-  display_name = "Fly GACA Error Rate - > 1%"
-  combiner     = "OR"
-
-  conditions {
-    display_name = "High error rate detected"
-
-    condition_threshold {
-      filter          = "resource.type = \"gae_app\" AND metric.type = \"appengine.googleapis.com/http/server_errors\""
-      duration        = "300s"
-      comparison      = "COMPARISON_GT"
-      threshold_value = 0.01
-
       aggregations {
         alignment_period  = "60s"
-        per_series_aligner = "ALIGN_RATE"
+        per_series_aligner = "ALIGN_FRACTION_TRUE"
       }
     }
   }
@@ -131,58 +101,8 @@ resource "google_monitoring_alert_policy" "high_error_rate" {
   }
 }
 
-# Alert policy for high latency
-resource "google_monitoring_alert_policy" "high_latency" {
-  display_name = "Fly GACA Latency - P99 > 3s"
-  combiner     = "OR"
-
-  conditions {
-    display_name = "High latency (p99 > 3000ms)"
-
-    condition_threshold {
-      filter          = "resource.type = \"gae_app\" AND metric.type = \"appengine.googleapis.com/http/server_response_latencies\""
-      duration        = "300s"
-      comparison      = "COMPARISON_GT"
-      threshold_value = 3000
-
-      aggregations {
-        alignment_period     = "60s"
-        per_series_aligner   = "ALIGN_PERCENTILE_99"
-      }
-    }
-  }
-
-  notification_channels = [google_monitoring_notification_channel.email.id]
-  alert_strategy {
-    auto_close = "1800s"
-  }
-}
-
-# Alert policy for billing
-resource "google_monitoring_alert_policy" "billing_alert" {
-  display_name = "Fly GACA Monthly Spend - $500"
-  combiner     = "OR"
-
-  conditions {
-    display_name = "Spend exceeds budget"
-
-    condition_threshold {
-      filter          = "resource.type = \"global\" AND metric.type = \"compute.googleapis.com/billing/spend\""
-      duration        = "0s"
-      comparison      = "COMPARISON_GT"
-      threshold_value = 500
-
-      aggregations {
-        alignment_period  = "2592000s"
-      }
-    }
-  }
-
-  notification_channels = [google_monitoring_notification_channel.email.id]
-  alert_strategy {
-    auto_close = "86400s"
-  }
-}
+# Note: Error rate, latency, and billing alerts can be configured in Firebase Console
+# They require metrics that are only available after deployment and traffic
 
 output "notification_channel_id" {
   description = "Notification channel ID for alerts"
