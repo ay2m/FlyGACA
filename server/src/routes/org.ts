@@ -155,7 +155,10 @@ orgRouter.post(
 
     if (org.seat_limit !== null) {
       const used = await queryOne<{ count: number }>(
-        "SELECT count(*)::int AS count FROM org_seats WHERE org_id = $1",
+        // A revoked seat is a freed seat. Counting it kept the seat permanently
+        // spent, so an org that revoked a cadet could never re-issue that place —
+        // the cap silently became "seats ever issued" rather than "seats in use".
+        "SELECT count(*)::int AS count FROM org_seats WHERE org_id = $1 AND status <> 'revoked'",
         [org.id],
       );
       const verdict = checkSeatLimit({

@@ -358,6 +358,23 @@ describe("POST /org/:orgId/provision-seats", () => {
     expect(query).not.toHaveBeenCalled();
   });
 
+  it("does not count a revoked seat against the cap", async () => {
+    // Otherwise revoking a cadet spends that place permanently: the cap silently
+    // becomes "seats ever issued" rather than "seats in use", and an org that
+    // rotates students runs out without ever exceeding its contracted size.
+    queryOne
+      .mockResolvedValueOnce({ id: "o1", name: "Riyadh Wings", seat_limit: 25, expires_at: null })
+      .mockResolvedValueOnce({ count: 3 });
+
+    await request(app).post("/api/org/o1/provision-seats").send({ emails: ["a@example.com"] });
+
+    const countSql = String(
+      queryOne.mock.calls.find(([q]) => /count\(\*\)/.test(String(q)))?.[0] ?? "",
+    );
+    expect(countSql).toMatch(/org_seats/);
+    expect(countSql).toMatch(/status <> 'revoked'/);
+  });
+
   it("refuses to provision seats once the paid intake window has closed", async () => {
     // The Cohort sells ONE 90-day intake, but the seat cap counts rows and this
     // route re-dates every seat it touches — so without an expiry check an owner

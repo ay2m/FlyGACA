@@ -741,6 +741,34 @@ describe("POST /renew — the Cloud Scheduler job", () => {
     spy.mockRestore();
   });
 
+  it("prunes the tables nothing else prunes, without risking the sweep", async () => {
+    // oauth_states leaks a row per abandoned Google sign-in — its only DELETE is
+    // predicated on `expires_at > now()`, so an expired row is unreachable by
+    // design. chat_usage grows with traffic, not users, because its key includes
+    // hashed anonymous IPs. Nothing else touches either.
+    query.mockResolvedValue([]);
+
+    const res = await request(app).post("/api/billing/renew").set("X-Cron-Secret", CRON_SECRET);
+
+    expect(res.status).toBe(200);
+    const sql = query.mock.calls.map(([q]) => String(q));
+    expect(sql.some((q) => /DELETE FROM oauth_states/.test(q))).toBe(true);
+    expect(sql.some((q) => /DELETE FROM auth_tokens/.test(q))).toBe(true);
+    expect(sql.some((q) => /DELETE FROM chat_usage/.test(q))).toBe(true);
+  });
+
+  it("still reports success when housekeeping fails", async () => {
+    // Disk hygiene must never be the reason a renewal sweep reports failure.
+    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+    query.mockResolvedValueOnce([]).mockRejectedValue(new Error("deadlock detected"));
+
+    const res = await request(app).post("/api/billing/renew").set("X-Cron-Secret", CRON_SECRET);
+
+    expect(res.status).toBe(200);
+    expect(res.body).toMatchObject({ renewed: 0, failed: 0 });
+    spy.mockRestore();
+  });
+
   it("does not charge a card another invocation already claimed", async () => {
     // The due-set select takes no lock, so two overlapping runs read the same
     // rows. Cloud Scheduler's 180s attempt deadline is shorter than a 200-card

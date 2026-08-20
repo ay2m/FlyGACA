@@ -640,6 +640,26 @@ billingRouter.post(
       }
     }
 
+    // Piggyback the daily housekeeping. Three tables grow without bound and
+    // nothing else prunes them: oauth_states leaks a row per abandoned Google
+    // sign-in (its only DELETE is the consume path, which is predicated on
+    // `expires_at > now()`, so an EXPIRED row is unreachable by design);
+    // auth_tokens keeps every used and lapsed verification/reset token; and
+    // chat_usage grows with TRAFFIC rather than with users, because its key
+    // includes hashed anonymous IPs.
+    //
+    // Deliberately after the charges and deliberately swallowed: this is a cost and
+    // disk concern, and it must never be the reason a renewal sweep reports failure.
+    try {
+      await query("DELETE FROM oauth_states WHERE expires_at < now()");
+      await query("DELETE FROM auth_tokens WHERE expires_at < now() - interval '7 days'");
+      // `day` is a DATE column, so compare against a date — not a formatted string
+      // leaning on an implicit cast.
+      await query("DELETE FROM chat_usage WHERE day < current_date - 90");
+    } catch (err) {
+      console.error("renew: housekeeping sweep failed", err);
+    }
+
     return res.json({ due: due.length, renewed, failed, skipped });
   }),
 );
