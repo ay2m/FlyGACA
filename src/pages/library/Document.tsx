@@ -99,7 +99,7 @@ export function Document({ kind = 'regulations' }: DocumentProps) {
             lang: i18n.language,
             dateModified,
           }),
-          breadcrumbLd(crumbs),
+          breadcrumbLd(crumbs, i18n.language),
         ]
       : undefined,
     { ogType: 'article' },

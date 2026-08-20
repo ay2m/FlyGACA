@@ -19,6 +19,7 @@ import {
   GUIDE_QUIZ,
   GUIDE_META,
   GUIDE_STATUS,
+  GUIDE_UPDATED,
   TOOL_NAME_KEY,
   partNumber,
   sectionId,
@@ -70,8 +71,11 @@ export function Guide() {
             description: t(`${base}.blurb`),
             path: `/guides/${slug}`,
             lang: i18n.language,
+            // Only guides actually re-verified carry a date (see GUIDE_UPDATED);
+            // the builder omits the date fields when this is undefined.
+            dateModified: GUIDE_UPDATED[slug as GuideSlug],
           }),
-          breadcrumbLd(crumbs),
+          breadcrumbLd(crumbs, i18n.language),
           ...(faqs.length ? [faqLd(faqs)] : []),
         ]
       : undefined,
@@ -123,6 +127,11 @@ export function Guide() {
     [intro, ...sections.flatMap((s) => [s.h, s.p]), ...takeaways].join(' '),
   );
 
+  // Shown next to the read time when the guide has actually been re-verified —
+  // freshness readers (and AI answer engines) can see, matching the dateModified
+  // in the JSON-LD above.
+  const reviewed = GUIDE_UPDATED[guideSlug];
+
   const isSaved = bookmarks.includes(guideSlug);
   const isRead = read.includes(guideSlug);
 
@@ -151,6 +160,9 @@ export function Guide() {
             {t(`guides.level.${meta.level}`)}
           </span>
           <span className={styles.metaDim}>{t('guides.readTime', { min: minutes })}</span>
+          {reviewed && (
+            <span className={styles.metaDim}>{t('guides.lastReviewed', { date: reviewed })}</span>
+          )}
           <button
             type="button"
             className={`${styles.bookmarkBtn} ${isSaved ? styles.bookmarkOn : ''}`}

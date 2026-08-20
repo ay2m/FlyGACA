@@ -56,7 +56,7 @@ export function Glossary() {
       terms,
       lang: i18n.language,
     }),
-    breadcrumbLd(crumbs),
+    breadcrumbLd(crumbs, i18n.language),
   ]);
 
   const [query, setQuery] = useState('');

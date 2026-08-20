@@ -25,7 +25,7 @@ const SECTIONS: { kind: PackKind; head: string }[] = [
 ];
 
 export function Packs() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   // Storefront hub → ItemList of the LIVE pack detail pages (each is its own URL;
   // `soon` packs have no detail route, so they're excluded here and from the sitemap).
   usePageMeta(
@@ -36,6 +36,7 @@ export function Packs() {
         name: t(`study.packCatalog.${p.id}.name`),
         path: `/study/packs/${p.id}`,
       })),
+      i18n.language,
     ),
   );
   const { entitlement, ownedPacks } = useAccount();

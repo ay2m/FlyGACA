@@ -53,6 +53,9 @@ export function organizationLd(): JsonLd {
       postalCode: '12965',
       addressCountry: 'SA',
     },
+    // The market this library is written for. Explicit for search + AI answer
+    // engines deciding which country's question this site can answer.
+    areaServed: { '@type': 'Country', name: 'Saudi Arabia' },
     // Saudi commercial-registration (unified national) number.
     identifier: { '@type': 'PropertyValue', propertyID: 'SA-CR', value: '7030976893' },
     vatID: '311415259500003',
@@ -99,8 +102,9 @@ export interface Crumb {
   path: string;
 }
 
-/** A BreadcrumbList for the page's position in the IA. */
-export function breadcrumbLd(items: Crumb[]): JsonLd {
+/** A BreadcrumbList for the page's position in the IA. Pass the rendering
+ *  language so the Arabic document's crumbs point at its own `/ar` URLs. */
+export function breadcrumbLd(items: Crumb[], lang?: string): JsonLd {
   return {
     '@context': CONTEXT,
     '@type': 'BreadcrumbList',
@@ -108,7 +112,7 @@ export function breadcrumbLd(items: Crumb[]): JsonLd {
       '@type': 'ListItem',
       position: i + 1,
       name: c.name,
-      item: canonicalUrl(c.path),
+      item: canonicalUrl(c.path, lang),
     })),
   };
 }
@@ -124,7 +128,7 @@ export interface ListItem {
  * tools and guides indexes). It lets crawlers read the page as an ordered list
  * of its leaf pages and can surface as a rich list result.
  */
-export function itemListLd(items: ListItem[]): JsonLd {
+export function itemListLd(items: ListItem[], lang?: string): JsonLd {
   return {
     '@context': CONTEXT,
     '@type': 'ItemList',
@@ -133,7 +137,7 @@ export function itemListLd(items: ListItem[]): JsonLd {
       '@type': 'ListItem',
       position: i + 1,
       name: it.name,
-      url: canonicalUrl(it.path),
+      url: canonicalUrl(it.path, lang),
     })),
   };
 }
@@ -150,7 +154,10 @@ export interface ArticleInput {
 }
 
 function articleOfType(type: 'TechArticle' | 'Article', a: ArticleInput): JsonLd {
-  const url = canonicalUrl(a.path);
+  // The article's URL is its own language document: `/ar/...` when rendering
+  // Arabic, the clean path otherwise — so `url`/`mainEntityOfPage` always agree
+  // with `inLanguage` (and with the canonical the head declares).
+  const url = canonicalUrl(a.path, a.lang);
   return {
     '@context': CONTEXT,
     '@type': type,
@@ -187,7 +194,7 @@ export function courseLd(a: ArticleInput): JsonLd {
     name: a.title,
     ...(a.description ? { description: a.description } : {}),
     inLanguage: a.lang ?? 'en',
-    url: canonicalUrl(a.path),
+    url: canonicalUrl(a.path, a.lang),
     provider: orgNode(),
     isAccessibleForFree: true,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'SAR' },
@@ -209,7 +216,7 @@ export function courseLd(a: ArticleInput): JsonLd {
  * same page), so the two nodes merge into one entity.
  */
 export function aboutPageLd(a: ArticleInput): JsonLd {
-  const url = canonicalUrl(a.path);
+  const url = canonicalUrl(a.path, a.lang);
   return {
     '@context': CONTEXT,
     '@type': 'AboutPage',
@@ -263,7 +270,7 @@ export function definedTermSetLd(a: {
   /** BCP-47 language of the current rendering (e.g. 'en' | 'ar'). */
   lang?: string;
 }): JsonLd {
-  const url = canonicalUrl(a.path);
+  const url = canonicalUrl(a.path, a.lang);
   return {
     '@context': CONTEXT,
     '@type': 'DefinedTermSet',
@@ -285,6 +292,8 @@ export interface SoftwareAppInput {
   description?: string;
   /** Router path of the tool (canonicalized internally). */
   path: string;
+  /** BCP-47 language of the current rendering (e.g. 'en' | 'ar'). */
+  lang?: string;
 }
 
 /** SoftwareApplication — for the free, browser-based calculator tools. */
@@ -294,7 +303,7 @@ export function softwareAppLd(a: SoftwareAppInput): JsonLd {
     '@type': 'SoftwareApplication',
     name: a.title,
     ...(a.description ? { description: a.description } : {}),
-    url: canonicalUrl(a.path),
+    url: canonicalUrl(a.path, a.lang),
     applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'Web',
     isAccessibleForFree: true,
@@ -313,6 +322,8 @@ export interface AirportInput {
   lon?: number;
   elevationFt?: number;
   country?: string;
+  /** BCP-47 language of the current rendering (e.g. 'en' | 'ar'). */
+  lang?: string;
 }
 
 /**
@@ -327,7 +338,7 @@ export function airportLd(a: AirportInput): JsonLd {
     name: a.name,
     icaoCode: a.icao,
     ...(a.iata ? { iataCode: a.iata } : {}),
-    url: canonicalUrl(a.path),
+    url: canonicalUrl(a.path, a.lang),
     ...(typeof a.lat === 'number' && typeof a.lon === 'number'
       ? {
           geo: {

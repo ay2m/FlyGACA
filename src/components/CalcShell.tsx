@@ -76,7 +76,7 @@ export function CalcShell({
   primaryLd,
   noindex,
 }: CalcShellProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
   const isPro = useFeature('tool-presets');
@@ -113,8 +113,9 @@ export function CalcShell({
     title,
     intro,
     [
-      primaryLd ?? softwareAppLd({ title, description: intro, path: pathname }),
-      breadcrumbLd(crumbs),
+      primaryLd ??
+        softwareAppLd({ title, description: intro, path: pathname, lang: i18n.language }),
+      breadcrumbLd(crumbs, i18n.language),
     ],
     noindex ? { noindex: true } : undefined,
   );

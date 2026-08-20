@@ -62,12 +62,15 @@ describe('isArabicPath + stripArPrefix', () => {
 });
 
 describe('hreflangAlternates', () => {
-  it('emits en (clean), ar (/ar) and x-default (clean), language-independent', () => {
+  it('emits en (clean), ar + ar-SA (/ar) and x-default (clean), language-independent', () => {
     const alts = hreflangAlternates('/chat');
-    expect(alts.map((a) => a.hreflang)).toEqual(['en', 'ar', 'x-default']);
+    expect(alts.map((a) => a.hreflang)).toEqual(['en', 'ar', 'ar-SA', 'x-default']);
     expect(alts[0].href).toBe(`${SITE_ORIGIN}/chat`);
     expect(alts[1].href).toBe(`${SITE_ORIGIN}${AR_PREFIX}/chat`);
-    expect(alts[2].href).toBe(`${SITE_ORIGIN}/chat`);
+    // Saudi Arabia is the target market, but bare `ar` stays as the catch-all —
+    // both point at the same Arabic document.
+    expect(alts[2].href).toBe(`${SITE_ORIGIN}${AR_PREFIX}/chat`);
+    expect(alts[3].href).toBe(`${SITE_ORIGIN}/chat`);
   });
   it('emits the same cluster whether given the clean or /ar path', () => {
     expect(hreflangAlternates('/ar/chat')).toEqual(hreflangAlternates('/chat'));

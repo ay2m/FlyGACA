@@ -114,6 +114,28 @@ export const GUIDE_STATUS: Record<GuideSlug, GuideStatus> = {
   'the-airac-cycle': 'live',
 };
 
+/**
+ * The date a guide's regulatory content was last verified against the corpus,
+ * ISO `YYYY-MM-DD`. Emitted as schema.org `datePublished`/`dateModified`, shown
+ * on the page as "last reviewed", and used as the guide's sitemap `lastmod`.
+ *
+ * Deliberately PARTIAL: only guides someone has actually re-checked appear here.
+ * A guide with no entry ships no date at all rather than a fabricated one —
+ * claiming freshness you haven't verified is worse than claiming none, both for
+ * readers and for the AI answer engines that weigh recency.
+ *
+ * Keep the entries as plain `'slug': 'date'` literals on one line each: the
+ * sitemap and prerender scripts read this table by regex, not by importing it.
+ */
+export const GUIDE_UPDATED: Partial<Record<GuideSlug, string>> = {
+  'how-to-become-a-pilot-in-saudi-arabia': '2026-08-19',
+  'gacar-explained': '2026-08-19',
+  'saudi-cpl-requirements': '2026-08-19',
+  'saudi-instrument-rating': '2026-08-19',
+  'atpl-requirements': '2026-08-19',
+  'drone-uas-rules-in-ksa': '2026-08-19',
+};
+
 const isLiveGuide = (slug: GuideSlug): boolean => GUIDE_STATUS[slug] === 'live';
 
 /** Published guides, in index order — drafts filtered out. */

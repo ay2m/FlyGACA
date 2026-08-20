@@ -41,7 +41,7 @@ const SEAT_STATS = [
 ] as const;
 
 export function Schools() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const features = t('schools.features', { returnObjects: true }) as unknown as Section[];
   const tiers = t('schools.packages.tiers', { returnObjects: true }) as unknown as Tier[];
   const steps = t('schools.how.steps', { returnObjects: true }) as unknown as Section[];
@@ -50,10 +50,13 @@ export function Schools() {
 
   usePageMeta(t('meta.schools'), t('metaDesc.schools'), [
     faqLd(faqs),
-    breadcrumbLd([
-      { name: t('nav.breadcrumbHome'), path: '/' },
-      { name: t('schools.title'), path: '/schools' },
-    ]),
+    breadcrumbLd(
+      [
+        { name: t('nav.breadcrumbHome'), path: '/' },
+        { name: t('schools.title'), path: '/schools' },
+      ],
+      i18n.language,
+    ),
   ]);
 
   const [name, setName] = useState('');

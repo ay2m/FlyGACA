@@ -44,10 +44,13 @@ export function LegalPage({ base }: { base: LegalBase }) {
       lang: i18n.language,
       dateModified: LAST_UPDATED,
     }),
-    breadcrumbLd([
-      { name: t('nav.breadcrumbHome'), path: '/' },
-      { name: title, path: doc.path },
-    ]),
+    breadcrumbLd(
+      [
+        { name: t('nav.breadcrumbHome'), path: '/' },
+        { name: title, path: doc.path },
+      ],
+      i18n.language,
+    ),
   ]);
 
   // Deep links to a section (#anchor) — jump once the page has rendered.

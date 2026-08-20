@@ -14,9 +14,9 @@
  *
  * Detection: prerender.mjs waits for the app's <footer> before snapshotting, and
  * the head-only floor (prerender-head.mjs) never emits one — so `<footer` in the
- * file is the "real body content" marker. Query-string hreflang variants
- * (?lang=en/ar) share the canonical file and are out of scope here (see
- * SEO-PLAN item 0.3 for Arabic body crawlability).
+ * file is the "real body content" marker. The Arabic tree is checked the same
+ * way: `/ar/<path>` is its own document on disk, so it either has a body or it
+ * fails here like any other URL.
  *
  * Escape hatch: PRERENDER_COVERAGE_LENIENT=1 downgrades failures to warnings —
  * for emergency deploys only; the gap it hides is real and stays in production.

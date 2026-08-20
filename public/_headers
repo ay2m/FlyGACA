@@ -1,8 +1,13 @@
 # Cloudflare Pages headers (copied verbatim into dist/ by Vite; also honored by
-# Netlify). Mirrored from firebase.json so every front behaves identically.
-# Cloudflare Pages + Netlify are *mirror* fronts (never the canonical
-# flygaca.com, which is on Firebase), so they noindex to avoid being indexed as
-# duplicates. Firebase/Vercel ignore this file and set their own headers.
+# Netlify). Cloudflare Pages + Netlify are *mirror* fronts, never the canonical
+# flygaca.com — that is served from a Cloud Storage bucket behind an HTTPS load
+# balancer, with /api/* routed to Cloud Run (see docs/RUNBOOK-deploy.md). The
+# mirrors noindex so they can't be indexed as duplicates of the canonical site.
+#
+# CAUTION: this blanket noindex applies to every path in this file's front. It
+# ships inside dist/, so any host that honors _headers and serves this build
+# noindexes the whole site — never put the canonical origin behind one without
+# removing the rule first.
 /*
   X-Robots-Tag: noindex, follow
   X-Content-Type-Options: nosniff

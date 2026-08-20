@@ -76,9 +76,14 @@ export interface Alternate {
  */
 export function hreflangAlternates(path: string): Alternate[] {
   const clean = stripArPrefix(path);
+  const ar = canonicalUrl(clean, 'ar');
   return [
     { hreflang: 'en', href: canonicalUrl(clean, 'en') },
-    { hreflang: 'ar', href: canonicalUrl(clean, 'ar') },
+    { hreflang: 'ar', href: ar },
+    // Saudi Arabia is the primary market, so the Arabic document is also declared
+    // for ar-SA. The bare `ar` stays as the catch-all for Arabic speakers
+    // elsewhere; a region-only cluster would strand them.
+    { hreflang: 'ar-SA', href: ar },
     { hreflang: 'x-default', href: canonicalUrl(clean, 'en') },
   ];
 }

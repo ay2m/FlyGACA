@@ -48,10 +48,13 @@ export function SupportPage() {
   usePageMeta(title, description, [
     articleLd({ title, description, path: '/support', lang: i18n.language }),
     faqLd(faqs),
-    breadcrumbLd([
-      { name: t('nav.breadcrumbHome'), path: '/' },
-      { name: title, path: '/support' },
-    ]),
+    breadcrumbLd(
+      [
+        { name: t('nav.breadcrumbHome'), path: '/' },
+        { name: title, path: '/support' },
+      ],
+      i18n.language,
+    ),
   ]);
 
   return (
