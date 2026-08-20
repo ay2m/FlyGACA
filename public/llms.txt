@@ -21,15 +21,36 @@ Operator: Fly GACA is operated by BDA Company International (شركة بدع ا�
 
 ## Guides
 
-- [Pilot Guides](https://flygaca.com/guides): Plain-language guides to becoming a pilot in Saudi Arabia — PPL/CPL requirements, the GACA medical, licence conversion (FAA/EASA → GACA) and SAELPT, each citing the GACAR Part.
+- [Learn hub](https://flygaca.com/learn): All guides, study modes and reference tools in one place.
+- [How to become a pilot in Saudi Arabia](https://flygaca.com/guides/how-to-become-a-pilot-in-saudi-arabia): The path from student to airline pilot, citing GACAR Part 61 and Part 67.
+- [Saudi PPL requirements](https://flygaca.com/guides/saudi-ppl-requirements): Age, medical, training and tests for a private pilot certificate.
+- [Saudi CPL requirements](https://flygaca.com/guides/saudi-cpl-requirements): Commercial pilot eligibility and the Appendix D experience route.
+- [Saudi instrument rating](https://flygaca.com/guides/saudi-instrument-rating): The GACAR §61.89 routes to an instrument rating.
+- [ATPL requirements](https://flygaca.com/guides/atpl-requirements): Airline transport pilot age and the §61.181 hours.
+- [Drone / UAS rules in KSA](https://flygaca.com/guides/drone-uas-rules-in-ksa): GACAR Part 107 limits for civil small unmanned aircraft.
+- [Foreign licence conversion](https://flygaca.com/guides/foreign-license-conversion-to-gaca): Converting an FAA/EASA licence to GACA.
+- [GACAR explained](https://flygaca.com/guides/gacar-explained): How the regulations are organized and cited.
 
 ## Study & exam prep
 
-- [Study & Exam Prep](https://flygaca.com/study): GACAR quizzes (12 domains), flashcards, ground school and a timed mock exam — every answer linked to the cited regulation.
+- [Study & Exam Prep](https://flygaca.com/learn?tab=practice): GACAR quizzes (12 domains), flashcards, ground school and a timed mock exam — every answer linked to the cited regulation.
+- [Aviation glossary](https://flygaca.com/library/glossary): Bilingual definitions of the GACAR and aviation terms used across the library.
+- [Aerodrome directory](https://flygaca.com/tools/aerodromes): Runways, frequencies and elevation for Saudi and regional aerodromes.
 
 ## Captain Adel (AI flight instructor)
 
 - [Captain Adel](https://flygaca.com/chat): Ask questions about Saudi GACAR and get answers grounded in the regulation with the exact Part and section cited.
+
+## Arabic (العربية)
+
+Every page has an Arabic twin under the `/ar` prefix — a distinct, crawlable document, not a
+query-string variant. The regulatory text itself is published in English; the Arabic pages carry
+Arabic navigation, metadata and guide content.
+
+- [Fly GACA بالعربية](https://flygaca.com/ar): The Arabic home.
+- [المكتبة التنظيمية](https://flygaca.com/ar/library): The GACAR library in Arabic.
+- [الكابتن عادل](https://flygaca.com/ar/chat): Ask about GACAR in Arabic and get the Part and section cited.
+- [أدلة الطيران](https://flygaca.com/ar/learn): Guides and study tools in Arabic.
 
 ## Optional
 

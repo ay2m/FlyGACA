@@ -32,14 +32,17 @@ const EXAMPLE_RESPONSE = `{
 }`;
 
 export function Developers() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const tiers = t('developers.tiers', { returnObjects: true }) as unknown as Tier[];
 
   usePageMeta(t('meta.developers'), t('metaDesc.developers'), [
-    breadcrumbLd([
-      { name: t('nav.breadcrumbHome'), path: '/' },
-      { name: t('developers.title'), path: '/developers' },
-    ]),
+    breadcrumbLd(
+      [
+        { name: t('nav.breadcrumbHome'), path: '/' },
+        { name: t('developers.title'), path: '/developers' },
+      ],
+      i18n.language,
+    ),
   ]);
 
   const mailto = `mailto:${SALES_EMAIL}?subject=${encodeURIComponent(t('developers.getKeySubject'))}`;

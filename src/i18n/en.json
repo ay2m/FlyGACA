@@ -2918,6 +2918,60 @@
           "Start with an aviation medical, Class 2 for a PPL, Class 1 for commercial.",
           "Train with an approved instructor or ATO, then pass theory exams and a skill test.",
           "Add ratings and higher licences (IR → CPL → ATPL) as your experience grows."
+        ],
+        "keyFacts": [
+          {
+            "label": "Governing rules",
+            "value": "GACAR Part 61 sets pilot certification; Part 67 sets the medical standards.",
+            "ref": "GACAR Part 61"
+          },
+          {
+            "label": "First licence",
+            "value": "The private pilot certificate — minimum age 17, or 16 for a glider or balloon rating.",
+            "ref": "GACAR §61.133"
+          },
+          {
+            "label": "Medical",
+            "value": "Examined by an aviation medical examiner designated under GACAR Part 183.",
+            "ref": "GACAR §67.3"
+          },
+          {
+            "label": "Training route",
+            "value": "Graduate an approved course at a GACAR Part 141 pilot school, or log the required training with an authorized instructor.",
+            "ref": "GACAR §61.133"
+          },
+          {
+            "label": "Knowledge test",
+            "value": "On the aeronautical knowledge areas in Appendix A to GACAR Part 141.",
+            "ref": "GACAR §61.133"
+          },
+          {
+            "label": "Career ladder",
+            "value": "Commercial pilot from age 18; airline transport pilot from age 23.",
+            "ref": "GACAR §61.153, §61.173"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "How do you become a pilot in Saudi Arabia?",
+            "a": "You train toward a GACA pilot certificate under GACAR Part 61. The usual first step is the private pilot certificate: you must be at least 17 (GACAR §61.133), hold a medical certificate issued after examination by an aviation medical examiner designated under GACAR Part 183 (§67.3), pass the knowledge test on the areas listed in Appendix A to GACAR Part 141, and either graduate an approved course at a Part 141 pilot school or log the required training with an authorized instructor. Fly GACA is an independent educational reference — confirm the current requirements with GACA before you rely on them."
+          },
+          {
+            "q": "What is the minimum age to start flight training in Saudi Arabia?",
+            "a": "GACAR §61.133 requires you to be at least 17 years of age to be issued a private pilot certificate, or at least 16 for a glider or balloon rating. Training can begin earlier; the age applies at issue of the certificate. Fly GACA is independent and educational — verify the current age limits against GACAR Part 61 at gaca.gov.sa."
+          },
+          {
+            "q": "Do I need a medical certificate before I can fly in Saudi Arabia?",
+            "a": "Yes. GACAR §67.3 requires an applicant for Class 1, Class 2 or Class 3 medical certification to be examined by an aviation medical examiner (AME) designated in accordance with GACAR Part 183. Which class you need depends on the certificate and the operation you are working toward. This is an independent educational summary — confirm the medical class you need with GACA before booking an examination."
+          },
+          {
+            "q": "Can I train at any flight school in Saudi Arabia?",
+            "a": "GACAR §61.133 lets you qualify either by graduating an approved certification course at a pilot school under GACAR Part 141, or by logging the required ground and flight training with an appropriately certificated and rated instructor. Part 141 governs pilot schools and Part 142 governs training centres. Fly GACA is not affiliated with GACA — check any school's current approval status with GACA directly."
+          },
+          {
+            "q": "How long does it take to become an airline pilot in Saudi Arabia?",
+            "a": "The regulations set experience, not a calendar. You can hold a commercial pilot certificate from age 18 (GACAR §61.153) and an airline transport pilot certificate from age 23 (§61.173), and an ATP applicant for an airplane category rating needs at least 1,500 hours of total time as a pilot (§61.181). How quickly you build that is a matter of training pace, not regulation. Verify the current requirements against GACAR Part 61 at gaca.gov.sa."
+          }
         ]
       },
       "gacar-explained": {
@@ -2948,6 +3002,60 @@
           "Each Part covers one subject, e.g. Part 1 definitions, Part 61 licensing, Part 91 operations.",
           "A citation like §61.17 means Part 61, section 17.",
           "Start with Part 1 definitions, and always read the current text at source."
+        ],
+        "keyFacts": [
+          {
+            "label": "What GACAR is",
+            "value": "The General Authority of Civil Aviation Regulations — the body of Saudi civil-aviation rules.",
+            "ref": "GACAR"
+          },
+          {
+            "label": "How it is organized",
+            "value": "Numbered Parts, divided into Subparts, cited by section as §.",
+            "ref": "GACAR"
+          },
+          {
+            "label": "Operating rules",
+            "value": "Part 91 is the general operating and flight rules; Part 121 covers commercial air operators.",
+            "ref": "GACAR Part 91, Part 121"
+          },
+          {
+            "label": "People",
+            "value": "Part 61 certifies pilots and instructors; Part 65 covers dispatchers and cabin crew.",
+            "ref": "GACAR Part 61, Part 65"
+          },
+          {
+            "label": "Medical",
+            "value": "Part 67 sets the medical standards and the Class 1, 2 and 3 certificates.",
+            "ref": "GACAR Part 67"
+          },
+          {
+            "label": "Unmanned aircraft",
+            "value": "Part 107 covers civil small UAS; Part 101 covers balloons, kites, rockets and model aircraft.",
+            "ref": "GACAR Part 107, Part 101"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "What does GACAR stand for?",
+            "a": "GACAR is the General Authority of Civil Aviation Regulations — the body of civil-aviation rules that applies in the Kingdom of Saudi Arabia. The rules are organized into numbered Parts (Part 61 for pilot certification, Part 91 for the general operating and flight rules, and so on), each divided into Subparts and cited by section, such as GACAR §61.133. Fly GACA is an independent educational library, not GACA — read the official text at gaca.gov.sa."
+          },
+          {
+            "q": "How is GACAR structured?",
+            "a": "GACAR is organized into numbered Parts by subject: Part 61 certifies pilots, flight instructors, ground instructors and flight engineers; Part 67 sets medical standards; Part 91 gives the general operating and flight rules; Part 121 covers commercial air operators; Part 141 covers pilot schools. Within a Part, rules are grouped into Subparts and cited by section number (§). This is an independent educational summary — verify any Part against the official text at gaca.gov.sa."
+          },
+          {
+            "q": "Is GACAR the same as the FAA's FARs?",
+            "a": "No. GACAR is Saudi Arabia's own body of civil-aviation regulations, issued by the General Authority of Civil Aviation, and only GACAR applies in the Kingdom. Its Part numbering will look familiar to anyone who has read the US FARs, but the requirements are not identical and you cannot assume a US rule carries over. Fly GACA is independent and not affiliated with GACA — always confirm a requirement in the GACAR text itself."
+          },
+          {
+            "q": "Which GACAR Part applies to me as a private pilot?",
+            "a": "Two apply most directly: GACAR Part 61, which sets how you are certificated and what your privileges and limitations are, and GACAR Part 91, the general operating and flight rules you fly under. Your medical certificate comes from Part 67. Fly GACA is an educational reference, not the regulator — confirm the current text with GACA."
+          },
+          {
+            "q": "Where can I read the official GACAR text?",
+            "a": "The authoritative text is published by the General Authority of Civil Aviation at gaca.gov.sa. Fly GACA is an independent educational library that reproduces and indexes the corpus so you can search it and jump straight to a section, but it never replaces the official text — verify anything you rely on against GACA's published version."
+          }
         ]
       },
       "saudi-ppl-requirements": {
@@ -3052,6 +3160,60 @@
           "Builds on the PPL with a Class 1 medical and more flight experience.",
           "Meet the total and specific hour requirements of Part 61 (PIC, night, instrument).",
           "Pass the CPL theory exams and the commercial skill test."
+        ],
+        "keyFacts": [
+          {
+            "label": "Governing rules",
+            "value": "GACAR Part 61 Subpart E, with the medical standards in Part 67.",
+            "ref": "GACAR §61.153"
+          },
+          {
+            "label": "Minimum age",
+            "value": "18 years of age to be issued a commercial pilot certificate.",
+            "ref": "GACAR §61.153"
+          },
+          {
+            "label": "Knowledge test",
+            "value": "On the aeronautical knowledge areas in Appendix C to GACAR Part 141.",
+            "ref": "GACAR §61.153"
+          },
+          {
+            "label": "Training route",
+            "value": "Graduate an approved commercial pilot course under Appendix C to GACAR Part 141, or log the required training.",
+            "ref": "GACAR §61.153"
+          },
+          {
+            "label": "Experience (non-approved route)",
+            "value": "At least 250 hours of flight time, including at least 200 hours in airplanes and 100 hours PIC in airplanes.",
+            "ref": "GACAR Part 61, Appendix D"
+          },
+          {
+            "label": "Cross-country",
+            "value": "At least 50 hours of cross-country PIC time, of which at least 20 hours must be in airplanes.",
+            "ref": "GACAR Part 61, Appendix D"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "What are the requirements for a commercial pilot licence in Saudi Arabia?",
+            "a": "Under GACAR §61.153 you must be at least 18 years of age, pass the knowledge test on the aeronautical knowledge areas listed in Appendix C to GACAR Part 141, and either graduate an approved commercial pilot certification course or log the required training for the category and class rating you want. Medical certification is governed by GACAR Part 67. Fly GACA is an independent educational reference — confirm the current requirements with GACA before you rely on them."
+          },
+          {
+            "q": "How many flight hours do you need for a CPL in Saudi Arabia?",
+            "a": "If you are not graduating from an approved commercial pilot certification course, Appendix D to GACAR Part 61 requires at least 250 hours of flight time as a pilot for an airplane single-engine rating, including at least 200 hours in airplanes and at least 100 hours of pilot-in-command time in airplanes. Graduates of an approved Part 141 course follow that course's requirements instead. This is an independent educational summary — verify the current hours against GACAR Part 61 at gaca.gov.sa."
+          },
+          {
+            "q": "How much cross-country time does a Saudi CPL need?",
+            "a": "Appendix D to GACAR Part 61 requires the 100 hours of pilot-in-command time to include at least 50 hours of cross-country flight, of which at least 20 hours must be in airplanes, for an airplane single-engine rating on the non-approved-course route. Fly GACA is independent and educational — confirm the current experience requirements with GACA."
+          },
+          {
+            "q": "How old do you have to be for a Saudi commercial pilot licence?",
+            "a": "GACAR §61.153 requires you to be at least 18 years of age to be issued a commercial pilot certificate. You may train before then; the age applies at issue. Fly GACA is not affiliated with GACA — verify the current minimum age in GACAR Part 61."
+          },
+          {
+            "q": "Do I need instrument training for a Saudi CPL?",
+            "a": "Appendix D to GACAR Part 61 requires the non-approved-course applicant to complete at least 20 hours of training on the areas of operation in Appendix C to GACAR Part 141, which includes at least 10 hours of instrument training using a view-limiting device. That is training toward the commercial certificate, and is separate from holding an instrument rating under GACAR §61.89. Confirm the current requirements against GACAR Part 61 at gaca.gov.sa."
+          }
         ]
       },
       "saudi-instrument-rating": {
@@ -3077,6 +3239,60 @@
           "Lets you fly under IFR in instrument meteorological conditions.",
           "Requires instrument instruction and logged instrument time, including approaches.",
           "Pass the instrument theory exam and the instrument skill test."
+        ],
+        "keyFacts": [
+          {
+            "label": "Governing rule",
+            "value": "GACAR §61.89 sets the instrument rating requirements.",
+            "ref": "GACAR §61.89"
+          },
+          {
+            "label": "Prerequisite",
+            "value": "Hold at least a current private pilot certificate, or apply for one concurrently.",
+            "ref": "GACAR §61.89"
+          },
+          {
+            "label": "Rating must match",
+            "value": "The airplane, helicopter or powered-lift rating must be appropriate to the instrument rating sought.",
+            "ref": "GACAR §61.89"
+          },
+          {
+            "label": "Knowledge test",
+            "value": "On the aeronautical knowledge areas in Appendix B to GACAR Part 141.",
+            "ref": "GACAR §61.89"
+          },
+          {
+            "label": "Training route",
+            "value": "An approved course under Appendix B to Part 141, a Part 121 operator programme, or logged training plus Appendix E experience.",
+            "ref": "GACAR §61.89"
+          },
+          {
+            "label": "Practical test",
+            "value": "On the areas of operation in Appendix B to GACAR Part 141.",
+            "ref": "GACAR §61.89"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "What are the requirements for an instrument rating in Saudi Arabia?",
+            "a": "GACAR §61.89 requires you to hold at least a current private pilot certificate (or apply for one concurrently) with an airplane, helicopter or powered-lift rating appropriate to the instrument rating sought, pass the knowledge test on the areas in Appendix B to GACAR Part 141, complete an approved instrument rating course or the equivalent logged training, and pass the practical test on the Appendix B areas of operation. Fly GACA is an independent educational reference — confirm the current requirements with GACA."
+          },
+          {
+            "q": "Do I need a private pilot licence before an instrument rating in Saudi Arabia?",
+            "a": "You must hold at least a current private pilot certificate, or be applying for one concurrently, with a category rating appropriate to the instrument rating you want — GACAR §61.89(a)(1). This is an independent educational summary; verify the current prerequisite against GACAR Part 61 at gaca.gov.sa."
+          },
+          {
+            "q": "Can I do the instrument rating without an approved course?",
+            "a": "GACAR §61.89(a)(3) allows three routes: graduating an approved instrument rating course under Appendix B to GACAR Part 141 (or the combined private-plus-instrument course under Appendix L), completing an approved instrument training programme of a GACAR Part 121 air operator, or receiving and logging ground and flight training from an appropriately certificated and rated instructor and meeting the aeronautical experience requirements of Appendix E to Part 61. Fly GACA is independent and educational — confirm which route applies to you with GACA."
+          },
+          {
+            "q": "Which test do I take for a Saudi instrument rating?",
+            "a": "Unless you already hold an instrument rating, GACAR §61.89(a)(2) requires the knowledge test on the aeronautical knowledge areas of Appendix B to GACAR Part 141, and §61.89(a)(4) requires a practical test on the Appendix B areas of operation, flown in an aircraft appropriate to the rating. Verify the current testing requirements with GACA before you book."
+          },
+          {
+            "q": "Are there restrictions on non-Saudi instructors for instrument training?",
+            "a": "GACAR §61.89(a)(3) records that, effective 1 January 2023, appropriately certificated and rated non-Saudi national instructors — except GCC national instructors — must be employed by a GACA certificated pilot school. Fly GACA is not affiliated with GACA — confirm the current position in GACAR Part 61 at gaca.gov.sa."
+          }
         ]
       },
       "gaca-medical-class-1": {
@@ -3464,7 +3680,61 @@
           "It builds on a CPL with an instrument rating and a Class 1 medical.",
           "It demands high total time and a complete set of theory exams."
         ],
-        "adel": "What are the GACAR Part 61 requirements for an Airline Transport Pilot Licence?"
+        "adel": "What are the GACAR Part 61 requirements for an Airline Transport Pilot Licence?",
+        "keyFacts": [
+          {
+            "label": "Governing rules",
+            "value": "GACAR §61.173 for eligibility; §61.181 for airplane aeronautical experience.",
+            "ref": "GACAR §61.173"
+          },
+          {
+            "label": "Minimum age",
+            "value": "23 years of age to be issued an ATP certificate.",
+            "ref": "GACAR §61.173"
+          },
+          {
+            "label": "Total time",
+            "value": "At least 1,500 hours of total time as a pilot for an airplane category and class rating.",
+            "ref": "GACAR §61.181"
+          },
+          {
+            "label": "Cross-country",
+            "value": "At least 500 hours of cross-country flight time.",
+            "ref": "GACAR §61.181"
+          },
+          {
+            "label": "Night",
+            "value": "At least 100 hours of night flight time.",
+            "ref": "GACAR §61.181"
+          },
+          {
+            "label": "Instrument",
+            "value": "At least 75 hours of instrument flight time, in actual or simulated conditions.",
+            "ref": "GACAR §61.181"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "What are the requirements for an ATPL in Saudi Arabia?",
+            "a": "GACAR §61.173 requires an airline transport pilot certificate applicant to be at least 23 years of age and of good moral character, and to hold a commercial pilot certificate with an instrument rating or an equivalent foreign ATP licence with instrument privileges issued by a Contracting State and carrying no geographical limitations. The aeronautical experience for an airplane category and class rating is set by §61.181. Fly GACA is an independent educational reference — confirm the current requirements with GACA."
+          },
+          {
+            "q": "How many hours do you need for an ATPL in Saudi Arabia?",
+            "a": "For an airplane category and class rating, GACAR §61.181 requires at least 1,500 hours of total time as a pilot, including at least 500 hours of cross-country flight time, 100 hours of night flight time, 50 hours in the class of airplane for the rating sought, and 75 hours of instrument flight time in actual or simulated instrument conditions. This is an independent educational summary — verify the current hours against GACAR Part 61 at gaca.gov.sa."
+          },
+          {
+            "q": "What is the minimum age for an airline transport pilot certificate in Saudi Arabia?",
+            "a": "GACAR §61.173(a) requires you to be at least 23 years of age to be issued an ATP certificate. Fly GACA is independent and not affiliated with GACA — confirm the current minimum age in GACAR Part 61."
+          },
+          {
+            "q": "Can simulator time count toward the Saudi ATPL hours?",
+            "a": "Within limits. GACAR §61.181 allows a maximum of 25 hours of training in a full flight simulator representing the class of airplane sought to count toward the 50-hour in-class requirement when accomplished in an approved course under Parts 121, 135, 141 or 142, and caps simulated instrument credit against the 75-hour instrument requirement. Verify the current crediting rules against GACAR Part 61 before you plan around them."
+          },
+          {
+            "q": "Is there an age limit for flying as an ATP in Saudi Arabia?",
+            "a": "GACAR §61.3 provides that a person holding a commercial pilot certificate or airline transport pilot certificate may not serve as a pilot in international operations under GACAR Part 121 or 135 after their 60th birthday, or after their 65th birthday in operations with more than one pilot. Fly GACA is an educational reference, not the regulator — confirm the current limitation with GACA."
+          }
+        ]
       },
       "flight-instructor-rating": {
         "name": "Flight instructor rating",
@@ -3539,7 +3809,61 @@
           "Stay clear of aerodromes, controlled airspace and restricted areas.",
           "Keep it in sight and within the Part 107 operating limits."
         ],
-        "adel": "What are the rules for flying a small drone in Saudi Arabia under Part 107?"
+        "adel": "What are the rules for flying a small drone in Saudi Arabia under Part 107?",
+        "keyFacts": [
+          {
+            "label": "Governing rules",
+            "value": "GACAR Part 107 for civil small UAS; Part 101 for balloons, kites, rockets and model aircraft.",
+            "ref": "GACAR Part 107"
+          },
+          {
+            "label": "What counts as small",
+            "value": "An unmanned aircraft weighing less than 25 kg on takeoff, including everything attached.",
+            "ref": "GACAR Part 107"
+          },
+          {
+            "label": "Maximum altitude",
+            "value": "400 feet (120 m) above ground level, unless within a 400-foot radius of a structure.",
+            "ref": "GACAR §107.59"
+          },
+          {
+            "label": "Maximum speed",
+            "value": "Ground speed may not exceed 87 knots (160 km/h).",
+            "ref": "GACAR §107.59"
+          },
+          {
+            "label": "Visual line of sight",
+            "value": "The remote pilot in command must keep the aircraft in unaided visual line of sight.",
+            "ref": "GACAR §107.37"
+          },
+          {
+            "label": "Remote pilot",
+            "value": "At least 18 years old, cleared through GACA Aviation Security, and able to read, speak, write and understand English.",
+            "ref": "GACAR §107.65"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "What are the drone rules in Saudi Arabia?",
+            "a": "Civil small unmanned aircraft systems are governed by GACAR Part 107, which applies to the registration, airman certification and operation of civil small UAS within the Kingdom (§107.1). Operating limitations in §107.59 include a maximum ground speed of 87 knots (160 km/h) and a maximum altitude of 400 feet (120 m) above ground level, and §107.37 requires the aircraft to stay in unaided visual line of sight. Fly GACA is an independent educational reference — confirm the current rules with GACA before you fly."
+          },
+          {
+            "q": "How high can you legally fly a drone in Saudi Arabia?",
+            "a": "GACAR §107.59(b) limits a small unmanned aircraft to 400 feet (120 metres) above ground level, unless it is flown within a 400-foot (120 m) radius of a structure, in which case it may not fly higher than 400 feet above that structure's immediate uppermost limit. This is an independent educational summary — verify the current limit against GACAR Part 107 at gaca.gov.sa."
+          },
+          {
+            "q": "Do I need a licence to fly a drone in Saudi Arabia?",
+            "a": "GACAR Part 107 covers airman certification for civil small UAS, and §107.65 requires an applicant for a remote pilot certificate with a small UAS rating to be at least 18 years of age, to be cleared through the GACA Aviation Security Division, and to be able to read, speak, write and understand English. Fly GACA is not affiliated with GACA — confirm the current certification requirements and any registration steps with GACA directly."
+          },
+          {
+            "q": "What counts as a small drone under Saudi rules?",
+            "a": "GACAR Part 107 defines a small unmanned aircraft as an unmanned aircraft weighing less than 25 kilograms on takeoff, including everything that is on board or otherwise attached to the aircraft. Heavier or different unmanned operations fall outside Part 107. Verify the current definition against GACAR Part 107 before assuming your aircraft qualifies."
+          },
+          {
+            "q": "Do I have to keep my drone in sight in Saudi Arabia?",
+            "a": "Yes. GACAR §107.37 requires the remote pilot in command, the visual observer if one is used, and the person manipulating the flight controls to be able to see the small unmanned aircraft with vision unaided by any device other than corrective lenses. Fly GACA is an educational reference, not the regulator — confirm the current visual line-of-sight rule with GACA."
+          }
+        ]
       },
       "weight-and-balance-basics": {
         "name": "Weight & balance basics",
@@ -3624,6 +3948,7 @@
     "levelLabel": "Level",
     "guideCount": "{{count}} guides",
     "readTime": "{{min}} min read",
+    "lastReviewed": "Last reviewed {{date}}",
     "sectionCount": "{{count}} sections",
     "onThisPage": "On this page",
     "prev": "Previous",
@@ -4325,7 +4650,8 @@
     "glossary": "A bilingual glossary of Saudi aviation: plain-language definitions of the GACAR, AIP, airspace, weather and licensing terms and abbreviations pilots meet — METAR, QNH, VFR, PPL and more. Independent; verify against GACA.",
     "about": "Fly GACA is an independent, educational platform and open regulatory library for Saudi civil aviation (GACAR). Not affiliated with GACA, it helps you find and study the rules.",
     "support": "Get help with Fly GACA and the Saudi exam-prep apps — how to contact support, response times, refunds, offline study and saved progress. Independent; not affiliated with GACA.",
-    "home": "Find and study every Saudi civil-aviation rule in one place. Search the GACAR library in English or Arabic and ask Captain Adel, an AI instructor that cites the exact Part and section. Independent and educational; not affiliated with GACA."
+    "home": "Find and study every Saudi civil-aviation rule in one place. Search the GACAR library in English or Arabic and ask Captain Adel, an AI instructor that cites the exact Part and section. Independent and educational; not affiliated with GACA.",
+    "offline": "You are offline. Fly GACA keeps the pages you have already opened available to read — reconnect to load anything new."
   },
   "dashboard": {
     "eyebrow": "Flight deck",

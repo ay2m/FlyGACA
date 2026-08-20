@@ -80,18 +80,27 @@ async function fetchSitemapPaths() {
 }
 
 // One URL per route type (first, sorted → deterministic), capped, then expanded
-// across ?lang=en / ?lang=ar. The apex may 301/308 to www — fetch follows it.
+// across the English URL and its Arabic twin.
+//
+// The Arabic variant is the real `/ar<path>` document, NOT `?lang=ar`: the query
+// param is only a legacy client-side redirect, so a bot fetching it receives the
+// English document and the Arabic tree looks broken when it isn't. Paths already
+// under /ar are left alone so a sitemap that lists them isn't double-prefixed.
+const AR_PREFIX = '/ar';
+const arPath = (p) => (p === '/' ? AR_PREFIX : p.startsWith(`${AR_PREFIX}/`) || p === AR_PREFIX ? p : `${AR_PREFIX}${p}`);
 function buildSample(paths) {
   const byType = new Map();
   for (const p of [...new Set(paths)].sort()) {
+    // Sample the English tree; the Arabic twin is derived, so an /ar URL in the
+    // sitemap never consumes a slot that an English route type still needs.
+    if (p === AR_PREFIX || p.startsWith(`${AR_PREFIX}/`)) continue;
     const t = routeType(p);
     if (!byType.has(t)) byType.set(t, p);
   }
-  const picked = [...byType.values()];
   const variants = [];
-  for (const p of picked) {
-    for (const lang of ['en', 'ar']) {
-      variants.push(`${BASE}${p}${p.includes('?') ? '&' : '?'}lang=${lang}`);
+  for (const p of byType.values()) {
+    for (const path of [p, arPath(p)]) {
+      variants.push(`${BASE}${path}`);
       if (variants.length >= MAX) return variants;
     }
   }
@@ -215,7 +224,10 @@ async function main() {
   const noindex = new Set(flat.filter((r) => r.indexable === false).map((r) => r.url));
   const shell = new Set(flat.filter((r) => r.bodyVisible === false && r.status === 200).map((r) => r.url));
   const errored = flat.filter((r) => r.error);
-  const arUrls = sample.filter((u) => u.includes('lang=ar'));
+  const arUrls = sample.filter((u) => {
+    const { pathname } = new URL(u);
+    return pathname === AR_PREFIX || pathname.startsWith(`${AR_PREFIX}/`);
+  });
   const arNoArabic = arUrls.filter((u) => (byUrl.get(u).Chrome?.arabicChars ?? 0) < 5);
 
   console.log(`\n${'─'.repeat(64)}`);
@@ -224,7 +236,10 @@ async function main() {
   if (shell.size) console.log(`  ✗ shell-only body (no prerendered content) on ${shell.size}/${sample.length} URLs`);
   if (errored.length) console.log(`  ✗ ${errored.length} request error(s)`);
   if (arUrls.length)
-    console.log(`  · Arabic body present on ${arUrls.length - arNoArabic.length}/${arUrls.length} ?lang=ar URLs (0.3 gap if low)`);
+    console.log(
+      `  · Arabic body present on ${arUrls.length - arNoArabic.length}/${arUrls.length} /ar URLs` +
+        ' (low = the Arabic snapshots are not being served)',
+    );
   if (!failed.length) console.log('  ✓ all sampled URLs indexable and body-visible to every crawler');
 
   process.exit(failed.length ? 1 : 0);

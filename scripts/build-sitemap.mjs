@@ -20,6 +20,10 @@ const readJson = (p) => JSON.parse(read(p));
 const routerPaths = [...read('src/router.tsx').matchAll(/path:\s*'([^']+)'/g)].map((m) => m[1]);
 
 // Session-gated, user-private routes carry no SEO value — keep them out.
+// `/business/admin` is the school-admin cohort dashboard: the page calls
+// useNoindexMeta, so listing it here would advertise a URL we tell crawlers to
+// ignore. `/offline` is the PWA fallback shell — a real route, but nothing to
+// rank (it still gets a head snapshot so the shell isn't title-less).
 const PRIVATE = new Set([
   '/account',
   '/dashboard',
@@ -29,6 +33,8 @@ const PRIVATE = new Set([
   '/settings',
   '/checkout',
   '/checkout/return',
+  '/business/admin',
+  '/offline',
 ]);
 // The former Guides + Study hubs now redirect to /learn — don't index the redirects
 // (their content + leaf pages live on, and `/learn` carries the hub priority).
@@ -50,9 +56,10 @@ const urls = new Map(['/', ...staticPaths].map((p) => [p, today]));
 
 // The set of URLs with a real Arabic snapshot (dist/ar/<path>/index.html) — the
 // only URLs allowed to declare an `hreflang="ar"` alternate. It mirrors
-// scripts/prerender-head.mjs exactly: home + all static routes + guides, plus the
-// top AR_CORPUS_MAX corpus docs in parts→reference→handbook order (dynamic detail
-// pages — aerodromes, packs — are not prerendered, so they stay en/x-default only).
+// scripts/prerender-head.mjs exactly: home + all static routes + guides + the live
+// prep packs, plus the top AR_CORPUS_MAX corpus docs in parts→reference→handbook
+// order. Aerodrome detail pages stay en/x-default only: their copy comes from
+// airports.json, whose Arabic fields cover names but not the page's own chrome.
 // Keep AR_CORPUS_MAX identical in both scripts or scripts/check-prerender.mjs fails.
 const AR_CORPUS_MAX = Number(process.env.AR_CORPUS_MAX ?? 60);
 const arCovered = new Set(['/', ...staticPaths]);
@@ -95,18 +102,50 @@ const draftGuides = new Set(
     ),
   ].map((m) => m[1]),
 );
+// Guides date from GUIDE_UPDATED — the day the content was actually re-verified.
+// Stamping every guide with the build date would tell crawlers the whole set was
+// refreshed on each deploy, which is simply false; a guide with no review date
+// falls back to the build date only because <lastmod> has to say something.
+const guideUpdated = Object.fromEntries(
+  [
+    ...(guidesSrc.match(/GUIDE_UPDATED[^{]*\{([\s\S]*?)\n\};/)?.[1] ?? '').matchAll(
+      /'([^']+)':\s*'(\d{4}-\d{2}-\d{2})'/g,
+    ),
+  ].map((m) => [m[1], m[2]]),
+);
 for (const slug of guideSlugs) {
   if (!draftGuides.has(slug)) {
-    urls.set(`/guides/${slug}`, today);
+    urls.set(`/guides/${slug}`, guideUpdated[slug] ?? today);
     arCovered.add(`/guides/${slug}`);
   }
 }
 
 // Aerodrome directory → one detail page per curated ICAO (the /tools/aerodromes/:icao
 // route resolves each from airports.json). Dated from the index's generated date.
+const LABEL = 'sitemap';
+// Only ICAOs the runtime can actually resolve: AerodromeDetail looks the code up
+// in airports.json, then airports-extra.json, and renders a noindex "not found"
+// page when neither has it. A curated ICAO missing from both would otherwise be
+// advertised in the sitemap and snapshotted as a dead URL, so drop it here —
+// loudly, since it means the aerodrome index and the airport data have drifted.
+function resolvableIcaos() {
+  const known = new Set(
+    ['public/data/airports.json', 'public/data/airports-extra.json'].flatMap((f) =>
+      readJson(f).airports.map((a) => a.icao),
+    ),
+  );
+  const all = readJson('public/data/aerodromes-index.json').documents;
+  const missing = all.filter((d) => !known.has(d.icao)).map((d) => d.icao);
+  if (missing.length)
+    console.warn(
+      `${LABEL}: ${missing.length} curated aerodrome(s) not in airports data — skipped: ${missing.join(', ')}`,
+    );
+  return all.filter((d) => known.has(d.icao));
+}
+
 const aero = readJson('public/data/aerodromes-index.json');
 const aeroDate = isDate(aero.generated) ? aero.generated.slice(0, 10) : today;
-for (const d of aero.documents) urls.set(`/tools/aerodromes/${d.icao}`, aeroDate);
+for (const d of resolvableIcaos()) urls.set(`/tools/aerodromes/${d.icao}`, aeroDate);
 
 // Prep packs → one detail page per LIVE pack id (src/lib/prepCatalog.ts). Each pack
 // literal declares `id: '<id>'` then `status: '<live|soon>'`; `soon` packs have no
@@ -115,7 +154,12 @@ const packSrc = read('src/lib/prepCatalog.ts');
 const livePackIds = [...packSrc.matchAll(/\bid:\s*'([^']+)'[\s\S]*?status:\s*'([^']+)'/g)]
   .filter((m) => m[2] === 'live')
   .map((m) => m[1]);
-for (const id of livePackIds) urls.set(`/study/packs/${id}`, today);
+// Pack copy is authored in both bundles (study.packCatalog.<id>), so each pack
+// gets a real Arabic snapshot too — prerender-head.mjs writes the same set.
+for (const id of livePackIds) {
+  urls.set(`/study/packs/${id}`, today);
+  arCovered.add(`/study/packs/${id}`);
+}
 // Not indexed by design: chart sheets and study sheets (selected by ?param on a
 // single viewer page, no per-item URL) and the 1,736 definition terms (search-only).
 
@@ -141,7 +185,8 @@ try {
 }
 
 // Priority tiers: home → hubs / top-cited Parts → reference/guide content → tools → legal → rest.
-const HUBS = new Set(['/library', '/tools', '/learn', '/guides', '/study']);
+// (/guides and /study are REDIRECTS, so they never reach this map — /learn is the hub.)
+const HUBS = new Set(['/library', '/tools', '/learn']);
 const LEGAL = new Set(['/disclaimer', '/terms', '/privacy', '/refund', '/safety']);
 function priority(u) {
   if (u === '/') return '1.0';
@@ -161,7 +206,8 @@ const arLoc = (u) => `${SITE}/ar${u === '/' ? '' : u}`;
 function alternates(u) {
   const loc = `${SITE}${u}`;
   const arLink = arCovered.has(u)
-    ? `<xhtml:link rel="alternate" hreflang="ar" href="${arLoc(u)}"/>`
+    ? `<xhtml:link rel="alternate" hreflang="ar" href="${arLoc(u)}"/>` +
+      `<xhtml:link rel="alternate" hreflang="ar-SA" href="${arLoc(u)}"/>`
     : '';
   return (
     `<xhtml:link rel="alternate" hreflang="en" href="${loc}"/>` +

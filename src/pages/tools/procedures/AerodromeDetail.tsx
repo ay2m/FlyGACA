@@ -80,6 +80,7 @@ export function AerodromeDetail() {
         icao: a.icao,
         iata: a.iata,
         path: `/tools/aerodromes/${a.icao}`,
+        lang: i18n.language,
         lat: a.lat,
         lon: a.lon,
         elevationFt: a.elev_ft,

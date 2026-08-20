@@ -20,8 +20,16 @@ import {
  * canonical front shipped with no CSP and no HSTS while two hosts nobody serves from
  * had both.
  *
- * `config/headers.json` is now the source of truth. This test keeps the two mirrors
- * honest against it, and pins the two generators the GCP front actually uses.
+ * `config/headers.json` is now the source of truth. This test keeps all three
+ * mirrors honest against it — `vercel.json`, `netlify.toml` and `public/_headers`
+ * — and pins the two generators the GCP front actually uses.
+ *
+ * `public/_headers` is the one that matters most despite being the least visible:
+ * it ships INSIDE `dist/`, so it travels with every build rather than sitting in
+ * one host's config. It joined the repo with a CSP that had already drifted from
+ * this file — no Moyasar origins, so checkout was CSP-blocked outright, and no
+ * corpus bucket. Harmless while every mirror is dormant; a dead payment flow the
+ * first time one is not.
  *
  * IMPORTANT: this cannot see the live load balancer. Green means the repo is
  * self-consistent, not that production serves these headers — applying them is a
@@ -31,6 +39,7 @@ import {
 const root = process.cwd();
 const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8'));
 const netlify = readFileSync(join(root, 'netlify.toml'), 'utf8');
+const pagesHeaders = readFileSync(join(root, 'public/_headers'), 'utf8');
 
 /** The `/(.*)`  header block that carries the security set (not the noindex one). */
 const vercelSecurityBlock = vercel.headers.find(
@@ -61,9 +70,41 @@ function netlifyHeadersFor(path: string): Record<string, string> {
   return out;
 }
 
+/**
+ * Header name -> value declared by `public/_headers` for a given path block.
+ *
+ * A third mirror front (Cloudflare Pages; Netlify honours it too) and the only
+ * one that ships INSIDE `dist/`, so it travels with every build. It arrived
+ * carrying a hand-written CSP that had already drifted: no `cdn.moyasar.com` or
+ * `api.moyasar.com`, which CSP-blocks checkout outright, and no
+ * `storage.googleapis.com`, which blocks the offloaded corpus. Inert while the
+ * mirrors are dormant, and a broken payment flow the moment one is used.
+ */
+function pagesHeadersFor(path: string): Record<string, string> {
+  // Line-scanned rather than regex-matched. The format is a path at column 0
+  // followed by indented `Key: value` lines, and a lookahead terminator gets
+  // subtle fast: an `m`-flagged `$` matches end-of-LINE, so `(?=\n\S|$)` fires
+  // immediately after the path and every block reads as empty.
+  const out: Record<string, string> = {};
+  let inBlock = false;
+  for (const line of pagesHeaders.split('\n')) {
+    if (!line.trim() || line.trimStart().startsWith('#')) continue;
+    if (!/^\s/.test(line)) {
+      if (inBlock) break; // next path block starts — done
+      inBlock = line.trim() === path;
+      continue;
+    }
+    if (!inBlock) continue;
+    const [key, ...rest] = line.trim().split(':');
+    out[key.trim()] = rest.join(':').trim();
+  }
+  return out;
+}
+
 describe('security headers', () => {
   const vercelGlobal = vercelHeadersFor('/(.*)');
   const netlifyGlobal = netlifyHeadersFor('/*');
+  const pagesGlobal = pagesHeadersFor('/*');
 
   it('declares the set production needs', () => {
     expect(Object.keys(SECURITY_HEADERS).sort()).toEqual([
@@ -90,11 +131,24 @@ describe('security headers', () => {
     },
   );
 
+  it.each(Object.entries(SECURITY_HEADERS) as [string, string][])(
+    'public/_headers serves %s identically',
+    (name, value) => {
+      expect(pagesGlobal[name]).toBe(value);
+    },
+  );
+
   it('adds no header to a mirror that the source of truth does not declare', () => {
     // The Vercel security block may carry nothing extra; the noindex X-Robots-Tag
     // lives in its own `missing`-guarded block and is excluded above.
     expect(Object.keys(vercelGlobal).sort()).toEqual(Object.keys(SECURITY_HEADERS).sort());
     expect(Object.keys(netlifyGlobal).sort()).toEqual(Object.keys(SECURITY_HEADERS).sort());
+    // `public/_headers` additionally carries X-Robots-Tag, so a mirror is never
+    // indexed as a duplicate of flygaca.com. That one is mirror-only by design and
+    // is the ONLY permitted extra.
+    expect(Object.keys(pagesGlobal).sort()).toEqual(
+      [...Object.keys(SECURITY_HEADERS), 'X-Robots-Tag'].sort(),
+    );
   });
 
   it('allows the corpus bucket in both connect-src and img-src', () => {
@@ -134,6 +188,18 @@ describe('cache rules', () => {
       expect(netlifyHeadersFor(rule.netlify)['Cache-Control']).toBe(rule.value);
     },
   );
+});
+
+describe('public/_headers cache rules', () => {
+  // Same path classes the other fronts declare. Getting these wrong on a file
+  // that ships inside dist/ strands users on a stale build.
+  it.each([
+    ['/assets/*', 'public, max-age=31536000, immutable'],
+    ['/data/*', 'public, max-age=3600'],
+    ['/sw.js', 'no-cache'],
+  ])('caches %s as %s', (path, value) => {
+    expect(pagesHeadersFor(path)['Cache-Control']).toBe(value);
+  });
 });
 
 describe('cacheControlFor', () => {

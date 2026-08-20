@@ -27,14 +27,17 @@
     <!-- Baseline crawl signals for no-JS crawlers (canonical + hreflang). These
          are the homepage/x-default defaults; usePageMeta and the prerendered
          per-route snapshots override them. Keep the origin in sync with
-         SITE_ORIGIN / hreflangAlternates in src/lib/seo.ts. -->
+         SITE_ORIGIN / hreflangAlternates in src/lib/seo/seo.ts. -->
     <link rel="canonical" href="https://flygaca.com/" />
     <link rel="alternate" hreflang="en" href="https://flygaca.com/" />
     <link rel="alternate" hreflang="ar" href="https://flygaca.com/ar" />
+    <link rel="alternate" hreflang="ar-SA" href="https://flygaca.com/ar" />
     <link rel="alternate" hreflang="x-default" href="https://flygaca.com/" />
     <!-- Baseline social tags (usePageMeta refines per route + language at runtime). -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Fly GACA" />
+    <meta property="og:url" content="https://flygaca.com/" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="Fly GACA — Saudi Aviation Library" />
     <meta
       property="og:description"
@@ -75,6 +78,7 @@
               "postalCode": "12965",
               "addressCountry": "SA"
             },
+            "areaServed": { "@type": "Country", "name": "Saudi Arabia" },
             "identifier": { "@type": "PropertyValue", "propertyID": "SA-CR", "value": "7030976893" },
             "vatID": "311415259500003",
             "taxID": "311415259500003",
@@ -212,8 +216,8 @@
       <script>
         // The shell is the home hero; on any other route the SPA fallback still
         // serves this file, so drop the shell there to avoid a wrong-page flash.
-        // `/ar` + `/ar/` are the Arabic home snapshot (main.tsx folds them onto
-        // `/?lang=ar`), so they keep the hero too.
+        // `/ar` + `/ar/` are the Arabic home document (the router mounts the same
+        // tree under basename '/ar'), so they keep the hero too.
         var p = location.pathname;
         if (p !== '/' && p !== '/index.html' && p !== '/ar' && p !== '/ar/') {
           var s = document.getElementById('app-shell');

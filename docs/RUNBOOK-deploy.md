@@ -152,11 +152,22 @@ loudly. Set every price you intend to sell.
 echo 'VITE_API_BASE_URL=https://api.flygaca.com' >> .env.local
 echo 'VITE_MOYASAR_PUBLISHABLE_KEY=pk_live_…'    >> .env.local
 
-npm run build
+# build:deploy = build + the full-body prerender + the honest coverage gate.
+# Plain `npm run build` only writes the per-route <head> floor; the AI crawlers
+# that decide citations do not run JS, so a deploy built that way ships bodies
+# they can't read. Needs a Chromium for Playwright on the build machine.
+# Optional: export INDEXNOW_KEY=<key> first to ping Bing/Copilot and drop the
+# ownership file (dist/<key>.txt) into the same upload.
+npm run build:deploy
 gcloud storage buckets create "gs://$BUCKET" --location="$REGION"
 gcloud storage rsync -r -d dist "gs://$BUCKET"
 gcloud storage buckets update "gs://$BUCKET" --web-main-page-suffix=index.html --web-error-page=index.html
 ```
+
+`check:prerender:coverage` fails the build if any sitemap URL lacks a rendered body — raise
+`PRERENDER_MAX` (or set it to `0` for the whole corpus) rather than shipping past it. On a machine
+with no browser, `npm run build` still produces a deployable `dist/`, but say so: that deploy is
+head-only.
 
 Then put an HTTPS load balancer in front with two backends: the bucket for `/*`, and a serverless
 NEG for the Cloud Run service on `/api/*`. Routing both through one origin is the simplest option —

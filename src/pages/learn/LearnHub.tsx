@@ -46,7 +46,7 @@ const REFERENCE_TOOLS = REFERENCE_GROUPS.flatMap((g) => g.ids);
  * renders the study dashboard. The two former hubs (/guides, /study) redirect here.
  */
 export function LearnHub() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [params, setParams] = useSearchParams();
   const tab: LearnTab = params.get('tab') === 'practice' ? 'practice' : 'guides';
   const setTab = (next: LearnTab) => {
@@ -69,18 +69,21 @@ export function LearnHub() {
   // catalog of its leaf pages for crawlers.
   const learnLd = useMemo(
     () =>
-      itemListLd([
-        ...LIVE_GUIDE_SLUGS.map((slug) => ({
-          name: t(`guides.items.${slug}.name`),
-          path: `/guides/${slug}`,
-        })),
-        ...STUDY_MODES.map((m) => ({ name: t(`study.${m.key}`), path: m.to })),
-        ...REFERENCE_TOOLS.map((id) => ({
-          name: t(`tools.items.${id}.name`),
-          path: `/tools/${id}`,
-        })),
-      ]),
-    [t],
+      itemListLd(
+        [
+          ...LIVE_GUIDE_SLUGS.map((slug) => ({
+            name: t(`guides.items.${slug}.name`),
+            path: `/guides/${slug}`,
+          })),
+          ...STUDY_MODES.map((m) => ({ name: t(`study.${m.key}`), path: m.to })),
+          ...REFERENCE_TOOLS.map((id) => ({
+            name: t(`tools.items.${id}.name`),
+            path: `/tools/${id}`,
+          })),
+        ],
+        i18n.language,
+      ),
+    [t, i18n.language],
   );
   usePageMeta(t('meta.learn'), t('metaDesc.learn'), learnLd);
 

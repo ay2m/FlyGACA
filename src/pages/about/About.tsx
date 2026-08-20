@@ -55,10 +55,13 @@ export function About() {
       lang: i18n.language,
     }),
     faqLd(faqs),
-    breadcrumbLd([
-      { name: t('nav.breadcrumbHome'), path: '/' },
-      { name: t('nav.about'), path: '/about' },
-    ]),
+    breadcrumbLd(
+      [
+        { name: t('nav.breadcrumbHome'), path: '/' },
+        { name: t('nav.about'), path: '/about' },
+      ],
+      i18n.language,
+    ),
   ]);
 
   return (

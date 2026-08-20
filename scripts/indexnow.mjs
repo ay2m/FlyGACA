@@ -16,7 +16,7 @@
  * must never fail a production deploy. Node-only, no deps. Pure helpers exported
  * for tests/indexnow.test.ts.
  */
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -73,6 +73,18 @@ if (isMain()) {
   if (payload.urlList.length === 0) {
     console.warn('indexnow: sitemap had no on-host URLs — nothing to submit.');
     process.exit(0);
+  }
+
+  // IndexNow verifies ownership by fetching `<site>/<key>.txt` and matching its
+  // body against the submitted key. Write it into dist/ so it ships with the
+  // same upload as the rest of the site — without it every submission is
+  // rejected, and the ping looks like it worked.
+  const distDir = join(root, 'dist');
+  if (existsSync(distDir)) {
+    writeFileSync(join(distDir, `${key}.txt`), key);
+    console.log(`indexnow: wrote dist/${key}.txt (ownership proof for ${payload.keyLocation})`);
+  } else {
+    console.warn('indexnow: dist/ missing — key file not written; submission will fail verification.');
   }
 
   try {

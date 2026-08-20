@@ -68,7 +68,7 @@ const SUGGESTIONS: Record<LibraryKind, string[]> = {
 };
 
 export function Library() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [kind, setKind] = useState<LibraryKind>('regulations');
   const [reload, setReload] = useState(0);
   const { data, error, loading } = useFetchJson<CorpusIndex>(CORPUS[kind].index, reload);
@@ -79,9 +79,10 @@ export function Library() {
       data
         ? itemListLd(
             data.documents.map((d) => ({ name: d.title, path: `${CORPUS[kind].base}/${d.slug}` })),
+            i18n.language,
           )
         : undefined,
-    [data, kind],
+    [data, kind, i18n.language],
   );
   usePageMeta(t('meta.library'), t('metaDesc.library'), itemLd);
   const [category, setCategory] = useState<string>('all');
