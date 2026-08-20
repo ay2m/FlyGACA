@@ -510,6 +510,57 @@ describe("POST /webhook/moyasar — the signature is the only gate", () => {
     expect(setEntitlement).toHaveBeenCalledWith("u1", expect.objectContaining({ plan: "pro" }));
   });
 
+  it("releases the claim when delivery fails, so the retry can re-deliver", async () => {
+    // The claim commits on its own connection, so a throw from deliver() used to
+    // leave the intent `paid` with nothing granted — permanently. The next retry
+    // would fail the status guard and answer 200, so the customer stayed charged
+    // with no product and nothing surfaced anywhere.
+    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+    const body = { id: "evt_1", data: { id: "pay_1" } };
+    stubMoyasar(payment());
+    queryOne.mockResolvedValueOnce(intentRow()).mockResolvedValueOnce({ id: "intent-1" });
+    setEntitlement.mockRejectedValueOnce(new Error("connection terminated"));
+
+    const res = await post(body, sign(JSON.stringify(body)));
+
+    expect(res.status).toBe(500);
+    const release = query.mock.calls.find(([sql]) =>
+      /UPDATE checkout_intents/.test(String(sql)) && /'pending'/.test(String(sql)),
+    );
+    expect(release, "the intent must be released back to pending").toBeDefined();
+    // Guarded so a release cannot clobber an intent some other caller has since
+    // legitimately fulfilled.
+    expect(String(release?.[0])).toMatch(/status = 'paid'/);
+    expect(release?.[1]).toEqual(["intent-1"]);
+    spy.mockRestore();
+  });
+
+  it("keeps the delivery when only the bookkeeping fails", async () => {
+    // The mirror case. Past deliver() the customer HAS their product, so releasing
+    // would re-deliver on retry — double credits, a second org. A counter that did
+    // not increment is a reconciliation problem, not the customer's problem.
+    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+    const body = { id: "evt_1", data: { id: "pay_1" } };
+    stubMoyasar(payment({ amount: 1900 }));
+    // A `credits` intent so delivery goes through addChatCredits (a store mock) and
+    // touches `query` not at all — every query() call below therefore belongs to the
+    // bookkeeping that runs after the product is delivered.
+    queryOne
+      .mockResolvedValueOnce(intentRow({ kind: "credits", cadence: null, amount: 1900 }))
+      .mockResolvedValueOnce({ id: "intent-1" });
+    query.mockRejectedValue(new Error("insert failed"));
+
+    const res = await post(body, sign(JSON.stringify(body)));
+
+    expect(res.status).toBe(200);
+    expect(addChatCredits).toHaveBeenCalled();
+    const release = query.mock.calls.find(([sql]) =>
+      /UPDATE checkout_intents/.test(String(sql)) && /'pending'/.test(String(sql)),
+    );
+    expect(release, "a delivered order must not be released").toBeUndefined();
+    spy.mockRestore();
+  });
+
   it("rejects a forged notification before touching the database", async () => {
     const body = { id: "evt_1", data: { id: "pay_1" } };
 
@@ -618,6 +669,7 @@ describe("POST /renew — the Cloud Scheduler job", () => {
     query.mockResolvedValueOnce([
       { user_id: "u1", cadence: "monthly", card_token: "card_tok", failure_count: 0 },
     ]);
+    queryOne.mockResolvedValueOnce({ user_id: "u1" }); // wins the claim
     getEntitlement.mockResolvedValue({
       plan: "pro",
       source: "moyasar",
@@ -637,6 +689,7 @@ describe("POST /renew — the Cloud Scheduler job", () => {
     query.mockResolvedValueOnce([
       { user_id: "u1", cadence: "monthly", card_token: "card_tok", failure_count: 0 },
     ]);
+    queryOne.mockResolvedValueOnce({ user_id: "u1" }); // wins the claim
     getEntitlement.mockResolvedValue({
       plan: "pro",
       source: "moyasar",
@@ -650,6 +703,66 @@ describe("POST /renew — the Cloud Scheduler job", () => {
     expect(res.body).toMatchObject({ failed: 1 });
     expect(setEntitlement).not.toHaveBeenCalled();
     spy.mockRestore();
+  });
+
+  it("does not charge a card another invocation already claimed", async () => {
+    // The due-set select takes no lock, so two overlapping runs read the same
+    // rows. Cloud Scheduler's 180s attempt deadline is shorter than a 200-card
+    // sequential sweep and it retries on timeout, so overlap is the expected case.
+    // Losing the compare-and-swap must mean skipping, not charging again.
+    query.mockResolvedValueOnce([
+      { user_id: "u1", cadence: "monthly", card_token: "card_tok", failure_count: 0 },
+    ]);
+    queryOne.mockResolvedValueOnce(null); // another invocation got there first
+    stubMoyasar(payment({ status: "paid", amount: 3900 }));
+
+    const res = await request(app).post("/api/billing/renew").set("X-Cron-Secret", CRON_SECRET);
+
+    expect(res.status).toBe(200);
+    expect(res.body).toMatchObject({ renewed: 0, failed: 0, skipped: 1 });
+    // The point of the claim: no card is touched when the CAS is lost.
+    expect(globalThis.fetch).not.toHaveBeenCalled();
+    expect(setEntitlement).not.toHaveBeenCalled();
+  });
+
+  it("claims a subscription before charging it, never after", async () => {
+    query.mockResolvedValueOnce([
+      { user_id: "u1", cadence: "monthly", card_token: "card_tok", failure_count: 0 },
+    ]);
+    queryOne.mockResolvedValueOnce({ user_id: "u1" });
+    stubMoyasar(payment({ status: "paid", amount: 3900 }));
+
+    await request(app).post("/api/billing/renew").set("X-Cron-Secret", CRON_SECRET);
+
+    // The claim is a conditional UPDATE — it must re-assert every predicate from
+    // the due-set select, or it would claim a row that is no longer eligible.
+    const claim = queryOne.mock.calls[0][0] as string;
+    expect(claim).toMatch(/UPDATE subscriptions/);
+    expect(claim).toMatch(/SET next_renewal_at/);
+    expect(claim).toMatch(/next_renewal_at <= now\(\)/);
+    expect(claim).toMatch(/auto_renew/);
+    expect(claim).toMatch(/card_token IS NOT NULL/);
+    expect(claim).toMatch(/RETURNING/);
+  });
+
+  it("never downgrades a school or staff grant it is renewing under", async () => {
+    // A user who bought Pro and later received a non-expiring staff/school grant
+    // still has auto_renew on with a saved card. A flat write would replace
+    // `school` with an expiring `pro` — destroying the grant and its audit trail,
+    // and charging them for it.
+    query.mockResolvedValueOnce([
+      { user_id: "u1", cadence: "monthly", card_token: "card_tok", failure_count: 0 },
+    ]);
+    queryOne.mockResolvedValueOnce({ user_id: "u1" });
+    getEntitlement.mockResolvedValue({ plan: "school", source: "staff" });
+    stubMoyasar(payment({ status: "paid", amount: 3900 }));
+
+    await request(app).post("/api/billing/renew").set("X-Cron-Secret", CRON_SECRET);
+
+    expect(setEntitlement).toHaveBeenCalledWith(
+      "u1",
+      expect.objectContaining({ plan: "school", source: "staff" }),
+    );
   });
 });
 

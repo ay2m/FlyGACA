@@ -33,6 +33,7 @@ import {
   renewalFailureOutcome,
   renewalBaseDate,
   mergeUpward,
+  secretEquals,
   type CheckoutIntent,
   type CheckoutKind,
   type Cadence,
@@ -336,13 +337,43 @@ async function fulfil(row: IntentRow, payment: MoyasarPayment): Promise<boolean>
 
   const intent = toIntent(row);
 
-  await deliver(intent, payment, new Date());
-
-  if (intent.promo) {
-    await query("UPDATE promo_codes SET redeemed = redeemed + 1 WHERE code = $1", [intent.promo]);
+  // The claim above commits on its own connection, so a throw from here on used to
+  // leave the intent `paid` with nothing granted — and unrecoverable, because the
+  // next webhook retry would re-run this, fail the status guard, and answer 200.
+  // The customer's card is charged, they have no product, and nothing surfaces.
+  //
+  // So release the claim and let Moyasar's retry genuinely re-attempt. Deliberately
+  // narrow: ONLY `deliver()` is covered. Each kind is a single grant, so a throw
+  // from it means the grant did not happen; whereas the bookkeeping below runs
+  // AFTER the customer already has their product, and releasing for that would
+  // re-deliver on retry — double credits, a second org.
+  try {
+    await deliver(intent, payment, new Date());
+  } catch (err) {
+    await query(
+      `UPDATE checkout_intents SET status = 'pending', payment_id = NULL, updated_at = now()
+        WHERE id = $1 AND status = 'paid'`,
+      [row.id],
+    ).catch((releaseErr) => {
+      // Now it really is stuck: charged, undelivered, still claimed. Say so loudly
+      // — this is the one case that needs a human.
+      console.error("fulfil: could not release claim", row.id, releaseErr);
+    });
+    throw err;
   }
-  await payReferralReward(intent);
-  await recordPayment(intent, row.id, payment);
+
+  // Past this point the product is delivered. These are counters and records: a
+  // failure costs reconciliation accuracy, not the customer's purchase, so it must
+  // not roll the delivery back.
+  try {
+    if (intent.promo) {
+      await query("UPDATE promo_codes SET redeemed = redeemed + 1 WHERE code = $1", [intent.promo]);
+    }
+    await payReferralReward(intent);
+    await recordPayment(intent, row.id, payment);
+  } catch (err) {
+    console.error("fulfil: delivered but bookkeeping failed", row.id, payment.id, err);
+  }
 
   return true;
 }
@@ -457,7 +488,10 @@ billingRouter.post(
 billingRouter.post(
   "/renew",
   handler(async (req, res) => {
-    if (!config.cronSecret || req.get("X-Cron-Secret") !== config.cronSecret) {
+    // Constant-time, like every other secret comparison in this file. An unset
+    // CRON_SECRET fails closed: the scheduler 401s visibly rather than the
+    // endpoint becoming open.
+    if (!config.cronSecret || !secretEquals(req.get("X-Cron-Secret") ?? "", config.cronSecret)) {
       throw new HttpError(401, "unauthenticated");
     }
 
@@ -477,8 +511,35 @@ billingRouter.post(
     const now = new Date();
     let renewed = 0;
     let failed = 0;
+    let skipped = 0;
 
     for (const sub of due) {
+      // Claim before charging. The select above takes no lock, so two overlapping
+      // invocations would otherwise read the same rows and charge every card
+      // twice — and overlap is the expected case, not a rare one: Cloud Scheduler's
+      // default attempt deadline is 180s, this loop is sequential over up to 200
+      // cards at a network round-trip each, and Scheduler RETRIES an attempt it
+      // considers timed out while the first is still running.
+      //
+      // Moving next_renewal_at forward conditionally is a compare-and-swap: the
+      // second invocation matches no row and skips. Same shape as the status guard
+      // that makes fulfil() idempotent. The date is corrected below on success;
+      // on failure the catch sets it deliberately.
+      const claimed = await queryOne<{ user_id: string }>(
+        `UPDATE subscriptions
+            SET next_renewal_at = now() + interval '1 day', updated_at = now()
+          WHERE user_id = $1
+            AND auto_renew
+            AND card_token IS NOT NULL
+            AND next_renewal_at <= now()
+          RETURNING user_id`,
+        [sub.user_id],
+      );
+      if (!claimed) {
+        skipped += 1;
+        continue;
+      }
+
       const current = await getEntitlement(sub.user_id);
       try {
         const amount = amountForCheckout("pro", sub.cadence, priceEnv());
@@ -495,11 +556,19 @@ billingRouter.post(
 
         const base = renewalBaseDate(current?.expiresAt, now);
         const expiresAt = extendExpiry(base, sub.cadence);
-        await setEntitlement(sub.user_id, {
-          plan: "pro",
-          source: "moyasar",
-          expiresAt: expiresAt.toISOString(),
-        });
+        // mergeUpward, like every other entitlement write on this path. A flat write
+        // would demote a user who bought Pro and later received a non-expiring staff
+        // or school grant: the renewal would replace `school`/`staff` with an
+        // expiring `pro`, destroying the grant and its source audit trail — while
+        // charging them for the privilege.
+        await setEntitlement(
+          sub.user_id,
+          mergeUpward(current, {
+            plan: "pro",
+            source: "moyasar",
+            expiresAt: expiresAt.toISOString(),
+          }),
+        );
         await query(
           `UPDATE subscriptions
               SET next_renewal_at = $2, last_renewal_at = now(),
@@ -527,6 +596,6 @@ billingRouter.post(
       }
     }
 
-    return res.json({ due: due.length, renewed, failed });
+    return res.json({ due: due.length, renewed, failed, skipped });
   }),
 );

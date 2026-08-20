@@ -280,7 +280,7 @@ export function entitlementFromCheckout(cadence: Cadence, from: Date): Entitleme
  * Constant-time compare of two short secrets. Length is not itself secret here
  * (both sides are operator-configured), but the comparison must not short-circuit.
  */
-function secretEquals(a: string, b: string): boolean {
+export function secretEquals(a: string, b: string): boolean {
   const x = Buffer.from(a, "utf8");
   const y = Buffer.from(b, "utf8");
   return x.length === y.length && timingSafeEqual(x, y);
