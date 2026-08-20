@@ -1,6 +1,8 @@
-# Cloudflare Workers config (static assets). Serves the Vite-built SPA from dist/
-# and runs worker/index.ts to proxy /api/* to the Cloud Run gateway. Deployed via
-# `wrangler deploy` (see docs/RUNBOOK-deploy.md).
+# Cloudflare Workers config (static assets) — a DORMANT MIRROR, not production.
+# Production is Cloud Storage + Cloud Run behind a Google load balancer; see
+# docs/RUNBOOK-golive.md. Kept deployable as a fallback: serves the Vite-built SPA
+# from dist/ and runs worker/index.ts to proxy /api/* to the Cloud Run gateway,
+# via `wrangler deploy`.
 name = "flygaca"
 main = "worker/index.ts"
 compatibility_date = "2025-06-01"
@@ -17,3 +19,8 @@ run_worker_first = ["/api/*"]
 
 [observability]
 enabled = true
+
+# Cloud Run origin the Worker proxies /api/* to. Repoint here rather than in
+# worker/index.ts, which only falls back to this value.
+[vars]
+API_ORIGIN = "https://api.flygaca.com"

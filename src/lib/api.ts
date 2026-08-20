@@ -86,6 +86,45 @@ function chatBody(req: ChatRequest): string {
 }
 
 /**
+ * A non-OK response from the chat gateway, carrying the status and the gateway's
+ * own error code from the body.
+ *
+ * Both used to be lost: the status lived only inside the message string and the
+ * body was never read, so every failure rendered the same "couldn't reach my
+ * engine" text — including a quota wall, which is an upsell moment.
+ *
+ * `code` is what callers should branch on. The status alone is ambiguous once a
+ * load balancer is in front: Cloud Run emits its own 503 when it cannot scale,
+ * and that must not read to the user as "Captain Adel is being connected to a new
+ * model". A 429 is likewise both the free-allowance wall and the burst limiter.
+ * `code` is absent when the body was not the gateway's JSON — which is exactly
+ * the infrastructure case, and is treated as a generic failure.
+ */
+export class ChatRequestError extends Error {
+  constructor(
+    readonly status: number,
+    readonly code?: string,
+  ) {
+    super(`Chat request failed: ${status}`);
+    this.name = 'ChatRequestError';
+  }
+}
+
+/**
+ * Best-effort read of the gateway's `{ error }` code from a non-OK response.
+ * Never throws: the body may be empty, HTML from a proxy, or already consumed.
+ */
+async function errorCode(res: Response): Promise<string | undefined> {
+  try {
+    const body: unknown = await res.clone().json();
+    const code = (body as { error?: unknown })?.error;
+    return typeof code === 'string' ? code : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+/**
  * Sends a chat turn to the gateway (buffered). `authToken` is the native-shell
  * bearer token; on web the session cookie carries the identity instead.
  */
@@ -105,7 +144,7 @@ export async function sendChat(
     signal,
   });
   if (!res.ok) {
-    throw new Error(`Chat request failed: ${res.status}`);
+    throw new ChatRequestError(res.status, await errorCode(res));
   }
   return (await res.json()) as ChatResponse;
 }
@@ -158,7 +197,7 @@ export async function* sendChatStream(
     body: chatBody(req),
     signal,
   });
-  if (!res.ok) throw new Error(`Chat request failed: ${res.status}`);
+  if (!res.ok) throw new ChatRequestError(res.status, await errorCode(res));
 
   const ctype = res.headers.get('content-type') ?? '';
   if (!ctype.includes('text/event-stream') || !res.body) {

@@ -42,11 +42,19 @@ export default defineConfig({
       // can't silently regress, while today's run still passes. Raise as cover
       // grows. (`npm run test:coverage` prints the live figures.)
       //
-      // 84.89 / 79.86 / 88.04 / 85.92 today. The recent jumps: the HUD sim engine
+      // 85.03 / 80.08 / 88.13 / 86.06 today. Earlier jumps: the HUD sim engine
       // (projection.ts and kinematics.ts went from 0% branch and function coverage,
       // reached only transitively through a component render, to 100% of their
       // functions) and services/backend.ts (30% → 97%, previously unreachable
       // because every service spec mocks that module).
+      //
+      // `functions: 88` was set against a reading of 88.04 that the tree then did
+      // not sustain: main merged at 87.86 and its CI has been red ever since, so
+      // the ratchet was enforcing a number nothing met. Closed by covering
+      // calc/recency's formatISODate/withinDays — pure date maths behind logbook
+      // currency that had no spec at all — rather than by lowering the floor. The
+      // margin is thin (0.13), so a change adding a couple of untested functions
+      // will trip this; cover them rather than dropping the number.
       thresholds: {
         statements: 84,
         branches: 79,

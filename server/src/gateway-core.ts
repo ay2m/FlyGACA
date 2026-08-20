@@ -24,7 +24,7 @@ export function parseCookies(cookieHeader: string | undefined): Record<string, s
 
 /**
  * Hard input caps (cost control, DESIGN N4). History *count* was always capped
- * (12 turns); these bound the *size* of what reaches Gemini. An over-long
+ * (12 turns); these bound the *size* of what reaches the model. An over-long
  * message is rejected (400) rather than truncated — silent truncation changes
  * the question; an over-long history turn is dropped like any other malformed
  * turn.

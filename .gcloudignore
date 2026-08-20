@@ -1,0 +1,39 @@
+# What `gcloud builds submit` uploads as the build context.
+#
+# Without this file gcloud falls back to .gitignore, which does NOT exclude
+# public/ — so every build would upload the full 64 MB regulatory corpus to reach
+# the one 14 MB file the image actually needs.
+#
+# Keep in step with .dockerignore: this decides what leaves the machine, that
+# decides what the Docker daemon sees. Anything dropped here can never be COPYed,
+# so the rag-chunks re-include below is load-bearing.
+
+.git
+.gitignore
+node_modules
+*/node_modules
+server/lib
+server/tests
+server/coverage
+dist
+dev-dist
+coverage
+test-results
+playwright-report
+.github
+.claude
+android
+ios
+apple
+archive
+e2e
+src
+tests
+screenshots
+supabase
+worker
+*.log
+
+# public/ is 64 MB and the image needs exactly one file from it.
+public
+!public/data/rag-chunks.json

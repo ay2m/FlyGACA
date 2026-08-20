@@ -36,7 +36,7 @@ export interface ChatRequest {
   history?: ChatTurn[];
   /** Defaults to "flygaca". */
   product?: string;
-  /** Gemini model tier: "flash" (default) | "pro". */
+  /** Model tier: "fast"/"flash" (default) | "pro". Resolved by MODEL_ID_*. */
   provider?: string;
   session?: string;
 }
@@ -67,7 +67,37 @@ export type StreamEvent =
       refusalClass?: string;
       meta?: { provider?: string };
     }
-  | { type: "error"; code?: string };
+  | { type: "error"; code?: StreamErrorCode };
+
+/**
+ * Why a stream ended badly.
+ *
+ * `model_unconfigured` means no model endpoint is set — an expected state while
+ * Captain Adel is between providers, which the client renders as an honest
+ * "being connected" message rather than a failure. `stream_failed` is everything
+ * else and stays deliberately opaque.
+ *
+ * The string is the wire contract: it is also matched on the client
+ * (`src/calc/chat/chatStream.ts`) and pinned by
+ * `tests/client-server-mirrors.test.ts`, so renaming it here alone fails that test
+ * rather than silently degrading the message users see.
+ */
+export const MODEL_UNCONFIGURED = "model_unconfigured";
+export const STREAM_FAILED = "stream_failed";
+export type StreamErrorCode = typeof MODEL_UNCONFIGURED | typeof STREAM_FAILED;
+
+/**
+ * Error codes in a non-OK JSON body from the chat routes.
+ *
+ * The client classifies on these rather than on the HTTP status, because the
+ * status alone is ambiguous once a load balancer is in front: Cloud Run emits
+ * its own 503 when it cannot scale, which must NOT read to the user as "Captain
+ * Adel is being connected to a new model". Likewise 429 covers both the free
+ * allowance (an upsell) and the burst limiter (just slow down) — same status,
+ * different message.
+ */
+export const QUOTA_EXCEEDED = "quota_exceeded";
+export const RATE_LIMITED = "rate_limited";
 
 /**
  * Body of the `/api/feedback` endpoint — a 👍/👎 on an answer, logged for

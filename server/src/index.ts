@@ -26,6 +26,7 @@ import { grantsRouter } from "./routes/grants.js";
 import { billingRouter } from "./routes/billing.js";
 import { orgRouter } from "./routes/org.js";
 import { addToWaitlist } from "./store.js";
+import { isModelConfigured } from "./model-core.js";
 import gateway from "./gateway.js";
 
 declare module "express-serve-static-core" {
@@ -75,12 +76,22 @@ app.use((req, res, next) => {
   return next();
 });
 
-/** Cloud Run health check — also validates the database connection. */
+/**
+ * Cloud Run health check — also validates the database connection.
+ *
+ * `model` reports whether Captain Adel has an endpoint to call, but does NOT
+ * affect the status code: an unconfigured model is a degraded feature, not an
+ * unhealthy service, and the library, tools, study, accounts and billing all
+ * work without one. Returning 503 here would pull the whole revision out of
+ * rotation over a feature that is deliberately off. Only the database failing
+ * is fatal.
+ */
 app.get(
   "/healthz",
   handler(async (_req, res) => {
     const db = await ping();
-    return res.status(db ? 200 : 503).json({ ok: db });
+    const model = isModelConfigured(config.model.baseUrl);
+    return res.status(db ? 200 : 503).json({ ok: db, model });
   }),
 );
 
@@ -114,6 +125,17 @@ app.use(errorMiddleware);
 // Tests import `app` directly; only a real run binds a port.
 if (config.nodeEnv !== "test") {
   assertRequiredConfig();
+  // Deliberately a warning, not part of assertRequiredConfig(): that throws before
+  // listen(), and refusing to boot would take down auth, billing and the whole
+  // account surface over one feature. Say it plainly in the log instead, so a
+  // revision serving a silent Captain Adel is visible in Cloud Logging rather
+  // than discovered by a user.
+  if (!isModelConfigured(config.model.baseUrl)) {
+    console.warn(
+      "MODEL_BASE_URL is not set — Captain Adel will decline every question. " +
+        "Everything else serves normally. See docs/RUNBOOK-golive.md.",
+    );
+  }
   app.listen(config.port, () => {
     console.info(`Fly GACA API listening on :${config.port} (${config.nodeEnv})`);
   });

@@ -28,8 +28,14 @@ export interface ApiTierSpec {
  * on Pro, so the entry band prices at ~24x cost. The previous quotas (5,000 on starter,
  * 25,000 on growth) were set far too generously against that: 5,000 Pro-model answers
  * alone cost ~SAR 470 against a SAR 499 tier, i.e. a ~6% gross margin. Retiering here
- * also leaves headroom to absorb the announced Gemini 3.x price increase without
- * repricing partners.
+ * leaves headroom to absorb a provider price rise without repricing partners.
+ *
+ * STALE COST BASIS: those per-answer figures were measured on Gemini, which this
+ * service no longer uses — generation moved to ALLaM on in-Kingdom inference. The
+ * prices below are deliberately left alone, because they are a commercial decision
+ * and the new provider has not published a rate card. Re-measure the per-answer
+ * cost once billing data exists; the margins above are the only thing that changes,
+ * and they can only have improved.
  */
 export const API_TIERS: Record<ApiTier, ApiTierSpec> = {
   starter: { monthlyQuota: 1000, priceSar: 499 },

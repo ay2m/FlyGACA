@@ -13,7 +13,7 @@ or plain GCP:
 | Email | Any Resend-compatible endpoint (`MAIL_ENDPOINT` / `MAIL_API_KEY`) |
 | Payments | Moyasar (hosted widget + server-to-server confirm) |
 | Renewals | Cloud Scheduler → `POST /api/billing/renew` |
-| AI | Gemini via Genkit (`GOOGLE_GENAI_API_KEY`) |
+| AI | ALLaM over an OpenAI-compatible endpoint (`MODEL_BASE_URL`) |
 
 `me-central2` (Dammam) keeps user data in-Kingdom for PDPL. Use whatever region you prefer, but keep
 Cloud Run and Cloud SQL in the **same** one — the unix-socket connection below requires it.
@@ -40,6 +40,16 @@ gcloud services enable \
   cloudbuild.googleapis.com \
   artifactregistry.googleapis.com \
   compute.googleapis.com
+```
+
+## 1b. Artifact Registry
+
+`cloudbuild.yaml` pushes the API image to `$REGION-docker.pkg.dev/$PROJECT_ID/flygaca/…`, so the
+repository has to exist before the first build:
+
+```bash
+gcloud artifacts repositories create flygaca \
+  --repository-format=docker --location="$REGION"
 ```
 
 ## 2. Cloud SQL (Postgres)
@@ -85,7 +95,7 @@ APIs & Services → Credentials → **Create OAuth client ID** → *Web applicat
 printf '%s' "$(openssl rand -base64 48)" | gcloud secrets create session-secret --data-file=-
 printf '%s' '<db url>'      | gcloud secrets create database-url        --data-file=-
 printf '%s' '<oauth secret>'| gcloud secrets create google-oauth-secret --data-file=-
-printf '%s' '<gemini key>'  | gcloud secrets create genai-api-key       --data-file=-
+printf '%s' '<model key>'   | gcloud secrets create model-api-key       --data-file=-
 printf '%s' '<sk_live_…>'   | gcloud secrets create moyasar-secret-key  --data-file=-
 printf '%s' '<webhook>'     | gcloud secrets create moyasar-webhook     --data-file=-
 printf '%s' '<mail key>'    | gcloud secrets create mail-api-key        --data-file=-
@@ -97,18 +107,34 @@ Grant the Cloud Run service account `roles/secretmanager.secretAccessor` and
 
 ## 5. Deploy the API
 
-Build from the **repo root** — the Dockerfile copies `public/data/rag-chunks.json` in so the
-BM25 index needs no cold-start fetch.
+Two steps, and **not** `gcloud run deploy --source`. Cloud Run's source builds only honour a
+Dockerfile at the root of the source directory; ours is `server/Dockerfile`, because it copies
+`public/data/rag-chunks.json` in so the BM25 index needs no cold-start fetch. `--source .` finds no
+Dockerfile and falls back to buildpacks on the *frontend* `package.json` (which has no `start`
+script), and `--source server/` puts the corpus outside the build context so the `COPY` fails.
+Either way you get a build failure, or an image with nothing listening on `$PORT`.
+
+`cloudbuild.yaml` does the build the repo's own `.dockerignore` already assumes:
 
 ```bash
+gcloud builds submit --config cloudbuild.yaml --region="$REGION" \
+  --substitutions="_REGION=$REGION,_TAG=$(git rev-parse --short HEAD)" .
+```
+
+Then create the service against that image. This first deploy is the one that sets env and secrets;
+later rollouts are just `npm run deploy:api`, which reuses whatever the previous revision had.
+
+```bash
+IMAGE="$REGION-docker.pkg.dev/$PROJECT_ID/flygaca/flygaca-api:$(git rev-parse --short HEAD)"
+
 gcloud run deploy flygaca-api \
-  --source . --region="$REGION" \
+  --image="$IMAGE" --region="$REGION" \
   --add-cloudsql-instances="$PROJECT_ID:$REGION:$INSTANCE" \
   --allow-unauthenticated \
   --memory=1Gi --timeout=300 --max-instances=10 \
-  --set-env-vars="NODE_ENV=production,APP_ORIGIN=https://flygaca.com,API_ORIGIN=https://api.flygaca.com,GOOGLE_OAUTH_CLIENT_ID=<client-id>,MAIL_FROM=Fly GACA <no-reply@flygaca.com>" \
+  --set-env-vars="NODE_ENV=production,APP_ORIGIN=https://flygaca.com,API_ORIGIN=https://api.flygaca.com,GOOGLE_OAUTH_CLIENT_ID=<client-id>,MAIL_FROM=Fly GACA <no-reply@flygaca.com>,MODEL_BASE_URL=<in-kingdom model endpoint>" \
   --set-env-vars="PRICE_PRO_MONTHLY=79,PRICE_PRO_ANNUAL=649,PRICE_PASS=299,PRICE_CREDITS=39,PRICE_PREP_PACK=249,PRICE_PREP_PACK_ESSENTIAL=249,PRICE_PREP_PACK_STANDARD=399,PRICE_PREP_PACK_COMPLETE=499,PRICE_BUNDLE=1499,PRICE_COHORT=12000" \
-  --set-secrets="DATABASE_URL=database-url:latest,SESSION_SECRET=session-secret:latest,GOOGLE_OAUTH_CLIENT_SECRET=google-oauth-secret:latest,GOOGLE_GENAI_API_KEY=genai-api-key:latest,MOYASAR_SECRET_KEY=moyasar-secret-key:latest,MOYASAR_WEBHOOK_SECRET=moyasar-webhook:latest,MAIL_API_KEY=mail-api-key:latest,CRON_SECRET=cron-secret:latest"
+  --set-secrets="DATABASE_URL=database-url:latest,SESSION_SECRET=session-secret:latest,GOOGLE_OAUTH_CLIENT_SECRET=google-oauth-secret:latest,MODEL_API_KEY=model-api-key:latest,MOYASAR_SECRET_KEY=moyasar-secret-key:latest,MOYASAR_WEBHOOK_SECRET=moyasar-webhook:latest,MAIL_API_KEY=mail-api-key:latest,CRON_SECRET=cron-secret:latest"
 ```
 
 `assertRequiredConfig()` runs before the listener binds, so a revision missing `DATABASE_URL` or a

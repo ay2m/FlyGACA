@@ -43,18 +43,22 @@ The route that actually works from this repo is **Capacitor** (`capacitor.config
 The repo also contains the **backend**: `server/` is a single Express service for **Cloud Run**,
 backed by **Cloud SQL (Postgres)**. No Firebase is used at runtime — auth, the datastore, the
 API and hosting are all first-party or plain GCP, and there is no Firebase dependency, config
-or import anywhere in `src/` or `server/`. Two stale leftovers survived the port and are
+or import anywhere in `src/` or `server/`. One stale leftover survived the port and is
 misleading rather than live: `scripts/native/ensure-firebase-plists.sh` (writes
-`GoogleService-Info.plist` for iOS targets that aren't in this repo) and the header comment
-in `worker/index.ts`, which still describes a Firebase-hosted gateway and Stripe functions
-that no longer exist. Delete or rewrite them; don't take either as evidence of the architecture. `server/src/index.ts` is the single
+`GoogleService-Info.plist` for iOS targets that aren't in this repo). Delete or rewrite it;
+don't take it as evidence of the architecture. `server/src/index.ts` is the single
 manifest of the HTTP surface, mounting one router per feature under `/api`:
 `auth` (sessions, Google OAuth, verification, reset), `account` (profile, logbook, records, study
 progress), `grants` (staff / school-seat / founding), `billing` (Moyasar checkout, confirm, webhook,
 renewal job), `org` (the B2B cohort dashboard), `waitlist`, plus the Captain Adel gateway
 (`/api/chat`, `/api/feedback`) and the licensed `/v1/ask` surface (tiered, API-key-authenticated,
-see `docs/LICENSED-API.md`). The RAG flow itself is Genkit + Gemini (see
-`docs/DESIGN-genkit-rag-backend.md`). `server/` is its own npm package with its own CI gate — run
+see `docs/LICENSED-API.md`). The RAG flow retrieves with BM25 in-process and generates
+with **ALLaM** (SDAIA's Arabic foundation model) over an OpenAI-compatible endpoint —
+`server/src/model-core.ts` (pure wire format) + `model.ts` (fetch/SSE), configured by
+`MODEL_BASE_URL`. **There is no Gemini and no model SDK**: the generation hop was the one
+call that left the Kingdom, so it now points at Saudi-hosted inference and the provider is
+config, not code. Genkit remains only as the flow/streaming harness. `docs/DESIGN-genkit-rag-backend.md`
+describes the retrieval design, but predates the provider change — its Gemini references are history. `server/` is its own npm package with its own CI gate — run
 `npm run lint && npm test && npm run build` inside `server/` when you touch it (root
 `npm run verify` does not cover it). Deploy region is `me-central2` (Dammam, in-Kingdom / PDPL);
 there is no region constant to keep in sync any more — the Cloud Run service and its Cloud SQL
@@ -192,19 +196,28 @@ service for `/api/*`:
 - **Google Cloud is the canonical origin**: the SPA is published to a Cloud Storage bucket behind an
   HTTPS load balancer, which routes `/api/*` to the **Cloud Run** service built from `server/`
   (region `me-central2`, Dammam — in-Kingdom / PDPL), backed by a **Cloud SQL** Postgres instance in
-  the same region. Secrets (session key, Moyasar keys, Gemini key, mail key) come from Secret
+  the same region. Secrets (session key, Moyasar keys, model key, mail key) come from Secret
   Manager; the renewal job is a Cloud Scheduler POST to `/api/billing/renew` carrying `CRON_SECRET`.
 - **Cloudflare Worker** (`worker/index.ts` + `wrangler.toml`) and the **Netlify** / **Vercel**
   mirrors each serve `dist/` and **proxy `/api/*` back to the Cloud Run origin** as a same-origin
   rewrite — so chat/account keep working and the strict CSP (`connect-src 'self'`) never changes.
-  Keep any new API surface under `/api/*` for this to hold. Each mirror hard-codes the API origin
-  (`https://api.flygaca.com` by default) — repoint it there if yours differs. The mirrors
-  `X-Robots-Tag: noindex` any host that isn't `flygaca.com`.
+  Keep any new API surface under `/api/*` for this to hold. **All three are dormant — nothing is
+  deployed to them**; production is Google Cloud only, which is what keeps user data in-Kingdom.
+  The Worker reads its API origin from `[vars] API_ORIGIN` in `wrangler.toml`; Netlify and Vercel
+  still hard-code `https://api.flygaca.com`. The mirrors `X-Robots-Tag: noindex` any host that
+  isn't `flygaca.com`.
 - Redirects consolidate the marketing domains onto `flygaca.com` (e.g. `captadel.com` → `flygaca.com`
   in `vercel.json` — that rule only fires for traffic still hitting Vercel).
 
+**Security headers live in `config/headers.json` and nowhere else.** GCP applies custom response
+headers per backend, so the load balancer's backend bucket and backend service must both be updated
+with `npm run -s headers:gcloud` — until you do, the canonical front serves no CSP and no HSTS.
+`tests/headers-parity.test.ts` holds the dormant Vercel/Netlify mirrors to the same file but cannot
+see the live load balancer.
+
 See `docs/RUNBOOK-deploy.md` for provisioning a fresh GCP project (APIs to enable, the Cloud SQL
-instance, the OAuth client, Secret Manager entries, the scheduler job) and the deploy sequence, and
+instance, the OAuth client, Secret Manager entries, the scheduler job), `docs/RUNBOOK-golive.md` for
+the go-live sequence (headers, corpus offload, CI/CD, launch checklist, rollback), and
 `docs/DATA-HOSTING.md` for how the corpus bucket is served. `supabase/migrations/` holds the pgvector
 schema for RAG embeddings; the app's own schema lives in `server/migrations/`.
 
@@ -227,8 +240,9 @@ schema for RAG embeddings; the app's own schema lives in `server/migrations/`.
   CI should mirror the same steps individually but swap `test` for `test:coverage` — a coverage
   **ratchet** with thresholds in `vitest.config.ts` — plus a **server** job
   (`lint · test:coverage · build` inside `server/`) and an **e2e · a11y** job (`npm run test:e2e`,
-  Playwright). NOTE: this repo ships without a `.github/workflows/` directory — wire the pipeline up
-  against your own GCP project before relying on CI.
+  Playwright). That is what `.github/workflows/ci.yml` runs. `deploy.yml` deploys `main` to Google
+  Cloud via Workload Identity Federation; both need the repo variables listed in
+  `docs/RUNBOOK-golive.md` §4 before they will work against your own project.
 
 ## Adding a new tool
 
@@ -251,9 +265,13 @@ pgvector), `build:sitemap`, `gen:og`, `gen:aip-sheet` (build the AIP study sheet
 (Captain Adel imagery), `audit:ai` (the AI-search visibility audit behind `SEO-PLAN.md`),
 `optimize:img`, and `new:guide` (scaffold a guide — see `GUIDE_AUTHORING.md`). Shared script
 helpers live in `scripts/lib/` (flavor slicing, markdown splitting, regulations parsing, sync
-merge) and `scripts/native/` (iOS build/signing helpers). There is no deploy script: `npm run
-deploy` deliberately fails with a pointer to `docs/RUNBOOK-deploy.md`, since deploying means
-`gcloud run deploy` plus a bucket sync, not one command.
+merge) and `scripts/native/` (iOS build/signing helpers). Deploying is two commands, not one, so
+`npm run deploy` still fails with a pointer: `deploy:api` (`scripts/deploy-api.mjs` → `cloudbuild.yaml`
+→ a Cloud Run revision) and `deploy:web` (`scripts/deploy-web.mjs` → bucket rsync + per-path
+`Cache-Control` from `config/headers.json` + CDN invalidation). Both take `--dry-run`. Note
+`gcloud run deploy --source` **cannot** build the API — Cloud Run only honours a Dockerfile at the
+source root and ours is `server/Dockerfile`, which copies the corpus in; `cloudbuild.yaml` exists
+for that.
 
 ## Where to look
 
@@ -262,7 +280,8 @@ Root: `MIGRATION.md` (rebuild log), `ROADMAP.md`, `README.md` (getting started),
 `SEO-PLAN.md`, `CONTRIBUTING.md`, `SECURITY.md`.
 
 `docs/` holds the engineering documentation: `RUNBOOK-deploy.md` (provisioning + the deploy
-sequence — written for THIS stack, keep it current), `ARCHITECTURE-BLUEPRINT.md`,
+sequence — written for THIS stack, keep it current), `RUNBOOK-golive.md` (go-live: load-balancer
+headers, corpus offload, CI/CD, launch checklist, rollback), `ARCHITECTURE-BLUEPRINT.md`,
 `DATA-HOSTING.md`, `BILLING.md`, `DESIGN-genkit-rag-backend.md`, `LICENSED-API.md`,
 `PRICING-REVENUE-STRATEGY.md`, `MERGE-CONFLICTS.md`, `corpus-link-shape.md`,
 `STORE-SUITE.md`, `RUNBOOK-native.md`, `RUNBOOK-openseo.md`, `APPS-FAMILY-ROADMAP.md`,
@@ -270,8 +289,9 @@ sequence — written for THIS stack, keep it current), `ARCHITECTURE-BLUEPRINT.m
 dashboard, study-progress-sync design, curriculum and sales material) and `docs/seo/`.
 `docs/screenshots/review-2026-07/` holds the images the README embeds.
 
-> ⚠️ **Everything under `docs/` except `RUNBOOK-deploy.md` was restored from
-> `ay2m/FlyGACA-app` history and predates the Cloud Run rebuild.** Each restored file that
+> ⚠️ **Everything under `docs/` except `RUNBOOK-deploy.md`, `RUNBOOK-golive.md` and
+> `DATA-HOSTING.md` was restored from `ay2m/FlyGACA-app` history and predates the Cloud Run
+> rebuild.** Each restored file that
 > still describes Firebase, Firestore, App Check or Stripe carries a banner saying so.
 > Read them for intent and design rationale, not for current architecture — `CLAUDE.md` is
 > the authority on how the system works today. Two were deliberately NOT restored

@@ -3,8 +3,8 @@
  * safety-critical part: grounding is decided from retrieval confidence, NOT
  * trusted to the model. A low-confidence retrieval yields a deterministic
  * cite-the-rule refusal and the model is never called, so a fabricated GACAR
- * figure can't be emitted. Genkit/Gemini, corpus retrieval, and telemetry are
- * mocked; buildSystem and the params stay real.
+ * figure can't be emitted. Genkit's flow wrapper, the model client, corpus
+ * retrieval and telemetry are mocked; buildSystem and the params stay real.
  */
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -12,10 +12,10 @@ const h = vi.hoisted(() => ({
   hits: [] as { entry: Record<string, unknown>; score: number }[],
   generated: "2026-01-01",
   streamChunks: ["Under ", "GACAR..."] as string[],
-  responseText: "The grounded answer.",
   sent: [] as string[],
   generateCalls: 0,
   lastModel: undefined as unknown,
+  lastHistory: undefined as unknown,
 }));
 
 // A zod stand-in: every access/call returns the same proxy, so the module's
@@ -39,21 +39,20 @@ vi.mock("genkit", () => ({
           output: handler(input, { sendChunk: (c) => h.sent.push(c) }),
         }),
       }),
-    generateStream: (args: { model: unknown }) => {
-      h.generateCalls += 1;
-      h.lastModel = args.model;
-      return {
-        response: Promise.resolve({ text: h.responseText }),
-        stream: (async function* () {
-          for (const c of h.streamChunks) yield { text: c };
-        })(),
-      };
-    },
   }),
 }));
 
-vi.mock("@genkit-ai/google-genai", () => ({
-  googleAI: Object.assign(() => ({}), { model: (id: string) => ({ __model: id }) }),
+// The model client stands in for the in-Kingdom ALLaM endpoint. It yields the
+// deltas the flow must both forward and accumulate, and records the model id it
+// was asked for so tier selection stays pinned.
+vi.mock("../src/model.js", () => ({
+  ModelError: class ModelError extends Error {},
+  streamChat: async function* (input: { model: string; history?: unknown[] }) {
+    h.generateCalls += 1;
+    h.lastModel = input.model;
+    h.lastHistory = input.history;
+    for (const c of h.streamChunks) yield c;
+  },
 }));
 vi.mock("@genkit-ai/firebase", () => ({ enableFirebaseTelemetry: vi.fn() }));
 
@@ -94,8 +93,8 @@ beforeEach(() => {
   h.sent = [];
   h.generateCalls = 0;
   h.lastModel = undefined;
+  h.lastHistory = undefined;
   h.streamChunks = ["Under ", "GACAR..."];
-  h.responseText = "The grounded answer.";
 });
 
 describe("captainAdelFlow — refusal (grounding decided server-side)", () => {
@@ -123,7 +122,9 @@ describe("captainAdelFlow — answered (model called)", () => {
     h.hits = [hit(2.0)]; // >= REFUSE_SCORE, < GROUNDED_SCORE
     const out = await captainAdelFlow({ message: "aeronautical experience" });
     expect(out.kind).toBe("partial");
-    expect(out.answer).toBe("The grounded answer.");
+    // The returned answer is the streamed deltas joined — one source of truth,
+    // so the text the client saw and the text the flow returns cannot diverge.
+    expect(out.answer).toBe("Under GACAR...");
     expect(out.sources).toHaveLength(1);
     expect(h.generateCalls).toBe(1);
     expect(h.sent).toEqual(["Under ", "GACAR..."]); // streamed deltas forwarded via sendChunk
@@ -140,6 +141,11 @@ describe("captainAdelFlow — answered (model called)", () => {
     });
     expect(out.kind).toBe("grounded");
     expect(h.generateCalls).toBe(1);
+    // Mapped to chat-completions roles ("assistant", not Genkit's "model").
+    expect(h.lastHistory).toEqual([
+      { role: "user", content: "first question" },
+      { role: "assistant", content: "prior answer" },
+    ]);
   });
 
   it("returns a 'grounded' verdict for a high-confidence retrieval", async () => {
@@ -151,17 +157,18 @@ describe("captainAdelFlow — answered (model called)", () => {
 });
 
 describe("captainAdelFlow — model selection", () => {
-  it("defaults to gemini-2.5-flash", async () => {
+  // Ids come from MODEL_ID_FAST / MODEL_ID_PRO; these are the config defaults.
+  it("defaults to the fast tier", async () => {
     h.hits = [hit(5.0)];
     const out = await captainAdelFlow({ message: "q" });
-    expect(out.meta.provider).toBe("gemini-2.5-flash");
-    expect(h.lastModel).toEqual({ __model: "gemini-2.5-flash" });
+    expect(out.meta.provider).toBe("allam-7b-instruct");
+    expect(h.lastModel).toBe("allam-7b-instruct");
   });
 
-  it("selects gemini-2.5-pro when the request asks for the pro tier", async () => {
+  it("selects the pro model when the request asks for the pro tier", async () => {
     h.hits = [hit(5.0)];
     const out = await captainAdelFlow({ message: "q", provider: "pro" });
-    expect(out.meta.provider).toBe("gemini-2.5-pro");
-    expect(h.lastModel).toEqual({ __model: "gemini-2.5-pro" });
+    expect(out.meta.provider).toBe("allam-34b-instruct");
+    expect(h.lastModel).toBe("allam-34b-instruct");
   });
 });

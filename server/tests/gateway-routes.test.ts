@@ -74,6 +74,11 @@ vi.mock("../src/db.js", () => ({
   queryOne: (...a: unknown[]) => queryOne(...a),
 }));
 
+// The genuine article: the gateway branches on `err instanceof ModelError &&
+// err.reason === "unconfigured"`, so a look-alike stub would silently take the
+// generic-failure path and the test would pass for the wrong reason.
+const { ModelError } = await import("../src/model.js");
+
 const gateway = (await import("../src/gateway.js")).default;
 const { notFoundHandler, errorHandler, authenticate } = await import("../src/gateway.js");
 
@@ -582,5 +587,110 @@ describe("notFoundHandler + errorHandler", () => {
     expect(end).toHaveBeenCalled();
     expect(status).not.toHaveBeenCalled();
     spy.mockRestore();
+  });
+});
+
+describe("no model endpoint configured", () => {
+  /**
+   * Fly GACA ships with no default `MODEL_BASE_URL`, so an unconfigured deploy
+   * refuses to call anything rather than sending Saudi regulatory questions
+   * somewhere unintended. That is an expected operating state — Captain Adel is
+   * between providers — and the client renders it as "being connected" rather
+   * than as a fault. These assert the gateway actually says which it is; folded
+   * into the generic 500 the distinction is invisible and users read a broken
+   * site instead of one waiting on a vendor.
+   */
+  const unconfigured = () => new ModelError("MODEL_BASE_URL is not set", "unconfigured");
+
+  /**
+   * A rejected `output` promise that is already "handled".
+   *
+   * The gateway's stream loop throws before it ever awaits `output`, so a bare
+   * `Promise.reject(...)` here surfaces as an unhandled rejection and Vitest
+   * exits non-zero even though every assertion passed. Attaching a no-op catch
+   * marks it handled without resolving it, so `await output` still throws if the
+   * gateway does reach it.
+   */
+  function rejected(err: Error): Promise<never> {
+    const p = Promise.reject(err);
+    p.catch(() => {});
+    return p;
+  }
+
+  /**
+   * A token stream that fails on its first read — the shape of a model call that
+   * never produced a delta. An async generator whose body only throws would say
+   * the same thing, but it has no `yield` and so trips `require-yield`; this
+   * states the intent directly.
+   */
+  function failingStream(err: Error): AsyncIterable<string> {
+    return {
+      [Symbol.asyncIterator]: () => ({ next: () => Promise.reject(err) }),
+    };
+  }
+
+  it("answers 503 model_unconfigured on the buffered chat route", async () => {
+    captainAdelFlow.mockRejectedValue(unconfigured());
+    const res = await request(app)
+      .post("/api/chat")
+      .set("X-Forwarded-For", nextIp())
+      .send({ message: "VFR minima?" });
+    expect(res.status).toBe(503);
+    expect(res.body).toEqual({ error: "model_unconfigured" });
+  });
+
+  it("keeps a genuine model fault an opaque 500", async () => {
+    // A reachable endpoint that errored is NOT "being connected" — claiming so
+    // would tell users to wait for something that has already arrived.
+    captainAdelFlow.mockRejectedValue(new ModelError("model request failed (500): boom"));
+    const res = await request(app)
+      .post("/api/chat")
+      .set("X-Forwarded-For", nextIp())
+      .send({ message: "VFR minima?" });
+    expect(res.status).toBe(500);
+    expect(res.body).toEqual({ error: "chat failed" });
+  });
+
+  it("sends the code in the SSE frame, where the status line is already gone", async () => {
+    captainAdelFlow.stream.mockImplementation(() => ({
+      stream: failingStream(unconfigured()),
+      output: rejected(unconfigured()),
+    }));
+    const res = await request(app)
+      .post("/api/chat?stream=1")
+      .set("X-Forwarded-For", nextIp())
+      .send({ message: "VFR minima?" });
+    // 200 because the stream opened before the failure was known.
+    expect(res.status).toBe(200);
+    expect(res.text).toContain("\"code\":\"model_unconfigured\"");
+    expect(res.text).toContain("[DONE]");
+  });
+
+  it("still marks an ordinary stream failure as stream_failed", async () => {
+    captainAdelFlow.stream.mockImplementation(() => ({
+      stream: failingStream(new Error("socket hang up")),
+      output: rejected(new Error("socket hang up")),
+    }));
+    const res = await request(app)
+      .post("/api/chat?stream=1")
+      .set("X-Forwarded-For", nextIp())
+      .send({ message: "VFR minima?" });
+    expect(res.text).toContain("\"code\":\"stream_failed\"");
+    expect(res.text).not.toContain("model_unconfigured");
+  });
+
+  it("gives licensed partners a retryable 503 rather than `ask failed`", async () => {
+    // A 500 reads to an integrator as "my request was wrong"; 503 says the fault
+    // is ours and the call is worth retrying.
+    queryOne.mockResolvedValueOnce({ id: "key-1", tier: "growth", revoked_at: null })
+      .mockResolvedValueOnce({ count: 0 });
+    captainAdelFlow.mockRejectedValue(unconfigured());
+    const res = await request(app)
+      .post("/api/v1/ask")
+      .set("x-api-key", "fg_live_abcdefghijklmnopqrstuvwxyz")
+      .set("X-Forwarded-For", nextIp())
+      .send({ message: "VFR minima?" });
+    expect(res.status).toBe(503);
+    expect(res.body).toEqual({ error: "model_unconfigured" });
   });
 });

@@ -1,0 +1,119 @@
+# Production deploy to Google Cloud.
+#
+# Everything lands in one GCP project in me-central2 (Dammam): the API on Cloud
+# Run, the SPA in a Cloud Storage bucket behind the HTTPS load balancer, the corpus
+# in its own bucket. Nothing is deployed to Cloudflare, Netlify or Vercel — those
+# configs are dormant mirrors. See docs/RUNBOOK-golive.md.
+#
+# Authentication is Workload Identity Federation, NOT a service-account JSON key: a
+# long-lived key in a repo secret is a standing credential to the project that
+# holds every user account and payment record, and it never expires on its own.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Never let two deploys race the same buckets. In-flight runs finish rather than
+# being cancelled mid-rsync, which would leave the bucket half-updated.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write # required to mint the WIF token
+
+env:
+  NODE_VERSION: '24'
+  REGION: me-central2
+
+jobs:
+  deploy:
+    name: build + deploy
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci
+
+      # Every VITE_* var is compiled into the bundle, so this must happen before
+      # the build. VITE_API_SAME_ORIGIN is set because the load balancer serves the
+      # SPA and /api from one origin — that is what keeps the session cookie
+      # same-site and the CSP at `connect-src 'self'`.
+      - name: Write build-time client config
+        run: |
+          {
+            echo "VITE_API_SAME_ORIGIN=1"
+            echo "VITE_DATA_BASE_URL=${{ vars.DATA_BASE_URL }}"
+            echo "VITE_MOYASAR_PUBLISHABLE_KEY=${{ vars.MOYASAR_PUBLISHABLE_KEY }}"
+            echo "VITE_GA_MEASUREMENT_ID=${{ vars.GA_MEASUREMENT_ID }}"
+          } > .env.local
+
+      - name: Build
+        run: npm run build
+
+      # The full-body prerender. `npm run build` only stamps per-route <head>, and
+      # this repo's acquisition channel is organic search over 123 routes x 2
+      # language trees. ubuntu-latest can run headless Chromium, which is why this
+      # belongs here rather than in the build script.
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      # PRERENDER_MAX=0 means "the whole corpus". Its default is 560, which is
+      # BELOW the 708 URLs build:sitemap emits, so the default would leave ~150
+      # sitemap URLs head-only and fail the coverage gate below — which is exactly
+      # what the gate is for. Local runs can keep the cap; a deploy cannot.
+      - name: Prerender routes
+        env:
+          PRERENDER_MAX: '0'
+        run: npm run prerender
+
+      # The honest gate. `check:prerender` (inside npm run build) only inspects
+      # routes that already have a snapshot, so a route with none is invisible to
+      # it; this one compares against the sitemap and fails on a real gap.
+      - name: Prerender coverage gate
+        run: npm run check:prerender:coverage
+
+      - id: auth
+        name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          project_id: ${{ vars.GCP_PROJECT_ID }}
+          workload_identity_provider: ${{ vars.WIF_PROVIDER }}
+          service_account: ${{ vars.DEPLOY_SERVICE_ACCOUNT }}
+
+      - uses: google-github-actions/setup-gcloud@v2
+
+      # Builds via cloudbuild.yaml (docker build -f server/Dockerfile .) and points
+      # a new revision at the image. Env vars and secrets carry over from the
+      # previous revision; changing those stays a runbook operation.
+      - name: Deploy API
+        env:
+          PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
+          TAG: ${{ github.sha }}
+        run: npm run deploy:api
+
+      # Uploads dist/ and the corpus, then stamps Cache-Control per path class from
+      # config/headers.json — without which index.html and sw.js get cached and
+      # users stay on the previous build.
+      - name: Publish SPA + corpus
+        env:
+          WEB_BUCKET: ${{ vars.WEB_BUCKET }}
+          DATA_BUCKET: ${{ vars.DATA_BUCKET }}
+          URL_MAP: ${{ vars.URL_MAP }}
+        run: npm run deploy:web
+
+      # Dark by default: with no INDEXNOW_KEY it logs and exits 0, and it is
+      # fail-open besides, so a search ping can never fail a deploy.
+      - name: Ping IndexNow
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: npm run indexnow

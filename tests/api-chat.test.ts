@@ -52,6 +52,15 @@ async function collect(gen: AsyncGenerator<StreamEvent>): Promise<StreamEvent[]>
   return out;
 }
 
+/** A non-OK Response whose body is the gateway's `{ error }` shape. */
+function errorResponse(status: number, code: string): Response {
+  return {
+    ok: false,
+    status,
+    clone: () => ({ json: () => Promise.resolve({ error: code }) }),
+  } as unknown as Response;
+}
+
 describe('sendChat — buffered turn', () => {
   it('posts to /api/chat and resolves the parsed response', async () => {
     const fetchMock = vi.fn().mockResolvedValue(jsonRes({ answer: 'See 91.155', sources: [] }));
@@ -102,6 +111,34 @@ describe('sendChat — buffered turn', () => {
   it('throws with the status code on a non-OK response', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 503 } as Response));
     await expect(sendChat(REQ)).rejects.toThrow('Chat request failed: 503');
+    // The status must survive as a number, not just inside the message: the chat
+    // page branches to pick between the quota upsell, the "being connected"
+    // notice and the generic fallback.
+    await expect(sendChat(REQ)).rejects.toMatchObject({ name: 'ChatRequestError', status: 503 });
+  });
+
+  it("carries the gateway's error code off the body", async () => {
+    // The code, not the status, is what the page classifies on — a bare 503 can
+    // just as easily come from Cloud Run failing to scale.
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(errorResponse(503, 'model_unconfigured')));
+    await expect(sendChat(REQ)).rejects.toMatchObject({
+      status: 503,
+      code: 'model_unconfigured',
+    });
+  });
+
+  it('leaves the code undefined when the body is not the gateway JSON', async () => {
+    // A proxy's HTML error page, an empty body, or a response already consumed.
+    // Must degrade to "no code" rather than throwing inside the error path.
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: false,
+        status: 503,
+        clone: () => ({ json: () => Promise.reject(new Error('not json')) }),
+      } as unknown as Response),
+    );
+    await expect(sendChat(REQ)).rejects.toMatchObject({ status: 503, code: undefined });
   });
 });
 
@@ -181,5 +218,9 @@ describe('sendChatStream — streamed turn', () => {
   it('throws with the status code on a non-OK response', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 500 } as Response));
     await expect(collect(sendChatStream(REQ))).rejects.toThrow('Chat request failed: 500');
+    await expect(collect(sendChatStream(REQ))).rejects.toMatchObject({
+      name: 'ChatRequestError',
+      status: 500,
+    });
   });
 });
