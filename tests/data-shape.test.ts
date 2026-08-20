@@ -17,7 +17,7 @@ import { join } from 'node:path';
  * it (otherwise the "still needs exemption" test fails).
  */
 const LEGACY_URL_ALLOWED = new Map<string, string>([
-  ['rag-chunks.json', 'backend BM25 retriever contract (functions/src/corpus.ts) reads `u`'],
+  ['rag-chunks.json', 'backend BM25 retriever contract (server/src/corpus.ts) reads `u`'],
 ]);
 
 const DATA_DIR = join(process.cwd(), 'public/data');

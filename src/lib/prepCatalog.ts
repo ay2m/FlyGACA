@@ -14,10 +14,10 @@
  *    the FREE_FOR_EVERYONE promo can't silently open a paid pack.
  *  - `status: 'soon'` packs are announced but not yet shipped (no content, no detail
  *    route) — the tools-registry `status` pattern. Flip to `'live'` when content lands
- *    AND add the id to SELLABLE_PACK_IDS in functions/src/billing-core.ts to sell it.
+ *    AND add the id to SELLABLE_PACK_IDS in server/src/billing-core.ts to sell it.
  *
  * NOTE: the paid + live ids here MUST mirror `SELLABLE_PACK_IDS` in
- * functions/src/billing-core.ts (the server validates every purchase against it).
+ * server/src/billing-core.ts (the server validates every purchase against it).
  * scripts/build-sitemap.mjs reads this file textually — keep the `id:`/`status:`
  * object literals on their own lines.
  */

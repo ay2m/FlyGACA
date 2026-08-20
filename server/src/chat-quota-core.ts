@@ -1,7 +1,7 @@
 /**
  * Pure free-tier daily-quota maths for Captain Adel — no Firebase/Express imports
  * so it is unit-testable (the billing-core/rate-limit-core pattern). The gateway
- * wraps this with a Firestore read/write; this decides, given the stored usage and
+ * wraps this with a Postgres read/write; this decides, given the stored usage and
  * `now`, whether one more free question is allowed and when the allowance resets.
  *
  * FREE_DAILY_LIMIT MUST match `src/calc/chat/chatQuota.ts` (the client-side nudge) so the
@@ -14,10 +14,10 @@
  * Free questions a signed-in free user may ask per UTC day. Must match
  * src/calc/chat/chatQuota.ts, which renders it to the user.
  *
- * This is the DEFAULT, not the last word: gateway.ts wraps it as
- * `defineInt("FREE_DAILY_LIMIT", { default: FREE_DAILY_LIMIT })` and enforces the
- * param's value, so setting that param tunes the live limit without a code change —
- * and the client keeps showing this number. Only change the param knowingly.
+ * This is the DEFAULT, not the last word: gateway.ts enforces
+ * `config.chat.freeDailyLimit` (CHAT_FREE_DAILY_LIMIT), which falls back to this —
+ * so the live limit can be tuned per revision without a code change, and the client
+ * keeps showing this number. Only change that setting knowingly.
  */
 export const FREE_DAILY_LIMIT = 5;
 
@@ -26,11 +26,11 @@ export const FREE_DAILY_LIMIT = 5;
  * being nudged to sign in. Deliberately smaller than FREE_DAILY_LIMIT: it's a
  * low-friction "taste" of Captain Adel that still caps the per-question Gemini
  * cost, and creating an account is the reward for more. Must match
- * src/calc/chat/chatQuota.ts (pinned by the root tests/integrity/client-server-mirrors.test.ts).
+ * src/calc/chat/chatQuota.ts (pinned by the root tests/client-server-mirrors.test.ts).
  *
- * Like FREE_DAILY_LIMIT this is the DEFAULT, not the last word: gateway.ts wraps it
- * as `defineInt("ANON_DAILY_LIMIT", { default: ANON_DAILY_LIMIT })` and enforces the
- * param's value, so the live limit can be tuned without a code change. Anonymous
+ * Like FREE_DAILY_LIMIT this is the DEFAULT, not the last word: gateway.ts enforces
+ * the `ANON_DAILY_LIMIT` env var, which falls back to this, so the live limit can be
+ * tuned per revision without a code change. Anonymous
  * turns are keyed on a hashed client IP (no uid exists), never on entitlement.
  */
 export const ANON_DAILY_LIMIT = 3;

@@ -1,9 +1,9 @@
 /**
  * B2B org seat-provisioning policy — the pure, Firebase-free rules behind the
- * `provisionSeats` callable (functions/src/org.ts). Per the repo convention
+ * seat-provisioning route (`routes/org.ts`). Per the repo convention
  * ("every business rule lives in a pure `*-core.ts`"), the request validation,
- * the seat-limit guardrail, and the invite-doc assembly live here so they are
- * unit-testable in isolation; the callable stays a thin Firestore wrapper.
+ * the seat-limit guardrail, and the invite assembly live here so they are
+ * unit-testable in isolation; the route stays a thin Postgres wrapper.
  *
  * The seat-limit check is the money/access guardrail: it decides whether an
  * owner may add N more members without exceeding the seats they were invoiced

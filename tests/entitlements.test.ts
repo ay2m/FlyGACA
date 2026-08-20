@@ -9,7 +9,7 @@ import {
 } from '@/lib/services/entitlements';
 
 // `isActive` / `effectivePlan` gate paid UI across the app (Header, account,
-// Dashboard) and mirror the server-only predicate in functions/entitlements-core.js.
+// Dashboard) and mirror the server-only predicate in server/src/billing-core.ts.
 // They are read to gate UI, never to grant — so the branches below are the
 // contract the UI relies on.
 

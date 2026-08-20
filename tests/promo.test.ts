@@ -1,6 +1,6 @@
 /**
  * Promo-code client helpers (src/lib/services/promo.ts) — mirrors referral.test.ts.
- * `normalizePromo` is the client mirror of functions/src/promo-core.ts
+ * `normalizePromo` is the client mirror of server/src/promo-core.ts
  * `normalizePromoCode`; its sanitization rules (uppercase, strip non-alphanumerics,
  * cap at 24 chars) are asserted against that exact implementation.
  */

@@ -16,7 +16,7 @@ import {
   type SchoolInfo,
 } from "../src/analytics-core.js";
 
-describe("functions/analytics-core — Health Score Engine", () => {
+describe("analytics-core — Health Score Engine", () => {
   const refDate = new Date("2026-08-16T12:00:00Z");
 
   it("computes F1 engagement with 7-day half-life decay", () => {
@@ -75,7 +75,7 @@ describe("functions/analytics-core — Health Score Engine", () => {
   });
 });
 
-describe("functions/analytics-core — Pass Probability Engine", () => {
+describe("analytics-core — Pass Probability Engine", () => {
   it("computes pass probability calibrated to 75% GACA threshold", () => {
     const neutral = calculatePassProbability({
       bestScore: 75,
@@ -110,7 +110,7 @@ describe("functions/analytics-core — Pass Probability Engine", () => {
   });
 });
 
-describe("functions/analytics-core — Cohort Summary with KSA PDPL Redaction", () => {
+describe("analytics-core — Cohort Summary with KSA PDPL Redaction", () => {
   const schoolInfo: SchoolInfo = {
     schoolId: "school-jeddah-01",
     seatLimit: 100,

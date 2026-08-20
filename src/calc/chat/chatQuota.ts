@@ -11,7 +11,7 @@ export const FREE_DAILY_LIMIT = 5;
 /**
  * Questions an anonymous (not-signed-in) visitor may ask per day before the
  * sign-in nudge — a smaller "taste" than the signed-in free allowance. Must match
- * `ANON_DAILY_LIMIT` in functions/src/chat-quota-core.ts (the enforced value),
+ * `ANON_DAILY_LIMIT` in server/src/chat-quota-core.ts (the enforced value),
  * pinned by tests/client-server-mirrors.test.ts.
  */
 export const ANON_DAILY_LIMIT = 3;

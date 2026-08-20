@@ -1,9 +1,9 @@
 /**
  * Cloudflare Worker (static assets). Serves the Fly GACA SPA from the bundled
- * dist/ assets and proxies same-origin `/api/*` requests to the Firebase-hosted
- * gateway, so chat/content work on the Cloudflare front with no CORS and no CSP
- * change (`connect-src 'self'` stays valid). The Firebase Cloud Functions
- * (`chat`, `stripeWebhook`) live in `functions/` and deploy separately. See
+ * dist/ assets and proxies same-origin `/api/*` requests to the Cloud Run origin,
+ * so chat/content work on the Cloudflare front with no CORS and no CSP change
+ * (`connect-src 'self'` stays valid). That origin is the single Express service in
+ * `server/`, which mounts every route under `/api` and deploys separately. See
  * docs/RUNBOOK-deploy.md.
  *
  * Routing is driven by wrangler.toml: `run_worker_first = ["/api/*"]` guarantees
@@ -13,7 +13,7 @@
  * index.html for client-side routes.
  */
 
-/** The canonical Firebase Hosting origin that fronts the Cloud Functions gateway. */
+/** The canonical origin of the Cloud Run service built from `server/`. */
 const API_ORIGIN = 'https://api.flygaca.com';
 
 interface Env {
@@ -27,9 +27,9 @@ export default {
 
     if (url.pathname.startsWith('/api/')) {
       const target = `${API_ORIGIN}${url.pathname}${url.search}`;
-      // Re-issue the request at the Firebase origin, preserving method, headers
-      // (incl. the Firebase `Authorization` token), and body; returning the fetch
-      // response streams it back unchanged (preserves SSE).
+      // Re-issue the request at the API origin, preserving method, headers (incl.
+      // the session cookie and any `Authorization` bearer), and body; returning the
+      // fetch response streams it back unchanged (preserves SSE).
       try {
         return await fetch(new Request(target, request));
       } catch {

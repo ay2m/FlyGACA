@@ -6,11 +6,9 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  // `functions/` is a separate package with its own toolchain and eslint config
+  // `server/` is a separate package with its own toolchain and eslint config
   // (linted by its own CI job); the root lint must not reach into it or its
-  // compiled `lib/` output — doing so flags TS rules the root config lacks.
-  // `archive/` is parked non-app material (see archive/README.md) and is never
-  // built, so it stays out of the CI gate too.
+  // compiled output — doing so flags TS rules the root config lacks.
   {
     ignores: [
       'dist',

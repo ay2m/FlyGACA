@@ -56,11 +56,6 @@ ensure_xcodegen() {
 
 ensure_xcodegen || exit 1
 
-# Guarantee every app target has a GoogleService-Info.plist (placeholder when the real
-# Firebase config is absent) so the referenced resource always exists — see the script
-# header and docs/RUNBOOK-ios-firebase.md.
-bash "$SCRIPT_DIR/ensure-firebase-plists.sh"
-
 log_info "Generating apple/FlyGACA.xcodeproj from apple/project.yml…"
 if (cd "$APPLE_DIR" && xcodegen generate); then
   log_success "Generated apple/FlyGACA.xcodeproj"

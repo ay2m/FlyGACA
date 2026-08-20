@@ -36,7 +36,7 @@ The route that actually works from this repo is **Capacitor** (`capacitor.config
 > ⚠️ **`apple/` is NOT in this repo** — no Swift package, no Xcode project, in any commit.
 > The `ios:build:*` / `ios:test` / `screenshots:*` npm scripts and `scripts/native/*` all
 > target `apple/…` paths that do not resolve here, so they fail (or, in the case of
-> `ios:test` and `ensure-firebase-plists.sh`, exit 0 while doing nothing). The Swift side
+> `ios:test`, exit 0 while doing nothing). The Swift side
 > lives in the sibling repo `ay2m/FlyGACA-ios`. Treat any claim in this file about
 > `apple/FlyGACAKit` — including the SRS "cross-platform contract" — as describing that
 > repo, not this one: there is nothing here to diff a port against.
@@ -44,11 +44,12 @@ The route that actually works from this repo is **Capacitor** (`capacitor.config
 The repo also contains the **backend**: `server/` is a single Express service for **Cloud Run**,
 backed by **Cloud SQL (Postgres)**. No Firebase is used at runtime — auth, the datastore, the
 API and hosting are all first-party or plain GCP, and there is no Firebase dependency, config
-or import anywhere in `src/` or `server/`. Two stale leftovers survived the port and are
-misleading rather than live: `scripts/native/ensure-firebase-plists.sh` (writes
-`GoogleService-Info.plist` for iOS targets that aren't in this repo) and the header comment
-in `worker/index.ts`, which still describes a Firebase-hosted gateway and Stripe functions
-that no longer exist. Delete or rewrite them; don't take either as evidence of the architecture. `server/src/index.ts` is the single
+or import anywhere in `src/` or `server/`. The two stale leftovers that survived the port
+have since been cleared: `scripts/native/ensure-firebase-plists.sh` is deleted (with its
+call sites in `ios-generate.sh` / `xcodebuild-wrapper.sh`), and the `worker/index.ts`
+header now describes the Cloud Run origin it actually proxies to. Remaining `Firebase` /
+`Firestore` mentions under `server/src/` are deliberate "X replaces Y" history, not live
+wiring. `server/src/index.ts` is the single
 manifest of the HTTP surface, mounting one router per feature under `/api`:
 `auth` (sessions, Google OAuth, verification, reset), `account` (profile, logbook, records, study
 progress), `grants` (staff / school-seat / founding), `billing` (Moyasar checkout, confirm, webhook,
