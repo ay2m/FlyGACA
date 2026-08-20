@@ -3,8 +3,13 @@ import {
   abortCleanup,
   applyStreamEvent,
   beginStream,
+  failureFromEvent,
+  failureFromCode,
   finalizeStream,
   patchLast,
+  FAILURE_I18N_KEY,
+  MODEL_UNCONFIGURED,
+  QUOTA_EXCEEDED,
   type StreamMessage,
 } from '@/calc/chat/chatStream';
 
@@ -150,5 +155,53 @@ describe('abortCleanup', () => {
 
   it('returns an empty list unchanged', () => {
     expect(abortCleanup([])).toEqual([]);
+  });
+});
+
+describe('failureFromEvent', () => {
+  it('recognises the unconfigured-model frame', () => {
+    expect(failureFromEvent({ code: MODEL_UNCONFIGURED })).toBe('unconfigured');
+  });
+
+  it('treats every other frame as transient', () => {
+    // Including a code the client has never heard of: a newer gateway must not
+    // make an older client claim the assistant is "being connected".
+    expect(failureFromEvent({ code: 'stream_failed' })).toBe('transient');
+    expect(failureFromEvent({ code: 'something_new' })).toBe('transient');
+    expect(failureFromEvent({})).toBe('transient');
+  });
+});
+
+describe('failureFromCode', () => {
+  it('maps the gateway codes it knows', () => {
+    expect(failureFromCode(MODEL_UNCONFIGURED)).toBe('unconfigured');
+    expect(failureFromCode(QUOTA_EXCEEDED)).toBe('quota');
+  });
+
+  it('treats the burst limiter as transient, not as the quota upsell', () => {
+    // Both are HTTP 429. Only one of them is solved by upgrading, so classifying
+    // on the status instead of the code would nag a user who merely typed fast.
+    expect(failureFromCode('rate_limited')).toBe('transient');
+  });
+
+  it('treats an infrastructure failure with no code as transient', () => {
+    // This is the case that makes code-based classification necessary: Cloud Run
+    // returns its own 503 when it cannot scale, with no gateway JSON body. On a
+    // status-based rule that would tell users Captain Adel is "being connected to
+    // a new model" while the service is merely overloaded.
+    expect(failureFromCode(undefined)).toBe('transient');
+    expect(failureFromCode('')).toBe('transient');
+    expect(failureFromCode('something_new')).toBe('transient');
+  });
+});
+
+describe('FAILURE_I18N_KEY', () => {
+  it('gives every failure a distinct key', () => {
+    const keys = Object.values(FAILURE_I18N_KEY);
+    expect(new Set(keys).size).toBe(keys.length);
+  });
+
+  it('reuses the existing quota upsell rather than inventing new copy', () => {
+    expect(FAILURE_I18N_KEY.quota).toBe('chat.quota.exhausted');
   });
 });

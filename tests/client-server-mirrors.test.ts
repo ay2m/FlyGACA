@@ -22,10 +22,17 @@ import {
   CREDIT_PACK_SIZE as SERVER_CREDIT_PACK_SIZE,
 } from '../server/src/chat-quota-core';
 import { SELLABLE_PACK_IDS } from '../server/src/billing-core';
+import {
+  MODEL_UNCONFIGURED as SERVER_MODEL_UNCONFIGURED,
+  QUOTA_EXCEEDED as SERVER_QUOTA_EXCEEDED,
+} from '../server/src/contract';
 
 import { FREE_DAILY_LIMIT, ANON_DAILY_LIMIT } from '@/calc/chat/chatQuota';
 import { CREDIT_PACK_SIZE } from '@/lib/services/billing';
 import { PACKS } from '@/lib/prepCatalog';
+import { MODEL_UNCONFIGURED, QUOTA_EXCEEDED, FAILURE_I18N_KEY } from '@/calc/chat/chatStream';
+import en from '@/i18n/en.json';
+import ar from '@/i18n/ar.json';
 
 describe('chat quota', () => {
   it('the free daily limit matches server/src/chat-quota-core.ts', () => {
@@ -68,5 +75,47 @@ describe('sellable exam-prep packs', () => {
       expect(pack?.access).toBe('paid');
       expect(pack?.status).toBe('live');
     }
+  });
+});
+
+describe('chat stream error codes', () => {
+  it('the unconfigured-model code matches the gateway that emits it', () => {
+    // The client compares the SSE frame's `code` against this literal to decide
+    // between "Captain Adel is being connected" and a generic failure. If the two
+    // drift, every unconfigured turn silently falls back to the wrong message —
+    // visible only to users, never to a test that mocks one side.
+    expect(MODEL_UNCONFIGURED).toBe(SERVER_MODEL_UNCONFIGURED);
+  });
+
+  it('the quota code matches, so the upsell fires on the right 429', () => {
+    // The gateway returns 429 for the free-allowance wall AND for the burst
+    // limiter. Only the code separates them, so a drift here shows the upgrade
+    // nag to someone who just typed too fast.
+    expect(QUOTA_EXCEEDED).toBe(SERVER_QUOTA_EXCEEDED);
+  });
+});
+
+describe('chat failure copy', () => {
+  /** Resolve a dotted i18n key against a bundle. */
+  function lookup(bundle: unknown, key: string): unknown {
+    return key
+      .split('.')
+      .reduce<unknown>((acc, part) => (acc as Record<string, unknown> | undefined)?.[part], bundle);
+  }
+
+  it('every failure maps to a key that exists in BOTH bundles', () => {
+    // A missing key does not throw — i18next renders the raw key, so the user
+    // would read "chat.unavailable" in the chat window. i18n-parity.test.ts only
+    // proves en/ar agree with each other, not that these keys exist at all.
+    for (const [failure, key] of Object.entries(FAILURE_I18N_KEY)) {
+      expect(typeof lookup(en, key), `en.json is missing ${key} (for ${failure})`).toBe('string');
+      expect(typeof lookup(ar, key), `ar.json is missing ${key} (for ${failure})`).toBe('string');
+    }
+  });
+
+  it('no longer claims the backend is missing "in this build"', () => {
+    // That wording is true of a local no-API build and wrong in production, where
+    // the API is up and only the model endpoint is absent.
+    expect(String(lookup(en, 'chat.notReady'))).not.toMatch(/in this build/i);
   });
 });

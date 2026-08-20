@@ -41,6 +41,28 @@ export interface ModelTiers {
 }
 
 /**
+ * Normalise a configured base URL: trimmed, without trailing slashes. Returns ""
+ * for anything that cannot address an endpoint, so callers get one answer to
+ * "is there somewhere to POST to" instead of each re-deriving it.
+ */
+export function normalizeBaseUrl(baseUrl: string | null | undefined): string {
+  return typeof baseUrl === "string" ? baseUrl.trim().replace(/\/+$/, "") : "";
+}
+
+/**
+ * Whether a model endpoint is configured at all.
+ *
+ * Deliberately a predicate over the value rather than a read of `config`, so it
+ * stays pure and both callers — the health report and the request path — agree
+ * by construction. "Unconfigured" is a supported state, not a bug: Fly GACA ships
+ * with no default endpoint so that an unconfigured deploy refuses to call
+ * anything rather than sending Saudi regulatory questions somewhere unintended.
+ */
+export function isModelConfigured(baseUrl: string | null | undefined): boolean {
+  return normalizeBaseUrl(baseUrl).length > 0;
+}
+
+/**
  * Map the request's tier to a concrete model id.
  *
  * The public contract still calls this `provider` and still accepts "pro" — that

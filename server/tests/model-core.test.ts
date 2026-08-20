@@ -2,7 +2,9 @@ import { describe, expect, it } from "vitest";
 import {
   buildChatRequest,
   describeError,
+  isModelConfigured,
   modelFor,
+  normalizeBaseUrl,
   parseSseLine,
   splitLines,
 } from "../src/model-core.js";
@@ -151,5 +153,38 @@ describe("describeError", () => {
   it("falls back to the raw body, truncated", () => {
     expect(describeError(502, "upstream boom")).toContain("upstream boom");
     expect(describeError(500, "x".repeat(2000)).length).toBeLessThan(600);
+  });
+});
+
+describe("isModelConfigured", () => {
+  it("is false for every way of having no endpoint", () => {
+    // Each of these reaches config as a plausible-looking value when the env var
+    // is missing, blank, or set to an empty string by a deploy template.
+    for (const v of [undefined, null, "", "   ", "\n"]) {
+      expect(isModelConfigured(v)).toBe(false);
+    }
+  });
+
+  it("is false for a URL that is only slashes", () => {
+    // Normalisation strips trailing slashes, so "/" would otherwise survive as a
+    // truthy base and produce a request to a nonsense path.
+    expect(isModelConfigured("/")).toBe(false);
+    expect(isModelConfigured("///")).toBe(false);
+  });
+
+  it("is true for a real endpoint, padded or trailing-slashed", () => {
+    expect(isModelConfigured("https://allam.example/v1")).toBe(true);
+    expect(isModelConfigured("  https://allam.example/v1/  ")).toBe(true);
+  });
+});
+
+describe("normalizeBaseUrl", () => {
+  it("trims whitespace and trailing slashes so the path join stays single-slashed", () => {
+    expect(normalizeBaseUrl("  https://allam.example/v1//  ")).toBe("https://allam.example/v1");
+  });
+
+  it("returns an empty string for a missing value rather than throwing", () => {
+    expect(normalizeBaseUrl(undefined)).toBe("");
+    expect(normalizeBaseUrl(null)).toBe("");
   });
 });

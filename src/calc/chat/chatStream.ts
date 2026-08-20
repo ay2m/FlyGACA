@@ -26,6 +26,51 @@ export type StreamEventLike =
   | { type: 'error'; code?: string };
 
 /**
+ * Gateway error codes the client reacts to. Mirror `server/src/contract.ts` and
+ * are pinned by `tests/client-server-mirrors.test.ts`, so the two cannot drift.
+ */
+export const MODEL_UNCONFIGURED = 'model_unconfigured';
+export const QUOTA_EXCEEDED = 'quota_exceeded';
+
+/**
+ * Why a turn failed, which decides what the user is told.
+ *
+ * `unconfigured` is not an error in the usual sense: Captain Adel ships with no
+ * default model endpoint, so between providers the honest message is "being
+ * connected", not "something broke". `quota` is the free-allowance wall, which
+ * is a conversion moment rather than a fault. `transient` is everything else.
+ */
+export type ChatFailure = 'unconfigured' | 'quota' | 'transient';
+
+/** i18n key per failure, so the page holds no key strings of its own. */
+export const FAILURE_I18N_KEY: Record<ChatFailure, string> = {
+  unconfigured: 'chat.unavailable',
+  quota: 'chat.quota.exhausted',
+  transient: 'chat.notReady',
+};
+
+/**
+ * Classify by the gateway's own error code.
+ *
+ * Deliberately NOT by HTTP status. Once a load balancer is in front, the status
+ * is ambiguous: Cloud Run returns its own 503 when it cannot scale, which must
+ * never render as "Captain Adel is being connected to a new model", and 429
+ * covers both the free-allowance wall (an upsell) and the burst limiter (just
+ * wait). An unrecognised or absent code — the infrastructure case — is transient,
+ * which is the honest default: something broke, try again.
+ */
+export function failureFromCode(code: string | undefined): ChatFailure {
+  if (code === MODEL_UNCONFIGURED) return 'unconfigured';
+  if (code === QUOTA_EXCEEDED) return 'quota';
+  return 'transient';
+}
+
+/** Classify a stream `error` frame, whose `code` is the same vocabulary. */
+export function failureFromEvent(ev: { code?: string }): ChatFailure {
+  return failureFromCode(ev.code);
+}
+
+/**
  * Replace the trailing message via `fn`. Pure counterpart of the page's
  * `patchLast`; an empty list is returned unchanged (unreachable in the page —
  * a turn always begins with a user + placeholder pair already appended).

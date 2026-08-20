@@ -20,6 +20,8 @@ import { extractApiKey, hashApiKey } from "./api-key-core.js";
 import { apiTier, isOverMonthlyQuota, monthKey, remainingThisMonth, API_TIERS } from "./api-tier-core.js";
 import { anonymousAuthContext, extractBearerToken, type AuthContext } from "./auth-core.js";
 import { parseFeedback } from "./feedback-core.js";
+import { isUnconfigured } from "./model.js";
+import { MODEL_UNCONFIGURED, QUOTA_EXCEEDED, RATE_LIMITED, STREAM_FAILED } from "./contract.js";
 import { frame, doneFrame, pingFrame, SSE_HEADERS } from "./sse.js";
 import { parseCookies, parseRequest, MESSAGE_MAX_CHARS } from "./gateway-core.js";
 import { config } from "./config.js";
@@ -179,7 +181,7 @@ app.post(["/chat", "/api/chat"], async (req: Request, res: Response): Promise<vo
   const verdict = chatLimiter.check(limiterKey);
   if (!verdict.allowed) {
     res.setHeader("Retry-After", String(verdict.retryAfterSec));
-    res.status(429).json({ error: "rate_limited" });
+    res.status(429).json({ error: RATE_LIMITED });
     return;
   }
 
@@ -203,7 +205,7 @@ app.post(["/chat", "/api/chat"], async (req: Request, res: Response): Promise<vo
     if (!quota.allowed) {
       console.info("funnel", { event: "anon_quota_exhausted" });
       res.setHeader("Retry-After", String(quota.retryAfterSec));
-      res.status(429).json({ error: "quota_exceeded" });
+      res.status(429).json({ error: QUOTA_EXCEEDED });
       return;
     }
   } else {
@@ -227,7 +229,7 @@ app.post(["/chat", "/api/chat"], async (req: Request, res: Response): Promise<vo
         });
         if (!credit) {
           res.setHeader("Retry-After", String(quota.retryAfterSec));
-          res.status(429).json({ error: "quota_exceeded" });
+          res.status(429).json({ error: QUOTA_EXCEEDED });
           return;
         }
       }
@@ -248,6 +250,14 @@ app.post(["/chat", "/api/chat"], async (req: Request, res: Response): Promise<vo
         meta: { provider: out.meta.provider },
       });
     } catch (err) {
+      // 503 + a distinct code for "no endpoint configured": that is an expected
+      // operating state, not a bug, and the client says so honestly rather than
+      // showing a generic failure. Everything else stays an opaque 500.
+      if (isUnconfigured(err)) {
+        console.warn("chat unavailable (buffered): no model endpoint configured");
+        res.status(503).json({ error: MODEL_UNCONFIGURED });
+        return;
+      }
       console.error("chat failed (buffered)", { err });
       res.status(500).json({ error: "chat failed" });
     }
@@ -283,9 +293,16 @@ app.post(["/chat", "/api/chat"], async (req: Request, res: Response): Promise<vo
     res.write(doneFrame());
     res.end();
   } catch (err) {
-    console.error("chat failed (stream)", { err });
+    // The status line is already sent by now, so the reason has to travel in the
+    // frame rather than the status code.
+    const unconfigured = isUnconfigured(err);
+    if (unconfigured) {
+      console.warn("chat unavailable (stream): no model endpoint configured");
+    } else {
+      console.error("chat failed (stream)", { err });
+    }
     if (!aborted) {
-      res.write(frame({ type: "error", code: "stream_failed" }));
+      res.write(frame({ type: "error", code: unconfigured ? MODEL_UNCONFIGURED : STREAM_FAILED }));
       res.write(doneFrame());
       res.end();
     }
@@ -308,7 +325,7 @@ app.post(["/v1/ask", "/api/v1/ask"], async (req: Request, res: Response): Promis
   const verdict = apiKeyLimiter.check(`key:${hash}`);
   if (!verdict.allowed) {
     res.setHeader("Retry-After", String(verdict.retryAfterSec));
-    res.status(429).json({ error: "rate_limited" });
+    res.status(429).json({ error: RATE_LIMITED });
     return;
   }
 
@@ -383,6 +400,13 @@ app.post(["/v1/ask", "/api/v1/ask"], async (req: Request, res: Response): Promis
       meta: { provider: out.meta.provider },
     });
   } catch (err) {
+    // Licensed partners get a real reason: 503 is retryable and tells them the
+    // fault is ours, where a bare 500 "ask failed" reads as a bad request.
+    if (isUnconfigured(err)) {
+      console.warn("v1/ask unavailable: no model endpoint configured");
+      res.status(503).json({ error: MODEL_UNCONFIGURED });
+      return;
+    }
     console.error("v1/ask failed", { err });
     res.status(500).json({ error: "ask failed" });
   }

@@ -166,10 +166,39 @@ Budget an evaluation pass against `REFUSE_SCORE` / `GROUNDED_SCORE` (`docs/DESIG
 
 ---
 
+### Launching without a model endpoint
+
+This is a **supported state, not a broken one.** `MODEL_BASE_URL` has no default, so an
+unconfigured deploy refuses to call anything rather than sending Saudi regulatory questions to
+an unintended jurisdiction. Everything except Captain Adel — the regulatory library, the 55
+flight tools, study, the logbook, accounts and billing — works with no model at all, so the
+launch does not have to wait on a provider.
+
+What that state looks like, end to end:
+
+| Surface | Behaviour |
+| --- | --- |
+| `GET /healthz` | `200 {"ok":true,"model":false}` — degraded, not down, so the revision stays in rotation |
+| Container boot | A `console.warn` naming `MODEL_BASE_URL`, visible in Cloud Logging |
+| `POST /api/chat` (buffered) | `503 {"error":"model_unconfigured"}` |
+| `POST /api/chat?stream=1` | An SSE `error` frame with `code: "model_unconfigured"` — the status line is already sent by then, so the reason travels in the frame |
+| `POST /v1/ask` (licensed) | `503 {"error":"model_unconfigured"}` — retryable, and distinct from a 500 for a genuine fault |
+| The chat page | The `chat.unavailable` message: Captain Adel is being connected to a model hosted inside the Kingdom, and the library, tools and study work meanwhile. Both languages |
+
+Turning it on is configuration only — set `MODEL_BASE_URL`, `MODEL_API_KEY` and the two
+`MODEL_ID_*` values on the Cloud Run revision. No redeploy of the image, no code change.
+
+Note the model ids **must** match the provider's own catalog. A mismatch is a 404 on the first
+question, which surfaces as the generic failure message rather than the "being connected" one —
+that distinction is deliberate, because a wrong model id is a fault, not an expected state.
+
 ## 6. Launch checklist
 
 **Service**
 - [ ] `GET https://api.flygaca.com/healthz` → 200 (it returns 503 until Postgres answers)
+- [ ] The same response's `model` field is what you expect — `true` once an endpoint is set,
+      `false` while Captain Adel is between providers. **`false` does not block launch**; see
+      "Launching without a model endpoint" below
 - [ ] `SESSION_SECRET` ≥ 32 chars; `SESSION_COOKIE_DOMAIN=.flygaca.com`
 - [ ] OAuth redirect URI is exactly `${API_ORIGIN}/api/auth/google/callback`
 - [ ] Cloud SQL automated backups **and** point-in-time recovery enabled

@@ -119,6 +119,39 @@ describe("streamChat", () => {
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
+  it("tags the unset-endpoint case as `unconfigured`, not a request failure", async () => {
+    // The gateway branches on this to tell the user "Captain Adel is being
+    // connected" instead of a generic failure, so the tag is load-bearing UX,
+    // not a log detail.
+    delete process.env.MODEL_BASE_URL;
+    vi.stubGlobal("fetch", vi.fn());
+    const { streamChat, isUnconfigured } = await load();
+    const err = await collect(streamChat({ model: "m", system: "S", message: "q" })).catch(
+      (e: unknown) => e,
+    );
+    expect(isUnconfigured(err)).toBe(true);
+  });
+
+  it("does NOT tag a reachable endpoint's failure as unconfigured", async () => {
+    // A 500 from a real provider must stay an opaque failure — telling users the
+    // assistant is "being connected" while it is merely broken would be a lie.
+    vi.stubGlobal("fetch", vi.fn(async () => sseResponse(["boom"], { status: 500 })));
+    const { streamChat, isUnconfigured } = await load();
+    const err = await collect(streamChat({ model: "m", system: "S", message: "q" })).catch(
+      (e: unknown) => e,
+    );
+    expect(isUnconfigured(err)).toBe(false);
+  });
+
+  it("isUnconfigured ignores unrelated errors", () => {
+    // It is called on whatever the flow threw, which may be any error at all.
+    return load().then(({ isUnconfigured }) => {
+      expect(isUnconfigured(new Error("nope"))).toBe(false);
+      expect(isUnconfigured(undefined)).toBe(false);
+      expect(isUnconfigured("model_unconfigured")).toBe(false);
+    });
+  });
+
   it("surfaces the provider's error message on a non-2xx", async () => {
     vi.stubGlobal(
       "fetch",

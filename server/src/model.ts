@@ -15,13 +15,38 @@ import { config } from "./config.js";
 import {
   buildChatRequest,
   describeError,
+  isModelConfigured,
+  normalizeBaseUrl,
   parseSseLine,
   splitLines,
   type ChatRequestInput,
 } from "./model-core.js";
 
+/**
+ * Why a model call could not be completed.
+ *
+ * `unconfigured` means no endpoint is set — an expected operating state while
+ * Captain Adel is between providers, and the one case worth telling the user
+ * about honestly rather than as a generic failure. `request` covers everything
+ * else: unreachable, unauthorised, non-2xx, malformed.
+ */
+export type ModelErrorReason = "unconfigured" | "request";
+
 /** Thrown when the model endpoint is unreachable, unauthorised or errors. */
-export class ModelError extends Error {}
+export class ModelError extends Error {
+  constructor(
+    message: string,
+    readonly reason: ModelErrorReason = "request",
+  ) {
+    super(message);
+    this.name = "ModelError";
+  }
+}
+
+/** True when `err` is a ModelError raised because no endpoint is configured. */
+export function isUnconfigured(err: unknown): boolean {
+  return err instanceof ModelError && err.reason === "unconfigured";
+}
 
 /**
  * Stream the answer as token deltas.
@@ -34,13 +59,14 @@ export async function* streamChat(
   input: Omit<ChatRequestInput, "temperature"> & { temperature?: number },
   signal?: AbortSignal,
 ): AsyncGenerator<string, void, undefined> {
-  const base = config.model.baseUrl.replace(/\/+$/, "");
-  if (!base) {
+  if (!isModelConfigured(config.model.baseUrl)) {
     throw new ModelError(
       "MODEL_BASE_URL is not set — Captain Adel has no model endpoint to call. " +
         "See docs/RUNBOOK-deploy.md §4.",
+      "unconfigured",
     );
   }
+  const base = normalizeBaseUrl(config.model.baseUrl);
 
   let res: Response;
   try {

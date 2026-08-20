@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
-import { sendChatStream, type ChatTurn } from '@/lib/api';
+import { sendChatStream, type ChatRequestError, type ChatTurn } from '@/lib/api';
 import { getIdToken } from '@/lib/services/auth';
 import { sessionId } from '@/lib/session';
 import { usePageMeta } from '@/hooks/usePageMeta';
@@ -16,7 +16,11 @@ import {
   abortCleanup,
   applyStreamEvent,
   beginStream,
+  failureFromEvent,
+  failureFromCode,
   finalizeStream,
+  FAILURE_I18N_KEY,
+  type ChatFailure,
 } from '@/calc/chat/chatStream';
 import { partSlug, conversationParts } from '@/calc/chat/chatSources';
 import { followupSuggestions, lastAssistantIndex, showFollowups } from '@/calc/chat/chatFollowups';
@@ -131,7 +135,11 @@ export function Chat() {
 
     const controller = new AbortController();
     abortRef.current = controller;
-    const notReady = t('chat.notReady');
+    // What a failed turn says depends on why it failed: an unconfigured model is
+    // an honest "being connected" message, a 429 is the upsell, everything else
+    // is the transient fallback.
+    const failureText = (f: ChatFailure) => t(FAILURE_I18N_KEY[f]);
+    const notReady = failureText('transient');
 
     try {
       const token = (await getIdToken()) ?? undefined;
@@ -145,7 +153,13 @@ export function Chat() {
         token,
         controller.signal,
       )) {
-        setMessages((prev) => applyStreamEvent(prev, ev, notReady));
+        setMessages((prev) =>
+          applyStreamEvent(
+            prev,
+            ev,
+            ev.type === 'error' ? failureText(failureFromEvent(ev)) : notReady,
+          ),
+        );
       }
       // A stream that closed without ever leaving the pending state → not connected.
       setMessages((prev) => finalizeStream(prev, notReady));
@@ -154,7 +168,8 @@ export function Chat() {
         // User stopped the stream: keep whatever arrived; drop an empty bubble.
         setMessages((prev) => abortCleanup(prev));
       } else {
-        setMessages((prev) => applyStreamEvent(prev, { type: 'error' }, notReady));
+        const text = failureText(failureFromCode((e as ChatRequestError)?.code));
+        setMessages((prev) => applyStreamEvent(prev, { type: 'error' }, text));
       }
     } finally {
       abortRef.current = null;
