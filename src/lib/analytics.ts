@@ -16,11 +16,24 @@ export function isVercelHost(): boolean {
   return window.location.hostname.endsWith('.vercel.app');
 }
 
+/**
+ * True on Firebase Hosting or any other production host. Falls back to generic
+ * Google Analytics (gtag) when Vercel endpoints aren't available.
+ */
+export function isAnalyticsEnabled(): boolean {
+  if (typeof window === 'undefined') return false;
+  return import.meta.env.PROD && !isNative();
+}
+
+/** Whether Vercel analytics specifically should run. */
+export function isVercelAnalyticsEnabled(): boolean {
+  return isAnalyticsEnabled() && isVercelHost();
+}
+
 /** Whether analytics should run at all: web only (the native App Store builds
- *  stay free of web beacons), production only (dev/test never emit), and only
- *  on a host that serves the Vercel analytics endpoints. */
+ *  stay free of web beacons), production only (dev/test never emit). */
 export function enabled(): boolean {
-  return !isNative() && import.meta.env.PROD && isVercelHost();
+  return isAnalyticsEnabled();
 }
 
 /**
@@ -79,4 +92,23 @@ export function reportWebVitals(): void {
     .catch(() => {
       /* best-effort telemetry — never break the app if the chunk fails to load */
     });
+}
+
+/** Initialize Google Analytics (gtag) for production Firebase Hosting. */
+export function initializeGoogleAnalytics(): void {
+  if (!isAnalyticsEnabled() || isVercelAnalyticsEnabled()) return; // Vercel has its own analytics
+  const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
+  if (!measurementId) return;
+  // Load gtag script dynamically
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+  document.head.appendChild(script);
+  // Initialize dataLayer
+  (window as any).dataLayer = (window as any).dataLayer || [];
+  function gtag(...args: any[]) {
+    (window as any).dataLayer.push(args);
+  }
+  gtag('js', new Date());
+  gtag('config', measurementId);
 }
