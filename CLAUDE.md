@@ -52,13 +52,18 @@ manifest of the HTTP surface, mounting one router per feature under `/api`:
 progress), `grants` (staff / school-seat / founding), `billing` (Moyasar checkout, confirm, webhook,
 renewal job), `org` (the B2B cohort dashboard), `waitlist`, plus the Captain Adel gateway
 (`/api/chat`, `/api/feedback`) and the licensed `/v1/ask` surface (tiered, API-key-authenticated,
-see `docs/LICENSED-API.md`). The RAG flow retrieves with BM25 in-process and generates
-with **ALLaM** (SDAIA's Arabic foundation model) over an OpenAI-compatible endpoint —
-`server/src/model-core.ts` (pure wire format) + `model.ts` (fetch/SSE), configured by
-`MODEL_BASE_URL`. **There is no Gemini and no model SDK**: the generation hop was the one
-call that left the Kingdom, so it now points at Saudi-hosted inference and the provider is
-config, not code. Genkit remains only as the flow/streaming harness. `docs/DESIGN-genkit-rag-backend.md`
-describes the retrieval design, but predates the provider change — its Gemini references are history. `server/` is its own npm package with its own CI gate — run
+see `docs/LICENSED-API.md`). The RAG flow retrieves with BM25 in-process and generates over an
+**OpenAI-compatible endpoint** — `server/src/model-core.ts` (pure wire format) + `model.ts`
+(fetch/SSE), configured by `MODEL_BASE_URL`, **no model SDK**. The default provider is **Google
+Gemini** (via its OpenAI-compatible endpoint); the provider is config, not code, so an in-Kingdom
+**ALLaM** endpoint (HUMAIN's, once its developer platform opens, or a self-hosted ALLaM behind
+vLLM) is a drop-in swap. Residency is scoped deliberately: all **personal** data (accounts,
+logbooks, payments, the database) stays in-Kingdom in `me-central2`, but the generation hop carries
+no account identity — only the user's question and the retrieved passages — so it runs on Gemini
+(processed globally) and is disclosed as a sub-processor rather than kept in-Kingdom (see
+`docs/RUNBOOK-golive.md` §5). Genkit remains only as the flow/streaming harness.
+`docs/DESIGN-genkit-rag-backend.md` describes the retrieval design but predates the model-client
+rewrite — read it for retrieval intent, not the provider. `server/` is its own npm package with its own CI gate — run
 `npm run lint && npm test && npm run build` inside `server/` when you touch it (root
 `npm run verify` does not cover it). Deploy region is `me-central2` (Dammam, in-Kingdom / PDPL);
 there is no region constant to keep in sync any more — the Cloud Run service and its Cloud SQL

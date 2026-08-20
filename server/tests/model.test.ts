@@ -37,7 +37,7 @@ async function load() {
 }
 
 beforeEach(() => {
-  process.env.MODEL_BASE_URL = "https://allam.example/v1";
+  process.env.MODEL_BASE_URL = "https://model.example/v1";
   process.env.MODEL_API_KEY = "test-key";
 });
 
@@ -55,7 +55,7 @@ describe("streamChat", () => {
       ),
     );
     const { streamChat } = await load();
-    const out = await collect(streamChat({ model: "allam-7b-instruct", system: "S", message: "q" }));
+    const out = await collect(streamChat({ model: "gemini-2.5-flash", system: "S", message: "q" }));
     expect(out).toEqual(["Under ", "GACAR ", "61.107"]);
   });
 
@@ -83,13 +83,13 @@ describe("streamChat", () => {
     const fetchMock = vi.fn(async () => sseResponse(["data: [DONE]\n"]));
     vi.stubGlobal("fetch", fetchMock);
     const { streamChat } = await load();
-    await collect(streamChat({ model: "allam-34b-instruct", system: "S", message: "q" }));
+    await collect(streamChat({ model: "gemini-2.5-pro", system: "S", message: "q" }));
 
     const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
-    expect(url).toBe("https://allam.example/v1/chat/completions");
+    expect(url).toBe("https://model.example/v1/chat/completions");
     expect((init.headers as Record<string, string>).Authorization).toBe("Bearer test-key");
     expect(JSON.parse(init.body as string)).toMatchObject({
-      model: "allam-34b-instruct",
+      model: "gemini-2.5-pro",
       stream: true,
     });
   });
@@ -179,11 +179,11 @@ describe("streamChat", () => {
   });
 
   it("tolerates a trailing slash on the base URL", async () => {
-    process.env.MODEL_BASE_URL = "https://allam.example/v1/";
+    process.env.MODEL_BASE_URL = "https://model.example/v1/";
     const fetchMock = vi.fn(async () => sseResponse(["data: [DONE]\n"]));
     vi.stubGlobal("fetch", fetchMock);
     const { streamChat } = await load();
     await collect(streamChat({ model: "m", system: "S", message: "q" }));
-    expect(fetchMock.mock.calls[0][0]).toBe("https://allam.example/v1/chat/completions");
+    expect(fetchMock.mock.calls[0][0]).toBe("https://model.example/v1/chat/completions");
   });
 });

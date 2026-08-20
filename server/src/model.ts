@@ -1,12 +1,12 @@
 /**
  * Streaming chat-completions client — the thin I/O half of `model-core.ts`.
  *
- * Replaces the Genkit `googleAI()` provider. Fly GACA keeps user data in-Kingdom
- * (Cloud Run + Cloud SQL in me-central2), and Gemini was the one call that left
- * it; pointing this at a Saudi-hosted endpoint closes that gap. It speaks plain
- * OpenAI chat-completions over `fetch`, so it works against HUMAIN's ALLaM
- * service, a self-hosted ALLaM behind vLLM, or any other compatible endpoint,
- * chosen entirely by `MODEL_BASE_URL` / `MODEL_ID_*`.
+ * Replaces the Genkit `googleAI()` SDK provider with plain OpenAI
+ * chat-completions over `fetch`, so the endpoint is `MODEL_BASE_URL` / `MODEL_ID_*`
+ * and the provider is config, not code. Default is Google Gemini via its
+ * OpenAI-compatible endpoint; the same client works against HUMAIN's ALLaM, a
+ * self-hosted ALLaM behind vLLM, or any other compatible endpoint. Personal data
+ * stays in-Kingdom regardless — this hop carries none (docs/RUNBOOK-golive.md §5).
  *
  * No SDK: the surface used here is one POST and an SSE body, and a vendor SDK
  * would re-introduce exactly the coupling this change exists to remove.

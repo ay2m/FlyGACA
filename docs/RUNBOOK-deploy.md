@@ -13,7 +13,7 @@ or plain GCP:
 | Email | Any Resend-compatible endpoint (`MAIL_ENDPOINT` / `MAIL_API_KEY`) |
 | Payments | Moyasar (hosted widget + server-to-server confirm) |
 | Renewals | Cloud Scheduler → `POST /api/billing/renew` |
-| AI | ALLaM over an OpenAI-compatible endpoint (`MODEL_BASE_URL`) |
+| AI | Google Gemini over an OpenAI-compatible endpoint (`MODEL_BASE_URL`); provider is config |
 
 `me-central2` (Dammam) keeps user data in-Kingdom for PDPL. Use whatever region you prefer, but keep
 Cloud Run and Cloud SQL in the **same** one — the unix-socket connection below requires it.
@@ -132,7 +132,7 @@ gcloud run deploy flygaca-api \
   --add-cloudsql-instances="$PROJECT_ID:$REGION:$INSTANCE" \
   --allow-unauthenticated \
   --memory=1Gi --timeout=300 --max-instances=10 \
-  --set-env-vars="NODE_ENV=production,APP_ORIGIN=https://flygaca.com,API_ORIGIN=https://api.flygaca.com,GOOGLE_OAUTH_CLIENT_ID=<client-id>,MAIL_FROM=Fly GACA <no-reply@flygaca.com>,MODEL_BASE_URL=<in-kingdom model endpoint>" \
+  --set-env-vars="NODE_ENV=production,APP_ORIGIN=https://flygaca.com,API_ORIGIN=https://api.flygaca.com,GOOGLE_OAUTH_CLIENT_ID=<client-id>,MAIL_FROM=Fly GACA <no-reply@flygaca.com>,MODEL_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai,MODEL_ID_FAST=gemini-2.5-flash,MODEL_ID_PRO=gemini-2.5-pro" \
   --set-env-vars="PRICE_PRO_MONTHLY=79,PRICE_PRO_ANNUAL=649,PRICE_PASS=299,PRICE_CREDITS=39,PRICE_PREP_PACK=249,PRICE_PREP_PACK_ESSENTIAL=249,PRICE_PREP_PACK_STANDARD=399,PRICE_PREP_PACK_COMPLETE=499,PRICE_BUNDLE=1499,PRICE_COHORT=12000" \
   --set-secrets="DATABASE_URL=database-url:latest,SESSION_SECRET=session-secret:latest,GOOGLE_OAUTH_CLIENT_SECRET=google-oauth-secret:latest,MODEL_API_KEY=model-api-key:latest,MOYASAR_SECRET_KEY=moyasar-secret-key:latest,MOYASAR_WEBHOOK_SECRET=moyasar-webhook:latest,MAIL_API_KEY=mail-api-key:latest,CRON_SECRET=cron-secret:latest"
 ```

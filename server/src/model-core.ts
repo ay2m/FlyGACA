@@ -3,13 +3,12 @@
  * the wire format can be unit-tested without a provider (see the `*-core.ts`
  * convention in CLAUDE.md). `model.ts` is the thin HTTP wrapper.
  *
- * The target is the OpenAI **chat-completions** shape, which is the de-facto
- * interface for Saudi-hosted inference: HUMAIN serves ALLaM on Groq in Dammam,
- * and Groq's API is OpenAI-compatible, as is vLLM if the model is self-hosted on
- * a GPU in me-central2. Nothing here is ALLaM-specific — the model id and base
- * URL are configuration, so moving between in-Kingdom providers is an env
- * change, not a code change. That portability is the point: it is what let this
- * service drop Gemini without picking a new lock-in.
+ * The target is the OpenAI **chat-completions** shape, the de-facto interface
+ * across providers: Google Gemini exposes it (the default), and so do Groq —
+ * which is how HUMAIN serves ALLaM in Dammam — and vLLM for a self-hosted model.
+ * Nothing here is provider-specific: the model id and base URL are configuration,
+ * so moving between providers (Gemini today, an in-Kingdom ALLaM later) is an env
+ * change, not a code change. That portability is the point — no vendor lock-in.
  */
 
 /** One turn as the chat-completions API wants it. */

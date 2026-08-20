@@ -16,29 +16,29 @@ import {
  * under load, where nobody reproduces it.
  */
 
-const TIERS = { fast: "allam-7b-instruct", pro: "allam-34b-instruct" };
+const TIERS = { fast: "gemini-2.5-flash", pro: "gemini-2.5-pro" };
 
 describe("modelFor", () => {
   it("defaults to the fast tier", () => {
-    expect(modelFor(undefined, TIERS)).toBe("allam-7b-instruct");
-    expect(modelFor("", TIERS)).toBe("allam-7b-instruct");
+    expect(modelFor(undefined, TIERS)).toBe("gemini-2.5-flash");
+    expect(modelFor("", TIERS)).toBe("gemini-2.5-flash");
   });
 
   it("selects the pro model case-insensitively", () => {
-    expect(modelFor("pro", TIERS)).toBe("allam-34b-instruct");
-    expect(modelFor("PRO", TIERS)).toBe("allam-34b-instruct");
+    expect(modelFor("pro", TIERS)).toBe("gemini-2.5-pro");
+    expect(modelFor("PRO", TIERS)).toBe("gemini-2.5-pro");
   });
 
   it("treats any unknown tier as fast rather than erroring", () => {
     // `provider` is client-supplied; an unrecognised value must not 500, and
     // must never silently upgrade a free user to the expensive model.
-    expect(modelFor("gemini-2.5-pro", TIERS)).toBe("allam-7b-instruct");
-    expect(modelFor("enterprise", TIERS)).toBe("allam-7b-instruct");
+    expect(modelFor("gemini-2.5-pro", TIERS)).toBe("gemini-2.5-flash");
+    expect(modelFor("enterprise", TIERS)).toBe("gemini-2.5-flash");
   });
 });
 
 describe("buildChatRequest", () => {
-  const base = { model: "allam-7b-instruct", system: "GROUNDING", message: "what is VFR?" };
+  const base = { model: "gemini-2.5-flash", system: "GROUNDING", message: "what is VFR?" };
 
   it("puts the grounding system prompt first", () => {
     const body = buildChatRequest(base);
@@ -145,8 +145,8 @@ describe("splitLines", () => {
 
 describe("describeError", () => {
   it("surfaces the provider's own message when it sends one", () => {
-    const body = JSON.stringify({ error: { message: "model `allam-99b` not found" } });
-    expect(describeError(404, body)).toContain("model `allam-99b` not found");
+    const body = JSON.stringify({ error: { message: "model `nonexistent-model` not found" } });
+    expect(describeError(404, body)).toContain("model `nonexistent-model` not found");
     expect(describeError(404, body)).toContain("404");
   });
 
@@ -173,14 +173,14 @@ describe("isModelConfigured", () => {
   });
 
   it("is true for a real endpoint, padded or trailing-slashed", () => {
-    expect(isModelConfigured("https://allam.example/v1")).toBe(true);
-    expect(isModelConfigured("  https://allam.example/v1/  ")).toBe(true);
+    expect(isModelConfigured("https://model.example/v1")).toBe(true);
+    expect(isModelConfigured("  https://model.example/v1/  ")).toBe(true);
   });
 });
 
 describe("normalizeBaseUrl", () => {
   it("trims whitespace and trailing slashes so the path join stays single-slashed", () => {
-    expect(normalizeBaseUrl("  https://allam.example/v1//  ")).toBe("https://allam.example/v1");
+    expect(normalizeBaseUrl("  https://model.example/v1//  ")).toBe("https://model.example/v1");
   });
 
   it("returns an empty string for a missing value rather than throwing", () => {

@@ -130,39 +130,49 @@ The deploy runs the full body prerender with `PRERENDER_MAX=0`. The default cap 
 
 ## 5. Data residency
 
-Cloud Run, Cloud SQL and both buckets sit in `me-central2`. The load balancer terminates TLS at
-Google's edge, but storage and processing stay in-region and never leave Google's own network.
+Cloud Run, Cloud SQL and both buckets sit in `me-central2`. All **personal** data — accounts,
+logbooks, records, payments, the database — stays in-region and never leaves Google's own network.
 
-**The model call used to be the exception. It no longer is.** Captain Adel ran on Gemini, which
-meant every question left the Kingdom even though the database never did. Generation now goes
-through `server/src/model.ts` — plain OpenAI chat-completions over `fetch`, no vendor SDK — so the
-endpoint is `MODEL_BASE_URL` and nothing else. Point it at Saudi-hosted inference and the whole
-request path stays in-Kingdom.
+**The model call is the one deliberate exception.** Captain Adel calls **Google Gemini** through its
+OpenAI-compatible endpoint:
 
-Two options, both in-Kingdom:
+```
+MODEL_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai
+MODEL_API_KEY=<AI Studio key, in Secret Manager>
+MODEL_ID_FAST=gemini-2.5-flash
+MODEL_ID_PRO=gemini-2.5-pro     # verify current ids at ai.google.dev/gemini-api/docs/models
+```
+
+Gemini processes globally, not in-Kingdom. That is a deliberate, scoped decision, not an oversight:
+the request carries **no account identity** — only the user's question and the regulatory passages
+retrieved to answer it — and PDPL governs *personal* data, of which this hop sends none. The
+database never moves. Gemini is disclosed as a sub-processor in the privacy notice (`/privacy`).
+This is why the residency requirement, which is hard for personal data, is met without an in-Kingdom
+model: there is no personal data in the model call to keep in-Kingdom.
+
+The client is provider-agnostic (plain OpenAI chat-completions, no SDK), so moving the generation
+hop **fully** in-Kingdom later — should a contract demand even prompt content stay in the Kingdom —
+is an env change, not a code change:
 
 | Option | What it is | Trade-off |
 | --- | --- | --- |
-| **HUMAIN / ALLaM** (intended) | SDAIA's Arabic foundation model, served by HUMAIN on Groq inference in **Dammam**. | Managed and cheap per token. Access is via HUMAIN's developer platform — as of this writing its public API docs, pricing and self-serve signup are **not published**, so getting credentials means contacting them. |
-| **Self-hosted ALLaM** | ALLaM weights from Hugging Face behind vLLM on a GPU in `me-central2`. | Fully under your control and definitely in-region, but an always-on GPU costs several hundred dollars a month — an order of magnitude above the rest of this stack. |
+| **HUMAIN / ALLaM** | SDAIA's Arabic foundation model, served by HUMAIN on Groq inference in **Dammam**. | Managed and cheap per token, and genuinely in-Kingdom. Access is via HUMAIN's developer platform — as of this writing its public API docs, pricing and self-serve signup are **not published**, so getting credentials means contacting them. |
+| **Self-hosted ALLaM** | ALLaM weights from Hugging Face behind vLLM on a GPU. | Fully under your control, but there are **no capable GPUs in `me-central2`** today (Compute Engine A100s and Cloud Run L4s are not offered there), so this cannot actually run in-Kingdom yet — and an always-on GPU elsewhere costs several hundred dollars a month, an order of magnitude above the rest of this stack. |
 
 **What will *not* work, despite being the obvious search results:** ALLaM is also offered on IBM
 watsonx and Azure AI Foundry, and neither has a Saudi region — Azure's nearest is UAE North. Running
-ALLaM there is in-Kingdom in branding only, and strictly worse than what we replaced: a weaker model
-*and* the data still leaves. If you cannot get in-Kingdom inference, that is a reason to revisit the
-residency requirement openly, not to pick a Saudi-flavoured endpoint abroad.
+ALLaM there is in-Kingdom in branding only, and strictly worse than Gemini: a weaker model *and* the
+data still leaves.
 
 ### Quality note
 
-ALLaM is a smaller, Arabic-first model; Gemini 2.5 Pro was neither. For this workload that matters
-less than it sounds, because the safety-critical part is not the model's: `captain-adel.ts` decides
-grounding from the **BM25 retrieval score** and returns a deterministic refusal *without calling the
-model at all* when confidence is low. The model only rephrases passages that were already retrieved
-and cited. So the "never invent a GACAR figure" guarantee is structural.
-
-What does depend on the model is answer fluency and citation discipline on the English corpus.
-Budget an evaluation pass against `REFUSE_SCORE` / `GROUNDED_SCORE` (`docs/DESIGN-genkit-rag-backend.md`
-§10) after switching, and tune those thresholds up if answers get loose.
+The safety-critical part is not the model's: `captain-adel.ts` decides grounding from the **BM25
+retrieval score** and returns a deterministic refusal *without calling the model at all* when
+confidence is low. The model only rephrases passages that were already retrieved and cited, so the
+"never invent a GACAR figure" guarantee is structural and holds under any provider. Gemini is a
+strong bilingual model, so fluency and citation discipline are not a concern here; if you later swap
+to a smaller in-Kingdom model, run an evaluation pass against `REFUSE_SCORE` / `GROUNDED_SCORE`
+(`docs/DESIGN-genkit-rag-backend.md` §10) and tune the thresholds up if answers get loose.
 
 ---
 
@@ -183,7 +193,7 @@ What that state looks like, end to end:
 | `POST /api/chat` (buffered) | `503 {"error":"model_unconfigured"}` |
 | `POST /api/chat?stream=1` | An SSE `error` frame with `code: "model_unconfigured"` — the status line is already sent by then, so the reason travels in the frame |
 | `POST /v1/ask` (licensed) | `503 {"error":"model_unconfigured"}` — retryable, and distinct from a 500 for a genuine fault |
-| The chat page | The `chat.unavailable` message: Captain Adel is being connected to a model hosted inside the Kingdom, and the library, tools and study work meanwhile. Both languages |
+| The chat page | The `chat.unavailable` message: Captain Adel is being connected to its answering engine, and the library, tools and study work meanwhile. Both languages |
 
 Turning it on is configuration only — set `MODEL_BASE_URL`, `MODEL_API_KEY` and the two
 `MODEL_ID_*` values on the Cloud Run revision. No redeploy of the image, no code change.

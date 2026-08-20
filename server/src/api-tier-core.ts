@@ -30,12 +30,11 @@ export interface ApiTierSpec {
  * alone cost ~SAR 470 against a SAR 499 tier, i.e. a ~6% gross margin. Retiering here
  * leaves headroom to absorb a provider price rise without repricing partners.
  *
- * STALE COST BASIS: those per-answer figures were measured on Gemini, which this
- * service no longer uses — generation moved to ALLaM on in-Kingdom inference. The
- * prices below are deliberately left alone, because they are a commercial decision
- * and the new provider has not published a rate card. Re-measure the per-answer
- * cost once billing data exists; the margins above are the only thing that changes,
- * and they can only have improved.
+ * COST BASIS: those per-answer figures were measured on Gemini, which is the
+ * default generation provider (via its OpenAI-compatible endpoint), so the basis
+ * holds. If Captain Adel is later moved to an in-Kingdom ALLaM endpoint, re-measure
+ * the per-answer cost — the prices are a commercial decision and only the implied
+ * margin moves with the provider.
  */
 export const API_TIERS: Record<ApiTier, ApiTierSpec> = {
   starter: { monthlyQuota: 1000, priceSar: 499 },
