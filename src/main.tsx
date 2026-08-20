@@ -27,6 +27,7 @@ import './styles/native.css';
 import { router } from './router';
 import { initNative } from '@/lib/native/nativeBridge';
 import { reportWebVitals, initializeGoogleAnalytics } from '@/lib/analytics';
+import { initializeFirebaseMonitoring } from '@/lib/firebase-monitoring';
 import { captureReferral } from '@/lib/share';
 import { canonicalRedirect, isMirrorHost, localeRedirect } from '@/lib/seo/seo';
 import { applyTheme, readTheme } from '@/lib/theme';
@@ -65,6 +66,9 @@ if (redirectTo) {
 
   // Initialize Google Analytics (production web only).
   initializeGoogleAnalytics();
+
+  // Initialize Firebase Crash Reporting (production web only).
+  initializeFirebaseMonitoring();
 
   // Capture an inbound ?ref= (from a shared link), stash it, and strip it from
   // the URL before the router reads the location — keeps the canonical clean.

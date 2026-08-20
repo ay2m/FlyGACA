@@ -1,5 +1,6 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react';
 import { reportError } from '@/lib/analytics';
+import { reportErrorToFirebase } from '@/lib/firebase-monitoring';
 import { ErrorFallback } from './ErrorFallback';
 
 interface Props {
@@ -27,7 +28,9 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, info: ErrorInfo): void {
-    reportError(error, { componentStack: (info.componentStack ?? '').slice(0, 500) });
+    const context = { componentStack: (info.componentStack ?? '').slice(0, 500) };
+    reportError(error, context);
+    reportErrorToFirebase(error, context);
   }
 
   render(): ReactNode {
