@@ -48,6 +48,11 @@ apple/.build/
 
 # Env
 .env
+
+# Firebase Data Connect — generated scaffolding from `firebase init`
+dataconnect/
+src/dataconnect-generated/
+server/src/dataconnect-generated/
 .env.local
 .env.*.local
 
