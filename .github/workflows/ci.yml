@@ -11,15 +11,21 @@
 name: CI
 
 on:
-  push:
-    branches: [main]
   pull_request:
   workflow_dispatch:
   # Deploy calls this workflow and blocks on it, so production can never ship a
   # revision that has not been through the same gate a pull request gets.
+  #
+  # This is ALSO why there is no `push: branches: [main]` trigger any more. With
+  # both, a push to main started this workflow twice — once directly, once as
+  # Deploy's `verify` job — and the concurrency group below deliberately does not
+  # cancel on main, so the second run QUEUED behind the first and every production
+  # deploy waited out a duplicate full CI pass, e2e included. Main now runs this
+  # exactly once, inside the deploy that gates on it.
   workflow_call:
 
-# A new push supersedes an in-flight run on the same ref; main is never cancelled.
+# A new push supersedes an in-flight run on the same ref; main is never cancelled,
+# because on main this run is the gate a production deploy is waiting on.
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
