@@ -21,14 +21,27 @@ let pool: pg.Pool | null = null;
 
 /** The shared connection pool, created on first use. */
 export function getPool(): pg.Pool {
-  pool ??= new pg.Pool({
-    connectionString: config.db.url,
-    max: config.db.poolMax,
-    // Cloud Run freezes idle instances; a short idle timeout avoids handing out
-    // a connection the database has already reaped.
-    idleTimeoutMillis: 10_000,
-    connectionTimeoutMillis: 10_000,
-  });
+  if (!pool) {
+    const created = new pg.Pool({
+      connectionString: config.db.url,
+      max: config.db.poolMax,
+      // Cloud Run freezes idle instances; a short idle timeout avoids handing out
+      // a connection the database has already reaped.
+      idleTimeoutMillis: 10_000,
+      connectionTimeoutMillis: 10_000,
+    });
+    // `pg` emits 'error' on the pool when an *idle* client dies — a Cloud SQL
+    // failover or maintenance restart, not anything a request did. `Pool` is an
+    // EventEmitter, so with no listener that emit is an uncaught exception and
+    // takes the whole instance down. pg has already removed and closed the client
+    // by this point, so logging is the entire correct response: the next caller
+    // gets a fresh connection. Attached here rather than after the assignment
+    // because `getPool` runs on every query and would otherwise stack listeners.
+    created.on("error", (err) => {
+      console.error("Idle Postgres client died; connection discarded:", err);
+    });
+    pool = created;
+  }
   return pool;
 }
 

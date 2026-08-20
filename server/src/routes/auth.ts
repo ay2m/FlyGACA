@@ -36,6 +36,7 @@ import {
   toAuthedUser,
   type UserRow,
 } from "../store.js";
+import { mayLinkGoogleToExistingAccount } from "../auth-core.js";
 import { sendVerificationEmail, sendPasswordResetEmail } from "../mail.js";
 import { handler, requireUser, HttpError } from "../http.js";
 
@@ -318,12 +319,24 @@ authRouter.get(
 
     // Match on the Google subject first (stable across email changes), then fall
     // back to the address so an existing password account links rather than
-    // colliding on the UNIQUE email constraint.
-    let row =
-      (await findUserByGoogleSub(info.sub)) ??
-      (await findUserByEmail(email).then((existing) =>
-        existing ? linkGoogleAccount(existing.id, info.sub, info.email_verified === true) : null,
-      ));
+    // colliding on the UNIQUE email constraint. The address fallback only applies
+    // when both sides have proven the mailbox — see `mayLinkGoogleToExistingAccount`.
+    let row = await findUserByGoogleSub(info.sub);
+    if (!row) {
+      const existing = await findUserByEmail(email);
+      if (existing) {
+        if (
+          !mayLinkGoogleToExistingAccount({
+            googleEmailVerified: info.email_verified === true,
+            existingEmailVerified: existing.email_verified,
+            existingHasPassword: existing.password_hash !== null,
+          })
+        ) {
+          return res.redirect(`${config.appOrigin}/account?signin=link-blocked`);
+        }
+        row = await linkGoogleAccount(existing.id, info.sub, true);
+      }
+    }
 
     row ??= await createUser({
       email,
