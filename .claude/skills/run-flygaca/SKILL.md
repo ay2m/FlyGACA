@@ -310,9 +310,10 @@ npm run verify         # typecheck + lint + format:check + test + build + bundle
   - `corpus: entry 0 is missing a string d/b/u field` → `CORPUS_URL` points at
     `public/data/library-search.json`. That is the browser's search index and its
     entries carry no `u`; the retriever wants **`rag-chunks.json`**.
-  - With `GOOGLE_GENAI_API_KEY` unset you reach Google and get
-    `API key not valid`. That is the expected end state without a real key — the
-    corpus and the whole RAG chain ran to get there.
+  - With `MODEL_BASE_URL` unset the flow raises `ModelError("unconfigured")` and
+    Captain Adel declines the question. That is the expected end state without an
+    endpoint — the corpus and the whole RAG chain ran to get there. Generation goes
+    to ALLaM over an OpenAI-compatible endpoint; there is no Google key involved.
 - **Verification / password-reset link** — with `MAIL_API_KEY` empty the mail is
   printed to the server log:
   `[mail] would send "Confirm your Fly GACA email" to … /api/auth/verify-email/confirm?token=…`.

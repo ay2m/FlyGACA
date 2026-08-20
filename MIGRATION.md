@@ -1,10 +1,20 @@
 # Migration tracker — legacy vanilla Fly GACA monorepo → `FlyGACA-app`
 
-This tracker records the **frontend** rebuild. At the time it was written the Firebase Functions
-gateway, the Captain Adel
-RAG service, the Python `sales_agents/`, `office/`/`docs/`, and the multi-host routing generator were
-out of scope. That is no longer the shape of the repo — the gateway and the RAG flow now live here
-under `functions/` (see CLAUDE.md). The Python agents and the routing generator were never migrated.
+> ⚠️ **Predates the Cloud Run rebuild — the Firebase/Firestore/App Check/Stripe stack
+> below is history, not the system.** The live architecture is an Express service on
+> **Cloud Run** backed by **Cloud SQL**, billed through **Moyasar**; there is no Firebase
+> dependency, config or import anywhere in `src/` or `server/`. See `CLAUDE.md` for how
+> it works today, and `docs/RUNBOOK-deploy.md` → `docs/RUNBOOK-infra.md` →
+> `docs/RUNBOOK-golive.md` for how it deploys.
+
+This tracker records the **frontend** rebuild. At the time it was written the backend gateway, the
+Captain Adel RAG service, the Python `sales_agents/`, `office/`/`docs/`, and the multi-host routing
+generator were out of scope. That is no longer the shape of the repo — the gateway and the RAG flow
+now live here under `server/` (see CLAUDE.md). The Python agents and the routing generator were
+never migrated.
+
+Stage 3 below describes a Firebase + Stripe setup that no longer exists in any form. Read it as a
+record of what was built and then replaced, not as a checklist to follow.
 
 ## ✅ Foundation done (this PR)
 

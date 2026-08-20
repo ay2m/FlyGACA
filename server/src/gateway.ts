@@ -165,7 +165,8 @@ app.post(["/chat", "/api/chat"], async (req: Request, res: Response): Promise<vo
   // Auth / App Check. Captain Adel chat is usable WITHOUT an account: an absent or
   // invalid ID token yields an anonymous caller (metered by hashed client IP on a
   // small daily free-trial allowance), not a 401. App Check failures still 403,
-  // enforced only when ENFORCE_APP_CHECK is on.
+  // (There is no App Check equivalent here: that was a Firebase control and went
+  // with it. Abuse protection is the rate limiter above plus the quota below.)
   let uid: string | undefined;
   let emailVerified: boolean;
   try {

@@ -11,9 +11,10 @@
  * `npm run deploy`. It is **non-fatal**: any failure (Chromium missing and
  * un-installable, a route timing out) logs a warning and exits 0, leaving the
  * head-prerendered HTML in place, so it can never break a deploy. It is NOT in
- * `npm run build` on purpose — Firebase App Hosting's buildpack can't run
- * headless Chromium, and the e2e webServer build must not wait on it. Set
- * SKIP_PRERENDER=1 to opt out explicitly.
+ * `npm run build` on purpose — it needs headless Chromium, which not every build
+ * machine has, and the e2e webServer build must not wait on it. The deploy
+ * workflow runs it explicitly with PRERENDER_MAX=0 and then gates on
+ * check-prerender-coverage.mjs. Set SKIP_PRERENDER=1 to opt out explicitly.
  *
  * Route set mirrors scripts/build-sitemap.mjs: static router paths + guide slugs
  * (always), plus every enumerable dynamic route the sitemap indexes — the library
@@ -183,8 +184,8 @@ function outPath(route) {
     : join(root, 'dist', route.replace(/^\//, ''), 'index.html');
 }
 
-// The Arabic snapshot lives under a real `/ar` path prefix (Firebase routes by
-// path, so this is a distinct file the crawler can fetch).
+// The Arabic snapshot lives under a real `/ar` path prefix — a distinct object in
+// the bucket that a crawler can fetch, rather than a client-side route.
 function outPathAr(route) {
   return route === '/'
     ? join(root, 'dist/ar/index.html')
@@ -193,12 +194,14 @@ function outPathAr(route) {
 
 // --- Output sanitization -------------------------------------------------------
 // The snapshot is serialized AFTER the app hydrated, so it carries markup the
-// app (or Firebase) injected at runtime that is useless — or actively harmful —
-// when the file is served statically in production:
-//   * the parser-blocking reCAPTCHA Enterprise loader (App Check) — on a network
-//     where google.com is slow/blocked it stalls HTML parsing before the app boots;
-//   * Vercel Analytics / Speed Insights and Firebase's gtag loader — dead
-//     third-party requests (and CSP violations) on non-Vercel hosting;
+// app injected at runtime that is useless — or actively harmful — when the file is
+// served statically in production:
+//   * any parser-blocking third-party loader — on a network where the origin is
+//     slow or blocked it stalls HTML parsing before the app boots. (The reCAPTCHA
+//     Enterprise loader this was written for came with App Check and is gone; the
+//     strip stays because the hazard is the pattern, not that one script.)
+//   * Vercel Analytics / Speed Insights and any gtag loader — dead third-party
+//     requests (and CSP violations) on the Cloud Storage front;
 //   * href/src attributes the DOM resolved against the preview origin
 //     (`http://localhost:4181/…` / `http://127.0.0.1:4181/…`) — CSP-blocked dead
 //     links on the real host.

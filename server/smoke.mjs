@@ -1,7 +1,7 @@
 /**
  * Smoke test for the pure (non-model) backend pieces, against the REAL corpus.
  * Run: CORPUS_URL=../public/data/library-search.json node smoke.mjs
- * The Gemini call is intentionally excluded (needs a deployed secret).
+ * The model call is intentionally excluded (needs a deployed secret).
  */
 import assert from "node:assert";
 import { retrieve, toChatSource, searchHref, getIndex } from "./lib/corpus.js";

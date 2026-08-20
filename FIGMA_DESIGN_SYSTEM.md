@@ -263,7 +263,7 @@ The `--tone` CSS variable sets the bar color and its glow. Any token value is va
 | Testing | Vitest + @testing-library/react + Playwright |
 | Linting | ESLint 9 + typescript-eslint |
 | Formatting | Prettier |
-| Deployment | Firebase Hosting (`firebase deploy --only hosting`) |
+| Deployment | Google Cloud — SPA to a Cloud Storage bucket behind the HTTPS load balancer, API to Cloud Run (`npm run deploy:web` / `npm run deploy:api`) |
 
 ---
 
@@ -422,7 +422,7 @@ FlyGACA-app/
 │   │   └── index.ts     i18next boot + <html lang/dir> sync
 │   ├── lib/             typed frontend services
 │   │   ├── api.ts       /api/chat + /api/content endpoints
-│   │   ├── auth.ts      Firebase Auth
+│   │   ├── auth.ts      session auth against the Cloud Run API
 │   │   ├── content.ts   fetchJson, CORPUS index, searchHref
 │   │   ├── entitlements.ts  pure predicate — UI gating only
 │   │   ├── native-bridge.ts Capacitor plugin bridge
@@ -446,7 +446,7 @@ FlyGACA-app/
 ├── tests/               Vitest unit + i18n-parity
 ├── scripts/             build-sitemap.mjs, prerender-head.mjs, build-og-images.mjs
 ├── archive/             parked non-app material (see archive/README.md)
-├── firebase.json        hosting + CSP headers
+├── config/headers.json  CSP + cache headers (single source of truth)
 ├── vite.config.ts       Vite + PWA config
 └── CLAUDE.md            primary AI collaboration guidelines
 ```

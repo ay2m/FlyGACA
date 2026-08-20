@@ -54,7 +54,6 @@ vi.mock("../src/model.js", () => ({
     for (const c of h.streamChunks) yield c;
   },
 }));
-vi.mock("@genkit-ai/firebase", () => ({ enableFirebaseTelemetry: vi.fn() }));
 
 vi.mock("../src/corpus.js", () => ({
   getIndex: () => Promise.resolve({ generated: h.generated, search: () => h.hits }),

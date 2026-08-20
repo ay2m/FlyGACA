@@ -1,5 +1,17 @@
 # Original User Request
 
+> ⚠️ **Predates the Cloud Run rebuild — the Firebase/Firestore/App Check/Stripe stack
+> below is history, not the system.** The live architecture is an Express service on
+> **Cloud Run** backed by **Cloud SQL**, billed through **Moyasar**; there is no Firebase
+> dependency, config or import anywhere in `src/` or `server/`. See `CLAUDE.md` for how
+> it works today, and `docs/RUNBOOK-deploy.md` → `docs/RUNBOOK-infra.md` →
+> `docs/RUNBOOK-golive.md` for how it deploys.
+>
+> This file is a verbatim record of the request as it was made. The Firebase Cloud Functions
+> backend and Firestore security rules it asks for were built, then replaced: multi-tenant
+> isolation is now structural rather than rule-based — no route lets a client write its own
+> plan, seats or entitlement — so there is no rules file to deploy.
+
 ## Initial Request — 2026-08-16T20:30:32Z
 
 Build a production-ready, fully-integrated Automated Flight School (ATO) Admin & Cohort Onboarding Dashboard for Fly GACA (`instructor.html` frontend UI + Firebase Cloud Functions backend + Firestore security rules), allowing flight academies in Saudi Arabia to manage cadet rosters, monitor study progress, track exam readiness, and provision annual seat licenses.

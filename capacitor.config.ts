@@ -34,7 +34,8 @@ const config: CapacitorConfig = {
       resize: 'native',
     },
     // Native Apple/Google sign-in is wired through the native-bridge adapter;
-    // the @capacitor-firebase/authentication plugin is added in the native shell.
+    // the native shell adds its own sign-in plugin; the web build uses the session
+    // cookie from the Cloud Run API. (The native shell lives in ay2m/FlyGACA-ios.)
   },
 };
 

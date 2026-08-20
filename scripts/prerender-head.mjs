@@ -5,9 +5,11 @@
  * built shell with the per-route <head> baked in (title, description, canonical,
  * the en/ar/x-default hreflang set, Open Graph, and a JSON-LD item) and the home
  * hero stripped on non-home routes so a no-JS crawler never sees homepage content
- * on every path. Pure Node string work — no browser — so it runs reliably inside
- * Firebase App Hosting's Cloud Native Buildpack (where headless Chromium can't),
- * and it's part of `npm run build`, so it can never be skipped on a deploy.
+ * on every path. Pure Node string work — no browser — so it runs anywhere `npm run
+ * build` runs, including a build machine with no Chromium, and it is part of that
+ * build, so it can never be skipped on a deploy. (The original reason was a hosting
+ * buildpack that could not run headless Chromium. That host is gone, but the
+ * property is still the point: this layer must never depend on a browser.)
  *
  * It is the floor; scripts/prerender.mjs (Playwright, full-body) is an optional
  * enhancement that overwrites these files with hydrated snapshots on hosts that
