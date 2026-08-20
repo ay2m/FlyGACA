@@ -40,6 +40,12 @@ export async function verifyPassword(password: string, stored: string | null): P
   if (scheme !== "scrypt" || !saltHex || !hashHex) return false;
   try {
     const expected = Buffer.from(hashHex, "hex");
+    // `Buffer.from(s, "hex")` truncates silently at the first non-hex character,
+    // so a corrupt record can decode to fewer bytes than it claims — and a
+    // zero-length one would make scrypt derive a zero-length key that
+    // timingSafeEqual then reports equal, letting ANY password through. Require
+    // the digest to be exactly the hex this module writes before comparing.
+    if (expected.length !== SCRYPT_KEYLEN || hashHex.length !== SCRYPT_KEYLEN * 2) return false;
     const actual = await scrypt(password, Buffer.from(saltHex, "hex"), expected.length);
     return timingSafeEqual(expected, actual);
   } catch {
