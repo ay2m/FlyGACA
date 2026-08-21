@@ -18,6 +18,10 @@ async function loadModule() {
 
 const settle = () => new Promise((r) => setTimeout(r, 20));
 
+beforeEach(() => {
+  vi.stubEnv('VITE_FIREBASE_APP_ID', '');
+});
+
 afterEach(() => {
   vi.unstubAllEnvs();
   vi.clearAllMocks();
@@ -33,6 +37,7 @@ describe('initializeFirebaseMonitoring', () => {
 
   it('is inert in production without VITE_FIREBASE_APP_ID', async () => {
     vi.stubEnv('PROD', true);
+    vi.stubEnv('VITE_FIREBASE_APP_ID', '');
     const mod = await loadModule();
     mod.initializeFirebaseMonitoring();
     await settle();
