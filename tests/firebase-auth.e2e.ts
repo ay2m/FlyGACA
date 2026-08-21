@@ -10,7 +10,6 @@ const BASE_URL = process.env.BASE_URL || 'http://localhost:5173';
 const FIREBASE_AUTH_PAGE = '/firebase-auth-example';
 const TEST_EMAIL = 'test-user@example.com';
 const TEST_PASSWORD = 'TestPassword123!';
-const TEST_DISPLAY_NAME = 'Test User';
 
 test.describe('Firebase Authentication', () => {
   test.beforeEach(async ({ page }) => {
@@ -89,7 +88,7 @@ test.describe('Firebase Authentication', () => {
     await expect(resetButton).toBeVisible();
   });
 
-  test('should handle authentication form submission', async ({ page, context }) => {
+  test('should handle authentication form submission', async ({ page }) => {
     // Note: This test verifies form behavior, not actual Firebase auth
     // (which requires emulator or real credentials)
 
