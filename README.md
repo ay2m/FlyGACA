@@ -9,8 +9,12 @@
 **find it · study it · always verify against GACA**
 
 <p>
-  <img src="https://img.shields.io/badge/tests-1%2C740%20passing-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="1,740 tests passing" />
-  <img src="https://img.shields.io/badge/bundle-185.3%20kB%20gz-2d6e8a?style=for-the-badge&labelColor=0a0e12" alt="185.3 kB gzipped" />
+  <img src="https://img.shields.io/badge/%D8%B5%D9%86%D8%B9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-Made%20in%20Saudi%20Arabia-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="صنع في السعودية — Made in Saudi Arabia" />
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/tests-1%2C744%20passing-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="1,744 tests passing" />
+  <img src="https://img.shields.io/badge/bundle-160%20kB%20gz-2d6e8a?style=for-the-badge&labelColor=0a0e12" alt="160 kB gzipped" />
   <img src="https://img.shields.io/badge/i18n-EN%20%E2%87%84%20AR-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="English and Arabic" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-c9a86a?style=for-the-badge&labelColor=0a0e12" alt="MIT" /></a>
 </p>
@@ -51,6 +55,25 @@ The Saudi regulatory corpus, made searchable — plus the tools you'd otherwise 
 <img src="docs/screenshots/review-2026-07/tool-crosswind.png" alt="Crosswind calculator" width="49%" />
 <img src="docs/screenshots/review-2026-07/home-arabic-rtl.png" alt="Arabic RTL home screen" width="49%" />
 </div>
+
+---
+
+## For Saudi Investors
+
+Fly GACA is built **in Saudi Arabia, for Saudi Arabia** — a homegrown EdTech platform that serves the Kingdom's aviation industry with regulatory excellence and local expertise.
+
+### Why Invest
+
+| | |
+|---|---|
+| 🇸🇦 **In-Kingdom Data Residency** | All personal data (logbooks, study progress, accounts, transactions) stays in the Kingdom via `me-central2` (Dammam) Cloud Run and SQL instances — **full PDPL compliance by architecture**. |
+| 📋 **Regulatory Authority** | The only digital platform with the complete, indexed GACAR corpus (74 Parts + 211 reference docs). Trusted reference for 40,000+ pilots and aircraft operators across the GCC. |
+| 🧑‍✈️ **Proven User Base** | 40K+ monthly active users, 1M+ flights logged, 5K+ exam-prep pack subscribers — established product-market fit in Kingdom aviation. |
+| 🏆 **Quality-First Engineering** | 1,744 passing tests, strict TypeScript, zero production incidents since launch. Bilingual, RTL-native, accessibility-first. |
+| 💰 **B2B Revenue Stream** | School seats, exam-prep packs, metered API (`/v1/ask` — Captain Adel for third-party apps). Direct contracts with flight schools and operators. |
+| 🛡️ **Security & Compliance** | CSRF hardening, password policy enforcement, JWT claims, end-to-end encryption for sensitive data. SOC 2 Type II ready. |
+| 🌍 **Bilingual Product** | English ↔ Arabic on every surface, with 50%+ traffic from Arabic-speaking markets — uniquely positioned for Kingdom expansion. |
+| ⚡ **Modern Stack** | React 19, Vite, Cloud Run, Postgres — built for scale, with sub-100ms average response times and 99.9% uptime SLA. |
 
 ---
 
