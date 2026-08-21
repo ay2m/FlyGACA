@@ -107,6 +107,13 @@ describe('buildPlan with a corpus bucket', () => {
     expect(rsync.at(-1)).toBe('gs://corpus/data');
   });
 
+  it('keeps the server-only RAG corpus out of the public bucket', () => {
+    // rag-chunks.json (~14 MB) is baked into the API image (server/Dockerfile);
+    // no browser fetches it, so the corpus rsync must not publish it.
+    const [rsync] = args(plan, /^storage rsync .*public\/data/);
+    expect(rsync).toContain('--exclude=^rag-chunks\\.json$');
+  });
+
   it('applies the corpus TTL in the corpus bucket, not the web bucket', () => {
     expect(cacheControlOf(plan, 'gs://corpus/data/**')).toBe('public, max-age=3600');
     expect(cacheControlOf(plan, 'gs://web/data/**')).toBeUndefined();

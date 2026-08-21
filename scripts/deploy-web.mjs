@@ -98,12 +98,21 @@ export function buildPlan({
     // Under a `data/` prefix, NOT the bucket root: VITE_DATA_BASE_URL is
     // `https://storage.googleapis.com/<bucket>/data` and every corpus URL is built
     // by `dataUrl()` swapping `/data` for it, so the prefix has to survive the move.
+    //
+    // rag-chunks.json is the RAG corpus the API image bakes in at build time
+    // (server/Dockerfile) — no browser ever fetches it, so shipping 14 MB of it
+    // to the public bucket is pure waste. Same Python-regex idiom as the web
+    // exclude above, anchored at this rsync's root (public/data), so the
+    // filename is top-level. Note gcloud rsync PROTECTS excluded destination
+    // objects from deletion, so a copy uploaded before this exclude landed
+    // lingers until a one-time `gcloud storage rm` removes it.
     plan.push(
       step(`upload ${corpus} → ${dataPrefix(dataBucket)}`, [
         'storage',
         'rsync',
         '--recursive',
         '--delete-unmatched-destination-objects',
+        '--exclude=^rag-chunks\\.json$',
         corpus,
         dataPrefix(dataBucket),
       ]),

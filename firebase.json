@@ -3,7 +3,14 @@
     "public": "dist",
     "trailingSlash": false,
     "cleanUrls": true,
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "**/_headers", "**/_redirects"],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "**/_headers",
+      "**/_redirects",
+      "**/rag-chunks.json"
+    ],
     "rewrites": [{ "source": "**", "destination": "/index.html" }],
     "headers": [
       {
