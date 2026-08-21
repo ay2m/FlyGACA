@@ -41,8 +41,8 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      # .npmrc carries legacy-peer-deps; without it this fails ERESOLVE on the
-      # Capacitor v6-plugins-on-v8-core tree.
+      # .npmrc carries legacy-peer-deps; without it this fails ERESOLVE on
+      # typescript-eslint@8's peer range vs the TS 7 compiler (see .npmrc).
       - run: npm ci
 
       - name: Typecheck

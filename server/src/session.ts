@@ -57,24 +57,52 @@ function secretKey(): Uint8Array {
   return new TextEncoder().encode(config.session.secret);
 }
 
+/**
+ * `iss`/`aud` pin a token to THIS service and THIS app, so a token minted by
+ * some other system that happens to share the HS256 secret (or a future second
+ * service keyed off the same Secret Manager entry) can never authenticate here.
+ */
+export const JWT_ISSUER = "flygaca-api";
+export const JWT_AUDIENCE = "flygaca-app";
+
 /** Mint a session token for `uid`. */
 export async function signSession(uid: string): Promise<string> {
   return new SignJWT({})
     .setProtectedHeader({ alg: "HS256" })
     .setSubject(uid)
+    .setIssuer(JWT_ISSUER)
+    .setAudience(JWT_AUDIENCE)
     .setIssuedAt()
     .setExpirationTime(`${config.session.ttlDays}d`)
     .sign(secretKey());
 }
 
-/** Verify a session token, returning its uid or `null` when invalid/expired. */
+/**
+ * Verify a session token, returning its uid or `null` when invalid/expired.
+ *
+ * Strict issuer/audience verification first. The fallback accepts ONLY a token
+ * carrying no `iss` and no `aud` at all — a legacy session minted before the
+ * claims were introduced (2026-08) — never one carrying wrong claims. Legacy
+ * cookies age out within `SESSION_TTL_DAYS` (30) of that deploy; delete the
+ * fallback after one full TTL has passed.
+ */
 export async function verifySession(token: string | undefined): Promise<string | null> {
   if (!token) return null;
   try {
-    const { payload } = await jwtVerify(token, secretKey(), { algorithms: ["HS256"] });
+    const { payload } = await jwtVerify(token, secretKey(), {
+      algorithms: ["HS256"],
+      issuer: JWT_ISSUER,
+      audience: JWT_AUDIENCE,
+    });
     return typeof payload.sub === "string" ? payload.sub : null;
   } catch {
-    return null;
+    try {
+      const { payload } = await jwtVerify(token, secretKey(), { algorithms: ["HS256"] });
+      if (payload.iss !== undefined || payload.aud !== undefined) return null;
+      return typeof payload.sub === "string" ? payload.sub : null;
+    } catch {
+      return null;
+    }
   }
 }
 

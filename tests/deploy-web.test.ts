@@ -1,5 +1,4 @@
 import { describe, expect, it } from 'vitest';
-// @ts-expect-error — plain ESM script, no types; exercised for its pure planners.
 import { buildPlan, gsWildcards, shellQuote } from '../scripts/deploy-web.mjs';
 
 /**
@@ -106,6 +105,13 @@ describe('buildPlan with a corpus bucket', () => {
     // syncing to the root would 404 every corpus fetch in production only.
     const [rsync] = args(plan, /^storage rsync .*public\/data/);
     expect(rsync.at(-1)).toBe('gs://corpus/data');
+  });
+
+  it('keeps the server-only RAG corpus out of the public bucket', () => {
+    // rag-chunks.json (~14 MB) is baked into the API image (server/Dockerfile);
+    // no browser fetches it, so the corpus rsync must not publish it.
+    const [rsync] = args(plan, /^storage rsync .*public\/data/);
+    expect(rsync).toContain('--exclude=^rag-chunks\\.json$');
   });
 
   it('applies the corpus TTL in the corpus bucket, not the web bucket', () => {

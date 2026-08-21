@@ -10,7 +10,7 @@ const QUICK = ['crosswind', 'tas', 'density-altitude'];
 // The flight-tools registry is the single source of truth the /tools hub also
 // counts from — read it directly so the dashboard stat never drifts from the
 // real catalog (the public/data/tools.json manifest is only a partial subset).
-const LIVE_COUNT = TOOLS.filter((tool) => tool.status === 'live').length;
+const LIVE_COUNT = TOOLS.length;
 
 /** Flight-planning tools — live calculator count + quick chips. */
 export function ToolsWidget() {

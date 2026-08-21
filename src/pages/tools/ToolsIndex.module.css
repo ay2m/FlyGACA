@@ -209,10 +209,6 @@
   inline-size: 6px;
 }
 
-.pending {
-  opacity: 0.55;
-}
-
 /* Favourite toggle — overlaid in the top inline-end corner, a sibling of the
    card link so we never nest an interactive control inside another. */
 .star {

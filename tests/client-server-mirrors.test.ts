@@ -27,7 +27,10 @@ import {
   QUOTA_EXCEEDED as SERVER_QUOTA_EXCEEDED,
 } from '../server/src/contract';
 
+import { meetsPasswordPolicy as serverMeetsPasswordPolicy } from '../server/src/auth-core';
+
 import { FREE_DAILY_LIMIT, ANON_DAILY_LIMIT } from '@/calc/chat/chatQuota';
+import { meetsPasswordPolicy } from '@/calc/app/passwordPolicy';
 import { CREDIT_PACK_SIZE } from '@/lib/services/billing';
 import { PACKS } from '@/lib/prepCatalog';
 import { MODEL_UNCONFIGURED, QUOTA_EXCEEDED, FAILURE_I18N_KEY } from '@/calc/chat/chatStream';
@@ -117,5 +120,33 @@ describe('chat failure copy', () => {
     // That wording is true of a local no-API build and wrong in production, where
     // the API is up and only the model endpoint is absent.
     expect(String(lookup(en, 'chat.notReady'))).not.toMatch(/in this build/i);
+  });
+});
+
+describe('password policy', () => {
+  // Regexes cannot be compared structurally across the packages, so pin the
+  // BEHAVIOR: both sides must return the same verdict for every vector. A
+  // drift means the sign-up form promises rules the API does not enforce (or
+  // rejects a password the server would take).
+  const vectors = [
+    'A-good-password1', // all four rules met
+    'Aa1!Aa1!', // exactly 8 chars, all rules met
+    'Aa1!Aa1', // too short
+    'aa1!aa1!', // no upper case
+    'AA1!AA1!', // no lower case
+    'Aa!!Aa!!', // no digit
+    'Aa11Aa11', // no special character
+    'كلمةسر1234', // unicode: no ASCII case → mixed fails, special passes
+    ' spaced Aa1! ', // whitespace counts as a special character
+    '',
+  ];
+
+  it.each(vectors.map((v) => [v]))('agrees with the server on %j', (password) => {
+    expect(meetsPasswordPolicy(password)).toBe(serverMeetsPasswordPolicy(password));
+  });
+
+  it('the strong vector passes and the weak ones fail on both sides', () => {
+    expect(meetsPasswordPolicy('A-good-password1')).toBe(true);
+    expect(meetsPasswordPolicy('aa1!aa1!')).toBe(false);
   });
 });

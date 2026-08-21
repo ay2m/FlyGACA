@@ -7,10 +7,10 @@ study hub, account/commerce, and guides are shipped and deploying to production 
 stage-by-stage rebuild history lives in [`MIGRATION.md`](./MIGRATION.md) (history only — no open
 items are tracked there).
 
-Scope note: this repo now carries the **backend too** — the Firebase Functions gateway and the
-Captain Adel RAG brain live in `functions/` (deployed to `me-central1`; Firestore in
-`me-central2`). The app calls them via the same `/api/chat` / `/api/feedback` endpoints on the
-`flygaca-app` Firebase project.
+Scope note: this repo now carries the **backend too** — the Express API and the Captain Adel
+RAG brain live in `server/` (a single service on **Cloud Run**, backed by **Cloud SQL** Postgres,
+region `me-central2`). The app calls it via the same `/api/chat` / `/api/feedback` endpoints
+behind the load balancer.
 
 ## How to read this
 
@@ -106,11 +106,11 @@ Captain Adel RAG brain live in `functions/` (deployed to `me-central1`; Firestor
 
 ## Now — production hardening & go-live confidence
 
-The app already auto-deploys to **Firebase Hosting** (canonical) and the Vercel/Cloudflare/Netlify
-mirrors on every merge to `main`. "Now" is about making that production footprint fully trustworthy.
+The app already auto-deploys on every merge to `main` — to **Google Cloud** (canonical:
+`deploy.yml`, bucket + load balancer + Cloud Run) and to **Firebase Hosting**
+(`deploy-firebase.yml`); the Vercel/Cloudflare/Netlify mirrors stay dormant. "Now" is about
+making that production footprint fully trustworthy.
 
-- **[platform]** Flip and verify the production secrets — Firebase config · App Check key · Stripe
-  price IDs — and deploy `firestore.rules`. See `archive/docs/RUNBOOK-cutover.md` and `docs/BILLING.md`.
 - **[platform]** ~~Close the backend money-path test gap.~~ **Done.** The entitlement-granting
   `claimFoundingAccess` callable, the Moyasar billing callables (`confirmPayment` /
   `cancelAutoRenew` / `createCheckoutConfig` / `getReferralCode`), the scheduled auto-renewal charge
@@ -121,34 +121,33 @@ mirrors on every merge to `main`. "Now" is about making that production footprin
   scope-minimization review (Aug 2026) found the current surface already minimal — every workflow's
   `GITHUB_TOKEN` is default-deny (`contents: read`, repo default confirmed `read`) with write escalated
   only per-job, and Google sign-in requests only default `openid/email/profile` (no `addScope`). It
-  also found **no third-party CI credentials exist yet** — Cloudflare/Supabase/OpenAI/App-Store-Connect
-  secrets are all unset and their jobs no-op. When each is added, scope it minimally and keep it
-  confined to its one job: `CLOUDFLARE_API_TOKEN` → `Workers Scripts: Edit` only; `SUPABASE_SERVICE_ROLE_KEY`
-  - `OPENAI_API_KEY` → the `docs-parser` embeddings job only; App Store Connect key → App Manager, not
-    Admin; the Firebase deploy SA stays **without** `datastore.indexAdmin` (see the note in `deploy.yml`).
-    Separately, periodically review the operator-account **claude.ai MCP connector** consent grants
-    (Airtable, Gmail, Drive, etc.) — third-party delegated grants that live outside this repo.
-- **[platform]** Enable **App Check enforcement** on the backend Functions once real traffic is
-  sending valid tokens. See `docs/APP-CHECK-BACKEND.md`.
+  also found few third-party CI credentials in play. The ones that exist today: the Workload
+  Identity Federation deploy service account used by `deploy.yml` (keep its roles to the deploy
+  path — bucket rsync, Cloud Run deploy, CDN invalidation), `FIREBASE_TOKEN` in
+  `deploy-firebase.yml` (a broad legacy-style CI token — worth replacing with a hosting-scoped
+  service account), and `INDEXNOW_KEY`. Scope each new secret minimally and keep it confined to
+  its one job.
+  Separately, periodically review the operator-account **claude.ai MCP connector** consent grants
+  (Airtable, Gmail, Drive, etc.) — third-party delegated grants that live outside this repo.
 - **[product]** Regenerate the **social/OG card** PNG in the new typeface. The share-card template
   now renders in **Readex Pro** (the Cairo→Readex swap shipped); only the PNG re-render remains — it
-  needs Google Fonts (`fonts.gstatic.com`) network access:
-  `node archive/scripts/scripts/build-og-card.mjs`.
-- **[platform]** **Re-enable and enforce CI.** The GitHub Actions **CI workflow is currently
-  disabled** (`disabled_manually`), so no build/e2e/functions job runs on pushes or PRs — re-enable
-  it under **Actions → CI → Enable workflow**. Then make the `build` (the `verify` chain), `e2e`,
-  and `functions` jobs required checks on `main`, and use descriptive squash-merge titles — recent
-  history (`sd (#215)`, `j (#209)`, `,m (#208)`) doesn't self-describe, which matters for an open
-  educational repo.
+  needs Google Fonts (`fonts.gstatic.com`) network access: `npm run gen:og`
+  (`scripts/build-og-images.mjs`).
+- **[platform]** **Make CI required.** `.github/workflows/ci.yml` is live and runs three jobs on
+  every push/PR — `frontend` (the `verify` chain with coverage), `server`, and `e2e`. What remains
+  is branch protection: make those three jobs required checks on `main`, and use descriptive
+  squash-merge titles — recent history (`sd (#215)`, `j (#209)`, `,m (#208)`) doesn't
+  self-describe, which matters for an open educational repo.
 - **[platform]** **Fix the Cloudflare Workers git integration.** The `Workers Builds: flygaca`
   check fails on every commit: the Cloudflare dashboard integration targets a Worker named
-  `flygaca`, while the repo deploys `flygaca-app` (`wrangler.toml`, `deploy-cloudflare.yml`). This
-  is a **dashboard-side** fix — repoint the integration at `flygaca-app` or disconnect it (the
-  repo's deploy path is the `deploy-cloudflare.yml` Action, unaffected). Diagnosed in
+  `flygaca`, while the repo's Worker is named `flygaca-app` (`wrangler.toml`). This
+  is a **dashboard-side** fix — repoint the integration at `flygaca-app` or disconnect it
+  (nothing in this repo deploys the Worker today; it is a dormant mirror). Diagnosed in
   [#253](https://github.com/FlyGACA/FlyGACA-app/pull/253).
 - **[platform]** **Dependency hygiene.** Clear the open Dependabot alerts on `main` (2 high, 4
-  moderate at last check) and adopt a recurring update cadence (Dependabot config or a scheduled
-  bump) so security debt doesn't accrue between feature work.
+  moderate at last check). The recurring cadence is now automated — `.github/dependabot.yml`
+  schedules dependency-update PRs — so security debt no longer accrues silently between
+  feature work.
 
 ## Next — this quarter-ish
 
@@ -163,8 +162,10 @@ mirrors on every merge to `main`. "Now" is about making that production footprin
 - **[platform]** **Shard the heavy data payloads.** `airports-extra.json` (21 MB) and
   `library-search.json` (19 MB) are each fetched as a single blob today; shard them (by
   region/ICAO prefix and by corpus/Part or term-prefix buckets) so the first search on a mobile
-  connection doesn't wait on the whole index. Confirm `rag-chunks.json` (14 MB) is only consumed
-  server-side and stop shipping it under `public/data/` if so. Keep `src/lib/content.ts`
+  connection doesn't wait on the whole index. ~~Confirm `rag-chunks.json` (14 MB) is only
+  consumed server-side and stop shipping it under `public/data/` if so.~~ **Done** — no client
+  code reads it; `deploy:web` now excludes it from the corpus rsync and `firebase.json` ignores
+  it. Keep `src/lib/content.ts`
   (`loadJson` promise cache) as the single fetch path and preserve the two-tier NetworkFirst
   cache split in `vite.config.ts` when shard names change.
 - **[platform]** **Emit semantic corpus links upstream.** The offline pipeline that builds
@@ -172,11 +173,14 @@ mirrors on every merge to `main`. "Now" is about making that production footprin
   files still emits legacy `document.html?…` URLs; `npm run data:normalize` heals them on each sync
   meanwhile. Patch the builder to emit the semantic shape natively, then retire the normalize step
   — exact diff and cleanup steps in [`docs/corpus-link-shape.md`](docs/corpus-link-shape.md).
-- **[platform]** **App Check on `/api/content`.** When the content endpoint goes live, attach the
-  same `X-Firebase-AppCheck` header `sendChat` already sends (noted in `src/lib/api.ts`).
-- **[platform]** **E2E coverage.** Extend the Playwright suite (`e2e/`) beyond today's smoke +
-  axe a11y checks to cover more critical flows — signed-in surfaces, mocked checkout, study flows,
-  the flavor route tree. Concrete flow list: `docs/TESTING-ROADMAP.md` **Phase 8**.
+- **[platform]** **Abuse protection for a future `/api/content` endpoint.** If corpus content
+  ever moves behind the API, put an abuse gate in front of it first (per-IP rate limiting via
+  `server/src/rate-limit-core.ts`, or a signed client token) — the App Check mechanism this item
+  once named went with the retired Firebase backend.
+- **[platform]** **E2E coverage.** Extend the Playwright suite (`e2e/`) beyond today's smoke,
+  axe a11y (incl. `/ar` RTL scans), offline-checkout and quiz-flow specs to cover more critical
+  flows — signed-in surfaces, mocked-network checkout, the flavor route tree. Concrete flow list:
+  `docs/TESTING-ROADMAP.md` **Phase 8**.
 - **[product]** **SEO phases 2–4.** Clause-level anchors, surfacing the highest-demand clauses in
   the sitemap, and tool↔library cross-links. See `SEO-PLAN.md`.
 
@@ -242,11 +246,14 @@ the findings are not re-derived.
   explorer along a route, or a published-procedure visualiser) are written up in
   `docs/DESIGN-airspace-hud-v2.md`. Doing nothing is an acceptable outcome.
 - **[platform]** Push notifications and native polish once the mobile shells ship.
-- **[platform]** **Observability.** Client error monitoring (e.g. Sentry) and privacy-respecting
-  usage analytics (page + tool usage only, no PII) to learn which of the 55 tools earn their
-  maintenance. Both dynamic-`import()`ed like the Firebase SDK so the initial-JS budget
-  (`scripts/check-bundle.mjs`) holds, and
-  any new origin added to the CSP deliberately — never wildcards.
+- **[platform]** **Observability.** A first pass shipped: GA4 usage analytics
+  (`src/lib/analytics.ts`, gated by `VITE_GA_MEASUREMENT_ID`) and Firebase Analytics-based crash
+  telemetry (`src/lib/firebase-monitoring.ts`, dynamic-imported off the boot path, gated by
+  `VITE_FIREBASE_APP_ID`), with `terraform/` automating the monitoring/alerting setup. Remaining:
+  richer client error monitoring (e.g. Sentry-grade stack traces) and a recurring no-PII audit of
+  what gets logged. Keep telemetry dynamic-`import()`ed so the initial-JS budget
+  (`scripts/check-bundle.mjs`) holds, and any new origin added to the CSP deliberately — never
+  wildcards.
 - **[docs]** **Contributor onboarding.** `CONTRIBUTING.md` (the `verify` gate, i18n-parity rule,
   tokens/logical-properties rule, and the add-a-tool recipe from `CLAUDE.md`) plus issue/PR
   templates in `.github/`, including a "regulation drift" template for content corrections.

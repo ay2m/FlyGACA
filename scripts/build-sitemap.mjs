@@ -108,9 +108,27 @@ for (const slug of guideSlugs) {
 
 // Aerodrome directory → one detail page per curated ICAO (the /tools/aerodromes/:icao
 // route resolves each from airports.json). Dated from the index's generated date.
+// Same resolvability guard as scripts/prerender.mjs: AerodromeDetail looks the
+// code up in airports.json then airports-extra.json and renders a noindex "not
+// found" when neither has it, so a curated ICAO missing from both must not be
+// advertised — it can never be prerendered, and check:prerender:coverage rightly
+// fails the deploy on the sitemap/prerender mismatch (this is exactly how OKBK
+// turned the prerender workflow red). Warn loudly: it means the aerodrome index
+// and the airport data have drifted and the data sync should reconcile them.
 const aero = readJson('public/data/aerodromes-index.json');
 const aeroDate = isDate(aero.generated) ? aero.generated.slice(0, 10) : today;
-for (const d of aero.documents) urls.set(`/tools/aerodromes/${d.icao}`, aeroDate);
+const knownIcaos = new Set(
+  ['public/data/airports.json', 'public/data/airports-extra.json'].flatMap((f) =>
+    readJson(f).airports.map((a) => a.icao),
+  ),
+);
+const missingIcaos = aero.documents.filter((d) => !knownIcaos.has(d.icao)).map((d) => d.icao);
+if (missingIcaos.length)
+  console.warn(
+    `build-sitemap: ${missingIcaos.length} curated aerodrome(s) not in airports data — skipped: ${missingIcaos.join(', ')}`,
+  );
+for (const d of aero.documents.filter((x) => knownIcaos.has(x.icao)))
+  urls.set(`/tools/aerodromes/${d.icao}`, aeroDate);
 
 // Prep packs → one detail page per LIVE pack id (src/lib/prepCatalog.ts). Each pack
 // literal declares `id: '<id>'` then `status: '<live|soon>'`; `soon` packs have no

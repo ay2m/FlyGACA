@@ -36,6 +36,23 @@ export function enabled(): boolean {
   return isAnalyticsEnabled();
 }
 
+type GtagFn = (...args: unknown[]) => void;
+type AnalyticsWindow = Window & { dataLayer?: unknown[]; gtag?: GtagFn };
+
+/**
+ * Route one event to whichever sink this host actually serves: the Vercel
+ * beacon on Vercel hosts, gtag (GA4) where `initializeGoogleAnalytics` or
+ * Firebase Analytics installed it, else drop it — a `track()` call on a
+ * non-Vercel host would only fire a dead request into the SPA fallback.
+ */
+function sendEvent(name: string, params: Record<string, string | number>): void {
+  if (isVercelAnalyticsEnabled()) {
+    track(name, params);
+    return;
+  }
+  (window as AnalyticsWindow).gtag?.('event', name, params);
+}
+
 /**
  * Report a caught client error to the analytics sink. This is the single hook
  * the top-level ErrorBoundary calls, and the natural insertion point for a
@@ -44,7 +61,7 @@ export function enabled(): boolean {
 export function reportError(error: unknown, info?: Record<string, string>): void {
   if (!enabled()) return;
   const message = error instanceof Error ? error.message : String(error);
-  track('client_error', { message: message.slice(0, 200), ...info });
+  sendEvent('client_error', { message: message.slice(0, 200), ...info });
 }
 
 export interface WebVitalPayload {
@@ -82,7 +99,7 @@ export function reportWebVitals(): void {
   if (!enabled()) return;
   void import('web-vitals')
     .then(({ onCLS, onINP, onLCP, onFCP, onTTFB }) => {
-      const report = (metric: Metric) => track('web_vital', { ...webVitalPayload(metric) });
+      const report = (metric: Metric) => sendEvent('web_vital', { ...webVitalPayload(metric) });
       onCLS(report);
       onINP(report);
       onLCP(report);
@@ -94,21 +111,36 @@ export function reportWebVitals(): void {
     });
 }
 
-/** Initialize Google Analytics (gtag) for production Firebase Hosting. */
+/**
+ * Initialize Google Analytics (gtag) on the non-Vercel production fronts.
+ * Exactly one GA4 pipeline runs per host: Vercel hosts use the Vercel beacon,
+ * and when Firebase Analytics is configured (`VITE_FIREBASE_APP_ID`) it loads
+ * its own gtag under the Firebase stream — loading a second copy here would
+ * double-count every hit. The command queue (`dataLayer` + `window.gtag`) is
+ * installed synchronously so events buffer from t0, but the gtag.js network
+ * fetch is deferred past window load so it never competes with the app boot.
+ */
 export function initializeGoogleAnalytics(): void {
   if (!isAnalyticsEnabled() || isVercelAnalyticsEnabled()) return; // Vercel has its own analytics
+  if (import.meta.env.VITE_FIREBASE_APP_ID) return; // Firebase Analytics IS GA4
   const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
   if (!measurementId) return;
-  // Load gtag script dynamically
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-  document.head.appendChild(script);
-  // Initialize dataLayer
-  (window as any).dataLayer = (window as any).dataLayer || [];
-  function gtag(...args: any[]) {
-    (window as any).dataLayer.push(args);
-  }
+
+  const w = window as AnalyticsWindow;
+  w.dataLayer = w.dataLayer || [];
+  const gtag: GtagFn = (...args) => {
+    w.dataLayer?.push(args);
+  };
+  w.gtag = gtag;
   gtag('js', new Date());
   gtag('config', measurementId);
+
+  const inject = () => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    document.head.appendChild(script);
+  };
+  if (document.readyState === 'complete') inject();
+  else window.addEventListener('load', inject, { once: true });
 }

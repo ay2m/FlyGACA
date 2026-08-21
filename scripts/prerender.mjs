@@ -299,10 +299,22 @@ try {
     writeFileSync(file, html);
   }
 
+  // One transient stall on a busy runner (networkidle, the footer, or the async
+  // <html lang/dir> flip timing out) must not fail the coverage gate: retry the
+  // route once on a fresh navigation before it falls back to head-only HTML.
+  async function snapshotWithRetry(url, file, lang = 'en') {
+    try {
+      await snapshot(url, file, lang);
+    } catch (err) {
+      console.warn(`  prerender: retrying ${url} — ${err.message}`);
+      await snapshot(url, file, lang);
+    }
+  }
+
   let done = 0;
   for (const route of routeList) {
     try {
-      await snapshot(`${BASE}${route}`, outPath(route));
+      await snapshotWithRetry(`${BASE}${route}`, outPath(route));
       done++;
     } catch (err) {
       console.warn(`  prerender: skipped ${route} — ${err.message}`);
@@ -315,7 +327,7 @@ try {
   for (const route of arRouteList) {
     const arRoute = route === '/' ? '/ar' : `/ar${route}`;
     try {
-      await snapshot(`${BASE}${arRoute}`, outPathAr(route), 'ar');
+      await snapshotWithRetry(`${BASE}${arRoute}`, outPathAr(route), 'ar');
       doneAr++;
     } catch (err) {
       console.warn(`  prerender: skipped ar ${route} — ${err.message}`);

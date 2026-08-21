@@ -10,6 +10,7 @@ import { captureRefFromUrl } from '@/lib/services/referral';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import { courseLd } from '@/lib/seo/jsonld';
 import { adelLink } from '@/lib/adel';
+import { CaptainAvatar } from '@/components/CaptainAvatar';
 import { Disclaimer } from '@/components/Disclaimer';
 import { ProgressBar } from '@/components/ProgressBar';
 import { findPack } from '@/lib/prepCatalog';
@@ -129,12 +130,15 @@ export function PackDetail({ fixedId, standalone = false }: PackDetailProps) {
       )}
 
       {!standalone && justPurchased && (
-        <p role="status" className={styles.purchaseOk}>
-          <span>{t('study.packPurchaseSuccess')}</span>
-          <button type="button" className={styles.canceledDismiss} onClick={dismissCheckoutParam}>
-            {t('pricing.checkoutCanceledDismiss')}
-          </button>
-        </p>
+        <div role="status" className={styles.purchaseOkWrap}>
+          <CaptainAvatar size="md" pose="smile" decorative />
+          <div className={styles.purchaseOk}>
+            <span>{t('study.packPurchaseSuccess')}</span>
+            <button type="button" className={styles.canceledDismiss} onClick={dismissCheckoutParam}>
+              {t('pricing.checkoutCanceledDismiss')}
+            </button>
+          </div>
+        </div>
       )}
       {!standalone && checkout === 'cancel' && (
         <p role="status" className={styles.purchaseCancel}>

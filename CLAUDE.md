@@ -33,20 +33,20 @@ The route that actually works from this repo is **Capacitor** (`capacitor.config
 `build:flavor` → `flavor:ios` → `cap add ios`).
 
 > ⚠️ **`apple/` is NOT in this repo** — no Swift package, no Xcode project, in any commit.
-> The `ios:build:*` / `ios:test` / `screenshots:*` npm scripts and `scripts/native/*` all
-> target `apple/…` paths that do not resolve here, so they fail (or, in the case of
-> `ios:test` and `ensure-firebase-plists.sh`, exit 0 while doing nothing). The Swift side
-> lives in the sibling repo `ay2m/FlyGACA-ios`. Treat any claim in this file about
-> `apple/FlyGACAKit` — including the SRS "cross-platform contract" — as describing that
-> repo, not this one: there is nothing here to diff a port against.
+> The Swift side lives in the sibling repo `ay2m/FlyGACA-ios`; the npm scripts and helpers
+> that used to target `apple/…` paths have been deleted (only `scripts/native/ios-localize.mjs`
+> remains, and it targets the Capacitor-generated `ios/App` project). Treat any claim in this
+> file about `apple/FlyGACAKit` — including the SRS "cross-platform contract" — as describing
+> that repo, not this one: there is nothing here to diff a port against.
 
 The repo also contains the **backend**: `server/` is a single Express service for **Cloud Run**,
-backed by **Cloud SQL (Postgres)**. No Firebase is used at runtime — auth, the datastore, the
-API and hosting are all first-party or plain GCP, and there is no Firebase dependency, config
-or import anywhere in `src/` or `server/`. One stale leftover survived the port and is
-misleading rather than live: `scripts/native/ensure-firebase-plists.sh` (writes
-`GoogleService-Info.plist` for iOS targets that aren't in this repo). Delete or rewrite it;
-don't take it as evidence of the architecture. `server/src/index.ts` is the single
+backed by **Cloud SQL (Postgres)**. The Firebase **backend** is gone — no `firebase-admin`, no
+Firestore, no App Check anywhere in `server/`; auth, the datastore and the API are all
+first-party or plain GCP. What Firebase remains is a deliberately thin **client/hosting** layer,
+not a backend: the `firebase` JS SDK is a dependency for optional Analytics-based crash
+telemetry (`src/lib/firebase-monitoring.ts` — dynamic-imported off the boot path, inert unless
+`VITE_FIREBASE_APP_ID` is set at build time), and Firebase **Hosting** is an auto-deployed
+static front (see Hosting & deploy). `server/src/index.ts` is the single
 manifest of the HTTP surface, mounting one router per feature under `/api`:
 `auth` (sessions, Google OAuth, verification, reset), `account` (profile, logbook, records, study
 progress), `grants` (staff / school-seat / founding), `billing` (Moyasar checkout, confirm, webhook,
@@ -77,10 +77,13 @@ instance are both regional resources set at deploy time (see `docs/RUNBOOK-deplo
   the static-host payload and the Capacitor `webDir`. `prerender-head.mjs` stamps per-route
   `<head>` meta (titles, descriptions, canonical, OG, JSON-LD) into the shipped HTML for SEO/AI
   search. A fuller static-HTML prerender (`npm run prerender`) runs in the deploy pipeline.
-  Note both build gates are weaker than they read: `check:prerender` only inspects routes that
+  Note `check:prerender` is weaker than it reads: it only inspects routes that
   already have an `hreflang="ar"` alternate — i.e. exactly the ones `prerender-head` wrote — so
-  a route with no snapshot is invisible to it, and `check:jsonld` reports no problem for a page
-  carrying no JSON-LD at all. `check:prerender:coverage` is the honest one and nothing runs it.
+  a route with no snapshot is invisible to it. `check:prerender:coverage` is the honest gate and
+  runs in `prerender.yml`, `deploy.yml`, `deploy-firebase.yml` and the `build:deploy` npm chain.
+  `check:jsonld` (`scripts/validate-jsonld.mjs`) fails a content route (guides, library, tools,
+  study packs) that carries no managed JSON-LD node (`data-managed-ld`) at all, in addition to
+  validating the nodes that are present.
 - **Routing:** `src/router.tsx` is the single route table (routes are lazy-loaded per page). Pages
   live one-per-folder under `src/pages/`. The shared chrome (`src/app/Layout|Header|Footer`, plus
   `MobileDock`, `AccountMenu`, and the `src/app/nav.ts` nav registry)
@@ -116,10 +119,8 @@ instance are both regional resources set at deploy time (see `docs/RUNBOOK-deplo
   `glidePath`), `calc/hud/` (the airspace-sim engine behind the per-aerodrome radar scope —
   the `/hud` page it was built for is retired, see `docs/DESIGN-airspace-hud-v2.md`:
   `scenario`, `kinematics`, `projection`,
-  `sectors`, `geoKsa`, `callsigns`, `simMetar`, seeded `rng`), `calc/app/`
-  (`authError`, `dashboardLayout`, `emailShape`, `passwordPolicy`, `pricingView`, `toolPresets`),
-  and `calc/analytics/` (`healthScore`, `passProbability`, `cohortSummary`) — which is tested
-  but imported by no page; the shipping equivalent is `server/src/analytics-core.ts`.
+  `sectors`, `geoKsa`, `callsigns`, `simMetar`, seeded `rng`), and `calc/app/`
+  (`authError`, `dashboardLayout`, `emailShape`, `passwordPolicy`, `pricingView`, `toolPresets`).
   Subfolders may import the flat core
   (`@/calc/recency`), never each other sideways. The
   `CalcShell` component provides the shared frame (copy-link · try-an-example · ask-Captain-Adel ·
@@ -195,19 +196,26 @@ instance are both regional resources set at deploy time (see `docs/RUNBOOK-deplo
 
 ## Hosting & deploy
 
-The single Vite build (`dist/`) is served from several fronts, all pointing at the **same** Cloud Run
-service for `/api/*`:
+The single Vite build (`dist/`) is served from several fronts; `/api/*` always belongs to the
+**same** Cloud Run service:
 
 - **Google Cloud is the canonical origin**: the SPA is published to a Cloud Storage bucket behind an
   HTTPS load balancer, which routes `/api/*` to the **Cloud Run** service built from `server/`
   (region `me-central2`, Dammam — in-Kingdom / PDPL), backed by a **Cloud SQL** Postgres instance in
   the same region. Secrets (session key, Moyasar keys, model key, mail key) come from Secret
   Manager; the renewal job is a Cloud Scheduler POST to `/api/billing/renew` carrying `CRON_SECRET`.
+- **Firebase Hosting is a live, auto-deployed front**: `deploy-firebase.yml` builds, prerenders
+  and runs `firebase deploy --only hosting` on every push to `main`. `firebase.json` serves
+  `dist/` and carries its own copy of the security headers, held to `config/headers.json` by
+  `tests/headers-parity.test.ts`. It does **not** proxy `/api/*` (the workflow's build sets only
+  `VITE_GA_MEASUREMENT_ID`, so this front serves the local-first build), and residency is
+  unchanged: everything personal — accounts, chat, billing, the database — stays on the
+  Cloud Run + Cloud SQL pair in `me-central2`, whichever front serves the static shell.
 - **Cloudflare Worker** (`worker/index.ts` + `wrangler.toml`) and the **Netlify** / **Vercel**
   mirrors each serve `dist/` and **proxy `/api/*` back to the Cloud Run origin** as a same-origin
   rewrite — so chat/account keep working and the strict CSP (`connect-src 'self'`) never changes.
   Keep any new API surface under `/api/*` for this to hold. **All three are dormant — nothing is
-  deployed to them**; production is Google Cloud only, which is what keeps user data in-Kingdom.
+  deployed to them**; the live fronts are Google Cloud (canonical) and Firebase Hosting.
   The Worker reads its API origin from `[vars] API_ORIGIN` in `wrangler.toml`; Netlify and Vercel
   still hard-code `https://api.flygaca.com`. The mirrors `X-Robots-Tag: noindex` any host that
   isn't `flygaca.com`.
@@ -217,8 +225,8 @@ service for `/api/*`:
 **Security headers live in `config/headers.json` and nowhere else.** GCP applies custom response
 headers per backend, so the load balancer's backend bucket and backend service must both be updated
 with `npm run -s headers:gcloud` — until you do, the canonical front serves no CSP and no HSTS.
-`tests/headers-parity.test.ts` holds the dormant Vercel/Netlify mirrors to the same file but cannot
-see the live load balancer.
+`tests/headers-parity.test.ts` holds the dormant Vercel/Netlify mirrors **and** the live
+`firebase.json` front to the same file, but cannot see the live load balancer.
 
 See `docs/RUNBOOK-deploy.md` for provisioning a fresh GCP project (APIs to enable, the Cloud SQL
 instance, the OAuth client, Secret Manager entries, the scheduler job), `docs/RUNBOOK-golive.md` for
@@ -251,9 +259,10 @@ schema for RAG embeddings; the app's own schema lives in `server/migrations/`.
 
 ## Adding a new tool
 
-The legacy→React migration is **complete** (all catalog tools are live). To add a tool: register
-it in `src/lib/tools.ts` — the typed catalog registry and single source of truth (`status:
-'soon'` until it ships, then flip to `'live'`) — lift its math into `src/calc/<tool>.ts` (pure,
+The legacy→React migration is **complete** (all 55 catalog tools are live, so the registry's
+`status` union is now just `'live'` — a future staged tool would re-widen it to
+`'soon' | 'live'`). To add a tool: register it in `src/lib/tools.ts` — the typed catalog
+registry and single source of truth — lift its math into `src/calc/<tool>.ts` (pure,
 add a Vitest spec), build a page under `src/pages/tools/<category>/` (the folder matching the
 registry's `category`; `ToolsIndex` alone stays at the `tools/` root) using `CalcShell` + `useNumericInputs`
 (or `useUrlState` for string-only tools), add its strings to both i18n bundles, and register the
@@ -270,7 +279,8 @@ pgvector), `build:sitemap`, `gen:og`, `gen:aip-sheet` (build the AIP study sheet
 (Captain Adel imagery), `audit:ai` (the AI-search visibility audit behind `SEO-PLAN.md`),
 `optimize:img`, and `new:guide` (scaffold a guide — see `GUIDE_AUTHORING.md`). Shared script
 helpers live in `scripts/lib/` (flavor slicing, markdown splitting, regulations parsing, sync
-merge) and `scripts/native/` (iOS build/signing helpers). Deploying is two commands, not one, so
+merge) and `scripts/native/` (just `ios-localize.mjs`, which localizes the Capacitor-generated
+`ios/App` project). Deploying is two commands, not one, so
 `npm run deploy` still fails with a pointer: `deploy:api` (`scripts/deploy-api.mjs` → `cloudbuild.yaml`
 → a Cloud Run revision) and `deploy:web` (`scripts/deploy-web.mjs` → bucket rsync + per-path
 `Cache-Control` from `config/headers.json` + CDN invalidation). Both take `--dry-run`. Note
@@ -294,14 +304,14 @@ headers, corpus offload, CI/CD, launch checklist, rollback), `ARCHITECTURE-BLUEP
 dashboard, study-progress-sync design, curriculum and sales material) and `docs/seo/`.
 `docs/screenshots/review-2026-07/` holds the images the README embeds.
 
-> ⚠️ **Everything under `docs/` except `RUNBOOK-deploy.md`, `RUNBOOK-golive.md` and
-> `DATA-HOSTING.md` was restored from `ay2m/FlyGACA-app` history and predates the Cloud Run
-> rebuild.** Each restored file that
-> still describes Firebase, Firestore, App Check or Stripe carries a banner saying so.
-> Read them for intent and design rationale, not for current architecture — `CLAUDE.md` is
-> the authority on how the system works today. Two were deliberately NOT restored
-> (`RUNBOOK-firebase.md`, `APP-CHECK-BACKEND.md`): they document a stack that no longer
-> exists.
+> ⚠️ **Any `docs/` file carrying the "Restored from `ay2m/FlyGACA-app` history" banner
+> predates the Cloud Run rebuild.** The banner itself is the marker — grep for it rather than
+> trusting a list here (16 files carried it at last count; docs without it are current or
+> post-rebuild, and `PRICING-REVENUE-STRATEGY.md` carries its own superseded-prices banner
+> instead). Read bannered files for intent and design rationale, not for current
+> architecture — `CLAUDE.md` is the authority on how the system works today. Two docs were
+> deliberately NOT restored (`RUNBOOK-firebase.md`, `APP-CHECK-BACKEND.md`): they document a
+> stack that no longer exists.
 
 Still genuinely absent, and cited nowhere any more: `archive/` (parked material — vendored
 references, finished-work docs, investor material — it lives only in `ay2m/FlyGACA-app`),

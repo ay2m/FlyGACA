@@ -7,6 +7,7 @@ import { adelLink } from '@/lib/adel';
 import { useStudyProgress, toggleLesson } from '@/lib/studyProgress';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import { courseLd } from '@/lib/seo/jsonld';
+import { CaptainAvatar } from '@/components/CaptainAvatar';
 import { Disclaimer } from '@/components/Disclaimer';
 import { SectionHeader } from '@/components/SectionHeader';
 import { HubBackLink } from '@/components/HubBackLink';
@@ -69,6 +70,12 @@ export function GroundSchool() {
                     }}
                   />
                 </div>
+                {done === m.lessons.length && m.lessons.length > 0 && (
+                  <div className={styles.moduleComplete}>
+                    <CaptainAvatar size="sm" pose="smile" decorative />
+                    <span>{t('study.gsModuleComplete')}</span>
+                  </div>
+                )}
                 {m.quiz && (
                   <Link to={`/study/quiz?bank=${m.quiz}`} className={styles.moduleQuiz}>
                     {t('study.gsModuleQuiz')} →

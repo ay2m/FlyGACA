@@ -9,8 +9,13 @@ concurrency:
   group: deploy-firebase
   cancel-in-progress: false
 
+permissions:
+  contents: read
+
 env:
-  NODE_VERSION: '26'
+  # Match ci.yml/deploy.yml — CI green on 24 says nothing about a build done on
+  # a different major, so the deploying workflow uses the tested version.
+  NODE_VERSION: '24'
 
 jobs:
   deploy:
@@ -31,6 +36,10 @@ jobs:
         run: |
           {
             echo "VITE_GA_MEASUREMENT_ID=${{ vars.GA_MEASUREMENT_ID }}"
+            # Owner-provisioned repo vars; unset leaves Firebase telemetry off by
+            # design (src/lib/firebase-monitoring.ts is inert without an appId).
+            echo "VITE_FIREBASE_APP_ID=${{ vars.FIREBASE_APP_ID }}"
+            echo "VITE_FIREBASE_PROJECT_ID=${{ vars.FIREBASE_PROJECT_ID }}"
           } >> .env.local
 
       - name: Build
@@ -48,6 +57,10 @@ jobs:
       - name: Prerender coverage gate
         run: npm run check:prerender:coverage
 
+      # NOTE: `firebase login:ci` tokens are deprecated upstream in favour of
+      # service-account / Workload Identity Federation auth (what deploy.yml
+      # already uses for GCP). Migrating is an owner-side change — provision a
+      # deployer SA + google-github-actions/auth and drop this secret.
       - name: Deploy to Firebase Hosting
         run: npx firebase deploy --only hosting --non-interactive
         env:

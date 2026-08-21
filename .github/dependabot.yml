@@ -1,0 +1,39 @@
+# Automated dependency updates — the cadence ROADMAP.md's dependency-hygiene
+# item asked for. Three ecosystems: the app package, the server package (its own
+# npm package with its own lockfile), and the workflows' action pins.
+#
+# Minor + patch updates arrive grouped (one PR per ecosystem per week) so the
+# noise stays low; majors arrive individually because they usually need a human
+# read of the changelog (and often a coverage/bundle-budget re-base — see
+# scripts/check-bundle.mjs's comment history).
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: npm
+    directory: /server
+    schedule:
+      interval: weekly
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        update-types:
+          - minor
+          - patch

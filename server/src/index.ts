@@ -18,7 +18,7 @@ import express from "express";
 import helmet from "helmet";
 import { config, assertRequiredConfig } from "./config.js";
 import { isAllowedOrigin } from "./gateway-core.js";
-import { withSession, errorMiddleware, handler } from "./http.js";
+import { csrfGuard, withSession, errorMiddleware, handler } from "./http.js";
 import { ping } from "./db.js";
 import { authRouter } from "./routes/auth.js";
 import { accountRouter } from "./routes/account.js";
@@ -95,11 +95,11 @@ app.get(
   }),
 );
 
-app.use("/api/auth", withSession, authRouter);
-app.use("/api/account", withSession, accountRouter);
-app.use("/api/grants", withSession, grantsRouter);
-app.use("/api/billing", withSession, billingRouter);
-app.use("/api/org", withSession, orgRouter);
+app.use("/api/auth", csrfGuard, withSession, authRouter);
+app.use("/api/account", csrfGuard, withSession, accountRouter);
+app.use("/api/grants", csrfGuard, withSession, grantsRouter);
+app.use("/api/billing", csrfGuard, withSession, billingRouter);
+app.use("/api/org", csrfGuard, withSession, orgRouter);
 
 app.post(
   "/api/waitlist",

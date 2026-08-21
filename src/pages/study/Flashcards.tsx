@@ -8,6 +8,7 @@ import { dueKeys, masteredCount } from '@/calc/study/srs';
 import { glidePathBins } from '@/calc/study/glidePath';
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 import { GlidePathStrip } from '@/components/study/GlidePathStrip';
+import { CaptainAvatar } from '@/components/CaptainAvatar';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import { courseLd } from '@/lib/seo/jsonld';
 import { ProgressBar } from '@/components/ProgressBar';
@@ -290,10 +291,13 @@ function CardView({
             <span className={styles.cardFlipHint}>{t('study.flipHint')}</span>
           </div>
           <div className={styles.cardBack}>
-            <span className={styles.cardA}>
-              <strong>{card.options[card.answer]}</strong>
-              <span className={styles.cardExplain}>{card.explain}</span>
-            </span>
+            <div className={styles.cardBackContent}>
+              <span className={styles.cardA}>
+                <strong>{card.options[card.answer]}</strong>
+                <span className={styles.cardExplain}>{card.explain}</span>
+              </span>
+            </div>
+            <CaptainAvatar size="sm" pose="hold" decorative className={styles.cardAvatar} />
           </div>
         </div>
       </div>

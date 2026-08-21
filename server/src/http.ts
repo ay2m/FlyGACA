@@ -11,6 +11,8 @@ import type { NextFunction, Request, RequestHandler, Response } from "express";
 import { parse as parseCookie } from "cookie";
 import { config } from "./config.js";
 import { verifySession } from "./session.js";
+import { isAllowedOrigin } from "./gateway-core.js";
+import { csrfVerdict } from "./csrf-core.js";
 import { findUserById, toAuthedUser, type AuthedUser } from "./store.js";
 
 declare module "express-serve-static-core" {
@@ -37,6 +39,27 @@ export const badRequest = (code = "invalid-argument") => new HttpError(400, code
 export const unauthorized = (code = "unauthenticated") => new HttpError(401, code);
 export const forbidden = (code = "permission-denied") => new HttpError(403, code);
 export const notFound = (code = "not-found") => new HttpError(404, code);
+
+/**
+ * CSRF guard for the cookie-authenticated mounts (policy in `csrf-core.ts`).
+ * Uses the SAME origin predicate as the CORS gate in index.ts, so nothing that
+ * passes CORS today changes; it adds the `Sec-Fetch-Site` backstop for
+ * requests arriving without an `Origin` header, and encodes the deliberate
+ * cross-origin endpoints (Moyasar webhook, Cloud Scheduler renew) as
+ * exemptions.
+ */
+export const csrfGuard: RequestHandler = (req, res, next) => {
+  const verdict = csrfVerdict({
+    method: req.method,
+    path: req.baseUrl + req.path,
+    origin: req.headers.origin,
+    secFetchSite: req.get("sec-fetch-site"),
+    hasBearer: Boolean(req.headers.authorization?.startsWith("Bearer ")),
+    isOriginAllowed: (o) => isAllowedOrigin(o) || config.extraAllowedOrigins.includes(o),
+  });
+  if (verdict === "deny") return res.status(403).json({ error: "csrf-rejected" });
+  return next();
+};
 
 /** Wrap an async handler so a rejected promise reaches the error middleware. */
 export function handler(

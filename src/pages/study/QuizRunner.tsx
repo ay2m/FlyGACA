@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import type { QuizBank, QuizQuestion } from '@/lib/content';
 import { useStudyProgress, setQuizBest, toggleFlag } from '@/lib/studyProgress';
 import { ProgressBar } from '@/components/ProgressBar';
+import { CaptainAvatar } from '@/components/CaptainAvatar';
 import { isSynthetic } from './session';
 import styles from './Study.module.css';
 import { shuffle } from '@/calc/study/shuffle';
@@ -91,30 +92,34 @@ export function Runner({ bank, onBack }: { bank: QuizBank; onBack: () => void })
 
   if (done) {
     const pct = Math.round((correct / queue.length) * 100);
+    const pose = pct >= 80 ? 'smile' : pct >= 60 ? 'thinking' : 'default';
     return (
       <Shell>
         <button type="button" className={styles.back} onClick={onBack}>
           ← {t('study.back')}
         </button>
-        <div className={styles.result} role="status">
-          <p className={styles.resultPct}>{pct}%</p>
-          <p>{t('study.scoreLine', { correct, total: queue.length })}</p>
-          <div className={styles.resultActions}>
-            <button
-              type="button"
-              className={styles.primary}
-              onClick={() => restart(bank.questions)}
-            >
-              {t('study.restart')}
-            </button>
-            <button type="button" className={styles.secondary} onClick={() => setReviewing(true)}>
-              {t('study.reviewAnswers')}
-            </button>
-            {wrong.length > 0 && (
-              <button type="button" className={styles.secondary} onClick={() => restart(wrong)}>
-                {t('study.retryWrong', { n: wrong.length })}
+        <div className={styles.resultWrap} role="status">
+          <CaptainAvatar size="md" pose={pose} decorative />
+          <div className={styles.result}>
+            <p className={styles.resultPct}>{pct}%</p>
+            <p>{t('study.scoreLine', { correct, total: queue.length })}</p>
+            <div className={styles.resultActions}>
+              <button
+                type="button"
+                className={styles.primary}
+                onClick={() => restart(bank.questions)}
+              >
+                {t('study.restart')}
               </button>
-            )}
+              <button type="button" className={styles.secondary} onClick={() => setReviewing(true)}>
+                {t('study.reviewAnswers')}
+              </button>
+              {wrong.length > 0 && (
+                <button type="button" className={styles.secondary} onClick={() => restart(wrong)}>
+                  {t('study.retryWrong', { n: wrong.length })}
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </Shell>
