@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
 // The parser lib is a build-time ESM module (.mjs); import it directly so the same code that runs
 // in CI is what's under test.
-// @ts-expect-error — untyped .mjs build script
 import { parseRegulationFile, buildLookup } from '../scripts/lib/regulations-parse.mjs';
 
 const part91 = `---

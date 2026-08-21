@@ -1,6 +1,8 @@
 import type { CSSProperties } from 'react';
+import { useRef } from 'react';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import { motion, useInView } from 'framer-motion';
 import { Disclaimer } from '@/components/Disclaimer';
 import { CaptainAvatar } from '@/components/CaptainAvatar';
 import { PageHero } from '@/components/PageHero';
@@ -31,6 +33,64 @@ interface Faq {
 }
 
 const FEATURE_TONES: BentoTone[] = ['default', 'cyan', 'green'];
+
+/** Animated gallery with scroll-triggered stagger and image reveals. */
+function LogGallery({ scenes, t }: { scenes: typeof LOG_SCENES; t: any }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <section className={styles.block} aria-labelledby="about-log" ref={ref}>
+      <SectionHeader id="about-log" title={t('about.log.head')} tone="var(--cat-3)" />
+      <motion.div
+        className={styles.log}
+        initial="hidden"
+        animate={isInView ? 'visible' : 'hidden'}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.08, delayChildren: 0 },
+          },
+        }}
+      >
+        {scenes.map((s) => (
+          <motion.figure
+            key={s.id}
+            className={styles.logFigure}
+            variants={{
+              hidden: { opacity: 0, y: 16 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+            }}
+          >
+            <motion.img
+              className={styles.logImg}
+              src={s.src}
+              alt=""
+              width={s.w}
+              height={s.h}
+              loading="lazy"
+              decoding="async"
+              initial={{ opacity: 0.8 }}
+              animate={isInView ? { opacity: 1 } : { opacity: 0.8 }}
+              transition={{ duration: 0.6 }}
+            />
+            <figcaption className={styles.logCaption}>{t(`about.log.${s.id}`)}</figcaption>
+          </motion.figure>
+        ))}
+      </motion.div>
+    </section>
+  );
+}
+
+/** The captadel.com "field notes" scene renders — the same official art family as the avatar. */
+const LOG_SCENES = [
+  { id: 'walkaround', src: '/img/captain/scenes/walkaround.webp', w: 720, h: 986 },
+  { id: 'briefingRoom', src: '/img/captain/scenes/briefing-room.webp', w: 720, h: 982 },
+  { id: 'holdingPoint', src: '/img/captain/scenes/holding-point.webp', w: 720, h: 979 },
+  { id: 'debrief', src: '/img/captain/scenes/debrief.webp', w: 720, h: 979 },
+  { id: 'leftSeat', src: '/img/captain/scenes/left-seat.webp', w: 1024, h: 672 },
+] as const;
 
 /** Category accents cycled across the "what it is / isn't" cards. */
 const CARD_TONES = ['var(--cat-1)', 'var(--cat-2)', 'var(--cat-3)', 'var(--cat-4)', 'var(--cat-5)'];
@@ -112,6 +172,10 @@ export function About() {
           ))}
         </BentoGrid>
       </section>
+
+      {/* Captain's log — the field-note scene gallery ported from captadel.com. The
+          captions carry the copy, so the images stay decorative for AT. */}
+      <LogGallery scenes={LOG_SCENES} t={t} />
 
       {/* Conversion band into the core product. */}
       <section className={styles.cta}>

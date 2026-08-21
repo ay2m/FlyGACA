@@ -193,6 +193,48 @@ describe("signSession + verifySession", () => {
     await expect(verifySession(subjectless)).resolves.toBeNull();
   });
 
+  it("stamps iss/aud into new tokens", async () => {
+    const { signSession, JWT_ISSUER, JWT_AUDIENCE } = await loadSession();
+    const token = await signSession("user-123");
+    const payload = JSON.parse(Buffer.from(token.split(".")[1], "base64url").toString("utf8"));
+    expect(payload.iss).toBe(JWT_ISSUER);
+    expect(payload.aud).toBe(JWT_AUDIENCE);
+  });
+
+  it("still accepts a legacy claim-less token (pre-iss/aud sessions age out via TTL)", async () => {
+    const { verifySession } = await loadSession();
+    const legacy = await new SignJWT({})
+      .setProtectedHeader({ alg: "HS256" })
+      .setSubject("user-123")
+      .setIssuedAt()
+      .setExpirationTime("30d")
+      .sign(new TextEncoder().encode(SECRET));
+    await expect(verifySession(legacy)).resolves.toBe("user-123");
+  });
+
+  it("rejects a token carrying the WRONG issuer or audience, even under our secret", async () => {
+    const { verifySession, JWT_AUDIENCE, JWT_ISSUER } = await loadSession();
+    const wrongIss = await new SignJWT({})
+      .setProtectedHeader({ alg: "HS256" })
+      .setSubject("user-123")
+      .setIssuer("some-other-service")
+      .setAudience(JWT_AUDIENCE)
+      .setIssuedAt()
+      .setExpirationTime("30d")
+      .sign(new TextEncoder().encode(SECRET));
+    await expect(verifySession(wrongIss)).resolves.toBeNull();
+
+    const wrongAud = await new SignJWT({})
+      .setProtectedHeader({ alg: "HS256" })
+      .setSubject("user-123")
+      .setIssuer(JWT_ISSUER)
+      .setAudience("some-other-app")
+      .setIssuedAt()
+      .setExpirationTime("30d")
+      .sign(new TextEncoder().encode(SECRET));
+    await expect(verifySession(wrongAud)).resolves.toBeNull();
+  });
+
   it("honours SESSION_TTL_DAYS in the token's exp claim", async () => {
     const { signSession } = await loadSession({ SESSION_TTL_DAYS: "7" });
     const token = await signSession("user-123");

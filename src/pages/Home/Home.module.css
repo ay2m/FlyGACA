@@ -194,6 +194,26 @@
   }
 }
 
+/* Height-reserving placeholder for the lazy "why trust it" bento so the CTA
+   band below doesn't shift when the grid streams in (same idea as
+   .dashboardFallback). */
+.whyFallback {
+  min-block-size: 420px;
+  contain: layout style;
+}
+
+@media (max-width: 960px) {
+  .whyFallback {
+    min-block-size: 760px;
+  }
+}
+
+@media (max-width: 600px) {
+  .whyFallback {
+    min-block-size: 1100px;
+  }
+}
+
 .notice {
   margin-block-start: var(--space-6);
   text-align: center;

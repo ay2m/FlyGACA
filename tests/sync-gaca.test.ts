@@ -1,5 +1,4 @@
 import { describe, expect, it } from 'vitest';
-// @ts-expect-error — plain ESM script helper, no types ship with it.
 import {
   COLLECTIONS,
   projectRecord,

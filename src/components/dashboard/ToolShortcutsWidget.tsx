@@ -19,7 +19,7 @@ export function ToolShortcutsWidget() {
   const ids = [...favorites, ...recents.filter((id) => !favorites.includes(id))];
   const tools = ids
     .map((id) => TOOLS.find((tool) => tool.id === id))
-    .filter((tool): tool is ToolMeta => tool !== undefined && tool.status === 'live')
+    .filter((tool): tool is ToolMeta => tool !== undefined)
     .slice(0, MAX_SHORTCUTS);
 
   return (

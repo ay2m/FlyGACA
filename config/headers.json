@@ -12,8 +12,16 @@
     "  cache     -> per path, so it CANNOT be a backend header. Set as Cloud Storage object",
     "               metadata at upload time by scripts/deploy-web.mjs.",
     "",
-    "vercel.json and netlify.toml are dormant mirrors, not production, but they must not rot:",
-    "tests/headers-parity.test.ts fails the build when either drifts from this file."
+    "vercel.json and netlify.toml are dormant mirrors and firebase.json is the live Firebase",
+    "Hosting front; none may rot: tests/headers-parity.test.ts fails the build when any of",
+    "them (or public/_headers) drifts from this file.",
+    "",
+    "script-src keeps 'unsafe-inline' deliberately: index.html ships two inline scripts by",
+    "design (the no-flash theme init and the app-shell remover), and both propagate into",
+    "every prerendered snapshot. Replacing it with static sha256 hashes is possible but",
+    "needs a build-time stamping step across all header copies; until then removing it",
+    "would break every page. style-src needs it for framer-motion's inline styles and the",
+    "Moyasar widget."
   ],
   "security": {
     "X-Content-Type-Options": "nosniff",
@@ -21,7 +29,7 @@
     "Referrer-Policy": "strict-origin-when-cross-origin",
     "Permissions-Policy": "geolocation=(), camera=(), microphone=(), payment=(), usb=()",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
-    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.moyasar.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdn.moyasar.com; img-src 'self' data: blob: https://*.googleusercontent.com https://cdn.moyasar.com https://www.googletagmanager.com https://storage.googleapis.com; font-src 'self'; connect-src 'self' https://api.moyasar.com https://www.google-analytics.com https://storage.googleapis.com; frame-src 'self' https://api.moyasar.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests"
+    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.moyasar.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdn.moyasar.com; img-src 'self' data: blob: https://*.googleusercontent.com https://cdn.moyasar.com https://www.googletagmanager.com https://storage.googleapis.com; font-src 'self'; connect-src 'self' https://api.moyasar.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://firebase.googleapis.com https://firebaseinstallations.googleapis.com https://storage.googleapis.com; frame-src 'self' https://api.moyasar.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests"
   },
   "cache": [
     {

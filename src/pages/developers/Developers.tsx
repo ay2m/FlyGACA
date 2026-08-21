@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { CaptainAvatar } from '@/components/CaptainAvatar';
 import { Disclaimer } from '@/components/Disclaimer';
 import { PageHero } from '@/components/PageHero';
 import { SectionHeader } from '@/components/SectionHeader';
@@ -50,13 +51,27 @@ export function Developers() {
   return (
     <section className={`container ${styles.page}`}>
       <PageHero
-        align="center"
         eyebrow={t('developers.eyebrow')}
         title={t('developers.title')}
         subtitle={t('developers.subtitle')}
+        media={<CaptainAvatar size="xl" glow live decorative />}
       />
 
       <p className={styles.intro}>{t('developers.intro')}</p>
+
+      {/* The left-seat scene from captadel.com — the caption carries the copy. */}
+      <figure className={styles.scene}>
+        <img
+          className={styles.sceneImg}
+          src="/img/captain/scenes/left-seat.webp"
+          alt=""
+          width={1024}
+          height={672}
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption className={styles.sceneCaption}>{t('developers.scene')}</figcaption>
+      </figure>
 
       {/* Tiers */}
       <section aria-labelledby="tiers-head">

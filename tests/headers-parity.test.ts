@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-// @ts-expect-error — plain ESM script, no types; exercised for its pure helpers.
 import {
   SECURITY_HEADERS,
   CACHE_RULES,
@@ -40,6 +39,7 @@ const root = process.cwd();
 const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8'));
 const netlify = readFileSync(join(root, 'netlify.toml'), 'utf8');
 const pagesHeaders = readFileSync(join(root, 'public/_headers'), 'utf8');
+const firebase = JSON.parse(readFileSync(join(root, 'firebase.json'), 'utf8'));
 
 /** The `/(.*)`  header block that carries the security set (not the noindex one). */
 const vercelSecurityBlock = vercel.headers.find(
@@ -50,6 +50,24 @@ const vercelSecurityBlock = vercel.headers.find(
 function vercelHeadersFor(source: string): Record<string, string> {
   const block = vercel.headers.find(
     (h: { source: string; missing?: unknown }) => h.source === source && !h.missing,
+  );
+  const out: Record<string, string> = {};
+  for (const { key, value } of block?.headers ?? []) out[key] = value;
+  return out;
+}
+
+/**
+ * Header name → value declared by firebase.json for a given `source` glob.
+ *
+ * Unlike the other mirrors, Firebase Hosting is a LIVE front —
+ * `deploy-firebase.yml` publishes dist/ to it on every push to main — so its
+ * embedded header copy drifting is a production incident, not a dormant one.
+ * (It joined the repo already missing `storage.googleapis.com`, silently
+ * CSP-blocking the offloaded corpus on that front.)
+ */
+function firebaseHeadersFor(source: string): Record<string, string> {
+  const block = (firebase.hosting?.headers ?? []).find(
+    (h: { source: string }) => h.source === source,
   );
   const out: Record<string, string> = {};
   for (const { key, value } of block?.headers ?? []) out[key] = value;
@@ -138,6 +156,19 @@ describe('security headers', () => {
     },
   );
 
+  it.each(Object.entries(SECURITY_HEADERS) as [string, string][])(
+    'firebase.json serves %s identically',
+    (name, value) => {
+      expect(firebaseHeadersFor('**')[name]).toBe(value);
+    },
+  );
+
+  it('adds no header to firebase.json the source of truth does not declare', () => {
+    expect(Object.keys(firebaseHeadersFor('**')).sort()).toEqual(
+      Object.keys(SECURITY_HEADERS).sort(),
+    );
+  });
+
   it('adds no header to a mirror that the source of truth does not declare', () => {
     // The Vercel security block may carry nothing extra; the noindex X-Robots-Tag
     // lives in its own `missing`-guarded block and is excluded above.
@@ -188,6 +219,19 @@ describe('cache rules', () => {
       expect(netlifyHeadersFor(rule.netlify)['Cache-Control']).toBe(rule.value);
     },
   );
+});
+
+describe('firebase.json cache rules', () => {
+  // firebase.json rewrites every path to /index.html itself, so like Vercel and
+  // Netlify it declares no index.html rule; the other three path classes must
+  // match the source of truth.
+  it.each([
+    ['/assets/**', 'public, max-age=31536000, immutable'],
+    ['/data/**', 'public, max-age=3600'],
+    ['/sw.js', 'no-cache'],
+  ])('caches %s as %s', (source, value) => {
+    expect(firebaseHeadersFor(source)['Cache-Control']).toBe(value);
+  });
 });
 
 describe('public/_headers cache rules', () => {

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { CaptainAvatar } from '@/components/CaptainAvatar';
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 import styles from './AdelHeroWidget.module.css';
 
@@ -101,6 +102,7 @@ export function AdelHeroWidget() {
     <div className={styles.efb} aria-hidden="true">
       <div className={styles.screen}>
         <div className={styles.bar}>
+          <CaptainAvatar size="sm" decorative />
           <span className={styles.dot} />
           <span className={styles.id}>{t('home.adel.id')}</span>
           <span className={styles.engine}>{t('home.adel.engine')}</span>

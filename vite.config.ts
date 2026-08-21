@@ -53,9 +53,14 @@ export default defineConfig(({ mode }) => {
           // internals, which the object form (package roots only) missed —
           // ~100 kB of renderer fell into the index chunk. Path-matching the
           // whole package directory keeps the split stable across versions.
-          // framer-motion is intentionally NOT pinned: it is only reached
-          // through the lazily-imported home dashboard, so leaving it alone
-          // lets Rollup fold it into that async chunk, off the initial path.
+          // framer-motion is intentionally NOT pinned: it is reached only
+          // through lazily-imported components (the home dashboard + WhyBento
+          // and lazy routes), so leaving it alone lets Rollup fold it into
+          // those async chunks, off the initial path (check:bundle enforces
+          // the budget either way).
+          // firebase IS pinned: the SDK is dynamic-imported from
+          // src/lib/firebase-monitoring.ts, and a named chunk keeps the ~100 kB
+          // async payload long-cached across app releases.
           manualChunks(id: string) {
             if (
               /node_modules[\\/](react|react-dom|scheduler|react-router|react-router-dom)[\\/]/.test(
@@ -70,6 +75,9 @@ export default defineConfig(({ mode }) => {
               )
             ) {
               return 'vendor-i18n';
+            }
+            if (/node_modules[\\/](firebase|@firebase)[\\/]/.test(id)) {
+              return 'vendor-firebase';
             }
           },
         },

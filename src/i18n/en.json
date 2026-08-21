@@ -74,7 +74,6 @@
     "loadError": "Could not load this content. Verify your connection and try again.",
     "retry": "Retry",
     "skipToContent": "Skip to content",
-    "soon": "Coming soon",
     "open": "Open",
     "close": "Close",
     "clear": "Clear",
@@ -127,22 +126,6 @@
     "more": "More",
     "breadcrumb": "Breadcrumb",
     "breadcrumbHome": "Home"
-  },
-  "command": {
-    "title": "Search & jump",
-    "open": "Search (⌘K)",
-    "searchShort": "Search",
-    "placeholder": "Search pages, tools, guides, GACAR Parts…",
-    "noResults": "No matches. Try a Part number, tool name, or topic.",
-    "partPrefix": "Part",
-    "hintNavigate": "navigate",
-    "hintOpen": "open",
-    "groups": {
-      "page": "Page",
-      "tool": "Tool",
-      "guide": "Guide",
-      "library": "Library"
-    }
   },
   "notFound": {
     "eyebrow": "404",
@@ -384,8 +367,7 @@
     "viewList": "List view",
     "stats": {
       "tools": "Tools",
-      "categories": "Categories",
-      "soon": "Coming soon"
+      "categories": "Categories"
     },
     "categories": {
       "performance": "Performance & runway",
@@ -2203,6 +2185,7 @@
       }
     ],
     "tiersNote": "Indicative pricing. Every plan shares a per-minute rate limit; monthly quotas reset each calendar month.",
+    "scene": "The left seat — where every rule earns its keep",
     "endpointHead": "The endpoint",
     "endpointLead": "POST /v1/ask with your key as a Bearer token (or an X-Api-Key header). Send a message; receive a grounded answer, its sources and kind.",
     "requestLabel": "Request",
@@ -4028,6 +4011,7 @@
     "gsObjective": "Objective",
     "gsAskAdel": "Learn with Captain Adel",
     "gsModuleQuiz": "Test yourself on this module",
+    "gsModuleComplete": "Module complete",
     "gsRead": "Read more",
     "gsDone": "Done",
     "gsLessons": "{{n}} lessons",
@@ -4346,6 +4330,14 @@
     "eyebrow": "About",
     "title": "About Fly GACA",
     "lead": "Every Saudi reg. One captain on the answer. Finding the right GACAR section should not be the hard part of flying in the Kingdom.",
+    "log": {
+      "head": "Captain's log — field notes",
+      "walkaround": "Walkaround — the preflight never lies",
+      "briefingRoom": "Briefing room — where GACAR stops being boring",
+      "holdingPoint": "Holding point — patience is a published procedure",
+      "debrief": "Debrief — coffee goes cold over Part 91",
+      "leftSeat": "Left seat — responsibility begins here"
+    },
     "sectionsHead": "What Fly GACA is, and isn't",
     "sections": [
       {

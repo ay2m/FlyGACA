@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
 // The iOS localization wiring lives in a build-time ESM module (.mjs); import the
 // pure `mutatePbxproj` directly so the same code that runs on the Mac is tested.
-// @ts-expect-error — untyped .mjs build script
 import { mutatePbxproj } from '../scripts/native/ios-localize.mjs';
 
 type Dict = Record<string, unknown>;

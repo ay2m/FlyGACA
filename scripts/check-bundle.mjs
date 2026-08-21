@@ -29,7 +29,13 @@ const DIST = 'dist';
 // 189 as the /guides catalogue grew: the CommandPalette indexes every guide from
 // GUIDE_SLUGS, so each new guide's registry rows in guides.ts land in the shell
 // (~33 bytes gz per guide; the guide's prose stays in the lazy en/ar chunks).
-const BUDGET_KB = 189;
+// Tightened 189 → 160 after the 2026-08 boot-path pass: the Firebase SDK became
+// a dynamic import (vendor-firebase is async-only) and Home's bento sections —
+// the last eager framer-motion consumers — went lazy, dropping the measured
+// floor from ~186 to ~147.6 kB gz. The head-room is deliberate protection: an
+// accidental eager import of firebase (~30 kB gz) or framer-motion (~35 kB gz)
+// trips this gate instead of silently landing in the shell.
+const BUDGET_KB = 160;
 
 const html = readFileSync(join(DIST, 'index.html'), 'utf8');
 const files = [...html.matchAll(/(?:src|href)="(\/assets\/[^"]+\.js)"/g)].map((m) => m[1]);

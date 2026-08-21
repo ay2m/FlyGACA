@@ -10,8 +10,6 @@ import { AdelHeroWidget } from './AdelHeroWidget';
 import { OnboardingHint } from '@/components/onboarding/OnboardingHint';
 import { SectionHeader } from '@/components/SectionHeader';
 import { Stepper } from '@/components/Stepper';
-import { BentoGrid } from '@/components/bento/BentoGrid';
-import { BentoCard, type BentoSpan, type BentoTone } from '@/components/bento/BentoCard';
 import { ButtonLink } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { useAccount } from '@/lib/services/account';
@@ -22,9 +20,13 @@ import { GUIDE_SLUGS } from '@/pages/guides/guides';
 import { liveTools } from '@/lib/tools';
 import styles from './Home.module.css';
 
-// The bento dashboard (and its framer-motion runtime) is split off the home
-// hero's critical path; it streams in under the Suspense boundary below.
+// Everything bento — the dashboard AND the "why trust it" grid — is lazy-loaded
+// so the framer-motion runtime the bento components import stays off the home
+// hero's critical path; both stream in under Suspense boundaries below.
+// (check:bundle enforces this: an eager bento import here puts framer-motion
+// back into the initial chunk and blows the budget.)
 const HomeDashboard = lazy(() => import('@/components/bento/HomeDashboard'));
+const WhyBento = lazy(() => import('./WhyBento'));
 
 // The single "at a glance" proof strip. Numbers stay truthful: Parts mirrors the
 // gacar-index, tools matches the migration catalogue, and guides is the live
@@ -35,15 +37,6 @@ const TRUST_STATS = [
   { value: liveTools().length, key: 'tools' },
   { value: GUIDE_SLUGS.length, key: 'guides' },
 ] as const;
-
-// "Why trust it" reads as an asymmetric bento, not four equal cards: a tall lead
-// pillar (the independence claim, carrying the mark) + one wide + two small.
-const WHY_LAYOUT: { span: BentoSpan; tone: BentoTone }[] = [
-  { span: 'lg', tone: 'default' },
-  { span: 'wide', tone: 'cyan' },
-  { span: 'sm', tone: 'green' },
-  { span: 'sm', tone: 'default' },
-];
 
 interface Step {
   h: string;
@@ -60,7 +53,6 @@ export function Home() {
   const isPro = uiIsPro(entitlement);
 
   const steps = t('home.how.steps', { returnObjects: true }) as unknown as Step[];
-  const reasons = t('home.why.items', { returnObjects: true }) as unknown as Step[];
   const demos = t('home.adel.demos', { returnObjects: true }) as unknown as Demo[];
 
   // Organization + WebSite already ship statically in index.html; only the FAQ
@@ -144,28 +136,9 @@ export function Home() {
       {/* Why trust it — independent · cites the section · offline · bilingual. */}
       <section className={`container ${styles.block}`} aria-labelledby="home-why">
         <SectionHeader id="home-why" title={t('home.why.title')} tone="var(--cat-2)" />
-        <BentoGrid label={t('home.why.title')}>
-          {reasons.map((r, i) => {
-            const cfg = WHY_LAYOUT[i] ?? { span: 'sm', tone: 'default' };
-            const lead = i === 0;
-            return (
-              <BentoCard key={i} span={cfg.span} tone={cfg.tone}>
-                {lead && (
-                  <img
-                    className={styles.whyMark}
-                    src="/img/flygaca-mark.png"
-                    alt=""
-                    width={40}
-                    height={40}
-                    decoding="async"
-                  />
-                )}
-                <h3 className={lead ? styles.featLead : styles.featTitle}>{r.h}</h3>
-                <p className={styles.featBody}>{r.p}</p>
-              </BentoCard>
-            );
-          })}
-        </BentoGrid>
+        <Suspense fallback={<div className={styles.whyFallback} aria-hidden="true" />}>
+          <WhyBento />
+        </Suspense>
       </section>
 
       {/* Conversion band — plan-aware. The gold heritage accent is used exactly
