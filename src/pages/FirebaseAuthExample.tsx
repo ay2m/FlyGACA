@@ -4,7 +4,7 @@
  * This is a reference implementation — integrate useAuth into your actual pages as needed.
  */
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@/components/Alert';
 import { Button } from '@/components/ui/Button';
@@ -24,12 +24,6 @@ export function FirebaseAuthExample() {
   const [displayName, setDisplayName] = useState('');
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    if (error) {
-      setMessage(error.message);
-    }
-  }, [error]);
 
   async function handleSignIn() {
     try {
@@ -153,9 +147,9 @@ export function FirebaseAuthExample() {
           <p>Test email/password, Google Sign-in, and account recovery</p>
         </div>
 
-        {message && (
-          <Alert tone={message.includes('Error') ? 'error' : 'success'} role="status">
-            {message}
+        {(message || error) && (
+          <Alert tone={(message || error?.message)?.includes('Error') || error ? 'error' : 'success'} role="status">
+            {message || error?.message}
           </Alert>
         )}
 
