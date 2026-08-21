@@ -247,4 +247,6 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md), and [`SECURITY.md`](SECURITY.md) to re
 <div align="center">
 <br />
 <sub><b>Fly GACA</b> · an independent educational platform · not affiliated with the General Authority of Civil Aviation</sub>
+<br />
+<sub>صنع في السعودية 🇸🇦</sub>
 </div>
