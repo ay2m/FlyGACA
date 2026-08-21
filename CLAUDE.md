@@ -283,10 +283,13 @@ The single Vite build (`dist/`) is served from several fronts; `/api/*` always b
 - **Firebase Hosting is a live, auto-deployed front**: `deploy-firebase.yml` builds, prerenders
   and runs `firebase deploy --only hosting` on every push to `main`. `firebase.json` serves
   `dist/` and carries its own copy of the security headers, held to `config/headers.json` by
-  `tests/headers-parity.test.ts`. It does **not** proxy `/api/*` (the workflow's build sets only
-  `VITE_GA_MEASUREMENT_ID`, so this front serves the local-first build), and residency is
-  unchanged: everything personal — accounts, chat, billing, the database — stays on the
-  Cloud Run + Cloud SQL pair in `me-central2`, whichever front serves the static shell.
+  `tests/headers-parity.test.ts`. It **proxies `/api/*`** to the `flygaca-api` Cloud Run service
+  directly via a `run` rewrite in `firebase.json` (same region, `me-central2`), and the workflow
+  sets `VITE_API_SAME_ORIGIN=1` alongside `VITE_GA_MEASUREMENT_ID` so the build knows the API is
+  same-origin — sign-in, chat and account all work from this front, not just the local-first
+  build. Residency is unchanged either way: everything personal — accounts, chat, billing, the
+  database — stays on the Cloud Run + Cloud SQL pair in `me-central2`, whichever front serves the
+  static shell.
 - **Cloudflare Worker** (`worker/index.ts` + `wrangler.toml`) and the **Netlify** / **Vercel**
   mirrors each serve `dist/` and **proxy `/api/*` back to the Cloud Run origin** as a same-origin
   rewrite — so chat/account keep working and the strict CSP (`connect-src 'self'`) never changes.
