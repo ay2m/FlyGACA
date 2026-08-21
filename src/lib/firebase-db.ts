@@ -18,7 +18,6 @@ import {
   where,
   orderBy,
   limit as firestoreLimit,
-  Query,
   DocumentData,
   QueryConstraint,
 } from 'firebase/firestore';
@@ -37,7 +36,7 @@ export function getDb(): Firestore {
       try {
         const [host, port] = import.meta.env.VITE_FIREBASE_EMULATOR_HOST.split(':');
         connectFirestoreEmulator(db, host, parseInt(port, 10));
-      } catch (e) {
+      } catch {
         // Emulator already connected
       }
     }

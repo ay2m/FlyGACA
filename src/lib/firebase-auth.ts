@@ -11,10 +11,8 @@ import {
 import {
   Auth,
   initializeAuth,
-  getAuth,
   connectAuthEmulator,
   signOut,
-  setPersistence,
   browserLocalPersistence,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -26,7 +24,6 @@ import {
   signInWithPopup,
   signInWithRedirect,
   getRedirectResult,
-  PhoneAuthProvider,
   signInWithPhoneNumber,
   RecaptchaVerifier,
   ConfirmationResult,
@@ -54,7 +51,7 @@ export function initializeFirebase(): Auth {
       connectAuthEmulator(auth, `http://${import.meta.env.VITE_FIREBASE_EMULATOR_HOST}`, {
         disableWarnings: true,
       });
-    } catch (e) {
+    } catch {
       // Emulator already connected
     }
   }
