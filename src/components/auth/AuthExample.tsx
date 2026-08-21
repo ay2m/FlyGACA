@@ -26,9 +26,13 @@ export function AuthExample() {
     return (
       <div className={styles.container}>
         <h1>Welcome!</h1>
-        <p>Signed in as: <strong>{user.email}</strong></p>
+        <p>
+          Signed in as: <strong>{user.email}</strong>
+        </p>
         {user.displayName && <p>Name: {user.displayName}</p>}
-        <p>User ID: <code>{user.uid}</code></p>
+        <p>
+          User ID: <code>{user.uid}</code>
+        </p>
         <button
           onClick={async () => {
             // Sign out is in the useAuth hook
@@ -159,11 +163,7 @@ export function AuthExample() {
 
             <div className={styles.divider}>or</div>
 
-            <button
-              type="button"
-              onClick={handleGoogleSignIn}
-              className={styles.buttonGoogle}
-            >
+            <button type="button" onClick={handleGoogleSignIn} className={styles.buttonGoogle}>
               Sign In with Google
             </button>
           </form>
@@ -211,11 +211,7 @@ export function AuthExample() {
 
             <div className={styles.divider}>or</div>
 
-            <button
-              type="button"
-              onClick={handleGoogleSignIn}
-              className={styles.buttonGoogle}
-            >
+            <button type="button" onClick={handleGoogleSignIn} className={styles.buttonGoogle}>
               Sign Up with Google
             </button>
           </form>

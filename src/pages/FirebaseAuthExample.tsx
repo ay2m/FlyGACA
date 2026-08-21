@@ -16,8 +16,7 @@ import styles from './firebase-auth.module.css';
 
 export function FirebaseAuthExample() {
   const { t } = useTranslation();
-  const { user, loading, error, signIn, signUp, signOut, signInGoogle, resetPassword } =
-    useAuth();
+  const { user, loading, error, signIn, signUp, signOut, signInGoogle, resetPassword } = useAuth();
   const [mode, setMode] = useState<'signin' | 'signup' | 'reset'>('signin');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -148,7 +147,10 @@ export function FirebaseAuthExample() {
         </div>
 
         {(message || error) && (
-          <Alert tone={(message || error?.message)?.includes('Error') || error ? 'error' : 'success'} role="status">
+          <Alert
+            tone={(message || error?.message)?.includes('Error') || error ? 'error' : 'success'}
+            role="status"
+          >
             {message || error?.message}
           </Alert>
         )}

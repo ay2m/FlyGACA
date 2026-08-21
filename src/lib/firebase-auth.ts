@@ -3,11 +3,7 @@
  * Provides methods for email/password, Google Sign-in, and phone authentication.
  */
 
-import {
-  initializeApp,
-  FirebaseApp,
-  FirebaseOptions,
-} from 'firebase/app';
+import { initializeApp, FirebaseApp, FirebaseOptions } from 'firebase/app';
 import {
   Auth,
   initializeAuth,
@@ -202,9 +198,7 @@ export function getCurrentUser(): FirebaseUser | null {
 }
 
 /** Subscribe to auth state changes. Returns unsubscribe function. */
-export function onAuthStateChange(
-  callback: (user: FirebaseUser | null) => void,
-): () => void {
+export function onAuthStateChange(callback: (user: FirebaseUser | null) => void): () => void {
   const auth = getFirebaseAuth();
   return auth.onAuthStateChanged(callback);
 }

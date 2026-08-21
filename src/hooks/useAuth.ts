@@ -56,19 +56,16 @@ export function useAuth(): UseAuthReturn {
     }
   }, []);
 
-  const signUp = useCallback(
-    async (email: string, password: string, displayName?: string) => {
-      try {
-        setError(null);
-        await signUpWithEmail({ email, password, displayName });
-      } catch (err) {
-        const error = err instanceof Error ? err : new Error(String(err));
-        setError(error);
-        throw error;
-      }
-    },
-    [],
-  );
+  const signUp = useCallback(async (email: string, password: string, displayName?: string) => {
+    try {
+      setError(null);
+      await signUpWithEmail({ email, password, displayName });
+    } catch (err) {
+      const error = err instanceof Error ? err : new Error(String(err));
+      setError(error);
+      throw error;
+    }
+  }, []);
 
   const signOutHandler = useCallback(async () => {
     try {

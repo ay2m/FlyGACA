@@ -129,10 +129,13 @@ export async function queryDocuments<T extends DocumentData>(
   const q = query(collection(db, collectionName), ...constraints);
   const querySnapshot = await getDocs(q);
 
-  return querySnapshot.docs.map((doc) => ({
-    ...doc.data(),
-    id: doc.id,
-  } as T));
+  return querySnapshot.docs.map(
+    (doc) =>
+      ({
+        ...doc.data(),
+        id: doc.id,
+      }) as T,
+  );
 }
 
 /** Query documents and return paginated results. */
@@ -164,10 +167,13 @@ export async function queryDocumentsPaginated<T extends DocumentData>(
   const q = query(collection(db, collectionName), ...constraints);
   const querySnapshot = await getDocs(q);
 
-  const data = querySnapshot.docs.slice(0, pageSize).map((doc) => ({
-    ...doc.data(),
-    id: doc.id,
-  } as T));
+  const data = querySnapshot.docs.slice(0, pageSize).map(
+    (doc) =>
+      ({
+        ...doc.data(),
+        id: doc.id,
+      }) as T,
+  );
 
   const hasMore = querySnapshot.docs.length > pageSize;
 
@@ -180,8 +186,11 @@ export async function getAllDocuments<T extends DocumentData>(
 ): Promise<T[]> {
   const db = getDb();
   const querySnapshot = await getDocs(collection(db, collectionName));
-  return querySnapshot.docs.map((doc) => ({
-    ...doc.data(),
-    id: doc.id,
-  } as T));
+  return querySnapshot.docs.map(
+    (doc) =>
+      ({
+        ...doc.data(),
+        id: doc.id,
+      }) as T,
+  );
 }
