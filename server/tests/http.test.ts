@@ -36,6 +36,7 @@ const {
   requireUser,
   requireVerifiedUser,
   errorMiddleware,
+  csrfGuard,
 } = await import("../src/http.js");
 
 /** Minimal `req` carrying only what these functions read. */
@@ -307,5 +308,80 @@ describe("errorMiddleware", () => {
     expect(next).toHaveBeenCalledWith(err);
     expect(res.statusCode).toBe(0);
     expect(res.body).toBeUndefined();
+  });
+});
+
+describe("csrfGuard", () => {
+  /** Duck-typed request carrying only what the guard reads. */
+  function csrfReq(over: {
+    method?: string;
+    baseUrl?: string;
+    path?: string;
+    origin?: string;
+    secFetchSite?: string;
+    authorization?: string;
+  }): Request {
+    const headers: Record<string, string | undefined> = {
+      origin: over.origin,
+      authorization: over.authorization,
+    };
+    return {
+      method: over.method ?? "POST",
+      baseUrl: over.baseUrl ?? "/api/auth",
+      path: over.path ?? "/logout",
+      headers,
+      get: (name: string) =>
+        name.toLowerCase() === "sec-fetch-site" ? over.secFetchSite : undefined,
+    } as unknown as Request;
+  }
+
+  it("403s a mutating request with a forged Origin", () => {
+    const res = mkRes();
+    const next = vi.fn();
+    csrfGuard(csrfReq({ origin: "https://evil.example" }), res as unknown as Response, next);
+    expect(res.statusCode).toBe(403);
+    expect(res.body).toEqual({ error: "csrf-rejected" });
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  it("passes an allowed-origin mutation and a safe-method read straight through", () => {
+    for (const req of [
+      csrfReq({ origin: "https://flygaca.com" }),
+      csrfReq({ method: "GET", origin: "https://evil.example" }),
+    ]) {
+      const next = vi.fn();
+      csrfGuard(req, mkRes() as unknown as Response, next);
+      expect(next).toHaveBeenCalled();
+    }
+  });
+
+  it("403s an origin-less cross-site request via Sec-Fetch-Site", () => {
+    const res = mkRes();
+    const next = vi.fn();
+    csrfGuard(csrfReq({ secFetchSite: "cross-site" }), res as unknown as Response, next);
+    expect(res.statusCode).toBe(403);
+    expect(next).not.toHaveBeenCalled();
+  });
+
+  it("composes the mount path so the billing exemptions survive the router split", () => {
+    // req.path inside a mounted router is relative; the guard must see the
+    // full /api/billing/... path or the webhook/renew exemptions never match.
+    const next = vi.fn();
+    csrfGuard(
+      csrfReq({ baseUrl: "/api/billing", path: "/webhook/moyasar", secFetchSite: "cross-site" }),
+      mkRes() as unknown as Response,
+      next,
+    );
+    expect(next).toHaveBeenCalled();
+  });
+
+  it("lets the native shell's Bearer calls through regardless of origin", () => {
+    const next = vi.fn();
+    csrfGuard(
+      csrfReq({ origin: "https://evil.example", authorization: "Bearer token-123" }),
+      mkRes() as unknown as Response,
+      next,
+    );
+    expect(next).toHaveBeenCalled();
   });
 });

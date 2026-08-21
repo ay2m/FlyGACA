@@ -38,6 +38,7 @@ import {
 } from "../store.js";
 import { sendVerificationEmail, sendPasswordResetEmail } from "../mail.js";
 import { handler, requireUser, HttpError } from "../http.js";
+import { meetsPasswordPolicy } from "../auth-core.js";
 
 export const authRouter: Router = Router();
 
@@ -124,7 +125,9 @@ authRouter.post(
     const displayName = typeof req.body?.displayName === "string" ? req.body.displayName : "";
 
     if (!EMAIL_RE.test(email)) throw new HttpError(400, "auth/invalid-email");
-    if (password.length < 8) throw new HttpError(400, "auth/weak-password");
+    // The full four-rule policy, not just length — the client form enforces the
+    // same rules, but only this check binds callers that skip the form.
+    if (!meetsPasswordPolicy(password)) throw new HttpError(400, "auth/weak-password");
 
     if (await findUserByEmail(email)) throw new HttpError(409, "auth/email-already-in-use");
 
@@ -187,7 +190,8 @@ authRouter.post(
     const token = typeof req.body?.token === "string" ? req.body.token : "";
     const password = typeof req.body?.password === "string" ? req.body.password : "";
     if (!token) throw new HttpError(400, "auth/invalid-action-code");
-    if (password.length < 8) throw new HttpError(400, "auth/weak-password");
+    // Same four-rule policy as /register: a reset must not weaken the account.
+    if (!meetsPasswordPolicy(password)) throw new HttpError(400, "auth/weak-password");
 
     const userId = await consumeAuthToken(hashToken(token), "reset");
     if (!userId) throw new HttpError(400, "auth/invalid-action-code");

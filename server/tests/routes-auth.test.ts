@@ -168,7 +168,7 @@ describe("POST /register", () => {
   it("creates the account, sends verification and signs the user in", async () => {
     const res = await request(app)
       .post("/api/auth/register")
-      .send({ email: "New.Cadet@Example.com ", password: "a-good-password", displayName: "Cadet" });
+      .send({ email: "New.Cadet@Example.com ", password: "A-good-password1", displayName: "Cadet" });
 
     expect(res.status).toBe(201);
     expect(res.body.user).toMatchObject({ uid: "u1" });
@@ -181,17 +181,17 @@ describe("POST /register", () => {
   it("stores a hash, never the password itself", async () => {
     await request(app)
       .post("/api/auth/register")
-      .send({ email: "a@b.com", password: "a-good-password" });
+      .send({ email: "a@b.com", password: "A-good-password1" });
 
     const [{ passwordHash }] = createUser.mock.calls[0] as [{ passwordHash: string }];
     expect(passwordHash).toMatch(/^scrypt\$[0-9a-f]+\$[0-9a-f]+$/);
-    expect(passwordHash).not.toContain("a-good-password");
+    expect(passwordHash).not.toContain("A-good-password1");
   });
 
   it("emails the token but stores only its digest", async () => {
     await request(app)
       .post("/api/auth/register")
-      .send({ email: "a@b.com", password: "a-good-password" });
+      .send({ email: "a@b.com", password: "A-good-password1" });
 
     const [digest] = createAuthToken.mock.calls[0] as [string];
     const [, emailedToken] = sendVerificationEmail.mock.calls[0] as [string, string];
@@ -203,7 +203,7 @@ describe("POST /register", () => {
     for (const email of ["", "not-an-email", "a@b", "a b@c.com"]) {
       const res = await request(app)
         .post("/api/auth/register")
-        .send({ email, password: "a-good-password" });
+        .send({ email, password: "A-good-password1" });
       expect(res.status).toBe(400);
       expect(res.body.error).toBe("auth/invalid-email");
     }
@@ -218,11 +218,22 @@ describe("POST /register", () => {
     expect(createUser).not.toHaveBeenCalled();
   });
 
+  it("enforces the full four-rule policy, not just length", async () => {
+    // Long enough but missing mixed case / digit / special — each must fail,
+    // exactly as the client sign-up form would reject it.
+    for (const password of ["alllowercase1!", "NoDigitsHere!", "NoSpecial123a"]) {
+      const res = await request(app).post("/api/auth/register").send({ email: "a@b.com", password });
+      expect(res.status).toBe(400);
+      expect(res.body.error).toBe("auth/weak-password");
+    }
+    expect(createUser).not.toHaveBeenCalled();
+  });
+
   it("409s on a duplicate address without creating anything", async () => {
     findUserByEmail.mockResolvedValue(userRow());
     const res = await request(app)
       .post("/api/auth/register")
-      .send({ email: "a@b.com", password: "a-good-password" });
+      .send({ email: "a@b.com", password: "A-good-password1" });
 
     expect(res.status).toBe(409);
     expect(res.body.error).toBe("auth/email-already-in-use");
@@ -233,12 +244,12 @@ describe("POST /register", () => {
 describe("POST /login", () => {
   it("signs in with the right password", async () => {
     findUserByEmail.mockResolvedValue(
-      userRow({ password_hash: await hashPassword("a-good-password") }),
+      userRow({ password_hash: await hashPassword("A-good-password1") }),
     );
 
     const res = await request(app)
       .post("/api/auth/login")
-      .send({ email: "cadet@example.com", password: "a-good-password" });
+      .send({ email: "cadet@example.com", password: "A-good-password1" });
 
     expect(res.status).toBe(200);
     expect(res.body.user).toMatchObject({ uid: "u1" });
@@ -251,14 +262,14 @@ describe("POST /login", () => {
     findUserByEmail.mockResolvedValue(null);
     const unknown = await request(app)
       .post("/api/auth/login")
-      .send({ email: "nobody@example.com", password: "a-good-password" });
+      .send({ email: "nobody@example.com", password: "A-good-password1" });
 
     findUserByEmail.mockResolvedValue(
       userRow({ password_hash: await hashPassword("the-real-password") }),
     );
     const wrong = await request(app)
       .post("/api/auth/login")
-      .send({ email: "cadet@example.com", password: "a-good-password" });
+      .send({ email: "cadet@example.com", password: "A-good-password1" });
 
     expect(unknown.status).toBe(401);
     expect(unknown.body).toEqual({ error: "auth/invalid-credential", message: "auth/invalid-credential" });
@@ -318,7 +329,7 @@ describe("POST /password-reset/confirm", () => {
 
     const res = await request(app)
       .post("/api/auth/password-reset/confirm")
-      .send({ token: "opaque-token", password: "a-new-password" });
+      .send({ token: "opaque-token", password: "A-new-password1" });
 
     expect(res.body).toEqual({ ok: true });
     // A reset proves control of the mailbox, so it also verifies the address.
@@ -332,7 +343,7 @@ describe("POST /password-reset/confirm", () => {
     consumeAuthToken.mockResolvedValue("u1");
     await request(app)
       .post("/api/auth/password-reset/confirm")
-      .send({ token: "opaque-token", password: "a-new-password" });
+      .send({ token: "opaque-token", password: "A-new-password1" });
 
     expect(consumeAuthToken).toHaveBeenCalledWith(hashToken("opaque-token"), "reset");
   });
@@ -341,7 +352,7 @@ describe("POST /password-reset/confirm", () => {
     consumeAuthToken.mockResolvedValue(null);
     const res = await request(app)
       .post("/api/auth/password-reset/confirm")
-      .send({ token: "already-used", password: "a-new-password" });
+      .send({ token: "already-used", password: "A-new-password1" });
 
     expect(res.status).toBe(400);
     expect(res.body.error).toBe("auth/invalid-action-code");
@@ -361,7 +372,7 @@ describe("POST /password-reset/confirm", () => {
   it("rejects a missing token", async () => {
     const res = await request(app)
       .post("/api/auth/password-reset/confirm")
-      .send({ password: "a-new-password" });
+      .send({ password: "A-new-password1" });
     expect(res.body.error).toBe("auth/invalid-action-code");
   });
 });
