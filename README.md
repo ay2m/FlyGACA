@@ -9,7 +9,7 @@
 **find it · study it · always verify against GACA**
 
 <p>
-  <img src="https://img.shields.io/badge/%D8%B5%D9%86%D8%B9%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-Made%20in%20Saudi%20Arabia-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="صنع في السعودية — Made in Saudi Arabia" />
+  <img src="https://img.shields.io/badge/Made%20in-Saudi%20Arabia-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="صنع في السعودية — Made in Saudi Arabia" />
 </p>
 
 <p>
