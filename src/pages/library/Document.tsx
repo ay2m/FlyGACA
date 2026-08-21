@@ -13,6 +13,7 @@ import { shareCurrent } from '@/lib/share';
 import { useOnline } from '@/lib/native/pwa';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import { useCopyToClipboardKeyed } from '@/hooks/useCopyToClipboard';
+import { addClauseAnchors, extractPartNumber } from '@/lib/library/clauseAnchors';
 import {
   useLibraryPrefs,
   recordView,
@@ -125,7 +126,18 @@ export function Document({ kind = 'regulations' }: DocumentProps) {
     setScale((s) => Math.min(SCALE_MAX, Math.max(SCALE_MIN, Math.round((s + delta) * 10) / 10)));
 
   // ── Rendered content + table of contents ──
-  const html = useMemo(() => (text ? sanitizeHtml(text) : ''), [text]);
+  const html = useMemo(() => {
+    if (!text) return '';
+    const sanitized = sanitizeHtml(text);
+    // For regulation documents, add clause-level anchor IDs to enable deep-linking
+    if (kind === 'regulations' && slug) {
+      const partNumber = extractPartNumber(slug);
+      if (partNumber) {
+        return addClauseAnchors(sanitized, partNumber);
+      }
+    }
+    return sanitized;
+  }, [text, kind, slug]);
   const toc = useMemo(() => (text ? tocFromHtml(text) : []), [text]);
   const filteredToc = useMemo(() => {
     const needle = filter.trim().toLowerCase();
