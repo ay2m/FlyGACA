@@ -66,9 +66,9 @@ export async function loadShardedData<T>(
 /**
  * Reassemble airport shards (array of airport objects) into AirportsIndex format.
  */
-export function reassembleAirports(
-  shards: Array<{ icao: string }[]>,
-): { airports: { icao: string }[] } {
+export function reassembleAirports(shards: Array<{ icao: string }[]>): {
+  airports: { icao: string }[];
+} {
   const airports = shards.flat();
   return { airports };
 }
@@ -76,9 +76,9 @@ export function reassembleAirports(
 /**
  * Reassemble library-search shards (array of search results) into SearchIndex format.
  */
-export function reassembleLibrarySearch(
-  shards: Array<{ id?: string; doc?: string }[]>,
-): { entries: { id?: string; doc?: string }[] } {
+export function reassembleLibrarySearch(shards: Array<{ id?: string; doc?: string }[]>): {
+  entries: { id?: string; doc?: string }[];
+} {
   const entries = shards.flat();
   return { entries };
 }

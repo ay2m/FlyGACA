@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom/vitest';
-import { afterEach } from 'vitest';
+import { afterEach, vi } from 'vitest';
+vi.stubEnv('VITE_API_BASE_URL', '');
 import i18n, { applyDocumentLang, type Lang } from '@/i18n';
 import { initReactI18next } from 'react-i18next';
 import { clearJsonCache } from '@/lib/content';

@@ -5,8 +5,6 @@
  * Pattern: detect "§ 61.57" or "61.57" in headings, generate id="gacar-part-61-57"
  */
 
-import type { ToolLibraryCrosslink } from './toolLibraryCrosslinks';
-
 /**
  * Extract Part number from a document slug (e.g., "part-61" → "61").
  */
@@ -28,10 +26,7 @@ function parseSection(text: string): string | null {
   }
 
   // Standalone section patterns: "§ 3", "Section 3"
-  const patterns = [
-    /Section\s+(\d+(?:\.\d+)*)/i,
-    /§\s+(\d+(?:\.\d+)*)/,
-  ];
+  const patterns = [/Section\s+(\d+(?:\.\d+)*)/i, /§\s+(\d+(?:\.\d+)*)/];
 
   for (const pattern of patterns) {
     const match = text.match(pattern);
@@ -61,19 +56,16 @@ export function generateClauseAnchorId(part: number, section: string): string {
  */
 export function addClauseAnchors(html: string, partNumber: number): string {
   // Match h2 and h3 tags, extract their text, detect sections, add id if missing
-  return html.replace(
-    /<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi,
-    (match, level, attrs, content) => {
-      const section = parseSection(content);
-      if (!section) return match; // No section found, keep original
+  return html.replace(/<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi, (match, level, attrs, content) => {
+    const section = parseSection(content);
+    if (!section) return match; // No section found, keep original
 
-      // If heading already has an id, keep it
-      if (/id="/.test(attrs)) return match;
+    // If heading already has an id, keep it
+    if (/id="/.test(attrs)) return match;
 
-      // Generate new ID and inject it
-      const anchorId = generateClauseAnchorId(partNumber, section);
-      const newAttrs = `${attrs} id="${anchorId}"`;
-      return `<h${level}${newAttrs}>${content}</h${level}>`;
-    }
-  );
+    // Generate new ID and inject it
+    const anchorId = generateClauseAnchorId(partNumber, section);
+    const newAttrs = `${attrs} id="${anchorId}"`;
+    return `<h${level}${newAttrs}>${content}</h${level}>`;
+  });
 }

@@ -5,7 +5,7 @@ import { useFetchJson } from '@/hooks/useFetchJson';
 import { useDebouncedValue } from '@/hooks/useDebouncedValue';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import { itemListLd } from '@/lib/seo/jsonld';
-import { CORPUS, fetchJson } from '@/lib/content';
+import { CORPUS } from '@/lib/content';
 import { loadShardedData, reassembleLibrarySearch } from '@/lib/sharded-loader';
 import { searchEntryLink, toSearchRef } from '@/lib/contentLinks';
 import {

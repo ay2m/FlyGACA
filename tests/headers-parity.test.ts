@@ -36,8 +36,8 @@ import {
  */
 
 const root = process.cwd();
-const vercel = JSON.parse(readFileSync(join(root, 'vercel.json'), 'utf8'));
-const netlify = readFileSync(join(root, 'netlify.toml'), 'utf8');
+const vercel = JSON.parse(readFileSync(join(root, 'config/vercel.json'), 'utf8'));
+const netlify = readFileSync(join(root, 'config/netlify.toml'), 'utf8');
 const pagesHeaders = readFileSync(join(root, 'public/_headers'), 'utf8');
 const firebase = JSON.parse(readFileSync(join(root, 'firebase.json'), 'utf8'));
 

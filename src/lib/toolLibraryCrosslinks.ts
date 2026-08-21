@@ -176,9 +176,7 @@ const TOOL_CROSSLINKS: Record<string, ToolLibraryCrosslink[]> = {
     { part: 67, section: '1', title: 'Applicability' },
     { part: 61, section: '3', title: 'Pilot Qualifications' },
   ],
-  'flight-review': [
-    { part: 61, section: '56', title: 'Flight Review' },
-  ],
+  'flight-review': [{ part: 61, section: '56', title: 'Flight Review' }],
 };
 
 /**
@@ -192,5 +190,5 @@ export function getToolCrosslinks(toolId: string): ToolLibraryCrosslink[] {
  * Check if a tool has cross-links to the library.
  */
 export function hasToolCrosslinks(toolId: string): boolean {
-  return (toolId in TOOL_CROSSLINKS) && TOOL_CROSSLINKS[toolId].length > 0;
+  return toolId in TOOL_CROSSLINKS && TOOL_CROSSLINKS[toolId].length > 0;
 }

@@ -35,7 +35,7 @@ interface Faq {
 const FEATURE_TONES: BentoTone[] = ['default', 'cyan', 'green'];
 
 /** Animated gallery with scroll-triggered stagger and image reveals. */
-function LogGallery({ scenes, t }: { scenes: typeof LOG_SCENES; t: any }) {
+function LogGallery({ scenes, t }: { scenes: typeof LOG_SCENES; t: (key: string) => string }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 

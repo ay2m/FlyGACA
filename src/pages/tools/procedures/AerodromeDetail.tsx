@@ -5,7 +5,7 @@ import { CalcShell } from '@/components/CalcShell';
 import { useFetchJson } from '@/hooks/useFetchJson';
 import { airportLd } from '@/lib/seo/jsonld';
 import { regionBadge } from '@/lib/aerodromes';
-import { fetchJson, type Airport, type AirportsIndex, type AirspacesIndex } from '@/lib/content';
+import { type Airport, type AirportsIndex, type AirspacesIndex } from '@/lib/content';
 import { loadShardedData, reassembleAirports } from '@/lib/sharded-loader';
 import { AerodromeScope } from '@/components/aerodrome/AerodromeScope';
 import { AirportTypeIcon } from '@/components/aerodrome/AirportTypeIcon';

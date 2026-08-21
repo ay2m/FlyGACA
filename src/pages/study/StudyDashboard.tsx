@@ -101,9 +101,7 @@ export function StudyDashboard() {
       {milestone && (
         <div className={styles.milestoneWrap} role="status">
           <CaptainAvatar size="md" pose="smile" decorative />
-          <p className={styles.milestone}>
-            {t('study.streakMilestone', { n: milestone })}
-          </p>
+          <p className={styles.milestone}>{t('study.streakMilestone', { n: milestone })}</p>
         </div>
       )}
 

@@ -22,9 +22,7 @@ export function ToolCrosslinks({ toolId }: ToolCrosslinksProps) {
 
   return (
     <div className={styles.container}>
-      <p className={styles.label}>
-        {t('common.governedBy') ?? 'Governed by:'}
-      </p>
+      <p className={styles.label}>{t('common.governedBy') ?? 'Governed by:'}</p>
       <ul className={styles.links}>
         {crosslinks.map((link) => (
           <li key={`${link.part}-${link.section}`}>
@@ -39,8 +37,7 @@ export function ToolCrosslinks({ toolId }: ToolCrosslinksProps) {
         ))}
       </ul>
       <p className={styles.caveat}>
-        {t('common.verifyAgainstGaca') ??
-          'Always verify current requirements directly with GACA.'}
+        {t('common.verifyAgainstGaca') ?? 'Always verify current requirements directly with GACA.'}
       </p>
     </div>
   );

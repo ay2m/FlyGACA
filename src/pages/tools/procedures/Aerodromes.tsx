@@ -6,7 +6,7 @@ import { TextField } from '@/components/calc/TextField';
 import { useFetchJson } from '@/hooks/useFetchJson';
 import { useDebouncedValue } from '@/hooks/useDebouncedValue';
 import { useUrlState } from '@/hooks/useUrlState';
-import { fetchJson, type Airport, type AirportsIndex } from '@/lib/content';
+import { type Airport, type AirportsIndex } from '@/lib/content';
 import { loadShardedData, reassembleAirports } from '@/lib/sharded-loader';
 import {
   REGION_FILTERS,
