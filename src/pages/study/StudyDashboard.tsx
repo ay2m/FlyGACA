@@ -9,6 +9,7 @@ import { GlidePathStrip } from '@/components/study/GlidePathStrip';
 import { ResultStat } from '@/components/calc/ResultStat';
 import { OutputGrid } from '@/components/calc/Grids';
 import { ProgressBar } from '@/components/ProgressBar';
+import { CaptainAvatar } from '@/components/CaptainAvatar';
 import styles from './Study.module.css';
 
 export const STUDY_MODES = [
@@ -98,9 +99,12 @@ export function StudyDashboard() {
       )}
 
       {milestone && (
-        <p className={styles.milestone} role="status">
-          {t('study.streakMilestone', { n: milestone })}
-        </p>
+        <div className={styles.milestoneWrap} role="status">
+          <CaptainAvatar size="md" pose="smile" decorative />
+          <p className={styles.milestone}>
+            {t('study.streakMilestone', { n: milestone })}
+          </p>
+        </div>
       )}
 
       {/* Quick actions: resume the last bank, drill the flagged review deck, clear due cards. */}

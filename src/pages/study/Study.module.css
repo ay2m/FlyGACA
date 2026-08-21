@@ -314,8 +314,6 @@
   inset: 0;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  display: grid;
-  place-items: center;
   text-align: center;
   padding: var(--space-6);
   border: var(--clay-border);
@@ -323,10 +321,27 @@
   background: var(--surface);
   box-shadow: var(--clay-shadow);
 }
+.cardFront {
+  display: grid;
+  place-items: center;
+}
 .cardBack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   transform: rotateY(180deg);
   background: color-mix(in srgb, var(--brand) 7%, var(--surface));
   border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+.cardBackContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.cardAvatar {
+  margin-block-start: var(--space-3);
 }
 .cardWrapper:hover .cardFront,
 .cardWrapper:hover .cardBack {
@@ -434,16 +449,21 @@
 }
 
 /* Study-hub streak milestone nudge — one celebratory entrance per view. */
-.milestone {
-  margin: 0;
-  padding: var(--space-3) var(--space-4);
+.milestoneWrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
   border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
   border-radius: var(--clay-radius);
   background: color-mix(in srgb, var(--gold) 10%, var(--surface));
+  animation: milestone-in var(--dur-entry) var(--ease-entry) both;
+}
+.milestone {
+  margin: 0;
   color: var(--text);
   font-weight: var(--fw-semibold);
-  text-align: center;
-  animation: milestone-in var(--dur-entry) var(--ease-entry) both;
+  flex: 1;
 }
 @keyframes milestone-in {
   from {
