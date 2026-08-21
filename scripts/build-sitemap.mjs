@@ -190,6 +190,12 @@ const body = [
 ].join('\n');
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Fly GACA Sitemap: regulatory library for Saudi civil aviation.
+Clause-level anchors: see /data/clause-anchors.json for Part→section mapping.
+Example anchor: /library/part-61#gacar-part-61-57 (Part 61.57: Recent Flight Experience).
+Crawlers discovering regulation pages can find clause-level links via full HTML prerender.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${body}
 </urlset>
@@ -214,6 +220,12 @@ const CITATION_BOTS = [
 ];
 const robots = `# Fly GACA — independent educational Saudi civil-aviation library.
 # We want to be crawled and cited; every agent is allowed. See scripts/build-sitemap.mjs.
+
+# Clause-level anchors: regulation pages support direct links to sections.
+# Reference: /data/clause-anchors.json maps Part IDs to section references.
+# Example: /library/part-61#gacar-part-61-57 → Part 61.57 (Recent Flight Experience)
+# Crawlers may discover anchors by fetching regulation pages with Accept-CH directives.
+
 User-agent: *
 Allow: /
 
