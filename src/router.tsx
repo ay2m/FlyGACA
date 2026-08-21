@@ -184,6 +184,10 @@ const Currency = lazyNamed(() => import('./pages/account/Currency'), 'Currency')
 const Logbook = lazyNamed(() => import('./pages/account/Logbook'), 'Logbook');
 const Records = lazyNamed(() => import('./pages/account/Records'), 'Records');
 const Settings = lazyNamed(() => import('./pages/account/Settings'), 'Settings');
+const FirebaseAuthExample = lazyNamed(
+  () => import('./pages/FirebaseAuthExample'),
+  'FirebaseAuthExample',
+);
 
 // Marketing / legal
 const Checkout = lazyNamed(() => import('./pages/checkout/Checkout'), 'Checkout');
@@ -353,6 +357,7 @@ const mainRoutes = [
       { path: 'logbook', element: <Logbook /> },
       { path: 'records', element: <Records /> },
       { path: 'settings', element: <Settings /> },
+      { path: 'firebase-auth-example', element: <FirebaseAuthExample /> },
       { path: 'checkout', element: <Checkout /> },
       { path: 'checkout/return', element: <Checkout /> },
       { path: 'pricing', element: <Pricing /> },
