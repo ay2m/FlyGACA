@@ -12,6 +12,7 @@
     "build:airports": "node scripts/build-airports.mjs",
     "build:chunks": "node scripts/build-rag-chunks.mjs",
     "shard:data": "node scripts/shard-airports.mjs && node scripts/shard-library-search.mjs",
+    "gen:clause-anchors": "node scripts/generate-clause-anchors.mjs",
     "optimize:img": "node scripts/optimize-images.mjs",
     "gen:og": "node scripts/build-og-images.mjs",
     "gen:aip-sheet": "node scripts/build-aip-study-sheet.mjs",
