@@ -50,3 +50,33 @@ export const PASSWORD_RULES: { id: string; test: (v: string) => boolean }[] = [
 export function meetsPasswordPolicy(password: string): boolean {
   return PASSWORD_RULES.every((r) => r.test(password));
 }
+
+/** What the Google-callback link decision needs to know about both sides. */
+export interface GoogleLinkCandidate {
+  /** Google's `email_verified` claim for the address it just asserted. */
+  googleEmailVerified: boolean;
+  /** Whether the row already found by that address has proven the mailbox. */
+  existingEmailVerified: boolean;
+  /** Whether that row carries a password credential a squatter could keep using. */
+  existingHasPassword: boolean;
+}
+
+/**
+ * Whether a Google sign-in may adopt an existing account matched by email address.
+ *
+ * Matching on the address alone hands the account to whoever registered it first:
+ * an unverified password row is a claim, not proof of ownership, and its
+ * `password_hash` keeps working after the link — so its owner inherits the
+ * victim's session, logbook, records and entitlements. The link also sets
+ * `email_verified`, which is the sole ownership proof the staff and school-seat
+ * grants consume, so the same merge doubles as a grant-escalation primitive.
+ *
+ * Linking is therefore allowed only when Google has verified the address AND the
+ * existing row either verified it too (both sides proved the same mailbox) or holds
+ * no password for anyone to retain. Everything else must go through the ordinary
+ * verify/reset flow instead of being merged silently.
+ */
+export function mayLinkGoogleToExistingAccount(candidate: GoogleLinkCandidate): boolean {
+  if (!candidate.googleEmailVerified) return false;
+  return candidate.existingEmailVerified || !candidate.existingHasPassword;
+}

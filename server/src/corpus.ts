@@ -51,6 +51,13 @@ export interface Retrieved {
   entry: SearchEntry;
   /** BM25 score (higher = more relevant). */
   score: number;
+  /**
+   * How many *distinct* query terms this passage actually contains. The raw
+   * score is a sum, so it grows with query length whether or not the passage is
+   * relevant; term overlap does not. The grounding gate keys off this — see
+   * `grounding-core.ts`.
+   */
+  matched: number;
 }
 
 /**
@@ -146,11 +153,17 @@ class Bm25Index {
     return Math.log(1 + (this.n - df + 0.5) / (df + 0.5));
   }
 
+  /** Distinct, non-stopword terms in a query — the denominator for coverage. */
+  queryTermCount(query: string): number {
+    return new Set(tokenize(query)).size;
+  }
+
   search(query: string, k: number): Retrieved[] {
     const terms = new Set(tokenize(query));
     if (terms.size === 0) return [];
 
     const scores = new Map<number, number>();
+    const matched = new Map<number, number>();
     for (const term of terms) {
       const list = this.postings.get(term);
       if (!list) continue;
@@ -160,13 +173,20 @@ class Bm25Index {
         const denom = tf + K1 * (1 - B + (B * dl) / (this.avgdl || 1));
         const contribution = idf * ((tf * (K1 + 1)) / (denom || 1));
         scores.set(id, (scores.get(id) ?? 0) + contribution);
+        // One increment per term per doc: `terms` is a Set, so this counts
+        // distinct query terms present, not total occurrences.
+        matched.set(id, (matched.get(id) ?? 0) + 1);
       }
     }
 
     return [...scores.entries()]
       .sort((a, b) => b[1] - a[1])
       .slice(0, k)
-      .map(([id, score]) => ({ entry: this.entries[id], score }));
+      .map(([id, score]) => ({
+        entry: this.entries[id],
+        score,
+        matched: matched.get(id) ?? 0,
+      }));
   }
 }
 

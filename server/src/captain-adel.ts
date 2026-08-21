@@ -20,7 +20,8 @@ import { getIndex, toChatSource } from "./corpus.js";
 import { buildSystem } from "./captain-adel-prompt.js";
 import { modelFor } from "./model-core.js";
 import { streamChat } from "./model.js";
-import type { ChatTurn, GroundingKind } from "./contract.js";
+import { gradeRetrieval } from "./grounding-core.js";
+import type { ChatTurn } from "./contract.js";
 
 // No model plugin. Genkit is kept only for `defineFlow` — the typed, streamable
 // flow wrapper `gateway.ts` calls — while generation goes through model.ts to a
@@ -35,12 +36,6 @@ function tune(name: string, fallback: number): number {
 
 // How many passages to retrieve and feed as context.
 const TOP_K = tune("RETRIEVE_K", 6);
-
-// BM25 score thresholds (DESIGN §10 — tune against a recall eval set; these are
-// conservative v1 defaults). Below MIN ⇒ refuse without calling the model;
-// below GROUNDED ⇒ answer but flag "partially grounded".
-const MIN_SCORE = tune("REFUSE_SCORE", 1.5);
-const GROUNDED_SCORE = tune("GROUNDED_SCORE", 4);
 
 const SOURCE_SCHEMA = z.object({
   citation: z.string(),
@@ -112,10 +107,19 @@ export const captainAdelFlow = ai.defineFlow(
     const index = await getIndex();
     const hits = index.search(req.message, TOP_K);
     const corpusVersion = `Rev ${index.generated}`;
-    const top = hits[0]?.score ?? 0;
 
-    // Low retrieval confidence ⇒ deterministic refusal; do not call the model.
-    if (hits.length === 0 || top < MIN_SCORE) {
+    // Grade the retrieval on distinct-term overlap, not raw score — see
+    // `grounding-core.ts` for why the old score thresholds let off-topic
+    // questions through.
+    const verdict = gradeRetrieval({
+      matched: hits[0]?.matched ?? 0,
+      queryTerms: index.queryTermCount(req.message),
+      topScore: hits[0]?.score ?? 0,
+    });
+
+    // Nothing usable retrieved ⇒ deterministic refusal; do not call the model,
+    // so a fabricated GACAR figure can never be emitted.
+    if (verdict === "refusal") {
       const refusalClass = hits[0]
         ? toChatSource(hits[0].entry, index.generated).section
         : undefined;
@@ -151,11 +155,10 @@ export const captainAdelFlow = ai.defineFlow(
       sendChunk(delta);
     }
 
-    const kind: GroundingKind = top >= GROUNDED_SCORE ? "grounded" : "partial";
     return {
       answer,
       sources,
-      kind,
+      kind: verdict,
       meta: { provider, retrieved: hits.length, corpusVersion },
     };
   },

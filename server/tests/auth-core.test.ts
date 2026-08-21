@@ -3,6 +3,7 @@ import {
   anonymousAuthContext,
   extractBearerToken,
   meetsPasswordPolicy,
+  mayLinkGoogleToExistingAccount,
 } from "../src/auth-core.js";
 
 describe("extractBearerToken", () => {
@@ -51,5 +52,55 @@ describe("meetsPasswordPolicy", () => {
     // Arabic script has no upper/lower distinction → the mixed rule fails, the
     // special rule passes (non-ASCII-alphanumeric). Mirrors the client meter.
     expect(meetsPasswordPolicy("كلمةسر1234")).toBe(false);
+  });
+});
+
+describe("mayLinkGoogleToExistingAccount", () => {
+  it("refuses an unverified password row — the account-takeover case", () => {
+    // Someone registered the victim's address and never verified it. Linking would
+    // leave their password working on the victim's account and mark it verified.
+    expect(
+      mayLinkGoogleToExistingAccount({
+        googleEmailVerified: true,
+        existingEmailVerified: false,
+        existingHasPassword: true,
+      }),
+    ).toBe(false);
+  });
+
+  it("links when both sides have proven the mailbox", () => {
+    expect(
+      mayLinkGoogleToExistingAccount({
+        googleEmailVerified: true,
+        existingEmailVerified: true,
+        existingHasPassword: true,
+      }),
+    ).toBe(true);
+  });
+
+  it("links an unverified row that has no password to inherit", () => {
+    expect(
+      mayLinkGoogleToExistingAccount({
+        googleEmailVerified: true,
+        existingEmailVerified: false,
+        existingHasPassword: false,
+      }),
+    ).toBe(true);
+  });
+
+  it("refuses whenever Google has not verified the address", () => {
+    // Google asserting an address it hasn't verified is no proof of ownership,
+    // so it cannot claim even an already-verified row.
+    for (const existingEmailVerified of [true, false]) {
+      for (const existingHasPassword of [true, false]) {
+        expect(
+          mayLinkGoogleToExistingAccount({
+            googleEmailVerified: false,
+            existingEmailVerified,
+            existingHasPassword,
+          }),
+        ).toBe(false);
+      }
+    }
   });
 });

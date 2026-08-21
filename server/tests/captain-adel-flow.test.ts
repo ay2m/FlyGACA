@@ -9,7 +9,8 @@
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const h = vi.hoisted(() => ({
-  hits: [] as { entry: Record<string, unknown>; score: number }[],
+  hits: [] as { entry: Record<string, unknown>; score: number; matched: number }[],
+  queryTerms: 4,
   generated: "2026-01-01",
   streamChunks: ["Under ", "GACAR..."] as string[],
   sent: [] as string[],
@@ -57,7 +58,12 @@ vi.mock("../src/model.js", () => ({
 vi.mock("@genkit-ai/firebase", () => ({ enableFirebaseTelemetry: vi.fn() }));
 
 vi.mock("../src/corpus.js", () => ({
-  getIndex: () => Promise.resolve({ generated: h.generated, search: () => h.hits }),
+  getIndex: () =>
+    Promise.resolve({
+      generated: h.generated,
+      search: () => h.hits,
+      queryTermCount: () => h.queryTerms,
+    }),
   toChatSource: (entry: Record<string, unknown>, generated: string) => ({
     citation: entry.__cite,
     url: "/library",
@@ -79,17 +85,23 @@ type Flow = {
 let captainAdelFlow: Flow;
 
 beforeAll(async () => {
-  Object.assign(process.env, { RETRIEVE_K: "6", REFUSE_SCORE: "1.5", GROUNDED_SCORE: "4" });
+  Object.assign(process.env, { RETRIEVE_K: "6" });
   captainAdelFlow = (await import("../src/captain-adel.js")).captainAdelFlow as unknown as Flow;
 });
 
-const hit = (score: number) => ({
+// `matched` is how many distinct query terms the passage contains — the signal
+// the grounding gate keys off. `h.queryTerms` is the denominator; together they
+// decide refusal/partial/grounded (see grounding-core.test.ts for the measured
+// corpus values these stand in for).
+const hit = (score: number, matched = 4) => ({
   entry: { x: "verbatim passage", __cite: "GACAR Part 61 §61.107", __section: "61.107" },
   score,
+  matched,
 });
 
 beforeEach(() => {
   h.hits = [];
+  h.queryTerms = 4;
   h.sent = [];
   h.generateCalls = 0;
   h.lastModel = undefined;
@@ -98,6 +110,10 @@ beforeEach(() => {
 });
 
 describe("captainAdelFlow — refusal (grounding decided server-side)", () => {
+  // NOTE: retrieval is mocked empty here, so this pins the *plumbing* — an empty
+  // result never reaches the model. Whether a real off-topic question actually
+  // retrieves nothing is decided by the gate, covered against measured corpus
+  // values in grounding-core.test.ts.
   it("refuses without calling the model when nothing is retrieved", async () => {
     const out = await captainAdelFlow({ message: "what is the airspeed of an unladen swallow?" });
     expect(out.kind).toBe("refusal");
@@ -109,7 +125,7 @@ describe("captainAdelFlow — refusal (grounding decided server-side)", () => {
   });
 
   it("refuses on a below-threshold top score and reports the closest section", async () => {
-    h.hits = [hit(1.0)]; // < REFUSE_SCORE (1.5)
+    h.hits = [hit(1.0)]; // below the score floor, however good the term overlap
     const out = await captainAdelFlow({ message: "borderline query" });
     expect(out.kind).toBe("refusal");
     expect(out.refusalClass).toBe("61.107"); // section of the closest (rejected) hit
@@ -119,7 +135,9 @@ describe("captainAdelFlow — refusal (grounding decided server-side)", () => {
 
 describe("captainAdelFlow — answered (model called)", () => {
   it("returns a 'partial' verdict for a mid-confidence retrieval and streams tokens", async () => {
-    h.hits = [hit(2.0)]; // >= REFUSE_SCORE, < GROUNDED_SCORE
+    // On topic but the question ranged wider than the passage: 3 of 8 terms.
+    h.queryTerms = 8;
+    h.hits = [hit(2.0, 3)];
     const out = await captainAdelFlow({ message: "aeronautical experience" });
     expect(out.kind).toBe("partial");
     // The returned answer is the streamed deltas joined — one source of truth,
@@ -149,7 +167,7 @@ describe("captainAdelFlow — answered (model called)", () => {
   });
 
   it("returns a 'grounded' verdict for a high-confidence retrieval", async () => {
-    h.hits = [hit(5.0)]; // >= GROUNDED_SCORE
+    h.hits = [hit(5.0)]; // all 4 query terms present in the passage
     const out = await captainAdelFlow({ message: "clear match" });
     expect(out.kind).toBe("grounded");
     expect(out.meta.corpusVersion).toBe("Rev 2026-01-01");

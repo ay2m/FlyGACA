@@ -57,7 +57,7 @@
     "cap:open": "cap open ios",
     "screenshots:help": "cat screenshots/README.md",
     "serve": "npm run build && vite preview --port 5000",
-    "deploy": "echo \"Build with npm run build:deploy, then deploy in two steps: npm run deploy:api && npm run deploy:web — see docs/RUNBOOK-golive.md\" && exit 1",
+    "deploy": "echo \"Deploy via gcloud — see docs/RUNBOOK-deploy.md\" && exit 1",
     "deploy:api": "node scripts/deploy-api.mjs",
     "deploy:web": "node scripts/deploy-web.mjs",
     "headers:gcloud": "node -e \"import('./scripts/lib/headers.mjs').then((m) => console.log(m.gcloudCustomResponseHeaders()))\"",

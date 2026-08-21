@@ -5,7 +5,7 @@
  */
 const PROMO_KEY = 'flygaca:promo';
 
-/** Client mirror of functions/src/promo-core.ts `normalizePromoCode`. */
+/** Client mirror of server/src/promo-core.ts `normalizePromoCode`. */
 export function normalizePromo(input: string | null | undefined): string {
   if (!input) return '';
   return input

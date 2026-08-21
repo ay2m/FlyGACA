@@ -33,6 +33,7 @@ The route that actually works from this repo is **Capacitor** (`capacitor.config
 `build:flavor` → `flavor:ios` → `cap add ios`).
 
 > ⚠️ **`apple/` is NOT in this repo** — no Swift package, no Xcode project, in any commit.
+<<<<<<< HEAD
 > The Swift side lives in the sibling repo `ay2m/FlyGACA-ios`; the npm scripts and helpers
 > that used to target `apple/…` paths have been deleted (only `scripts/native/ios-localize.mjs`
 > remains, and it targets the Capacitor-generated `ios/App` project). Treat any claim in this
@@ -47,6 +48,24 @@ not a backend: the `firebase` JS SDK is a dependency for optional Analytics-base
 telemetry (`src/lib/firebase-monitoring.ts` — dynamic-imported off the boot path, inert unless
 `VITE_FIREBASE_APP_ID` is set at build time), and Firebase **Hosting** is an auto-deployed
 static front (see Hosting & deploy). `server/src/index.ts` is the single
+=======
+> The `ios:build:*` / `ios:test` / `screenshots:*` npm scripts and `scripts/native/*` all
+> target `apple/…` paths that do not resolve here, so they fail (or, in the case of
+> `ios:test`, exit 0 while doing nothing). The Swift side
+> lives in the sibling repo `ay2m/FlyGACA-ios`. Treat any claim in this file about
+> `apple/FlyGACAKit` — including the SRS "cross-platform contract" — as describing that
+> repo, not this one: there is nothing here to diff a port against.
+
+The repo also contains the **backend**: `server/` is a single Express service for **Cloud Run**,
+backed by **Cloud SQL (Postgres)**. No Firebase is used at runtime — auth, the datastore, the
+API and hosting are all first-party or plain GCP, and there is no Firebase dependency, config
+or import anywhere in `src/` or `server/`. The two stale leftovers that survived the port
+have since been cleared: `scripts/native/ensure-firebase-plists.sh` is deleted (with its
+call sites in `ios-generate.sh` / `xcodebuild-wrapper.sh`), and the `worker/index.ts`
+header now describes the Cloud Run origin it actually proxies to. Remaining `Firebase` /
+`Firestore` mentions under `server/src/` are deliberate "X replaces Y" history, not live
+wiring. `server/src/index.ts` is the single
+>>>>>>> docs-target-vs-deployed
 manifest of the HTTP surface, mounting one router per feature under `/api`:
 `auth` (sessions, Google OAuth, verification, reset), `account` (profile, logbook, records, study
 progress), `grants` (staff / school-seat / founding), `billing` (Moyasar checkout, confirm, webhook,
@@ -65,9 +84,11 @@ no account identity — only the user's question and the retrieved passages — 
 `docs/DESIGN-genkit-rag-backend.md` describes the retrieval design but predates the model-client
 rewrite — read it for retrieval intent, not the provider. `server/` is its own npm package with its own CI gate — run
 `npm run lint && npm test && npm run build` inside `server/` when you touch it (root
-`npm run verify` does not cover it). Deploy region is `me-central2` (Dammam, in-Kingdom / PDPL);
-there is no region constant to keep in sync any more — the Cloud Run service and its Cloud SQL
-instance are both regional resources set at deploy time (see `docs/RUNBOOK-deploy.md`).
+`npm run verify` does not cover it). The *intended* deploy region is `me-central2` (Dammam, in-Kingdom /
+PDPL), but see the caution in "Hosting & deploy" below — that region is not yet available to
+this account and nothing is deployed there. There is no region constant to keep in sync — the
+Cloud Run service and its Cloud SQL instance are both regional resources set at deploy time
+(see `docs/RUNBOOK-deploy.md`).
 
 ## Architecture
 
@@ -195,6 +216,80 @@ instance are both regional resources set at deploy time (see `docs/RUNBOOK-deplo
   design).
 
 ## Hosting & deploy
+
+> [!CAUTION]
+> **`flygaca.com` is DOWN, and everything in this section is the TARGET architecture.**
+> Re-verified against `gcloud`, the Firebase Hosting API and `dig`/`curl` on 2026-08-20:
+>
+> - **The domain serves a Firebase "Site Not Found" 404 on every path.** `flygaca.com` and
+>   `www.flygaca.com` are bound to Hosting site `flygaca-sa`, but the apex TXT record still
+>   reads `hosting-site=flygaca-app`, so both sit at `DOMAIN_VERIFICATION_LOST`. The build is
+>   healthy and current — `flygaca-sa.web.app` returns 200. The Hosting API names the fix:
+>   REMOVE `hosting-site=flygaca-app`, ADD `hosting-site=flygaca-sa`. DNS is at **Hostinger**
+>   (`ns1/ns2.dns-parking.com`), not Google. The cert auto-renewed on Aug 1, so the padlock is
+>   green over a 404.
+> - **`api.flygaca.com` is NXDOMAIN.** `worker/index.ts:17`, `vercel.json:27` and
+>   `netlify.toml:18` all hard-code it as the API origin, so every mirror's `/api/*` is dead.
+>   None of the three mirrors is actually deployed.
+> - **The frontend is Firebase Hosting too**, not just the Functions — served from
+>   199.36.158.100 with the Firebase-era CSP (`identitytoolkit`, `securetoken`) still live.
+>   It deploys from the **sibling repo** `ay2m/FlyGACA-app`, which still holds the
+>   `.firebaserc` + `firebase.json`. This repo has no Firebase config at all.
+> - The Express service in `server/` has **never been deployed**. No `flygaca-api` Cloud Run
+>   service exists in any project. (There is a service *named* `flygaca-app` in
+>   `flygaca-sa`/`me-central1`, but its image is `gcr.io/cloudrun/placeholder`.)
+> - **There are TWO parallel legacy stacks**, each with all 13 functions. The one configured for
+>   the real domain (`APP_ORIGIN=https://flygaca.com`) is in **`flygaca-app`, whose billing is
+>   DISABLED** and whose `MOYASAR_SECRET_KEY` is in `DESTROYED` state — three services abort at
+>   startup. The billed, healthy stack in `flygaca-sa` points at the **staging** host
+>   (`APP_ORIGIN=https://flygaca-sa.web.app`), so fixing DNS alone leaves checkout returning
+>   users to staging. Both stacks expose ~24 `allUsers` endpoints with `ENFORCE_APP_CHECK=false`.
+> - **Subscription renewal has been failing nightly** since at least 2026-08-16: HTTP 500,
+>   `FAILED_PRECONDITION: The query requires an index` on `subscriptions`
+>   (`autoRenew`+`status`+`nextChargeAt`). The composite Firestore index was never created.
+> - **A Cloud Build trigger on `main` was auto-deploying broken images** to `flygaca-dev`:
+>   it buildpacks the **repo root** (`--path=.`), found no `Dockerfile` there, and built the
+>   Vite SPA, so every revision died with `failed to start and listen on PORT=8080`. The
+>   Dockerfile has since been moved `server/Dockerfile` → `./Dockerfile` so both that trigger
+>   and `gcloud run deploy --source .` resolve it. Existing crashed revisions still need
+>   clearing, and traffic is still pinned to `gcr.io/cloudrun/placeholder`.
+> - Persistence: Cloud SQL `flygaca-sa-instance` (Postgres 18) in **`us-east4` — Northern
+>   Virginia**; `flygaca-fdc` in `me-west1` (Tel Aviv). Both are **Firebase Data Connect
+>   scaffolding**, not the app's DB — `server/migrations/0001_init.sql` has never been applied
+>   anywhere, and no `schema_migrations` table exists. Both have **backups disabled, no PITR,
+>   no HA, and deletion protection OFF**. Firestore likewise has zero backups and PITR disabled.
+> - **There is no user data anywhere.** The billed `flygaca-sa` Firestore (`us-central1`, Iowa,
+>   created 2026-08-15) is **empty**: `listCollectionIds` returns `{}`, and a `runQuery` on
+>   `users` returns zero documents with a valid `readTime` — genuinely empty, not
+>   permission-denied. The older `flygaca-app` Firestore in `me-central2` is deleted. Nothing was
+>   ever migrated into the new stack.
+> - **`me-central2` is not available to this account**, re-confirmed 2026-08-20 with identical
+>   `LOCATION_POLICY_VIOLATED` across three project numbers. It is **not a support ticket**:
+>   Dammam is sold **only through CNTXT** (Google's exclusive KSA reseller) to **organizations**
+>   on **Invoiced Billing**. Individuals go on an open-ended waiting list. Unblocking needs a KSA
+>   legal entity (CR + VAT) and a billing migration — a corporate blocker, not an engineering one.
+>   Note it is **Cloud Run specifically** that is denied — Scheduler, Artifact Registry, Cloud
+>   Build, Compute and Secret Manager all answer *reads* in `me-central2` (creates are untested
+>   and per Google's docs would also be refused). The account's only Dammam resource is a
+>   **deleted** Firestore in the unbilled `flygaca-app` project: the metadata still lists
+>   `locationId: me-central2` (created 2026-06-01), but every request returns
+>   `FAILED_PRECONDITION: Cannot serve requests because the database was deleted.` There is no
+>   usable `me-central2` resource anywhere.
+> - **Doha is the slowest realistic region.** Measured from Riyadh/STC: `me-central1` 158 ms vs
+>   Milan 83 ms, Netherlands 91 ms, Dammam 17 ms. Confirmed against the live `chat` service
+>   (TTFB floor 169 ms). `me-central1` is a poor default even as a stopgap.
+> - The live price table is the old one, under the old `MOYASAR_PRICE_*_SAR` names — Pro 59/349,
+>   **Student 39/299 (tier still active)**, Pass 149, packs 49/79, bundle 199. The `flygaca-app`
+>   stack disagrees (`PRO_ANNUAL=449`), so the two stacks are not price-consistent.
+>
+> **So: data is not in-Kingdom today.** Any PDPL or data-residency claim that says otherwise —
+> in this repo, in `ay2m/Office`, or in the investor decks — is aspirational. Do not repeat the
+> in-Kingdom claim as fact. **And the region grant alone would not make it true:**
+> `server/src/captain-adel.ts:13,25` calls `googleAI()` — the **global** Gemini Developer API
+> (`generativelanguage.googleapis.com`), not regional Vertex AI — so every user-typed chat
+> question leaves the region regardless of where Cloud Run sits. Supabase pgvector is likewise
+> unpinned. End-to-end in-Kingdom processing needs Genkit moved to regional Vertex AI *and*
+> Supabase pinned, on top of the CNTXT grant.
 
 The single Vite build (`dist/`) is served from several fronts; `/api/*` always belongs to the
 **same** Cloud Run service:
