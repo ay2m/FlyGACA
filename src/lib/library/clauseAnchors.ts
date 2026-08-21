@@ -16,15 +16,21 @@ export function extractPartNumber(slug: string): number | null {
 }
 
 /**
- * Parse section number from text (e.g., "§ 61.57" → "61.57", "Section 3" → "3").
+ * Parse section number from text. For Part-Section format (e.g., "61.57"),
+ * return only the section part. For standalone sections (e.g., "Section 3"), return as-is.
  */
 function parseSection(text: string): string | null {
-  // Match patterns: "§ 61.57", "61.57", "§ 3", "Section 3", "3.1.2"
+  // Look for Part.Section patterns like "61.57" and extract just the section ".57"
+  const fullMatch = text.match(/§?\s*\d+(\.\d+(?:\.\d+)?)/);
+  if (fullMatch) {
+    // "61.57" → ".57", then strip the dot → "57"
+    return fullMatch[1].substring(1);
+  }
+
+  // Standalone section patterns: "§ 3", "Section 3"
   const patterns = [
-    /§\s*(\d+(?:\.\d+)*)/,
-    /\b(\d+(?:\.\d+)*)\b\s*(?:—|\(|$)/,
     /Section\s+(\d+(?:\.\d+)*)/i,
-    /§\s*(\d+)/,
+    /§\s+(\d+(?:\.\d+)*)/,
   ];
 
   for (const pattern of patterns) {
