@@ -23,6 +23,9 @@ the Playwright E2E suite). Measured 2026-08-03 (186 spec files):
 | Functions | 85.6% | 79 |
 | Lines | 82.8% | 77 |
 
+(The ratchet has since been raised to **84 / 79 / 88 / 85** — statements/branches/functions/lines
+— as coverage rose; `vitest.config.ts` is the source of truth, not this audit-day table.)
+
 The rest of the family, same date:
 
 | Surface | Lines | Branches | Notes |
@@ -32,13 +35,17 @@ The rest of the family, same date:
 | Captain-Adel (`FlyGACA/Captain-Adel`) | 96.3% | 89.9% | `node --test` coverage, report-only; holes → **Phase 9** |
 | iOS `FlyGACAKit` (`ay2m/FlyGACA`) | — | — | engines/models/store tested; `FeatureUI` + 2 decoders untested → **Phase 9** |
 
+(The `functions/` and Firestore-rules rows describe the retired Firebase stack. Today's backend is
+`server/` — Express on Cloud Run — with its own coverage ratchet in `server/vitest.config.ts`, and
+there is no `tests/rules/` tree in this repo.)
+
 The aviation-math core (`src/calc/*` — every module has a referencing spec), the backend
 `*-core.ts` policy modules, and the client↔server mirror tests are all at or near 100%: the
 "pure core, thin wrapper" architecture is holding. The open gaps are concentrated, not diffuse:
 (1) the backend **wrappers that move money and write entitlements** (Phase 5 — **complete**:
 founding + billing callables + the renewal engine, plus the gateway route/streaming/App-Check
 paths and the corpus loader), (2) the
-**configured-Firebase half** of the client services (Phase 6), (3) a tail of zero-coverage
+**configured-API half** of the client services (Phase 6), (3) a tail of zero-coverage
 components plus shared date-math branches (Phase 7), and (4) everything behind sign-in or payment
 in E2E (Phase 8). Family-wide items are batched in Phase 9. Phases 1–4 record the earlier push and
 are complete except where noted.
@@ -47,36 +54,37 @@ are complete except where noted.
 
 Reuse the existing patterns — don't invent new scaffolding:
 
+- The `tests/` tree is **flat** — one file per suite at the root (no lib/, hooks/, components/,
+  pages/, integrity/ or rules/ subdirs; only `tests/helpers/` holds shared fixtures).
 - Render with `renderWithRouter` from `tests/helpers/render.tsx` (adds a `LocationProbe`).
 - Global `tests/setup.ts` already boots i18next (en/ar), installs a `MockStorage`, clears the
   content cache, and stubs `scrollIntoView` — assert against real English strings.
-- Mock Firebase callables with the `vi.hoisted` holder + `vi.mock('@/lib/services/firebase')` +
-  `vi.mock('firebase/functions')` idiom — see `tests/lib/org-client.test.ts`.
-- Mock Firestore with `vi.mock('firebase/firestore')` recording into a holder — see
-  `tests/lib/sync-io.test.ts`.
-- Hooks: `renderHook` + `waitFor` + `act` — see `tests/hooks/fetch-hooks.test.tsx`,
-  `tests/lib/pwa-hooks.test.ts`.
+- Mock the backend transport with `vi.mock('@/lib/services/backend')` + the `makeBackendModule`
+  holder from `tests/helpers/mockBackend.ts` — see `tests/org-client.test.ts`,
+  `tests/sync-io.test.ts`. (No Firebase mocks, no emulators — the backend client is plain fetch.)
+- Hooks: `renderHook` + `waitFor` + `act` — see `tests/fetch-hooks.test.tsx`,
+  `tests/pwa-hooks.test.ts`.
 - Widgets: seed `localStorage`, then **dynamic** `await import(...)` — see
-  `tests/components/dashboard-widgets.test.tsx`.
-- `useSyncExternalStore` stores: see `tests/lib/library-prefs-store.test.ts`.
+  `tests/dashboard-widgets.test.tsx`.
+- `useSyncExternalStore` stores: see `tests/library-prefs-store.test.ts`.
 
 ## Phase 1 — Account / billing / entitlement services + backend gate  *(highest risk)*
 
 This is the code that gates money and access. `CLAUDE.md` requires the client mirrors to match the
 server core.
 
-- [x] `tests/lib/staff.test.ts` — `src/lib/services/staff.ts`: pure `looksLikeStaff()` matching + all
+- [x] `tests/staff.test.ts` — `src/lib/services/staff.ts`: pure `looksLikeStaff()` matching + all
       `claimStaffAccessIfEligible` no-op/happy paths (callable `claimStaffAccess`).
-- [x] `tests/lib/school.test.ts` — `src/lib/services/school.ts` (0%): `claimSchoolSeatIfEligible`
+- [x] `tests/school.test.ts` — `src/lib/services/school.ts` (0%): `claimSchoolSeatIfEligible`
       (callable `claimSchoolSeat`).
-- [x] `tests/lib/waitlist.test.ts` — `src/lib/services/waitlist.ts` (0%): `addDoc` payload shape +
+- [x] `tests/waitlist.test.ts` — `src/lib/services/waitlist.ts` (0%): `addDoc` payload shape +
       the `'unavailable'` throw when the db is null.
-- [x] `tests/lib/study-progress-sync.test.ts` — `src/lib/services/studyProgressSync.ts` (16%):
+- [x] `tests/study-progress-sync.test.ts` — `src/lib/services/studyProgressSync.ts` (16%):
       local-first no-op paths + the initial upload payload/path. (Now ~88% lines.)
 - [x] Broaden existing suites to lift the uncovered branches in `services/account.ts` (~66%),
       `services/billing.ts` (~62%), `services/auth.ts` (~72%). *Partially:* `billing.ts` lifted to
       ~86% lines; `account.ts`/`auth.ts` still sit near 70% — the remainder needs the
-      configured-Firebase harness and is carried into **Phase 6**.
+      configured-API harness and is carried into **Phase 6**.
 - [x] Backend coverage gate: add `@vitest/coverage-v8` + a ratchet threshold to
       `functions/vitest.config.ts` and a `test:coverage` script, so the `functions` CI job can't
       silently regress.
@@ -97,13 +105,13 @@ server core.
 
 ## Phase 3 — Widget / peripheral-chat render smoke  *(lower risk)*
 
-- [x] Hub controls `ViewToggle` / `SortSelect` (both 0%) — `tests/components/hub-controls.test.tsx`.
+- [x] Hub controls `ViewToggle` / `SortSelect` (both 0%) — `tests/hub-controls.test.tsx`.
 - [x] Peripheral chat UI `SourcesDigest`, `CrossRefChips`, `ExportActions` (all 0%) —
-      `tests/components/chat-digest.test.tsx`. Ratchet raised again to 76/73/79/77.
+      `tests/chat-digest.test.tsx`. Ratchet raised again to 76/73/79/77.
 - [x] Bento widgets `StatValue` / `ToolsWidget` / `LearnWidget` (all 0%) —
-      `tests/components/bento-widgets.test.tsx`.
-- [x] Library `SelectionPopover` (0%) — `tests/components/selection-popover.test.tsx`.
-- [x] `SpeakButton` (24%) — `tests/components/speak-button.test.tsx` with a `speechSynthesis` stub.
+      `tests/bento-widgets.test.tsx`.
+- [x] Library `SelectionPopover` (0%) — `tests/selection-popover.test.tsx`.
+- [x] `SpeakButton` (24%) — `tests/speak-button.test.tsx` with a `speechSynthesis` stub.
 
 Final app coverage after Phases 1–3: **78.9 / 74.5 / 81.6 / 79.9** (from 72.2 / 70.6 / 74.2 / 72.8).
 The ratchet sits at 76/73/79/77 with headroom.
@@ -117,16 +125,16 @@ page unit tests. Two complementary tracks:
 **Done — widen the cheap render-smoke net** (guards against render-time crashes, no architectural
 change):
 
-- [x] `tests/pages/tool-pages-smoke.test.tsx` — the ~45 self-contained CalcShell tool pages (pre-existing).
-- [x] `tests/pages/static-pages-smoke.test.tsx` — the static i18n-driven pages (`About`, `NotFound`,
+- [x] `tests/tool-pages-smoke.test.tsx` — the ~45 self-contained CalcShell tool pages (pre-existing).
+- [x] `tests/static-pages-smoke.test.tsx` — the static i18n-driven pages (`About`, `NotFound`,
       `Offline`, and the four legal docs). Same parameterized-loop pattern.
 
 **Open — the structural decision (team call):** whether to fold `src/pages/**` into the coverage
 `include`. Doing so would drop the headline number sharply (pages are ~40% of `src`, mostly E2E- not
 unit-covered) and would pressure unit-testing of data/auth/router-param pages that E2E serves better.
 Recommendation: **keep pages E2E-owned**, keep growing the smoke nets above for crash-safety, and
-expand `e2e/flows.spec.ts` for the data/auth flows — rather than folding pages into the unit-coverage
-ratchet.
+expand the Playwright suite (`e2e/`) for the data/auth flows — rather than folding pages into the
+unit-coverage ratchet.
 
 **Update (Aug 2026):** the oversized-file split pass is the working model for this. `Chat.tsx`,
 `Document.tsx`, `Pricing.tsx`, and `SignInForms.tsx` each shed their pure logic into tested
@@ -182,17 +190,18 @@ whole shortfall lives in three Firebase wrappers — exactly the code that charg
       96.7/90.2/96.9/98.0 stmts/branch/funcs/lines, up from 75.6/75.2/81.8/76.5 at the start of
       Phase 5.
 
-## Phase 6 — The configured-Firebase half of the client services
+## Phase 6 — The configured-API half of the client services
 
-Local-first means the null-Firebase path is well tested; the configured path largely isn't.
+Local-first means the unconfigured path (`isBackendConfigured()` false, every service a no-op) is
+well tested; the configured path largely isn't. (This phase originally targeted
+`src/lib/services/firebase.ts`, which no longer exists — the backend client is
+`src/lib/services/backend.ts`, plain fetch against the Cloud Run API.)
 
-- [ ] A shared "configured Firebase" fixture (extend the `vi.hoisted` holder idiom from
-      `tests/lib/account-firebase.test.ts`) so suites can exercise the non-null path without an
-      emulator.
-- [ ] `src/lib/services/firebase.ts` (~18% lines — the real init/emulator wiring),
-      `services/auth.ts` (~71% — error-mapping branches), `services/account.ts` (~71% — profile
-      CRUD + sync-conflict paths). Carried from Phase 1.
-- [ ] `src/lib/native/nativeBridge.ts` (~34%) — a fake `window.Capacitor` fixture to exercise the
+- [ ] Exercise the configured-API paths of `services/auth.ts` (error-mapping branches) and
+      `services/account.ts` (profile CRUD + sync-conflict paths) with the
+      `vi.mock('@/lib/services/backend')` + `makeBackendModule` idiom
+      (`tests/helpers/mockBackend.ts`) — no emulator, no Firebase. Carried from Phase 1.
+- [ ] `src/lib/native/nativeBridge.ts` — a fake `window.Capacitor` fixture to exercise the
       plugin routing (auth/IAP/offline-cache). Matters more with every iOS-family release; today
       only the inert-on-web behaviour is verified.
 
@@ -217,25 +226,31 @@ rest; same render-smoke patterns as Phases 2–3.
       tools. Table-driven edge-date spec: `addMonths` month-end behaviour (e.g. 31 Jan + 1 month),
       `parseISO` rejections, `withinDays` window boundaries, `daysLeft` sign at expiry. Also
       `calc/hud/callsigns.ts` (71% lines).
-- [ ] **Exit:** raise the app ratchet (76/73/79/77 today) to just below the new live numbers.
+- [ ] **Exit:** raise the app ratchet (84/79/88/85 today — `vitest.config.ts`) to just below the
+      new live numbers.
 
 ## Phase 8 — E2E: authenticated & paid flows
 
-The Playwright suite covers public surfaces well (27-route smoke, 13 flows, axe sweep) but every
-deep flow runs anonymous. This is the concrete work-list behind the standing **[platform] E2E
-coverage** item in `ROADMAP.md`.
+The Playwright suite (`e2e/`) covers the public surfaces — `smoke.spec.ts` (route + flow smokes),
+`a11y.spec.ts` (the axe sweep, including `/ar` RTL scans), `checkout.spec.ts` and `study.spec.ts`
+— but every deep flow runs anonymous. This is the concrete work-list behind the standing
+**[platform] E2E coverage** item in `ROADMAP.md`.
 
-- [ ] Extend the session-stub fixture (the account round-trip in `e2e/flows.spec.ts`) to walk the
-      signed-in surfaces: dashboard widgets render, logbook entry create/edit/delete, records CRUD,
-      settings.
-- [ ] Mocked-success checkout: stub the billing callable, drive `/checkout` → `/checkout/return`,
-      assert the entitlement-gated UI flips. Closes the loop that Phase 5 opens server-side.
-- [ ] Study flows beyond the free sampler's timed exam: quiz, flashcards, ground school, paths —
-      today these pages rely on unit tests only.
+- [ ] Add a session-stub fixture and walk the signed-in surfaces: dashboard widgets render,
+      logbook entry create/edit/delete, records CRUD, settings.
+- [x] Offline-first checkout degradation: `e2e/checkout.spec.ts` drives `/checkout` in the
+      default no-backend build and asserts it degrades gracefully instead of breaking.
+- [ ] Mocked-network checkout success: stub `/api/billing/*` at the network layer, drive
+      `/checkout` → `/checkout/return`, assert the entitlement-gated UI flips. Needs a second
+      Playwright project running a `VITE_API_SAME_ORIGIN=1` build (so the app actually issues
+      `/api` requests to intercept) — deliberately deferred. Closes the loop that Phase 5 opened
+      server-side.
+- [x] Quiz flow: `e2e/study.spec.ts` drives the quiz end-to-end in a browser.
+- [ ] Remaining study flows: flashcards, ground school, paths — today these pages rely on unit
+      tests only.
 - [ ] Flavor route-tree smoke: boot with `IS_FLAVOR_APP` and assert the reduced single-pack tree —
-      unit-tested in `tests/app/flavor-router.test.ts`, never driven in a browser.
-- [ ] Arabic/RTL passes: run the axe sweep on key routes in `ar` (today only the toggle flow
-      asserts RTL flips).
+      unit-tested in `tests/flavor-router.test.ts`, never driven in a browser.
+- [x] Arabic/RTL passes: the axe sweep in `a11y.spec.ts` now scans key routes under `/ar` as well.
 
 ## Phase 9 — Family-wide (work lands in the named repos)
 
@@ -256,43 +271,34 @@ the gaps:
       all seven `FeatureUI` views (incl. `ModuleHomeView`, `QuizView`, `ExamTimerView`) have zero
       coverage. (iOS lives in the `ay2m/FlyGACA` repo; this monorepo only generates its content.)
 
-**`FlyGACA/Captain-Adel`** — 96.3% lines overall; three specific holes:
-
-- [ ] `evals/checks/citation-faithfulness.js` (39% lines / **0% functions**) — the opt-in
-      per-claim judge's extraction/verdict logic is deterministic; unit-test it with fixture
-      claims, no API key needed.
-- [ ] Page scripts: of 13 files in `public/assets/js/`, only `chat-core.js` is test-loaded. Start
-      with `exam.js` and `checkout.js` (scoring + payment UI), following the
-      `test/chat-core.test.js` pattern for classic scripts under `node:test`.
-- [ ] `src/billing/routes.js` (66% branch) — the uncovered lines are all Moyasar/Firestore error
-      paths.
+**`FlyGACA/Captain-Adel` — retired stack.** The standalone Captain Adel service this block
+audited (its `evals/checks/citation-faithfulness.js` judge, the `public/assets/js/` page scripts,
+`src/billing/routes.js`) was superseded by this repo's `server/` in the Cloud Run rebuild; its
+coverage holes are no longer tracked here.
 
 **App Store metadata repos (ELPT · AIP shipping; PPL · CPL · IR · ATPL parked)**
 
 - [ ] A fixture self-test for `scripts/check-metadata.mjs` (feed it a deliberately broken locale
-      tree, assert it fails). The script is byte-identical across all six repos and is each repo's
-      entire CI gate — author the test once, sync to the siblings.
+      tree, assert it fails). The script lives only in those metadata repos — nothing in this
+      monorepo carries or runs it — and is each repo's entire CI gate: author the test once, sync
+      to the siblings.
 
 ## Known-good — don't re-audit these
 
 Verified in the August 2026 audit; future coverage passes should skip them:
 
-- `tests/rules/firestore-rules.test.ts` — every collection in `firestore.rules` has allow **and**
-  deny/self-grant/forgery cases.
 - The backend `*-core.ts` policy modules — all ≈100%.
-- `tests/integrity/client-server-mirrors.test.ts` (client mirrors ↔ server cores) and
-  `tests/integrity/i18n-parity.test.ts`.
+- `tests/client-server-mirrors.test.ts` (client mirrors ↔ server cores) and
+  `tests/i18n-parity.test.ts`.
 - Every `src/calc` module is imported by at least one spec — calc gaps are branch-level only
   (`recency`, `callsigns` above), not missing files.
-- Captain-Adel's brain + eval harness (`evals/cases.json`, 73 cases, EN+AR, plus the parity gate).
 
 ## Measuring
 
 - App: `npm run test:coverage` (per-file JSON in `coverage/coverage-summary.json`).
-- Backend: `cd functions && npm run test:coverage`. Per-function hit counts (how the Phase 5
+- Backend: `cd server && npm run test:coverage`. Per-function hit counts (how the Phase 5
   zero-hit list was produced): add `--coverage.reporter=json` and read `fnMap`/`f` in
   `coverage/coverage-final.json`.
-- Captain-Adel: `npm run test:coverage` (`node --test --experimental-test-coverage`).
 - iOS (in `ay2m/FlyGACA`): `cd apple/FlyGACAKit && swift test` — no coverage tooling wired; the Phase 9 gaps are
   file-level (sources with no referencing test).
 

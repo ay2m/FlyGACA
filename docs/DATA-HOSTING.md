@@ -10,12 +10,14 @@ Two notes on what is *not* in the client's copy:
 
 - **`rag-chunks.json` is a backend input, not client data.** The Cloud Run image bakes it in
   (`server/Dockerfile` sets `CORPUS_URL=/app/data/rag-chunks.json`) so the BM25 index needs no
-  cold-start fetch. No client code reads it. It still lives under `public/data/` in the repo, so
-  the corpus bucket does carry a copy — 14 MB of dead weight there, and worth excluding if the
-  bucket's egress ever matters.
-- **The long-tail aerodrome tier is region-sharded** (`public/data/airports-extra/<REGION>.json` +
-  `_manifest.json`) so a page fetches one shard instead of the whole tier. Same total bytes in the
-  bucket, far fewer per visit. See `scripts/lib/airport-shards.mjs`.
+  cold-start fetch. No client code reads it. It still lives under `public/data/` in the repo, but
+  the web deploys no longer ship it: `scripts/deploy-web.mjs` excludes it from the corpus rsync
+  and `firebase.json` ignores it, so neither front carries the 14 MB of dead weight.
+- **The long-tail aerodrome tier is a sharding candidate, not yet sharded.** Today
+  `public/data/airports-extra.json` is a single ~21 MB file fetched whole on first use. The plan
+  (tracked in `ROADMAP.md` under "Shard the heavy data payloads") is to split it by region/ICAO
+  prefix plus a small manifest, so a page fetches one shard instead of the whole tier — same
+  total bytes in the bucket, far fewer per visit.
 
 ## How the app finds the corpus
 
