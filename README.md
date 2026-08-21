@@ -44,7 +44,7 @@ The Saudi regulatory corpus, made searchable — plus the tools you'd otherwise 
 |  | |
 |---|---|
 | 📚 **Regulatory library** | 74 GACAR Parts and 211 reference documents, full-text searchable, deep-linkable to the section. Offline-capable. |
-| 🤖 **Captain Adel** | RAG over the corpus, generated over an OpenAI-compatible endpoint (**Gemini** by default; provider is config, so an in-Kingdom ALLaM is a drop-in swap). Answers cite the Part/section they came from, and refuse when retrieval comes up empty. |
+| <img src="public/img/captain/avatar-256.png" width="72" alt="Captain Adel — the Fly GACA AI pilot assistant" /><br />🤖 **Captain Adel** | RAG over the corpus, generated over an OpenAI-compatible endpoint (**Gemini** by default; provider is config, so an in-Kingdom ALLaM is a drop-in swap). Answers cite the Part/section they came from, and refuse when retrieval comes up empty. |
 | 🧮 **55 flight tools** | Crosswind, ISA, TAS, holding entries, runway performance, weight & balance, METAR/TAF decoding — pure, tested math, state in the URL so any result is a link. |
 | 🎓 **Study** | 1,000 questions across 26 banks, flashcards with spaced repetition, ground school, timed mock exams, and per-certificate prep packs. |
 | 🛩️ **Logbook & currency** | Flights, landings, ratings and medicals — with the calendar-month maths the regulation actually specifies. |
