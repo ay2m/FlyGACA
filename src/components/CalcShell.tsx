@@ -4,11 +4,13 @@ import { useTranslation } from 'react-i18next';
 import { Copy, Check, ShareNetwork, GraduationCap } from '@phosphor-icons/react';
 import { Disclaimer } from './Disclaimer';
 import { Breadcrumbs } from './Breadcrumbs';
+import { ToolCrosslinks } from './calc/ToolCrosslinks';
 import { adelLink } from '@/lib/adel';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import { breadcrumbLd, softwareAppLd, type Crumb, type JsonLd } from '@/lib/seo/jsonld';
 import { shareCurrent } from '@/lib/share';
 import { useFeature } from '@/lib/services/features';
+import { hasToolCrosslinks } from '@/lib/toolLibraryCrosslinks';
 import {
   addPreset,
   removePreset,
@@ -39,6 +41,8 @@ interface CalcShellProps {
   intro?: string;
   /** Small category eyebrow above the title. */
   category?: string;
+  /** Tool ID for cross-linking to governing regulations. */
+  toolId?: string;
   /** Inputs / outputs of the calculator. */
   children: ReactNode;
   /** Applies a worked example to the inputs (the "Try an example" button). */
@@ -68,6 +72,7 @@ export function CalcShell({
   title,
   intro,
   category,
+  toolId,
   children,
   onExample,
   adelPrompt,
@@ -297,6 +302,8 @@ export function CalcShell({
           <div className={styles.formulaBody}>{formula}</div>
         </details>
       )}
+
+      {toolId && hasToolCrosslinks(toolId) && <ToolCrosslinks toolId={toolId} />}
 
       {regLink && (
         <nav className={styles.regLink} aria-label={t('calc.governingReg')}>

@@ -70,6 +70,7 @@ export function Crosswind() {
       title={t('crosswind.title')}
       intro={t('crosswind.intro')}
       category={t('tools.categories.performance')}
+      toolId="crosswind"
       formula={t('crosswind.formula')}
       onExample={() => {
         set('rwy', EXAMPLE.rwy);
