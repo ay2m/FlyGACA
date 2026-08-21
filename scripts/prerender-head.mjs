@@ -36,7 +36,7 @@ const shell = readFileSync(shellPath, 'utf8');
 const SUFFIX = 'Fly GACA';
 const DEFAULT_TITLE = 'Fly GACA — Saudi Aviation Library';
 const DEFAULT_DESC =
-  'Fly GACA — an independent educational reference library of Saudi civil-aviation regulations (GACAR), charts and study tools. Not affiliated with GACA.';
+  'Fly GACA: Your complete platform for Saudi aviation. Explore GACAR regulations, study tools, flight logbooks, Captain Adel AI assistant, and exam-prep packs. Learn and master civil aviation faster.';
 const OG_SECTIONS = new Set(['tools', 'guides', 'library', 'study', 'pricing']);
 
 // English lives at clean paths; the Arabic variant lives under /ar. Mirrors
