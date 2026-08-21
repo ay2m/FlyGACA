@@ -83,6 +83,23 @@
   inline-size: 100%;
 }
 
+/* OAuth buttons side-by-side on desktop, stacked on mobile. */
+.oauthButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+@media (max-width: 480px) {
+  .oauthButtons {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Half-width button for OAuth buttons row. */
+.halfWidth {
+  inline-size: 100%;
+}
+
 /* Google "G" chip — a white rounded square so the brand mark reads on the
    teal clay-primary button. */
 .googleChip {

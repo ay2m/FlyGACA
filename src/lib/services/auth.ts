@@ -126,6 +126,17 @@ export async function signInWithGoogle(): Promise<AuthUser | null> {
   return null;
 }
 
+/**
+ * Apple sign-in. Same server-side OAuth dance as Google — full-page navigation
+ * to `/api/auth/apple/start` with no return to this promise.
+ */
+export async function signInWithApple(): Promise<AuthUser | null> {
+  requireBackend();
+  const returnTo = typeof window !== 'undefined' ? window.location.href : '/';
+  window.location.assign(`${apiUrl('/auth/apple/start')}?returnTo=${encodeURIComponent(returnTo)}`);
+  return null;
+}
+
 export async function signInWithEmail(email: string, password: string): Promise<AuthUser> {
   requireBackend();
   const { user } = await apiFetch<SessionResponse>('/auth/login', {

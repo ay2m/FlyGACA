@@ -7,6 +7,7 @@ import { signIn } from '@/lib/services/account';
 import { looksLikeEmail } from '@/calc/app/emailShape';
 import { useSignInForm } from '@/hooks/useSignInForm';
 import { GoogleMark } from './GoogleMark';
+import { AppleMark } from './AppleMark';
 import { SignInFormBody } from './SignInFormBody';
 import { SignUpFormBody } from './SignUpFormBody';
 import styles from './AccountPage.module.css';
@@ -25,6 +26,7 @@ export function BackendSignIn() {
     loginForm,
     signupForm,
     runGoogle,
+    runApple,
   } = useSignInForm();
 
   const containerClass = `${styles.fadeTransition} ${animating ? styles.animating : ''}`;
@@ -48,16 +50,28 @@ export function BackendSignIn() {
 
   return (
     <>
-      <Button
-        type="button"
-        variant="clayPrimary"
-        icon={<GoogleMark />}
-        className={styles.fullWidth}
-        disabled={busy}
-        onClick={runGoogle}
-      >
-        {t('account.continueGoogle')}
-      </Button>
+      <div className={styles.oauthButtons}>
+        <Button
+          type="button"
+          variant="clayPrimary"
+          icon={<GoogleMark />}
+          className={styles.halfWidth}
+          disabled={busy}
+          onClick={runGoogle}
+        >
+          {t('account.continueGoogle')}
+        </Button>
+        <Button
+          type="button"
+          variant="clayPrimary"
+          icon={<AppleMark />}
+          className={styles.halfWidth}
+          disabled={busy}
+          onClick={runApple}
+        >
+          {t('account.continueApple')}
+        </Button>
+      </div>
       <p className={styles.divider}>{t('account.or')}</p>
 
       <div className={containerClass}>
