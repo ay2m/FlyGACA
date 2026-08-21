@@ -6,7 +6,6 @@ import { useEffect, useState, useCallback } from 'react';
 import { User as FirebaseUser } from 'firebase/auth';
 import {
   initializeFirebase,
-  getFirebaseAuth,
   signOutUser,
   signInWithEmail,
   signUpWithEmail,
@@ -38,7 +37,6 @@ export function useAuth(): UseAuthReturn {
 
   // Subscribe to auth state changes
   useEffect(() => {
-    const auth = getFirebaseAuth();
     const unsubscribe = onAuthStateChange((currentUser) => {
       setUser(currentUser);
       setLoading(false);
