@@ -15,7 +15,27 @@ import { expect, test } from '@playwright/test';
  * page, at config level and via `test.use`; a runtime `page.emulateMedia` call
  * does work). So do not trust the config for this — settle explicitly below.
  */
-const ROUTES = ['/', '/library', '/tools', '/tools/crosswind', '/learn', '/pricing'];
+/**
+ * English routes plus the Arabic twins of the highest-traffic ones: the RTL
+ * tree is half the product's URLs and previously had ZERO axe coverage, so a
+ * contrast or focus-order break that only reproduces under `dir="rtl"` shipped
+ * silently. `/chat` and `/study/quiz` render fully without a backend (the
+ * composer shows its not-ready state; the quiz reads public/data/quiz.json).
+ */
+const ROUTES = [
+  '/',
+  '/library',
+  '/tools',
+  '/tools/crosswind',
+  '/learn',
+  '/pricing',
+  '/chat',
+  '/study/quiz',
+  '/about',
+  '/ar',
+  '/ar/library',
+  '/ar/tools/crosswind',
+];
 
 /** Wait out the entry animations. Infinite ones (shimmers, glows) never end — skip those. */
 async function settle(page: import('@playwright/test').Page) {
@@ -44,6 +64,13 @@ for (const route of ROUTES) {
       .waitFor({ state: 'detached' })
       .catch(() => {});
     await settle(page);
+
+    // The /ar tree must actually mount as an Arabic RTL document — an English
+    // LTR shell under an /ar URL would "pass" axe while being the wrong page.
+    if (route.startsWith('/ar')) {
+      await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+      await expect(page.locator('html')).toHaveAttribute('lang', 'ar');
+    }
 
     const { violations } = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])

@@ -42,8 +42,18 @@ const fileForUrl = (url) => {
   return path === '/' ? join(distDir, 'index.html') : join(distDir, path.replace(/^\//, ''), 'index.html');
 };
 
+// Floor ratchet on how many bilingual routes the sitemap must advertise. The
+// old `checked === 0` guard only caught a TOTAL collapse; a sitemap change (or
+// prerender-head regression) that silently dropped, say, the tools or guides
+// section from the ar-alternate set would sail through PR CI and only surface
+// as lost coverage at deploy time. Set from a real build's printed count
+// (328 as of 2026-08) minus slack for deliberate route removals; raise it as
+// sections ship.
+const MIN_BILINGUAL_ROUTES = 300;
+
 const missing = [];
 const wrongLang = [];
+const unstamped = [];
 let checked = 0;
 
 // Walk each <url> block; only those advertising an Arabic alternate are in scope.
@@ -53,11 +63,17 @@ for (const block of xml.match(/<url>[\s\S]*?<\/url>/g) ?? []) {
   if (!loc || !arHref) continue;
   checked++;
 
-  // English floor must exist and be an English document.
+  // English floor must exist, be an English document, AND carry the per-route
+  // head stamp — a canonical pointing at this loc proves prerender-head wrote
+  // this route's own <head>, not just a copied shell.
   const enFile = fileForUrl(loc);
   if (!existsSync(enFile)) missing.push(`en  ${loc} → ${enFile.slice(root.length + 1)}`);
-  else if (!readFileSync(enFile, 'utf8').includes('lang="en"'))
-    wrongLang.push(`en  ${loc} (expected lang="en")`);
+  else {
+    const html = readFileSync(enFile, 'utf8');
+    if (!html.includes('lang="en"')) wrongLang.push(`en  ${loc} (expected lang="en")`);
+    if (!html.includes(`rel="canonical" href="${loc}"`))
+      unstamped.push(`en  ${loc} (no canonical for its own URL — head not stamped)`);
+  }
 
   // Arabic sibling must exist and actually be Arabic + RTL (not the English shell).
   const arFile = fileForUrl(arHref);
@@ -70,14 +86,20 @@ for (const block of xml.match(/<url>[\s\S]*?<\/url>/g) ?? []) {
   }
 }
 
-if (checked === 0) {
-  console.error('check-prerender: no `hreflang="ar"` alternates found in the sitemap — coverage lost.');
+if (checked < MIN_BILINGUAL_ROUTES) {
+  console.error(
+    `check-prerender: only ${checked} bilingual routes in the sitemap — the floor is ${MIN_BILINGUAL_ROUTES}. ` +
+      'Either coverage regressed (sitemap/prerender-head), or routes were deliberately removed — ' +
+      'if so, lower MIN_BILINGUAL_ROUTES in scripts/check-prerender.mjs with a note.',
+  );
   process.exit(1);
 }
 
-if (missing.length || wrongLang.length) {
-  console.error(`check-prerender: FAILED — ${missing.length} missing, ${wrongLang.length} wrong-language snapshot(s):`);
-  for (const m of [...missing, ...wrongLang]) console.error(`  ✗ ${m}`);
+if (missing.length || wrongLang.length || unstamped.length) {
+  console.error(
+    `check-prerender: FAILED — ${missing.length} missing, ${wrongLang.length} wrong-language, ${unstamped.length} unstamped snapshot(s):`,
+  );
+  for (const m of [...missing, ...wrongLang, ...unstamped]) console.error(`  ✗ ${m}`);
   process.exit(1);
 }
 
