@@ -2,8 +2,10 @@
  * The flight-tools registry — the single source of truth for the catalog.
  * Names/blurbs/category labels are resolved from i18n by id (so they stay
  * bilingual); this file holds only structure (route, category, status, search
- * keywords). Flip `status` to 'live' as each tool ships, and add its route to
- * src/router.tsx.
+ * keywords). The catalog is fully shipped, so `status` is always 'live' — the
+ * positional literal stays in every `t()` call because
+ * scripts/prerender-head.mjs regex-parses this file for tool routes. A future
+ * staged tool would widen the union again and add its route to src/router.tsx.
  */
 
 export type ToolCategoryId =
@@ -19,7 +21,7 @@ export interface ToolMeta {
   id: string;
   route: string;
   category: ToolCategoryId;
-  status: 'live' | 'soon';
+  status: 'live';
   badge?: 'new';
   /** Language-neutral search hints (abbreviations, alt names). */
   keywords?: string[];
@@ -39,7 +41,7 @@ export const TOOL_CATEGORIES: ToolCategoryId[] = [
 const t = (
   id: string,
   category: ToolCategoryId,
-  status: 'live' | 'soon',
+  status: 'live',
   opts: { badge?: 'new'; keywords?: string[]; route?: string } = {},
 ): ToolMeta => ({
   id,
@@ -165,4 +167,4 @@ export const TOOLS: ToolMeta[] = [
   t('chart-symbols', 'reference', 'live', { keywords: ['legend', 'vfr chart'] }),
 ];
 
-export const liveTools = () => TOOLS.filter((x) => x.status === 'live');
+export const liveTools = () => TOOLS;

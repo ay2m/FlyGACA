@@ -67,7 +67,7 @@ export function ToolsIndex() {
   const toolListLd = useMemo(
     () =>
       itemListLd(
-        TOOLS.filter((x) => x.status === 'live').map((x) => ({
+        TOOLS.map((x) => ({
           name: t(`tools.items.${x.id}.name`),
           path: x.route,
         })),
@@ -84,7 +84,7 @@ export function ToolsIndex() {
   const searchRef = useRef<HTMLInputElement>(null);
   const rootRef = useRef<HTMLDivElement>(null);
 
-  const liveCount = TOOLS.filter((x) => x.status === 'live').length;
+  const liveCount = TOOLS.length;
   const byId = useMemo(() => new Map(TOOLS.map((tl) => [tl.id, tl])), []);
   const q = query.trim();
 
@@ -135,16 +135,11 @@ export function ToolsIndex() {
 
   // Animated figures for the hero readout.
   const stats = useMemo<HeroStat[]>(() => {
-    const soon = TOOLS.filter((x) => x.status === 'soon').length;
-    const cats = TOOL_CATEGORIES.filter((c) =>
-      TOOLS.some((x) => x.category === c && x.status === 'live'),
-    ).length;
-    const out: HeroStat[] = [
+    const cats = TOOL_CATEGORIES.filter((c) => TOOLS.some((x) => x.category === c)).length;
+    return [
       { label: t('tools.stats.tools'), value: liveCount, tone: 'cyan' },
       { label: t('tools.stats.categories'), value: cats, tone: 'green' },
     ];
-    if (soon > 0) out.push({ label: t('tools.stats.soon'), value: soon, tone: 'gold' });
-    return out;
   }, [t, liveCount]);
 
   // Quick-pick category chips for the hero; toggle the matching category filter.

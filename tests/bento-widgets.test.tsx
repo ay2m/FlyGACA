@@ -46,7 +46,7 @@ describe('StatValue', () => {
 
 describe('ToolsWidget', () => {
   it('shows the live-tool count straight from the registry and links to /tools', () => {
-    const liveCount = TOOLS.filter((tool) => tool.status === 'live').length;
+    const liveCount = TOOLS.length;
     renderWithRouter(<ToolsWidget />);
     expect(screen.getByText(String(liveCount))).toBeInTheDocument();
     expect(screen.getByRole('link')).toHaveAttribute('href', '/tools');

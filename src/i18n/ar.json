@@ -74,7 +74,6 @@
     "loadError": "تعذّر تحميل المحتوى. تحقّق من اتصالك وحاول مجددًا.",
     "retry": "إعادة المحاولة",
     "skipToContent": "تخطَّ إلى المحتوى",
-    "soon": "قريبًا",
     "open": "افتح",
     "close": "إغلاق",
     "clear": "مسح",
@@ -127,22 +126,6 @@
     "more": "المزيد",
     "breadcrumb": "مسار التنقل",
     "breadcrumbHome": "الرئيسية"
-  },
-  "command": {
-    "title": "بحث وانتقال",
-    "open": "بحث (⌘K)",
-    "searchShort": "بحث",
-    "placeholder": "ابحث في الصفحات والأدوات والأدلة وأجزاء GACAR…",
-    "noResults": "لا نتائج. جرّب رقم Part أو اسم أداة أو موضوعًا.",
-    "partPrefix": "Part",
-    "hintNavigate": "تنقّل",
-    "hintOpen": "فتح",
-    "groups": {
-      "page": "صفحة",
-      "tool": "أداة",
-      "guide": "دليل",
-      "library": "المكتبة"
-    }
   },
   "notFound": {
     "eyebrow": "404",
@@ -384,8 +367,7 @@
     "viewList": "عرض قائمة",
     "stats": {
       "tools": "الأدوات",
-      "categories": "الفئات",
-      "soon": "قريبًا"
+      "categories": "الفئات"
     },
     "categories": {
       "performance": "الأداء والمدرج",

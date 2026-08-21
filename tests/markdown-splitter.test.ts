@@ -6,7 +6,6 @@
  * parser is resilient to the corpus's real-world OCR noise.
  */
 import { describe, expect, it } from 'vitest';
-// @ts-expect-error — pure ESM JS lib, no types (mirrors scripts/lib/sync-merge.mjs).
 import {
   splitPartHtml,
   isSectionHeading,

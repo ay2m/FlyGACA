@@ -74,7 +74,6 @@
     "loadError": "Could not load this content. Verify your connection and try again.",
     "retry": "Retry",
     "skipToContent": "Skip to content",
-    "soon": "Coming soon",
     "open": "Open",
     "close": "Close",
     "clear": "Clear",
@@ -127,22 +126,6 @@
     "more": "More",
     "breadcrumb": "Breadcrumb",
     "breadcrumbHome": "Home"
-  },
-  "command": {
-    "title": "Search & jump",
-    "open": "Search (⌘K)",
-    "searchShort": "Search",
-    "placeholder": "Search pages, tools, guides, GACAR Parts…",
-    "noResults": "No matches. Try a Part number, tool name, or topic.",
-    "partPrefix": "Part",
-    "hintNavigate": "navigate",
-    "hintOpen": "open",
-    "groups": {
-      "page": "Page",
-      "tool": "Tool",
-      "guide": "Guide",
-      "library": "Library"
-    }
   },
   "notFound": {
     "eyebrow": "404",
@@ -384,8 +367,7 @@
     "viewList": "List view",
     "stats": {
       "tools": "Tools",
-      "categories": "Categories",
-      "soon": "Coming soon"
+      "categories": "Categories"
     },
     "categories": {
       "performance": "Performance & runway",

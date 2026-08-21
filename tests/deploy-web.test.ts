@@ -1,5 +1,4 @@
 import { describe, expect, it } from 'vitest';
-// @ts-expect-error — plain ESM script, no types; exercised for its pure planners.
 import { buildPlan, gsWildcards, shellQuote } from '../scripts/deploy-web.mjs';
 
 /**

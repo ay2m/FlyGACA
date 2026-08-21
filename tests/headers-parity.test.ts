@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-// @ts-expect-error — plain ESM script, no types; exercised for its pure helpers.
 import {
   SECURITY_HEADERS,
   CACHE_RULES,

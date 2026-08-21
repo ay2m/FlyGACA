@@ -1,5 +1,4 @@
 import { describe, expect, it } from 'vitest';
-// @ts-expect-error — plain ESM script, no types; exercised for its pure helpers.
 import { extractLocs, buildPayload } from '../scripts/indexnow.mjs';
 
 describe('extractLocs', () => {
