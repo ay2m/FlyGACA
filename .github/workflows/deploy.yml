@@ -55,6 +55,10 @@ jobs:
             echo "VITE_DATA_BASE_URL=${{ vars.DATA_BASE_URL }}"
             echo "VITE_MOYASAR_PUBLISHABLE_KEY=${{ vars.MOYASAR_PUBLISHABLE_KEY }}"
             echo "VITE_GA_MEASUREMENT_ID=${{ vars.GA_MEASUREMENT_ID }}"
+            # Owner-provisioned repo vars; unset leaves Firebase telemetry off by
+            # design (src/lib/firebase-monitoring.ts is inert without an appId).
+            echo "VITE_FIREBASE_APP_ID=${{ vars.FIREBASE_APP_ID }}"
+            echo "VITE_FIREBASE_PROJECT_ID=${{ vars.FIREBASE_PROJECT_ID }}"
           } > .env.local
 
       - name: Build

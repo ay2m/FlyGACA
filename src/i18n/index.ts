@@ -46,6 +46,18 @@ export function applyDocumentLang(lang: Lang): void {
     manifest.href = lang === 'ar' ? '/manifest-ar.webmanifest' : '/manifest.webmanifest';
 }
 
+/**
+ * Ensure the Arabic @font-face rules exist before Arabic renders. The CSS is
+ * split out of main.tsx (see src/styles/fonts-arabic.ts) so English sessions
+ * never block on it; awaiting the import here keeps Arabic boots/switches from
+ * painting before the rules land. Best-effort — a failed chunk load falls back
+ * to the system face rather than blocking the language.
+ */
+function ensureArabicFonts(lang: Lang): Promise<unknown> {
+  if (lang !== 'ar') return Promise.resolve();
+  return import('@/styles/fonts-arabic').catch(() => undefined);
+}
+
 /** Fetch + register a language's strings exactly once (idempotent). */
 async function ensureLanguage(lang: Lang): Promise<void> {
   if (i18n.hasResourceBundle(lang, 'translation')) return;
@@ -59,7 +71,7 @@ async function ensureLanguage(lang: Lang): Promise<void> {
  */
 export async function bootI18n(): Promise<typeof i18n> {
   const lng = resolveInitialLang();
-  const mod = await LOADERS[lng]();
+  const [mod] = await Promise.all([LOADERS[lng](), ensureArabicFonts(lng)]);
 
   await i18n.use(initReactI18next).init({
     resources: { [lng]: { translation: mod.default } },
@@ -85,7 +97,7 @@ export async function bootI18n(): Promise<typeof i18n> {
  * React re-renders into the new language.
  */
 export async function switchLanguage(lang: Lang): Promise<void> {
-  await ensureLanguage(lang);
+  await Promise.all([ensureLanguage(lang), ensureArabicFonts(lang)]);
   await i18n.changeLanguage(lang);
 }
 

@@ -5,7 +5,10 @@
  */
 export interface CacheRule {
   match: string;
-  cacheControl: string;
+  value: string;
+  why: string;
+  vercel: string | null;
+  netlify: string | null;
 }
 export const HEADERS: {
   security: Record<string, string>;
