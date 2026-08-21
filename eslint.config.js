@@ -80,7 +80,7 @@ export default tseslint.config(
   {
     // Node-side files: Playwright E2E and config files run under Node, not the
     // browser, so expose Node globals (process, etc.).
-    files: ['e2e/**/*.ts', 'playwright.config.ts', '*.config.ts'],
+    files: ['e2e/**/*.ts', 'config/**/*.ts', 'capacitor.config.ts', 'eslint.config.js'],
     languageOptions: { globals: globals.node },
   },
   {
