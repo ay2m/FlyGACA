@@ -7,6 +7,7 @@ import { useFetchJson } from '@/hooks/useFetchJson';
 import { useDebouncedValue } from '@/hooks/useDebouncedValue';
 import { useUrlState } from '@/hooks/useUrlState';
 import { fetchJson, type Airport, type AirportsIndex } from '@/lib/content';
+import { loadShardedData, reassembleAirports } from '@/lib/sharded-loader';
 import {
   REGION_FILTERS,
   inRegion,
@@ -41,7 +42,11 @@ export function Aerodromes() {
   useEffect(() => {
     if (!needExtra || extra || extraLoading) return;
     setExtraLoading(true);
-    fetchJson<AirportsIndex>('/data/airports-extra.json')
+    loadShardedData<AirportsIndex>(
+      '/data/airports-extra.json',
+      '/data/airports-shards',
+      reassembleAirports,
+    )
       .then((d) => setExtra(d.airports))
       .catch(() => setExtra([]))
       .finally(() => setExtraLoading(false));

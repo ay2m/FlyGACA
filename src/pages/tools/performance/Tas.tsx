@@ -34,6 +34,7 @@ export function Tas() {
       title={t('tas.title')}
       intro={t('tas.intro')}
       category={t('tools.categories.performance')}
+      toolId="tas"
       formula={t('tas.formula')}
       onExample={() => {
         set('cas', EXAMPLE.cas);

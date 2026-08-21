@@ -27,6 +27,7 @@ export function Holding() {
       title={t('tools.items.holding.name')}
       intro={t('tools.items.holding.blurb')}
       category={t('tools.categories.procedures')}
+      toolId="holding"
       formula={t('holding.formula')}
       onExample={() => {
         set('inbound', '270');

@@ -6,6 +6,7 @@ import { useFetchJson } from '@/hooks/useFetchJson';
 import { airportLd } from '@/lib/seo/jsonld';
 import { regionBadge } from '@/lib/aerodromes';
 import { fetchJson, type Airport, type AirportsIndex, type AirspacesIndex } from '@/lib/content';
+import { loadShardedData, reassembleAirports } from '@/lib/sharded-loader';
 import { AerodromeScope } from '@/components/aerodrome/AerodromeScope';
 import { AirportTypeIcon } from '@/components/aerodrome/AirportTypeIcon';
 import { RunwayDiagram } from '@/components/aerodrome/RunwayDiagram';
@@ -29,7 +30,11 @@ export function AerodromeDetail() {
   useEffect(() => {
     if (!data || inCore || extra || extraLoading) return;
     setExtraLoading(true);
-    fetchJson<AirportsIndex>('/data/airports-extra.json')
+    loadShardedData<AirportsIndex>(
+      '/data/airports-extra.json',
+      '/data/airports-shards',
+      reassembleAirports,
+    )
       .then((d) => setExtra(d.airports))
       .catch(() => setExtra([]))
       .finally(() => setExtraLoading(false));

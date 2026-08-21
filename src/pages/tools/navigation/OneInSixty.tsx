@@ -16,6 +16,7 @@ export function OneInSixty() {
       title={t('tools.items.one-in-sixty.name')}
       intro={t('tools.items.one-in-sixty.blurb')}
       category={t('tools.categories.navigation')}
+      toolId="one-in-sixty"
       formula={t('oneInSixty.formula')}
       onExample={() => {
         set('flown', '30');

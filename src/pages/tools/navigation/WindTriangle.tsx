@@ -17,6 +17,7 @@ export function WindTriangle() {
       title={t('tools.items.wind-triangle.name')}
       intro={t('tools.items.wind-triangle.blurb')}
       category={t('tools.categories.navigation')}
+      toolId="wind-triangle"
       formula={t('windTriangle.formula')}
       onExample={() => {
         set('crs', '270');

@@ -32,6 +32,7 @@ export function Notam() {
       title={t('tools.items.notam.name')}
       intro={t('tools.items.notam.blurb')}
       category={t('tools.categories.atmosphere-weather')}
+      toolId="notam"
       formula={t('notam.qnote')}
       onExample={() => set('raw', EXAMPLE)}
       related={[{ to: '/tools/metar', label: t('tools.items.metar.name') }]}

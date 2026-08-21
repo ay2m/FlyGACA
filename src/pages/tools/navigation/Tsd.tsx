@@ -16,6 +16,7 @@ export function Tsd() {
       title={t('tools.items.tsd.name')}
       intro={t('tools.items.tsd.blurb')}
       category={t('tools.categories.navigation')}
+      toolId="tsd"
       formula={t('tsd.formula')}
       onExample={() => {
         set('gs', '120');

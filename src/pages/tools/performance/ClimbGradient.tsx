@@ -17,6 +17,7 @@ export function ClimbGradient() {
       title={t('tools.items.climb-gradient.name')}
       intro={t('tools.items.climb-gradient.blurb')}
       category={t('tools.categories.performance')}
+      toolId="climb-gradient"
       formula={t('climb.formula')}
       onExample={() => {
         set('grad', '318');

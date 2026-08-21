@@ -99,9 +99,9 @@ describe('Tool Library Cross-links', () => {
     });
   });
 
-  describe('Currency tool', () => {
+  describe('Part 61 Currency tool', () => {
     it('links to recent flight experience regulations', () => {
-      const links = getToolCrosslinks('currency');
+      const links = getToolCrosslinks('part61-currency');
       expect(links.some((l) => l.section === '57')).toBe(true);
     });
   });

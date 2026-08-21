@@ -19,6 +19,7 @@ export function Metar() {
       title={t('tools.items.metar.name')}
       intro={t('tools.items.metar.blurb')}
       category={t('tools.categories.atmosphere-weather')}
+      toolId="metar"
       formula={t('wx.cavok')}
       onExample={() => set('raw', 'OERK 121200Z 33015G25KT 9999 FEW040 SCT100 38/12 Q1009')}
       related={[

@@ -51,6 +51,7 @@ export function WeightBalance() {
       title={t('tools.items.weight-balance.name')}
       intro={t('tools.items.weight-balance.blurb')}
       category={t('tools.categories.weight-fuel')}
+      toolId="weight-balance"
       formula={t('weightBalance.formula')}
       onExample={() => {
         set('ew', '1000');

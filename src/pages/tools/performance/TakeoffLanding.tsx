@@ -30,6 +30,7 @@ export function TakeoffLanding() {
       title={t('tools.items.takeoff-landing.name')}
       intro={t('tools.items.takeoff-landing.blurb')}
       category={t('tools.categories.performance')}
+      toolId="takeoff-landing"
       formula={t('runwayPerf.formula')}
       onExample={() => {
         set('book', '600');

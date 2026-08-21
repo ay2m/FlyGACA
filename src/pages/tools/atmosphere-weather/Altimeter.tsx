@@ -18,6 +18,7 @@ export function Altimeter() {
       title={t('tools.items.altimeter.name')}
       intro={t('tools.items.altimeter.blurb')}
       category={t('tools.categories.atmosphere-weather')}
+      toolId="altimeter"
       formula={t('altimeter.formula')}
       onExample={() => {
         set('qnh', '1011');

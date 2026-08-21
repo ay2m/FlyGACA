@@ -17,6 +17,7 @@ export function TopOfClimb() {
       title={t('tools.items.top-of-climb.name')}
       intro={t('tools.items.top-of-climb.blurb')}
       category={t('tools.categories.performance')}
+      toolId="top-of-climb"
       formula={t('topOfClimb.formula')}
       onExample={() => {
         set('gain', '10000');

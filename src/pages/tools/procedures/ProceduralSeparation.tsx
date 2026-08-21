@@ -16,6 +16,7 @@ export function ProceduralSeparation() {
       title={t('tools.items.procedural-separation.name')}
       intro={t('tools.items.procedural-separation.blurb')}
       category={t('tools.categories.procedures')}
+      toolId="procedural-separation"
       formula={t('separation.formula')}
       onExample={() => {
         set('lead', '120');

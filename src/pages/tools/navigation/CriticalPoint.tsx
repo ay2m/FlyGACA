@@ -24,6 +24,7 @@ export function CriticalPoint() {
       title={t('tools.items.critical-point.name')}
       intro={t('tools.items.critical-point.blurb')}
       category={t('tools.categories.navigation')}
+      toolId="critical-point"
       formula={t('criticalPoint.formula')}
       onExample={() => {
         set('dist', '500');

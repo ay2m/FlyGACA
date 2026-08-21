@@ -17,6 +17,7 @@ export function DescentVdp() {
       title={t('tools.items.descent-vdp.name')}
       intro={t('tools.items.descent-vdp.blurb')}
       category={t('tools.categories.performance')}
+      toolId="descent-vdp"
       formula={t('vdp.formula')}
       onExample={() => {
         set('hat', '540');

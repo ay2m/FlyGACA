@@ -17,6 +17,7 @@ export function CloudBase() {
       title={t('tools.items.cloud-base.name')}
       intro={t('tools.items.cloud-base.blurb')}
       category={t('tools.categories.atmosphere-weather')}
+      toolId="cloud-base"
       formula={t('cloudBase.formula')}
       onExample={() => {
         set('temp', '34');

@@ -17,6 +17,7 @@ export function TopOfDescent() {
       title={t('tools.items.top-of-descent.name')}
       intro={t('tools.items.top-of-descent.blurb')}
       category={t('tools.categories.performance')}
+      toolId="top-of-descent"
       formula={t('tod.formula')}
       onExample={() => {
         set('alt', '3000');

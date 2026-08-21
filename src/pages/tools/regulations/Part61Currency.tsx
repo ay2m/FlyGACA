@@ -17,6 +17,7 @@ export function Part61Currency() {
       title={t('tools.items.part61-currency.name')}
       intro={t('tools.items.part61-currency.blurb')}
       category={t('tools.categories.regulations')}
+      toolId="part61-currency"
       formula={t('part61Currency.formula')}
       onExample={() => {
         set('last', '2024-01-15');

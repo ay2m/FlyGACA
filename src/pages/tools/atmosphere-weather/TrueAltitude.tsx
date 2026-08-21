@@ -17,6 +17,7 @@ export function TrueAltitude() {
       title={t('tools.items.true-altitude.name')}
       intro={t('tools.items.true-altitude.blurb')}
       category={t('tools.categories.atmosphere-weather')}
+      toolId="true-altitude"
       formula={t('trueAlt.formula')}
       onExample={() => {
         set('ind', '10000');

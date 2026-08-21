@@ -17,6 +17,7 @@ export function FlightReview() {
       title={t('tools.items.flight-review.name')}
       intro={t('tools.items.flight-review.blurb')}
       category={t('tools.categories.regulations')}
+      toolId="flight-review"
       formula={t('flightReview.formula')}
       onExample={() => {
         set('last', '2023-06-01');

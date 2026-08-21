@@ -22,6 +22,7 @@ export function VfrBrief() {
       title={t('tools.items.vfr-brief.name')}
       intro={t('tools.items.vfr-brief.blurb')}
       category={t('tools.categories.procedures')}
+      toolId="vfr-brief"
       formula={t('vfrBrief.formula')}
     >
       <p className={styles.progress}>

@@ -18,6 +18,7 @@ export function Isa() {
       title={t('tools.items.isa.name')}
       intro={t('tools.items.isa.blurb')}
       category={t('tools.categories.atmosphere-weather')}
+      toolId="isa"
       formula={t('isaTool.formula')}
       onExample={() => {
         set('pa', '10000');

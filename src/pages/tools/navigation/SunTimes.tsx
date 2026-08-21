@@ -42,6 +42,7 @@ export function SunTimes() {
       title={t('tools.items.sun-times.name')}
       intro={t('tools.items.sun-times.blurb')}
       category={t('tools.categories.navigation')}
+      toolId="sun-times"
       formula={t('sunTimes.formula')}
       onExample={() => {
         set('lat', '24.71');

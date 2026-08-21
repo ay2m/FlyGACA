@@ -30,6 +30,7 @@ export function AiracCycle() {
       title={t('tools.items.airac.name')}
       intro={t('tools.items.airac.blurb')}
       category={t('tools.categories.navigation')}
+      toolId="airac"
       formula={t('airac.formula')}
       onExample={() => set('date', fmtDate(new Date()))}
       related={[{ to: '/tools/zulu-clock', label: t('tools.items.zulu-clock.name') }]}

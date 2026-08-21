@@ -6,6 +6,7 @@ import { useDebouncedValue } from '@/hooks/useDebouncedValue';
 import { usePageMeta } from '@/hooks/usePageMeta';
 import { itemListLd } from '@/lib/seo/jsonld';
 import { CORPUS, fetchJson } from '@/lib/content';
+import { loadShardedData, reassembleLibrarySearch } from '@/lib/sharded-loader';
 import { searchEntryLink, toSearchRef } from '@/lib/contentLinks';
 import {
   filterDocs,
@@ -127,7 +128,11 @@ export function Library() {
     if (!fullText || requested.current) return;
     requested.current = true;
     setIndexLoading(true);
-    fetchJson<SearchIndex>('/data/library-search.json')
+    loadShardedData<SearchIndex>(
+      '/data/library-search.json',
+      '/data/library-shards',
+      reassembleLibrarySearch,
+    )
       .then((idx) => setEntries(idx.entries))
       .catch(() => setEntries([]))
       .finally(() => setIndexLoading(false));

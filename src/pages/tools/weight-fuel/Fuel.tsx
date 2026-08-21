@@ -17,6 +17,7 @@ export function Fuel() {
       title={t('tools.items.fuel.name')}
       intro={t('tools.items.fuel.blurb')}
       category={t('tools.categories.weight-fuel')}
+      toolId="fuel"
       formula={t('fuel.formula')}
       onExample={() => {
         set('fob', '120');

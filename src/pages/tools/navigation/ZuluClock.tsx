@@ -24,6 +24,7 @@ export function ZuluClock() {
       title={t('tools.items.zulu-clock.name')}
       intro={t('tools.items.zulu-clock.blurb')}
       category={t('tools.categories.navigation')}
+      toolId="zulu-clock"
       formula={t('zulu.formula')}
       onExample={() => {
         set('mode', 'utc');

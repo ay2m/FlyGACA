@@ -16,6 +16,7 @@ export function GreatCircle() {
       title={t('tools.items.great-circle.name')}
       intro={t('tools.items.great-circle.blurb')}
       category={t('tools.categories.navigation')}
+      toolId="great-circle"
       formula={t('greatCircle.formula')}
       onExample={() => {
         set('lat1', '24.96');

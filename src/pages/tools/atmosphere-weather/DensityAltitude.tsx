@@ -32,6 +32,7 @@ export function DensityAltitude() {
       title={t('densityAltitude.title')}
       intro={t('densityAltitude.intro')}
       category={t('tools.categories.atmosphere-weather')}
+      toolId="density-altitude"
       formula={t('densityAltitude.formula')}
       onExample={() => {
         set('elev', EXAMPLE.elev);

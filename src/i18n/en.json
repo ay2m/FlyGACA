@@ -80,7 +80,9 @@
     "clear": "Clear",
     "share": "Share",
     "backToTop": "Back to top",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "governedBy": "Governed by:",
+    "verifyAgainstGaca": "Always verify current requirements directly with GACA."
   },
   "pwa": {
     "updateTitle": "A new version is available.",

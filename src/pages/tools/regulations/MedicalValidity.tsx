@@ -17,6 +17,7 @@ export function MedicalValidity() {
       title={t('tools.items.medical-validity.name')}
       intro={t('tools.items.medical-validity.blurb')}
       category={t('tools.categories.regulations')}
+      toolId="medical-validity"
       formula={t('medicalValidity.formula')}
       onExample={() => {
         set('issue', '2024-03-01');
