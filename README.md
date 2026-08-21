@@ -54,6 +54,9 @@ The Saudi regulatory corpus, made searchable — plus the tools you'd otherwise 
 <div align="center">
 <img src="docs/screenshots/review-2026-07/tool-crosswind.png" alt="Crosswind calculator" width="49%" />
 <img src="docs/screenshots/review-2026-07/home-arabic-rtl.png" alt="Arabic RTL home screen" width="49%" />
+
+<img src="public/img/captain/scenes/left-seat.webp" alt="Captain Adel in the left seat at sunrise" width="98.5%" />
+<sub><i>The left seat — where every rule earns its keep.</i></sub>
 </div>
 
 ---

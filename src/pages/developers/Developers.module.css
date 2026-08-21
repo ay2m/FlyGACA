@@ -123,3 +123,25 @@
 .ctaBtn:hover {
   background: var(--accent-bright);
 }
+
+/* ── The left-seat scene under the hero ── */
+.scene {
+  margin: var(--space-5) auto;
+  max-inline-size: 52rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.sceneImg {
+  inline-size: 100%;
+  block-size: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.sceneCaption {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  letter-spacing: 0.03em;
+  text-align: center;
+}

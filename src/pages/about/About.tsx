@@ -32,6 +32,14 @@ interface Faq {
 
 const FEATURE_TONES: BentoTone[] = ['default', 'cyan', 'green'];
 
+/** The captadel.com "field notes" scene renders — the same official art family as the avatar. */
+const LOG_SCENES = [
+  { id: 'walkaround', src: '/img/captain/scenes/walkaround.webp', w: 720, h: 986 },
+  { id: 'briefingRoom', src: '/img/captain/scenes/briefing-room.webp', w: 720, h: 982 },
+  { id: 'holdingPoint', src: '/img/captain/scenes/holding-point.webp', w: 720, h: 979 },
+  { id: 'debrief', src: '/img/captain/scenes/debrief.webp', w: 720, h: 979 },
+] as const;
+
 /** Category accents cycled across the "what it is / isn't" cards. */
 const CARD_TONES = ['var(--cat-1)', 'var(--cat-2)', 'var(--cat-3)', 'var(--cat-4)', 'var(--cat-5)'];
 
@@ -111,6 +119,28 @@ export function About() {
             </BentoCard>
           ))}
         </BentoGrid>
+      </section>
+
+      {/* Captain's log — the field-note scene gallery ported from captadel.com. The
+          captions carry the copy, so the images stay decorative for AT. */}
+      <section className={styles.block} aria-labelledby="about-log">
+        <SectionHeader id="about-log" title={t('about.log.head')} tone="var(--cat-3)" />
+        <div className={styles.log}>
+          {LOG_SCENES.map((s) => (
+            <figure key={s.id} className={styles.logFigure}>
+              <img
+                className={styles.logImg}
+                src={s.src}
+                alt=""
+                width={s.w}
+                height={s.h}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className={styles.logCaption}>{t(`about.log.${s.id}`)}</figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
 
       {/* Conversion band into the core product. */}

@@ -2185,6 +2185,7 @@
       }
     ],
     "tiersNote": "Indicative pricing. Every plan shares a per-minute rate limit; monthly quotas reset each calendar month.",
+    "scene": "The left seat — where every rule earns its keep",
     "endpointHead": "The endpoint",
     "endpointLead": "POST /v1/ask with your key as a Bearer token (or an X-Api-Key header). Send a message; receive a grounded answer, its sources and kind.",
     "requestLabel": "Request",
@@ -4327,6 +4328,13 @@
     "eyebrow": "About",
     "title": "About Fly GACA",
     "lead": "Every Saudi reg. One captain on the answer. Finding the right GACAR section should not be the hard part of flying in the Kingdom.",
+    "log": {
+      "head": "Captain's log — field notes",
+      "walkaround": "Walkaround — the preflight never lies",
+      "briefingRoom": "Briefing room — where GACAR stops being boring",
+      "holdingPoint": "Holding point — patience is a published procedure",
+      "debrief": "Debrief — coffee goes cold over Part 91"
+    },
     "sectionsHead": "What Fly GACA is, and isn't",
     "sections": [
       {
