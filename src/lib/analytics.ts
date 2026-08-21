@@ -94,6 +94,10 @@ export function reportWebVitals(): void {
     });
 }
 
+interface GtagWindow extends Window {
+  dataLayer: unknown[];
+}
+
 /** Initialize Google Analytics (gtag) for production Firebase Hosting. */
 export function initializeGoogleAnalytics(): void {
   if (!isAnalyticsEnabled() || isVercelAnalyticsEnabled()) return; // Vercel has its own analytics
@@ -105,9 +109,10 @@ export function initializeGoogleAnalytics(): void {
   script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
   document.head.appendChild(script);
   // Initialize dataLayer
-  (window as any).dataLayer = (window as any).dataLayer || [];
-  function gtag(...args: any[]) {
-    (window as any).dataLayer.push(args);
+  const gtagWindow = window as unknown as GtagWindow;
+  gtagWindow.dataLayer = gtagWindow.dataLayer || [];
+  function gtag(...args: unknown[]): void {
+    gtagWindow.dataLayer.push(args);
   }
   gtag('js', new Date());
   gtag('config', measurementId);
