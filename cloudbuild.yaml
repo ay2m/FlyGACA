@@ -2,11 +2,11 @@
 #
 # This file exists because `gcloud run deploy --source .` cannot build this service.
 # Cloud Run's source deploys only honour a Dockerfile at the ROOT of the source
-# directory, and ours is at `server/Dockerfile` — deliberately, because it copies
+# directory, and ours is at the root (`./Dockerfile`) — deliberately, because it copies
 # `public/data/rag-chunks.json` into the image so the BM25 index needs no cold-start
 # fetch, and that file is outside `server/`. Pointing `--source` at `server/` instead
 # puts the corpus outside the build context and the COPY fails. So the build has to
-# be an explicit `docker build -f server/Dockerfile .` from the repo root, exactly as
+# be an explicit `docker build -f Dockerfile .` from the repo root, exactly as
 # `.dockerignore` and the Dockerfile's own header describe.
 #
 #   gcloud builds submit --config cloudbuild.yaml --region me-central2 .
@@ -28,7 +28,7 @@ steps:
     name: gcr.io/cloud-builders/docker
     args:
       - build
-      - --file=server/Dockerfile
+      - --file=Dockerfile
       - --tag=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:${_TAG}
       - --tag=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_SERVICE}:latest
       - .
