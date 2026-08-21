@@ -73,3 +73,5 @@ captain-art/
 # Python bytecode (skill helper scripts)
 __pycache__/
 *.py[cod]
+public/data/airports-shards/
+public/data/library-shards/
