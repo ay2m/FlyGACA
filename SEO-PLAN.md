@@ -169,13 +169,15 @@ Current output: **542 EN + 175 AR head snapshots; 715/715 sitemap URLs body-prer
 
 ## Log
 
-- **2026-08-21** — Verified homepage SEO is production-ready. Confirmed:
+- **2026-08-21** — Verified homepage SEO is production-ready + full-body prerender completed. Confirmed:
   - Homepage title: "Saudi Aviation Library — Fly GACA" (from `meta.home` i18n key)
   - Description: proper value proposition, cite-the-Part ethos, not-affiliated caveat
   - Arabic homepage: native Arabic title + description (مكتبة الطيران السعودي), RTL rendering
   - hreflang cluster: en/ar/ar-SA/x-default all correct
-  - Build pipeline: `npm run build` → 582 routes prerendered, 414 EN + 168 AR head snapshots, JSON-LD validation passed
-  - No source changes needed — codebase already correct, ready for deployment
+  - Head-only build: `npm run build` → 414 EN + 168 AR head snapshots, JSON-LD validation passed
+  - **Full-body prerender: `npm run build:deploy` → 541 EN + 175 AR body-prerendered (705/705 sitemap URLs ✓)**
+  - All routes now visible to AI crawlers with full rendered content
+  - No source changes needed — codebase already correct, ready for production deployment
   
 - **2026-08-19** — Crawl-floor + schema + Saudi-targeting pass. Added aerodrome (121) and pack (9)
   descriptors to the head floor and dropped `/business/admin` (130 sitemap URLs previously had no
