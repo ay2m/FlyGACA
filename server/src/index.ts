@@ -86,6 +86,13 @@ app.use((req, res, next) => {
  * rotation over a feature that is deliberately off. Only the database failing
  * is fatal.
  */
+app.get("/", (_req, res) => {
+  if (!config.isProduction) {
+    return res.redirect(config.appOrigin || "http://localhost:5173");
+  }
+  return res.json({ service: "flygaca-api", status: "ok" });
+});
+
 app.get(
   "/healthz",
   handler(async (_req, res) => {
