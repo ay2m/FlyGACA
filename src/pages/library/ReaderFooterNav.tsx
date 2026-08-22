@@ -60,7 +60,7 @@ export function ReaderFooterNav({
         </nav>
       )}
 
-      <nav aria-label={t('document.prevNextNav')} className={styles.prevNext}>
+      <nav aria-label={t('library.title')} className={styles.prevNext}>
         {prev ? (
           <Link to={`${base}/${prev.slug}`} className={styles.prevNextLink}>
             <span className={styles.prevNextDir}>← {t('document.prev')}</span>
