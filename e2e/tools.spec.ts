@@ -44,7 +44,7 @@ test('crosswind calculator accepts input and computes', async ({ page }) => {
   await fields.nth(2).fill('20');
 
   // Should compute crosswind and headwind components
-  await expect(page.getByText(/\d+\.\d+/)).toBeVisible();
+  await expect(page.getByText(/\d+\.\d+/).first()).toBeVisible();
 });
 
 test('temperature calculator (ISA/alt) computes', async ({ page }) => {
