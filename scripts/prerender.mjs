@@ -138,7 +138,7 @@ corpus.push(...packRoutes);
 // the cap only trims the corpus tail. A trim warns loudly here (and becomes a
 // fatal deploy failure once check-prerender-coverage runs), so raise
 // PRERENDER_MAX or set it to 0 to prerender the whole corpus.
-const MAX = Number(process.env.PRERENDER_MAX ?? 560);
+const MAX = Number(process.env.PRERENDER_MAX ?? 0);
 const baseList = [...baseRoutes];
 const budget = MAX === 0 ? corpus.length : Math.max(0, MAX - baseList.length);
 const corpusIncluded = corpus.slice(0, budget);
