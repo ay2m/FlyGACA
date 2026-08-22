@@ -9,7 +9,7 @@ const BASE_URL = `http://localhost:${PORT}`;
  * tests exercise exactly what ships (including the PWA shell and SPA routing).
  */
 export default defineConfig({
-  testDir: './e2e',
+  testDir: '../e2e',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
