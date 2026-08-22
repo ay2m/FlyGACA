@@ -285,8 +285,10 @@ try {
   // signature of a race rather than a broken page. Waiting for the language to
   // land removes the race at its source.
   async function snapshot(url, file, lang = 'en') {
-    await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
-    await page.waitForSelector('footer, article, main', { timeout: 15000 });
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+    await page.waitForSelector('footer, article, main, [data-testid="reader-body"]', {
+      timeout: 15000,
+    });
     await page.waitForFunction(
       (want) => {
         const el = document.documentElement;

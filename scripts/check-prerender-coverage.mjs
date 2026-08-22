@@ -55,7 +55,8 @@ for (const route of paths) {
   else if (
     !readFileSync(file, 'utf8').includes('<footer') &&
     !readFileSync(file, 'utf8').includes('<article') &&
-    !readFileSync(file, 'utf8').includes('<main')
+    !readFileSync(file, 'utf8').includes('<main') &&
+    !readFileSync(file, 'utf8').includes('data-testid="reader-body"')
   )
     headOnly.push(route);
 }
