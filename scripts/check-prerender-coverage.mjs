@@ -52,7 +52,12 @@ const headOnly = []; // snapshot exists but has no rendered body
 for (const route of paths) {
   const file = fileFor(route);
   if (!existsSync(file)) missing.push(route);
-  else if (!readFileSync(file, 'utf8').includes('<footer')) headOnly.push(route);
+  else if (
+    !readFileSync(file, 'utf8').includes('<footer') &&
+    !readFileSync(file, 'utf8').includes('<article') &&
+    !readFileSync(file, 'utf8').includes('<main')
+  )
+    headOnly.push(route);
 }
 
 // Drift the other way (body-prerendered routes the sitemap doesn't list, e.g.

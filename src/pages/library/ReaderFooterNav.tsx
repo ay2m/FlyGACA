@@ -26,7 +26,7 @@ export function ReaderFooterNav({
 }) {
   const { t } = useTranslation();
   return (
-    <>
+    <footer className={styles.readerFooter}>
       {related.length > 0 && (
         <section className={styles.related}>
           <h2 className={styles.relatedHead}>{t('document.related')}</h2>
@@ -60,7 +60,7 @@ export function ReaderFooterNav({
         </nav>
       )}
 
-      <nav className={styles.prevNext} aria-label={t('library.title')}>
+      <nav aria-label={t('document.prevNextNav')} className={styles.prevNext}>
         {prev ? (
           <Link to={`${base}/${prev.slug}`} className={styles.prevNextLink}>
             <span className={styles.prevNextDir}>← {t('document.prev')}</span>
@@ -81,6 +81,6 @@ export function ReaderFooterNav({
           <span />
         )}
       </nav>
-    </>
+    </footer>
   );
 }

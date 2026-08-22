@@ -286,7 +286,7 @@ try {
   // land removes the race at its source.
   async function snapshot(url, file, lang = 'en') {
     await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
-    await page.waitForSelector('footer', { timeout: 15000 });
+    await page.waitForSelector('footer, article, main', { timeout: 15000 });
     await page.waitForFunction(
       (want) => {
         const el = document.documentElement;
