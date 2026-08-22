@@ -1,0 +1,3434 @@
+[
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "§139.149 Issuance of Authorization .. ...20 §139.151 Validity of the Authorization.... ...20 § 139.153 Amendment to the Authorization.... ...20 § 139.155 Responsibilities of the Authorization Holder.... ....21",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "§ 139.303 Runway shoulders.. ....50 § 139.305 Runway turn pads ... ...51 § 139.307 Runway strips... .54 § 139.309 Runway end safety areas... ..58 § 139.311 Clearways... ..60 § 139.313 Stopways.. ..62 § 139.315 Radio altimeter operating area",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-2"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "139.503Markings... ..101 § 139.505 Lights..... ...126 § 139.507 Signs.... ...177 § 139.509 Markers ..... ...188",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-3"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "APPENDIX- B-1 AERODROME MANUAL CONTENT... .247 APPENDIX -B-2. PARTICULARS TO BE INCLUDED IN STANDARD OPERATING PROCEDURES.. ..25 APPENDIX C - AUTHORIZATION OF AERODROMES ... ..256 APPENDIX D - DESIGN AND ESTABLISHMENT OF AERODROME.... .257 ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-appendix-b-certification-of-aerodromes-247"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "APPENDIX F-1. Number, siting and orientation of runways....... ..279 APPENDIX F-2. Grading of a strip for precision approach runways... ..281 APPENDIX F-3. Strength of runway strip.. ..282 APPENDIX F-4. Runway end safety areas (RESA)... ..2",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-appendix-f-physical-characteristics-279"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "APPENDIX K - ELECTRICAL SYSTEM... ..354 APPENDIX L - AERODROME OPERATIONAL SERVICES, EQUIPMENT, ANDINSTALLATIONS. 355 APPENDIX L-1. AIRCRAFT RESCUE AND FIREFIGHTING ADDITIONAL REQUIREMENT. ..355 APPENDIX L-2.ARFF Qualifications .360 Appendi",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-5"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) This part is promulgated in accordance with the article 33 of the Civil Aviation Law of the Kingdom of Saudi Arabia, which states that no civil aerodromes or airfields may be constructed, used, or invested in, in the Kingdom of Saudi Ar",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-101-general"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The requirements of this part are applicable to each person employed or used by an aerodrome operator conducting operations and are certified or authorized under this part. (b) This part prescribes the technical, operational and managem",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-103"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "139.105 (a) (1) The General Aviation aerodromes include but not limited to the following: (i) Private Aerodrome: An aerodrome used for the operation of aircrafts for use by its owner or operator and not open to the public. the existence of ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-7"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(3) Security Manual; and (4) Aerodrome Emergency Plan Manual (e) The aerodrome operators applying for authorization only under Subpart-C, are required to nominate a suitable person to function as the Person In-Charge of the Aerodrome. (f) T",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-8"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The Person in Charge of the Aerodrome assumes the responsibility for the overall compliance of the certificated aerodrome with regulatory requirements of this part, assumes the direct supervision of the Person In-charge of Operations, P",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-mathbf-139-107-person-in-charge-of-the-aerod"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Each aerodrome certificate or authorization holder must nominate adequately qualified management personnel or group of persons as specified in § 139.105 (c) and (e)whose responsibilities are to ensure that the organization complies with",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-109"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(d) The Person in-charge of aerodrome maintenance is responsible for ensuring that the aerodrome's maintenance program is carried out in compliance with this part. (e) The Person in-charge of aerodrome safety must satisfy the requirements o",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-9"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(c) No aerodrome certificate /authorization holder allows a person, who appears to be or who conducts in such a manner or physical indications that the individual is under the influence of psychoactive substances (except a patient under med",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-10"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The certificated or authorized aerodromes must allow operations of aircraft, for which the design, physical and operational characteristics of aerodrome, is suitable. (b) When operational parameters of an aircraft exceed the physical an",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-113"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Maintenance Service Provider. (1) No aerodrome certificate holder may outsource any aerodrome maintenance functions unless otherwise accepted by the President. (2) The aerodrome operator must, if maintenance services are subcontracted, ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-115"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Aerodrome consultant is a legal entity that has the expertise in discharging the functions of designing, constructing and /or carrying out the supervisory functions. (b) The aerodrome certificate holder / operator is fully responsible t",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-117"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The President or his/her authorized representative has the authority to conduct planned inspections, unannounced spot inspection, audits and onsite verification of facility, documents, and records to determine the compliance with the re",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-119"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) In case of any deviation from any aerodrome specification requirements that is permitted under the regulations in this part, an applicant must conduct an aeronautical study/safety risk assessment with the mitigation measures, if any for",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-121"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) A level-1 finding is any significant non-compliance with the GACAR Part-139 requirements which lowers the safety standard and capable of causing serious risk to the flight safety.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-123"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(b)A level-2 finding is any non-compliance with the GACAR Part-139 requirements which could lower the safety standard and possibly cause hazard to the flight safety. (C) A level-3 finding is an observation or recommendation to improve safet",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-12"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The requiremnts for issuance of aerodrome certificate is applicable to the aerodromes open to the public and serves aircraft operations offering scheduled or non-scheduled commercial air services/operation. (b) No aerodrome operators ar",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-125"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The application for certification of aerodrome must be submitted in a form and manner acceptable to thePresident. (b) The applicant must ensure that the aerodrome physical characteristics, facilities, services, and equipment installed a",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-127"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(9) Agreement for providing Air Navigation Services for aerodrome; (10) Aerodrome land ownership proof or lease agreement; (11) Environmental Permit from National Center for Environmental Compliance; and (12) Any other relevant documents as",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-14"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) An applicant may be issued with an aerodrome certificate upon confirming that the applicant meets the provisions of this part and no findings or deviations are reported or once the corrective action plans are accepted and mitigation mea",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-129"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The aerodrome certificate is issued for a maximum period of five years and thereafter renewed for five years. It remains valid subject to the conditions that: (1) The organization is maintaining the compliance with requirements this par",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-131"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The aerodrome certificate holder must apply to the President for renewal or reissuance of the certificate at least three months prior to the expiry of validity of the certificate or commencement of operations whichever is earlier. The a",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-133"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(2) The location of the principal base of operations of the certificate holder; (3) The change of management personnel; or (4) The change in aerodrome manual, operating procedures, facilities, systems, or any work that may affect the safety",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-15"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The aerodrome certificate holder is responsible: (1) To maintain the aerodrome in accordance with requirements specified in the accepted aerodrome manual and requirement of this part; (2) To update and distribute the aerodrome manual am",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-135"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Aerodrome operators who intend to apply for certification, must develop and submit an aerodrome manual for acceptance by the President. (b) Each aerodrome certificate holder must develop the aerodrome manual as per contents prescribed i",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-137-aerodrome-manual"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The certificate holder must develop and implement Safety Management System (SMS) manual as per the provisions of GACAR Part- 5. (b) The SMS Manual, for the purpose of implementing the aerodrome SMS requirements as mentioned in 139.135-(",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-139"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The aerodrome operator must describe the following competency requirements in the aerodrome manual and ensure that the persons possess competency with regard to: (1) Relevant knowledge, skills, and experience in the respective field of ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-141"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(b) In accordance with the job functions, adequate initial and recurrent training must be provided to persons to ensure that continued competence is maintained throughout the duration of employment / contract and validity of certificate. (c",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-17"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The issuance of aerodrome authorization is applicable to aerodromes as per the classification of aerodromes stipulated in §139.105 (b) No aerodrome operator is permitted to operate an aerodrome or provide services without obtaining prio",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-145-authorization-of-aerodromes"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The application for authorization of aerodrome must be submitted in a form and manner acceptable to thePresident. (b) The applicant must ensure that the aerodrome physical characteristics, facilities, aerodrome support services and equi",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-mathbf-l39-147-application-for-aerodrome-aut"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(10) Any other relevant documents as required by the President.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-19"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) An applicant may be issued an aerodrome authorization upon confirming that the applicant meets the requirements of this part and no findings or deviations are reported or once the corrective action plans are accepted and mitigation meas",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-mathbf-139-149-issuance-of-authorization"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The aerodrome authorization issued will remain valid, subject to: (1) The organization is maintaining the compliance with this part; (2) Provide access of aerodrome to GACA officers to determine continued compliance with the requirement",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-151-validity-of-the-authorization"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The authorization holder must make the provisions for making an amendment in aerodrome operation procedures manual and to notify the President of any changes in the organization's activities or locations or personnel. (b) No aerodrome a",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-mathbf-139-153-amendment-to-the-authorizatio"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(4) The change in the aerodrome operation manual, operating procedures, facilities, systems, any work that may affect the safety of the aerodrome operations.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-20"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "An authorization holder of an aerodrome must: (1) Have a single point of responsibility for the authorized aerodrome for its management of safe operation, maintenance, and security as per the provisions of this part. (2) Conduct aerodrome o",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-mathbf-139-155-responsibilities-of-the-autho"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) A master plan containing detailed plans for the development of aerodrome infrastructure must be established by the aerodrome operator. (b) The master plan must: (1) contain a schedule of priorities including a phased implementation plan",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-mathbf-139-161-aerodrome-design-and-location"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) An aerodrome reference code (code number and letter) which is selected for aerodrome planning purposes must be determined in accordance with the characteristics of the aeroplane for which an aerodrome facility is intended. (b) The aerod",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-163"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Any person or organization intending to establish an aerodrome, must apply in a form and manner acceptable to the President for prior permission. (b) The applicant must be the legal owner of the land or hold valid lease agreement or leg",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-mathbf-139-165-permission-for-design-and-est"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The applicant must submit the following documents for the grant of permission to establish an aerodrome: (1) Application for establishment of aerodrome in the prescribed form; (2) Statement of compliance with regulations in the prescrib",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-167-application-for-establishing-an-aero"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) An applicant may be granted permission to establish an aerodrome, if the President considers that the applicant meets the requirements of this part; (b) The President may stipulate additional requirements or conditions that are necessar",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-mathbf-139-169-grant-of-permission"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The applicant, once granted the establishment permission, must construct the aerodrome as per provisions of the permission and requirements of the relevant authorities for construction and in compliance with safety regulations. (b) The ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-171"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Horizontal reference system World Geodetic System — 1984 (WGS-84) must be used as the horizontal (geodetic) reference system. Reported aeronautical geographical coordinates indicating latitude and longitude must be expressed in terms of",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-201"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Determination and reporting of aerodrome-related aeronautical data must be in accordance with the accuracy and integrity classification required to meet the needs of the end-users of aeronautical data. (b) Aerodrome mapping data must be",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-203"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(g) Aerodrome mapping databases can be provided at one of two levels of quality — fine or medium. These levels and the corresponding numerical requirements are defined in Radio Technical Commission for aeronautics (RTCA) Document DO-272B an",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-26"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) An aerodrome reference point must be established for an aerodrome. (b) The aerodrome reference point must be located near the initial or planned geometric center of the aerodrome (all usable runways) and must normally remain where first",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-205"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The aerodrome elevation and geoid undulation at the aerodrome elevation position must be measured to the accuracy of one-half meter or foot and reported to the President. (b) For an aerodrome used by international civil aviation for non",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-207"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) An aerodrome reference temperature must be determined for an aerodrome in degrees Celsius. (b) The aerodrome reference temperature must be the monthly mean of the daily maximum temperatures for the hottest month of the year (the hottest",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-209"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The following data must be measured or described, as appropriate, for each facility provided on an aerodrome: (1) Runway — true bearing to one-hundredth of a degree, designation number, length, width, displaced threshold location to the",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-211-aerodrome-dimensions-and-related-inf"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note 1. — See GACAR Part 175 and Annex 15, Appendix 1, for graphical illustrations of obstacle data collection surfaces and criteria used to identify obstacles in Areas 2 and 3. Note 2. — PANS-AIM (Doc 10066), Appendix 1 and Appendix 8 prov",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-28"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(b) The bearing strength of a pavement intended for aircraft of apron (ramp) mass greater than 5,700 kg must be made available using the aircraft classification number — pavement classification number (ACN-PCN) method by reporting all the f",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-213"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(3) Maximum allowable tire pressure category:",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-29"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note-ReferAppendix E-1 for guidanceonStandardMethod forreporting thebearing strength of the pavement in terms of the Pavement Classification Number (PCN). (Applicable until 27 November 2024.) (g) Criteria to regulate the use of a pavement b",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-30"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The bearing strength of a pavement must be determined. (b) The bearing strength of a pavement intended for aircraft of apron (ramp) mass greater than 5 700 kg must be made available using the aircraft classification rating-pavement clas",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-213-2"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) Pavement classification rating (PCR) and numerical value; (2) Pavement type for ACR-PCR determination; (3) Subgrade strength category; (4) Maximum allowable tire pressure category or maximum allowable tire pressure value; and (5) Evalua",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-31"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(3) Maximum allowable tire pressure category: (g) Criteria to regulate the use of a pavement by an aircraft with an ACR higher than the PCR reported for that pavement in accordance with §139.213 (b) and §139.213 (c) must be as below: (1) Fo",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-32"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note: Also refer ICAO Annex 14 Volume I, Attachment A.20 and ICAO Doc 9157 Part 3 - Pavements, Chapter 2. (i) The bearing strength of a pavement intended for aircraft of apron (ramp) mass equal to or less than 5,700 kg must be made availabl",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-33"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The following distances must be calculated to the nearest meter or foot for a runway intended for use by international commercial air transport: (1) Takeoff run available; (2) Take-off distance available; (3) Accelerate-stop distance av",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-217"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "s 139.219 Condition of the Movement Area and Related Facilities. (a) Information on the condition of the movement area and the operational status of related facilities must be provided to the President, and similar information of operationa",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-34"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Annex 8 and to provide the information fulfiling the syntax requirements for dissemination specified in ICAO Annex 15, the PANS-ATM (Doc 4444) and the PANS-AIM (Doc 10066). (c) To facilitate compliance with § 139.219 (a) and § 139.219 (b), ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-35"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) The runway surface condition must be assessed and reported through a runway condition code (RWYCC) and a description using the following terms: COMPACTED SNOW DRY DRY SNOW DRY SNOW ON TOP OF COMPACTED SNOW DRY SNOW ON TOP OFICE FROST IC",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-36"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(3) When friction measurements are used as part of the overall runway surface assessment on compacted snow - or ice-covered surfaces, the friction measuring device must meet the standard set or agreed by the President. (4) Friction measurem",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-37"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The telephone/telex number(s) of the office of the aerodrome coordinator of operations for the removal of an aircraft disabled on or adjacent to the movement area must be made available, on request, to aircraft operators. (b) Informatio",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-221-disabled-aircraft-removal"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Information concerning the level of protection provided at an aerodrome for aircraft rescue and firefighting purposes must be made available. (b) The level of protection normally available at an aerodrome must be expressed in terms of t",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-223"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The following information concerning a visual approach slope indicator system installation must be made available: (1) Associated runway designation number; (2) Type of system according to § 139.505-(e)-(1)-(ii). For PAPI or APAPI insta",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-225"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "2^prime , and for an APAPI this must be the setting angle of the unit farther from the runway minus 2^prime , i.e., angle a minus 2^prime",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-39"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) To ensure that aeronautical information services units obtain information to enable them to provide up-to-date-pre-flight information and to meet the need for in-flight information, arrangements must be made between aeronautical informa",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-227"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Unless authorized by the President, the Aerodrome operator must provide the following charts to the President for publication in the KSA AIP: (i) Aerodrome Obstacle Chart —- ICAO Type A; (i) Precision Approach Terrain Chart — ICAO; (ii)",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-229-aeronautical-charts"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Number and orientation of runways Introductory Note. — Many factors affect the determination of the orientation, siting and number of runways. One important factor is the usability factor, as determined by the wind distribution, which i",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-301-runways"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) 37 km/h (20 kt) in the case of aeroplanes whose reference field length is 1small,500 m or over, except that when poor runway braking action owing to an insufficient longitudinal coefficient of friction is experienced with some frequency",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-42"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note. — Guidance on factors which may be considered in the determination of the location of a displaced threshold is given in ICAO Annex 14, Attachment A, Section 11. (c) Actual length of runways (1) Primary runway Except as provided in § 1",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-43"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "requirements for take-off and landing of the aeroplanes the runway is intended to serve.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-44"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) The width of a runway must be not less than the appropriate dimension specified in the following tabulation: Note 1. — The combinations of code numbers and OMGWS for which widths are specified have been developed for typical aeroplane c",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-d-width-of-runways"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) 150 m where the higher code number is 2; and (ii) 120 m where the higher code number is 1. (2) Where parallel instrument runways are intended for simultaneous use subject to conditions specified in the PANS-ATM (Doc 4444) and the PANS-O",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-45"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) 1.25 per cent where the code number is 4, except that for the first and last quarter of the length of the runway the longitudinal slope must not exceed O.8 per cent; (i) 1.5 per cent where the code number is 3, except that for the first",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-46"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(ii) Any point 1.5 m above a runway to all other points 1.5m above the runway within a distance of at least half the length of the runway where the code letter is A. Note. — Consideration will have to be given to providing an unobstructed l",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-47"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "But in any event must not exceed 1.5 per cent or 2 per cent, as applicable, nor be less than 1 per cent except at runway or taxiway intersections where flatter slopes may be necessary. For a cambered surface, the transverse slope on each si",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-48"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(4) Measurements of the surface friction characteristics of a new or resurfaced paved runway must be made with a continuous friction measuring device using self-wetting features. Note. —Additional guidance is included in the ICAO Airport Se",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-49"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) General Runway shoulders must be provided for a runway where the code letter is D, E or F. Note. — Guidance on characteristics and treatment of runway shoulders is given in ICAO Annex 14 Volume I, Attachment A, Section 9, and in the Aer",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-303"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) 60 m where the code letter is D or E; (2) 60 m where the code letter is F with two- or three-engine aeroplanes; and (3) 75 m where the code letter is F with four (or more)-engine aeroplanes. (c) Slopes on runway shoulders The surface of",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-50"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) General (1) Where the end of a runway is not served by a taxiway or a taxiway turnaround and where the code letter is D, E, or F a runway turn pad must be provided to facilitate a 180-degree turn of aeroplane (See figure F-1).",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-305"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(2) Where the end of a runway is not served by a taxiway or a taxiway turnaround and where the code letter is A, B or C, a runway turn pad must be provided to facilitate a 180-degree turn of aeroplanes. (3) The runway turn pad must be locat",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-51"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note.— Wheel base means the distance from the nose gear to the geometric centre of the main gear.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-52"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "The longitudinal and transverse slopes on a runway turn pad must be sufficient to prevent of the accumulation of water on the surface and facilitate rapid drainage of surface water. The slopes must be the same of those adjacent runway pavem",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-b-slopes-on-runway-turn-pads"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "for which the turn pad is intended, and any possible foreign object damage to the aeroplane engines. Note. — As a minimum, the width of the shoulders would need to cover the outer engine of the most demanding aeroplane and thus may be wider",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-53"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) General A runway and any associated stopways must be included in a strip. (b) Length of runway strips (1) A strip must extend before the threshold and beyond the end of the runway or stopway for a distance of at least: (2) 60 m where th",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-307"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) 140 m where the code number is 3 or 4; and (i) 70 m where the code number is 1 or 2; On each side of the center line of the runway and its extended center line throughout the length of the strip. (3) A strip including a non-instrument r",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-54"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "the relevant frangibility requirement in Subpart H, must be permitted on any part of a runway strip of a precision approach runway delineated by the lower edges of the inner transitional surfaces. No mobile object must be permitted on this ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-55"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note: Refer Appendix F-2 for guidance on grading of a greater area including a precision approach runway where the code number is 3 or 4. (f) Slopes on runway strips (1) Longitudinal slopes A longitudinal slope along that portion of a strip",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-56"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note 2. — The Aerodrome rescue and firefighting (RFF) procedure would need to take into account the location of open air water conveyances within the non-graded portion of a runway strip. (g) Strength of runway strips (1) That portion of a ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-57"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) General (1) A runway end safety area must be provided at each end of a runway strip where: (i) The code number is 3 or 4; and (i) The code number is 1 or 2 and the runway is an instrument one. (2) A runway end safety area must be provid",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-309"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(b) Dimensions of runway end safety areas (1) A runway end safety area must extend from the end of a runway strip to a distance of at least 90 m where: (i) The code number is 3 or 4; and (i) The code number is 1 or 2 and the runway is an in",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-58"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "A runway end safety area must provide a cleared and graded area for aeroplane which the runway is intended to serve in the event of an aeroplane undershooting or overrunning the runway. (e) Slopes on runway end safety areas (1) General: The",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-59"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note. — The inclusion of detailed specifications for clearways in this section is not intended to imply that a clearway has to be provided in ICAO Annex 14 Volume I. Attachment A, Section 2, provides information on the useof clearways.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-311"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Location of clearways The origin of a clearway must be at the end of the take-off run available. (b) Length of clearways The length of a clearway must not exceed half the length of the take-off run available. (c) Width of clearways A cl",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-60"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Width of stopways A stopway must have the same width as the runway with which it is associated. (b) Slopes on stopways Slopes and changes in slope on a stopway, and the transition from a runway to a stopway, must comply with the specifi",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-313-stopways"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) General A radio altimeter operating area must be established in the pre-threshold area of a precision approach runway. (b) Length of the area A radio altimeter operating area must extend before the threshold for a distance of at least 3",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-315"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(c) Width of the area A radio altimeter operating area must extend laterally, on each side of the extended centre line of the runway, to a distance of 60 m , except that, when special circumstances so warrant, the distance may be reduced to",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-62"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) General (1) Taxiways must be provided to permit the safe and expeditious surface movement of aircraft. (2) Sufficient entrance and exit taxiways for a runway must be provided to expedite the movement of aeroplanes to and from the runway",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-mathbfhat-139-317-taxiways"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note.— Wheel base means the distance from the nose gear to the geometric centre of the main gear.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-63"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "A straight portion of a taxiway must have a width of not less than that given by the following tabulation:",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-b-width-of-taxiways"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Changes in direction of taxiways must be as few and small as possible. The radii of the curves must be compatible with the maneuvering capability and normal taxiing speeds of the aeroplanes for which the taxiway is intended. The design of t",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-c-taxiway-curves"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(d) Junctions and intersections To facilitate the movement of aeroplanes, fillets must be provided at junctions and intersections of taxiways with runways, aprons, and other taxiways. The design of the fillets must ensure that the minimum w",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-64"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "would not adversely affect the safety or significantly affect the regularity of operations of aeroplanes. (f) Slopes on taxiways (1) Longitudinal slopes The longitudinal slope of a taxiway must not exceed: (i) 1.5 per cent where the code le",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-65"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) 1 per cent per 25 m (minimum radius of curvature of 2,500 m ) where the code letter is A or B. (3) Sight distance Where a change in slope on a taxiway cannot be avoided, the change must be such that, from any point: i） 3textrmm above th",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-66"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) Rapid exit taxiways (1) A rapid exit taxiway must be designed with a radius of turn-off curve of at least: To enable exit speeds under wet conditions of: (2) The radius of the fillet on the inside of the curve at a rapid exit taxiway mu",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-67"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(j) Taxiways on bridges (1) The width of that portion of a taxiway bridge capable of supporting aeroplanes, as measured perpendicularly to the taxiway centre line, must not be less than the width of the graded area of the strip provided for",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-68"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Straight portions of a taxiway where the code letter is C, D, E or F must be provided with shoulders which extend symmetrically on each side of the taxiway so that the overall width of the taxiway and its shoulders on straight portions ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-319"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) General A taxiway, other than an aircraft stand taxi lane, must be included in a strip. (b) Width of taxiway strips A taxiway strip must extend symmetrically on each side of the centre line of the taxiway throughout the length of the ta",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-321"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(e) Slopes on taxiway strips (1) The surface of the strip must be flush at the edge of the taxiway or shoulder, if provided, and the graded portion must not have an upward transverse slope exceeding: (i) 2.5 per cent for strips where the co",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-70"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) The distance between a holding bay, runway-holding position established at a taxiway/runway intersection or road-holding position and the centre line of a runway must be in accordance with Table F-2 and, in the case of a precision appro",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-71"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) If holding bay, runway-holding position or road-holding position is at a lower elevation to the threshold, the distance may be decreased 5m for every metre the bay or holding position is lower than the threshold, contingent upon not inf",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-72"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) General Aprons must be provided where necessary to permit the on- and off-loading of passengers, cargo, or mail as well as the servicing of aircraft without interfering with the Aerodrome traffic. (b) Size of aprons The total apron area",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-325"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Each part of an apron must be capable of withstanding the traffic of the aircraft it is intended to serve, due consideration being given to the fact that some portions of the apron will be subjected to a higher density of traffic and, as a ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-73"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(2) Over any portion of the stand provided with azimuth guidance by a visual docking guidance system.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-74"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) An isolated aircraft parking position must be designated, or the Aerodrome control tower must be advised of an area or areas suitable for the parking of an aircraft which is known or believed to be the subject of unlawful interference, ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-327"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) General Aeroplane de-icing /anti-icing facilities must be provided at an aeroplane where icing conditions are expected to occur. (b) Location (1) De-icing/anti-icing facilities must be provided either at aircraft stands or at specific s",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-329"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "The size of a de-icing/ anti-icing pad must be equal to the parking area required by the most demanding aeroplane in a given category with at least 3.8 m clear paved area all around the aeroplane for the movement of the de-icing/ anti-icing",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-75"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "See Figure G-1. (a) Outer horizontal surface. (1) An outer horizontal surface is a specified portion of a horizontal plane around an Aerodrome beyond the limits of the conical surface. It represents the level above which consideration needs",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-401"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) A lower edge coincident with the periphery of the inner horizontal surface; and (ii) An upper edge located at a specified height above the inner horizontal surface. (3) The slope of the conical surface must be measured in a vertical pla",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-78"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(7) The height of the inner horizontal surface must be measured above an elevation datum established for such purpose. The height is 45textrmm above the elevation of the lowest runway threshold existing or proposed for the aerodrome.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-79"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "See Figure G-4 for inner transitional and balked landing obstacle limitation surfaces. Figure G-3. Obstacle Limitation Surfaces.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-81"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(d) Approach surface (1) Description: approach surface is an inclined plane or combination of planes preceding the threshold. Note- The purpose of the approach surface is to protect an aircraft during the final approach to the runway by def",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-82"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) An inner edge coincident with the location of the inner edge of the approach surface but of its own specified length; (ii) Two sides originating at the ends of the inner edge and extending parallel to the vertical plane containing the c",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-83"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(g) Inner transitional surface It is intended that the inner transitional surface be the controlling obstacle limitation surface for navigation aids, aircraft and other vehicles that must be near the runway and which is not to be penetrated",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-84"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "landing surface and from there up the side of the balked landing surface to the point where the side intersects the inner horizontal surface; and i) An upper edge located in the plane of the inner horizontal surface. (3) The elevation of a ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-85"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Inner Approach, Inner Transitional and Balked Landing Surfaces together, define a volume of airspace in the immediate vicinity of a precision approach runway which is known as the obstacle",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-i-obstacle-free-zone-ofz"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "free zone (OFZ). This zone must be kept free from fixed objects, other than lightweight frangible mounted aids to air navigation which must be near the runway to perform their function, and from transient objects such as aircraft and vehicl",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-86"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "The requirements for obstacle limitation surfaces are specified on the basis of the intended use of a runway, i.e., take-off or landing and type of approach, and are intended to be applied when such use is made of the runway. In cases where",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-403-obstacle-limitation-requirements"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(2) The heights and slopes of the surfaces must not be greater than, and their other dimensions not less than, those specified in Table G-1. Note. — Because of transverse or longitudinal slopes on a strip, in certain cases the inner edge or",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-87"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) The following obstacle limitation surfaces must be established for a non-precision approach runway: (i) Conical surface; (i) Inner horizontal surface; (iii) Approach surface; and (iv) Transitional surfaces. (2) The heights and slopes of",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-88"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Guidance on obstacle limitation surfaces for precision approach runways is given in the ICAO Airport Services Manual (Doc 9137), Part 6. (1) The following obstacle limitation surfaces must be established for a precision approach runway cate",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-89"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(6) Fixed objects must not be permitted above the inner approach surface, the inner transitional surface or the balked landing surface, except for frangible objects which",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-90"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "because of their function must be located on the strip. Mobile objects must not be permitted above these surfaces during the use of the runway for landing. (7) New objects or extensions of existing objects must not be permitted above an app",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-91"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "RUNWAYS MEANT FOR TAKE-OFF (i) All dimensions are measured horizontally unless specified otherwise. (i) The take-off climb surface starts at the end of the clearway if the clearway length exceeds the specified distance. (iii) 1800m when the",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-92"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "would not adversely affect the safety or significantly affect the regularity of operations of aeroplanes.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-93"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Arrangements must be made to enable the President to be consulted concerning proposed construction beyond the limits of the obstacle limitation surfaces that extend above a height established by that authority, in order to permit an aer",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-405"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Objects which do not project through the approach surface, but which would nevertheless adversely affect the optimum siting or performance of visual or non-visual aids must, as far as practicable, be removed. (b) Anything which may, in ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-407"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": ":rlap, the lower surface must be used as the controlling obste",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-409"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Except as provided in § 139.403 -(a)-(3), (4), (5), 8 139.403-(b)-(4), (5), (6), ≤ 139.403-(c)-(6), (7), (8), (9) and § 139.403-(d)-(4), (5) (b) Objects which do not penetrate an approach surface to a new runway or a proposed runway ext",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-411"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(c) Anything which may, in the opinion of the President, endanger aircraft on the movement area must be removed. Except for those objects or vehicles on essential Aerodrome duties which, because of their function, must be positioned within ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-94"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) An aerodrome operator must:",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-413"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) monitor the OLS for the aerodrome; and (2) report to the President, in writing, any infringement, or potential infringement, of the OLS. (b) When a new obstacle is detected, the aerodrome operator must ensure that the information is pas",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-95"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) If a proposed object or structure is identified as likely to be an obstacle, details of the relevant proposal must be referred to the President to determine, in writing: (1) Whether the object or structure will be a hazard to aircraft o",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-415"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Guidance on form and time of notice of proposed construction or alteration are specified in GACAR Part 77.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-417-notes-of-construction-or-alteration"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) An aerodrome operator must monitor any object or structure that may infringe the aerodrome's OLS and PANS-OPS airspace associated with instrument approach procedures. (b) Under regulation GACAR Part 172, instrument approach procedure de",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-419"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "The aerodrome operator must designate a qualified officer to achieve obstacle control mission. This officer must receive specific training on the obstacle limitation surfaces and he must have the ability to use the necessary equipment to ac",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-421"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Guidance on the need to provide aerodrome obstacle and terrain charts and its characteristics is contained in GACAR Part 139 Subpart E.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-423"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "The aerodrome operator will apply the aerodrome survey requirements as per AC 175-003.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-425"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Wind direction indicators (1) Application An aerodrome must be equipped with at least one wind direction indicator. (2) Location A wind direction indicator must be located so as to be visible from aircraft in flight or on the movement a",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-501"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) Location Where provided, a landing direction indicator must be located in a conspicuous place on the Aerodrome. (2) Characteristics (i) The landing direction indicator must be in the form of a “\"T\". (i) The shape and minimum dimensions ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-99"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) A signalling lamp must be capable of producing red, green and white signals, and of: (A) Being aimed manually at any target as required; (B) Giving a signal in any one color followed by a signal in either of the two other colors; and (C",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-100"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) General (1) Interruption of runway markings (i) At an intersection of two (or more) runways the markings of the more important runway, except for the runway side stripe marking, must be displayed and the markings of the other runway(s) ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-503"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(B) 2nd - Non-precision approach runway; and (C) 3rd —— Non-instrument runway (ii) At an intersection of a runway and taxiway the markings of the runway must be displayed, and the markings of the taxiway interrupted, except that runway side",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-101"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i A runway designation marking must consist of a two-digit number and on parallel runways must be supplemented with a letter. On a single runway, dual parallel runways and triple parallel runways the two-digit number must be the whole numb",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-3-characteristics"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(ii) The numbers and letters must be in the form and proportion shown in Figure H-3. The dimensions must be not less than those shown in Figure H-3, but where the numbers are incorporated in the threshold marking, larger dimensions must be ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-103"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(B) 0.45 m on non-precision approach runways where the code number is 3 or 4, and precision approach category I runways; and (C) 0.30 m on non-precision approach runways where the code number is 1 or 2, and on non-instrument runways.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-104"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) Application (i) A threshold marking must be provided at the threshold of a paved instrument runway, and of a paved non instrument runway where the code number is 3 or 4 and the runway is intended for use by international commercial air ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-d-threshold-marking"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "across a runway, a double spacing must be used to separate the two stripes nearest the centre line of the runway, and in the case where the designation marking is included within the threshold marking this spacing must be 22.5 m (4) Transve",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-106"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(ii) When a runway threshold is temporarily displaced from the normal position, it must be marked as shown in Figure H-4 (A) or Figure H-4 (B) and all markings prior to the displaced threshold must be obscured except the runway centre line ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-107"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "a. The greater dimensions of the specified ranges are intended to be used where increased conspicuity is required. b. The lateral spacing may be varied within these limits to minimize the contamination of the marking by rubber deposits. c. ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-108"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(f) Touchdown zone marking (1) Application (i) A touchdown zone marking must be provided in the touchdown zone of a paved precision approach runway where the code number is 2, 3 or 4. (ii) A touchdown zone marking must be provided in the to",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-table-h-1-location-and-dimensions-of-aiming-"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(2) Location and characteristics (i) A touchdown zone marking must consist of pairs of rectangular markings symmetrically disposed about the runway centre line with the number of such pairs related to the landing distance available and, whe",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-109"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(g) Runway side stripe marking (1) Application (i) A runway side stripe marking must be provided between the thresholds of a paved runway where there is a lack of contrast between the runway edges and the shoulders or the surrounding terrai",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-110"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(h) Taxiway Centre line marking (1) Application (i) Taxiway centre line marking must be provided on a paved taxiway, de-icing/antiicing facility and apron where the code number is 3 or 4 in such a way as to provide continuous guidance betwe",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-111"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "marking for at least 3 dashed line segments or 47m from start to finish, whichever is greater. See Figure H-7 (b). (C) If the enhanced taxiway centre line marking continues through a taxiway/taxiway intersection that is located within 47m o",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-113"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) Runway turn pad marking (1) Application Where a runway turn pad is provided, a runway turn pad marking must be provided for continuous guidance to enable an aeroplane to complete a 180-degree turn and align with the runway centre line. ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-116"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) At an intersection of a taxiway and a non-instrument, non-precision approach or take-off runway, the runway-holding position marking must be as shown in Figure H-6, pattern A. (ii) Where a single runway-holding position is provided at a",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-117"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(k) Intermediate holding position marking (1) Application and location (i) An intermediate holding position marking must be displayed along an intermediate holding position. (i) An intermediate holding position marking must be displayed at ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-118"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "from the near edge of the intersecting taxiway to ensure safe clearance between taxiing aircraft. It must be coincident with a stop bar or intermediate holding position lights, where provided. (iv) The distance between an intermediate holdi",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-119"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(m)Aircraft stand markings (1) Application Aircraft stand markings must be provided for designated parking positions on a paved apron and on a de-icing/anti-icing facility. (2) Location Aircraft stand markings on a paved apron and on a de-i",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-figure-h-9-vor-aerodrome-checkpoint-marking"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) Aircraft stand markings must include such elements as stand identification, lead-in line, turn bar, turning line, alignment bar, stop line and lead-out line, as are required by the parking configuration and to complement other parking a",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-121"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(n) Apron safety lines (1) Application Apron safety lines must be provided on a paved apron as required by the parking configurations and ground facilities. (2) Location Apron safety lines must be located so as to define the areas intended ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-122"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(p) Mandatory instruction marking (1) Application Where it is impracticable to install a mandatory instruction sign in accordance with § 139.507-(b)-(1)-(i), a mandatory instruction marking must be provided on the surface of the pavement.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-123"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) The mandatory instruction marking on taxiways where the code letter is A, B, C or D must be located across the taxiway equally placed about the taxiway centre line and on the holding side of the runway-holding position marking as shown ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-2-location"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) A mandatory instruction marking must consist of an inscription in white on a red background. Except for a NO ENTRY marking, the inscription must provide information identical to that of the associated mandatory instruction sign. (ii) A ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-124"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) Application (i) Where an information sign would normally be installed and is impractical to install, as determined by the President, an information marking must be displayed on the surface of the pavement. (ii) Where operationally requi",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-q-information-marking"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(B) An inscription in black upon a yellow background, when it replaces or supplements a direction or destination sign. (i) Where there is insufficient contrast between the marking background and the pavement surface, the marking must includ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-125"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) General (1) Lights which may endanger the safety of aircraft A non-aeronautical ground light near an aerodrome which might endanger the safety of aircraft must be extinguished, screened or otherwise modified so as to eliminate the sourc",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-505"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) Instrument runway — code number 4: within the areas before the threshold and beyond the end of the runway extending at least 4,500 m in length from the threshold and runway end and 750 m either side of the extended runway centre line in",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-126"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(4) Aeronautical ground lights which may cause confusion to mariners",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-127"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "In the case of aeronautical ground lights near navigable waters, consideration needs to be given to ensuring that the lights do not cause confusion to mariners. (5) Elevated approach lights (i) Elevated approach lights and their supporting ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-128"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(A) Approach lighting system; (B) Runway edge lights; (C) Runway threshold lights; (D) Runway end lights; (E) Runway centre line lights; (F) Runway touchdown zone lights; and (G) Taxiway centre line lights. (iii) On the perimeter of and wit",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-129"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) Application (i Where operationally necessary an aerodrome beacon or an identification beacon must be provided at each aerodrome intended for use at night.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-c-aeronautical-beacons"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(ii) The operational requirement must be determined having regard to the requirements of the air traffic using the aerodrome, the conspicuity of the aerodrome features in relation to its surroundings and the installation of other visual and",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-130"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "An identification beacon must be provided at an aerodrome which is intended for use at night and cannot be easily identified from the air by other means. (i) Location (A) The identification beacon must be located on the aerodrome in an area",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-131"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Where physically practicable, a simple approach lighting system as specified in s 139.505-(d)-(2) -(i) -(A) to § 139.505-(d)-(2)-(ii)-(C) must be provided to serve a non-precision approach runway, except when the runway is used only in cond",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-132"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "in length. Subject to the approach system having a crossbar at 300 m from the threshold, an additional crossbar may be provided at 150 m from the threshold. (E) The system must lie as nearly as practicable in the horizontal plane passing th",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-133"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "The lights of the crossbar must be spaced so as to produce a linear effect, except that gaps may be left on each side of the centre line. These gaps must be kept to a minimum to meet local requirements and each must not exceed 6 m (C) The l",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-134"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(D) If the centre line consists of barrettes as described in 139.505-(d)-(3) -(ii) -(A) - (II) or 139.505-(d)-(3)-(ii)-(B)-(Il), each barrette must be supplemented by a flashing light, except where such lighting is considered unnecessary ta",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-135"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "light located 30textrmm from the threshold. Where the serviceability level of the approach lights specified as maintenance objectives in § 139.1009- (7) can be demonstrated, lights forming the side rows may be placed on each side of the cen",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-136"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "i) Characteristics (A) The centre line of a precision approach category II and IHI lighting system for the first 300 m from the threshold must consist of barrettes showing variable white, except that, where the threshold is displaced 300 m ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-139"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "where such lighting is considered unnecessary taking into account the characteristics of the system and the nature of the meteorological conditions. (F) Each capacitor discharge light must be flashed twice a second in sequence, beginning wi",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-140"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) A visual approach slope indicator system must be provided to serve the approach to a runway whether or not the runway is served by other visual approach aids or by non-visual aids, where one or more of the following conditions exist: (A",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-1-application"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(E) Terrain or prevalent meteorological conditions are such that the aeroplane may be subjected to unusual turbulence during approach. (ii) The standard visual approach slope indicator systems must consist of PAPI and APAPI systems conformi",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-141"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(A) The PAPI system must consist of a wing bar of 4 sharp transition multi-lamp (or paired single lamp) units equally spaced. The system must be located on the left side of the runway unless it is physically impracticable to do so. (B) The ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-142"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(B) The color transition from red to white in the vertical plane must be such as to appear to an observer, at a distance of not less than 300 m , to occur within a vertical angle of not more than 3^prime (C) At full intensity red light must",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-143"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(F) Where wing bars are installed on each side of the runway to provide roll guidance, corresponding units must be set at the same angle so that the signals of each wing bar change symmetrically at the same time.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-144"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "a) Where a PAPI or APAPI is installed on a runway not equipped with ILS or MLS, the distance D1 must be calculated to ensure that the lowest height at which a pilot will see a correct approach path indication (Figure H-18, angle B for a PAP",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-installation-tolerances"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(v) Obstacle protection surface (A) An obstacle protection surface must be established when it is intended to provide a visual approach slope indicator system. (B) The characteristics of the obstacle protection surface, i.e. origin, diverge",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-figure-h-17-siting-of-papi-and-apapi"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(E) Where an aeronautical study indicates that an existing object extending above an obstacle protection surface could adversely affect the safety of operations of aeroplanes one or more of the following measures must be taken: (1) Remove t",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-146"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "a. In selecting the eye-to-wheel height group, only aeroplanes meant to use the system on a regular basis shall be considered. The most demanding amongst such aeroplanes shall determine the eye-to-wheel height group. b. Where practicable th",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-148"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(f) Circling guidance lights (1) Application Circling guidance lights must be provided when existing approach and runway lighting systems do not satisfactorily permit identification of the runway and/or approach area to a circling aircraft ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-table-h-3-dimension-and-slopes-of-the-obstac"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(2) Location (i) The location and number of circling guidance lights must be adequate to enable a pilot, as appropriate, to: (A) Join the downwind leg or align and adjust the aircraft's track to the runway at a required distance from it and",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-150"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(B) Keep in sight the runway threshold and/or other features which will make it possible to judge the turn on to base leg and final approach, taking into account the guidance provided by other visual aids. (ii） Circling guidance lights must",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-151"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) Runway edge lights must be provided for a runway intended for use at night or for a precision approach runway intended for use by day or night. (i) Runway edge lights must be provided on a runway intended for take-off with an operating ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-152"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Runway threshold lights must be provided for a runway equipped with runway edge lights except on a non-instrument or non-precision approach runway where the threshold is displaced, and wing bar lights are provided. (i) Location of runway th",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-153"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(3) Characteristics of runway threshold and wing bar lights (i) Runway threshold and wing bar lights must be fixed unidirectional lightsshowing green in the direction of approach to the runway. The intensity and beam spread of the lights mu",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-154"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "[3) Characteristics (i Runway end lights must be fixed unidirectional lights showing red in the direction of the runway. The intensity and beam spread of the lights must be adequate for the conditions of visibility and ambient light in whic",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-156"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) Runway end lights on a precision approach runway must be in accordance with the specifications of Appendix H, Figure AH-13. (k) Runway centre line lights (1) Application (i) Runway centre line lights must be provided on a precision appr",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-157"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "3） Characteristics (i) Runway centre line lights must be fixed lights showing variable white from the threshold to the point 900 m from the runway end; alternate red and variable white from 900 m to 300 m from the runway end; and red from 3",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-158"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(m) Rapid exit taxiway indicator lights (1）Application (i) Rapid exit taxiway indicator lights must be provided on a runway intended for use in runway visual range conditions less than a value of 350 m and/or where the traffic density is he",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-160"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(ii) Rapid exit taxiway indicator lights must be in accordance with the specifications in Appendix H, Figure AH-11 or Figure AH-12 as appropriate. (ii) Rapid exit taxiway indicator lights must be supplied with power on a separate circuit to",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-161"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "lights must show green (Figure H-23.). The first light in the exit centre line must always show green and the light nearest to the perimeter must always show yellow. (ii) Where it is necessary to denote the proximity to a runway, taxiway ce",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-162"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(3) Location Taxiway centre line lights must normally be located on the taxiway centre line marking, except that they may be offset by not more than 30 cm where it is not practicable to locate them on the marking. (4) Taxiway centre line li",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-164"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(B) The lights should be spaced at longitudinal intervals of not more than 7.5 m",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-165"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(7) Taxiway centre line lights on runways (i) Location Taxiway centre line lights on a runway forming part of a standard taxi-route and intended for taxing in runway visual range conditions less than a value of 350 m must be spaced at longi",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-figure-h-24-offset-runway-and-taxiway-centre"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "taxiway edge lights need not be provided where, considering the nature of the operations, adequate guidance can be achieved by surface illumination or other means. (ii) Taxiway edge lights must be provided on a runway forming part of a stan",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-166"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(ii) Runway turn pad lights on a straight section of the runway turn pad marking must be spaced at longitudinal intervals of not more than 15 m (ii) Runway turn pad lights on a curved section of the runway turn pad marking must not exceed a",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-167"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(iii) Stop bars installed at a runway-holding position must be unidirectional and must show red in the direction of approach to the runway. (iv) Where the additional lights specified in § 139.505 -(r)-(3)-(ii) are provided, these lights mus",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-168"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(t)Runway guard lights (1) Application (i) Runway guard lights, Configuration A, must be provided at each taxiway/runway intersection associated with a runway intended for use in: (A) Runway visual range conditions less than a value of 550 ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-169"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) Runway guard lights, Configuration B, must consist of yellow lights spaced at intervals of 3 m across the taxiway. (iv) The light beam must be unidirectional and must show yellow in the direction of approach to the runway- holding posit",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-170"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "aiming of floodlights must be such that an aircraft stand receives light from two or more directions to minimize shadows. (3) Characteristics (i) The spectral distribution of apron floodlights must be such that the colors used for aircraft ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-171"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(iv) The azimuth guidance unit and the stopping position indicator must be located in such a way that there is continuity of guidance between the aircraft stand markings, the aircraft stand manoeuvring guidance lights, if present, and the v",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-172"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(D) When stopping guidance is indicated by color change, green must be used to show that the aircraft can proceed and red to show that the stop point has been reached except that for a short distance prior to the stop point a third color ma",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-173"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) The time taken from the determination of the lateral displacement to its display must not result in a deviation of the aircraft, when operated in normal conditions, from the stand centreline greater than 1textrmm (iv) The information on",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-174"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Aircraft stand manoeuvring guidance lights must be provided to facilitate the positioning of an aircraft on an aircraft stand on a paved apron or on a de-icing/anti-icing facility intended for use in poor visibility conditions unless adequa",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-175"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(iv) The flash frequency of the flashing-red light must be between 30 and 60 per minute.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-176"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) General (1) Application Signs must be provided to convey a mandatory instruction, information on a specific location or destination on a movement area or to provide other information to meet the requirementsof § 139.915- (1). (2) Charac",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-507-signs"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(b) Mandatory instruction signs (1) Application (i) A mandatory instruction sign must be provided to identify a location beyond which an aircraft taxiing or vehicle must not proceed unless authorized by the Aerodrome controltower.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-179"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(ii) Mandatory instruction signs must include runway designation signs, category I, II or III holding position signs, runway-holding position signs, road-holding position signs and NO ENTRY signs. (iii) A pattern “A\"” runway-holding positio",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-180"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(iv) The inscription on a category I, II, IMI or joint I/III holding position sign must consist of the runway designator followed by CAT I, CAT II, CAT II or CAT II/III, as appropriate. (v) The inscription on a NO ENTRY sign must be in acco",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-181"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) Application (i) An information sign must be provided where there is an operational need to identify by a sign, a specific location, or routing (direction or destination) information. (ii) Information signs must include direction signs, ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-c-information-signs"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(iii) A runway exit sign must be located on the same side of the runway as the exit is located (i.e. left or right) and positioned in accordance with Table H-5. (iv) A runway exit sign must be located prior to the runway exit point in line ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-184"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(vi) The inscription on a direction sign must comprise an alpha or alphanumerical message identifying the taxiway(s) plus an arrow or arrows appropriately oriented as shown in Figure H-27. (viii) The inscription on a location sign must comp",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-185"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(2) Location A VOR Aerodrome check-point sign must be located as near as possible to the checkpoint and so that the inscriptions are visible from the cockpit of an aircraft properly positioned on the VOR Aerodrome check-point marking. (3) C",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-186"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "The road-holding position sign must be located 1.5 m from one edge of the road (left or right as appropriate to the local traffic regulations) at the holding position. (2) Characteristics (i) A road-holding position sign must consist of an ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-187"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) General Markers must be frangible. Those located near a runway or taxiway must be sufficiently low to preserve clearance for propellers and for the engine pods of jet aircraft.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-509"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Objects within the lateral boundaries of the obstacle limitation surfaces (1) Vehicles and other mobile objects, excluding aircraft, on the movement area of an aerodrome are obstacles and must be marked and, if the vehicles and aerodrom",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-601"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(5) A fixed object, other than an obstacle, adjacent to a take-off climb surface must be marked and, if the runway is used at night, lighted if such marking and lighting is considered necessary to ensure its avoidance, except that the marki",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-189"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) The marking may be omitted when the obstacle is lighted by medium-intensity obstacle lights, Type A, by day and its height above the level of the surrounding ground does not exceed 150 m (iii) The marking may be omitted when the obstacl",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-190"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) The presence of objects which must be lighted, as specified in § 139.601 , must be indicated by low-, medium- or high-intensity obstacle lights, or a combination of such lights.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-a-general"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(2) Low-intensity obstacle lights, Types A, B, C, D and E, medium-intensity obstacle lights, types A, B and C, high-intensity obstacle lights Type A and B, must be in accordance with the specifications in Table I-1 and Appendix H. (3) The n",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-191"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note.This table does not include recommended horizontal beam spreads. § 139.603-(a)-(3) requires 360^° coverage around an obstacle. Therefore, the number of lights needed to meet this requirement will depend on the horizontal beam spreads o",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-193"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(f) Beam spread is defined as the angle between the horizontal plan and the directions for which the intensity exceeds that mentioned in the“intensity” column. Note. This table does not include recommended horizontal beam spreads. § 139.603",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-194"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) Low-intensity obstacle lights, Type C, must be displayed on vehicles and other mobile objects excluding aircraft. (i) Low-intensity obstacle lights, Type C, displayed on vehicles associated with emergency or security must be flashing-bl",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-4-lighting"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "A) It has essentially unbroken surfaces and has one dimension, horizontal or vertical, greater than 1.5 m , and the other dimension, horizontal or vertical, less than 4.5 m Or (B) It is of skeletal type with either a vertical or a horizonta",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-196"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(ii) An object must be colored in a single conspicuous color if its projection on any vertical plane has both dimensions less than 1.5 m . Orange or red must be used, except where such colors merge with the background. (3) Marking by flags ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-197"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) Flags used to mark fixed objects must not be less than O.6 m on each side. (iii) Flags used to mark fixed objects must be orange in color or a combination of two triangular sections, one orange and the other white, or one red and the ot",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-198"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) In case of an object to be lighted one or more low-, medium- or high-intensity obstacle lights must be located as close as practicable to the top of the object. Requirements on how a combination of low-, medium-, and/or high-intensity l",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-5-lighting"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(ii) Where an object is indicated by medium-intensity obstacle lights, Type A, and the top of the object is more than 105 m above the level of the surrounding ground or the elevation of tops of nearby buildings (when the object to be marked",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-202"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "§ 139.603-(c)-(5)-(i) except that where an object to be marked is surrounded by buildings, the elevation of the tops of the buildings may be used as the equivalent of the ground level when determining the number of light levels. (ii) Where,",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-203"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) When lighting is deemed necessary, medium intensity obstacle lights must be used. In the case of a wind farm, i.e., group of two or more wind turbines it must be regarded as an extensive object and the lights must be installed: (A) To i",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-204"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(e) Overhead wires, cables, etc. and supporting towers (1) Marking The wires, cables, etc. to be marked must be equipped with markers; the supporting tower must be colored. (2) Marking by colors The supporting towers of overhead wires, cabl",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-205"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Where multiple wires, cables, etc. are involved, a marker must be located not lower than the level of the highest wire at the point marked. (iv) A marker must be of one color. When installed, white and red, or white and orange markers must ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-206"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(iv) Where, in the opinion of President, the use of high-intensity obstacle lights, Type B, at night may dazzle pilots in the vicinity of an Aerodrome (within approximately 10,000 m radius) or cause significant environmental concerns, a dua",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-207"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Application Shoulders for taxiways, runway turn pads, holding bays and aprons and other non-load-bearing surfaces which cannot readily be distinguished from load-bearing surfaces and which, if used by aircraft, might result in damage to",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-703"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(b) Location A taxi side stripe marking must be placed along the edge of the load-bearing pavement, with the outer edge of the marking approximately on the edge of the load-bearing pavement. (c) Characteristics A taxi side stripe marking mu",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-210"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Application When the surface before a threshold is paved and exceeds 60 m in length and is not suitable for normal use by aircraft, the entire length before the threshold must be marked with a chevron marking. (b) Location Chevron marki",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-705"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Application Un-serviceability markers must be displayed wherever any portion of a taxiway, apron or holding bay is unfit for the movement of aircraft but it is still possible for aircraft to bypass the area safely. On a movement area us",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-707"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "The safety of operations at aerodromes depends on the quality of the supplied power. The total electrical power supply system may include connections to one or more external sources of electric power supply. one or more local generating fac",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-801"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "secondary power is required must be so arranged that the facilities are automatically connected to the secondary power supply on failure of the primary source of power. (ii) For a runway meant for take-off in runway visual range conditions ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-213"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(vi) Requirements for a secondary power supply must be met by either of the following: (A) Independent public power, which is a source of power supplying the aerodrome service from a substation other than the normal substation through a tra",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-214"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) For a runway meant for use in runway visual range conditions less than a value of 550 m ,the electrical systems for the power supply, lighting and control of the lighting systems included in Table K-1 must be so designed that an equipme",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-803"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(c) Where a runway forming part of a standard taxi-route is provided with runway lighting and taxiway lighting, the lighting systems must be interlocked to preclude the possibility of simultaneous operation of both forms of lighting.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-217"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) A system of monitoring must be employed to indicate the operational status of the lighting systems. (b) Where lighting systems are used for aircraft control purposes, such systems must be monitored automatically so as to provide an indi",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-805"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) General (1) An aerodrome emergency plan must be established at an aerodrome, commensurate with the aircraft operations and other activities conducted at the aerodrome. (2) The aerodrome certificate holder must establish an aerodrome eme",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-901"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "- off the Aerodrome: fire departments, police, health authorities (including medical, ambulance, hospital and public health services), military, and harbor patrol or coast guard. Note 2. — Public health services include planning to minimize",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-219"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(4) A person must be assigned to assume control of the emergency operations center and, when appropriate, another person the command post. (c) Communication system Adequate communication systems linking the command post and the emergency op",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-220"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(3) An assessment of the approach and departure areas within 1,000 m of therunway threshold must be carried out to determine the options available for intervention.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-221"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Application (1) Rescue and firefighting equipment and services must be provided at an aerodrome when serving commercial air transport operation. (2) Where an aerodrome is located close to water/swampy areas, or difficult terrain, and wh",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-903"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(c) Extinguishing agents (1) Both principal and complementary agents must normally be provided at an aerodrome. (2) The principal extinguishing agent must be: (i) A foam meeting the minimum performance level A; or (i) A foam meeting the min",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-222"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Except that the principal extinguishing agent for aerodromes in categories 1 to 3 should preferably meet a performance level B or C foam. (3) Unless authorized by the President, the complementary extinguishing agent must be a dry chemical p",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-223"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(5) At aerodromes where operation by aeroplanes larger than the average size in a given category are planned, the quantities of water must be recalculated and the amount of water",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-table-l-2-minimum-usable-amounts-of-extingui"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "for foam production and the discharge rates for foam solution must be increased accordingly. (6) The quantity of foam concentrates separately provided on vehicles for foam production must be in proportion to the quantity of water provided a",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-224"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(17) Where a major delay in the replenishment of the supplies is anticipated, the amount of reserve supply in 139.903-(d)-(14), 139.903-(d)-(15) and 139.903-(d)-(16), must be increased as determined by a risk assessment. (d)Rescue equipment",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-225"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(f) Emergency access roads (1) Emergency access roads must be provided on an aerodrome where terrain conditions permit their construction, so as to facilitate achieving minimum response times. Particular attention must be given to the provi",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-226"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(2) Unless authorized by the President, rescue and fire fighting vehicles must not be more than fifteen years old. (3) Where the international Aerodrome category is (9) or (10), the Aerodrome certificate holder must provide Escape Stair Veh",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-227"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) All rescue and firefighting personnel must be properly trained to perform their duties in an efficient manner and must participate in live fire drills commensurate with the types of aircraft and type of rescue and firefighting equipment",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-i-personnel"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(5) All responding rescue and firefighting personnel must be provided with protective clothing and respiratory equipment to enable them to perform their duties in an effective manner.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-228"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) A plan for the removal of an aircraft disabled on, or adjacent to, the movement area must be established for an Aerodrome, and a coordinator designated to implement the plan, when necessary. (b) The disabled aircraft removal plan must b",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-mathbf-139-905-disabled-aircraft-removal"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The wildlife strike hazard on, or in the vicinity of, an aerodrome must be assessed through: (1) The collection of information from aircraft operators, airport personnel, etc. on the presence of wildlife on or around the aerodrome const",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-907"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(d) The aerodrome operator must take action to eliminate or to prevent the establishment of garbage disposal dumps or any other source which may attracts wildlife to the aerodrome, or its vicinity, unless an appropriate wildlife assessment ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-229"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) When the president determines that a wildlife hazard management program is needed, the certificate holder must formulate and implement the program using the wildlife hazard assessment as a basis. The program must - (1) Provide measures ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-230"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) When warranted by the volume of traffic and operating conditions, an appropriate apron management service must be provided on an apron by an aerodrome ATS unit, by another aerodrome operating authority, or by a cooperative combination o",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-909"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(e) An emergency vehicle responding to an emergency must be given priority over all other surface movement traffic. (f) A vehicle operating on an apron must: (1) Give way to an emergency vehicle; an aircraft taxiing, about to taxi, or being",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-231"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Fire extinguishing equipment suitable for at least initial intervention in the event of fuel fire and personnel trained in its use must be readily available during the ground servicing of an aircraft, and there must be a means of quickl",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-911"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) A vehicle must be operated: (1) On a maneuvering area only as authorized by the aerodrome control tower; and (2) On an apron only as authorized by the appropriate designated authority of the aerodrome operator.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-913"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(b) The driver of a vehicle on the movement area must comply with all mandatory instructions conveyed by markings and signs unless otherwise authorized by: (1) The aerodrome control tower when on the maneuvering area; or (2) The appropriate",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-232"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Application A surface movement guidance and control system (SMGCS) must be provided at an aerodrome. (b) Characteristics (1) The design of a SMGCS must take into account: (i) The density of air traffic; (ii) The visibility conditions un",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-915"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(v) Movements of vehicles. (2) The visual aid components of a SMGCS, i.e. markings, lights and signs must be designed to conform to the relevant specifications in § 139.503, § 139.505 and § 139.507, respectively. An SMGCS must be designed t",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-233"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Unless its function requires it to be there for air navigation or for aircraft safety purposes, no equipment or installation must be:",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-917"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) On a runway strip, a runway end safety area, a taxiway strip or within the distances specified in Table F-1, column 11, if it would endanger an aircraft; or; (2) On a clearway if it would endanger an aircraft in the air. (b) Any equipme",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-234"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(1) A fence or other suitable barrier must be provided on an aerodrome to prevent the entrance to the movement area of animals large enough to be a hazard to aircraft. (2) A fence or other suitable barrier must be provided on an aerodrome t",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-235"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "At an aerodrome where it is deemed desirable for security reasons, a fence or other barrier provided for the protection of international civil aviation and its facilities must be illuminated at a minimum essential level. Consideration must ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-921"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Characteristics (1) Where an ARIWS is installed at an aerodrome: (i) It must provide autonomous detection of a potential incursion or of the occupancy of an active runway and a direct warning to a flight crew or vehicle operator; (ii) I",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-923"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) Its visual aid components, i.e. lights, must be designed to conform with the relevant specifications in § 139.505 ; and (iv) Failure of part or all of it must not interfere with normal Aerodrome operations. To this end, provision must b",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-236"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) A maintenance program, including preventive maintenance where appropriate, must be established at an Aerodrome to maintain facilities in a condition which does not impair the safety, regularity, or efficiency of air navigation. Note 1. ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-1001"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The surfaces of all movement areas including pavements (runways, taxiways, aprons and adjacent areas) must be inspected and their conditions monitored regularly as part of an Aerodrome preventive and corrective maintenance program with ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-1003"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note 3. — Additional guidance on sweeping/cleaning of surfaces is contained in the Airport Services Manual (Doc 9137), Part 9. Note 4. — Guidance on precautions to be taken in regard to the surface of shoulders is given in Attachment A, Sec",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-238"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "these measurements must be sufficient to determine the trend of the surface friction characteristics of the runway. Note 1. — Guidance on evaluating the runway surface friction characteristics is provided in Assessment, Measurement and Repo",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-239"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Snow, slush, ice, standing water, mud, dust, sand, oil, rubber deposits and other contaminants must be removed from the surface of runways in use as rapidly and completely as possible to minimize accumulation. Note. — The above requirem",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-1005"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(c) Aprons must be kept clear of snow, slush, ice, etc., to the extent necessary to enable aircraft to maneuver safely or, where appropriate, to be towed or pushed. (d) Whenever the clearance of snow, slush, ice, etc., from the various part",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-240"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The longitudinal slope of the temporary ramp, measured with reference to the existing runway surface or previous overlay course, must be: (1) 0.5 to 1.0 per cent for overlays up to and including 5 cm in thickness; and (2) Not more than ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-1007"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) A light must be deemed to be unserviceable when the main beam average intensity is less than 50 per cent of the value specified in the appropriate figure in Appendix H. For light units where the designed main beam average intensity is a",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-139-1009-visual-aids"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i)Precision approach category I and III lighting system, the inner 450 m; (ii) Runway center line lights; (ii)Runway threshold lights; and (iv)Runway edge lights; (2) 90 per cent of the lights are serviceable in the touchdown zone lights; ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-242"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(2) Runway threshold lights; (3) Runway edge lights; and (4) Runway end lights. In order to provide continuity of guidance an unserviceable light must not be permitted adjacent to another unserviceable light unless the light spacing is sign",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-243"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "This appendix outlines a methodology and procedure to assess the compatibility between aeroplane operations and aerodrome infrastructure and operations when an aerodrome accommodates an aeroplane that exceeds the certificated characteristic",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-1-introduction"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "7. The GACA with the information which is necessary for its safety oversight and the continued monitoring of the conditions specified in the aerodrome certification.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-245"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Introducing new types of aeroplanes into existing aerodromes may have an impact on the aerodrome facilities and services, in particular, when the aeroplane characteristics exceed the parameters that were used for planning the aerodrome. ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-i1-impact-of-aeroplane-characteristics-on-th"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Purpose of the Aerodrome manual. 2. Legal position regarding Aerodrome certification as contained in the applicable regulation. 3. Distribution of the Aerodrome manual. 4. Procedures for distributing and amending the Aerodrome manual and",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-1-introduction-2"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Details of the following: a. Latitude and longitude of the Aerodrome reference point in World Geodetic System 1984 (WGS-84) format. b. Elevations of: i. Aerodrome ii. Apron 2. Plans showing the position of the aerodrome reference point, lay",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-l-description-of-the-aerodrome-aerodrome-cha"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "strips. It will not be necessary for these plans or the information called for in subparagraphs c) to f) below to accompany all copies of the Aerodrome manual, but they are to be appended to the licence holder's master copy and to the copy ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-247"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "The system of aeronautical information service available and the system that the certificate holder uses to promulgate AIP requirements.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-1-promulgation-of-aeronautical-information"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Control of access to the Aerodrome and its operational areas, including the location of notice boards, and the control of vehicles in the operational areas.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-2-control-of-access"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. The Aerodrome operator's arrangements in response to an emergency. These arrangements must take account of the complexity and size of the Aeroplane operation. 2. Description of actions to be taken by the Aerodrome operator as part of pla",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-3-emergency-planning"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "8. Arrangements for personnel training and preparation for dealing with emergencies.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-248"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Policy statement on the RFF categories to be provided. 2. Where the senior Aerodrome fire officer or designated fire watch officers have specific safety accountabilities, these must be included in the relevant chapter of the Aerodrome ma",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-4-rescue-and-fire-fighting-rff-services"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "d. Low visibility procedures (LVP); e. Any legal requirements; f. Health and safety policy regarding training of personnel in the use of respiratory protection equipment and personal protection equipment. 10. Procedures indicating how accid",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-249"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Routine aerodrome inspections, including lighting inspections, and reporting, including the nature and frequency of these inspections. 2. Inspecting the apron, runways and taxiways following a report of debris on the movement area, an ab",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-5-inspections-of-the-movement-area"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Promulgation of information on the aerodrome operational state, temporary withdrawals of facilities, runway closures, etc.: a. Arrangements for maintaining the paved areas, including the runway friction assessments; b. Arrangements for m",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-250"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Description of the procedures.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-7-snow-and-ice-control-sand-and-other-haza"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Responsibilities with respect to the aerodrome ground lighting system. 2. A full description of all visual aids available on each approach, runway, taxiway, and apron, including signs, markings and signals. 3. Procedures for operational ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-8-visual-aids"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Arrangements between air traffic control, the aerodrome operator, and the apron management unit. 2. Arrangements for allocating aeroplane stands. 3. Arrangements for initiating engine start and ensuring clearance of aeroplane pushback.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-9-apron-management"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Means and procedures for jet blast protection. 2. Arrangements of safety precautions during aeroplane refuelling operations. 3. Arrangements for apron sweeping and cleaning. 4. Arrangements for reporting incidents and accidents on an apr",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-10-apron-safety-management"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Details of the applicable traffic rules (including speed limits and the means of enforcing the rules). 2. Method and criteria for allowing drivers to operate vehicles on the movement area. 3. Arrangements and means of communicating with ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-11-vehicles-on-the-movement-area"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Arrangements and method for dispersal of bird and other wildlife. 2. Measure to discourage birds and other wildlife. 3. Arrangements for assessing wildlife hazards. 4. Arrangements for implementing wildlife control programmes.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-12-wildlife-hazard-management"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Arrangements for monitoring the height of buildings or structures within the boundaries of the obstacle limitation surfaces (OLS). 2. Arrangements for controlling new developments in the vicinity of aerodromes. 3. The reporting procedure",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-13-obstacles"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Details of the capability for removal of a disabled aeroplane. 2. Arrangements for removing a disabled aeroplane, including the reporting and notifying procedures and liaison with ATC.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-252"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Arrangements for special areas on the aerodrome to be set up for the storage of dangerous goods.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-15-dangerous-goods"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Obtaining and disseminating meteorological information, including runway visual range (RVR) and surface visibility. 2. Protection of runways during LVP if such operations are permitted. 3. The arrangement and rules before, during and aft",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-16-low-visibility-operations"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Description of the areas to be protected and procedures for their protection.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-17-protection-of-sites-for-radar-navigatio"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Safety policy. 2. Operator’s structure and responsibility. This must include: a. The name, status, and responsibilities of the accountable executive; b. The name, status, and responsibilities of the safety manager; c. The name, status, a",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-vi-safety-management-system-sms"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "9. Documentation. 10. Safety-related committees. 11. Safety promotion. 12. Responsibility for monitoring the contractors and third parties operating on the Aerodrome. Vl1. Term of Reference related to the Runway safety team 1. The RST must ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-253"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Name of the Standard Operating Procedure: 1.Purpose 2.Document Control (a) Approving authority (b) Responsible department and official for SOP implementation. (c) Relevant stake holders (d) Revision history, if any. 3. Regulatory and other ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-appendix-b-2-particulars-to-be-included-in-s"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "APPENDIX E-1. Standard method for reporting the bearing strength of the pavement in terms of the Pavement Classification (PCN). (applicable until 27 November 2024). As per the GACAR 139.213, the bearing strength of the pavement intended for",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-appendix-e-aerodrome-data"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(d) Modulus of subgrade reaction K-value in terms of the MN/m^3 considered for Rigid pavement deign supported with Soil/Geo-technical investigation report. (e) Flexural strength of the Portland Cement Concrete (PCC) / Pavement Quality Concr",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-258"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "The pavement will be considered rigid (code - R) if its primary load distribution capability is provided by a plain, reinforced or Portland cement concrete (PCC) layer. The pavement constructed with stabilized material such as aggregates or",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-259"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Aerodrome operator or their Consultants are advised to use the following documents for determination of the PCN. If any other document is referred, that must be clearly indicated in the PCN evaluation report. (a) GACAR 139 - version 7.0; (b",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-260"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. On a global level, movement areas are exposed to a multitude of climatic conditions and consequently a significant difference in the condition to be reported. The runway condition report (RCR) describes a basic methodology applicable for",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-appendix-e-3-runway-condition-report-for-rep"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(j) Aerodrome inspection procedures and techniques; (k) Type of runway contaminants and reporting; (l) Assessment and reporting of runway surface friction characteristics; (m)Use of runway friction measurement device; (n) Calibration and ma",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-263"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note1AIGTEsttdawhi (From3mmandbelow,therumwaythirdisconsideredWET). Not2.FUHWETNWRW33m）stmtlatdvwh depthisreported. Note3.Above4mmforSTANDINGWATERand3mmforSLUSHWETSNOWandDRYSNOWanassessed valueisreportedandasignificantchangerelatestoobserve",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-264"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(c) Table for assessing a runway condition code (RWYCC)",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-table-ae-2-depth-assessment-for-contaminants"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(d) Table for correlation of runway condition code and pilot reports of runway braking action",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-265"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(e)Table for Runway condition assessment matrix (RCAM) 'Runway surface temperature should preferably be used where available. 2The Aerodrome operator may assign a higher runway condition code (but no higher than code 3) for each third of th",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-267"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "8. List of Figures used in Runway Condition Report (a) Figure for reporting of runway condition code from ATS to flight crew for runway thirds. (b) Figure for reporting of runway condition code for runway thirds from ATS to flight crew on a",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-268"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "The following format of SNOWTAM must be used. For more details, refer ICAO Doc 10066-PANSAIM and Doc 9981-PANS-Aerodromes.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-9-format-of-snowtam"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Procedures—-Aeronautical Ifonmation Management Appendix 4. SNOWTAMFORMAT (Saa Chapter 5. 5.2.5.1.4) (applicable as qf 5 November 2020)",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-270"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "APPENDIX E-5. Drainage characteristics of the movement area and adjacent areas",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-272"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Rapid drainage of surface water is a primary safety consideration in the design, construction and maintenance of the movement area and adjacent areas. The objective is to minimize water depth on the surface by draining water off the runw",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-i-general"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "2. Slopes for the various parts of the movement area and adjacent parts are described in SUBPART F and figures are given as per cent. Further guidance is given in the ICAO Aerodrome Design Manual (Doc 9157), Part 1, Chapter 5. 3. Texture in",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-273"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "10. Using this classification, the threshold value between micro texture and macrotexture is 0.1 mm mean texture depth (MTD). Related to this scale, the normal wet runway aircraft performance is based upon texture giving drainage and fricti",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-274"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Macrotexture does not change within a short time span, but accumulation of rubber can fill up the texture and as such reduce the drainage capacity, which can result in impaired safety. Furthermore, the runway structure may change over ti",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-iv-maintenance-of-drainage-characteristics-o"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "pavements is available in the Airport Services Manual (Doc 9137), Part 2 — Pavement Surface Conditions and Part 9 — Airport Maintenance Practices and the Aerodrome Design Manual (Doc 9157),Part 2. 3. The pavement may be shot blasted in orde",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-275"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "SUBPART E § 139.203-(b) and § 139.203-(c) relate to the provision of aerodrome mapping data. The aerodrome mapping data features are collected and made available to the aeronautical information services for aerodromes designated by Presiden",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-i-introduction"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Aerodrome mapping data include aerodrome geographic information that supports applications which improve the user's situational awareness or supplement surface navigation, thereby increasing safety margins and operational efficiency. Wi",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-11-applications"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(i) safety risks at the aerodrome; (ii) visibility conditions; (iii)aerodrome layout; and (iv)traffic density. Note. — Further guidance on Aerodrome mapping data can be found in the Airport Services Manual, Part 8 — Airport Operational Serv",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-277"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "APPENDIX F-1. Number, siting and orientation of runways (1） Siting and orientation of runways 1.1 Many factors must be taken into account in the determination of the siting and orientation of runways. Without attempting to provide an exhaus",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-appendix-f-physical-characteristics"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(D) The availability of a secondary runway; (E) The width of runways; (F) The runway surface conditions —— water, snow and ice on the runway materially reduce the allowable crosswind component; and (G) The strength of the wind associated wi",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-279"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "As per SUBPART F, §139.307 (e), the portion of a strip of an instrument runway within at least 75textrmm from the centre line must be graded where the code number is 3 or 4. For a precision approach runway, it may be desirable to adopt a gr",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-appendix-f-2-grading-of-a-strip-for-precisio"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Since the graded portion of a strip is provided to minimize the hazard to an aircraft running off the runway, it must be graded in such a manner as to prevent the collapse of the nose landing gear of the aircraft. The surface must be prepar",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-appendix-f-3-strength-of-runway-strip"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Where a runway end safety area is provided in accordance with SUBPART F, consideration must be given to providing an area long enough to contain overruns and undershoots resulting from a reasonably probable combination of adverse operationa",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-appendix-f-4-runway-end-safety-areas-resa"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "A runway end safety area must be so prepared or constructed as to reduce the risk of damage to an aeroplane undershooting or overrunning the runway, enhance aeroplane deceleration, and facilitate the movement of rescue and fire fighting veh",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-appendix-f-5-strength-of-runway-end-safety-a"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "APPENDIX H - VISUAL AIDS FOR NAVIGATION COLORS FOR AERONAUTICAL GROUND LIGHTS, MARKINGS, SIGNS AND PANELS",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-285"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Chromaticities for lights having filament-type light sources (1) The chromaticities of Aeronautical ground lights with filament-type sources must be within the following boundaries: CIE Equations (see Figure AH-1):",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-i1-colors-for-aeronautical-ground-lights"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(2) Where dimming is not required, or where observers with defective color vision must be able to determine the color of the light, green signals must be within the following boundaries: (i) Yellow boundary y=0.726-0.726x (ii) White boundar",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-286"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(b) Discrimination between lights having filament-type sources: (1) If there is a requirement to discriminate yellow and white from each other, they must be displayed in close proximity of time or space as, for example, by being flashed suc",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-287"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(2) where observers white defective color vision must be able to determine the color of the light, green signals must be within the following boundaries: (i) Yellow boundary y=0.726-0.726x (ii) White boundary mathbfx=0.625mathbfy–0.041 (ii)",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-288"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(ii) Blue boundary y = 0.726 - 0.726x (d) Color measurement for filament-type and solid state-type light sources (1) The color of aeronautical ground lights must be verified as being within the boundaries specified in Figure AH-1 or AH-2, a",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-289"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) The chromaticities and luminance factors of ordinary, colors of retro-reflective materials and colors of trans illuminated (internally illuminated) signs and panels must be determined under the following standard conditions: (1) Angle o",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-imi-colors-for-markings-signs-and-panels"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(c) The chromaticity and luminance factors of colors of retroreflective materials for markings, signs and panels must be within the following boundaries when determined under standard conditions. CIE Equations (see Figure AH-4):",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-291"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(d) The chromaticity and luminance factors of colors for trans illuminated (internally illuminated) signs and panels must be within the following boundaries when determined under standard conditions. CIE Equations (see Figure AH-5):",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-292"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Curves Calculated on formula: 2. Vertical Setting angles of the lights must be such that the following vertical coverage of the main beam will be met:",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-iv-aeronautical-ground-light-characteristics"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "641 m and beyond 2.5^ °-13.5^ ° (as illustrated above) 3. Light in crossbars beyond 22.5m from the centre line must be tord-in 2 degrees. All other lights must be aligned parallel to the centre of the runway. 4. See collective note for Figu",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-300"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Curves Calculated on formula: 2. Toe-in in 2 degrees 3. Vertical Setting angles of the lights must be such that the following vertical coverage of the main beam will be met: 4. See collective note for Figures AH-6 to AH-16 and AH-30",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-301"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Curves Calculated on formula: 2. Toe-in in 3 degrees 3. See collective note for Figures AH-6 to AH-16 and AH-30 Figure AH-8. Isocandela diagram for threshold light (green light)",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-302"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Curves Calculated on formula: 2. Toe-in in 2 degrees 3. See collective note for Figures AH-6 to AH-16 and AH-3 Figure AH-9. Isocandela diagram for threshold wing bar light (green light)",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-303"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Curves Calculated on formula: 2. Toe-in in 4 degrees 3. See collective note for Figures AH-6 to AH-16 and AH-30",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-304"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Curves Calculated on formula: 2. For red light, multiple value by 0.15 3. For yellow light, multiple value by 0.40 4. See collective note for Figures AH-6 to AH-16 and AH-30 Figure AH-11. Isocandela diagram for runway centre line light w",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-305"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Curves Calculated on formula: 2. For red light, multiple value by 0.15 3. For yellow light, multiple value by 0.40 4. See collective note for Figures AH-6 to AH-16 and AH-30 Figure AH-12. Isocandela diagram for runway centre line light w",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-306"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Curves Calculated on formula: 4. See collective note for Figures AH-6 to AH-16 and AH-30 AH-13. Isocandela diagram for runway end light (red light)",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-307"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Curves Calculated on formula: 2. Toe-in in 3.5 degrees 3. For red light, multiple value by 0.15 4. For yellow light, multiple value by 0.40 5. See collective note for Figures AH-6 to AH-16 and AH-30 Figure AH-14. Isocandela diagram for r",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-308"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Curves Calculated on formula: 2. Toe-in in 4.5 degrees 3. For red light, multiple value by 0.15 4. For yellow light, multiple value by 0.40 5. See collective note for Figures AH-6 to AH-16 and AH-30 Figure AH-15. Isocandela diagram for r",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-309"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "a) Collective notes to Figures AH-6 to AH-16 and AH-30 each figure are symmetrical about the common vertical and (2) Figures AH-6 to AH-15 and AH-30 show the minimum allowable light intensities. The average intensity of the main beam is cal",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-310"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(5) The beam coverage in the figures provides the necessary guidance for approaches down to an RVR of theorder of 150 m and take-offs down to an RVR of the order of 100 m (6) Horizontal angles are measured with respect to the vertical plane",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-311"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. These beam coverages allow for displacement of the cockpit from the centre line up to distances of theorder of 12 m and are intended for use before and after curves. See collective notes for Figures AH-17 to AH-26 3. Increased intensitie",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-312"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. These beam coverages are generally satisfactory and cater for a normal displacement of the cockpit from the centre line of approximately 3 m 2. See collective notes for Figures AH-17 to AH-26 Figure AH-18. Isocandela diagram for taxiway ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-313"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Lights on curves to be toed-in 15.75 degrees with respect to the tangent of the curve. 2. See collective notes for Figures AH-17 to AH-26 Figure AH-19. Isocandela diagram for taxiway centre line ( 7.5 mathbfm spacing), no-entry bar and s",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-314"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. At locations where high background luminance is usual and where deterioration of light output resulting from dust, snow and local contamination is a significant factor, the cd-values must be multiplied by 2.5. 2. Where omnidirectional li",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-315"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Lights on curves to be toed-in 15.75 degrees with respect to the tangent of the curve. 2. At locations where high background luminance is usual and where deterioration of light output resulting from dust, snow and local contamination is ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-316"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Beam coverage allows for displacement of the cockpit from the centre line up of distances in the Orderof 12 m and is intended for use before and after curves. 2. See collective notes for Figures AH-17 to AH-26 Figure AH-22. Isocandela di",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-317"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Beam coverage is generally satisfactory and caters to a normal displacement of the cockpit corresponding to the outer main gear wheel on the taxiway edge. 2. See collective notes for Figures AH-17 to AH-26. Figure AH-23. Isocandela diagr",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-318"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Lights on curves to be toed-in 17 degrees with respect to the tangent of the curve. 2. See collective notes for Figures AH-17 to AH-26. Figure AH-24. Isocandela diagram for high-intensity taxiway centre line 7.5 mathbfm spacing),no-entry",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-319"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Although the lights flash in normal operation, the light intensity is specified as if the lights were fixed for incandescent lamps. 2. See collective notes for Figures AH-17 to AH-26. Figure AH-25. Isocandela diagram for high-intensity r",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-320"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) Collective notes to Figures AH-17 to AH-26. (1) The intensities specified in Figures AH-17 to AH-25 are in green and yellow light for taxiway center line lights, yellow light for runway guard lights and red light for stop bar lights. (2",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-321"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "less than 50 per cent of the value shown in the figures and it must be the aim of airport authorities to maintain a level of light output close to the specified minimum average intensity. (7) The light unit must be installed so that the mai",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-322"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Although the lights flash in normal operation, the light intensity is specified as if the lights were fixed or incandescent lamps. 2. The intensities specified are in yellow light. Figure AH-28. Isocandela diagram for each light in high-",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-323"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1. Although the lights flash in normal operation, the light intensity is specified as if the lights were fixed for incandescent lamps. 2. The intensities specified are in yellow light Figure AH-29. Isocandela diagram for each light in high-",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-324"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note 1. See Subpart H, Sections § 139.503–(p) and § 139.503–(q) for specifications on the application, location and characteristics of mandatory instruction markings and information markings. Note 2. This appendix details the form and propo",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-v-mandatory-instruction-markings-and-informa"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Therefore, the spacing of characters for pavement marking is obtained by first determining the equivalent elevated sign character height and then proportioning from the spacing values given in Table H-1. For example, in the case of the runw",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-326"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "VI. REQUIRMENT CONCERNING DESIGN OF TAXIING GUIDANCE SIGNS Note. See Chapter I, Section § I39.507 for specifications on the application, location and characteristics of signs. (a) Inscription heights must conform to the following tabulation",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-331"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(d) Sign luminance must be as follows: (1) Where operations are conducted in runway visual range conditions less than a value of 800m average sign luminance must be at least: Red 30 cd/m2 Yellow 150 cd/m2 White 300 cd/m2 (2) Where operation",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-332"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Gj) The face height of signs must be as follows: (k) The face width of signs must be determined using Figure AH-34 except that, where a mandatory instruction sign is provided on one side of a taxiway only, the face width must not be less th",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-333"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note 1. The average luminance of a sign is calculated by establishing grid points on a sign face showing typical inscriptions and a background of the appropriate color (red for mandatory instruction signs and yellow for direction and destin",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-334"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note 1. The arrow stoke width, diameter of the dot, and both width and length of the dash must be proportioned to the character stroke width. Note 2. The dimensions of the arrow must remain constant for particular sign size, regardless of o",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-340"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1 To determine the proper SPACE between letters or numerals, obtain the code numberfromtable a)orb)and entertablec)for that code number to the desired letter or numeral height. 2. The space between words or groups of characters forming an a",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-instructions"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note. High-intensity obstacle lighting is recommended on structures with a height of more than 150 m above ground level. If medium-intensity lighting is used, marking will also be required",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-appendixi-location-of-lights-on-obstacles"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note. High-intensity obstacle lighting is recommended on structures with a height of more than 150 m above ground level. If medium-intensity lighting is used, marking will also be required.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-347"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note. High-intensity obstacle lighting is recommended on structures with a height of more than 150 m above ground level. If medium-intensity lighting is used, marking will also be required.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-348"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note. High-intensity obstacle lighting is recommended on structures with a height of more than 150 m above ground level. If medium-intensity lighting is used, marking will also be required.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-350"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Note. High-intensity obstacle lighting is recommended on structures with a height of more than 150 m above ground level. If medium-intensity lighting is used, marking will also be required. Figure AI-8. High-/medium-intensity dual obstacle ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-351"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "APPENDIX K - ELECTRICAL SYSTEM Reserved.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-353"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "The Aerodrome certificate holder must comply with the following requirements: I.Personnel a. The Aerodrome certificate holder must submit the following for acceptance: i. The annual training program that cover at least the following subject",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-appendix-l-1-aircraft-rescue-and-firefightin"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "V. Duty Chief if applicable vi. Dispatch Supervisor if applicable. vii. Training Officer, vii. Paramedic, and ix. Fire Chief. c. The positions mentioned on Appendix L-1 -(1)-b personnel must be trained to the appropriate levels of the duty ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-355"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "1.The certificate holder must establish an SOP for RFF vehicles maintenance that meet manufacture maintenance program. 2.The certificate holder must have a qualified technician for maintain fire vehicles. 6. Ambulance and Medical Facilities",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-356"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Arms in front of head and crossed at wrists. At night, same with wands.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-357"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "No outside evidence of dangerous condition or “all clear.\" Arms extended outward and down at a 45-degree angle. Arms moved inward below waistline simultaneously until wrists crossed, then extended outward to starting position. At night, sam",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-c-emergency-contained"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "D. Fire Move right-hand in a 'fanning' motion from shoulder to knee, while at the same time pointing with left hand to area of fire. Night - same with wands.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-certification-authorization-a-358"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(a) RFF Requirement For Private Aerodrome And Flight Training Aerodrome. (1) The airport operator must submit a service level agreement to provide firefighting and rescue services at the airport during the operating hours stipulated in the ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-appendix-l-4-rescue-and-firefighting-require"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "(vii) Hands on training, must be provided to enable them to perform their duties in an effective manner. (A)A written or graphic illustration of the event area must be presented to RFF personal during the pre- event safety briefing. (B) Pri",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-design-certification-authoriz-4"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "APPENDIX M -AERODROME MAINTENANCE Reserved.",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-design-certification-authoriz-5"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "REFERENCES AND GUIDANCE MATERIAL ICAO DOCUMENTS RELATED TO THIS GACAR ICAO 14 Volume I, 9th Edition, July 2022. Advanced Surface Movement Guidance and Control Systems (A-SMGCS) Manual (Doc 9830) Aerodrome Design Manual (Doc 9157) Part 1 —- ",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-design-certification-authoriz-6"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Part 1 —- Rescue and Fire Fighting Part 2 — Pavement Surface Conditions Part 3 — Wildlife Control and Reduction Part 5 — Removal of Disabled Aircraft Part 6 — Control of Obstacles Part 7 —— Airport Emergency Planning Part 8 —— Airport Opera",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-design-certification-authoriz-7"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Aerodromes",
+    "b": "Part 139",
+    "x": "Procedures for Air Navigation Services — Aeronautical Information Management (PANSAIM) (Doc10066) Procedures for Air Navigation Services — Aircraft Operations (PANS-OPS) (Doc 8168) Volume I—— Flight Procedures Volume I — Construction of Vis",
+    "kind": "regulations",
+    "id": "part-139",
+    "anchor": "sec-gacar-part-139-design-certification-authoriz-8"
+  }
+]

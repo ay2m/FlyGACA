@@ -68,8 +68,9 @@ function Inner() {
     if (params.get('add') === '1') {
       setAdding(true);
       setEditingId(null);
-      params.delete('add');
-      setParams(params, { replace: true });
+      const next = new URLSearchParams(params);
+      next.delete('add');
+      setParams(next, { replace: true });
     }
   }, [params, setParams]);
 

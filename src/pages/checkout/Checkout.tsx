@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/Card';
 import { Alert } from '@/components/Alert';
 import { Disclaimer } from '@/components/Disclaimer';
 import { useNoindexMeta } from '@/hooks/usePageMeta';
-import { apiFetch } from '@/lib/services/backend';
+import { apiFetch, ApiError } from '@/lib/services/backend';
 import { getCurrentUser } from '@/lib/services/auth';
 import styles from './Checkout.module.css';
 
@@ -78,7 +78,7 @@ function loadWidgetAssets(): Promise<void> {
  *    server-side (confirmPayment) and continue to wherever that purchase belongs.
  */
 export function Checkout() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   useNoindexMeta(t('checkout.title'));
   const [params] = useSearchParams();
   const navigate = useNavigate();
@@ -95,8 +95,9 @@ export function Checkout() {
   const ref = params.get('ref') ?? undefined;
   const promo = params.get('promo') ?? undefined;
 
-  function fail(code: string) {
+  function fail(err: unknown) {
     setStatus('error');
+    const code = err instanceof ApiError ? err.code : err instanceof Error ? err.message : '';
     setError(t(`checkout.errors.${code}`, t('checkout.errors.generic')));
   }
 
@@ -114,7 +115,7 @@ export function Checkout() {
         navigate(res.redirectTo ?? '/account?checkout=success', { replace: true });
       } catch (e) {
         if (cancelled) return;
-        fail(e instanceof Error ? e.message : '');
+        fail(e);
       }
     })();
     return () => {
@@ -163,6 +164,8 @@ export function Checkout() {
         if (kind) callbackUrl.searchParams.set('kind', kind);
         if (packId) callbackUrl.searchParams.set('packId', packId);
 
+        if (formRef.current) formRef.current.innerHTML = '';
+
         window.Moyasar.init({
           element: `#${FORM_ID}`,
           amount: cfg.amount,
@@ -174,6 +177,7 @@ export function Checkout() {
           supported_networks: cfg.supportedNetworks,
           save_card: cfg.saveCard,
           metadata: { checkoutId: cfg.checkoutId },
+          language: i18n.language?.startsWith('ar') ? 'ar' : 'en',
           ...(cfg.methods.includes('applepay')
             ? {
                 apple_pay: {
@@ -187,14 +191,14 @@ export function Checkout() {
         if (!cancelled) setStatus('ready');
       } catch (e) {
         if (cancelled) return;
-        fail(e instanceof Error ? e.message : '');
+        fail(e);
       }
     })();
     return () => {
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [paymentId, kind, cadence, packId, orgName, ref, promo]);
+  }, [paymentId, kind, cadence, packId, orgName, ref, promo, i18n.language]);
 
   return (
     <section className={`container-narrow ${styles.page}`}>

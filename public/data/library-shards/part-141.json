@@ -1,0 +1,1498 @@
+[
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This part prescribes the requirements for issuing pilot school certificates, provisional pilot school certificates, associated ratings, and operations specifications. This part also prescribes the general operating rules, limitations, and p",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-1"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Except for ultralight vehicle operator schools, no person may operate a pilot school without, or in violation of, a pilot school certificate or provisional pilot school certificate and operations specifications issued under this part. bfdel",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-pmb-141-3-certificate-and-operations-specifi"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "An applicant that meets the applicable requirements of Subparts A, B, and C of this part, but does",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-7"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "not meet the recent training activity requirements of GACAR §§ 141.5(c) through (e), may be issued a provisional pilot school certificate with ratings.",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "The President issues examining authority to a pilot school holding a certificate issued under GACAR § 141.5 with respect to a training course if the pilot school and the training course meet the requirements of Subpart F of this part.",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-9"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) The ratings listed in paragraph (b) of this section may be issued to an applicant for (1) A pilot school certificate, provided the applicant meets the requirements of GACAR § 141.5; or (2) A provisional pilot school certificate, provide",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-11"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "within a shorter period. (2) The application must be submitted in the form and manner prescribed by the President. (3) When a certificate holder seeks reconsideration of a decision from the President concerning amendments of a certificate, ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-2"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) General. The holder of a pilot school certificate or a provisional pilot school certificate issued under this part may not exercise the privileges of that certificate after it expires. (b) A pilot school certificate or a provisional pil",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-15"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "If the holder of a certificate issued under this part permits any aircraft owned or leased by that holder to be engaged in any operation that the certificate holder knows to be in violation of GACAR § 91.23 , that operation is a basis for s",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-mathbf-141-17-carriage-of-psychoactive-subst"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) A person applying to the President for pilot school certificate or provisional pilot school certificate under this part must demonstrate, as part of the application process under GACAR § 141.13, that it has a safety management system (S",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-mathbf-141-19-safety-management-systems"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Each certificate holder must obtain operations specifications containing all of the following: (a) The specific location of the certificate holder's principal operations base and, if different, the address that will serve as the primary poi",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-23"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) The President may suspend, revoke, amend, or modify any operations specifications issued under this part if (1) The President determines that aviation safety and the public interest require the amendment or (2) The certificate holder ap",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-25"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each holder of a pilot school certificate or a provisional pilot school certificate must display that certificate in a place in the school that is normally accessible to the public and is not obscured. (b) A certificate must be made ava",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-27"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Each holder of a certificate issued under this part must allow the President to inspect its personnel, facilities, equipment, and records to determine the certificate holder's compliance with theGACAR. § 141.31 Advertising Limitations. (a) ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-29"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "A training center certificated under GACAR Part 142 may provide the training, testing, and checking for pilot schools certificated under GACAR Part 141, and is considered to meet the requirements of GACAR Part 141, provided— (a) There is a ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-35"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Pilot school holding a pilot school certificate(1) A pilot school holding a pilot school certificate issued under GACAR § 141.5 may apply for renewal of its certificate and ratings within 30 days preceding the month the pilot school's c",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-37"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(2) A pilot school holding a pilot school certificate issued under GACAR § 141.5 mayhave its certificate and ratings renewed for an additional 24 months if the President determines the school's personnel, aircraft, facility and aerodrome, a",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-4"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) This subpart prescribes (1) The personnel and aircraft requirements for a pilot school certificate or a provisional pilot school certificate and (2) The facilities that a pilot school must have available on a continuous basis. (b) As us",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-47"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) An applicant for a pilot school certificate or for a provisional pilot school certificate must meet",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-49-personnel"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "the following personnel requirements: (1) Each applicant must have adequate personnel, including certificated flight instructors, certificated ground instructors, or holders of a commercial pilot certificate with a lighterthan-air rating, a",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-6"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(b) An applicant for a pilot school certificate or for a provisional pilot school certificate must designate a chief instructor for each of the school's approved training courses, who must meet the requirements of GACAR § 141.51 (c) When ne",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-7"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) To be eligible for designation as a chief instructor for a course of training, a person must meet the following requirements: (1) Hold a commercial pilot certificate or an ATP certificate, and, except for a chief instructor for a course",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-mathbf-141-51-chief-instructor-qualification"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) A chief instructor designated for a pilot school is responsible for (1) Certifying each student's training record, graduation certificate, stage check and end-ofcourse test reports, and recommendation for course completion, unless the d",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-53"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "thereafter that the instructor passes a recurrent proficiency check every 12 months after the month in which the initial test was accomplished; (3) Ensuring that each student accomplishes the required stage checks and end-of-course tests in",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-8"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Whenever a pilot school makes a change of designation of its chief instructor, that school (a) Must immediately provide the President with written notification of the change; (b) May conduct training without a chief instructor for that trai",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-55"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(e) May have its certificate reinstated, upon (1) Designation of another chief instructor and approval of that chief instructor by the President; (2) Showing it meets the requirements of GACAR § 141.63(a)(2); and (3) Applying for reinstatem",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-9"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) To be eligible for designation as an assistant chief instructor for a course of training, a person must meet the following requirements: (1) Hold a commercial pilot or an ATP certificate and, except for the assistant chief instructor fo",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-57"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) To be designated as a check instructor for conducting student stage checks, end-of-course tests, and instructor proficiency checks under this part, a person must meet the following eligibility requirements of this section: (1) For check",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-59"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) An applicant for a pilot school certificate or a provisional pilot school certificate must show that he has continuous use of each aerodrome at which training flights originate. (b) Each aerodrome used for airplanes and gliders must hav",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-10"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) For operations bases located within the Kingdom of Saudi Arabia. An applicant for a pilot school certificate or provisional pilot school certificate must show that each aircraft used by the school for flight training and solo flights— (",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-63"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Saudi Arabia. (2) Is certificated with one of the following, unless the President determines otherwise because of the nature of the approved course: (i) A standard airworthiness certificate or (i) A special airworthiness certificate for air",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-11"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) An applicant for a pilot school certificate or provisional pilot school certificate must show that the applicant has continuous use of a briefing area located at each aerodrome at which training flights originate that is (1) Adequate to",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-67"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) An applicant for a pilot school or provisional pilot school certificate must show that (1) Except as provided in paragraph (c) of this section, each room, training booth, or other space used for instructional purposes is heated, lighted",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-69"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Each pilot school must prepare and maintain a training and procedures manual, acceptable to the President, for the use of the pilot school's personnel. The pilot school must ensure that the following requirements are satisfied: (a) The poli",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-79"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(1) A general description of the scope of training authorized under the school's certificate and operations specifications; (2) Copies of the certificate holder's operations specifications or appropriate extracted information, including air",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-13"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each pilot school must establish a quality assurance system acceptable to the President. Personnel responsible for the implementation and maintenance of the quality assurance system must be identified by the pilot school. (b) The qualit",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-91"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) When requested by the President, a pilot school must allow the GACA to administer any knowledge test, practical test, stage check, or end of course test to its students. (b) When a stage check or end of course test is administered by th",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-93"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "the following fundamental areas of security and protection: (i) Integrity, (ii) Identification/Authentication, (ii) Confidentiality, (iv) Availability, and (v) Access control.",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-16"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each training course for which approval is requested must meet the minimum curriculum requirements in accordance with the appropriate appendix to this part. (b) Except as provided in paragraphs (d) and (e) of this section, each training",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-107"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(e) A pilot school certificated under GACAR § 141.5 may request and receive final approval from the President for any training course under this part that does not meet the minimum ground and flight training time requirements, provided the ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-17"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) An applicant for, or holder of, a pilot school certificate or provisional pilot school certificate may apply for approval to conduct a course for which a curriculum is not prescribed by this part. (b) The course for which application is",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-109"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This subpart prescribes the requirements for the issuance of examining authority to the holder of a pilot school certificate issued under GACAR § 141.5 , and the privileges and limitations of that examining authority. § 141.121 Examining Au",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-119"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(B) A designated examiner who is not an employee of the pilot school. (6) The school must ensure that each chief instructor, assistant chief instructor, and check instructor authorized to administer tests or checks, as a result of the succe",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-19"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "A pilot school that holds examining authority may only recommend the issuance of a pilot, flight instructor, or ground instructor certificate and rating to a person who does not take a knowledge",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-mathbf-141-125-limitations-and-reports"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "test or practical test, if the recommendation for the issuance of that certificate or rating is in accordance with the following requirements: (a) The person graduated from a training course for which the pilot school holds examining author",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-20"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This subpart prescribes the operating rules applicable to a pilot school certificated under this part. § 141.137 Privileges. (a) The holder of a pilot school certificate or a provisional pilot school certificate may advertise and conduct ap",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-135"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Each pilot school must ensure aircraft used for flight training and solo flights carry the checklists and handbooks prescribed in GACAR § 91.303 (C). § 141.141 Limitations. (a) The holder of a pilot school certificate or a provisional pilot",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-mathbf-141-139-aircraft-requirements"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(1) If the student completed a proficiency test and knowledge test that was conducted by the receiving pilot school and the previous training was based on a GACAR Part 141 or a GACAR Part 142 approved flight training course, the credit is l",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-22"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) No person other than a certificated flight instructor or commercial pilot with a lighter-than-air rating who has the ratings and the minimum qualifications specified in the approved training course outline may give a student flight trai",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-143"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(c) Each chief instructor and assistant chief instructor assigned to a training course must complete, at least once every 12 months, an approved syllabus of training consisting of ground or flight training, or both, or an approved flight in",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-23"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Except as provided in paragraph (b) of this section, each instructor who is assigned to a ground training course must hold a flight or ground instructor certificate, or a commercial pilot certificate with a lighter-than-air rating, with",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-145"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "The holder of a pilot school certificate or provisional pilot school certificate may not provide training to a student who is enrolled in an approved course of training unless (a) Each aerodrome, aircraft, and facility necessary for that tr",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-147"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) The holder of a pilot school certificate or a provisional pilot school certificate must, at the time a student is enrolled in an approved training course, furnish that student with a copy of the following: (1) A certificate of enrollmen",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-151"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) The holder of a pilot school certificate or provisional pilot school certificate must issue a graduation certificate to each student who completes its approved course of training.",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-153"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(b) The graduation certificate must be issued to the student upon completion of the course of training and contain at least the following information: (1) The business name of the school and the certificate number of the school; (2) The nam",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-25"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) No certificate holder may use an electronic signature for records requiring a certifying statement unless the electronic signature system is approved by the President. (b) No certificate holder may use an electronic recordkeeping system",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-161"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "system. A record of the audit must be completed and retained on file as part of the operator's record retention requirements. This audit may be a computer program that automatically audits itself. (4) Audit procedures to ensure the integrit",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-27"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each holder of a pilot school certificate or provisional pilot school certificate must establish and maintain a current and accurate record of the participation of each student enrolled in an approved course of training conducted by the",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-141-163"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "record must be certified to that effect by the chief instructor. (d) The holder of a pilot school certificate or a provisional pilot school certificate must retain each student record required by this section for at least 2 years from the d",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-28"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This appendix prescribes the minimum curriculum for a private pilot certification course required under this part, for the following ratings: (a) Airplane single engine, (b) Airplane multiengine, (c) Rotorcraft helicopter, (d) Rotorcraft gy",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-1-applicability"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "A person must hold either a sport pilot certificate or student pilot certificate before enrolling in the solo flight phase of the private pilot certification course.",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-i1-eligibility-for-enrollment"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least the following ground training on the aeronautical knowledge areas listed in paragraph (b) of this section, appropriate to the aircraft category and class rating:",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iii-aeronautical-knowledge-training"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(1) Airplane, rotorcraft, or powered-lift category rating: 35 hours of ground training; (2) Glider category rating: 15 hours of ground training; (3) Lighter-than-air category with a balloon class rating: 10 hours of ground training; (4) Lig",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-30"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(12) Aeronautical decisionmaking and judgment; and (13) Preflight action that includes (i) How to obtain information on runway lengths at aerodromes of intended use, data on take-off and landing distances, weather reports and forecasts, and",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-31"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least the following flight training, as provided in this section and Section V of this appendix, on the approved areas of operation listed in paragraph (d) of this section, appropriate to the aircraf",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iv-flight-training"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(iv) At least 3 hours of night flight training in a powered parachute that includes 10 takeoffs and 10 landings to a full stop (with each landing involving a flight in the traffic pattern) at an aerodrome; and (v) At least 3 hours of flight",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-32"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(i) Preflight preparation; (ii) Preflight procedures; (i) Aerodrome operations; (iv) Takeoffs, landings, and go arounds; (v) Performance maneuvers; (vi) Ground reference maneuvers; (vii) Navigation; (vii) Slow flight and stalls; (ix) Basic ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-33"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(vii) Slow flight and stalls; (ix) Basic instrument maneuvers; (x) Emergency operations; (xi) Multi-engine operations; (xi) Night operations; and (xi) Post-flight procedures. (3) For a rotorcraft helicopter course(i) Preflight preparation; ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-34"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(ii) Preflight procedures; (ii) Aerodrome operations; (iv) Takeoffs, landings, and go-arounds; (v) Performance maneuvers; (vi) Ground reference maneuvers; (vii) Navigation; (vii) Flight at slow airspeeds; (ix) Emergency operations; (x) Nigh",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-35"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(x) Basic instrument maneuvers; (xi) Emergency operations; (xii) Night operations; and (xiii) Post-flight procedures. (6) For a glider course(i) Preflight preparation; (i) Preflight procedures; (ii) Aerodrome operations; (iv) Launches/tows,",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-36"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(ii) Aerodrome operations; (iv) Takeoffs, landings, and go-arounds; (v) Performance maneuvers; (vi) Ground reference maneuvers; (vii) Navigation; (vii) Emergency operations; and (ix) Post-flight procedures. (8) For a lighter-than-air balloo",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-37"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(ii) Aerodrome operations; (iv) Takeoffs, landings, and go-arounds; (v) Performance maneuvers; (vi) Ground reference maneuvers; (vii) Navigation; (vi) Night operations; (ix) Emergency operations; and (x) Post-flight procedures. (10) For a w",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-38"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Each approved course must include at least the following solo flight training: (a) For an airplane single-engine course: 10 hours of solo flight training in a single-engine airplane on the approved areas of operation in paragraph (d)(1) of ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-v-solo-flight-training"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(2) Three takeoffs and three landings to a full stop (with each landing involving a flight in the traffic pattern) at an aerodrome with an operating control tower. (d) For a rotorcraft gyroplane course: 5 hours of solo flight training in gy",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-40"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each student enrolled in a private pilot course must satisfactorily accomplish the stage checks and end-of-course tests in accordance with the school's approved training course, consisting of the approved areas of operation listed in pa",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-vi-stage-checks-and-end-of-course-tests"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This appendix prescribes the minimum curriculum for an instrument rating course and an additional instrument rating course, required under this part, for the following ratings: (a) Instrument—airplane, (b) Instrument—helicopter, and (c) Ins",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-i-applicability"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Before enrolling in the flight portion of an instrument rating course a person must hold at least a private pilot certificate with an aircraft category and class rating appropriate to the instrument rating to which the course applies.",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-i1-eligibility-for-enrollment-2"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least the following ground training on the aeronautical knowledge areas listed in paragraph (b) of this section appropriate to the instrument rating to which the course applies: (1) Initial instrumen",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-ii1-aeronautical-knowledge-training"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(5) Use of IFR en route and instrument approach procedure charts; (6) Procurement and use of aviation weather reports and forecasts, and the elements of forecasting weather trends on the basis of that information and personal observation of",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-42"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least the following flight training on the approved areas of operation listed in paragraph (d) of this section, appropriate to the instrument-aircraft category and class rating to which the course ap",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iv-flight-training-2"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "this section. (5) Credit for training in an approved ATD cannot exceed 5 hours. (6) Credit for training in FSTDs and ATDs, if used in combination, cannot exceed 30 hours. However, credit for training in an ATD cannot exceed the limitation p",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-43"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Each student enrolled in an instrument rating course must satisfactorily accomplish the stage checks and end-of-course tests, in accordance with the school's approved training course, consisting of the approved areas of operation listed in ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-v-stage-checks-and-end-of-course-tests"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This appendix prescribes the minimum curriculum for a commercial pilot certification course required under this part, for the following ratings: (a) Airplane single engine, (b) Airplane multiengine, (c) Rotorcraft helicopter, (d) Rotorcraft",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-1-applicability-2"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "A person must hold the following prior to enrolling in the flight portion of the commercial pilot certification course: (a) At least a private pilot certificate; and (b) If the course is for a rating in an airplane or a powered-lift categor",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-i1-eligibility-for-enrollment-3"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least the following ground training on the aeronautical knowledge areas listed in paragraph (b) of this section, appropriate to the aircraft category and class rating to which the course applies: (1)",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iii-aeronautical-knowledge-training-2"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(8) Significance and effects of exceeding aircraft performance limitations; (9) Use of aeronautical charts and a magnetic compass for pilotage and dead reckoning; (10) Use of air navigation facilities; (11) Aeronautical decisionmaking and j",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-45"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Airplane category rating. A person who is applying for a commercial pilot certificate with an airplane category rating must have completed at least the following in airplanes: (1) PIC flight time: 60 hours and (2) Cross-country flight t",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iv-aeronautical-experience"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least the following flight training, as provided in this section and Section V of this appendix, on the approved areas of operation listed in paragraph (d) of this section that are appropriate to the",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-v-flight-training"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(i) At least 10 hours of instrument training using a view-limiting device including attitude instrument flying, partial panel skills, recovery from unusual flight attitudes, and intercepting and tracking routes and courses using navigation ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-46"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(i) At least 2 hours of flight training in nighttime conditions in a gyroplane at an aerodrome, that includes 10 takeoffs and 10 landings to a full stop (with each landing involving a flight in the traffic pattern); and (iv) At least 3 hour",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-47"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "of this section that includes (i) At least 40 hours of instrument training using a view-limiting device for attitude instrument flying, partial panel skills, recovery from unusual flight attitudes, and intercepting and tracking routes and c",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-48"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "launch site; and (C) Two flights in preparation for the practical test within 60 days preceding the date of the test. (9) For a powered parachute course: 30 hours of flight training from a certificated flight instructor with a powered parac",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-49"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "which the course is approved, meets the requirements of this paragraph, and is given by an authorized instructor. (2) Training in an FFS that meets the requirements of GACAR § 141.65(a) or (b) may be credited for a maximum of 10 hours towar",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-50"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(1v) lakeoffs, landings, and go-arounds (v) Performance maneuvers; (vi) Navigation; (vii) Slow flight and stalls; (viii) Emergency operations; (ix) Multi-engine operations; (x) High-altitude operations; and (xi) Postflight procedures. (3) F",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-51"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(4) For a rotorcraft gyroplane course (i) Preflight preparation; (ii) Preflight procedures; (ii) Aerodrome operations; (iv) Takeoffs, landings, and go-arounds; (v) Performance maneuvers; (vi) Ground reference maneuvers; (vii) Navigation; (v",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-52"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(ix) Emergency operations; (x) High altitude operations; (xi) Special operations; and (xii) Postflight procedures. (6) For a glider course(i) Preflight preparation; (ii) Preflight procedures; (ii) Aerodrome operations; (iv) Launches/tows, a",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-53"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(i) Preflight preparation; (iv) Preflight lessons on a maneuver to be performed in flight; (v) Preflight procedures; (vi) Aerodrome operations; (vii) Takeoffs, landings, and go-arounds; (vii) Performance maneuvers; (ix) Navigation; (x) Emer",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-54"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(xi) Postflight procedures. (9) For a powered parachute course(i) Preflight preparation; (ii) Preflight procedures; (ii) Aerodrome operations; (iv) Takeoffs, landings, and go-arounds; (v) Performance maneuvers; (vi) Navigation; (vii) Emerge",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-55"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Each approved course must include at least the following solo flight training: (a) For an airplane single engine course: 10 hours of solo flight time in a single-engine airplane, or 10 hours of flight time while performing the duties of PIC",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-vi-solo-training"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(1) Include one cross-country flight with landings at a minimum of three points and one segment of the flight consisting of a straight-line distance of at least 50 NM from the original point of departure and (2) Include 5 hours night flight",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-57"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(g) For a lighter-than-air airship course: 10 hours of flight training in an airship performing the duties of PIC while under the supervision of a commercial pilot with an airship rating. The training must consist of the approved areas of o",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-58"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(2) At least 5 hours night flight under VFR with 10 takeoffs and 10 landings (with each landing involving a flight with a traffic pattern).",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-59"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each student enrolled in a commercial pilot course must satisfactorily accomplish the stage checks and end of course tests, in accordance with the school's approved training course, consisting of the approved areas of operation listed i",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-vii-stage-checks-and-end-of-course-tests"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This appendix prescribes the minimum curriculum for an airline transport pilot certification course under this part, for the following ratings: (a) Airplane single-engine. (b) Airplane multiengine. (c) Rotorcraft helicopter. (d) Powered-lif",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-1-applicability-3"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Before completing the flight portion of the airline transport pilot certification course, a person must meet the aeronautical experience requirements for an airline transport pilot certificate under part 61, subpart G of this chapter that i",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-i-eligibility-for-enrollment"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Convention on International Civil Aviation.",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-61"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least 40 hours of ground training on the aeronautical knowledge areas listed in paragraph (b) of this section, appropriate to the aircraft category and class rating for which the course applies. (b) ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iii-aeronautical-knowledge-areas"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(9) Aircraft loading; weight and balance; use of charts, graphs, tables, formulas, and computations; and the effects on aircraft performance; (10) Aerodynamics relating to an aircraft's flight characteristics and performance in normal and a",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-62"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(4) Training in full flight simulators or flight training devices described in paragraphs (b)(2) and (3) of this section, if used in combination, may be credited for a maximum of 50 percent of the total flight training hour requirements of ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-63"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each student enrolled in an airline transport pilot course must satisfactorily accomplish the stage checks and end-of-course tests, in accordance with the school's approved training course,",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-v-stage-checks-and-end-of-course-tests-2"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "consisting of the approved areas of operation listed in paragraph (c) of section No. 4 of this appendix that are appropriate to the aircraft category and class rating for which the course applies. (b) Each student must demonstrate satisfact",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-64"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This appendix prescribes the minimum curriculum for a flight instructor certification course and an additional flight instructor rating course required under this part, for the following ratings: (a) Airplane single engine, (b) Airplane mul",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-1-applicability-4"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "A person must hold the following prior to enrolling in the flight portion of the flight instructor or additional flight instructor rating course: (a) A commercial pilot certificate or an ATP certificate, with an aircraft category and class ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-i1-eligibility-for-enrollment-4"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least the following ground training in the aeronautical knowledge areas listed in paragraph (b) of this section: (1) Initial issuance of a flight instructor certificate course: 40 hours of training; ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iii-aeronautical-knowledge-training-3"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least the following flight training on the approved areas of operation under paragraph (c) of this section appropriate to the flight instructor rating to which the course applies: (1) Airplane, rotor",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iv-flight-training-3"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(vi) Takeoffs, landings, and go-arounds; (vi) Fundamentals of flight; (ix) Performance maneuvers; (x) Ground reference maneuvers; (xi) Slow flight, stalls, and spins; (xi) Basic instrument maneuvers; (xii) Emergency operations; and (xiv) Po",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-66"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(xii) Basic instrument maneuvers; (xiii) Emergency operations; (xiv) Multi-engine operations; and (xv) Postflight procedures. (3) For a rotorcraft helicopter course(i) Fundamentals of instructing; (ii) Technical subject areas; (i) Preflight",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-67"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(i) Fundamentals of instructing; (ii) Technical subject areas; (ii) Preflight preparation; (iv) Preflight lesson on a maneuver to be performed in flight; (v) Preflight procedures; (vi) Aerodrome operations; (vi) Takeoffs, landings, and go-a",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-68"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(vii) Hovering maneuvers; (vi) Takeoffs, landings, and go-arounds; (ix) Fundamentals of flight; (x) Performance maneuvers; (xi) Ground reference maneuvers; (xii) Slow flight and stalls; (xiii) Basic instrument maneuvers; (xiv) Emergency ope",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-69"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(xi) Performance maneuvers; (xii) Slow flight, stalls, and spins; (xii) Emergency operations; and (xiv) Postflight procedures.",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-70"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each student enrolled in a flight instructor course must satisfactorily accomplish the stage checks and end-of-course tests, in accordance with the school's approved training course, consisting of the appropriate approved areas of opera",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-v-stage-checks-and-end-of-course-tests-3"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This appendix prescribes the minimum curriculum for a flight instructor instrument certification course required under this part, for the following ratings: (a) Flight Instructor Instrument—Airplane; (b) Flight Instructor Instrument—Helicop",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-1-applicability-5"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "A person must hold the following prior to enrolling in the flight portion of the flight instructor instrument course: (a) A commercial pilot certificate or ATP certificate with an aircraft category and class rating appropriate to the flight",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-i1-eligibility-for-enrollment-5"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least 15 hours of ground training on the aeronautical knowledge areas listed in paragraph (b) of this section, appropriate to the flight instructor instrument rating (for an airplane, helicopter, or ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iii-aeronautical-knowledge-training-4"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(i) The learning process, (i) Elements of effective teaching, (ii) Student evaluation and testing, (iv) Course development, (v) Lesson planning, and (vi) Classroom training techniques. (2) The aeronautical knowledge areas in which training ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-72"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least 15 hours of flight training in the approved areas of operation under paragraph (c) of this section appropriate to the flight instructor rating to which the course applies. (b) For the use of FS",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iv-flight-training-4"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Each student enrolled in a flight instructor instrument course must satisfactorily accomplish the stage checks and end-of-course tests, in accordance with the school's approved training course, consisting of the approved areas of operation ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-v-stage-checks-and-end-of-course-tests-4"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This appendix prescribes the minimum curriculum for a ground instructor certification course and an additional ground instructor rating course, required under this part, for the following ratings: (a) Ground Instructor—Basic, (b) Ground Ins",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-1-applicability-6"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least the following ground training on the knowledge areas listed in paragraphs (b), (c), (d), and (e) of this section, appropriate to the ground instructor rating to which the course applies: (1) In",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-i1-aeronautical-knowledge-training"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(c) Ground training for a basic ground instructor certificate must include the aeronautical knowledge areas applicable to a private pilot. (d) Ground training for an advanced ground instructor rating must include the aeronautical knowledge ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-74"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Each student enrolled in a ground instructor course must satisfactorily accomplish the stage checks and end-of-course tests, in accordance with the school's approved training course, consisting of the approved knowledge areas in paragraphs ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iii-stage-checks-and-end-of-course-tests"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This appendix prescribes the minimum curriculum for an additional aircraft category rating course or an additional aircraft class rating course required under this part, for the following ratings: (a) Airplane single engine, (b) Airplane mu",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-1-applicability-7"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "A person must hold the level of pilot certificate for the additional aircraft category and class rating to which the course applies prior to enrolling in the flight portion of an additional aircraft category or additional aircraft class rat",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-i1-eligibility-for-enrollment-6"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) For a private pilot certificate, the following aeronautical knowledge areas must be included in a 10-hour ground training course for an additional class rating or a 15-hour ground training course",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iii-aeronautical-knowledge-training-5"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "for an additional aircraft category and class rating: (1) Applicable regulations issued by the GACA for private pilot privileges, limitations, and KSA airspace flight operations; (2) Safe and efficient operation of aircraft, including colli",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-76"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(7) Principles and functions of aircraft systems; (8) Maneuvers, procedures, and emergency operations appropriate to the aircraft; (9) Nighttime and high-altitude operations; and (10) Procedures for flight and ground training for lighter-th",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-77"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(12) Aeronautical decisionmaking and judgment; and (13) Crew resource management to include crew communication and coordination.",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-78"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Course for an additional airplane category and single engine class rating. (1) For the private pilot certificate, the course must include 20 hours of flight training on the areas of operations under paragraph IV(d)(1) of Appendix A to t",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iv-flight-training-5"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "be used to meet more than 16.5 hours of the training requirements, and the use of the FTD is limited to 11 hours of the 16.5 hours permitted. The course must (i) Include 5 hours of instrument training in a single-engine airplane that includ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-79"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "navigation systems; (ii) Include 10 hours of training in a multi-engine airplane that has retractable landing gear, flaps, and a controllable pitch propeller, or is turbine-powered; (ii) Include (A) If the person does not hold a commercial ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-80"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(e) Course for an additional lighter-than-air category and airship class rating. (1) For the private pilot certificate, the course requires 20 hours of flight training on the areas of operation under , paragraph IV(d)(7) of Appendix A to th",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-81"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "of departure; and (iv) Include 3 hours of flight training in an airship within 2 months before the date of the practical test. (f) Course for an additional lighter-than-air category and a gas balloon class rating. (1) For the private pilot ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-82"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(i) Two flights of 30 minutes each; (ii) One flight involving a controlled ascent to 2 0oo ft (600 m) above the launch site; and (i) Two flights within 2 months before the date of the practical test. (2) For the commercial pilot certificate",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-83"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(iv) If the person does not hold a private pilot certificate with an airplane or powered-lift category rating, include 10 hours of solo flight training in a powered-lift, including 5 hours of cross-country flight training, with at least one",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-84"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(1) For the private pilot certificate, the course must include 20 hours of flight training on the areas of operations under paragraph IV(d)(9) of Appendix A to this part . An FSTD cannot be used to meet more than 4 hours of the training req",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-g-course-for-an-additional-powered-parachute"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "straight and level flight, constant airspeed climbs and descents, turns to a heading, recovery from unusual flight attitudes, radio communications, and the use of navigation systems/facilities and radar services appropriate to instrument fl",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-85"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "operations under paragraph IV(d)(2) of Appendix A to this part. An FSTD cannot be used more than 0.6 hours to meet the training requirements, and use of the FTD is limited to 0.4 hours of the 0.6 hours permitted. The course must (i) Include",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-86"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(ii) Include one 2-hour cross-country flight during daytime conditions in a helicopter and, a total straight-line distance of more than 50 NM from the original point of departure; (i) Include one 2-hour cross-country flight during nighttime",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-87"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "to instruments, and must include training using a view-limiting device for attitude instrument flying, partial panel skills, recovery from unusual flight attitudes, and intercepting and tracking routes and courses using navigation systems. ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-88"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "areas of operation under paragraph V(d)(7) of Appendix C to this part. An FSTD cannot be used more than 16.5 hours to meet the training requirements, and use of the FTD is limited to 11 hours of the 16.5 hours permitted. The course must (i)",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-89"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each student enrolled in an additional aircraft category rating course or an additional aircraft class rating course must satisfactorily accomplish the stage checks and end-of-course tests, in accordance with the school's approved train",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-90"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This appendix prescribes the minimum curriculum for an aircraft type rating course other than an ATP certificate,for— (a) A type rating in an airplane category—single-engine class, (b) A type rating in an airplane category—multi-engine clas",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-1-applicability-8"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Prior to enrolling in the flight portion of an aircraft type rating course, a person must hold at least a private pilot certificate and— (a) An instrument rating in the category and class of aircraft that is appropriate to the aircraft type",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-i1-eligibility-for-enrollment-7"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least 10 hours of ground training on the aeronautical knowledge areas listed in paragraph (b) of this section, appropriate to the aircraft type rating to which the course applies. (b) Ground training",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iii-aeronautical-knowledge-training-6"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least (1) Flight training on the approved areas of operation under paragraph (c) of this section in the aircraft type to which the course applies and (2) Training of 10 hours of which at least 5 hour",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iv-flight-training-6"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "by an authorized instructor. (2) Training in an FFS that meets the requirements of GACAR § 141.65- (a), may be credited for a maximum of 50 percent of the total flight training hour requirements of the approved course, or of this section, w",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-92"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(2) A type rating for an airplane—multi-engine course-- (i) Preflight preparation, (ii) Preflight procedures, (ii) Take-off and departure phase, (iv) In-flight maneuvers, (v) Instrument procedures, (vi) Landings and approaches to landings, ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-93"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(4) A type rating for a rotorcraft —-helicopter course (i) Preflight preparation, (ii) Preflight procedures, (iii) Take-off and departure phase, (iv) In-flight maneuvers, (v) Instrument procedures, (vi) Landings and approaches to landings, ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-94"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each student enrolled in an aircraft type rating course must satisfactorily accomplish the stage checks and end-of-course tests, in accordance with the school's approved training course, consisting of the approved areas of operation tha",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-v-stage-checks-and-end-of-course-tests-5"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This appendix prescribes the minimum curriculum for the special preparation courses that are listed inGACAR § 141.11",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-i-applicability-2"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Prior to enrolling in the flight portion of a special preparation course, a person must hold a pilot certificate, flight instructor certificate, or ground instructor certificate that is appropriate for the exercise of the operating privileg",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-i1-eligibility-for-enrollment-8"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) To be approved, a special preparation course must (1) Meet the appropriate requirements of this appendix; and (2) Prepare the graduate with the necessary skills, competency, and proficiency to exercise safely the privileges of the certi",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iii-general-requirements"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a)The approved special preparation course may include training in an FSTD, provided it is representative of the aircraft for which the course is approved, meets requirements of this paragraph, and the training is given by an authorized ins",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iv-use-of-fstds"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "this section, whichever is less. (c) Except for the airline transport pilot certification program in section (X) of this appendix, training in an FTD that meets the requirements of GACAR § 141.65(b), may be credited for a maximum of five pe",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-97"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Each person enrolled in a special preparation course must satisfactorily accomplish the stage checks and end-of-course tests, in accordance with the school's approved training course, consisting of the approved areas of operation that are a",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-v-stage-check-and-end-of-course-tests"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "An approved special preparation course for pilots in special operations that are mission-specific for certain aircraft must include at least the following: (a) Aeronautical knowledge training on— (1) Performing that special flight operation",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-vi-special-operations-course"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(1) On that special flight operation and (2) To develop skills, competency, proficiency, resourcefulness, self-confidence, and self-reliance in the student for performing that special flight operation in a safe manner.",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-98"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "An approved special preparation pilot refresher course for a pilot certificate, aircraft category and class rating, or an instrument rating must include at least the following: (a) Aeronautical knowledge training of 4 hours on (1) The aeron",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-vii-pilot-refresher-course"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "An approved special preparation flight instructor refresher course must include at least a combined total of 16 hours of aeronautical knowledge training, flight training, or any combination of ground and flight training on the following: (a",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-viii-flight-instructor-refresher-course"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "An approved special preparation ground instructor refresher course must include at least 16 hours of aeronautical knowledge training on— (a) The aeronautical knowledge areas of Appendixes A, B, and C to this part that apply to student, priv",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-ix-ground-instructor-refresher-course"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "An approved airline transport pilot certification training program must include the academic and FSTD training set forth in § 61.177 . GACA will not approve a course with fewer hours than those prescribed in § 61.177",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-x-airline-transport-pilot-certification-trai"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This appendix prescribes the minimum curriculum for a pilot ground school course required under this part.",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-i-applicability-3"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "An approved course of training for a pilot ground school must include training on the aeronautical knowledge areas that are (a) Needed to safely exercise the privileges of the certificate, rating, or authority for which the course is establ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-ii-general-requirements"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Each person enrolled in a pilot ground school course must satisfactorily accomplish the stage checks and end-of-course tests, in accordance with the school's approved training course, consisting of the approved areas of operation that are a",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iv-stage-checks-and-end-of-course-tests"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "This appendix prescribes the minimum curriculum for a combined private pilot certification and instrument rating course required under this part, for the following ratings: (a) Airplane. (1) Airplane single engine and (2) Airplane multiengi",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-1-applicability-9"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least 65 hours of ground training on the aeronautical knowledge areas listed in paragraph (b) of this section that are appropriate to the aircraft category and class rating of the course. (b) Ground ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iii-aeronautical-knowledge-training-7"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(4) Aeronautical charts for VFR navigation using pilotage, dead reckoning, and navigation systems; (5) Radio communication procedures; (6) Recognition of critical weather situations from the ground and in flight, windshear avoidance, and th",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-101"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each approved course must include at least 70 hours of training, as described in Section IV and Section V of this appendix, on the approved areas of operation listed in paragraph (d) of Section IV of this appendix that are appropriate t",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-iv-flight-training-7"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "the approved areas of operation in paragraph (d)(2) of this section that includes (i) At least 3 hours of cross-country flight training in a multi-engine airplane; (i) At least 3 hours of night flight training in a multi-engine airplane tha",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-103"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(c) For use of FSTDs (1) The course may include training in a combination of FSTDs and ATDs, provided it is representative of the aircraft for which the course is approved, meets the requirements of this section, and the training is given b",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-104"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(ix) Basic instrument maneuvers and flight by reference to instruments; (x) Instrument approach procedures; (xi) ATC clearances and procedures; (xii) Emergency operations; (xiii) Night operations; and (xiv) Postflight procedures. (2) For a ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-105"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(xi) Multi-engine operations; (xiv) Night operations; and (xv) Postflight procedures. (3) For a combined private pilot certification and instrument rating course involving a rotorcraft helicopter (i) Preflight preparation; (ii) Preflight pr",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-106"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(ii) Preflight procedures; (ii) Aerodrome operations; (iv) Hovering maneuvers; (v) Takeoffs, landings, and go-arounds; (vi) Performance maneuvers; (vii) Ground reference maneuvers; (vi) Navigation and navigation systems; (ix) Slow flight an",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-107"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "Each approved course must include at least the following solo flight training: (a) For a combined private pilot certification and instrument rating course involving a single",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-v-solo-flight-training-2"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "engine airplane: 10 hours of flying solo in a single-engine airplane on the appropriate areas of operation in paragraph (d)(1) of Section IV of this appendix that includes at least— (1) Five hours of solo cross-country flight, including at ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-108"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "paragraph (d)(4) of Section IV of this appendix that includes at least (1) Five hours of solo cross-country flight, including at least one 150-NM flight with full-stop landings at a minimum of three points, and one segment of the flight con",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-gacar-part-141-pilot-schools-109"
+  },
+  {
+    "d": "Pilot Schools",
+    "b": "Part 141",
+    "x": "(a) Each student enrolled in a private pilot course must satisfactorily accomplish the stage checks and end-of-course tests in accordance with the school's approved training course that consists of the approved areas of operation listed in ",
+    "kind": "regulations",
+    "id": "part-141",
+    "anchor": "sec-vi-stage-checks-and-end-of-course-tests-2"
+  }
+]

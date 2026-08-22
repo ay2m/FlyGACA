@@ -1,0 +1,418 @@
+[
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "WMO-No. 782WMO-No. 782For more information, please contact: World Meteorological Organization 7 bis , avenue de la Paix – P.O. Box 2300 – CH 1211 Geneva 2 – Switzerland Strategic Communications Office Tel.: +41 (0) 22 730 87 40/83 14 – Fax:",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c0"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": ". The mention of specific companies or products does not imply that they are endorsed or recommended by WMO in preference to others of a similar nature which are not mentioned or advertised . FOREWORD This booklet is a simple guide to the a",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c1"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "part in ensuring that prepared weather reports satisfy the stated requirements. Nevertheless, certain limitations should be understood. For instance, when visibility is 10 km or more, the observer at the usual observing site, even at larger",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c2"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "he following information in the order shown: IDENTIFICATION GROUPS SURFACE WIND PREVAILING VISIBILITY RUNWAY VISUAL RANGE (if available) PRESENT WEATHER CLOUD (or vertical visibility if appropriate) AIR AND DEWPOINT TEMPERATURE PRESSURE – Q",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c3"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "oup, respectively, as appropriate. 2. The code word AUTO is inserted when the report contains a fully automated observation, that is without human intervention. The encode on the opposite page reads: Aerodrome special report at LUDO on 21 o",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c4"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "le: 31015G27KT 280V350 Notes: 1. The wind reported should be the mean over the 10 min preceding the observation. If during this period there has been a marked discontinuity lasting at least 2 min, the mean values should be assessed over the",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c5"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "is not the same in different directions, and when visibility is fluctuating rapidly and the prevailing visibility cannot be determined, the group V V V V shall be used to report the lowest visibility. Example: Prevailing visibility of 4 000",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c6"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "and 6 km to the north) If the maximum visibility is observed in more than one direction, then the most operationally significant direction is reported. – 10 – CODE FORMAT RDRDR/VRVRVRVRi ENCODE SO FAR SPECI LUDO 211025Z 31015G27KT 280V350 4",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c7"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "required instrumentation capable of assessing and displaying 1-, 2-, 5- and 10-min mean values, the variations and the tendency of the change are required. The tendency is indicated by i, as follows: (a) i = U when the runway visual range h",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c8"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "vy: + It is a shower: SH The encode becomes +SHRA . If more than one weather phenomenon is observed, separate groups will be encoded. However, for more than one form of precipitation, these forms of precipitations will be combined in a sing",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c9"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "bility. 3. Whereas if visibility is 5 001 to 5 999 m this is still encoded as 5 000 (rounded down to the nearest 1 000 m) in the METAR/SPECI , but the phenomena FU, HZ, DU, SA and BR will not appear. 4. The qualifier TS shall be used whenev",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c10"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "ed as: SCT018 Note: The cloud base is rounded down, in this case to 1 800 ft. Cloud type Types of clouds other than significant convective clouds are not identified. Significant convective clouds are: – Cumulonimbus indicated by CB ; – Cumu",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c11"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "NSC (Nil Significant Cloud) is used. 3. When cumulonimbus ( CB) and T owering CUmulus ( TCU ) have a common cloud base, the type of cloud is reported as CB and the amount of cloud is encoded as the sum of CB and TCU amounts at that cloud ba",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c12"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "5 10/03 – 21 – 7. AIR AND DEWPOINT TEMPERATURE The observed air temperature and dewpoint temperature, each as two figures rounded to the nearest whole degree Celsius, should be reported as follows: Temperatures below 0 °C will be preceded b",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c13"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "information only in accordance with regional air navigation agreements, including: • Sea-surface temperature and the state of the sea or significant wave height; • State of the runway. Recent weather Using the indicator letters RE , informa",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c14"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "signator. WS R24 indicates that wind shear has been reported in either the take-off or landing zones, or both, of runway 24. Sea-surface temperature and the state of the sea or significant wave height Information on sea-surface temperature ",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c15"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "4 CR = 5 eReR = 12 BRBR = 93 24/451293 Note: The state of the runway shall not be included as supplementary information in METAR and SPECI as of 3 November 2021. – 28 – COMPLETE CODE FORMAT METAR or COR CCCC YYGGgg Z NIL AUTO SPECI KT orddd",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c16"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "to a METAR or SPECI . The forecaster should ensure that the encoding of the forecasts follows the agreed international standard practices. The decoding of these forecasts is carried out by a variety of people: pilots, air traffic services s",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c17"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "riod of validity of a TREND forecast is 2 h from the time of the report, and this report forms an integral part of the forecast. The TREND forecast indicates significant changes in respect of one or more of the elements: surface wind, preva",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c18"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "r the time at which, the change is forecast to occur is indicated using the abbreviations FM , TL or AT , as appropriate. (a) When a change is forecast both to begin and end within the TREND forecast period, the beginning and end of change ",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c19"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "groups are omitted and the change indicator BECMG is used. (f) When changes are forecast to take place at midnight UTC, the time is indicated as follows: (i) By 0000 when associated with FM and AT ; (ii) By 2400 when associated with TL . TE",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c20"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "ing of the fluctuations. For example: TEMPO FM1030 (d) When the period of the temporary fluctuations is forecast to start at the beginning of the TREND period and to continue throughout the remainder of that period, the change indicator TEM",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c21"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "REND period is indicated by: BECMG 25035G50KT – 40 – CODE FORMAT V V V V or CAVOK Example: 6000 Decode: Forecast visibility 6 km ENCODE SO FAR BECMG FM1100 25035G50KT 6000 – 41 – 3. VISIBILITY Change indicators are used when the prevailing ",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c22"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "expected to cause a significant change in visibility. To indicate the end of the occurrence of significant weather phenomena, the abbreviation NSW (Nil Significant W eather) replaces the group w’w’ . Example: For a TREND forecast period 030",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c23"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "scured, vertical visibility observations are available, and the forecast indicates changes in vertical visibility to, or passing, any one of the following values: 30, 60 or 150 m (100, 200 or 500 ft). (d) No significant change in the clouds",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c24"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "sing the latest available regulations, ensure that internationally agreed practices are followed. The decoding of these forecasts is carried out by people of various disciplines and many will not have easy access to these regulations. Conse",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c25"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "n specific information presented in a fixed order. The information and order are as follows: IDENTIFICATION GROUPS SURFACE WIND PREVAILING VISIBILITY This page intentionally left blank. – 49 – WEATHER CLOUD (or vertical visibility, if appro",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c26"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "n the 16th to 1200 UTC on the 17th of the month – 51 – 1. IDENTIFICATION GROUPS This section contains eight parts, as follows: – The aerodrome forecast code name ( TAF) included at the beginning of an individual aerodrome forecast and at th",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c27"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "during a thunderstorm. When a wind speed of 100 kt or more is forecast, it should be indicated as P99KT . Example: 310P99KT – 54 – CODE FORMAT V V V V or CAVOK Example: 8000 Decode: Visibility 8 km ENCODE SO FAR TAF LUDO 130530Z 1307/1316 3",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c28"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "mple: SHRA (moderate rain shower) If no significant weather, as defined above, is expected to occur, the group is omitted. However, after a change group, if the weather ceases to be significant, the weather group w’w’ is replaced by NSW (ab",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c29"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "– Cumulonimbus cloud ( CB) when forecast, if not already in one of the groups above. Normally, the number of groups will not exceed three, except that cumulonimbus will always be included if forecast. The cloud groups are in the order of lo",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c30"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "s which are considered significant, and which therefore need to be indicated in the aerodrome forecast (and also the thresholds for deciding if the TAF should be amended), are as follows. Surface wind When the surface wind is forecast to ch",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c31"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "or more of the following values: 30, 60, 150 or 300 m (or 100, 200, 500 or 1 000 ft) This page intentionally left blank. – 63 – Depending upon the number of flights conducted in accordance with visual flight rules, an additional value of 45",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c32"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "ime in hours and minutes UTC) is used to indicate the beginning of a self-contained part of the forecast. All conditions given before this group are superseded by conditions indicated after the group. Example: TAF LUDO 130530Z 1307/1316 270",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c33"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "teorological conditions which may occur at any time during the period YYGG to YeYeGeGe. The meteorological conditions following these groups are expected to last less than 1 h in each instance and in aggregate less than half the period indi",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c34"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "is indicates that the visibility will fall to 1 500 m by 0500 UTC on the 14th with a moderate probability of fog with a visibility of 800 m between 0500 and 0700 UTC on the same day (14th). Example 2: TAF LUDO 130530Z 1307/1316 27015KT 9999",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c35"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "316 . . . Note: The time of issue of this TAF AMD is 0820 UTC but the forecast is valid from 0800 to 1600 UTC. Regional code forms: Forecast maximum (TXTFTF/YFYFGFGFZ TN TFTF/YFYFGFGFZ) and minimum temperatures This group is used only if ag",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c36"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "1400 and 1600 UTC of a thunderstorm with moderate rain, cloud 3/8 to 4/8 base 500 ft and 5/8 to 7/8 cumulonimbus base 1 000 ft EXPLANATION OF WEATHER PHENOMENA SIGNIFICANT TO AVIATION 1. Drizzle (DZ) Fairly uniform precipitation in very fin",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c37"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "valent of drizzle. They are very small and opaque white particles of ice which fall from stratiform clouds. These particles are fairly flat or elongated and their diameter is generally less than 1 mm. 5. Ice pellets (PL) Transparent or tran",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c38"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "ticles in the air, reducing horizontal visibility to 1 000 to 5 000 m. The relative humidity is greater than 95 per cent. Note: [concerning 7 and 8] Large cumulonimbus clouds are the main “factories” where hail is produced in the atmosphere",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c39"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "5 000 m or less caused by the suspension in the air of small particles of dust raised from the ground. 13. Sand (SA) The reduction of horizontal visibility to 5 000 m or less caused by the suspension in the air of small particles of sand ra",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c40"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "ud but not necessarily reaching the ground. The diameter can vary from a few metres to some hundreds of metres. A well- developed funnel cloud is called a tornado if over land and a waterspout if over water. The most violent tornado can hav",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c41"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "ver can see areas where the apparent visibility is less than 1 000 m. 22. Partial (covering part of the aerodrome) (PR) This descriptor is used only with fog (FG) and indicates that a substantial part of the aerodrome is covered by fog, whi",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c42"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "rm a mixture of water and clear ice. Freezing fog normally deposits rime, rarely clear ice. 28. Precipitation intensity criteria (a) Drizzle Light: rate < 0.1 mm h–1 Moderate: 0.1 ≤ rate < 0.5 mm h–1 Heavy: rate ≥ 0.5 mm h–1 (b) Rain Light:",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c43"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "(1–2 oktas) Cloud amount: SCT – SC aTtered (3–4 oktas) BKN – B roKeN (5–7 oktas) OVC – OV erCast (8 oktas)Height of base of clouds in units of 30 m (100 ft) Present weather (see table w'w') RVR tendency indicator over past 10 min. U = upwar",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c44"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "TIME OF OBSERVATION TTGGgg VVVV w’w’ N sNsNshshshs (cc) dddﬀGf mfmTTTTT or NOSIGWIND SHEARSTATE OF THE RUNWAYb Runway designator – for parallel runwaysmay have LL, L, C, R or RR appended (L = left; C = centre; R = right) Indicator of REcent",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c45"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "point.INTENSITY OR PROXIMITYDESCRIPTOR OTHER PRECIPITATION OBSCURATIONWEATHER PHENOMENA QUALIFIERw'w' – SIGNIFICANT PRESENT, FORECAST AND RECENT WEATHERRECENT WEATHERSUPPLEMENTARY INFORMATION PRESENT WEATHERPRESSURE CAVOKPREVAILINGVISIBILIT",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c46"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "000 = calm Followed by VnVnVnVnDv NSC NCDReplaced when there are no such clouds, norestriction on verticalvisibility and CAVOK is not appropriate by: Nil Signiﬁcant Cloud No Cloud Detected April 2019 a Clouds of operational signiﬁcance (i.e",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c47"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "ionally signiﬁcant if minimum visibility observed in more than one direction Note: 25 m STEP if RVR < 400 m 50 m STEP if 400 ≤ RVR < 800 m100 m STEP if RVR ≥ 800 m ICAO four-letter location indicator Replaced when skyexpected to beobscured ",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c48"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "SW Replaced when no CB and no cloud below 1 500 m (5 000 ft) or below the highest minimum sector altitude, whichever is greater, is forecast and CAVOK is not appropriate by: NSC Nil Signiﬁcant Cloud Nil Signiﬁcant WeatherFORECAST CLOUD AMOU",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c49"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "TEMPO – TEMPO rary ﬂuctuations of less than one hour and in aggregate less than half the period indicated by YYGG/YeYeGeGeType of signiﬁcant changes: BECMG – BEC oMinG, used where changes are expected to reach or pass through speciﬁed value",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c50"
+  },
+  {
+    "d": "WMO-782 - Aerodrome Reports and Forecasts - Users Handbook to METAR-TAF Codes (2020)",
+    "b": "Weather Reference",
+    "x": "7 oktas) OVC – OV erCast (8 oktas) Prevailing visibility in metres 9999 = 10 km or moreForecast signiﬁcant weather (see table w'w' for METAR/SPECI decode) Mean wind direction in degrees true rounded to nearest 10° ( VRB = VaRiaBle when ﬀ < ",
+    "kind": "reference",
+    "id": "wmo-782-aerodrome-reports-and-forecasts-users-handbook-to-metar-taf-codes-2020",
+    "anchor": "c51"
+  }
+]

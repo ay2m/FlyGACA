@@ -257,7 +257,7 @@ export function ToolsIndex() {
         </div>
       </div>
 
-      <div ref={rootRef} onKeyDown={onGridKeyDown}>
+      <div ref={rootRef} onKeyDown={onGridKeyDown} role="group" aria-label={t('tools.title')} tabIndex={-1}>
         {showGrouped && featured.length > 0 && (
           <section className={styles.category}>
             <SectionHeader title={t('tools.featured')} tone="var(--brand-hover)" />

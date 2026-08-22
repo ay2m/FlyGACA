@@ -2,7 +2,7 @@ import { fileURLToPath, URL } from 'node:url';
 import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
-import { FLAVORS, toFlavorId } from './src/flavors/registry';
+import { FLAVORS, toFlavorId } from './src/flavors/registry.ts';
 
 /**
  * Inject search-engine ownership-verification <meta> tags into the initial HTML,

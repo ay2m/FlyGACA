@@ -1,0 +1,42 @@
+type User @table {
+  name: String!
+  email: String!
+  role: String!
+  phoneNumber: String
+  frequentRoutes: String
+}
+
+type Airport @table {
+  airportCode: String!
+  name: String!
+  city: String!
+  region: String!
+  capacity: Int
+  contactEmail: String
+}
+
+type Flight @table {
+  flightNumber: String!
+  originAirport: Airport!
+  destinationAirport: Airport!
+  departureTime: Timestamp!
+  status: String!
+  arrivalTime: Timestamp
+  gateNumber: String
+  aircraftModel: String
+}
+
+type Cargo @table {
+  trackingNumber: String!
+  weight: Float!
+  status: String!
+  dimensions: String
+  pickupLocation: String
+  flight: Flight!
+}
+
+type Booking @table {
+  seatNumber: String!
+  user: User!
+  flight: Flight!
+}

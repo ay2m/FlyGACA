@@ -1,0 +1,42 @@
+[
+  {
+    "d": "Special Air Traffic Rules",
+    "b": "Part 93",
+    "x": "This part prescribes special air traffic rules for operating aircraft in certain areas described in this part, unless otherwise authorized by air traffic control.",
+    "kind": "regulations",
+    "id": "part-93",
+    "anchor": "sec-s3-1"
+  },
+  {
+    "d": "Special Air Traffic Rules",
+    "b": "Part 93",
+    "x": "This subpart prescribes air traffic rules for runways designated with a right hand traffic pattern.",
+    "kind": "regulations",
+    "id": "part-93",
+    "anchor": "sec-mathbf-93-11-applicability"
+  },
+  {
+    "d": "Special Air Traffic Rules",
+    "b": "Part 93",
+    "x": "Aerodromes and runways with right hand traffic patterns are identified on the applicable aerodrome charts in the Saudi Arabian Aeronautical Information Publication (AIP). Unless otherwise authorized by the responsible Air Traffic Services U",
+    "kind": "regulations",
+    "id": "part-93",
+    "anchor": "sec-aerodromes-and-runways-with-right-hand-traff"
+  },
+  {
+    "d": "Special Air Traffic Rules",
+    "b": "Part 93",
+    "x": "This subpart prescribes air traffic rules for aerodromes and runways designated with special noise abatement procedures. pmb§pmb93.23 Reserved. Reserved.",
+    "kind": "regulations",
+    "id": "part-93",
+    "anchor": "sec-pmb-pmb93-21-applicability"
+  },
+  {
+    "d": "Special Air Traffic Rules",
+    "b": "Part 93",
+    "x": "This subpart prescribes air traffic rules for operating aircraft in certain areas described in this subpart during the Hajj period. § 93.33 Reserved. Reserved.",
+    "kind": "regulations",
+    "id": "part-93",
+    "anchor": "sec-93-31"
+  }
+]

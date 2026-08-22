@@ -1,0 +1,1022 @@
+[
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "§ 172.63 Meteorological Conditions. ·21 § 172.65 Navigation Database Validation. ·21 § 172.67 Validation Reports. 22",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) This part prescribes rules governing the development, validation, approval, registration, promulgation and maintenance of instrument flight procedures (IFP) that are intended for use by civil aircraft operating under instrument flight r",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-1"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(1) Meets the applicable requirements of this part; and (2) Is certificated by the President under GACAR Part 170 to be an IFPS provider. (b) No person may provide an instrument flight procedure service in the Kingdom of Saudi Arabia unless",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-3"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Determination and reporting of aeronautical data must be in accordance with the accuracy and integrity requirements prescribed in GACAR Part 171 and GACAR Part 139. Accuracy requirements for aeronautical data are based upon a 95 per cen",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-9"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "data process from survey/origin to the next intended user. The integrity classification related to aeronautical data must be as provided in Tables A7-1 to A7-5 of Appendix 7 of ICAO Annex 15. Aeronautical data integrity requirements must be",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-4"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "Each IFPS provider must allow the President to make any inspections, at any time, in order to allow the President to determine compliance with this part.",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-11"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Each IFPS provider must employ, contract, or otherwise engage (1) A person, identified for the purposes of this part as the director of instrument flight procedure services, who must—- (i) Have the authority within the custodian's organ",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-21"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Each IFPS provider must ensure that IFP designers have acquired and maintain the necessary competency level through training and supervised on-the-job training (OJT). (b) Training for IFP designers must include an initial training and r",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-5"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) This subpart prescribes requirements for each IFPS provider to prepare and maintain a manual. (b) Each manual, and all of its revisions, must be acceptable to the President. (c) Each IFPS provider must (1) Ensure that its manual is amen",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-31"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Each IFPS provider must provide the President with a manual containing (1) A statement signed by the director of instrument flight procedure services , on behalf of the organization, confirming that— (i) The manual defines the organizat",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-33"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "qualified designers. (3) The duties and responsibilities of the chief designer and all qualified designers. (4) An organization chart showing lines of responsibility of the senior persons in paragraph (a)(2) of this section. (5) A summary o",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-7"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "§ 172.41 General. (a) In the interest of efficiency, regularity and economy, every effort must be made to ensure that instrument approach procedures (IAP) are evolved so as to keep to the minimum consistent with safety, both the time taken ",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-development-ofinstrument-flight-p"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "responsible for the design; and (3) Validated as prescribed in Subpart E of this part. (b) Each IFPS provider must establish detailed procedures for ensuring that during the processes of design, maintenance, or transfer of data of an IFP-- ",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-8"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "Procedure Design Manual; (vi) Doc. 9881, Guidelines for Electronic Terrain, Obstacle and Aerodrome Mapping Information; and (vii) Doc. 9906, Quality Assurance Manual for Flight Procedure Design. (2) Any other guideline or standard that is a",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-9"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(e) An IFP must not be designed on or use a ground based aeronautical facility unless (1) The aeronautical facility is operated under the authority of an aeronautical telecommunication service operated in accordance with GACAR Part 173; and",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-10"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Terrain data and associated criteria relating to electronic terrain, obstacle and aerodrome mapping information must comply with the guidelines provide in ICAO Doc 9881 - Guidelines for Electronic Terrain, Obstacle and Aerodrome Mapping",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-47"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "§ 172.51 General. (a) This subpart prescribes the requirements for the validation of IFP. (b) Validation comprises a ground validation element and may also comprise a flight validation element. In the case of RNAV procedures, a navigation d",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-alidation-of-instrument-flight-proc"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Each IFPS provider must establish detailed procedures for conducting the ground validation of an IFP. The aim of ground validation is to reveal any errors in criteria application and documentation, and assess the flyability of the IFP. ",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-11"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(e) In the case of RNAV IFP a test database for the full flight simulator produced by an appropriate navigation data provider for use in the flight management system (FMS) must be used. (f) Where a ground validation cannot fully verify the ",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-12"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Each IFPS provider must establish detailed procedures for conducting the flight validation of an IFP as required by this section. The flight validation procedures must include the use of equipment that (1) Has the precision, and accurac",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-57"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "the validation being performed; (2) Has known measurement uncertainties including, but not limited to, the software, firmware and crosswind uncertainties; (3) Records the actual flight path of the validation aircraft; (4) Is checked before ",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-13"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "aircraft the procedure is designed for: (2) An instrument departure procedure unless the procedure limits the flyability and performance characteristics of the class of aircraft the procedure is designed for: (3) An amendment of a previousl",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-14"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(i) Unless it is not practical to do so, the IFP designer must participate in the initial validation flight to assist in its evaluation and obtain direct knowledge of issues related to the procedure's design from the flight validation pilot",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-15"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Flight validations must be performed by qualified and experienced flight validation pilots. The qualifications and experience for flight validation pilots are specified in Appendix B to this part. (b) The minimum crew of the validation ",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-59"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "The aircraft to be used for flight validation of an IFP must have the performance capabilities appropriate to the categories for which the IFP has been designed.",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-61"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "All IFP validation flights must be conducted during daylight hours in visual meteorological conditions (VMC), which allow the flight to be carried out with a flight visibility of not less than 8KM, and in sight of the surface throughout the",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-63"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Navigation database validation must be performed for all RNAV instrument flight procedures. Such procedures are coded using ARINC 424 path terminators to define specific nominal tracks, which are defined by waypoint location, waypoint t",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-65"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(c) If the database validation is unable to take place until after the effective date of the IFP, then NOTAM action must be required to delay the effective date.",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-16"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "Where a ground and/or flight and navigation database validation has been conducted, a report must be completed by each of the following where applicable: (a) IFP designer; (b) IFP flight validating pilot; and (c) Relevant ATS unit.",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-pmb-pmb172-67-validation-reports"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "§ 172.81 General. This subpart prescribes the requirements for - (a) The design submission that must be submitted by the IFPS provider to the President prior to the approval of each IFP; and (b) Formal declarations required to be made by th",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-approval-of-instrument-flight-proc"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(2) Where any maps or charts have been scanned or digitized such scans or digitized drawings must be included in the submission. It is the responsibility of the IFPS provider to ensure that all relevant data and information is submitted and",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-17"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(B) Local transformation parameters (C) Local values of \"N\" Geoidal separation (xi) Airspace data and information (xi) Reference to any/all topographical maps used in design (c) Drawings. (1) All procedure design drawings must be included i",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-18"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(3) Units of measurement and conversion factors must be as prescribed in GACAR Part 2. (4) Rounding of results must follow the standard guidelines in ICAO Doc. 8168 Volume II and related ICAO publications. Rounding must only be made at the ",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-19"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Each IFPS provider must establish a detailed procedure for the making of a declaration of compliance of every IFP that the custodian's organization proposes to promulgate.",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-mathbf-172-89-declaration-of-compliance-of-i"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(b) The procedure required by paragraph (a) must include details of the checks to be carried out by the chief designer concerning the particular type of IFP, to ensure that the IFP meets the applicable requirements and standards prescribed ",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-20"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Except as provided in paragraph (b) of this section, before approving an IFP, the President must be satisfied that (1) The IFP has been developed and validated in compliance with the applicable requirements and standards of this part; (",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-pmb-172-91-approval-of-instrument-flight-pro"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(d) Each custodian must ensure that any transfer of aeronautical data associated with an IFP, from or to the IFP register complies with the standards specified in the Aeronautical Information Transfer Model (AIXM-5) document or other standa",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-21"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) The President must approve, in advance, all withdrawals of an IFP from the IFP register. (b) Except as provided in (d), each custodian must apply to the President for a withdrawal of an IFP from the IFP register at least 90 days before ",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-2-107-withdrawal-of-instrument-flight-proced"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Each IFPS provider must establish a procedure for recording, investigating, correcting, and reporting to the President any identified error, and any identified nonconformance or suspected nonconformance with the standards and requiremen",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-115-errors-in-published-instrument-fligh"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(3) The correction required by paragraph (2) is clearly identified and promulgated by the most appropriate means relative to the operational significance of the error or nonconformance; and (4) The source of the error or nonconformance is i",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-22"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Each IFPS provider must establish a quality assurance system to ensure compliance with, and the adequacy of, the procedures required under this part. (b) The quality system must incorporate the elements of a flight procedure design qual",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-131"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(2) To follow up a corrective action to ensure the action is effective; (3) To amend any procedure required under this Part as a result of a corrective action; and (4) Management will measure the effectiveness of any corrective action taken",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-24"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "implemented, and maintained at all levels of the custodian's organization; (2) Ensure that the audits are performed by trained auditing personnel who are independent of those having direct responsibility for the activity being audited; (3) ",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-25"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Each IFPS provider must establish a procedure for the management of records that are required for the custodian organization's functions relating to the design, verification, declaration, registration and maintenance of IFP. (b) The man",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-141"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(ii) Flight validation pilots required by GACAR § 172.59; and (i) Personnel required by GACAR § 172.21(a)(3). (2) The records required by paragraphs (c) and (d) to be legible, accurate, permanent, and retrievable in a legible format; and (3",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-27"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Each IFPS provider must submit a promulgated information incident report to the President within 24 hours of the promulgated information incident. (b) The report must include the following information: (1) Date and time of the incident;",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-172-143"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "standard for the qualifications and experience of a chief di (1) The qualification and experience requirements of a qualified IFP designer; (2) Extensive experience in the design of the type of procedures to be designed and maintained by th",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-i-chief-designer"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) The minimum standard for the qualifications and experience of a qualified designer is:",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-i1-qualified-designers"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(1) Satisfactory completion of an approved PANS-OPS procedures design course or a training course accepted by the President as an equivalent; (2) Satisfactory completion of a course of in-service training in procedures design as detailed in",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-28"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Personnel who are not qualified under Section HI must not: (1) Design a procedure for which approval is required under GACAR Part 172, except under direct supervision; or (2) Verify or check a procedure for which approval is required un",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-ii-apprentice-designers"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(a) Qualifications. Each IFP flight validation pilot must hold an airline transport pilot certificate issued in accordance with GACAR Part 61 or be otherwise acceptable to the President. (b) Training. Each IFP flight validation pilot must h",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-appendix-b-to-gacar-part-172-requirements-fo"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "1. The following template prescribes the minimum content of an IFP design submission. The President may specify additional or alternative requirements. (a) General Section - Common to all IFPs. (1) Runway Parameters including magnetic and t",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-design-submission-ti"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(6) Segment length. (7) Details of significant terrain. (8) Descent gradient. (9) Speeds used. (10) Bank angle used. (11) Wind velocity used. (12) Altitudes (maximum and minimum) per segment. (13) Timings. (14) Reference navigation aid. (15",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-30"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(2) Standard Arrival Routes. (3) Initial Segment. (i) How many and why (ii) Type (if a reversal is used confirm type) (i) All the design parameters including the speed, timings, minimum altitude, maximum altitude, inbound timings and/or dis",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-31"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(v) IAF and IF or start of Intermediate segment as applicable (vi) Obstacle field applicable (vi) Descent gradients and/or rates required (viii) Dominant obstacle (ix) Published parameters (4) Intermediate Segment. (i) IF or start of Interm",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-32"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(iv) Segment length (v) Threshold crossing height (vi) Missed Approach Point - how determined (timing, distance) (vii) Missed Approach Point tolerances (vii) Missed Approach Point distance from threshold (ix) SOC parameters (x) Obstacle fie",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-33"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(Note ^*= If DME available) (5a) Final Segment - NPA no FAF: (i) Rate of descent (ii Timings (6) Precision Segment. (i) Final Approach Point (ii) Basic ILS Surfaces infringements list (iii) Localizer to threshold distances (iv) Localizer se",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-34"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(xv) SOC (xvi) Height loss margins applied (7) Missed Approach Segment. (i) Start of climb (ii) Climb gradient (i) OCA(H) due to missed approach obstacles (iv) Proof of obstacle clearance to the missed approach obstacle (i.e. nominal altitu",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-35"
+  },
+  {
+    "d": "Instrument Flight Procedure Services",
+    "b": "Part 172",
+    "x": "(iv) DME subdivisions (if any) (v) Obstacle field (vi) Dominant obstacle for each sector (vii) Published parameters 9) Visual Maneuvering. (i) Altitude (ii) Speeds (ii) Wind velocity (iv) Bank angle (v) Radius of turn (vi) Rate of turn (vii",
+    "kind": "regulations",
+    "id": "part-172",
+    "anchor": "sec-gacar-part-172-instrument-flight-procedure-s-36"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "Cessna. MODEL MORE PEOPLE BUY AND FLY CESSNA AIRPLANES THAN ANY OTHER MAKE SKYHAWK 1972 WORLD'S LARGEST PRO- OWNER'S DUCER OF GENERAL A/IANUAL AVIATION AIRCRAFT SINCE 1956 PERFORMANCE-SPECIFICATIONS Model 172* Skyhawk* GROSS WEIGHT . . . . ",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c0"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": ". . . . .52gal, 52gal. OIL CAPACITY: Total . . . . . . . . . . .8qts 8qts PROPELLER: Fixed Pitch (Diameter) . . . .75inches 75inches ENGINE: Lycoming Engine . . . . . . . . . . . .O-320-E2D O-320-E2D 150 rated HPat2700 RPM *This manual cove",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c1"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "c. Available atCessna Dealers world wide d. Best inthe industry Specific benefits and provisions ofthe warranty plus other important benefits for you are contained inyour Warranty and Owner's Service Policy Booklet supplied with your aircra",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c2"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "Page = SECTION I-OPERATING CHECK LIST ........ 1-1 SECTION 11-DESCRIPTION AND OPERATING DETAILS ............. 2-1 SECTION III-EMERGENCY PROCEDURES..... 3-1 SECTION IV-OPERATING LIMITATIONS.------. 4-1 SECTION V-CARE OF THE AIRPLANE........ ",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c3"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "librated airspeed may beobtained from the Airspeed Correction Table inSection VI. BEFORE ENTERING THE AIRPLANE. (1) Make anexterior inspection inaccordance with figure 1-1. BEFORE STARTING THE ENGINE. (1) Seats, Seat Belts and Shoulder Harn",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c4"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "orabout four seconds toclear fuel strainer ofpossible water and sediment. Check strainer drain closed. Ifwater isobserved, there isapossibility that thefueltank sumps contain water. Thus, thefuel tank sump drain plugs and fuel selector valv",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c5"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "e Instruments and Ammeter--Check. (7) Suction Gage--Check (4.6 to5.4 inches ofmercury). (8) Magnetos--Check (RPM drop should notexceed 125 RPM on either magneto or50RPM differential between magnetos). (9) Carburetor Heat--Check operation. (",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c6"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "er--Full throttle. (2) Carburetor Heat--Cold. (3) Wing Flaps--Retract to20°. (4) Upon reaching anairspeed ofapproximately 65MPH, retract flaps slowly. NORMAL LANDING. (1) Touchdown--Main wheels first. (2) Landing Roll--Lower nose wheel gent",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c7"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": ") 36. Primer 13. Fuel and Oil Gages 23. Mixture Control Knob 37. Phone Jack Figure 2-1, 1-8 Jecties H DESCRIPTION AND OPERATING DETAILS The following paragraphs describe thesystems and equipment whose function and operation isnotobvious whe",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c8"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "URE MAXIMUM FUEL CAPACITY WHEN REFUELING, PLACE THE FUEL SELECTOR VALVE INEITHER \"LEFT\" OR RIGHT\" POSITION TOPREVENT CROSS-FEEDING. ENGINE V STRAINER ENGINE PRIMER ' CODE FUEL SUPPLY VENT MECH CALT LE MIXTURE TO CONTROL ENGINE KNOB Figure 2",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c9"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "a- neously, however, the\"BAT\" side oftheswitch could beturned \"ON\" separately tocheck equipment while ontheground. The \"ALT\" side of the switch, when placed inthe\"OFF\" position, removes the alternator from theelectrical system. With this sw",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c10"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "AIS AND INITRUMENT START 5ITCHTO FUEL QUANitTY INDICATORS BATTERY INSTNDIORFLAP POSITION TO WING RAP SYSTEM MAGNETOS TO STSOBE MOHTS (OPT) SitO Eti CIRCUIT BR (PUSH-TO-RESET)TO PITOT NEAT SYSTEM (OPT) FUSE DIODE gRESISTOR CAPACITOR INOISE R",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c11"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "eset\" circuit breakers mounted onthe instrument panel. Ex- ceptions tothis arethe optional clock, flight hour recorder, and battery contactor closing (external power) circuits which have fuses mounted adjacent tothebattery. Also, thecigar l",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c12"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "ght reflected from water droplets orparticles in theatmosphere, particularly atnight, can produce vertigo and loss of orientation. The two high intensity strobe lights will enhance anti-collision pro- tection. However, thelights should betu",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c13"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "de- sired bythepilot. Aswitch ontheleft forward doorpost islabeled \"RED\", \"OFF\", and \"WHITE\". Placing theswitch inthetopposition will provide ared light. Inthebottom position, standard white lighting isprovided. The center position is\"OFF\".",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c14"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "line and isstowed above the cabin door. When stowed, thehar- ness isheld inplace bytwo retaining clips, one above the door and one onthefront oftheforward door post. When stowing the harness, place it behind both retaining clips and secure ",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c15"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "warm temperatures, one ortwo strokes oftheprimer should besufficient. Incold weather, uptosixstrokes oftheprimer may benecessary. If theengine iswarm, nopriming will berequired. Inextremely cold tem- peratures, itmay benecessary tocontinue ",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c16"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "ound operations unless heat isabsolutely necessary. When the knob is pulled outtothe heat position, airentering theengine isnot filtered. Taxiing over loose gravel orcinders should bedone atlow engine speed toavoid abrasion and stone damage",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c17"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "sence ofRPM drop may beanindication offaulty grounding of one side oftheignition system orshould because for suspicion that the magneto timing isset inadvance ofthesetting specified. ALTERNATOR CHECK. Prior toflights where verification ofpr",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c18"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "d- able small dents appear inthepropeller blades, they should beimmedi- ately corrected asdescribed inSection Vunder propeller care. Prior totake-off from fields above 3000 feet elevation, the mixture should beleaned togive maximum RPM inaf",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c19"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "mal, then pulled offabruptly toprevent possible settling back tothe runway while drifting. When clear ofthe ground, make acoordinated turn into the wind tocorrect for drift. ENROUTE CLIMB. CLIMB DATA. For detailed data, refer totheMaximum R",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c20"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "ks and begins tofall off, then enrichen slightly back topeak RPM. Carburetor ice, asevidenced byanunexplained drop inRPM, can be removed byapplication offull carburetor heat. Upon regaining the origi- nalRPM (with heat off), usethe minimum ",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c21"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "following technique. (1) Retard throttle toidlë positiota (2) Apply full rudder opposite tothedirection oftotation. (3) After one-fourth turn, move the control wheel forward ofneutral inabrisk motion. (4) Asrotation stops, neutralize rudder",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c22"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "ength. Ifflap settings greater than20°are used inside- slips with full rudder deflection, some elevator oscillation may befelt at normal approach speeds. However, this does notaffect control oftheair- craft. Although the crab orcombination ",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c23"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "trical system. Pre-heat will thaw theoiltrapped inthe oilcooler, which probably will becongealed prior tostarting inextremely cold tem- peratures. When using anexternal power source, theposition ofthe master switch isimportant. Refer toSect",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c24"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "otstart during the first few attempts, orifengine firing diminishes instrength, itisprobable that thespark plugs have been frosted over. Preheat must beused before another start isattempted. IMPORTANT Pumping thethrottle may cause raw fuel ",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c25"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "fproper pre-flight inspections and maintenance are practiced. Enroute weather emergencies can beminimized oreliminated bycareful flight planning and good judgement when unexpected weather isencounter- ed. However, should anemergency arise t",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c26"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "aporate the electrolyte atanexcessive rate. Electronic com- ponents intheelectrical system could beadversely affected byhigher than normal voltage ifafaulty voltage regulator setting iscausing the 3-1 overcharging. Topreclude these possibil",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c27"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "rburetor heat knob full outuntil theengine runs smoothly; then remove carburetor heat and readjust thethrottle. Ifconditions re- quire the continued use ofcarburetor heat incruise flight, usethe mini- mum amount ofheat necessary toprevent i",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c28"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "ility theoilpressure gage orrelief valve ismalfunctioning. A leak intheline tothe gage isnotnecessarily cause for animmediate pre- cautionary landing because anorifice inthis line will prevent asudden loss ofoilfrom the engine sump. However",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c29"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "position, and mixture control setting. Also check that engine primer isfull inand locked and ignition switch is properly positioned. Ifallattempts torestart the engine fail, and aforced landing isim- minent, select asuitable field and prepa",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c30"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "re sothat door can beopened. (7) Inflate life vests and raft (ifavailable) after evacuation ofcabin. The aircraft can notbedepended onforflotation for more than a few minutes. DISORIENTATION INCLOUDS. When flying inmarginal weather, the pil",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c31"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "Ifpossible, obtain radio clearance for anemergency descent through clouds. Toguard against aspiral dive, choose aneasterly orwesterly heading tominimize compass card.swings duetochanging bank angles. Inaddition, keep hands offthe control wh",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c32"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "trimmed glide. (8) Upon breaking outofclouds, apply normal cruising power and resume flight. FIRES. ENGINE FIRE DURING START ON GROUND. Improper starting procedures such aspumping thethrottle during a difficult cold weather start can cause ",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c33"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "speed that will provide anincombustible mixture. (8) Execute aforced landing asdescribed inparagraph Emergency Landing Without Engine Power. Donotattempt torestart theengine. ELECTRICAL FIRE INFLIGHT. The initial indication ofanelectrical f",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c34"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "ilter iceand apply carburetor heat asrequired. Anunexplained loss inengine speed could be caused bycarburetor ice orairintake filter ice. (6) Plan alanding atthenearest airport. With anextremely rapid icebuild-up, select asuitable \"off airp",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c35"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "ne service. Your Cessna Dealer will behappy toassist you inselecting equipment best suited toyour needs. MANEUVERS-NORMAL CATEGORY. This airplane iscertificated inboth the normal and utility category. The normal category isapplicable toairp",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c36"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "Up ...............+4.4-1.76 FlapsDown ..............+3.5 Inthe utility category, thebaggage compartment and rear seat must notbeoccupied. Noaerobatic maneuvers are approved except those list- edbelow: MANEUVER MAXIMUM ENTRY SPEED* Chandelle",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c37"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "ist ofthe certificated calibrated airspeed (CAS) limitations fortheairplane. Never Exceed Speed (glide ordive, smooth air) . . . . .174 MPH Maximum Structural Cruising Speed . . . . . . . . . .140 MPH Maximum Speed, Flaps Extended . . . . .",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c38"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "2700 RPM (red line) CARBURETOR AIR TEMPERATURE GAGE (OPT). Icing Range . . . . . . . . . . . . .-15°to5°C(yellow arc) WEIGHT AND $ALANCE. The following information will enable youtooperate your Cessna within the prescribed weight and center",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c39"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": ".g.arm (fuselage station) ofthe item being loaded, must bemade ifthe position ofthe load isdifferent from that shown onthe Loading Graph. Total theweights and moments/1000 and plot these values on.the Center ofGravity Moment Envelope todete",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c40"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "his point falls within the envelope, the loading isacceptable. 400 DING GRAPH 38GAL* 1\" 10020 MAXIMUM USABLE FUEL 10*STANDARD TANKS50**LONGRANGE TANKS- 5 10 15 20 25 30 LOAD MOMENT/1000 (POUND-INCHES) NOTES: (1) Line representing adjustable",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c41"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "ofthe nose strut does not cause excessive vertical movement ofthetail andthe resulting contact with low hangar doors orstructure. Aflat nose wheel tire ordeflated strut will also increase tail height. MOORING YOUR AIRPLANE. Proper tie-down ",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c42"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "ing with agood commercial wax will finish theclean- ingjob. Athin, even coat ofwax, polished out byhand with clean soft flannel cloths, will fill inminor scratches and help prevent further scratching. Donot use acanvas cover onthewindshield",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c43"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "ebefore flight, care should betaken toprotect thepaint- edsurfaces during ice removal with chemical liquids. A50-50 solution of isopropyl alcohol and water will satisfactorily remove ice accumulations without damaging thepaint. Asolution wi",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c44"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "nd carpet, clean the interior regularly with avacuum cleaner. Blot upany spilled liquid promptly, with cleansing tissue orrags. Don't patthespot; press the blotting material firmly and hold itfor sev- eral seconds. Continue blotting until n",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c45"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "Unlike suede leather, dust and dirt marks can beremoved easily with a damp sponge. Remove non-greasy stains with aliquid cleaner such as \"Mr. Clean\", \"Handy Andy\", \"Lestoil\", \"Liquid Ajax\", or\"Cinch\". Greasy stains can beremoved with anapht",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c46"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "r airplane you will receive anOwner's Service Policy. Cou- pons attached tothe policy entitle youtoaninitial inspection andthefirst 100-hour inspection atnocharge. Ifyoutake delivery from your Dealer, hewill perform the initial inspection b",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c47"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "e are miscellaneous data, information and licenses that are a part oftheaircraft file. The following isacheck list forthat file. In addition, aperiodic check should bemade ofthelatest Federal Aviation Regulations toensure that alldata requi",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c48"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "d exterior paint combination oftheaircraft. The code may be used inconjunction with anapplicable Parts Catalog iffinish andtrim in- formation isneeded. This plate islocated just above the MAA plate on the left forward door post. 5-7 LUBRICA",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c49"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "lement ischanged. OIL FILLER: When preflight check shows low oillevel, service with aviation grade engine oil; SAE 50above60°F, SAE 10W30 orSAE 30at temperatures from0°to70°F, and SAE 10W30 orSAE 20at temperatures below10°F. (Multi-viscosit",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c50"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "nded to100-hour intervals providing theoilfilter element is changed at50-hour intervals. Change engine oilatleast every four months even though less than 50hours have accumulated. Reduce intervals for prolonged operation industy areas, cold",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c51"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "serviced ortested atspecific intervals for various types offlight operations. For these regulations, owners should check with aviation officials inthe country where the aircraft isbeing operated. 5-10 OMER FOLLORUP SYSTEM Your Cessna Dealer",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c52"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "re compiled from actual tests with theairplane and engine ingood condition and using average piloting technique and best power mixture. You will find this data avaluable aidwhen planning your flights. Apower setting selected from the range ",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c53"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "gure 6-1. STALL SPEEDS-MPH CAS ANGLE OF BANK CONDITION0° 20° 40° 60° FLAPS UP 57 59 65 81 2300 LBS. GROSS FLAPS10°52 54 59 74 WEIGHT FLAPS40°49 51 56 69 POWER OFF- AFT CG Figure 6-2. 6-2 TAKE-OFF DATA TAKE-OFF DISTANCE FROM HARD SURFACE RUN",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c54"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "full throttle, mixture leaned forsmooth operation above 3000 ft. 2. Fuel used includes warm upand take-off allowance. 3. For hot weather, decrease rate ofclimb 20ft./min. foreach10°Fabove standard day temperature forparticular altitude. CO ",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c55"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "GROSS APPROACH@ S.L &59°F @2500 ft.&50°F @5000 ft.&41°F @ 7500 ft.&32°F WEIGHT . lASOROUND TOTAL OROUND TOTAL GROUND TOTAL GROUND TOTAL LBS. MPHROLL TO CLEAR ROLL TO CLEAR ROLL TO CLEAR ROLL TO CLEAR 50' OBS. 50' OBS. 50' OBS. 50' OBS. 2300",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c56"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "d be installed toimprove engine operation. The kitconsists of two baffles which attach tothe engine air intakes inthe cowling, and insulation forthe crankcase breather line. Once installed, the crank- case breather insulation isapproved for",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c57"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "y and external power circuits have been designed tocom- pletely eliminate the need to\"jumper\" across thebattery contactor toclose itforcharging acompletely \"dead\" battery. Aspecial fused circuit inthe external power system supplies the need",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c58"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "NES 'OMNI SPEAKER-PHONE SWITCH (TYPICAL) TRANSMITTER SWITCHES CONTROL SPEAKER-PHONE SELECTOR SWITCH FUNCTION OF COMMUNICATION AND NAVIGATION EOUIPMENT INRADIO STACK ON INSTRUMENT PANEL Figure 7-1. 7-3 phone tothe radio unit the pilot desire",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c59"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "eused forthe omni course sensing function ofthe auto- pilot. The upposition selects the upper omni receiver inthe radio panel stack andthedown position selects the lower omni receiver. BOOM MICROPHONE Aboom microphone may bemounted near the",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c60"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "titude. CRUISE. (1) Adjust power and elevator trim for level flight. (2) \"ROLL TRIM\" Control Knob--Adjust asdesired. DESCENT. (1) Adjust power and elevator trini for desired speed and rate of descent. (2) \"ROLL TRIM\" Control Knob--Adjust as",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c61"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "mputer. TO OBTAIN TRUE AIRSPEED, rotate ring until pressure altitude isaligned with outside airtemperature indegrees Fahrenheit. Then read true airspeed onrotatable ring opposite airspeed needle. NOTE Pressure altitude should not beconfused",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c62"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "on. Spring clips will hold the valve open. After draining, use ascrewdriver orsuitable tool tosnap thevalve into theextended (closed) position and remove thedrain hose. CARBURETOR AIR TEMPERATURE GAGE Acarburetor airtemperature gage may bei",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c63"
+  },
+  {
+    "d": "Cessna 172 Skyhawk 1972 Owners Manual (Model 172L)",
+    "b": "Aircraft Manual",
+    "x": "LACE THE FUEL SELECTOR VALVE IN EITHER \"LEFT\" OR \"RIGHT\" POSITION TOPREVENT CROSS-FEEDING). ENGINE OIL: AVIATION GRADE--SAE 50ABOVE60°F SAE 10W30 OR SAE 30BETWEEN0°and70°F SAE 10W30 OR SAE 20BELOW10°F (MULTI-VISCOSITY OIL WITH ARANGE OF SAE",
+    "kind": "reference",
+    "id": "cessna-172-skyhawk-1972-owners-manual-model-172l",
+    "anchor": "c64"
+  },
+  {
+    "d": "Cessna 172N (1978) Pilot’s Operating Handbook",
+    "b": "Aircraft Manual",
+    "x": "Pilot’s Operating Handbook for the 1978-model Cessna 172N Skyhawk. Third-party copyright (Textron Aviation) — catalogued here for study, not reproduced. For an aircraft you fly, use that airframe’s own POH/AFM.",
+    "kind": "reference",
+    "id": "cessna-172n-1978-pilots-operating-handbook"
+  },
+  {
+    "d": "Cessna 172N (1979) Pilot’s Operating Handbook",
+    "b": "Aircraft Manual",
+    "x": "Pilot’s Operating Handbook for the 1979-model Cessna 172N Skyhawk. Third-party copyright (Textron Aviation) — catalogued here for study, not reproduced.",
+    "kind": "reference",
+    "id": "cessna-172n-1979-pilots-operating-handbook"
+  },
+  {
+    "d": "Cessna 172P (1981–1985) Pilot’s Operating Handbook",
+    "b": "Aircraft Manual",
+    "x": "Pilot’s Operating Handbook for the 1981–1985 Cessna 172P Skyhawk. Third-party copyright (Textron Aviation) — catalogued here for study, not reproduced.",
+    "kind": "reference",
+    "id": "cessna-172p-pilots-operating-handbook"
+  },
+  {
+    "d": "Cessna 172 Service Manual (1969–1976)",
+    "b": "Aircraft Manual",
+    "x": "Factory service manual covering 1969–1976 Cessna 172 airframes. Third-party copyright (Textron Aviation) — catalogued here for study, not reproduced.",
+    "kind": "reference",
+    "id": "cessna-172-service-manual-1969-1976"
+  }
+]

@@ -640,6 +640,21 @@ describe("POST /apple/callback", () => {
     expect(createUser).not.toHaveBeenCalled();
   });
 
+  it("blocks linking when Apple tries to adopt an unverified password account", async () => {
+    consumeOAuthState.mockResolvedValue("https://flygaca.com/account");
+    findUserByAppleSub.mockResolvedValue(null);
+    findUserByEmail.mockResolvedValue(userRow({ email_verified: false, password_hash: "hash" }));
+    stubApple(idTokenPayload({ sub: "a1", email: "cadet@example.com", email_verified: true }));
+
+    const res = await request(app)
+      .post("/api/auth/apple/callback")
+      .send({ code: "abc", state: "s1" });
+
+    expect(res.headers.location).toBe("https://flygaca.com/account?signin=link-blocked");
+    expect(linkAppleAccount).not.toHaveBeenCalled();
+    expect(createUser).not.toHaveBeenCalled();
+  });
+
   it("creates a new account, trusting Apple's verified flag only when set", async () => {
     consumeOAuthState.mockResolvedValue("https://flygaca.com/account");
     stubApple(idTokenPayload({ sub: "a2", email: "new@example.com", email_verified: false }));

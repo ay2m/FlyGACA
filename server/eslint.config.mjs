@@ -4,7 +4,7 @@ import tseslint from "typescript-eslint";
 import importPlugin from "eslint-plugin-import";
 
 export default tseslint.config(
-  { ignores: ["lib/**", "generated/**"] },
+  { ignores: ["lib/**", "generated/**", "src/dataconnect-generated/**"] },
   js.configs.recommended,
   tseslint.configs.recommended,
   {

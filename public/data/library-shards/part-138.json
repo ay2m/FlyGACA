@@ -1,0 +1,1906 @@
+[
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "§ 138.137 Heliport Operation Manual 15 \\ 138.139 Safety Management Systems... 16 §$ 138.141 Competence of Personnel . 16",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "138.205 Heliport reference point . 24 138.207 Heliport elevations... 25 § 138.209 Heliport dimensions and related information 25 § 138.211 Declared distances . 26 § 138.213 Coordination between aeronautical information services and heliport",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-2"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "APPENDIX A-1. Contents of the heliport operation manual. 128 APPENDIX D - DESIGN AND ESTABLISHMENT .... 131 APPENDIX D-1. Details of site and orientation of heliports... 131 APPENDIX D-2. Consideration for aeronautical study 134 APPENDIX E ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-4"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) This part is promulgated in accordance with the Article 33 of the Civil Aviation Law of the Kingdom of Saudi Arabia, which states that no civil aerodromes or airfields may be constructed, used, or invested in, in the Kingdom of Saudi Ar",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-101-general"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) This part is applicable to all civil heliport operators including, those operators operating heliports inside an aerodrome under the provisions of GACAR Part 139. (b) The requirements of this part are applicable to each person employed ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-103-applicability"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) For the purpose this part, heliports are classified as follows: (1) Civil/Public Heliports: A heliport which is open to the public and serves helicopter operations offering scheduled or non-scheduled commercial air services. All civil/p",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-105"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(2) General Aviation Heliports: A General Aviation heliport must be authorized under provisions of this part, is any heliport used to serve helicopter operations for any purpose other than those listed in § 138.105 (a) (1). General Aviation",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-6"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "erson In-Charge of Safety in accordance with GACAR Part (2) Persons reporting directly to Person In-Charge of the Heliport: i. Person In-Charge of Operations i. Person In-Charge of Maintenance iii. Person In-Charge of Rescue and Firefightin",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-7"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The Person in Charge of the Heliport assumes the responsibility for the overall compliance of the certificated heliport with regulatory requirements of this part, assumes the direct supervision of the Person In-charge of Operations, Per",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-107"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "() Depending on the size and complexity of the heliport and the suitability of the nominated person, the President may accept one person to hold the position of the Person in Charge of the Heliport while holding any of the other positions i",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-8"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) Each heliport certificate or authorization holder must nominate adequately qualified management person or group of persons as specified in § 138.105 (c) and (e), whose responsibilities are to ensure that the organization complies with t",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-109-heliport-management-personnel"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "() The names and titles of the management personnel including additional responsibilities with organizational chart must be listed in heliport operation manual. (k) The heliport operator must identify an alternate person to each position to",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-9"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The requirements prescribed in GACAR Part 7 are applicable to all heliport operators certified or authorized under this part. (b) No person on the maneuvering area, movement area, or stands/apron of a heliport will be under the influenc",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-111"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The certificated and authorized heliports must allow operations of helicopters for which the design of physical and operational characteristics of heliport is suitable.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-113"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(b) When operational parameters of a helicopter exceed the authorized or certified physical and operational characteristics of the heliport,the heliport operator must carry out a compatibility study and take suitable actions to confirm the ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-10"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) No heliport certificate holder may outsource heliport maintenance services unless otherwise accepted by the President. (b) For acceptance of maintenance Services, the heliport operator must apply in a form and manner acceptable to the p",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-115"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) Heliport consultant is a legal entity that has the expertise in discharging the functions of designing, constructing and/or carrying out the supervisory functions. (b) The Heliport Certificate holder / operator is fully responsible to c",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-117"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) President or an authorized representative has the authority to conduct planned inspections, unannounced spot inspection, audits and onsite verification of facility, documents, and records to determine the compliance with the regulatory ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-119"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "conditions under which the heliport certification or authorisation holder deal with violation found during the internal process of audits and inspections.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-11"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) In case of any deviation from any heliport specification that is permitted under the regulations in this part, an applicant must conduct an aeronautical study as acceptable to the President and provide mitigation measures for safe opera",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-121-exemptions"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) A level 1 finding is any significant non-compliance with the GACAR Part 138 requirements which lowers the safety standard and hazards seriously the flight safety. (b) A level 2 finding is any non-compliance with the GACAR Part 138 requi",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-123"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The issuance of heliport certificate is applicable to the heliports open to the public and to serve helicopter operations offering commercial air operations. (b) No heliport operators are permited to operate public heliport unless certi",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-125-heliport-certification-requirement"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The application for certification of heliport must be submitted in a form and manner acceptable to the President. (b) The applicant must ensure that the heliport physical characteristics, facilities, services, and equipment installed an",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-127"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "An applicant may be issued with a Heliport Certificate upon confirming that the applicant meets the provisions of this part and no findings or deviations are reported or once the corrective action plans are accepted and mitigation measures ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-129-issuance-of-heliport-certificate"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The Heliport certificate is issued and renewed for a maximum period of three years. It remains valid subject to the condition that: (1） The organization is remaining in compliance with requirements this part; (2) The certificate is not ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-131"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The heliport certificate holder must apply to the President for renewal or reissuance of the certificate at least three months in advance to the expiry of validity of the certificate or commencement of operation. The application must be",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-133"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(d) The certificate holder must apply in a form and manner acceptable to the president for acceptance of any major changes that affect the scope of certification and require revisions to the heliport operation manual.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-14"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The heliport Certificate holder is responsible: (1) To maintain the heliport in accordance with requirements specified in the accepted heliport operation manual and requirement of this part; (2) To update and distribute the heliport ope",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-135"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) Heliport operators, intend to apply for certification, must develop and submit the Heliport Operation Manual (HOM) for acceptance by the President. (b) Each heliport certificate holder must develop the Heliport Operation Manual as per c",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-137"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(d) Granted regulatory exemptions must be published in the AIP. (e) Maintain at least one copy of updated Heliport Operation Manual at the Heliport and one copy at the operator's principal place of business, if other than the heliport. (f) ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-15"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The certificate holder must develop and implement Safety Management System as per the provisions of GACAR Part 5. (b) The Safety Management System Manual (SMSM), for the purpose of implementing the heliport SMS requirements as mentioned",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-139"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The heliport operator must describe the following competency requirements in the heliport operation manual and ensure that the persons possess competency with regard to: (1)） Relevant knowledge, skills and experience in the respective f",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-141"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(c) The training program must be developed so as to ensure that each employee assigned to perform the functions including operation, safety, rescue and firefighting, and maintenance function is capable to perform the assigned task. (d) The ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-16"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The issuance of heliport authorization is applicable to heliports as per the classification of heliports stipulated in §138.105 (b) No heliport operator is permited to operate heliport or provide services without obtaining prior authori",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-mathbf-138-145-authorization-of-heliports"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The application for authorization of heliport must be submitted in a form and manner acceptable to the President. (b) The applicant must ensure that the heliport physical characteristics, facilities, heliport support services and equipm",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-mathbf-l38-147-application-for-heliport-auth"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Procedures Manual (HOPM) depending on the size and complexity of the heliport requirements and operations.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-18"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "An applicant may be issued a heliport authorization upon confirming that the applicant meets the requirements of this part and no findings or deviations are reported or once the corrective action plans are accepted and mitigation measures a",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-149-issuance-of-authorization"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The Heliport authorization issued will remain valid, subject to: (1) The organization is remaining in compliance with this part; (2) Provide access of heliport to GACA officers to determine continued compliance with the requirements; (3",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-mathbf-138-151-continued-validity-of-the-aut"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The authorization holder must describe provisions for an amendment in heliport operation procedures manual as how to notify the President of any changes in the organization's activities or approvals or locations or personnel. (b) No hel",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-153"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(4) The heliport operation manual, operating procedures, facilities, systems, any work that may affect the safety of the heliport operations.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-19"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "An authorization holder of a heliport must: (a) Have a single point of responsibility for the authorized heliport for its management of safe operation, maintenance, and security as per the provisions of this part. (b) Conduct heliport opera",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-155-responsibilities-of-the-authorizatio"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "a) No person may use a temporary heliport unless otherwise permitted by the President. b) An applicant of a temporary heliport must apply to GACA prior to the use of the temporary heliport in a form and manner acceptable to the President. c",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-157-permission-of-temporary-heliports"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The heliport operator must give due consideration for design of heliports taking into account the land-use and environmental impact control measures. (b) Heliport design and location must be selected such that the downwind operations ar",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-161-heliports-design-and-location"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) Any person or organization intending to establish a heliport, must apply in a form and manner acceptable to the president for prior permission. (b) The applicant must be the legal owner of the land or hold valid lease agreement or legal",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-163-permission-for-design-and-establishm"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The applicant must submit the following documents for the grant of permission: (1)） Application for establishment of heliport in the prescribed form;",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-165-application-for-establishing-a-new-h"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": ")Statement of Regulations Compliance in the prescribed fc (3) Proof of Ownership or Lease Rights of the land; (4) Environment Impact Assessment Report; (5) Heliport Feasibility Study Report (including site selection, weather data, tabulated",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-21"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) An applicant may be granted permission to establish a new heliport, if the President considers that the applicant meets the requirements of this part; (b) The President may stipulate additional requirements or conditions that are necess",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-167-grant-of-permission"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The applicant, once granted the establishment permission, must construct the heliport as per provisions of the permission and requirements of the relevant authorities for construction and safety regulations. (b) The applicant must allow",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-169-construction-of-heliport"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) For the establishment of temporary heliports, the operator must ensure that the heliport is suitable in terms of physical and operational characteristics for the intended type of helicopter operations. (b) Applicant must apply to GACA p",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-171-establishment-of-temporary-heliports"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The following common reference systems must be used for heliports for establishing horizontal, vertical and temporal references. (i)Horizontal Reference System - World Geodetic System — 1984 (WGS-84) must be used as the horizontal (geod",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-201-common-reference-systems"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) Determination and reporting of heliport-related aeronautical data must be in accordance with the accuracy and integrity classification required to meet the needs of the end-user of aeronautical data. (b) Digital data error detection tec",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-203-aeronautical-data"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) A heliport reference point must be established for a heliport not collocated with an aerodrome. (b) The heliport reference point must be located near the initial or planned geometric center of the heliport and must normally remain where",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-205"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The heliport elevation and geoid undulation at the heliport elevation position must be measured and reported to the aeronautical information services authority to the accuracy of one-half center Or foot. (b)The elevation of the TLOF and",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-207-heliport-elevations"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The following data must be measured or described, as appropriate, for each facility provided on a heliport: (1) heliport type —— surface-level, elevated, shipboard or helideck; (2) TLOF —- dimensions to the nearest meter or foot, slope,",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-209-heliport-dimensions-and-related-info"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "() The geographical coordinates of appropriate center line points of helicopter taxiways and helicopter taxi route must be measured and reported to the President in degrees, minutes, seconds and hundredths of seconds. (d) The geographical c",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-25"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The following distances to the nearest meter or foot must be declared, where relevant, for a heliport: (1) Take-off distance available; (2) Rejected take-off distance available; and (3) Landing distance available.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-211"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(@) To ensure that aeronautical information services units obtain information to enable them to provide up-to-date pre-flight information and to meet the need for in-flight information, arrangements must be made between aeronautical informa",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-213"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(b) Before introducing changes to the air navigation system, due account must be taken by the services responsible for such changes of the time needed by the aeronautical information service for the preparation, production and issue of rele",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-26"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) Information concerning the level of protection provided at a heliport for helicopter rescue and firefighting purposes must be made available in heliport operation manual and the AIP. (b) The level of protection normally available at a h",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-215"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note 1. — The provisions given in this section are based on the design assumption that no more than onehelicopter will be in theFATO at thesame time. Note 2. — The design provisions given in this section assume when conducting operations t",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-301-onshore-heliports"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) A FATO must: (1) Provide: (i) An area free of obstacles, except for essential objects which because of their function are located on it, and of sufficient size and shape to ensure containment of every part of the design helicopter in th",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-i-final-approach-and-take-off-areas-fato"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(i)The length of the Rejected Take-Off Distance (RTOD) for the required Take-Off procedure prescribed in the helicopter flight manual (HFM) of the helicopters for which the FATO is intended, or 1.5 Design D, whichever is greater; and (i) Th",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-28"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(h) A safety area must provide: (1) An area free of obstacles, except for essential objects which because of their function are located on it, to compensate for maneuvering errors; and 2) When solid, a surface which: is contiguous and flush",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-i1-safety-areas"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(m)A heliport must be provided with at least one protected side slope, rising at 45 degrees outward from the edge of the safety area and extending to a distance of 10 m (See Figure F-2). (n) A heliport should be provided with at least two p",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-iii-protected-side-slope"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The diagrams in Figure F-6 show a number of configurations of FATO/Safety Areas/Side slopes. For a more complex arriva/departure arrangement which consists of: two surfaces that are not diametrically opposed; more than two surfaces",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-31"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The inclusion of detailed specifications for helicopter clearways in this section is not intended to imply that a clearway has to be provided.) (p) A helicopter clearway must provide: (1) An area free of obstacles, except for essen",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-iv-helicopter-clearways"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(1) Provide: (i) An area free of obstacles and of sufficient size and shape to ensure containment of the undercarriage of the most demanding helicopter the TLOF is intended to serve in accordance with the intended orientation; (ii) A surfac",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-32"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(ii) When there is a limitation on the direction of touchdown, of sufficient width to meet the requirement of (u) (1) (i) above but not less than twice the undercarriage width (UCW) of: (A) in a FATO, the design helicopter; or (B) in a stan",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-33"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note 1. — The specifications for ground taxi-routes and air taxi-routes are intended for the safety of simultaneous operations during the maneuvering of helicopters. The effect of wind velocity/turbulence induced by the rotor downwash woul",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-vi-helicopter-taxiways-and-taxi-routes"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(gg) A helicopter taxiway must: (1) Provide: (i) An area free of obstacles and of sufficient width to ensure containment of the undercariage of the most demanding wheeled helicopter the taxiway is intended to serve; (i) A surface which: (A)",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-vii-helicopter-taxiways"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(1) Two times the undercarriage width (UCW) of the most demanding helicopter the taxiway is intended to serve; or (2) A width meeting the requirements of (gg)(1)(i). (i) The transverse slope of a taxiway must not exceed 2 per cent and the l",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-35"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Gj) A helicopter taxi-route must provide: (1) An area free of obstacles, except for essential objects which because of their function are located on it, established for the movement of helicopters; with sufficient width to ensure containmen",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-vill-helicopter-taxi-routes"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(i) When collocated with a taxiway: (A) Is contiguous and flush with the taxiway; (B) Does not present a hazard to operations; and (C) Ensures effective drainage; and (ii) When not collocated with a taxiway: (A) Is free of hazards if a forc",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-36"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(mm) A helicopter ground taxi-route must have a minimum width of 1.5 times the overall width of the largest helicopter it is intended to serve, and be centered on a taxiway (See Figure F-3). (nn) Essential objects located in a helicopter gr",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-ix-helicopter-ground-taxi-routes"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(infty) A helicopter air taxi-route must have a minimum width of twice the overall width of the largest helicopter it is intended to serve. (pp) If collocated with a taxiway for the purpose of permitting both ground and air taxi operations ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-x-helicopter-air-taxi-routes"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "essential objects located in the helicopter air taxi-route musi (i)Be located at a distance of less than 50 cm outwards from the edge of the helicopter taxiway; and (ii) Penetrate a surface originating 50 cm outwards of the edge of the heli",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-37"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(m) A helicopter stand must: (1) Provide: (i) An area free of obstacles and of sufficient size and shape to ensure containment of every part of the largest helicopter the stand is intended to serve when it is being positioned within the sta",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-xi-helicopter-stands"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "i) A surface which: (A) is resistant to the effects of rotor downwash; (B) is free of irregularities that would adversely affect the manoeuvring of helicopters; (C) has bearing strength capable of withstanding the intended loads; D) has suf",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-38"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(ww) A protection area must provide: (1) An area free of obstacles, except for essential objects which because of their function are located on it; and (2) When solid, a surface which is contiguous and flush with the stand; is resistant to ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-xii-protection-areas"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(ddd) Where a FATO is located near a runway or taxiway, and where simultaneous operations are planned, the separation distance between the edges of a runway or taxiway and the edge of a FATO must not be less than the appropriate dimension i",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-xii1-location-of-a-final-approach-and-take-o"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "I. Final approach and take-off areas and touchdown and lift-off areas (FATOs and TLOFs) (Note 1. — For helidecks that have a 1 D or larger FATO it is presumed that the FATO and the TLOF will always occupy the same space and have the same lo",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-303-helidecks"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(e) For helicopters with a MTOM of 3 175 kg or less, the TLOF should be of sufficient size to contain an area within which can be accommodated a circle of diameter of not less than 1 D of the largest helicopter the helideck is intended to s",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-44"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) When helicopter operating areas are provided in the bow or stern of a ship or are purpose-built above the ship's structure, they must be regarded as purpose-built shipboard heliports. (b) Except for the arrangement described in h (2) fo",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-305-shipboard-heliport"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Note 2. — The touchdown heading of the helicopter is limited to the angular distance subtended by the 1 D arc headings, minus the angular distance which corresponds to 15 degrees at each end of the arc.) (i) For non-purpose-built shipboard ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-46"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) Description-An inclined plane or a combination of planes or, when a turn is involved, a complex surface sloping upwards from the end of the safety area and centered on a line passing through the center of the FATO. (For depiction of sur",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-i-approach-surface"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(f) In the case of an approach surface involving a turn, the surface must not contain more than one curved portion. (g) Where a curved portion of an approach surface is provided, the sum of the radius of arc defining the center line of the ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-49"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Note 1. For single take-off climb/approach surface. Transitional surface extends to perpendicular to far side of safety area. Note 2. This figure shows a square FATO for illustrate purposes only. For circular FATO the transitional surface l",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-50"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Note 1. — This example diagram does not represent any specific profile, technique or helicopter type and is intended to show a generic example. An approach profile and a backup procedure for departure profile are depicted. Specific manufact",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-51"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Note 1. — Any combination of curve and straight portion may be established using the following formula: S+Rgeq575 m and Rgeq270 m Wwhere S=305 m , where S is the length of the straight portion and R is the radius of tum. Note any combinatio",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-52"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Note. — The slope design categories in Table G-1 may not be restricted to a specific performance classofoperationand may be applicable to more than one performance class of operation. The slope design categories depicted inTableG-1 represen",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-53"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "corresponds with helicopters operated in performance class 3; and slope category \"C\" generally corresponds with helicopters operated in performance class 2. Consultation with helicopter operators will help to determine the appropriate slope",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-54"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(i) Description - A complex surface along the side of the safety area and part of the side of the approach/take-off climb surface, that slopes upwards and outwards to a predetermined height of 45 m (150ft). (See Figure G-3. See Table G -1 f",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-i1-transitional-surface"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(m)Description - An inclined plane, a combination of planes or, when a turn is involved, a complex surface sloping upwards from the end of the safety area and centered on a line passing through the center of the FATO. (See Figures G-1, G-2,",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-i-take-off-climb-surface"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(1) An inner edge horizontal and equal in length to the minimum specified width/diameter of the FATO plus the safety area, perpendicular to the centerline of the take-off climb surface and located at the outer edge of the safety area; (2) T",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-56"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(v) Description - A complex surface originating at and extending from, a reference point on the edge of the FATO of a helideck. In the case of a TLOF of less than1D, the reference point must be locatednot lessthan 0.5 D from the center of t",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-iv-obstacle-free-sector-surface-helidecks"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(x) A helideck obstacle-free sector must comprise of two components, one above and one below helideck level. (See Figure G-7): (1) Above helideck level - The surface must be a horizontal plane level with the elevation of the helideck surfac",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-57"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(y) Description. A complex surface originating at the reference point for the obstacle-free sector and extending over the arc not covered by the obstacle-free sector within which the height of obstacles above the level of the TLOF must be p",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-v-limited-obstacle-sector-surface-helidecks"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note 1. —— The requirements for obstacle limitation surfaces are specified on the basis of the intended use of a FATO, i.e. approach manoeuvre to hover or landing, or take-off manoeuvre and type of approach, and are intended to be applied ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-403"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The following obstacle limitation surfaces must be established for a FATO at heliports with a PinS approach procedure utilizing a visual segment surface: (See Figure G-3). (1) Take-off climb surface; (2) Approach surface; and",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-surface-level-heliports"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(3) Transitional surfaces. (b) The following obstacle limitation surfaces must be established for a FATO at heliports, other than specified in 138.403(a), including heliports with a PinS approach procedure where a visual segment surface is ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-58"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(i) The obstacle limitation surfaces for elevated heliports must conform to the requirements for surface- level heliports specified in 138.403-(a) and 138.403-(f) Gj) An elevated heliport must have at least one approach and take-off climb s",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-1-elevated-heliports"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(l) A helideck must have an obstacle-free sector. (m)There must be no fixed obstacles within the obstacle-free sector above the obstacle-free surface. (n) In the immediate vicinity of the helideck, obstacle protection for helicopters must b",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-i1-helidecks"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(p) For a TLOF less than 1D within the 150-degree limited obstacle surface/sector out to a distance of 0.62D and commencing from a distance 0.5D, both measured from the center of the TLOF, objects must not exceed a height of 5 cm above the ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-63"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(q) The specifications in (t) and (v) must be applicable for shipboard heliports.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-iii-shipboard-heliports"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(r) When helicopter operating areas are provided in the bow or stern of a ship they must apply the obstacle criteria for helidecks. V. Amidships location —— purpose-built and non-purpose-built (s) Forward and aft of a TLOF of 1 D and larger",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-iv-purpose-built-heliports-located-forward-o"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(v) No objects must be located within the TLOF except those aids essential for the safe operation of a helicopter (such as nets or lighting) and then only up to a maximum height of 2.5 cm Suchobjects must only be present if they do not repr",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-vi-1-ship-s-side-location"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(w) From the fore and aft mid-points of the D circle in two segments outside the circle, limited obstacle areas must extend to the ship's rail to a fore and aft distance of 1.5 times the fore-to-aftdimension of the TLOF, located symmetrical",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-65"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(y) An area designated for winching on-board ships must be comprised of a circular clear zone of diameter 5 m and extending from the perimeter of the clear zone, a concentric maneuvering zone ofdiameter 2 D (See Figure G-12.) (z) The maneuv",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-vi-2-winching-areas"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(1) The inner maneuvering zone extending from the perimeter of the clear zone and of a circle of diameter not less than 1.5 D ; and (2) The outer maneuvering zone extending from the perimeter of the inner maneuvering zone and of a circle of",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-67"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "1．Application (i) A heliport must be equipped with at least one wind direction indicator. 2. Location (ii) A wind direction indicator must be located so as to indicate the wind conditions over the FATO and TLOF and in such a way as to be fr",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-a-wind-direction-indicators"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(vi) The color of the wind direction indicator must be so selected as to make it clearly visible and understandable from a height of at least 200 m (650 ft.) above the heliport, having regard to background. Where practicable, a single color",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-69"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The objective of the winching area markings is to provide visual cues which assist a helicopter to be positioned over, and retained within, an area from which a passenger or equipment can be lowered or raised.) 1． Application (i) W",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-a-winching-area-marking"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(iv)A winching area clear zone marking must consist of a solid circle of diameter not less than 5 m and of a conspicuous color. (v) A winching area maneuvering zone marking must consist of a broken circle line of 30 cm in width and of a dia",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-70"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note 1. — The objective of a heliport identification marking is to provide to the pilot an indication of the presence of a heliport and, by its form, likely usage; the preferred direction(s) of approach; or the FATO orientation within the ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-b-heliport-identification-marking"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "shown in Figure H-3 and where the marking is used for a runway-type FATO, its dimensions must be increased by a factor of 3 as shown in Figure H-2. (vi)A heliport identification marking for a heliport at a hospital must consist of a letter ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-71"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note 1. — The objective of the maximum allowable mass marking is to provide the mass limitation of the heliport such that it is visible to the pilot from the preferred final approach direction.) 1．Application (i) A maximum allowable mass m",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-c-maximum-allowable-mass-marking"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(iv)A maximum allowable mass marking must consist of a one-, two- or three-digit number. (v) The maximum allowable mass must be expressed in tones ( 1 000 kg) rounded down to the nearest 1 000 kg followed by a letter “t'. (vi)The maximum al",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-72"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note: Color of the markings must be as given in 138.503 (b)(5) and (6)",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-75"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(vii) The numbers and the letter of the marking must have a color contrasting with the background and must be in the form and proportion shown in Figure H-4 for a DValue of more than 30 m .For a D-Value between 15 m to 30 m the height of th",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-1-all-fatos-except-runway-type-fatos"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(ix)The numbers and the letter of the marking must have a color contrasting with the back ground and must be in the form and proportion shown in Figure H-4.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-ii-runway-type-fatos"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. —- The objective of the D-value marking is to provide to the pilot the “D\" of the largest helicopter that can be accommodated on the heliport.) 1.Application I.All FATOs except runway-type FATOs (i) The D-value marking must be displa",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-d-d-value-marking"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "3. Characteristics (v) The D-value marking must be white. The D-value marking must be rounded to the nearest whole center or foot with 0.5 rounded down. (vi) The numbers of the marking must have a color contrasting with the background and m",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-77"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(e) Final approach and take-off area perimeter marking or markers for surface-level heliports (Note. — The objective of final approach and take-off area perimeter marking, or markers, is to provide to the pilot, where the perimeter of the F",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-78"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "and with end-to-end spacing of not less than 1.5 m and not more than 2 m .The corners of a square or rectangular FATO must be defined. (x) For a paved FATO the perimeter must be defined with a dashed line. The FATO perimeter marking segment",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-79"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Note. — The objective of final approach and take-off area designation markings for runwaytype FATOs is to provide to the pilot an indication of the magnetic heading of the runway.) 1．Application (i)A FATO designation marking must be provide",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-f-final-approach-and-take-off-area-designati"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "2. Location (i) A FATO designation marking must be located at the beginning of the FATO as shown in Figure H-2. 3. Characteristics (ii) A FATO designation marking must consist of a two-digit number. The twodigit number must be the whole num",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-80"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Note. — The objective of the aiming point marking is to provide a visual cue indicating to the pilot the preferred approach/departure direction; the point to which the helicopter approaches to the hover before positioning to a stand where a",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-g-aiming-point-marking"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The objective of the touchdown and lift-off area perimeter marking is to provide to the pilot an indication of an area that is free of obstacles; has dynamic load bearing; and in which, when positioned in accordance with the TDPM, ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-h-touchdown-and-lift-off-area-perimeter-mark"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Note. — The objective of a touchdown/positioning marking (TDPM) is to provide visual cues which permit a helicopter to be placed in a specific position such that, when the pilot's seat is above the marking, the undercarriage is within the l",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-i-touchdown-positioning-marking"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "[I. When there is a limitation on the direction of touchdown/positioning: (A) For unidirectional applications, a shoulder line with an associated centreline; or (B) For multidirectional applications, a TDPC marking with prohibited landing s",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-83"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "in an orientation that might constitute a hazard. This is achieved by having the helicopter nose clear of the hatched markings during the touchdown.)",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-84"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The objective of a heliport name marking is to provide to the pilot a means of identifying a heliport which can be seen, and read, from all directions of approach.) 1．Application (i) A heliport name marking must be provided at a he",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-j-heliport-name-marking"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(ii) Where a limited obstacle sector (LOS) exists on a helideck the marking must be located that side of the “heliport identification marking\". For a nonpurpose-built heliport located on a ship's side the marking must be located on the inbo",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-85"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The objective of the helideck obstacle-free sector (chevron) marking is to indicate the direction and limits of a sector that is free of obstacles above the level of the helideck for the preferred approach and departure directions.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-k-helideck-obstacle-free-sector-chevron-mark"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(ii)The helideck obstacle-free sector marking must indicate the location of the obstaclefree sector and the directions of the limits of the sector. (iv) The height of the chevron must not be less than 30cm (v) The chevron must be marked in ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-86"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. -The objective of helideck and shipboard heliport surface marking is to provide to the pilot, by color and conspicuity, the location of the TLOF on a helideck or shipboard heliport.) 1． Application (i) A surface marking must be provi",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-1-helideck-and-shipboard-heliport-surface-ma"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note 1. — The objective of helicopter taxiway markings and markers is, without being a hazard to the helicopter, to provide to the pilot by day and, if necessary, by night, visual cues to guide movement along the taxiway. Note 2. — Ground ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-m-helicopter-taxiway-markings-and-markers"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(i) The center line of a helicopter taxiway must be identified with a marking. (i The edges of a helicopter taxiway, if not self-evident, must be identified witl markers or markings. 2. Location (ii) Helicopter taxiway markings must be alon",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-87"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(xii)If the helicopter taxiway is to be used at night, the edge markers must be internally illuminated or retro-reflective. (xi)",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-88"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The objective of helicopter air taxi-route markings and markers is to provide to the pilot by day and, if necessary, by night, visual cues to guide movement along the air taxi-route.) 1．Application (i) The center line of a helicopt",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-n-helicopter-air-taxi-route-markings-and-mar"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The objective of the helicopter stand markings is to provide to the pilot a visual indication of an area that is free of obstacles and in which permitted maneuvering, and all necessary ground functions, may take place; identificati",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-0-helicopter-stand-markings"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "when required; and, guidance for maneuvering and positioning of the helicopter within the Stand.) 1．Application (i) A helicopter stand perimeter marking must be provided. (ii) A helicopter stand must be provided with the appropriate TDPM. (",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-89"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The objective of a flight path alignment guidance marking is to provide the pilot with a visual indication of the available approach and/or departure path direction(s).) 1. Application (i) Flight path alignment guidance marking(s) ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-p-flight-path-alignment-guidance-marking"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The flight path alignment guidance marking can be combined with a flight path alignment guidance lighting system described in § 138.505(d) and shown in Figure H-9). 2. Location (i) The flight path alignment guidance marking must be",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-92"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note 1. — The Design, Characteristics and chromaticity of elevated and inset lights available in GACAR Part 139 are equally applicable to heliports. Note 2. — The specifications for marking and lighting of obstacles available in GACAR Part",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-a-general"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(i) A heliport beacon must be provided at a heliport where I. Long-range visual guidance is considered necessary and is not provided by other visual means; or I. Identification of the heliport is difficult due to surrounding lights. 2. Loca",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-93"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "1.Application (i) An approach lighting system must be provided at a heliport where it is desirable and practicable to indicate a preferred approach direction. 2. Location (i) The approach lighting system must be located in a straight line a",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-c-approach-lighting-system"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(iv) The steady lights must be omnidirectional white lights. (v) Sequenced flashing lights must be omnidirectional white lights. (vi) The flashing lights must have a flash frequency of one per second and their light distribution must be as ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-95"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(d) Flight path alignment guidance lighting system 1． Application (i) Flight path alignment guidance lighting system(s) must be provided at a heliport where it is desirable and practicable to indicate available approach and/or departure pat",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-97"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(i) The flight path alignment guidance lighting system must be in a straight line along the direction(s) of approach and/or departure path on one/or more of the TLOF, FATO, safety area or any suitable surface in the immediate vicinity of th",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-2-location"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(vii) A suitable control must be incorporated to allow for adjustment of light intensity to meet the prevailing conditions and to balance the flight path alignment guidance lighting system with other heliport lights and general lighting tha",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-98"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The objective of a visual alignment guidance system is to provide conspicuous and discrete cues to assist the pilot to attain and maintain a specified approach track to a heliport.) 1． Application (i) A visual alignment guidance sy",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-e-visual-alignment-guidance-system"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The objective of a visual approach slope indicator is to provide conspicuous and discrete color cues within a specified elevation and azimuth, to assist the pilot to attain and maintain the approach slope to a desired position with",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-f-visual-approach-slope-indicator"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The objective of a final approach and take-off area lighting system for onshore surface-level heliports is to provide to the pilot operating at night an indication of the shape, location and extent of the FATo.) 1．Application (i) W",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-i-and-take-off-area-lighting-systems-for-ons"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(ii) FATO lights must be placed along the edges of the FATO. The lights must be uniformly spaced as follows: 1. For an area in the form of a square or rectangle, at intervals of not more than 50 m with a minimum of four lights on each side ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-2-location-2"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The objective of aiming point lights is to provide a visual cue indicating to the pilot by night the preferred approach/departure direction; the point to which the helicopter",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-h-aiming-point-lights"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "approaches to a hover before positioning to a TLOF, where a touchdown can be made; and that the surface of the FATO is not intended for touchdown.) 1．Application (i) Where an aiming point marking is provided at a heliport intended for use a",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-100"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The objective of a touchdown and lift-off area lighting system is to provide illumination of the TLOF and required elements within. For a TLOF located in a FATO, the objective is to provide discernibility, to the pilot on a final a",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-i-touchdown-and-lift-off-area-lighting-syste"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "IⅢI. Arrays of segmented point source lighting (ASPSL) or luminescent panel (LP) lighting to identify the TLOF when (i) and (ii) are not practicable and FATO lights are available. (i) For an elevated heliport, shipboard heliport or helideck",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-101"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(ix) On surface-level heliports, ASPSL or LPs, if provided to identify the TLOF must be placed along the marking designating the edge of the TLOF. Where the TLOF is a circle, they must be located on straight lines circumscribing the area. (",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-102"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(xix) When located within the safety area of a surface level or elevated heliport, the TLOF floodlights must not exceed a height of 25cm (x) For a helideck or shipboard heliport, the TLOF floodlights must not exceed a height of 5 cm , or fo",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-103"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The objective of helicopter stand floodlighting is to provide illumination of the stand surface and associated markings to assist the maneuvering and positioning of a helicopter and facilitation of essential operations around the h",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-j-helicopter-stand-floodlighting"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "2. Location (i) Helicopter stand floodlights must be located so as to provide adequate illumination, with a minimum of glare to the pilot of a helicopter in flight and on the ground, and to personnel on the stand. The arrangement and aiming",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-104"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The objective of winching area floodlighting is to provide illumination of the surface, obstacles and visual cues to assist a helicopter to be positioned over, and retained within, an area from which a passenger or equipment can be",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-k-winching-area-floodlighting"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "The characteristics and specifications for taxiway center lights and taxiway edge lights given in GACAR § 139.505 are equally applicable to taxiways intended for ground taxing of helicopters.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-105"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. - Arrangements for an aeronautical study of objects outside the obstacle limitation surface (OLS) and for other objects are addressed in GACARs 139 Sub Part F. 一 (i) Where an aeronautical study indicates that obstacles in areas outsi",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-bf-m-visual-aids-for-denoting-obstacles-outs"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "1.Application At a heliport intended for use at night, obstacles must be floodlighted if it is not possible to display obstacle lights on them. 2. Location (i Obstacle floodlights must be arranged so as to illuminate the entire obstacle and",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-n-floodlighting-of-obstacles"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. - Heliport emergency planning is the process of preparing a heliport to cope with an emergency that takes place at the heliport or in its vicinity. Examples of emergencies include crashes on or off the heliport, medical emergencies, ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-601-heliport-emergency-planning"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(2) How to initiate the plan for each emergency specified; (3) The name of agencies on and off the heliport to contact for each type of emergency with telephone numbers or other contact information; (4) The role of each agency for each type",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-107"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(3) The heliport certificate holder must review the plan, thereafter, or after an actual emergency, so as to correct any deficiency found during such exercises or actual emergency.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-108"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. - Provisions described in this subpart are intended to address incidents or accidents within the heliport response area only. No dedicated firefighting provisions are included for helicopter accidents or incidents that may occur outs",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-603"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(1) The following specifications must apply to new built or replacement of existing systems or part thereof from 1 January 2023: § 138.603 (b) (1), (c) (3), (c) (4), (c) (5), (c) (7), (c) (9), (c) (10), (c) (12), (c) (13) and (d) (2). (2) R",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-a-applicability"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(1) For the application of primary media, the discharge rate (in liters/minute) applied over the assumed practical critical area (in m2) must be predicated on a requirement to bring any fire which may occur on the heliport under control wit",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-b-level-of-protection-provided"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note - This section is not applicable to helidecks regardless of how primary media is being delivered.) (2) The practical critical area must be calculated by multiplying the helicopter fuselage length (mathfrakm) by the helicopter fuselage",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-practical-critical-area-calculation-where-pr"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(4) For heliports, except helidecks, the practical critical area must be based on an area contained within the heliport perimeter, which always includes the TLOF, and to the extent that it is load-bearing, the FATO.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-practical-critical-area-calculation-where-pr-2"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(5) For helidecks, the practical critical area must be based on the largest circle capable of being accommodated within the TLOF perimeter.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-110"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Throughout (c), the discharge rate of a performance level B foam is assumed to be based on an application rate of 5.5 L/min/m2 , and for a performance level C foam and for water, is assumed to be based on an application rate of 3.75 L/min/m",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-extinguishing-agents"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The minimum discharge duration in Table I-2 is assumed to be two minutes. However, if the availability of back-up specialist fire services is remote from the heliport, consideration may need to be given to increasing the discharge ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-table-i-2-minimum-usable-amounts-of-extingui"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(3) The assumption is made that primary media (foam) will be delivered through a fixed foam application system such as a fixed monitor system (FMS). (4) Where an RFFS is provided at an elevated heliport, the amount of foam media and complem",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-111"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note 1.— The minimum discharge duration in Table I-3 is assumed to be five minutes.) Elevated heliports/ limited-sized surface level heliports with primary media applied in a dispersed pattern through a fixed foam application system (FFAS)",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-table-i-3-minimum-usable-amounts-of-extingui"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Purpose-built elevated heliports/limited-sized surface level heliport with primary media applied in a dispersed pattern through a fixed application system (FAS) - a passive fire retarding surface with water-only deck integrated firefighting",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-112"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(18) Complementary media must be in accordance with Table I-3, to H0 levels for helidecks up to and including 16.0 m and to H1/H2 levels for helidecks greater than 16.0 m Helidecks greater than 24 m should adopt H3 levels.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-113"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. - Response time is considered to be the time between the initial call to the rescue and firefighting service and the time when the first responding vehicle(s) (the service) is (are) in position to apply foam at a rate of at least 50 ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-d-response-time"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(1) Rescue arrangements commensurate with the overall risk of the helicopter operation must be provided at the heliport. (2) The provision of minimum equipment is recommended as listed below. Sizes of equipment are not detailed in this tabl",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-e-rescue-arrangements"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "\\* For access to casualties in an aircraft on its side. \\*\\* This equipment is required for each helideck crew member. \\*\\*\\* Requires additional training by competent personnel only specified for helicopters above 24 m (3) Rescue equipment",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-114"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(1) A suitable alerting and/or communication system must be provided in accordance with the emergency response plan.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-communication-and-alerting-system"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(1) Where provided, to determining the minimum number of rescue and firefighting personnel required a task resource analysis must be completed and the level of staffing documented in the heliport operation manual for certified heliports, th",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gpersonnel"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(3) Rescue and firefighting personnel must be provided with protective equipment and respiratory equipment to enable them to perform their duties in an effective manner.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-115"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(1) Elevated heliports and helidecks must be provided with a main access and at least one additional means of escape. (2) Access points must be located as far apart from each other as is practicable. (3) The provision of an alternative mean",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-h-means-of-escape"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) Power supply for visual aids on certified heliports must be provided in accordance with provisions given in this part and as defined in GACAR Part 139 Sub Part H- Electrical Systems.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-703"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The electrical systems for the power supply, lighting and control of the lighting systems must be so designed that an equipment failure will not leave the pilot with inadequate visual guidance or misleading information. (b) Where the se",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-705"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a)A system of monitoring must be employed to indicate the operational status of the lighting systems. Where lighting systems are provided with radio control, such systems must be monitored automatically so as to provide an indication of an",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-707-monitoring"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The wildlife strike hazard on, or in the vicinity of, a heliport must be accessed by the heliport operator through: (1) The collection of information from aircraft/helicopter operators, heliport and airport personnel etc. on the presenc",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-801-wildlife-strike-hazard-reduction"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(5) Recommended actions for reducing identified wildlife hazards to the helicopter operations. (h) The wildlife hazard assessment required under paragraph (a) of this section must be submitted to the President for acceptance and determinati",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-119"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) A plan for the removal of helicopter disabled on, or adjacent to, the movement area must be established for a heliport, and a coordinator designated to implement the plan, when necessary. (b) The disabled helicopter removal plan must be",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-803"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) When warranted by the volume of traffic and operating conditions, an appropriate apron management service must be provided on an apron by the heliport operator in order to: (1) Regulate movement with the objective of preventing collisio",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-805-apron-parking-stands-management-serv"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) Fire extinguishing equipment suitable for at least initial intervention in the event of fuel fire and personnel trained in its use must be readily available during the ground servicing of helicopter and there must be a means of quickly ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-807-ground-servicing-of-helicopter"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) A vehicle must be operated: (1) On a maneuvering area only as authorized by the heliport operator; and (2) On parking stands/apron only as authorized by the appropriate designated of the heliport in-charge. (b) The driver of a vehicle o",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-809"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(c) The driver of a vehicle on the movement area must comply with all mandatory instructions conveyed by lights during nights/low visibility. (d) The driver of a vehicle on the movement area must be appropriately trained for the tasks to be",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-121"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) Unless its function requires any equipment to be there for air navigation or for helicopter safety purposes, no equipment or installation must be provided on FATO, TLOF and Safety area. If such equipment is need to be provided, then mus",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-811"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) A fence or other suitable barrier must be provided on a heliport with provisions of access control and security oversight of movement aera. (b) A fence or other suitable barrier must be provided on a heliport to prevent the entrance to ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-813"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Consideration must be given to the provision of a perimeter road inside the heliport fencing for the use of both maintenance personnel and security patrols.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-122"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) At a heliport, where it is deemed desirable for security reasons, a fence or other barrier provided for the protection of civil aviation activity on heliport and security fencing must be illuminated at a minimum essential level of five ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-815-security-lighting"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The operator of a certified heliport must make arrangements for special areas on the heliport to be set up for the storage of dangerous goods. The procedures must be explained in Heliport Operation Manual with defined responsibilities. ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-817"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) Heliport operators must develop a maintenance program, including preventive maintenance where appropriate, and implement at the heliport to maintain facilities in a condition which does not impair the safety, regularity, or efficiency o",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-901-general"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The surfaces of all movement areas including pavements (FATO, TLOF, Stands, Aprons and adjacent areas) must be inspected and their conditions monitored regularly as part of the heliport preventive and corrective maintenance program with",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-903-surfaces-and-pavements"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) Standing water, mud, dust, sand, oil, rubber deposits, snow, slush, and other contaminants must be removed from the surface of FATO, TLOF and Stands/Apron in use and develop procedures to minimize accumulation. (b) Chemicals to remove o",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-905"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) A system of preventive maintenance of visual aids must be employed to ensure lighting and marking system reliability. (b) A light must be deemed to be unserviceable when the main beam average intensity is less than 50 per cent of the va",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-138-907-visual-aids"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) The Heliport Operation Manual is applicable for certified heliports. The certificate holder of a heliport must develop the heliport operation manual for the certified heliport. (The Heliport Operation Manual must be submitted along with",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-heliport-operation-manual-hom"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "1.1 This section must contain a short explanation of the general terms and abbreviations used in the heliport operation manual including the following: 1.1.1 Purpose of the heliport operation manual. 1.1.2 Legal position regarding heliport ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-part-1-0-introduction"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "2.1 Name and address of the heliport. 2.2 Name and address of the heliport operator. 2.3 Name of the accountable executive and heliport management personnel. 2.4 Organization chart of the heliport operator. Part 3.0 Description of the helip",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-part-2-0-technical-administration"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "3.1 Details of the following: 3.1.1 Latitude and longitude of the heliport reference point in World Geodetic System—-1984 (WGS-84) format. 3.1.2 Elevations of the heliport. 3.1.3 Elevations of FATO/TLOF/Parking Stands 3.2 Layout Plans showi",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-126"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "5.1.13 Obstacles 5.1.14 Removal of a disabled helicopters 5.1.15 Dangerous goods 5.1.16 Low visibility operations 5.1.17 Protection of sites for radar, navigation aids and meteorological equipment, if any. 5.2 The applicants or heliport aut",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-127"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "6.1 The heliport operator must establish a safety management system at heliport and safety management manual must be developed as per provisions in GACAR Part 5 and at least includes the following: 6.1.1 Safety policy. 6.1.2 Operator's orga",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-part-6-0-safety-management-system-sms"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "1.0 Siting and orientation of heliport FATO and approach and take-off climb surfaces 1.1 Many factors are considered in the determination of the siting and orientation of heliports FATO. Without attempting to provide an exhaustive list of t",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-appendix-d-design-and-establishment"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Attention must be paid in particular to whether the heliport is to be used in all meteorological conditions or only in visual meteorological conditions, and whether it is intended for use by day and night or only by day.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-1-1-1-type-of-operation"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "A study of the wind distribution must be made to determine the usability factor. In this regard, the following must be taken into consideration: (a) Wind statistics used for the calculation of the usability factor are normally available in ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-1-1-2-climatological-conditions"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(i) The wide variations which may exist, in handling characteristics and maximum permissible crosswind components for diverse types of helicopters (including future types) within various range groups of maximum permissible crosswind compone",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-129"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "considered acceptable and must be followed while planning establishment of new heliports or operationalization of the existing heliports for type of classification prescribed in this part.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-130"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "In case of any deviation from heliport specification, the heliport operator must conduct an aeronautical study, only if and where permitted by this part to assess the safety risk of deviations from the requirement and to take suitable mitig",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-1-0-purpose"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "An aeronautical study is a study of an aeronautical problem to identify possible solutions and select a solution that is acceptable without degrading safety.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-2-0-definition"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Technical analysis will provide justification for a deviation on the grounds that an equivalent level of safety can be attained by other means. It is generally applicable in situations where the cost of correcting a problem that violates a ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-3-0-technical-analysis"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Any deviations must have prior acceptance of the President. In some instances, the only reasonable means of providing an equivalent level of safety is to adopt suitable procedures and to require, as a condition of authorization or certifica",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-4-0-approval-of-deviations"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "APPENDIX F-1 - REQUIREMENTS FOR INSTRUMENT HELIPORTS WITH NONPRECISION AND/OR PRECISION APPROACHES AND INSTRUMENT DEPARTURES",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-appendix-f-physical-characteristics"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note. — The specifications in this appendix describe additional conditions beyond those found in GACAR Part 138, that apply to instrument heliports with non-precision and/or precision approaches. All specifications contained within the sub",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-1-general"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "The elevation of the TLOF and/or the elevation and geoid undulation of each threshold of the FATO (where appropriate) must be measured and reported to the aeronautical information services authority to the accuracy of: (1) One-half center o",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-a-heliport-elevation"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "The following additional data must be measured or described, as appropriate, for each facility provided on an instrument heliport: (1) Distances to the nearest center or foot of localizer and glide path elements comprising an instrument lan",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-b-heliport-dimensions-and-related-informatio"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(a) Surface-level and elevated heliports Safety areas ea surrounding an instrument FATO must extend: (See Figui (1) Laterally to a distance of at least 45 m on each side of the center line; and",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-3-physical-characteristics"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "udinally to a distance of at least 60 m beyond the ends of th 4. Obstacle Environment (a) Obstacle limitation surfaces and sectors Approach surface Characteristics- The limits of an approach surface must comprise: (1) An inner edge horizont",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-133"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(1） The following obstacle limitation surfaces must be established for an instrument FATO with a non-precision and/or precision approach: (i) Take-off climb surface; (ii) Approach surface; and (ii)Transitional surfaces. See Figure F1-2 to F",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-134"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(1) Where an approach lighting system is provided for a non-precision FATO, the system must not be less than 210 m in length. (2) The light distribution of steady lights must be as indicated in Figure H-11, Ilustration 2 in this part except",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-approach-lighting-systems"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note - Characteristics, Chromaticity's, Colors and Isocandela of the heliports visual aids for denoting obstacles markings and lighting systems must be the same as prescribed in relevant subpart of GACAR Part 139. Whenever, separate parame",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-appendix-g-obstacle-environment"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note - Characteristics, Chromaticity's and Isocandela of the heliports visual aids for navigations, markings, signs, panels and lighting systems must be as given in this part and as prescribed in relevant subpart and appendix of GACAR 139.",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-appendix-h-visual-aids"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(Note - Electrical systems provided at heliport must be the same as prescribed in GACAR Part 139. Whenever, separate parameters of marking and lighting for denoting obstacles for heliports are developed and implemented, the same shall be pr",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-appendix-j-electrical-systems"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "Closed Heliport, FATO, and /or parts thereof (a) Requirements for closed markings are the followin (1) A closed marking must be displayed on a FATO, helicopter parking position, taxiway, or on any part of those areas, which is permanently c",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-1-general-2"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(3) On a helicopter parking position, a closed marking must be super imposed on the inner circle and must cover at least 75% of the diameter of the outer circle in accordance with figure M-1. (? Requirements in respect of un serviceability ",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-145"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "(3) An un-serviceability cone must be at least 0.5textrmm high and red or international orange in combination with white; (4) An un-serviceability flag must be at least 0.5textrmm square and red or international orange in combination with w",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-146"
+  },
+  {
+    "d": "Certification, Authorization and Operation of Heliports",
+    "b": "Part 138",
+    "x": "APPENDIX N -REFERENCES AND GUIDANCE MATERIALS (Note: The GACAR Regulations are developed under references and guidance available in the following ICAO documents and references available in GACAR Part 1, Part 5 and Part 91, Part 119, Part 13",
+    "kind": "regulations",
+    "id": "part-138",
+    "anchor": "sec-gacar-part-138-certification-authorization-a-147"
+  }
+]

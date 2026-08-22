@@ -440,7 +440,7 @@ authRouter.post(
 
     let info: AppleUserInfo;
     try {
-      const payload = Buffer.from(parts[1], "base64").toString("utf-8");
+      const payload = Buffer.from(parts[1], "base64url").toString("utf-8");
       info = JSON.parse(payload) as AppleUserInfo;
     } catch {
       console.error("Failed to parse Apple id_token");
@@ -449,12 +449,18 @@ authRouter.post(
 
     // User info may also come from POST body (only first time)
     if (req.body?.user) {
-      const userObj = JSON.parse(req.body.user) as {
-        name?: { firstName?: string; lastName?: string };
-        email?: string;
-      };
-      if (userObj.email) info.email = userObj.email;
-      if (userObj.name) info.name = userObj.name;
+      try {
+        const userObj = (typeof req.body.user === "string"
+          ? JSON.parse(req.body.user)
+          : req.body.user) as {
+          name?: { firstName?: string; lastName?: string };
+          email?: string;
+        };
+        if (userObj.email) info.email = userObj.email;
+        if (userObj.name) info.name = userObj.name;
+      } catch (err) {
+        console.error("Failed to parse Apple req.body.user", err);
+      }
     }
 
     const email = normalizeEmail(info.email);
@@ -463,11 +469,22 @@ authRouter.post(
     }
 
     // Same pattern as Google: match on Apple subject first, then email for linking
-    let row =
-      (await findUserByAppleSub(info.sub)) ??
-      (await findUserByEmail(email).then((existing) =>
-        existing ? linkAppleAccount(existing.id, info.sub, info.email_verified === true) : null,
-      ));
+    let row = await findUserByAppleSub(info.sub);
+    if (!row) {
+      const existing = await findUserByEmail(email);
+      if (existing) {
+        if (
+          !mayLinkGoogleToExistingAccount({
+            googleEmailVerified: info.email_verified === true,
+            existingEmailVerified: existing.email_verified,
+            existingHasPassword: existing.password_hash !== null,
+          })
+        ) {
+          return res.redirect(`${config.appOrigin}/account?signin=link-blocked`);
+        }
+        row = await linkAppleAccount(existing.id, info.sub, true);
+      }
+    }
 
     const displayName = info.name
       ? [info.name.firstName, info.name.lastName].filter(Boolean).join(" ")

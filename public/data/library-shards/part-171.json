@@ -1,0 +1,3482 @@
+[
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Except as provided in paragraph (b) of this section, this part prescribes rules governing—- (1) The provision of air traffic services (ATS) in the Kingdom of Saudi Arabia (KSA) as well as in the airspace over the high seas encompassed b",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-1"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) No person may provide an air traffic service (ATS) in the Kingdom of Saudi Arabia unless the person complies with the provisions of this part and they have been certificated by the President under GACAR Part 170 to provide such service.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-bfxi171-3-restrictions-on-air-traffic-servic"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(c) Except as provided in GACAR Part 170, each ATS provider must comply with the limitations and provisions of their certificate, operations specifications and their manual prepared under Subpart C.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The objectives of ATS must be to: (1) Prevent collisions between aircraft; (2) Prevent collisions between aircraft on the maneuvering area and obstructions on that area; (3) Expedite and maintain an orderly flow of air traffic; (4) Prov",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-bfdelta171-5-objectives-of-air-traffic-servi"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The air traffic services must comprise three services identified as follows: (1) The air traffic control service, to accomplish objectives (a)(1), (a)(2) and (a)(3) of §171.5 ,this service being divided in three parts as follows: (i) Ar",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-bfxibf171-7-divisions-of-air-traffic-service"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(3) Alerting service to notify appropriate organizations regarding aircraft in need of search and rescue aid, and assist such organizations as required; and (b) Where air traffic services are established, the certified ATS provider must pub",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-2"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The need for the provision of ATS must be determined by the General Manager of Air Traffic Services (GM-ATS) as defined under GACAR Part 171, §171.43(a)(3), and must be accepted by the President. The factors that must be considered in d",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-bfxi171-9-determination-of-the-need-for-air-"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(b) The designation of the particular portions of the airspace or the particular aerodromes must be as follows: (1) Flight information regions (FIR). Those portions of the airspace where it is determined that flight information service and ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-3"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "The air traffic services must be provided by units established and designated as follows: (a) Flight information centers (FIC) must be established to provide flight information service and alerting service within flight information regions,",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-13"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(2) Approach Control Units (APP); and (3) Aerodrome Control Towers (TWR). (d) Where air traffic services are established, the certified ATS provider must publish information as necessary to permit the utilization of such services.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-4"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) General. The delineation of airspace, wherein ATS are to be provided, must be related to the nature of the route structure and the need for efficient service rather than to national boundaries. Note 1. — Agreements to permit the delinea",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-15"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "which it is desired to provide the applicable parts of the ATC service, taking into account the capabilities of the navigation aids normally used in that area. Note. — In a control area other than one formed by a system of airways, a system",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-5"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "the surface of the earth to at least the lower limit of the control area. Note. — An upper limit higher than the lower limit of the overlying control area may be established whendesired. (4) If a control zone is located outside of the later",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-6"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) An area control center (ACC) or flight information center (FIC) must be identified by the name of a nearby town or city or geographic feature. (b) An aerodrome control tower (TWR) or approach control unit (APP) must be identified by the",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-17"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Determination and reporting of air traffic services-related aeronautical data must be in accordance with the accuracy and integrity classification required to meet the needs of the end-user of aeronautical data. Note. — Specifications c",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-19"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(b) Each ATS provider must ensure that digital data error detection techniques are used during the transmission and/or storage of aeronautical data and digital data sets. Note. — Detailed specifications concerning digital data error detecti",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-7"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Horizontal reference system. World Geodetic System - 1984 (WGS-84) must be used as the horizontal (geodetic) reference system for air navigation services. Reported aeronautical geographical coordinates (indicating latitude and longitude",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-21"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must coordinate with the GACA when interacting with foreign States or foreign ATS providers when there are implications for Regional Air Navigation Agreements for which the KSA is a party.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-23"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Except as otherwise prescribed in this part, each ATS provider must provide services in full compliance with the applicable standards and procedures of the International Civil Aviation Organization (ICAO). Specifically, the standards and pr",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-25"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must facilitate inspections and audits by the President or by a qualified entity acting on behalf of the President to assess the level of effective implementation of the requirements of this Part and it must cooperate as n",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-27"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must have sufficient qualified management and technical personnel, acceptable to the President, to ensure the highest degree of safety in its operations. The ATS provider must have qualified personnel, , serving full t",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-41"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(3) Discharge their duties to meet applicable legal requirements and to maintain safe operations. (e) Each ATS provider must (1) Describe, in the operations manual required by GACAR 171, §171.51 , thesafety accountabilities and responsibili",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-9"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(5) Developing and signing Letters of Agreement (LOA) with aerodrome operator, aerodrome meteorological offices, and any operator or user conducting specific flying activities that must be considered in the provision of ATs.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-171-811"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must establish and maintain an operations manual that shows how and where the ATS provider provides, or proposes to provide, air traffic services in compliance with the applicable GACARs. (b) The operations manual must",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-51"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "documentation must be available within the Unit libraries as required under GACAR Part 171, § I7I.807 (10) A statement of the responsibilities and functions for each operating position; (11) A description of the arrangements made or propose",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-12"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "services; (24) If authorized to designate and classify airspace under Subpart H, a description of methods and criteria used for conducting aeronautical studies as part of the airspace design process; (25) If authorized to establish and desi",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-13"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must publish an air traffic services procedures manual (ATSPM). (b) Where an ATS provider provides services across a number of facilities, the ATSPM must be published in two parts: (1) ATSPM Part 1, which is applicable",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-53"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Arrangements for the control and amendment of the ATSPM and all other relevant documentation must be documented fully in the ATS Provider's operations manual.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-raffic-service-procedures-manual-formatting-"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The ATS Provider must ensure that all documentation required for the safe and efficient provision of services at a unit is to be made available to staff in a timely and comprehensive manner. Documentation required to be immediately avai",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-57"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must have processes, procedures and competent personnel to ensure that their air traffic controllers (1) Are appropriately certificated; (2) Are competent to provide the ATC services for which they hold valid ratings a",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-63"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(5) Hold a current Class 3 medical certificate; (6) Hold a current English Language Proficiency Certificate Level 4 or higher in accordance with the requirements of Appendix A to GACAR Part 61; (7) Are not under the influence of psychoactiv",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-16"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(d) Each ATS provider must permit an OJTI to provide an ATC service without any training responsibilities, for sufficient time to remain competent on the specific sector(s) or operational position(s) for which he provides on-the-job trainin",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-17"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) An ATCO license entitles the holder to provide an ATC service, for which he does not hold a valid rating, under the supervision of an OJTI, who holds a valid rating appropriate to the ATC service being provided. (b) A controller who has",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-65"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) This subpart sets out the requirements for a training and assessment program (b) Each ATS provider must implement a training and assessment program to ensure that an individual performing a function in conjunction with any air traffic s",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-71"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must have a unit training plan (UTP) for each ATSU, approved by the President, which details the processes by which ATCOs, AFISOs, Instructors, and assessors are trained, and competent to exercise the privileges of the",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-72-unit-training-plan"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(3) Continuation training designed to maintain the validity of the endorsements of the license, consisting of: (i) Unit recurrent (refresher) training. Unit recurrent training must ensure that all operational personnel receive annual recurr",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-19"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must (a) Assign the over-all responsibility of managing a specific UTP to the ATSU Manager/Chief who is responsible for the development, implementation, and monitoring of the UTP. The ATSU Manager/Chief, or his assigned de",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-73"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider may only use ATC or FIS On-The-Job-Instructors (OJTI) who hold a valid OJTI",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-77"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Endorsement rating issued in accordance with GACAR Part 64 requirements. (b) Each ATC and FIS OJTI must work under the direction of the ATSU training officer. (c) Each ATS provider must detail the duties of the ATC and FIS OJTI in Parts 1 a",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-20"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must ensure that each air traffic controller Officer (ATCO) maintain their English language proficiency rating scale of Level 4 or higher in accordance with Appendix A to GACAR Part 61. (b) Each ATS provider must ensur",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-79"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must publish instructions for remedial training to ensure that proficiency standards are maintained in Part 1 of the ATSPM. (b) Each ATS provider must maintain remedial training records as prescribed in Subpart Z.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-81"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) For the purposes of this section an ATC Assessor is an Air Traffic Controller who holds an ATC Assessor Endorsement and who is authorized and qualified to conduct competency assessments under GACAR § 171.79 (b) No ATS provider may use a",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-83"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(1) That person satisfies all requirements of GACAR Part 171 §171.83 ;and (2) Within the preceding 24 calendar months that person satisfactorily conducts an assessment of competence under the observation of a GACA inspector or a designated ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-mathbf-171-85-initial-and-transition-trainin"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(d) ATC Assessors must use appropriate methods, procedures, and techniques for conducting the required assessments. )se of an assessment of performance is to confirm the consiste1 (i) Standard practices and procedures as detailed in the ATS",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-22"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) This subpart prescribes requirements for the management of fatigue in the provision of air traffic control services. (b) Each ATS provider has the option to (1) complies with duty time limitations requirements prescribed in this subpart",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-91"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must develop, implement, and monitor a rostering system, acceptable to the President, in order to manage the risks of occupational fatigue of air traffic controllers through a safe alternation of duty and rest periods.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-93"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(ii) Notwithstanding point (i), at ATS units where workload for any part of the day is judged to be low and the activity is spasmodic rather than continuous, the maximum time providing ATC service without a break, at these times, must not e",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-24"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(ii) During any calendar year or annual leave a minimum of 10 days of total holiday entitlement must be taken. Any annual leave period must include a minimum of five consecutive days. (b) Each ATS provider should consult air traffic control",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-25"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATCO must report for any duty period rested and prepared to perform his assigned duties. (b) No ATS provider may assign, and no ATCO may accept assignment to, a duty period if the ATCO has reported for a duty period and he/she is s",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-95"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS Provider must: (1) retain evidence that duty time limitations set by the air traffic controllers’ rostering system required under §171.93 are not exceeded and that non-duty period requirements are met; (2) identify a process fo",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-97"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(1) the reason for the need to deviate; (2) the extent of the deviation; (3) the date and time of enactment of the deviation; and (4) a safety case, outlining mitigations, to support the deviation.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-26"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) This subpart prescribes procedures that must be used by each ATS provider that has been authorized by the President to introduce airspace changes and to conduct the designation and classification of— (1) Airspace within the territorial ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-101"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each authorized ATS provider must ensure that any proposal for airspace change, including Instrument Flight Procedures (IFPs), routes, points and minimum altitudes as defined under Subpart H of this part, must include at least the follo",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-103"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "the airspace change, its suitability for purpose and availability. (iv) ATS Unit procedures must also be included for a post-implementation safety review of the airspace change and its associated safety requirements. (v) The updates to the ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-28"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The lateral limits of airspace designated under this subpart must be defined by (1) Geographical co-ordinates in degrees, minutes, and seconds; and (2) Any one or more of the following: (i) Prominent geographical line features: (ii) A c",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-105"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Any person with a bona fide interest in airspace may apply to the authorized ATS provider for a designation or classification of airspace under this subpart. (b) An applicant for an airspace designation or classification must provide th",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-107"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Before making a designation or classification under this subpart, the authorized ATS provider must consult with such persons, organizations, and representative groups within the aviation industry and elsewhere and any government departm",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-cedure-for-designation-classification-and-re"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "under this subpart is no longer needed or is no longer appropriate, the authorized ATS provider may withdraw the designation or alter the classification. (b) The withdrawal of an airspace designation or the change of an airspace classificat",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-31"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The authorized ATS provider must establish and maintain an air navigation register. (b) The authorized ATS provider must ensure that the air navigation register contains the following information: (1) A current description of any airspa",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-113"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "When directed by the President, the authorized ATS provider must designate, classify and register airspace in accordance with instructions prescribed by the President.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-115"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) When ATS routes are established, a protected airspace along each ATS route and a safe spacing between adjacent ATS routes must be provided. (b) When warranted by density, complexity or nature of the traffic, special routes must be estab",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-123"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Convention of International Civil Aviation; (3) approved by the President as prescribed under GACAR Part 172 \\$172.83. (f) Routes that are established and designated under this subpart do not come into force until those designations are not",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-32"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Strategic Lateral Offset Procedures (SLOP) are procedures authorized by the President for application in specific circumstances, and subject to operational approval by an authorized ATS provider, that allow aircraft to fly on a parallel",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-125"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "conformance monitoring systems must account for the application of SLOP. (c) Strategic lateral offset procedures may only be implemented on a regional basis after coordination between all States involved; (d) The routes or airspace where ap",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-33"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Changeover points must be established on ATS route segments defined by reference to very high frequency omnidirectional radio ranges where this will assist accurate navigation along the route segments. The establishment of changeover po",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-127"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Significant points must be established for the purpose of defining an ATS route or instrument approach procedure and/or in relation to the requirements of air traffic services for information regarding the progress of aircraft in flight",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-129-establishment-and-identification-of-"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Where necessary, authorized ATS providers must establish standard routes for taxiing aircraft on an aerodrome between runways, aprons and maintenance areas. Such routes must be direct, simple and where practicable, designed to avoid tra",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-131"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each authorized ATS provider must determine and promulgate minimum flight altitudes for each ATS route and control area defined within Jeddah FIR. The minimum flight altitudes determined must provide a minimum clearance above the contro",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-133"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The authorized ATS provider must establish and maintain a routes and points register. (b) The authorized ATS provider must ensure that the routes and points register contains the current description of each ATC route, taxing route, sign",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-135"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The ATS provider must ensure that the development, validation, approval, registration, promulgation and maintenance of instrument flight procedures (IFP) are conducted in accordance with the requirements",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-137"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "of GACAR Part 172. (b) Each ATS provider must establish suitable arrangements with a certified Instrument flight procedures services (IFPS) provider to ensure that all instrument flight procedures, serving the aerodromes and airspace under ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-36"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must establish systems and procedures for ensuring effective coordination between its headquarters and each ATSU and the following agencies and operators (as applicable) (1) General Authority of Civil Aviation (GACA); ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-151"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Air traffic services units (ATSUs), in carrying out their objectives, must have due regard for the requirements of the operators consequent on their obligations as specified in the applicable GACARs, and, if so required by the operators",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-153"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(c) When it becomes evident that delays will be encountered by arriving aircraft, operators or designated representatives must, to the extent practicable, be notified and kept currently informed of any changes in such expected delays.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-38"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must establish and maintain close cooperation with military authorities responsible for activities that may affect flights of civil aircraft. (b) Each ATS provider must ensure that: (1) Coordination arrangements with a",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-155"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Procedures for Air Navigation Services — Aeronautical Information Management (PANS-AIM, Doc 10066). (e) Arrangements must be made to permit information relevant to the safe and expeditious conduct of flights of civil aircraft to be promptly",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-39"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Note 3.— Guidance on collaborative decision-making (CDM) processes for safety risk assessment and promulgation through NOTAM that could involve military authorities can be found in the Manual Concerning Safety Measures Relating to Military ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-smm-doc-9859"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) To ensure that aircraft receive the most up-to-date meteorological information for aircraft operations, arrangements must be made, where necessary, between each ATS provider and each MET provider for ATS personnel: (1) In addition to us",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-157"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) To ensure that AIS providers obtain information to enable them to provide up-to-date pre-flight information and to meet the need for in-flight information, arrangements must be made between each ATS provider and each AIS provider for AT",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-159"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "issuance of relevant material for promulgation. To ensure timely provision of the information to the AIS provider, close coordination between those services concerned is therefore required. (c) Of particular importance are changes to aerona",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-41"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The coordination and transfer of control of a flight between successive ATCUs and control sectors must comply with the ATC service coordination requirements prescribed in this part. ATCUs must, to the extent possible, establish and appl",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-161"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": ": Coordination in cases of State aircraft without RNAV capab (1) In the case of automated messages not containing the information provided in Item 18 of the flight plan, the sending ATCU must inform the receiving ATCU by supplementing the a",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-42"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "ATSUs providing air traffic advisory service must apply the coordination procedures specified in GACAR § 171.161 with respect to such aircraft having elected to use this type of service.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-lination-in-respect-of-the-provision-of-air-"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "When so prescribed by the ATS provider in Part 1 of the ATSPM, ATSUs must ensure that the aeronautical telecommunications stations serving the centers concerned are informed regarding transfers of communications contact by aircraft. Unless ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-167"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must ensure that each ATsU coordinates and informs the aerodrome operator of the following: (1) when it becomes apparent that there is a deterioration in the status of the aerodrome or associated facilities; (2) when i",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-169"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Radiotelephony and/or data link must be used in air-ground communications for ATS purposes. (b) Where RCP specification is used for performance-based communication in accordance with the requirements of Appendix D to this part, ATSUs mu",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-171"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "coordinate release of equipment for routine maintenance with appropriate maintenance personnel. (f) Any significant safety-related change to the ATS system, including the implementation of a reduced separation minimum or a new procedure, mu",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-45"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS Provider must ensure that the delivery of its ATS services is supported by suitable systems and equipment. As a minimum, the following level of equipment and services must be provided: (a) Each ATS provider must establish the follo",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-173"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "data to and/or from air traffic services computers is required. Note. — Special circumstances may be due to traffic density, types of aircraft operations and/or the manner in which the airspace is organized and may exist even if the control",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-46"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(vii) Altimeter setting indicator meeting the requirements of GACAR § 171.179 (ix) Signal lamp with green, red, and white functions; mathbfPsi(mathbfx) Direct-speech and/or data link communications for ground-ground communications for air t",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-47"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(4) situation display, where an ATS surveillance service is provided; (5) A display system or systems designed to show the disposition of current and pending flights together with ancillary information for individual aircraft; (6) A power s",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-48"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(h) Each ATS provider must establish procedures to ensure that the aeronautical telecommunications equipment required by paragraphs (c) and (d) are operated in accordance with the requirements of GACAR Part 173 Appendix A. (i) Each ATS prov",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-49"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Note 2.— Guidance material regarding the provision of information to ATS units in respect to visual and non-visual navigation aids is contained in the Air Traffic Services Planning Manual (Doc 9426). Specifications for monitoring visual aid",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-50"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Unless otherwise authorized by the President, the recording of voice communications and surveillance data used in the provision of an air traffic service must be in accordance with ICAO Annex 11 Chapter 6. In addition, the following specifi",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-175"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(f) These procedures must be published in Part 1 of the ATSPM and any local variations published in Part 2 of the ATSPM. G) ATSU Managers/Chiefs must forward a report to GACA if a failure occurs in recorder equipment during a period when an",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-51"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATSU must use Coordinated Universal Time (UTC) expressed in hours and minutes and when required, seconds of the 24-hour day, beginning at midnight (0000). (b) Each ATS providers must ensure ATSUs are equipped with clocks indicating",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-177"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Atmospheric pressure must be measured in Hectopascals and be transmitted to the aircraft when appropriate as published in Part 1 of the ATSPM. (b) The reading from the altimeter setting indicator must be compared to the weather report f",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-179"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "The suitability of an ATS Surveillance ground system for the provision of an air traffic service must be clearly demonstrated in the system safety case prepared in accordance with the approved ATS Provider's safety management system. In add",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-181"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(g) ATS Surveillance data from primary and secondary radar equipment or other systems (e.g., ADs-B, ADS-C), used as an aid to air traffic services, must be automatically recorded for use in accident and incident investigations, search and r",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-53"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) A situation display providing surveillance information to the controller must, as a minimum, include position indications, map information required to provide ATS surveillance services and, where available, information concerning the id",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-183"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider and ATCO must ensure that: (a) The performance of the radar equipment is checked in accordance with operating instructions provided by the aeronautical telecommunication service provider under GACAR Part 173; and (b) The t",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-185"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) If radar hand-offs are to be used, the ATS provider must publish applicable procedures in Parts 1 and 2 of the ATSPM and, through coordination with other units, if necessary, ensure that: (1) Each of the radar displays to be used provid",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-189"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "IFR units subject to detailed procedures established between the units.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-55"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must ensure that automated systems inform operational personnel immediately of any failure of an automated system component that may limit their use of the equipment.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-191"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must establish and publish in Part 2 of the ATSPM procedures to ensure that operational personnel check all backup radios, stand-alone transceivers and speed dial phones for functionality at regular intervals.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-193"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must ensure that procedures for unit personnel to determine the circumstances under which navigational aids or frequencies must be permited to be shutdown are published in Part 2 of the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-mathbf-171-195-interruptions-to-navaids-or-f"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must establish instructions in Parts 1 and 2 of the ATSPM for opening and closing of control positions. Such instructions must take into account the difference between the individual ATsU. § 171.199 Fire Prevention and Fac",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-197"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(3) Evacuation plans and procedures are viable and satisfactory; and (4) A periodic review of evacuation plans and any necessary updates and changes performed. (c) Periodically conduct emergency evacuation test drills. Such test drills must",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-56"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Air traffic flow management (ATFM) must be implemented for airspace where air traffic demand at times exceeds, or is expected to exceed, the declared capacity of the air traffic control services concerned. The ATFM must be implemented o",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-201"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "In assessing capacity values each ATS provider must take into account, as a minimum, the following factors:",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-203"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The level and type of ATM provided; (b) The structural complexity of the control area, the control sector or the aerodrome concerned, runway acceptance rates; workload, including control and coordination tasks to be per (d) The types of",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-58"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must implement procedures to vary the number of operational sectors or working positions to meet the prevailing and anticipated demand. Applicable procedures must be contained in Part 2 of the ATSPM for the unit. (b) I",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-205"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(b) In the event that traffic demand regularly exceeds ATC capacity, resulting in continuing and frequent traffic delays or it becomes apparent that forecast traffic demand will exceed capacity values, each ATS provider must, as far as prac",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-59"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must, through the establishment of agreements, arrangements and procedures, make provision for the flexible use of airspace reserved for military or other special activities in order to increase airspace capacity and t",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-209"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Where required by the President, or where established by an ATS provider, ATFM must be implemented based on the terms and conditions of Regional Air Navigation Agreements. (b) Where practicable, the ATFM service within a region or other",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-211"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) ATSU Managers/Chiefs must include in the ATSPM those policies, standards, criteria and information required for the administration and management of all ATSUs. (b) ATSU Managers/Chiefs and supervisory personnel must be familiar with all",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-231"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Air traffic control service must be provided to all: (1) IFR flights in airspace designated as Classes A, B, C, D and E; (2) VFR flights in airspace designated as Classes B, C and D; (3) Special VFR (SVFR) flights; and (4) Aerodrome tra",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-233"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Subpart R. (d) No clearance may be given to execute any maneuver that would reduce the spacing between two aircraft to less than the separation minimum applicable in the circumstances. (e) Larger separations than the specified minima must b",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-61"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "The parts of ATC service described in GACAR § 171.7 must be provided by the various units as follows: (a) Area control service. (1) By an Area Control Center (ACC); or (2) By the unit providing approach control service in a control zone or ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-235"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must ensure that in order to provide ATC service, an ATCU must: (1) Be provided with information on the intended movement of each aircraft, or variations therefrom, and with current information on the actual progress o",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-237"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must designate the area of responsibility of each ATCU, and when applicable, for individual sectors within an ATCU. lled flight must be under the control of only one fn at any givi (c) Responsibility for the control of",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-239"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Except as provided for in (b), each ATS provider must ensure that the place, time and coordination of transfer of control between ATCUs comply with the Standards and Recommended Practices prescribed by",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-241"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "the International Civil Aviation Organization in Chapter 3, paragraph 3.6 of ICAO Annex 11 and related requirements in Chapter 4, paragraph 4.3 of ICAO Doc. 4444 (PANS-ATM). (b) Each ATS provider must. (1) Stipulate procedures for the trans",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-63"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Certain military flights require a degree of operational freedom, which is not consistent with the application of ATC procedures. To ensure flight safety, the military authorities are required to inform ATC prior to operating such fligh",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-243"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "The first ATSU receiving a flight plan, or change thereto, must: (a) Check it for compliance with the format and data conventions; (b) Check it for completeness and, to the extent possible, for accuracy; licate acceptance of the flight plan",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-245"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "If a position report is not received at the expected time, subsequent control must not be based on the assumption that the estimated time is accurate. Immediate action must be taken to obtain the report if it is likely to have any bearing o",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-247"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) When receiving special air-reports by data link communications, ATsUs must forward them without delay to their associated meteorological watch office and the WAFCs. (b) When receiving special air-reports by voice communications, ATsUs m",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-249"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Expression of vertical position of aircraft. (1) For flights in the vicinity of aerodromes and within terminal control areas the vertical position of aircraft must, except as provided for in (b), be expressed in terms of altitudes at or",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-251"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(ii) For precision approach runways. (4) For flights en-route, the vertical position of aircraft must be expressed in terms of: (i) Flight levels at or above the lowest usable flight level; and (ii) Altitudes below the lowest usable flight ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-65"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(2) FICs and ACCs must have available for transmission to aircraft, on request, an appropriate number of QNH reports or forecast pressures for the FIRs and control areas for which they are responsible, and for those adjacent. (3) The flight",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-66"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) General. Each ATS provider must establish provisions and procedures for the presentation to controllers, and subsequent updating, of flight plan and control data for all flights being provided with a service by an ATS unit. Provision mu",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-253"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "presentation must be updated in accordance with the progress of aircraft, in order to facilitate the timely detection and resolution of conflicts as well as to facilitate and provide a record of coordination with adjacent ATSUs and control ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-67"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The procedures to be applied for the provision of ATC to aircraft equipped with ACAS must be identical to those applicable to non-ACAS equipped aircraft. (b) When a pilot reports a maneuver induced by an ACAS resolution advisory (RA), t",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-261"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "must resume responsibility for providing separation for all the affected aircraft when: (1) The controller acknowledges a report from the flight crew that the aircraft has resumed the current clearance; or (2) The controller acknowledges a ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-68"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Rules pertaining to the operation of civil IFR flights within the KSA as prescribed in GACAR Part 91 must be published in Part 1of the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-265"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Change from IFR flight to VFR flight is prohibited unless a message initiated by the pilot in command containing the specific expression “canceling my IFR flight plan\", together with the changes, if any, to be made to the current flight",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-267"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(c) An ATCU receiving notification of an aircraft's intention to change from IFR to VFR flight must, as soon as practicable thereafter, so inform all other ATSUs to whom the IFR flight plan was addressed, except those units through whose re",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-69"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(1) When a meteorological forecast is predicting severe turbulence, ATC must determine whether RVSM should be suspended and, if so, for how long and for which specific flight level(s) and/or area. (2) In cases where RVSM will be suspended, ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-70"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Except when communications between ATCUs are conducted in a mutually agreed language, the English language must be used for such communications.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-269"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "If communication congestion is such that the controller cannot transmit quickly to the aircraft he needs to, then he must ensure separation instructions are transmitted first.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-270"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must-develop and promulgate in Part 1 of the ATSPM contingency plans for implementation in the event of disruption, or potential disruption, of ATS and related supporting services in the airspace for which they are res",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-271"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Complete radiocommunications failure. (1) ATC contingencies related to communications, including circumstances preventing a controller from communicating with aircraft under control, may be caused by either a failure of ground radio equ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-272"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "through the aircraft operator's company frequency if applicable, on any VHF frequency designated for air-to-air use by flight crews or any other communication means or, if the aircraft is on the ground, by direct contact; (ii) If communicat",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-72"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "all flight crews concerned must be provided with essential traffic information. (e) Short-term conflict alert (STCA) procedures. (1) The generation of short-term conflict alerts is a function based on surveillance data, integrated into an A",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-73"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(1) An ATS provider must ensure that the procedures to be applied for the provision of air traffic services to aircraft equipped with ACAS are identical to those applicable to non-ACAS equipped aircraft. In particular, the prevention of col",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-74"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "ATSPM and must specify: (i) The types of flight which are eligible for generation of MSAW; (ii) The sectors or areas of airspace for which MSAW minimum safe altitudes have been defined and within which the MSAW function is implemented; (i) ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-75"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "concerned. (5) The appropriate ATC unit must advise the aircraft concerned when it is to revert to the call sign indicated by the flight plan. (i) Each ATS provider must publish ATC contingency procedures in Part 1 of the ATSPM, and where a",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-76"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "ATCUs must immediately report in accordance with procedures published in Part 1 of the ATSPM any failure or irregularity of communication, navigation and surveillance systems or any other safetysignificant systems or equipment which could a",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-273"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) If an operating irregularity has taken place that implicates an ATC service, each ATS provider must immediately arrange for the removal from operational duties of any ATCO directly involved in the occurrence until the circumstances have",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-275"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The GM-ATS must consult with GACA regarding the release of unit operational records or material contained in them for any other situation than those specified in this part. (b) Following an accident or incident, the affected ATsU superv",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-277"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "efficiency checks. (2) Permit Rescue Coordination Center (RCC) personnel, access as required in support of search activities. Audio and radar tape recordings may be played back, and the information released to the RCC, during active search ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-77"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must (a) define the objectives of aerodrome air traffic service and publish these in Part 1of the ATSPM. (b) publish instructions for the aerodrome controller and aerodrome flight information officer to carry out their res",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-301"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "whereby the communications can be established instantaneously and for other purposes the communications can normally be established within fifteen seconds; and; (2) printed communications, when a written record is required; the message tran",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-79"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) General. (1) Aerodrome control towers must issue information and clearances to aircraft under their control to achieve a safe, orderly and expeditious flow of air traffic on and in the vicinity of an aerodrome with the object of prevent",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-303"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "observation utilizing a visual surveillance system, augmented in low visibility conditions by an ATS surveillance system when available. Traffic must be controlled in accordance with the procedures set forth herein and all applicable traffi",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-80"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(c) Failure or irregularity of aids and equipment. Aerodrome control towers must immediately report in accordance with GACAR § 171.273 any failure or irregularity of operation in any equipment, light or other device established at an aerodr",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-81"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) All aerodrome traffic patterns must be a left-hand traffic pattern unless right-hand traffic pattern has been established by the President under GACAR Part 93. (b) Each ATS provider must publish circuit procedures for each aerodrome in ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-305"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must ensure that the TWR selects the runway-in-use that will permit aircraft to land and take- off as near as possible into wind unless safety, the runway configuration or traffic conditions determine that a different ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-307"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(ii) When the approach requires use to be made of vertical minima greater than 300 ft above aerodrome elevation and: (A) The ceiling is lower than 800 ft above aerodrome elevation; or (B) The visibility is less than 3000 m (4) When wind she",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-82"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "TWRs must request the POB for all flights departing within KSA airspace at initial contact with ATC. This information must be recorded and maintained and released to the ACC if requested as detailed in Part 1 of the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-309"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Start-up time. (1) Start-up time procedures must be implemented where necessary to avoid congestion and excessive delays on the maneuvering area or when warranted by ATFM requirements, where established. Start-up time procedures must be",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-311"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(2) Essential local traffic must be considered to consist of any aircraft, vehicle or personnel on or near the maneuvering area, or traffic operating in the vicinity of the aerodrome, which may constitute a hazard to the aircraft concerned.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-83"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "blast and propeller slipstream to taxiing aircraft, to aircraft taking off or landing, particularly when intersecting runways are being used, and to vehicles and personnel operating on the aerodrome. (f) Abnormal aircraft configuration and ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-84"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Essential information on aerodrome conditions must be given to every aircraft, except when it is known that the aircraft already has received all or part of the information from other sources. The information must be given in sufficient",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-313"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "the direction of landing or take-off. (d) When a condition, not previously notified, pertaining to the safe use by aircraft of the maneuvering area is reported to or observed by the controller, the appropriate aerodrome authority must be in",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-85"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(1) For the purpose of expediting air traffic, aircraft may be permitted to taxi on the runway-in-use, provided no delay or risk to other aircraft will result. Where control of taxiing aircraft is provided by a ground controller and the con",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-86"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The movement of persons or vehicles including towed aircraft on the maneuvering area of an aerodrome must be controlled by the TWR as necessary to avoid hazard to them or to aircraft landing, taxing or taking off. At controlled aerodrom",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-317"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "communications capability or is employed in accordance with a pre-arranged plan established with the aerodrome control tower. When employed in accordance with a plan prearranged with the aerodrome control tower, Work-In-Progress and mainten",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-87"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(f) Each ATS provider must-publish procedures in Part 1 of the ATSPM for the movement of persons or vehicles on the maneuvering area who must be subject to permission from the TWR and must be controlled as necessary for their own safety and",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-88"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Aircraft in traffic circuit must be controlled as per prescribed separation minima under Subpart R and as detailed in Parts 1 and 2 of the ATSPM except that: (1) Aircraft in formation (more than one aircraft in a group) are exempted fro",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-319"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(3) Priority must be given to: (i) An aircraft which anticipates being compelled to land because of factors affecting the safe operation of the aircraft (engine failure, shortage of fuel, etc.); (ii) Air ambulance aircraft or aircraft carry",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-89"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) An aircraft landing or in the final stages of an approach to land must normally be given priority over aircraft intending to depart. (b) Departing aircraft must normally be cleared in the order in which they are ready for takeoff, excep",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-321"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Departure sequence. Departures must normally be cleared in the order in which they are ready for takeoff, except that deviations may be made from this order of priority to facilitate the maximum number of departures with the least avera",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-323"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "c) Take-off clearance. (1) Take-off clearance may be issued to an aircraft when there is reasonable assurance that the separation in (b), will exist when the aircraft commences takeoff. (2) When an ATC clearance is required prior to takeoff",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-90"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Separation of landing aircraft and preceding landing and departing aircraft using the same runway. Except as provided in the separation minima prescribed Subpart R, a landing aircraft must not normally be permitted to cross the runway t",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-325"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(1) When necessary or desirable in order to expedite traffic, a landing aircraft may be requested to: (i) Hold short of an intersecting runway after landing; (ii) Land beyond the touchdown zone of the runway; (i) Vacate the runway at a spec",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-91"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) When there is a requirement for traffic to operate on the maneuvering area in conditions of visibility which prevent the TWR from applying visual separation between aircraft, and between aircraft and vehicles, the following must apply: ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-329"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(d) The TWR must inform the APP concerned when procedures for precision approach category I/II and low visibility operations will be applied and also when such procedures are no longer in force. (e) The TWR must, prior to a period of applic",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-92"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Instructions with regard to actions to be taken in the event of an obstructed runway or a runway incursion must be contained in both Part 1 and 2 of the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-341"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) As detailed in Part 1 of the ATSPM, all suspension of VFR operations must be accomplished through or notified to the TWR. (b) Whenever VFR operations are suspended, the TWR must: (1) Hold all departures other than those which file IFR; ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-343"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) When traffic conditions permit, and subject to the weather minima prescribed in (b), SVFR flights may be authorized by the TWR to enter a control zone for the purpose of landing, take off and departure from a control zone, to cross a co",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-345"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(c) Separation must be effected between all SVFR flights in accordance with the minima prescribed by the ATS provider and as detailed in Part 1 of the ATSPM and between SVFR flights and IFR flights in accordance with the applicable separati",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-93"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Aeronautical Ground Lights: General. (1) Except as provided in (2) and (3) of this paragraph, all aeronautical ground lights must be operated (i) Continuously during the hours of darkness or during the time the center of the sun's disc ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-347"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(d) Runway Lighting. (1) Runway lighting must not be operated if that runway is not in use for landing, takeoff or taxing purposes, unless required for runway inspections or maintenance. (2) If runway lighting is not operated continuously, ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-94"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "When aircraft navigation lights are observed to be off or unserviceable, in whole or in part, the pilot must be advised about the problem.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-348"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Aerodrome controllers must make use of automatic monitoring facilities, when provided, to ascertain whether the lighting is in good order and functioning according to selection. (b) In the absence of an automatic monitoring system or to",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-349"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Signals used by light-gun in the TWR together with appropriate response must be published in Part 1 of theATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-351"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Aerodrome control towers must, prior to an aircraft taxiing for takeoff, provide the pilot with the correct time, unless arrangements have been made for the pilot to obtain it from other sources. (b) ATS services units must provide airc",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-353"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Provision must be made to ensure that the APP at all times is kept informed of the sequence in which aircraft will depart as well as the runway to be used. (b) Provision must be made to display the designators of assigned SIDs to the TW",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-355"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(c) Each ATS provider must publish procedures for coordination requirements between APP and TWR in Part 1 of the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-96"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must establish procedures in Part 2 of the ATSPM and include detailed instructions for managing VIP flights at each ATS unit. (b) At aerodromes normally not handling ATC service, a temporary ATC service may be provided",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-357"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must publish procedures for the use of ATS surveillance systems in the aerodrome control service in Part 1 of the ATSPM. When authorized by, and subject to conditions prescribed by the President, ATS surveillance syste",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-359"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "To use the ATS Surveillance Systems for Surface Movement Control, each ATS provider must consider the following: (a) Where provided, Surface Movement Radar (SMR) systems must, to the extent possible, enable the detection and display of the ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-361"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must use electro-optical technologies and systems in low visibility situations or to overcome any limitations identified in the provision of Air Traffic Services (ATS) from an existing aerodrome control tower. The visu",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-363"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "displays being used in an aerodrome control tower. (b) Each ATS Provider considering the provision of remote aerodrome air traffic services must comply with the requirements of Appendix E to this part and ensure that: (1) the remote aerodro",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-98"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "remote aerodrome services; (ix) impact on airspace users and appropriate mitigation measures; (x) Transition/implementation plan (xi) Continuity of service - The systems design must consider service continuity and availability requirements ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-99"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The APP must issue clearances and information to aircraft under its control to achieve a safe, orderly and expeditious flow of air traffic in the APP area of responsibility as detailed in Part 1 of the ATSPM. (b) Each ATS provider must ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-371"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "circuit television or separate information processing systems.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-101"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "An aircraft must not be cleared for an initial approach unless: (a) The pilot has reported passing a designated point associated with an instrument approach procedure or defined by a radio aid; (b) The aircraft has been observed by radar to",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-372"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Information regarding significant changes in the meteorological conditions in the takeoff or climb-out area, obtained by the unit providing approach control service after a departing aircraft has established communication with such unit",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-373"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) As early as practicable after an aircraft has established communication with the APP, the following elements of information, in the order listed, must be transmitted to the aircraft, with the exception of such elements which it is known",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-374"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(iii) Present weather; (iv) Cloud below 5000 ft or below the highest minimum sector altitude, whichever is greater; cumulonimbus; if the sky is obscured, vertical visibility when available; (v) Air temperature; (vi) Dew point temperature, i",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-102"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(5) Changes in observed RVR value(s), in accordance with the reported scale in use, or changes in the visibility representative of the direction of approach and landing",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-103"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) An expected approach time (EAT) must be determined for an arriving aircraft that will be subjected to a delay of 10 minutes or more or such other period as prescribed by the President. The EAT must be transmitted to the aircraft as soon",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-375"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must ensure that controllers are familiar with the relevant holding procedures for all IAPs published for the aerodrome in the KSA AIP. (b) In the event an aircraft is held en route or at a location or aid other than t",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-377"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Approach clearance must be issued in an order which will facilitate arriving of the maximum number of aircraft with the least average delay as detailed in Part 1 of the ATSPM, except that a special priority must be given to: (1) Aircraf",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-379"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "e.g., engine failure, shortage of fuel, etc.; (2) Air ambulance aircraft or aircraft carrying any sick or seriously injured person requiring urgent medical attention; (3) Aircraft in search and rescue operations; and (4) Other aircraft as m",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-104"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(3) The time at which aircraft should pass the specified point must be determined by the unit providing approach control service and notified to the aircraft sufficiently in advance to permit the pilot to arrange the flight path accordingly",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-105"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) An RNP approach utilizes GNSS augmented by either ABAS (e.g., RAIM) or SBAS to provide lateral, or lateral and vertical guidance. (b) Each ATS Provider must publish in Part 1 of the ATSPM procedures to ensure safe management of RNP appr",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-381"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(4) Once an aircraft has been cleared for the approach, the pilot will follow the lateral and vertical profile of the RNP approach. (5) Phraseology associated with RNP approaches must comply with ICAO Doc 4444.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-106"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Subject to the conditions in paragraph (c) of this section, clearance for an IFR flight to execute a visual approach may be requested by a flight crew or initiated by the controller subject to concurrence of the flight crew. (b) Control",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-383"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "effected at such a point or time that information on essential local traffic, if applicable, and clearance to land or alternative instructions can be issued to the aircraft in a timely manner. (g) Conditions for visual approaches must be pu",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-107"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The APP must specify the IAP to be used by arriving aircraft. A flight crew may request an alternative procedure and, if circumstances permit, may be cleared accordingly. (b) If a pilot reports or it is clearly apparent to the ATCU that",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-385"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "ep ACC informed of relevant data affecting the approach sequ (1) Lowest level at the clearance limit for use by the ACC. (2) Expected type of IAP; (3) Next available EAT; (4) Revisions of EAT when 5 minutes or more different from that issue",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-387"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(c) After coordination with the APP, the ACC may clear the first arriving aircraft for approach rather than to a holding fix. (d) General coordination procedures must be published in Part 1 of the ATSPM. Location specific coordination proce",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-108"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Procedures and requirements for using ATS surveillance system in the approach control service must comply, except as provided in (b), with the applicable standard procedures of the International Civil Aviation Organization (Ref. Chapter",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-eral-approach-control-procedures-using-ats-s"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(b) Each ATS provider must -- (1) Publish general procedures for the use of radar in approach control function in Part 1 of the ATSPM;and (2) Publish radar separation minima within the TMA including reduced minima together with any conditio",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-109"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Procedures and requirements for operating on parallel or near-parallel runways must be published by each ATS provider in Parts 1 and 2 of the ATSPM. Except as provided in (b), these procedures must comply with the applicable standard pr",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-393"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must define the objectives of the area control service in Part 1 of the ATSPM. (b) Each ATS provider must ensure that an area control center, in addition to being connected to the flight information center as prescribe",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-421"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "provisions for direct speech and, where applicable, data link communications, with automatic recording, whereby for the purpose of transfer of control using radar, ADS-B or ADS-C data, the communications can be established instantaneously a",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-111"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "The ACC must retain control of aircraft until the transfer of control point prescribed in unit procedures in Part 2 of the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-423"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Communication transfer must occur at the same time as the transfer of control unless a different procedure is coordinated. § 171.427 Control Procedures. Each ATS provider must detail in Part 1 of the ATSPM the use of the following control p",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-425"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must detail in Part 1 of the ATSPM the procedures for information interchange between adjacent ACCs. The procedures must include transfer of control and communication, which must be detailed in LOA established under § ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-429"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) General coordination procedures between ACC and APP must be detailed in Part 1 of the ATSPM. (b) Local procedures for coordination must be published in Part 2 of the ATSPM. (c) Provision must be made to ensure that the APP is at all tim",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-s-171-431-coordination-between-acc-and-app"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The information provided by ATS surveillance systems and presented on a situation display may be used to perform the following functions in the provision of ATC service: (1) Provide ATS surveillance services as necessary in order to imp",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-471"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(c) Direct pilot-controller communications must be established prior to the provision of ATS surveillance services, unless special circumstances, such as emergencies, dictate otherwise. (d) Requirements for the level of reliability and avai",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-114"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must publish the type of surveillance system to be used and the functionality of system in the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-473"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must stipulate requirements for performance checks on radar displays including reporting procedures for any deficiencies or faults in Part 2 of the ATSPM. (b) The provision of ATS surveillance services must be limited ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-475"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must publish established minimum vectoring altitudes for all Approach Radar Units in Part 2 of the ATSPM. Such altitudes must be depicted on a map displayed prominently for the",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-477"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Approach Radar Controller. (b) Tactical radar vectoring altitudes must be established in accordance with the Procedures prescribed in ICAO Doc. 8168, Volume II (PANS-OPS). (c) The lowest useable flight level must be calculated from actual Q",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-115"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must stipulate procedures in Part 1 of the ATSPM for aircraft being transferred from a procedural environment to a radar-controlled environment and vice versa.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-479"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must (1) In accordance with the MID Regional SSR Code Employment Plan distribute codes for domestic and local flights to the individual radar units. (2) Have in place instructions that ensure that other relevant author",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-481"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must establish procedures, and publish them in Part 1 of the ATSPM, relating to the operation of SSR transponders and ADS-B, as follows: (a) When it is observed that the Mode A code shown on the situation display is differ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-482"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(2) Where possible, correct the label showing the aircraft identification on the situation display; and (3) Notify the next control position and any other unit concerned of the erroneous aircraft identification transmitted by the aircraft.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-117"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Verification of level information. (1) The tolerance value used to determine that pressure-altitude-derived level information displayed to the controller is accurate must be pm200 ft in RVSM airspace. In other airspace, it must be pm300",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-483"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "be pm200 ft) in RVSM airspace. In other airspace, it must be pm300 ft, except that, subject to approval by the President, the ATS provider may specify a smaller criterion, but not less than pm200 ft, if this is found to be more practical. (",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-118"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Before providing an ATS surveillance service to an aircraft, identification must be established, and the pilot informed. Thereafter, identification must be maintained until termination of the ATS surveillance service. (b) If identificat",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-485"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(d) Each ATS provider must publish procedures to be used for identification of aircraft using both primary and secondary radars in Part 1 of the ATSPM. (e) Before implementing any new surveillance technology each ATS provider must publish i",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-119"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Transfer of identification from one controller to another must only be attempted when it is considered that the aircraft is within the accepting controller's surveillance coverage. (b) Transfer of identification must be effected by one ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-487"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must publish procedures in Part 1 of the ATSPM governing the transferring of radar control both internally and externally and using secondary as well as primary radar control. ;econdary radar, the SSR Code must be know",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-s-171-489-transfer-of-radar-control"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) An aircraft provided with ATS surveillance service must be informed of its position in the following circumstances: (1) upon identification, except when the identification is established: (i) based on the pilot's report of the aircraft ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-491"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(2) Magnetic track and distance to a significant point, an en-route navigation aid, or an approach aid; n (using points of the compass) and distance from a known p (4) Distance to touchdown, if the aircraft is on final approach; or (5) Dist",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-121"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must publish procedures in Part 1 of the ATSPM concerning situations where an aircraft is observed to be on a conflicting path with another aircraft. Such collision hazard procedures must ensure that as many relevant detai",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-492"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must detail in Parts 1 and 2 of the ATSPM the list of actions to be taken by the radar controller, in the event of complete failure of the radar equipment. This list must include the passing of essential traffic inform",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-493"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "minimum may be resorted to temporarily if standard procedural separation cannot be provided immediately.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-122"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must detail in Parts 1 and 2 of the ATSPM the actions to be taken by the controller in the event of complete failure of the ground radio equipment used for ATS surveillance service. Such procedures must include: (a) Withou",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-494"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must -- (a) Instruct controllers through Part 1 of the ATSPM to advise aircraft and MET providers of observed or reported adverse weather information. (b) Ensure that radar controllers are aware of radar limitations in res",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-mathbf-171-495-adverse-weather-information"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) publish detailed information in Part 1 of ATSPM on solar radiation, space weather events that can have an operational impact and generate a degradation or loss of satellite-based and/or ground-based navigation and/or communications syst",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-123"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Vectoring must be achieved by issuing to the pilot specific headings which will enable the aircraft to maintain the desired track. When vectoring an aircraft, a controller must comply with the following: (1) Whenever practicable, the ai",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-499"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(b) When vectoring an IFR flight and when giving an IFR flight a direct routing which takes the aircraft off an ATS route, the controller must issue clearances such that the prescribed obstacle clearance will exist at all times until the ai",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-124"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) An aircraft which has been informed that it is provided with ATS surveillance service must be informed immediately when, for any reason, the service is interrupted or terminated. (b) When the control of an identified aircraft is to be t",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-501"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Except as provided for in (h), (i) and GACAR §171.492 the separation minima specified in GACAR §171.564 must only be applied between identified aircraft when there is reasonable assurance that identification will be maintained. (b) When",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-503"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "has not identified the aircraft, the controller may, if so prescribed by the ATS provider in Part 1 of the ATSPM, continue to provide an ATS surveillance service to identified aircraft provided that: (1) Reasonable assurance exists that the",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-125"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Subject to authorization by the President, each ATS provider must provide and publish instructions for the application of speed control in Part 1 of the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-505"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must publish instructions in Part 1 of the ATSPM relating to the issuance of clearances and detailing the procedures for providing ATC service to known traffic. Such procedures must contain, but are not limited to the ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-521"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Note. — The procedures and provisions relating to the exchange and acknowledgement of CPDLC messages are contained in Annex 10, Volume Il, and the PANS-ATM (Doc 4444), Chapter 14.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-127"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "All air traffic control clearances must be issued according to the requirements of ICAO PANS ATM Doc 4444 Paragraph 4.5. In particular, the following requirements must be observed or satisfied: Except as provided in (d) and (e), an ATC clea",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-523"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "and any other necessary maneuver consistent with safe operation of the aircraft. (d) Standard clearances for arriving aircraft must contain the following items: (1) Aircraft identification; (2) Designator of the assigned STAR; (3) Runway-in",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-128"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) When a flight plan specifies that the initial portion of a flight will be uncontrolled, and that the subsequent portion of the flight will be subject to ATC, the aircraft must be advised to obtain its clearance from the ATCU in whose ar",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-525"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) When an aircraft files, at the departure aerodrome, flight plans for the various stages of flight through intermediate stops, the initial clearance limit must be the first destination aerodrome and new clearances must be issued for each",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-527"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(b) The flight plan for the second stage, and each subsequent stage, of a flight through intermediate stops must become active for ATS and search and rescue purposes only when the appropriate ATSU has received notification that the aircraft",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-129"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "ACCs must, except where procedures providing for the use of standard departure clearances have been implemented, forward a clearance to APPs or TWRs with the least possible delay after receipt of request made by these units, or prior to suc",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-529"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) An ATCU may request an adjacent ATCU to clear aircraft to a specified point during a specified period. (b) After the initial clearance has been issued to an aircraft at the point of departure, it will be the responsibility of the approp",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-531"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Clearance limit. (1) A clearance limit must be described by specifying the name of the appropriate significant point, or aerodrome, or controlled airspace boundary. (2) When prior coordination has been effected with units under whose co",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-533"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "clearance to the destination aerodrome may be issued as soon as possible. (3) If an aircraft has been cleared to an intermediate point in adjacent controlled airspace, the appropriate ATCU must then be responsible for issuing, as soon as pr",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-130"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Horizontal speed control must not be applied to aircraft entering or established in a holding pattern.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-535"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(b) In cases where the flight crew informs the ATCU they are unable to comply with a horizontal speed instruction the controller must apply an alternative method to achieve the desired spacing between the aircraft concerned. (c) Aircraft mu",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-131"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Vertical speed control may be applied between two climbing aircraft or two descending aircraft in order to establish or maintain a specific vertical separation minimum. (b) Vertical speed adjustments must be limited to those necessary t",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-536"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATC clearance must be coordinated between ATCUs to cover the entire route of an aircraft or a specified portion thereof as follows",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-537"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "ust be cleared for the entire route to the aerodrome of first inte (1) When it has been possible, prior to departure, to coordinate the clearance between all the units under whose control the aircraft will come; or (2) When there is reasona",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-132"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(e) When an aircraft intends to leave a control area for flight outside controlled airspace and will subsequently re-enter the same or another control area, a clearance from point of departure to the aerodrome of first intended landing may ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-133"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Except as otherwise prescribed in paragraphs (b) and (c) of this section, the separation methods and minima applied within KSA as well as in the airspace over the high seas encompassed by the Jeddah FIR must be in accordance with the se",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-561"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Separation by an air traffic control unit must be obtained by at least one of the following: (1) Vertical separation, obtained by assigning different levels selected from: (i) The appropriate table of cruising levels in GACAR Part 91, o",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-563"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "of data from monitoring programs. (e) Each ATS provider must describe, in detail, in Part 1 of the ATSPM the following types of separation minima: (1) Vertical (2) Horizontal (3) Lateral (4) Longitudinal (5) Geographical (6) Track (7) Time ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-136"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Unless otherwise prescribed in accordance with (b) (with respect to radar), (c) or (d), or GACAR § 171.393 (with respect to independent and dependent parallel approaches), the horizontal separation",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-565"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "minimum based on radar and/or ADS-B and/or MLAT systems must be at least 9.3 km (5.0 NM). (b) The separation minimum in (a) may, if authorized by the President, be reduced, but not below: (1) 5.6 km (3.0 NM) when radar and/or ADS-B and/or M",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-137"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(e) The minima set out in (d) must be applied when: (1) An aircraft is operating directly behind another aircraft at the same altitude or less than1ooo ft below;or (2) Both aircraft are using the same runway, or parallel runways separated b",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-138"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "The separation minima prescribed in GACAR § 171.561 (a) may be reduced in the vicinity of aerodromes if: (a) Adequate separation can be provided by the aerodrome controller when each aircraft is continuously visible to this controller; (b) ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-567"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "other aircraft is in sight and separation can be maintained.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-139"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Provided that an appropriate, documented safety assessment that is acceptable to the President has shown that an acceptable level of safety can be met, lower minima than those in GACAR §171.323 (a) and §171.325 (a) may be used. The safe",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-569"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(4) There must be available means, such as suitable landmarks, to assist the controller in assessing the distances between aircraft. A surface surveillance system that provides the air traffic controller with position information on aircraf",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-140"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(i) A Category 1 aircraft may be cleared for takeoff when the preceding departing aircraft is a Category 1 or 2 aircraft which is airborne and has passed a point at least 600 m from the position of the succeeding aircraft; (ii) A Category 2",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-141"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "A reduction of separation minima required by military necessity or other extraordinary circumstances may only be accepted by an ATCU when a specific request in some recorded form has been obtained from the authority having jurisdiction over",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-571"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must publish any non-standard procedures in Parts 1 and 2 of the ATSPM in order to provide instructions for the controllers. By nature, such procedures can never be comprehensive, but the published procedures must incl",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-581"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(3) The horizontal boundaries of the area within which other traffic requires appropriate vertical separation must extend for 10 NM either side of the track flown by the aircraft which is dumping fuel, from 10 NM ahead, to 50 NM or 15 minut",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-143"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must publish comprehensive instructions concerning aircraft carrying out aerial surveys in Part 1 of the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-585"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must publish procedures in the KSA AIP and Part 2 of the ATSPM for uncoordinated flights over the Red Sea for both RVSM and non-RVSM aircraft.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-587"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) A VFR flight reporting that it is uncertain of its position or lost, or encountering adverse meteorological conditions, must be considered to be in a state of emergency and handled as such. The controller must, under such circumstances,",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-588"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "preparation or conduct of the flight. (b) Each ATS provider must publish instructions concerning the handling of strayed VFR aircraft and VFR flights encountering adverse meteorological conditions in Part 1 of the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-144"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) As soon as an ATsU becomes aware of a strayed aircraft it must take all necessary steps in accordance with the relevant standards and requirements in force and published in Part 1 of the ATSPM to assist the aircraft and to safeguard its",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-589"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "establishing two-way communication with the aircraft; (3) Inquire of other ATSUs serving the adjacent FIR about the flight and request their assistance in establishing two-way communication with the aircraft; and (4) Attempt to obtain infor",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-145"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) As soon as an ATSU learns that an aircraft is being intercepted in its area of responsibility, it must take such of the following steps as are appropriate in the circumstances: (1) Attempt to establish two-way communication with the int",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-591"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "unit with available information that will assist in identifying the aircraft and requesting it to take action in accordance with (a); and (2) Relay messages between the intercepted aircraft and the appropriate ATSU, the intercept control un",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-146"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must - (a) Take adequate steps to prevent emission of laser beams from adversely affecting flight operations. (b) Provide instructions to controllers to avoid potential hazards to aircraft under their control. It is not po",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-593"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must incorporate with Part 1 of the ATSPM information on, and requirements for, operation of unmanned free balloons as described in ICAO Annex 2 Appendix 5, and as follows. (b) On receipt of notification of the intende",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-595"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(1) The balloon flight identification or project code name; (2) Balloon classification and description; (3) SSR code or NDB frequency as applicable; (4) The launch site; (5) The estimated time of the commencement of the launch or the planne",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-147"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must incorporate in their ATSPM Part 1 and Part 2 information on, and requirements for, the operation of unmanned and Remotely Piloted Aircraft near aerodromes, and within controlled airspace. The requirements should c",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-597"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(3) Conflicts resolution actions to resolve conflicts between unmanned and remotely piloted aircraft and other traffic; (4) ATC Voice and Data Link Communications covering the communications links between ATC and remote pilot; (5) Procedure",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-148"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must establish procedures, and publish them in Part 1 of the ATSPM, for the reporting of ATS related air traffic incidents and occurrences. (b) An air traffic incident report must be submitted, normally to the manager ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-599"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) RPLs must not be used for flights other than IFR flights operated regularly on the same day(s) of consecutive weeks and on at least ten occasions or every day over a period of at least ten consecutive days. The elements of each flight p",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-601"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(b) RPLs must cover the entire flight from the departure aerodrome to the destination aerodrome. RPL procedures must be applied only when all ATS authorities concerned with the flights have agreed to acceptRPLs. (c) The use of RPLs for inte",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-149"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATSU, upon receipt of information from a pilot regarding suspected case(s) of communicable disease, or other public health risk, on board the aircraft, must forward a message as soon as possible to the ATsU serving the destination/",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-mathbf-171-603-notification-of-suspected-com"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(1) Aircraft identification; (2) Departure aerodrome; (3) Destination aerodrome; (4) Estimated time of arrival; (5) Number of persons on board; (6) Number of suspected cases on board; and (7) Nature of the public health risk, if known. (c) ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-150"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must provide alerting service - (1) For all aircraft provided with ATC service; (2) In so far as practicable, to all other aircraft having filed a flight plan or otherwise known to the air traffic services; and (3) To ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-621"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Without prejudice to any other circumstances that may render such notification advisable, ATSUs must, except as prescribed in § 171.629(a) , notify RCCs immediately when an aircraft is considered to be in a state of emergency in accorda",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-623"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "occupants are not threatened by grave and imminent danger and do not require immediate assistance. : contain such of the following information as is available in (1) INCERFA, ALERFA or DETRESFA, as appropriate to the phase of the emergency;",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-153"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "ATSUs must, as necessary, use all available communication facilities to endeavor to establish and maintain communication with an aircraft in a state of emergency, and to request news of the aircraft.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-625"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) When an ACC or a FIC decides that an aircraft is in the uncertainty or the alert phase, it must, when practicable, advise the operator prior to notifying the RCC. (b) All information notified to the RCC by an ACC or FIC must, whenever p",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-629"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "communicated, without delay, to the operator.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-154"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) When it has been established by an ATsU that an aircraft is in a state of emergency, other aircraft known to be in the vicinity of the aircraft involved must, except as provided in bullet (b) below, be informed of the nature of the emer",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-mathbf-171-631-information-to-aircraft-opera"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Consistent with GACAR § 171.596 , each ATS provider must publish procedures in Parts 1 and 2 of the ATSPM to be followed by all ATSU(s) concerning (1) Reporting of any incident or accident. (2) Coordination procedures for adjacent ATSUs",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-633"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) An aircraft known or believed to be in a state of emergency, including being subjected to unlawful interference, must be given maximum consideration, assistance and priority over other aircraft as may be necessitated by the circumstance",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-641"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "link capability and/or an SSR transponder might operate the equipment as follows: 1) on Mode A, Code 7700; or 2) on Mode A, Code 7500, to indicate specifically that it is being subjected to unlawful interference; andlor 3) activate the appr",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-156"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must publish guidance that will assist controllers in identifying either a distress or an urgency situation. This guidance must be published in Part 1 of the ATSPM. (b) In particular, each ATS provider must publish gui",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-643"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must ensure ATS personnel are prepared to recognize any indication of the occurrence of unlawful interference with an aircraft. (b) Whenever unlawful interference with an aircraft is suspected, and where automatic dist",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-645"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "expecting a reply from the aircraft; (2) Monitor and plot the progress of the flight with the means available, and coordinate transfer of control with adjacent ATsUs without requiring transmissions or other responses from the aircraft, unle",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-157"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "other aircraft, vehicles and personnel must be kept at a safe distance from the threatened aircraft. (k) ATS units must not provide any advice or suggestions concerning action to be taken by the flight crew in relation to an explosive devic",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-158"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must publish procedures to be followed when either an airborne or ground-based radio station appears unable to establish two-way communication. This must include expected actions by the aircraft in the event of major c",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-647"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "the assumption that the aircraft will comply with the communication failure procedures prescribed in GACAR §91.95 Or §91.209 . When a controlled aircraft experiencing complete communication, failure is operating or expected to operate in an",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-159"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "meteorological conditions at the aerodrome of intended landing are such that a diversion to an alternate is considered likely. (8) When an ATCU receives information that an aircraft, after experiencing a communication failure has re-establi",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-160"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "In order to reduce the impact of a degradation of aircraft position source data, for example, a space-based augmentation system (SBAS) outage for a Global Navigation Satellite System (GNSS), each ATS provider must establish, and publish in ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-648"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Upon recognition or receipt of advice that an aircraft is making an emergency descent through other traffic, all appropriate action must be taken immediately to safeguard all aircraft concerned. When deemed necessary, ATCUs must immedia",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-649"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must provide instructions for application of emergency separation if horizontal or vertical separation cannot be maintained due to an aircraft emergency or following ATC surveillance system alerts or warnings and publi",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-651-emergency-separation"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) When a state of emergency is considered to exist, the flight of the aircraft involved must be plotted on a chart in order to determine the probable future position of the aircraft and its maximum range of action from its last known posi",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-mathbf-171-653-plotting-aircraft-in-a-state-"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Flight information service (FIS) must be provided to all aircraft which are likely to be affected by the information and which are: (1) Provided with ATC service; or (2) Otherwise known to the relevant ATsUs. (b) Where ATSUs provide bot",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-671"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "the following units providing a service within its area of responsibility: (1) the area control center, unless collocated; (2) approach control units; (3) aerodrome control towers, and aerodrome flight information services; (4) appropriate ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-162"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) FIS must include the provision of pertinent: (1) SIGMET and AIRMET information;",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-672"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(2) Information concerning pre-eruption volcanic activity, volcanic eruptions and volcanic ash clouds; (3) Information concerning the release into the atmosphere of radioactive materials or toxic chemicals; (4) Information on changes in the",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-163"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "flight. (g) Operational flight information service broadcasts, when provided, must consist of messages containing integrated information regarding selected operational and meteorological elements appropriate to the various phases of flight.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-164"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(1) name of aerodrome; (2) time of observation; (3) landing runway; (4) significant runway surface conditions and, if appropriate, braking action; (5) changes in the operational state of the radio navigation services, if appropriate; (6) ho",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-165"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Voice-automatic terminal information service (Voice-ATIS) broadcasts must be provided at aerodromes where there is a requirement to reduce the communication load on the ATS VHF air-ground communication channels. When provided, they must",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-673"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(1) One broadcast serving arriving aircraft; or (2) One broadcast serving departing aircraft; or (3) One broadcast serving both arriving and departing aircraft; or (4) Two broadcasts serving arriving and departing aircraft respectively at t",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-166"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Note. — Guidance material on human performance can be found in the Human Factors Training ICAC Manual (Doc9683). (k) Where a data link ATIS (D-ATIS) supplements the existing availability of Voice-ATIS, the following apply: (1) The informati",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-167"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(n) Information contained in a current ATIS, the receipt of which has been acknowledged by the aircraft concerned, need not be included in a directed transmission to the aircraft, with the exception of the altimeter setting, which must be p",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-168"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(21) Altimeter setting(s); (23) Any available information on significant meteorological phenomena in the approach and climb out areas including wind shear, and information on recent weather of operational significance; (24) Trend forecast, ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-169"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS Provider must provide HF and/or VHF VOLMET broadcasts and/or D-VOLMET service when it has been determined by regional air navigation agreements that a requirement exists. VOLMET broadcasts must use standard radiotelephony phraseolo",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-675"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must publish procedures for issuing both general traffic information and essential traffic information in Part 1 of the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-677"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(b) Essential traffic information must be given to controlled flights concerned whenever they constitute essential traffic to each other. Note. — This information will inevitably relate to controlled flights cleared subject to maintaining o",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-170"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must publish procedures for identifying and managing situations outside of controlled airspace when there is a need to prescribe airspace limits and pilot procedures for TIBA in order to supplement collision hazard informa",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-679"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "er must detail in Part 1 of the ATSPM the requirement for the (1) SIGMET and AIRMET information; (2) Special reports and amended aerodrome forecast; (3) Surface wind;",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-681"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(4) Visibility; (5) Runway Visual Range; (6) Present weather; (7) Cloud base; (8) Air temperature and dew point; (9) Altimeter setting; and (10) Volcanic activity. (b) Information on the position, intensity, extent and movement of significa",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-171"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATsU providing an air traffic advisory service must establish procedures detailing that the objective of the air traffic advisory service is to make information on collision hazards more effective than it would be in the mere provi",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-683"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(c) Where an aircraft elects to, or is required to use the air traffic advisory service, each ATSU providing that service must: (1) Advise the aircraft to depart at the time specified and to cruise at the levels indicated in the flight plan",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-172"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must establish procedures for the recording and transmission of information on the progress of flights and publish those procedures in Part 1 of the ATSPM. (b) Information on the actual progress of flights, including t",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-685"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Except as provided for in (b), each ATS provider must adopt communication procedures (including messaging procedures) that comply with Annex 11 to the Convention of International Civil Aviation, ICAO Doc. 4444 (PANS-ATM), Regional Suppl",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-751"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must detail the categories of messages that is handled by aeronautical mobile service together with a description of the individual categories. This information must be documented in Part 1 of the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-753"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must detail the composition of messages to be handled by the aeronautical mobile and fixed services in Part 1 of the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-755"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must list the phonetic alphabet and the pronunciation of numbers from O to 10 in Part 1 of theATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-757"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must publish procedures for radio transmitting technique in Part 1of the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-759-transmitting-technique"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must publish a table listing the approved ground station call signs in Part 1of the ATSPM. § 171.763 Aircraft Call Signs. (a) Each ATS provider must issue instructions for the use of both full, abbreviated and changed call",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-761"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must publish, in Part 1 of the ATSPM, procedures for exchange of communication between ground stations and aircraft including requirements for sections that must be read back or include corrections and repetitions.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-765"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must: (a) Publish detailed procedures in association with aircraft in distress in Part 1 of the ATSPM. These procedures must include the following: (1) Actions by aircraft in distress; (2) Action by station acknowledging d",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-istress-and-urgency-radiotelephony-communica"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must publish detail procedures for communication with air ambulance aircraft in Part 1 of the ATSPM. This must include all relevant information to ensure the most expeditious flight profile available.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-769"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must in Part 2 of the ATSPM detail coordination procedures between the ATSU and an aeronautical communication station. These procedures must also be included in Part 1 of the ATSPM in general terms.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-771"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must detail procedures to be followed in the event of false and deceptive",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-773"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "transmissions on ATC frequencies in Part 1 of the ATSPM. (b) When the transmission of false or deceptive instructions and clearances is detected, the ATS provider must take all necessary action to have the transmitter located and the transm",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-176"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must publish in Part 1 of the ATSPM the approved phraseologies for use by ATS personnel in the provision of ATS. (b) Except as provided for in (c) and (d), these phraseologies must comply with the phraseologies prescri",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-775"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must enter into an agreement with a MET service provider certified under GACAR Part 179 for the provision of meteorological information and services necessary for he provision of air traffic services in KSA. (b) Each A",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-781"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must ensure that (a) FICs and ACCs are supplied with meteorological information as described in GACAR Part 179 (Ref. ICAO Annex 3, Appendix 9, 1.3), particular emphasis being given to the occurrence or expected occurrence ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-783"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "meteorological station, where such a station exists. (d) APPs providing approach control service for final approach, landing and takeoff at aerodromes where runway visual range values are assessed by instrumental means are equipped with dis",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-179"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must ensure that (a) TWRs are supplied with meteorological information as described in GACAR Part 179 for the aerodrome with which they are concerned. Special reports and amendments to forecasts must be communicated to the",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-787"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "which they are related shall be clearly marked to identify the runway and section of the runway monitored by each sensor. (d) TWRs at aerodromes where runway visual range values are measured by instrumental means are equipped with display(s",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-180"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must establish procedures to ensure that, where necessary for flight information purposes, current meteorological reports and forecasts are supplied to communication stations. A copy of such information must be forwarded t",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-789"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The following aircraft observations must be made: (1) routine aircraft observations during en-route and climb-out phases of the flight; and (2) special and other non-routine aircraft observations during any phase of the flight.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-mathbf-171-791-aircraft-observations"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(b) Each ATS provider must establish procedures to ensure that routine, special and other non-routine meteorological observations are made (1) During en-route and climb-out phases of flights operating on international air routes and for the",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-181"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must ensure that copies of all administrative and operational forms, checklists and other relevant proforma relating to the administrative and operational provision of services are included in Part 1 of the ATSPM. Any form",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-803"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must make appropriate logs available at all units and issue instructions in the ATSPM on completion and retention of the unit logs.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-805"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must ensure that unit libraries are maintained at all operating ATSUs. Information contained in unit libraries must be available to all operating personnel on a 24-hour basis and must contain relevant documents of both",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-807"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "instructions for the periodic review must be published in Part 2 of the ATSPM.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-183"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must publish information to operational personnel in the form of unit directives in order to keep operational personnel informed of critical safety information. (b) All unit directives must be issued as: (1) Operations",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-809-unit-directives"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must ensure that letters of agreement (LOA) between adjacent ATSUs are established to aid in coordination. LOAs must describe supplementary procedures needed to minimize verbal coordination and to ensure compatibility ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-811"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "verbal coordination messages; (4) Means of communication; (5) Requirements and procedures for approval requests; (6) Significant points, levels or times for transfer of control; (7) Significant points, levels or times for transfer of commun",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-184"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "This subpart prescribes requirements for the preparation, maintenance, and retention of reports and records for each ATS provider.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-851"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) In addition to all accidents, serious incidents and incidents that must be notified and reported to the President as prescribed under GACAR Part 4, each ATS provider must ensure that occurrences covered by Appendix A of this part are re",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-853"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) A telecommunication log, written or automatic, must be maintained in each station of the aeronautical telecommunication service. (b) Aeronautical stations must record messages at the time of their receipt, except that, if during an emer",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-855"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(f) Telecommunication logs, written or automatic recordings, must be retained for a period prescribed in GACAR § 171.857 . When logs and automatic recordings are pertinent to inquiries or accident and incident investigations, they must be r",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-186"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Each ATS provider must ensure that training records, ATS communication and data recordings, ATS watch logs, and ATS units’ data are retained and stored in a form and manner acceptable to the President for the minimum periods shown in th",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-857"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(b) Each ATS provider must ensure that - ns and documents are filed and stored on a daily (local time) 1 (i) Forms, messages, reports, etc. are to be grouped by type, packaged and labeled indicating the site name, year, month and day; (ii) ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-187"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(iii) Electronic data must be stored securely and accessible in a controlled manner. and (iv) Revenue messages for domestic and international services must be separately packaged and retained for a period of at least 5 years, unless otherwi",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-188"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider must advise all ATSU of restrictions concerning access to ATS audio and video recordings. § 171.861 Flight Strip Filing Procedures. Each ATS provider must detail procedures for filling of flight strips both for paper and e",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-171-859"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Note 1: Although this appendix lists the majority of reportable occurrences, it cannot be completely comprehensive. Any other occurrences, which are judged by those involved to be of hazardous nature mustalsobereported. Note 2: This appendi",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-189"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Near collision incidents encompassing specific situations where one aircraft and another aircraft/the ground/a vehicle/person or objects are perceived to be too close to each other including: (a) Separation minima infringement; (b) Inadequa",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-i-near-collision-incidents"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Potential for collision or near collision encompassing specific situations having the potential to be an accident or a near collision, if another aircraft is in the vicinity including: (a) Runway incursion where no avoiding action is necess",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-ii-potential-for-collision-or-near-collision"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "ATM-specific occurrences encompassing those situations where the ability to provide safe ATM services",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-iii-atm-specific-occurrences"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "is affected, including situations where, the safe operation of aircraft has not been jeopardized. This must include the following occurrences: (a) Inability to provide ATM services: (1) Inability to provide air traffic services; (2) Inabili",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-190"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Significant malfunction or deterioration of service.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-iv-atc-surveillance-and-communications"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(b) Failure or unplanned shutdown of a major operational ATC computer system, requiring reversion to manual back-up and resulting in disruption to the normal flow of air traffic.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-191"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Significant deterioration of aerodrome infrastructure. (b) Aerodrome maneuvering areas obstructed by aircraft, vehicles, animals or foreign objects, resulting in a hazardous or potentially hazardous situation. (c) Errors or inadequacies",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-v-aerodrome-hazards"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Contingency plans are intended to provide alternative facilities and services in Jeddah FIR when ANS facilities and services are temporarily not available. Contingency arrangements are therefore temporary in nature, remain in effect only un",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-i-status-of-contingency-plans"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Each ATS provider providing air traffic services and related supporting services in Jeddah FIR is also responsible, in the event of disruption or potential disruption of these services, for instituting measures to ensure the safety of civil",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-i1-responsibility-for-developing-promulgatin"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) Time is essential in contingency planning if hazards to air navigation are to be reasonably prevented. Timely introduction of contingency arrangements requires decisive initiative and action, which again presupposes that contingency pla",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-ii-preparatory-action"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "acts of unlawful interference with civil aviation that are likely to affect the availability of a portion of the Jeddah FIR for civil aircraft operations and/or the provision of air traffic services and supporting services. (3) Be recognize",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-193"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) When the ATS provider anticipates or experiences disruption of air traffic services and/or related supporting services, the ATS provider must advise, as early as practicable, GACA, and other adjacent States whose services might be affec",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-iv-coordination"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "V. Development, Promulgation and Application of Contingency Plans. (a) ANS contingency plan must include detail all the information on current and alternative routes, navigational capability of aircraft and availability or partial availabil",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-194"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Part 91, to ATS routes in the area. (b) Notification, by NOTAM, of anticipated or actual disruption of air traffic services and/or related supporting services must be dispatched to users of air navigation services as early as practicable. T",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-195"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "This appendix provides detailed requirements for the designation and classification of airspace by specially authorized ATS providers. I - Controlled Airspace. C.1 Controlled Airspace: General. (a) If the authorized ATS provider determines ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-appendix-c-to-gacar-part-171-designation-and"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "service within that control area or control zone; and (2) Identify the control area or control zone by (i) The ICAO nationality letters of the State providing the air traffic control service followed by the letter “A\" followed by a number; ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-197"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The authorized ATS provider may specify a control area designated under this part as (1) A terminal control area if the authorized ATS provider determines that an approach control service is required at the confluence of ATS routes in t",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-3-control-areas"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The authorized ATS provider may designate as a control zone that portion of airspace around an aerodrome if (1) The authorized ATS provider determines that an aerodrome control service or an aerodrome and approach control service is req",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-5-control-zones"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The authorized ATS provider may designate a portion of controlled airspace as a VFR transit lane for either or both of the following purposes: (1) Separating transiting VFR traffic from arriving and departing IFR flights; (2) Permitting",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-7-vfr-transit-lanes"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "within that controlled airspace. (c) The authorized ATS provider must — (1) Ensure that buffer zones are provided between the nominal flight paths of arriving and departing IFR flights and each VFR transit lane; and (2) Identify each VFR tr",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-199"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) If the authorized ATS provider considers it necessary in the interests of aviation safety, air traffic management, or international agreements, and after coordination with the President, the ATS provider may designate any controlled air",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-9-subsidiary-airspace-designations"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(b) all flights are provided with air traffic control service and are separated from each other. C.23 Class B Airspace. Any portion of airspace that is designated as a control area or control zone under C.3 or C.5 must be classified as Clas",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-200"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Any portion of airspace that is designated as a control area or control zone under C.3 or C.5 must be classified as Class D airspace if the authorized ATS provider considers it necessary in the interests of aviation safety where (a) IFR and",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-27-class-d-airspace"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(c) VFR flights receive traffic information in respect of all other flights. C.29 Class E Airspace. Any portion of airspace that is designated as a control area under C.3 or C.5 must be classified as Class E airspace if the authorized ATS p",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-201"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "The authorized ATS provider may classify any portion of uncontrolled airspace as Class F airspace if the ATS provider considers it necessary in the interests of aviation safety where— (a) IFR and VFR flights are permitted; and (b) all parti",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-31-class-f-airspace"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Class G airspace is any uncontrolled airspace that is not Class F airspace and IFR and VFR flights are permitted and receive flight information service if requested.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-33-class-g-airspace"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "C.41 Special Use Airspace: General. (a) The authorized ATS provider may designate special use airspace under this Section if the ATS provider considers such airspace is necessary (1) In the interests of safety or security within the civil a",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-iii-special-use-airspace"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The authorized ATS provider may (1) Designate a portion of airspace as a restricted area to restrict the activities of aircraft within that area within the territorial limits of Saudi Arabia; and (2) Impose conditions under which— (i) A",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-43-restricted-areas"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(2) Specify the administering authority responsible for each restricted area; and (3) Identify each area by the nationality letters “OE\" followed by the letter “R\" followed by a unique number. (4) ensure that the identification so assigned ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-203"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The authorized ATS provider may designate a portion of airspace as a prohibited area within which the flight of aircraft is prohibited except as provided in GACAR §91.133 (b) Upon initial establishment, the authorized ATS provider must ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-45-prohibited-areas"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The authorized ATS provider may (1) Designate a portion of airspace as a military operating area to segregate military activities from Other traffic; and (2) Impose conditions under which (i) Aircraft may be permitted to fly within that",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-47-military-operating-areas"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(2) Specify the administering authority responsible for each military operating area; and (3) Identify each military operating area by the nationality letters “OE\" followed by the letter ^“M\"\" followed by a unique number.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-204"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The authorized ATS provider may designate a portion of uncontrolled airspace as a mandatory broadcast zone if, due to traffic density or special circumstances, the pilots within that zone are required to make radio broadcasts of their p",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-49-mandatory-broadcast-zones"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The authorized ATS provider may designate a portion of airspace as a volcanic hazard zone if volcanic activity (such as flying rocks, gas plumes, and ash clouds) may present a hazard to aircraft. (b) The authorized ATS provider must ide",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-51-volcanic-hazard-zones"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The authorized ATS provider may designate a portion of airspace as a danger area to notify operators that there is a potential danger to aircraft flying in the area. (b) Upon initial establishment of a danger area, the authorized ATS pr",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-53-danger-areas"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "point for a danger area. The using agency must be a person or organization that is responsible for the activity that necessitated the danger area being so designated; and (3) Identify the area by the nationality letters “OE\" followed by the",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-205"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "The authorized ATS provider may designate any portion of special use airspace as transponder mandatory airspace if the authorized ATS provider determines that the traffic density in the airspace requires the operation of transponders to red",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-63-transponder-mandatory-airspace-within-s"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(1) Facilitating the requirements of air traffic services for information regarding the progress of aircraft in flight; or (2) Facilitating the safe conduct of flight by visual reference. (b) The authorized ATS provider must ensure that vis",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-206"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "The authorized ATS provider may designate a portion of airspace as a mountainous zone if, in the interests of safety, the authorized ATS provider considers it necessary to increase the minimum obstacle clearance to provide additional height",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-73-mountainous-zone"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "The authorized ATS provider may designate a portion of airspace as an ADIZ for which special flight procedures apply in order to facilitate national security.",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-c-75-designated-air-defense-identification-z"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "I - Performance-based navigation (PBN) D1 - PBN Operations (a) When applicable, the navigation specification(s) for designated areas, tracks or ATS routes must be prescribed by an ATS Provider on the basis of regional air navigation agreeme",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-appendix-d-to-gacar-part-171-performance-bas"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) When applicable, the RCP specification(s) must be prescribed by an ATS Provider on the basis of regional air navigation agreements. In prescribing an RCP specification, limitations may apply as a result of communication infrastructure c",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-d3-pbc-operations"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) When applicable, the RSP specification(s) must be prescribed on the basis of regional air navigation agreements. In prescribing an RSP specification, limitations may apply as a result of surveillance infrastructure constraints or specif",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-d5-pbs-operations"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "This appendix provides details on the main operational requirements that must be met for the provision of remote aerodrome air traffic services. For the purpose of this appendix, the following definitions apply: Conventional tower: A facili",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-appendix-e-to-gacar-part-171-remote-aerodrom"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "The ATS provider may provide remote aerodrome ATS from a centralized facility known as a Remote Tower Centre (RTC), which could house one or several RTMs. In all cases, the provision of remote aerodrome air traffic services (ATS) can be imp",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-e1-modes-of-operations"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Note: Similarity to the ATCO/AFISO workstations and support tools provided in the conventional tower would reduce both the ATCO/AFISO familiarization time during the transition into contingency phase as well as the need for recurrent contin",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-211"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "For remote aerodrome tower, the ATS facilities and associated configuration must be carefully assessed and selected according to the operational needs and supported and identified by the safety, security, and human factors assessments. The ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-e3-list-of-remote-ats-facilities"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(e) Telecommunications means to provide aeronautical mobile service, aeronautical fixed service and surface movement control service; (f) presentation of ATS surveillance system(s), (e.g., air situation displays or surface movement control ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-212"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The ATS Provider must: (1) Submit to GACA the remote aerodrome tower System specifications, a compliance matrix between System Specifications and Technical and Operational Documentation and GACAR Part 173 Appendix C Requirements with ju",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-e5-operational-documentation"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "etc.) and its related systems before initiating ATS service provision, or before assuming responsibility for service provision, and to properly organize handover/takeover the control of operational systems; (2) enable ATCOs/AFISOs to identi",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-214"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The ATS provider must define the local operational visual performance, tailored to the specific operational needs and the specific operational context. (b) In addition to the local operational visual performance needs to be identify as ",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-e7-ovp-considerations"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "Note: It may be beneficial to apply a ‘scenario/use case’ approach both when defining and validating operational visual performance requirements. For instance, a scenario could be: Detect an aircraft of a certain type/size at 5 NM final, re",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-gacar-part-171-air-traffic-services-215"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "The ATS provider must develop, and validate the aeronautical information related to the provision of remote aerodrome ATs. This information must be coordinated and agreed with the aerodrome operator prior to its submission for publication i",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-e9-aeronautical-publication"
+  },
+  {
+    "d": "Air Traffic Services",
+    "b": "Part 171",
+    "x": "(a) The ATS provider must coordinate with the aerodrome operator to ensure that, at least the following, operational information and procedures are inserted in the aerodrome manual. (1) procedures for the day-to-day coordination (day- and n",
+    "kind": "regulations",
+    "id": "part-171",
+    "anchor": "sec-e11-aerodrome-manual"
+  }
+]

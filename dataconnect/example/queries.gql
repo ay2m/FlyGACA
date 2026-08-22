@@ -1,0 +1,138 @@
+# --- Airport Operations ---
+
+query GetAirports @auth(level: PUBLIC, insecureReason: "Publicly accessible airport information") {
+  airports {
+    id
+    name
+    city
+    airportCode
+  }
+}
+
+mutation CreateAirport @auth(level: PUBLIC, insecureReason: "Publicly accessible airport information") {
+  airport_insert(data: {
+    airportCode: "SFO",
+    name: "San Francisco International",
+    city: "San Francisco",
+    region: "California",
+    capacity: 50000
+  })
+}
+
+mutation UpdateAirport($id: UUID!, $capacity: Int) @auth(level: PUBLIC, insecureReason: "Publicly accessible airport information") {
+  airport_update(id: $id, data: { capacity: $capacity })
+}
+
+mutation DeleteAirport($id: UUID!) @auth(level: PUBLIC, insecureReason: "Publicly accessible airport information") {
+  airport_delete(id: $id)
+}
+
+# --- User Operations ---
+
+query GetMyProfile @auth(level: USER) {
+  user(key: { id_expr: "auth.uid" }) {
+    name
+    email
+    phoneNumber
+  }
+}
+
+mutation CreateUser($email: String!, $name: String!, $role: String!) @auth(level: USER) {
+  user_insert(data: {
+    id_expr: "auth.uid",
+    email: $email,
+    name: $name,
+    role: $role
+  })
+}
+
+mutation UpdateMyProfile($name: String, $phoneNumber: String) @auth(level: USER) {
+  user_update(key: { id_expr: "auth.uid" }, data: { name: $name, phoneNumber: $phoneNumber })
+}
+
+mutation DeleteMyAccount @auth(level: USER) {
+  user_delete(key: { id_expr: "auth.uid" })
+}
+
+# --- Flight Operations ---
+
+query ListFlights @auth(level: PUBLIC, insecureReason: "Flight schedule is public data") {
+  flights {
+    flightNumber
+    originAirport { name }
+    destinationAirport { name }
+    departureTime
+    status
+  }
+}
+
+mutation CreateFlight($flightNumber: String!, $originId: UUID!, $destId: UUID!, $departure: Timestamp!) @auth(level: PUBLIC, insecureReason: "Publicly accessible flight schedule") {
+  flight_insert(data: {
+    flightNumber: $flightNumber,
+    originAirportId: $originId,
+    destinationAirportId: $destId,
+    departureTime: $departure,
+    status: "Scheduled"
+  })
+}
+
+mutation UpdateFlightStatus($id: UUID!, $status: String!) @auth(level: PUBLIC, insecureReason: "Publicly accessible flight schedule") {
+  flight_update(id: $id, data: { status: $status })
+}
+
+mutation DeleteFlight($id: UUID!) @auth(level: PUBLIC, insecureReason: "Publicly accessible flight schedule") {
+  flight_delete(id: $id)
+}
+
+# --- Booking Operations ---
+
+query ListMyBookings @auth(level: USER) {
+  bookings(where: { userId: { eq_expr: "auth.uid" } }) {
+    seatNumber
+    flight { flightNumber departureTime }
+  }
+}
+
+mutation CreateBooking($flightId: UUID!, $seat: String!) @auth(level: USER) {
+  booking_insert(data: {
+    userId_expr: "auth.uid",
+    flightId: $flightId,
+    seatNumber: $seat
+  })
+}
+
+mutation UpdateBooking($id: UUID!, $seat: String!) @auth(level: USER) {
+  booking_update(id: $id, data: { seatNumber: $seat })
+}
+
+mutation DeleteBooking($id: UUID!) @auth(level: USER) {
+  booking_delete(id: $id)
+}
+
+# --- Cargo Operations ---
+
+query ListCargo @auth(level: PUBLIC, insecureReason: "Cargo status is public") {
+  cargos {
+    trackingNumber
+    status
+    weight
+    flight { flightNumber }
+  }
+}
+
+mutation CreateCargo($trackingNumber: String!, $weight: Float!, $flightId: UUID!) @auth(level: PUBLIC, insecureReason: "Publicly accessible cargo info") {
+  cargo_insert(data: {
+    trackingNumber: $trackingNumber,
+    weight: $weight,
+    status: "Pending",
+    flightId: $flightId
+  })
+}
+
+mutation UpdateCargoStatus($id: UUID!, $status: String!) @auth(level: PUBLIC, insecureReason: "Publicly accessible cargo info") {
+  cargo_update(id: $id, data: { status: $status })
+}
+
+mutation DeleteCargo($id: UUID!) @auth(level: PUBLIC, insecureReason: "Publicly accessible cargo info") {
+  cargo_delete(id: $id)
+}

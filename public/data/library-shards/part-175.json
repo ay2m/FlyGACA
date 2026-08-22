@@ -1,0 +1,3690 @@
+[
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "§ 175.227 Function ... .75 § 175.229 Availability... .75 § 175.231 Units of measurement . .75 § 175.233 Coverage and scale .75 § 175.235 Format... .75 § 175.237 Identification.. .76 § 175.239 Culture and topography ..76 § 175.241 Magnetic v",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-rodromeobstaclechart-icaotypeb"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "§ 175.459 Function..... .129 § 175.461 Availability .. .129 §175.463 Coverage and scale .129 § 175.465 Format... .129 § 175.467 Projection.... .130 § 175.469 Culture and topography ... 130 § 175.471 Magnetic variation. .132 § 175.473 Aerona",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-aeronautical-navigation-chart-icaosmall-sca"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) This part of the General Authority of Civil Aviation Regulations (GACAR) prescribes the requirements to be met by Aeronautical Information Service (AIS) and Aeronautical Charts providers that hold or are required to hold an Air Navigati",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-1"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) No person may provide AIS and Aeronautical Charts for civil aviation in the Kingdom of Saudi Arabia (KSA), including the production of digital data sets and electronic aeronautical charts, unless that person complies with the provisions",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-3"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The AIS and Aeronautical Charts provider must provide all the relevant evidence to demonstrate compliance with the applicable requirements of this part at the request of the President.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-bf-175-5-demonstration-of-compliance"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The AIS and Aeronautical Charts provider must facilitate and cooperate as requested when inspections and audits are undertaken by the President.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-7"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "After receipt of notification of findings from the President, the AIS and Aeronautical Charts provider must: (a) identify the root cause of the non-compliance. (b) define a corrective action plan that meets the approval of the President. (c",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-bf-175-9-findings-and-corrective-actions"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The AIS and Aeronautical Charts provider must implement any safety measures, including safety directives, mandated by the President.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-bf-175-11-immediate-reaction-to-a-safety-pro"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) An occurrence is an incident associated with the operation of an aircraft which affects or could affect the safety of operation. (b) The AIS and Aeronautical Charts provider must report to the President, and to any other organization re",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-13"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The AIS and Aeronautical Charts provider must have in place contingency plans for all the services it provides in the case of events which result in significant degradation or interruption of its operations.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-bf-175-15-contingency-plans"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS and Aeronautical Charts provider must provide its services in an open and transparent manner. It must publish the conditions of access to its services and changes thereto and establish a consultation process with the users of it",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-17-open-and-transparent-provision"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS and Aeronautical Charts provider must use procedures to manage, assess and, if necessary, mitigate the impact of changes to its systems. referred to in point (a) or any material modifications to those p (1) be submitted, for app",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-19"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS and Aeronautical Charts provider planning a change to its systems must: (1) notify the President of the change. (2) provide the President, if requested, with any additional information that allows the President to decide whether",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-21"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) For any change notified in accordance with § 175.21 (a)(1), the AIS and Aeronautical Charts provider must: (1) ensure that a safety support assessment in accordance with GACAR Part 5 is carried out covering the scope of the change inclu",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-2"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Contracted activities include all the activities within the scope of the AIS and Aeronautical Charts provider's operations, in accordance with the terms of the certificate, that are performed by other organizations either themselves cer",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-25"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS and Aeronautical Charts provider must engage, employ or contract:",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-27"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(1) An accountable manager, acceptable to the President, identified for the purposes of this part as the Manager of Aeronautical Information Services and Aeronautical Charts, who has the authority within the AIS and Aeronautical Charts prov",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-3"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The AIS and Aeronautical Charts provider must - (a)Develop job descriptions with the identification of the knowledge and skills required for each function for all AIS technical staff involved in aeronautical information management, cartogra",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-29"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The AIS and Aeronautical Charts provider must ensure that there are adequate and appropriate facilities to perform and manage all tasks and activities in accordance with the applicable requirements of this part.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-31"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS and Aeronautical Charts provider must establish a system of record-keeping that allows adequate storage of the records and reliable traceability of all its activities, covering in particular all the elements indicated in § 175.7",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-33"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS and Aeronautical Charts provider must provide and keep up to date its operations manuals relating to the provision of its services for the use and guidance of operations personnel. The operations manual and any changes thereto m",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-35"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The AIS and Aeronautical Charts provider must coordinate with the President when interacting with foreign States or foreign AIS and Aeronautical Charts providers when there are implications for Regional Air Navigation Agreements for which t",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-37"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The AIS and Aeronautical Charts provider must ensure that the transfer of aeronautical data is subject to a suitable authentication process such that recipients are able to confirm that the data or information has been transmitted by an aut",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-39"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS and Aeronautical Charts provider must ensure that error reporting, measurement and corrective action mechanisms are established and maintained. (b) The error reporting, error measurement and corrective mechanisms must ensure tha",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-41"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "aeronautical data; (4) affected users are warned of errors by the most effective means, taking into account the integrity level of the aeronautical data and aeronautical information; and (5) the President is notified of a promulgated inform",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-4"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The AIS and Aeronautical Charts provider must identify, in the aeronautical information products, except NOTAM, the aeronautical data and aeronautical information that do not meet the data quality requirements. § 175.45 Publication of infor",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-43"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The identification of data not meeting the data quality requirements must be made with an annotation or by explicitly providing the quality value.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-47"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The following aeronautical information and aeronautical data must be approved by the President before it is published: (a) airspace changes, including controlled/regulated airspace, CTA/TMA/CTR/ATZ, ATS routes, Prohibited / Danger / Restric",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-49"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "SUBPART A - GENERAL SPECIFICATIONS",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-section-two-aeronautical-information-service"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The object of AIS is to ensure the flow of aeronautical data and aeronautical information necessary for global air traffic management (ATM) system safety, regularity, economy and efficiency in an environmentally sustainable manner. (b) ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-57"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The AIS provider must use the following reference systems: (a) Horizontal reference system The World Geodetic System —- 1984 (WGS-84) must be used as the horizontal (geodetic) reference system for air navigation. Consequently, published aer",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-59"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "parameters required for height transformation between the model and EGM-96, must be provided in the Aeronautical Information Publication (AIP). Note: Specifications concerning determination and reporting (acuracy of field work and data inte",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-5"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Aeronautical information products intended for international distribution must include English text for those parts expressed in plain language. (b) Place names must be spelt in conformity with local usage, transliterated, when necessar",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-61"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "8601 — Data elements and interchange formats — Information interchange — Representation of dates and times 9000—— Quality Management Systems —— Fundamentals and Vocabulary 19101 — Geographic information — Reference model 19104 — Geographic ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-iso-standard"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS provider must ensure that the requirements of this part are adequately met. It is a condition of any AIS provider certification, that the aeronautical data and aeronautical information provided must be of required quality in acc",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-63"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The following responsibilities apply to the AIS provider: (a) An AIS provider must ensure that aeronautical data and aeronautical information necessary for the safety, regularity and efficiency of air navigation are made available in a form",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-65"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(2) from other sources that may be available. Note: One such source is the subject of a provision in oint I75.I29 (e) Aeronautical data and aeronautical information obtained under § 175.65 (d)(1) must, when distributed, be clearly identifie",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-6"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "GACA President, and other States concerned. Note: The intention is that States are able to access data for the purposes specified in 8 175.65 (d). (i) The procurement of aeronautical data and aeronautical information, including the elements",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-7"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note: In order to protect the investment in the products of the AlS provider as wellas to ensure better control of their use, an AlS provider may apply copyright to those products in accordance with the national legislation. (a) The AIS pro",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-69-copyright"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The overhead cost of collecting and compiling aeronautical data and aeronautical information may be included in the cost basis for aerodrome and air navigation services charges, as appropriate, in accordance with the principles contained in",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-71"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS provider must establish information management resources and processes that are adequate to ensure the timely collection, processing, storing, integration, exchange and delivery of quality-assured aeronautical data and aeronauti",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-73"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Data integrity must be assured by the AIS provider by employing cryptographic technologies (e.g. hash functions, message authentication codes, asymmetric and symmetric encryption, and digital certificates).",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-75"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note: Guidance material in respect to the processing of aeronautical data and aeronautical information is contained in RTCA DO-200B/EUROCAE ED-76A — Standards for Processing Aeronautical Data. oy the AIS provider for data error detection mu",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-8"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "When originating, processing, or transmitting data, the AIS provider must ensure that aeronautical data conform to the specifications of Appendix 1, referred to as the “aeronautical data catalogue\", and meet the following data quality speci",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-77"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS provider must use digital data error detection techniques during the transmission and/or storage of aeronautical data and digital data sets. (b) The AIS provider must use the digital data error detection techniques in order to m",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-81-data-error-detection"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Automation must be applied by the AIS provider in order to ensure the quality, efficiency and costeffectiveness of aeronautical information services. Note: Guidance material on the development of databases and the establishment of data ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-83"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS provider must implement and maintain quality management systems encompassing all functions of an AIS, as outlined in § 175.65 . The execution of such quality management systems must be made demonstrable to the President for each",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-9"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The AIS provider must ensure that: and aeronautical information must take into consideration human factors principles which facilitate their optimum utilization. (b) Due consideration must be given to the integrity of information where huma",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-87"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS provider must collect Metadata for aeronautical data processes and exchange points. (b) The AIS provider must apply Metadata collection throughout the aeronautical information data chain, from origination to distribution to the ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-91-metadata"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS provider must provide aeronautical information in the form of aeronautical information products and associated services. Note: Specifications concerning the order of resolution of aeronautical data provided for each aeronautical",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-93"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note 1: The AIP is intended primarily to satisfy international requirements for the exchange of aeronautical information of a lasting character essential to air navigation. Note 2: The AlP constitutes the basic information source for perman",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-97-aeronautical-information-publi"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "covered by the AIP; (2) the general conditions under which the services or facilities are available for international use; (3) a list of significant differences between the national regulations and practices of the Kingdom of Saudi Arabia (",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-11"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "must be clearly indicated in the KSA AIP. (i)The AIP must be self-contained and must include a table of contents. Gj)The AIP must be organized in three parts (GEN, ENR and AD), sections and subsections. (k) The AIP must be dated. (1) The da",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-12"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note: Guidance material for the production and provision of the eAIP is contained in ICAO Doc 8126. (a) The information content of the eAIP and the structure of chapters, sections and sub-sections must follow the content and structure of th",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-99"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Operationally significant changes to the AIP must be published in accordance with Aeronautical Information Regulation and Control (AIRAC) procedures and must be clearly identified by the acronym AIRAC. (b) Regular interval or publicatio",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-101"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) A checklist of valid AIP Supplements must be regularly provided. (b) Each AIP Supplement must be allocated a serial number which must be consecutive and based on the calendar year. Note: Guidance material on the use of AIP Supplements t",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-13"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS provider must isue as an AIC the following: (1） a long-term forecast of any major change in legislation, regulations, procedures or facilities; or (2) information of a purely explanatory or advisory nature liable to affect fligh",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-105-aeronautical-information-circ"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note: Section 3 of this part provides regulations including provision requirements for each chart type. (a) The AIS provider must ensure that the aeronautical charts listed alphabetically below, when available for designated international a",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-107-aeronautical-charts"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) A checklist of valid NOTAM must be regularly provided. (b) Except as otherwise provided in (e) and (f), each NOTAM must contain the information in the order shown in the NOTAM Format in Appendix 3. Note: Detailed guidance material cover",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-109"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note: A data subject may appear in multiple data sets. (a) If available, the AIS provider must ensure that digital data is in the form of the following data sets: (1) AIP data set; (2) terrain data sets; (3) obstacle data sets; (4) aerodrom",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-111"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note: The purpose of the AIP data set is to support the transition of the ATM domain towards the use of digital data sets instead of paper products. Therefore, its scope is defined considering the likelihood that the data contained in this ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-113"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note 1: Numerical requirements for terrain and obstacle data sets are contained in Appendices 1 and 8. Note 2: Requirements for terrain and obstacle data collection surfaces are contained in Appendix 8. Note 3: Terrain and obstacle data is ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-115"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(4) Area 4: the area extending 900 m prior to the runway threshold and 60 m each side of the extended runway centre line in the direction of the approach on a precision approach runway, Category II or III. (b) Where the terrain at a distanc",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-14"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS provider must ensure that terrain data sets contain the digital representation of the terrain surface in the form of continuous elevation values at all intersections (points) of a defined grid, referenced to commondatum. (b) The",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-117-terrain-data-sets"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(i) When terrain data sets are provided: (1) a terrain grid must be angular or linear and must be of regular or irregular shape. (2) sets of terrain data must include spatial (position and elevation), thematic and temporal aspects for the s",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-15"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS provider must ensure that obstacle data sets contain the digital representation of the vertical and horizontal extent of obstacles. (b)The AIS provider must ensure that obstacle data is not included in terrain data sets. () The ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-119"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The AIS provider must ensure that Aerodrome mapping data sets, if available, are provided in accordance with the following: Note: Aerodrome features consist of attributes and geometries, which are characterized as points, lines or polygons.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-121-aerodrome-mapping-data-sets"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The AIS provider must ensure that instrument flight procedure data sets, if available, are provided in accordance with the following: (a) Instrument flight procedure data sets must contain the digital representation of instrument flight pro",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-123-instrument-flight-procedure-d"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) General The AIS provider must: tribute aeronautical information products those users who reque (2) make available the AIP, AIP Amendments, AIP Supplements and AIC by the most expeditious means. (3) employ global communication networks s",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-125-distribution-services"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS provider must ensure that: (1） for any aerodrome/heliport used for international air operations, aeronautical information relative to the route stages originating at the aerodrome/heliport is made available to flight operations ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-127-pre-flight-information-service"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(b) Geographic coverage for pre-flight information services must be determined and periodically reviewed. In general, the coverage zone must be limited to the Flight Information Region (FIR) within which the aerodrome/heliport is located, t",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-16"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note: The MET service provider remains responsible for the quality of the meteorological information provided by means of such a system in accordance with GACAR Part 179.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-17"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) For any aerodrome/heliport used for international air operations, the AIS provider must make arrangements to receive information concerning the KSA airspace and operation of air navigation facilities or services noted by flight crews. (",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-129-post-flight-information-service"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS provider must ensure that aeronautical data and aeronautical information are amended or reissued to keep them up to date. (b) The same update cycle must be applied to the Aeronautical Information Publication (AIP) and the digita",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-131"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS provider must ensure that information concerning the following circumstances is distributed under the regulated system (AIRAC), i.e. basing establishment, withdrawal or significant changes upon a series of common effective dates",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-133"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "days in advance of the effective date. Note: AIRAC information is distributed by the AIS provider at least 42 days in advance of the AIRAC effective dates with the objective of reaching recipients at least 28 days in advance of the effectiv",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-18"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The Aeronautical Information Publication (AIP) must be amended or reissued at such regular intervals as may be necessary to keep it up to date. Permanent changes to the AIP must be published as AIP Amen (c) Specifications for AIP amendm",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-135"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note: Guidance material on the establishment of intervals between publication dates of AIP Amendments is contained in the Aeronautical Information Services Manual (ICAO Doc 8126). (1) when an AIP Amendment will not be published at the estab",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-19"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(6) interruption of or return to operation of major components of aerodrome lighting systems; (7） establishment, withdrawal or significant changes to procedures for air navigation services; (8) occurrence or correction of major defects or i",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-20"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "could be affected and the direction of movement; (26) establishment of operations of humanitarian relief missions, such as those undertaken under the auspices of the United Nations, together with procedures and/or limitations which affect a",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-21"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "aerodrome(s)/heliport(s) operational hours; and (19) other non-operational information of a similar temporary nature. (e) Specifications for NOTAM: (1） NOTAM must be published with sufficient lead time for the affected parties to take any r",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-22"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS provider must: (1) amend or reissue data sets at such regular intervals as may be necessary to keep them up to date; and (2) issue permanent changes and temporary changes of long duration (three months or longer) made available ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-75-139-aeronautical-information-product-upda"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note 1: This subpart provides general requirements on the Quality Management System (QMS) related to Aeronautical Information Management (AIM) processes. Note 2: Detailed guidance can be found in the Manual on the Quality Management System ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-141-quality-management-system"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The AIS provider must ensure that: (1) data is collected and transmitted to the Aeronautical Information Service (AIS) in accordance with the accuracy requirements and integrity classification specified in Appendix 1. (2) positional dat",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-145"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The metadata to be collected must include, as a minimum: (1) the names of the organizations or entities performing any action of originating, transmitting or manipulating the data; (2) the action performed; and (3) the date and time the",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-147-metadata-requirements"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) When the AIP is issued as a printed volume, it must be published by the AIS provider in loose-leaf form unless the complete publication is reissued at frequent intervals. (b) Each AIP issued as a printed volume and each page of an AIP i",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-149-printed-aip"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Differentiation and identification of AIC topics according to subjects using colour coding must be practised where the numbers of AIC in force are sufficient to make identification in this form necessary. (b) AIC must be colour coded by",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-151"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "SUBPART A -AVAILABILITY AND CHART PROVISIONS",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-section-three-aeronautical-charts"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Information. The Aeronautical Charts service provider must, on request by another Contracting State and when approved by the President, provide all information relating to the Kingdom of Saudi Arabia (KSA) territory that is necessary to",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-161-availability"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) For the aeronautical charts production and revision, the Aeronautical Charts service provider must comply with the requirements of Subpart C and while producing or revising: (1)） Aerodrome Obstacle Chart — ICAO Type A (Operating Limitat",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-163"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The mandatory charts are: (1) Aerodrome Obstacle Chart —- ICAO Type A. (2) Precision Approach Terrain Chart — ICAO. (3) Enroute Chart — ICAO. (4) Instrument Approach Chart — ICAO. (5) Aerodrome/Heliport Chart — ICAO; and (6) the World A",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-165"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The Aeronautical Charts service provider must ensure that the charts, listed in this paragraph, are considered \"non-mandatory”’ charts, which means that these must be produced only if the availability of these charts would contribute to the",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-167"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The Aeronautical Charts service provider must ensure that the production of the charts listed below is \"conditional\", which means that the availability of these charts is required only if certain conditions/circumstances prevail: (a) The Ar",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-169-conditionally-required-charts"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The regulations contained in this Subpart are applicable to all ICAO aeronautical charts unless otherwise stated in the specifications of the chart concerned.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-171"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "purposes of this part, the total flight is divided into the followin (1) Phase 1 — Taxi from aircraft stand to take-off point. (2) Phase 2 — Take-off and climb to en-route ATS route structure. (3)Phase 3 — En-route ATS route structure. (4) ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-173"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The title of a chart or chart series prepared in accordance with the specifications contained in this part and intended to satisfy the function of the chart must be that of the relevant chapter heading as modified by application of any Stan",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-175-titles"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The marginal note layout must be as given in Appendix 9, except as otherwise specified for a particular chart. (b) The following information must be shown on the face of each chart unless otherwise stated in the specification of the cha",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-177"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Symbols used must conform to those shown in Appendix 10 — ICAO Chart Symbols, except that where it is desired to show on an aeronautical chart special features or items of importance to civil aviation for which no ICAO symbol is at pres",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-179"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Distances must be derived as geodesic distances. (b) Distances must be expressed in either kilometres or nautical miles or both, provided the units are clearly differentiated. () Altitudes, elevations and heights must be expressed in ei",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-181-units-of-measurement"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) For charts of large areas, the name and basic parameters and scale of the projection must be indicated. (b) For charts of small areas, a linear scale only must be indice mathbf§175.185 Date of validity of aeronautical information The da",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-183"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Abbreviations must be used on aeronautical charts whenever they are appropriate. (b) Where applicable, abbreviations must be selected from the Procedures for Air Navigation Services —- ICAO Abbreviations and Codes (Doc 8400).",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-189-abbreviations"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) International boundaries must be shown but may be interrupted if data more important to the use of the chart wouldbeobscured. (b) Where the territory of more than one State appears on a chart, the names identifying the countries must be",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-191"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Colors used on charts must conform to Appendix 11 —- Color Guide",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-193"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Relief, where shown, must be portrayed in a manner that will satisfy the chart users? need for: (1) orientation and identification. (2) safe terrain clearance. (3) clarity of aeronautical information when shown. (4) planning. Note: Reli",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-195"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "When prohibited, restricted or danger areas are shown, the reference or other identification must be included, except that the nationality letters may be omitted. Note: Nationality letters are those contained in ICAO Doc 7910 — Location Ind",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-197"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) When ATS airspace is shown on a chart, the class of airspace, the type, name or call sign, the vertical limits and the radio frequency(ies) to be used must be indicated and the horizontal limits depicted in accordance with Appendix 10 —",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-199-air-traffic-services-airspace"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The Aeronautical Charts service provider must take all necessary measures to introduce a properly organized quality system containing procedures, processes and resources necessary to implement quality management at each function stage a",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-205-aeronautical-data"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Horizontal reference system GACAR PART 175 - AERONAUTICAL INFORMATION SERVICES & AERONAUTICAL CHARTS (1) World Geodetic System —- 1984 (WGS-84) must be used as the horizontal (geodetic) reference system. Published aeronautical geographi",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-207"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "This chart, in combination with the relevant information published in the KSA AIP, must provide the data necessary to enable an operator to comply with the operating limitations of ICAO Annex 6, Part I, Chapter 5, and Part III, Section I, C",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-209"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Aerodrome Obstacle Charts —— ICAO Type A (Operating Limitations) must be made available in the manner prescribed in § 175.161 for all aerodromes regularly used by international civil aviation, except for those aerodromes where there are",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-211"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Elevations must be shown to the nearest half-metre or to the nearest foot. (b) Linear dimensions must be shown to the nearest half-metre § 175.215 Coverage and scale (a) The extent of each plan must be sufficient to cover all obstacles.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-213"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The charts must depict a plan and profile of each runway, any associated stopway or clearway, the take-off flight path area and obstacles. (b) The profile for each runway, stopway, clearway and the obstacles in the take-off flight path ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-217"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The chart must be identified by the name of the country in which the aerodrome is located, the name of the city or town or area which the aerodrome serves, the name of the aerodrome and the designator(s) of the runway(s).",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-219"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The magnetic variation to the nearest degree and date of information must be indicated. § 175.223 Aeronautical data (a) Obstacles (1) Objects in the take-off flight path area which project above a plane surface having a 1.2 per cent slope a",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-221-magnetic-variation"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "1 800 m , where D is the distance from the point of origin; (i)it extends to the point beyond which no obstacles exist or to a distance of 10.0 km , whichever is the lesser. (2) For runways serving aircraft having operating limitations whic",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-26"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(2) The nature of the runway and stopway surfaces must be indicated. Stopways must be identified as such and must be shown by a br (4) When stopways are shown, the length of each stopway must be indicated. (5) The profile view must show: (i",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-27"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The order of accuracy attained must be shown on the chart. (b) The horizontal dimensions and the elevations of the runway, stopway and clearway to be printed on the chart must be determined to the nearest 0.5 m (1 ft). (c) The order of ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-225"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "This chart must provide information to satisfy the following functions: nination of minimum safe altitudes/heights including those for c (b) the determination of procedures for use in the event of an emergency during take-off or landing; ()",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-227-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a)Elevations must be shown to the nearest half-metre or to the nearest foot. (b) Linear dimensions must be shown to the nearest half-metre.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-231"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The extent of each plan must be sufficient to cover all obstacles. Note: Isolated distant obstacles that would unnecessarily increase the sheet size may be indicated by the appropriate symbol and an arrow, provided that the distance and",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-233"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The charts must include: (a) Any necessary explanation of the projection used; (b) Any necessary identification of the grid used; (c) A notation indicating that obstacles are those which penetrate the surfaces specified in ICAO Annex 14, Vo",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-235"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(e) Outside the neat line, every minute of latitude and longitude marked in degrees and minutes. Note: Lines of latitude and longitude may be shown across the face of the chart.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-29"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The chart must be identified by the name of the country in which the aerodrome is located, the name of the city or town or area which the aerodrome serves, and the name of the aerodrome.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-237"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Drainage and hydrographic details must be kept to a minimum. (b) Buildings and other salient features associated with the aerodrome must be shown. Wherever possible, they must beshown toscale. (c) All objects, either cultural or natural",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-239-culture-and-topography"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The chart must show a compass rose orientated to the True North, or a North point, showing the magnetic variation to the nearest degree with the date of magnetic information and annual change.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-241"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The charts must show: (1） the aerodrome reference point and its geographical coordinates in degrees, minutes and seconds; (2) the outline of the runways by a solid line. (3) the length and width of the runway. (4) the magnetic bearing t",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-243-aeronautical-data"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(12) take-off and approach areas. Note: The take-off area is described in § I75.223 (b) . The approach area consists of an area on the surface of the earth lying directly below the approach surface as specified in ICAO Annex 14, Volume I, C",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-30"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The order of accuracy attained must be shown on the chart. (b) The horizontal dimensions and the elevations of the movement area, stopways and clearways to be printed on the chart must be determined to the nearest 0.5 m (c) The order of",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-245-accuracy"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "This electronic chart must portray the terrain and obstacle data in combination with aeronautical data, as appropriate, necessaryto: (a) Enable an operator to comply with the operating limitations of ICAO Annex 6, Part I, Chapter 5, and Par",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-247-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Aerodrome Terrain and Obstacle Charts — ICAO (Electronic) must be made available in the manner prescribed in § 175.161 for aerodromes regularly used by international civil aviation. Note 1: Where the Aerodrome Terrain and Obstacle Chart",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-249"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Electronic charts must be identified by the name of the country in which the aerodrome is located, the name of the city or town which the aerodrome serves, and the name of the aerodrome. § 175.253 Chart coverage of each chart must be suffic",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-251"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) General (1) when developing computer graphic applications that are used to portray features on the chart, the relationships between features, feature attributes, and the underlying spatial geometry and associated topological relationshi",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-255"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note: GACAR Part 139, provides guidance on declared distances. (e) Radio navigation aid features Each radio navigation aid feature located within the chart coverage must be portrayed by an appropriate symbol. Note: Navigation aid feature at",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-32"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The order of accuracy of aeronautical, terrain and obstacle data must be in accordance with its intended use. Note: Specifications concerning the accuracy of aeronautical, terrain and obstacle data are contained in Appendix1. (b) The ae",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-257"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) It must be possible to vary the scale at which the chart is viewed. Symbols and text size must vary with chart scale to enhance readability. (b) Information on the chart must be geo-referenced, and it must be possible to determine curso",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-259"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) A comprehensive statement of the data sets comprising the chart must be provided in the form of data product specifications on which basis air navigation users will be able to evaluate the chart data product and determine whether it ful",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-261"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The chart must provide detailed terrain profile information within a defined portion of the final approach so as to enable aircraft operating agencies to assess the effect of the terrain on decision height determination by the use of radio ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-263-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The Precision Approach Terrain Chart —— ICAO must be made available for all precision approach runways Categories II and Ml at aerodromes used by international civil aviation, except where the requisite information is provided in the Ae",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-265"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The horizontal scale must be 1:2 500, and the vertical scale 1:500. (b) When the chart includes a profile of the terrain to a distance greater than 900 m (3 000 ft) from the runway threshold, the horizontal scale must be 1:5 000.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-267-scale"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The chart must be identified by the name of the country in which the aerodrome is located, the name of the city or town or area which the aerodrome serves, the name of the aerodrome and the designator of the runway.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-269-identification"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The chart must include: (1) a plan showing contours at 1textrmm (3 ft) intervals in the area 60 m (200 ft) on either side of the extended centre line of the runway, to the same distance as the profile, the contours to be related to the ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-271"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "This chart must provide flight crews with information to facilitate navigation along ATS routes in compliance with air traffic services procedures. Note: Simplified versions of these charts are appropriate for inclusion in Aeronautical Info",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-273-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The Enroute Chart —— ICAO must be made available in the manner prescribed in §175.161 for all areas where flight information regions have been established. Note: As specified in S 175.169, an Area Chart — ICAO may have to be provided. (",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-275"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note 1: A uniform scale for charts of this type cannot be specified due to the varying degree of congestion ofinformation in certain areas. Note 2: A linear scale based on the mean scale of the chart may be shown. (a) Layout of sheet lines ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-277-coverage-and-scale"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) A conformal projection on which a straight line approximates a great circle must be used. (b) Parallels and meridians must be shown at suitable intervals. (t) Graduation marks must be placed at consistent intervals along selected parall",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-279"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Each sheet must be identified by chart series and number.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-281"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Generalized shore lines of all open water areas, large lakes and rivers must be shown except where they conflict with data more applicable to the function of the chart. teral formed by the parallels and meridians, the area minimum a Not",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-283-culture-and-topography"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Isogonals must be indicated and the date of the isogonic information given. mathbf§ 175.287 Bearings, tracks and radials (a) Bearings, tracks and radials must be magnetic. Where bearings and tracks are additionally provided as true values f",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-285"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Aerodromes All aerodromes used by international civil aviation to which an instrument approach can be made must be shown. Note: Other aerodromes may be shown. (b) Prohibited, restricted and danger areas Prohibited, restricted and danger",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-289"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "e the flight crew with information to facilitate the following pha (a) the transition between the en-route phase and approach to an aerodrome; (b) the transition between take-off/missed approach and en-route phase of flight; and Note: The f",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-291-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The coverage of each chart must extend to points that effectively show departure and arrival routes. (b) The chart must be drawn to scale and a scale-bar shown.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-295"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) A conformal projection on which a straight line approximates a great circle must be used. (b)Parallels and meridians must be shown at suitable intervals (t) Graduation marks must be placed at consistent intervals along the neat lines, a",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-297"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The chart must be identified by a name associated with the airspace portrayed Note: The name may be that of the air traffic services centre, the name of the largest city or town situated in the area covered by the chart or the name of the c",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-301"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Generalized shorelines of all open water areas, large lakes and rivers must be shown except where they conflict with data more applicable to the function of the chart. (b) To improve situational awareness in areas where significant reli",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-303"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "gnetic variation of the area covered by the chart must be shown",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-305"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Bearings, tracks and radials must be magnetic. Where bearings and tracks are additionally provided as true values for RNAV segments, they must be shown in parentheses to the nearest tenth of a degree, e.g. 290^° (294.9^°T) (b) Where bea",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-307"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Aerodromes All aerodromes which affect the terminal routings must be shown. Where appropriate, a runway pattern symbol must be used. (b) Prohibited, restricted and danger areas Prohibited, restricted and danger areas must be depicted wi",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-309"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(i) the radio navigation aids associated with the air traffic services system, together with their names, identifications, frequencies and geographical coordinates in degrees, minutes and seconds. (ii) in respect of DME, additionally the el",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-35"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "This chart must provide the flight crew with information to enable it to comply with the designated standard departure route — instrument from take-off phase to the en-route phase. Note 1: Provisions governing the identification of standard",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-311"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The Standard Departure Chart — Instrument (SID) —- ICAO must be made available wherever a standard departure route —— instrument has been established and cannot be shown with sufficient clarity on the Area Chart —— ICAO.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-313"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The coverage of the chart must be sufficient to indicate the point where the departure route begins and the specified significant point at which the en-route phase of flight along a designated air traffic services route can becommenced.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-315"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) A conformal projection on which a straight line approximates a great circle must be used. (b) When the chart is drawn to scale, parallels and meridians must be shown at suitable intervals. (t) Graduation marks must be placed at consiste",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-317"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The chart must be identified by the name of the city or town or area which the aerodrome serves, the name of the aerodrome and the identification of the standard departure route(s) —— instrument as established in accordance with the Procedu",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-319"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Where the chart is drawn to scale, generalized shore lines of all open water areas, large lakes and rivers must be shown except where they conflict with data more applicable to the function of the chart. (b) To improve situational aware",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-36"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Magnetic variation used in determining the magnetic bearings, tracks and radials must be shown to the nearest degree.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-323"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Bearings, tracks and radials must be magnetic. Where bearings and tracks are additionally provided as true values for RNAV segments, they must be shown in parentheses to the nearest tenth of a degree, e.g. 290^° (294.9^°T) Note: A note ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-325"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Aerodromes (1) the aerodrome of departure must be shown by the runway pattern. (2) all aerodromes which affect the designated standard departure route — instrument must be shown and identified. Where appropriate, the aerodrome runway pa",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-327"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "minimum altitudes must also be shown in those parts of the chart not covered by the minimum sector altitude. Note 1: Quadrilaterals formed by the parallels and meridians normally correspond to the half degree of latitude and longitude. Rega",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-37"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "when the significant point is used for conventional navigation: name-code. geographical coordinates in degrees, minutes and seconds. bearing to the nearest tenth of a degree from the reference radio navigation aid. distance to the nearest t",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-38"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "This chart must provide the flight crew with information to enable it to comply with the designated standard arrival route— instrument from the en-route phase to the approach phase. Note 1: Standard arrival routes — instrument are to be int",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-329-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The coverage of the chart must be sufficient to indicate the points where the en-route phase ends and the approach phase begins. (b)The chart must be drawn to scale. (c) If the chart is drawn to scale, a scale-bar must be shown. (d) Whe",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-333"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) A conformal projection on which a straight line approximates a great circle must be used. (b) When the chart is drawn to scale, parallels and meridians must be shown at suitable intervals duation marks must be placed at consistent inter",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-335"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The chart must be identified by the name of the city or town or area which the aerodrome serves, the name of the aerodrome, and the identification of the standard arrival route(s) — instrument as established in accordance with the Procedure",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-337"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Where the chart is drawn to scale, generalized shore lines of all open water areas, large lakes and rivers must be shown except where they conflict with data more applicable to the function of the chart.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-339-culture-and-topography"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(b) To improve situational awareness in areas where significant relief exists, the chart must be drawn to scale and all relief exceeding 300 m (1 0o0 ft) above the aerodrome elevation must be shown by smoothed contour lines, contour values ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-39"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Magnetic variation used in determining the magnetic bearings, tracks and radials must be shown to the nearest degree.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-341"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Bearings, tracks and radials must be magnetic. Where bearings and tracks are additionally provided as true values for RNAV segments, they must be shown in parentheses to the nearest tenth of a degree, e.g. 290^° (294.9^°T) Note: A note ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-343"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Aerodromes (1) the aerodrome of landing must be shown by the runway patt (2) all aerodromes which affect the designated standard arrival route — instrument must be shown and identified. Where appropriate, the aerodrome runway patterns m",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbfhat-175-345-aeronautical-data"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "This chart must provide flight crews with information which will enable them to perform an approved instrument approach procedure to the runway of intended landing including the missed approach procedure and, where applicable, associated ho",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-347-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Instrument Approach Charts —- ICAO must be made available for all aerodromes used by international civil aviation where instrument approach procedures have been established by the certified Instrument flight Procedure Services (IFPS) pr",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-349-availability"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The coverage of the chart must be sufficient to include all segments of the instrument approach procedure and such additional areas as may be necessary for the type of approach intended. (b) The scale selected must ensure optimum legibi",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-351"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The sheet size must be in printable format.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-353-format"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) A conformal projection on which a straight line approximates a great circle must be used. (b) Graduation marks must be placed at consistent intervals along the neat lines. § 175.357 Identification The chart must be identified by the nam",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-355"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Culture and topographic information pertinent to the safe execution of the instrument approach procedure, including the missed approach procedure, associated holding procedures and visual manoeuvring (circling) procedure when establishe",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-359"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "ubove the aerodrome elevation may be selected to start layer tin Note 2: An appropriate brown colour, on which half-tone layertinting is to be based, is specified in Appendix 11 — Colour Guide for contours and topographic features. Note 3: ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-40"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The magnetic variation must be shown. (b) When shown, the value of the variation, indicated to the nearest degree, must agree with that used in determining magnetic bearings, tracks and radials.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-361"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Bearings, tracks and radials must be magnetic. Where bearings and tracks are additionally provided as true values for RNAV segments, they must be shown in parentheses to the nearest tenth of a degree, e.g. 290^° (294.9^°T) Note: A note ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbfhat-igma175-363-bearings-tracks-and-ra"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Aerodromes (1） all aerodromes which show a distinctive pattern from the air must be shown by the appropriate symbol. Abandoned aerodromes must be identified as abandoned. (2) the runway pattern, at a scale sufficiently large to show it ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-365"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(3) the elevation of the top of obstacles must be shown to the nearest (next higher) metre or foot. (4) the heights of obstacles above a datum other than mean sea level (see (3) above) must be shown. When shown, they must be given in parent",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-41"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(i) the approach procedure track by an arrowed continuous line indicating the direction of flight. i) the missed approach procedure track by an arrowed broken 1 (ii) any additional procedure track, other than those specified in a) and b), b",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-42"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(5) the profile view must include a ground profile or a minimum altitude/height portrayal as follows: (i) a ground profile shown by a solid line depicting the highest elevations of the relief occurring within the primary area of the final a",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-43"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "This chart must provide flight crews with information which will enable them to transit from the en-route/descent to approach phases of flight to the runway of intended landing by means of visual reference.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-367-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The Visual Approach Chart —— ICAO must be made available in the manner prescribed in § 175.161 for all aerodromes used by international civil aviation where: (1) only limited navigation facilities are available; or (2) radio communicati",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-369"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The scale must be sufficiently large to permit depiction of significant features and indication of the aerodromelayout. (b) The scale must not be smaller than 1:500 000. Note: A scale of 1:250 000 or 1:200 000 is preferred. (c) When an ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-s-175-371-scale"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The sheet size must be in printable format. Note: It would be advantageous to print the charts in several colors, selected to provide maximum legibility in varying degrees and kinds of light.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-373"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) A conformal projection on which a straight line approximates a great circle must be used. duation marks must be placed at consistent intervals along the r",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-375"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The chart must be identified by the name of the city or town which the aerodrome serves and the name of the aerodrome.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-377"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Natural and cultural landmarks must be shown (e.g. bluffs, cliffs, sand dunes, cities, towns, roads, railroads,",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-379"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "isolated lighthouses). (b) Geographical place names must be included only when they are required to avoid confusion or ambiguity. (c) Shore lines, lakes, rivers and streams must be shown. (d) Relief must be shown in a manner best suited to ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-44"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Aerodromes (1) all aerodromes must be shown by the runway pattern. Restrictions on the use of any landing direction must be indicated. Where there is any risk of confusion between two neighbouring aerodromes, this must be indicated. Aba",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-385"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) This chart must provide flight crews with information which will facilitate the ground movement of aircraft: (1) from the aircraft stand to the runway; and (2) from the runway to the aircraft stand. (b) For helicopter movement: (1) from",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-387-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The Aerodrome/Heliport Chart —— ICAO must be made available in the manner prescribed in § 175.161 for all aerodromes/heliports regularly used by international civil aviation. (b) The Aerodrome/Heliport Chart — ICAO must be made availabl",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-389"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The coverage and scale must be sufficiently large to show clearly all the elements listed in § 175.397 (a). (b)A linear scale must be shown.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-391"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The chart must be identified by the name of the city or town or area which the aerodrome/heliport serves and the name of the aerodrome/heliport.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-393"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "True and Magnetic North arrows and magnetic variation to the nearest degree and annual change of the magnetic variation must be shown.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-395-magnetic-variation"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(1） geographical coordinates in degrees, minutes and seconds for the aerodrome/heliport reference point. (2) elevations, to the nearest metre or foot, of the aerodrome/heliport and apron (altimeter checkpoint locations) where applicable; an",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-46"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "This supplementary chart must provide flight crews with detailed information to facilitate the ground movement of aircraft to and from the aircraft stands and the parking/docking of aircraft.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-399-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The Aerodrome Ground Movement Chart —- ICAO must be made available in the manner prescribed in §175.161 where, due to congestion of information, details necessary for the ground movement of aircraft along the taxiways to and from the aircra",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-401"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The coverage and scale must be sufficiently large to show clearly all the elements listed in § 175.409 (b) A linear scale must be shown.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-403"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The chart must be identified by the name of the city or town or area which the aerodrome serves and the name of the aerodrome.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-405"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a)A True North arrow must be shown. (b) Magnetic variation to the nearest degree and its annual change must be shown. Note: This chart need not be True North orientated.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-407-magnetic-variation"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) This chart must show in a similar manner all the information on the Aerodrome/Heliport Chart ——- ICAO relevant to the area depicted, including: (1) apron elevation to the nearest metre or foot. (2) aprons with aircraft stands, bearing s",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-409-aerodrome-data"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(6) where established, standard routes for taxiing aircraft, with their designators; (7） geographical coordinates in degrees, minutes, seconds and hundredths of seconds for appropriate taxiway centre line points. (8) the boundaries of the a",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-47"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "This supplementary chart must provide flight crews with detailed information to facilitate the ground movement of aircraft between the taxiways and the aircraft stands and the parking/docking of aircraft.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-411"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The Aircraft Parking/Docking Chart —— ICAO must be made available in the manner prescribed in § 175.161 where, due to the complexity of the terminal facilities, the information cannot be shown with sufficient clarity on the Aerodrome/Helipo",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-413"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The coverage and scale must be sufficiently large to show clearly all the elements listed in § 175.421 (b) A linear scale must be shown.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-415"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The chart must be identified by the name of the city or town or area which the aerodrome serves and the name of the aerodrome.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-417-identification"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) A True North arrow must be shown. (b) Magnetic variation to the nearest degree and its annual change must be shown. Note: This chart need not be True North orientated.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-419"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) This chart must show in a similar manner all the information on the Aerodrome/Heliport Chart —— ICAO and the Aerodrome Ground Movement Chart — ICAO relevant to the area depicted, including: (1) apron elevation to the nearest metre or fo",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-421"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "centre line points. (7) the boundaries of the air traffic control service. (8) relevant communication facilities listed with their channels and, if applicable, logon address. (9) obstacles to taxing. (10) aircraft servicing areas and buildi",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-48"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "This chart must provide information to satisfy the requirements of visual air navigation. Note: This chart may also serve: (a) as a basic aeronautical chart: (1) when highly specialized charts lacking visual information do not provide essen",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-423-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The World Aeronautical Chart — ICAO 1:1 0o0 000 must be made available in the manner prescribed in § 175.161 for all areas delineated in Appendix 12. Note: When operational or chart production considerations indicate that operational re",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-pmb-mathbf175-425-availability"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "r scales for kilometres and nautical miles arranged in the follow (1) Kilometres. (2) nautical miles. their zero points in the same vertical line must be shown in the (b) The length of the linear scales must represent at least 200 km (110 N",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-427-scales"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The title and marginal notes must be in one of the working languages of ICAO. Note: The Arabic language may be used in addition to the English language. (b) The information regarding the number of the adjoining sheets and the unit of me",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-429-format"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Fold the chart on the long axis near the mid-parallel of latitude, face out, with the bottom part of the chart face upward. Fold inward near the meridian, and fold both halves backward in accordion folds. (d) Whenever practicable, the sheet",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-50"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The projections must be as follows: (1) between the Equator and 80^° latitude: the Lambert conformal conic projection, in separate bands for each tier of charts. The standard parallels for each 4^° band must be 40^prime south of the nor",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-431"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(c) The graduation marks at 1' and 5 intervals must extend away from the Greenwich Meridian and from the Equator. Each 10' interval must be shown by a mark on both sides of the graticule line. (d) The length of the graduation marks must be ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-51"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Sheet numbering must be in conformity with the index in Appendix 12. Note: The corresponding International Map of the World (IMW) sheet number may also be shown.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-433"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a)Built-up areas (1) cities, towns and villages must be selected and shown according to their relative importance to visual air navigation. (2) cities and towns of sufficient size must be indicated by the outline of their built-up areas an",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-435-culture-and-topography"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "wind turbines, mine structures, forts, ruins, levees, pipelines, rocks, bluffs, cliffs, sand dunes, isolated lighthouses and lightships, when considered to be of importance for visual air navigation, must be shown. Note: Descriptive notes m",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-52"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "e face of the chart in the colour used for aeronautical informatio \"Warning — The reliability of relief information on this chart is doubtful and elevations must be used With caution.?\"' (k) Escarpments Escarpments must be shown when they a",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-53"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Isogonic lines must be shown. (b) The date of the isogonic information must be indicated in the margin.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-437"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) General Aeronautical data shown must be kept to a minimum consistent with the use of the chart for visual navigation and the revision cycle. (b)Aerodromes (1) land and water aerodromes and heliports must be shown with their names, to th",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-439"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(2) when considered of importance to visual flight, prominent transmission lines, permanent cable car installations and wind turbines, which are obstacles, must be shown. (d) Prohibited, restricted and danger areas Prohibited, restricted an",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-54"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) This chart must provide information to satisfy the requirements of visual air navigation for low speed, shortor medium-range operations at low and intermediate altitudes. Note 1: This chart may be used: (1) to serve as a basic aeronauti",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-441"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The Aeronautical Chart — ICAO 1:500 000 must be made available in the manner prescribed in for all areas delineated in Appendix 12. Note: The selection of this scale as an alternative to the World Aeronautical Chart — ICAO 1:1 ooo oo0 is co",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-443"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Linear scales for kilometres and nautical miles arranged in the following order: (1) kilometres, (2) nautical miles, with their zero points in the same vertical line must be shown in the margin. (b) The length of the linear scale must b",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-445"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The title and marginal notes must be in one of the working languages of ICAO. Note: The Arabic language may be used in addition to the English language. (b) The information regarding the number of the adjoining sheets and the unit of me",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-447"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(c) The method of folding must be as follows: Fold the chart on the long axis near the mid-parallel of latitude, face out, with the bottom part of the chart face upward. Fold inward near the meridian, and fold both halves backward in accord",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-56"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) A conformal (orthomorphic) projection must be used. (b)The projection of the World Aeronautical Chart —— ICAO 1:1 0oo 000 must be used. (c) Parallels must be shown at intervals of 30^° (d) Meridians must normally be shown at intervals o",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-449"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Each sheet must be identified by a name which must be that of the principal town or of a main geographical feature appearing on the sheet. (b) Where applicable, sheets must also be identified by the reference number of the corresponding",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-451"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a)Built-up areas (1) cities, towns and villages must be selected and shown according to their relative importance to visual air navigation. (2) cities and towns of sufficient size must be indicated by the outline of their built-up areas an",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-453"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) General Aeronautical information must be shown consistent with the use of the chart and the revision cycle. (b)Aerodromes (1) land and water aerodromes and heliports must be shown with their names, to the extent that they do not produce",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-457"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "aerodrome traffic zones, control areas, flight information regions and other airspaces in which VFR flights operate must be shown together with the appropriate class of airspace. Air Defence Identification Zone (ADIZ) must be shown and prc ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-57"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "This chart must: 1 air navigation aid for flight crews of long-range aircraft at hig (b) provide selective checkpoints over extensive ranges for identification at high altitudes and speeds, which are required for visual confirmation of posi",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-459-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The Aeronautical Navigation Chart —— ICAO Small Scale must be made available in the manner prescribed in § 175.161 for all areas delineated in Appendix 12. Note: The selection of this scale as an alternative to the World Aeronautical Chart ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-461"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The Aeronautical Navigation Chart ——- ICAO Small Scale must provide, as a minimum, complete coverage of the major land masses of the world. Note 1: A sheet layout for this series is contained in the ICAO Aeronautical Chart Manual (Doc 8",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-463"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The title and marginal notes must be in one of the working languages of ICAO. Note: The Arabic language may be used in addition to the English language.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-465-format"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(b) The information regarding the number of the adjoining sheets and the unit of measurement to express elevations must be so located as to be clearly visible when the sheet is folded. Note: There is no internationally agreed sheet numberin",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-59"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) A conformal (orthomorphic) projection must be used. (b) The name and basic parameters of the projection must be shown in the margin. (c) Parallels must be shown at intervals of 1^° (d) Graduations on the parallels must be shown at suffi",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-467-projection"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a)Built-up areas (1) cities, towns and villages must be selected and shown according to their relative importance to visual air navigation. (2) cities and towns of sufficient size must be indicated by the outline of their built-up areas an",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-469"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(1) all railroads having landmark value must be shown. Note: In congested areas, some railroads may be omitted in the interest of legibility (2) important tunnels must be shown. Note: A descriptive note may be added. (c) Highways and roads ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-b-railroads"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(1) contours must be shown. The selection of intervals must be governed by the requirement to depict clearly the relief features required in air navigation. (2) the values of the contours used must be shown. (h) Hypsometric tints (1) when h",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-g-contours"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(2) charts on which spot elevations are generally unreliable must bear a warning note prominently displayed on the face of the chart in the colour used for aeronautical information, as follows: \"Warning — The reliability of relief informati",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-60"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Isogonic lines must be shown. (b) The date of isogonic information must be indicated in the margin.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-471"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Aerodromes Land and water aerodromes and heliports must be shown with their names, to the extent that they do not produce undesirable congestion on the chart, priority being given to those of greatest aeronautical significance. (b) Obst",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-473"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "This chart must provide a means of maintaining a continuous flight record of the aircraft position by various fixing methods and dead reckoning in order to maintain an intended flight path.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-475-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "This chart must be made available, in the manner prescribed in § 175.161 , to cover major air routes over oceanic areas and sparsely settled areas used by international civil aviation. Note: In areas where the Enroute Chart — ICAO is provid",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-477"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Where practicable, the chart for a particular region must cover major air routes and their terminals on a single sheet. (b) The scale must be governed by the area to be covered. Note: Normally the scale will range from 1:3 000 000 to 1:",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-479"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The sheet must be of a size that can be adapted for use on a navigator's plotting table.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-481-format"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) A conformal projection on which a straight line approximates a great circle must be used. (b) Parallels and meridians must be shown. (1） the intervals must be arranged to permit accurate plotting to be carried out with a minimum of time",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-483"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Each sheet must be identified by chart series and number.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-485-identification"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Generalized shore lines of all open water areas, large lakes and rivers must be shown.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-487-culture-and-topography"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(b) Spot elevations for selected features constituting a hazard to air navigation must be shown. Particularly hazardous or prominent relief features must be emj Note: Large cities and towns may be shown.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-61"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Isogonals must be shown at consistent intervals throughout the chart. The interval selected must, regardless of scale, minimize the amount of interpolation required. (b) The date of the isogonic information must be shown.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-489"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The following aeronautical data must be shown: (1) aerodromes regularly used by international commercial air transport together with their names. (2) selected radio aids to navigation that will contribute to position-finding together wi",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-491"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The Electronic Aeronautical Chart Display —- ICAO, with adequate back-up arrangements and in compliance with the requirements of Annex 6 for charts, must enable flight crews to execute, in a convenient and timely manner, route planning, rou",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-493-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a)The Electronic Aeronautical Chart Display — ICAO must be capable of displaying all aeronautical, cultural and topographic information required by Subpart G and Subpart I through U. (b) The Electronic Aeronautical Chart Display — ICAO mus",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-495"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Display categories (1) information available for display must be subdivided into the following categories: (i) basic display information, permanently retained on the display and consisting of the minimum information essential for the sa",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-497-display-requirements"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(1) employ a minimum use of lines, arcs and area fills. do not cause confusion with any existing aeronautical chart sy (3) do not impair the legibility of the display. Note: Additional details for each symbol may be added according to the r",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-62"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The provision and updating of data for use by the display must be in conformance with the aeronautical data quality system requirements. Note: For aeronautical data quality system requirements, see oint I75.205 and s 175.77. (b) The dis",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-499"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) A means must be provided for carrying out on-board tests of major functions. In case of a failure, the test must display information to indicate which part of the system is at fault. (b) A suitable alarm or indication of system malfunct",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-501"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "To ensure safe navigation in case of a failure of the Electronic Aeronautical Chart Display — ICAO, the provision of adequate back-up arrangements must include:",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-503"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Facilities enabling a safe takeover of display functions in order to ensure that a failure does not result in a critical situation; and (b) A back-up arrangement facilitating the means for safe navigation of the remaining part of the fl",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-63"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) This supplementary chart must provide information that will enable flight crews to monitor and cross-check altitudes assigned by a controller using an ATS surveillance system. Note: The objectives of the air traffic control service as p",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-505-function"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The ATC Surveillance Minimum Altitude Chart —— ICAO must be made available, in the manner prescribed in § 175.161 , where vectoring procedures are established and minimum vectoring altitudes cannot be shown adequately on the Area Chart — IC",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbf-175-507-availability"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) The coverage of the chart must be sufficient to effectively show the information associated with vectoring procedures. (b) The chart must be drawn to scale. (c) The chart must be drawn to the same scale as the associated Area Chart ——- ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-509"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "lal projection on which a straight line approximates a geodesic : (b) Graduation marks must be placed at consistent intervals along the neat lines, as appropriate.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-511"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "oply to more than one aerodrome, the name associated with the : Note: The name may be that of the city which the aerodrome serves or, when the procedures apply to more than one aerodrome, that of the air traffic services centre or the large",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-64"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Generalized shorelines of all open water areas, large lakes and rivers must be shown except where they conflict with data more applicable to the function of the chart. (b) Appropriate spot elevations and obstacles must be shown. Note:Ap",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-515"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The average magnetic variation of the area covered by the chart must be shown to the nearest degree.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-517"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Bearings, tracks and radials must be magnetic, except as provided for in (b). (b) In areas of high latitude, where it is determined by the President of GACA that reference to Magnetic North is impractical, another suitable reference, i.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-519"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(a) Aerodromes (1) all aerodromes that affect the terminal routings must be shown. Where appropriate, a runway pattern symbol must be used. (2) the elevation of the primary aerodrome to the nearest metre or foot must be shown. (b) Prohibite",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-175-521"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(iv) transition altitude, where established. (v) information associated with vectoring including: minimum vectoring altitudes to the nearest higher 50 m or 100 ft, clearly identified. lateral limits of minimum vectoring altitude sectors nor",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-65"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "(b) The Aeronautical Data Catalogue is a general description of the Aeronautical Information Management (AIM) data scope and consolidates all data that can be collected and maintained by the Aeronautical Information Service (AIS) provider. ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-appendix-1-to-gacar-part-175-aeronautical-da"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note 1: The information elements prefixed with “#AIP-DS#\" may be omitted when available through the AIP data set(as specified in § I75.O97 (f), Note 2: The information elements prefixed with “#OBS-DS#” may be omitted when available through ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-appendix-2-to-gacar-part-175-contents-of-the"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "When the AIP is produced as one volume, the preface, record of AIP Amendments, record of AIP Supplements, checklist of AIP pages and list of current hand amendments appear only in Part 1 — GEN, and the annotation \"not applicable” must be en",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-part-1-general-gen"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of the AIP, including: 1) name of the publishing authority; 2) applicable ICAO documents; 3) publication media (i.e. printed, online or other electronic media); 4) AIP structure and established regular amendment interval; ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-0-1-preface"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "A record of AIP Amendments and AIRAC AIP Amendments (published in accordance with the AIRAC system) containing: 1) amendment number; 2) publication date; 3) date inserted (for the AIRAC AIP Amendments, effective date); and 4) initials of of",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-0-2-record-of-aip-amendments"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "A record of issued AIP Supplements containing: 1) Supplement number; 2) Supplement subject; 3) AIP section(s) affected; 4) period of validity; and 5) cancellation record.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-0-3-record-of-aip-supplements"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "A checklist of AIP pages containing: 1) page number/chart title; and 2) publication or effective date (day, month by name and year) of the aeronautical information.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-0-4-checklist-of-aip-pages"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "A list of current hand amendments to the AIP containing: 1) AIP page(s) affected; 2) amendment text; and 3) AIP Amendment number by which a hand amendment was introduced.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-0-5-list-of-hand-amendments-to-the-aip"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "A list of sections and subsections contained in Part 1 — General (GEN). Note: Subsections may be listed alphabetically.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-0-6-table-of-contents-to-part-1"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The addresses of designated authorities concerned with the facilitation of international air navigation (civil aviation, meteorology, customs, immigration, health, en-route and aerodrome/heliport charges, agricultural quarantine and aircraf",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-1-1-designated-authorities"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Regulations and requirements for advance notification and applications for permission concerning entry, transit and departure of aircraft on international flights.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-1-2-entry-transit-and-departure-of-aircr"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Regulations (including customs, immigration and quarantine, and requirements for advance notification and applications for permission) concerning entry, transit and departure of non-immigrant passengers and crew. GEN 1.4 Entry, transit and ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-1-3-entry-transit-and-departure-of-passe"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of aircraft instruments, equipment and flight documents, including: 1) instruments, equipment (including aircraft communication, navigation and surveillance equipment) and flight documents to be carried on aircraft, includ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-1-5-aircraft-instruments-equipment-and-f"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "A list of titles and references and, where applicable, summaries of national regulations affecting air navigation, togetherwith a list of international agreements/conventions ratified by the State. GEN1.7 Differences from ICAO Standards, Re",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-1-6-summary-of-national-regulations-and-"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "GEN 2.1.1 Units of measurement Description of units of measurement used including table of units of measurement. GEN 2.1.2 Temporal reference system Description of the temporal reference system (calendar and time system) employed, together ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-2-1-measuring-system-aircraft-markings-h"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "scription of the horizontal (geodetic) reference system used, inc 1) name/designation of the reference system; 2) identification and parameters of the projection; 3) identification of the ellipsoid used; 4) identification of the datum used;",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-2-1-3-horizontal-reference-system"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of the vertical reference system used, including: 1) name/designation of the reference system; 2) description of the geoid model used including the parameters required for height transformation betweer. the modelused and E",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-2-1-4-vertical-reference-system"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "A list of alphabetically arranged abbreviations and their respective significations used by the State in its AIP and in the distribution of aeronautical data and aeronautical information with appropriate annotation for those national abbrev",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-2-2-abbreviations-used-in-aeronautical-i"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "A list of chart symbols arranged according to the chart series where symbols are applied.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-2-3-chart-symbols"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "A list of alphabetically arranged location indicators assigned to the locations of aeronautical fixed stations to be used for encoding and decoding purposes. An annotation to locations not connected to the Aeronautical Fixed Service (AFS) m",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-2-4-location-indicators"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# A list of radio navigation aids arranged alphabetically, containing: 1) identifier; 2) name of the station; 3) type of facility/aid; and 4) indication whether aid serves en-route (E), aerodrome (A) or dual (AE) purposes.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-2-5-list-of-radio-navigation-aids"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "ables for conversion or, alternatively, conversion formulae betv 1) nautical miles and kilometres and vice versa; 2) feet and metres and vice versa; 3) decimal minutes of arc and seconds of arc and vice versa; and 4) other conversions as ap",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-2-6-conversion-of-units-of-measurement"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Information on the time of sunrise and sunset including a brief description of criteria used for determination of the times given and either a simple formulae or table from which times may be calculated for any location within its territory",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-2-7-sunrise-sunset"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "GEN 3.2.1 Responsible service(s) ervice(s) responsible for the production of aeronautical charts, ir 1) service name; 2) postal address; 3) telephone number; 4) telefax number; 5) e-mail address; 6) AFS address; 7 website address, if availa",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-3-2-aeronautical-charts"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of how aeronautical charts are revised and amended. GEN 3.2.3 Purchase arrangements Details of how charts may be obtained, containing: 1) service/sales agency(ies); 2) postal address; 3) telephone number; 4) telefax number",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-3-2-2-maintenance-of-charts"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "GEN 3.3.1 Responsible service Description of the Air Traffic Service (ATS) and its major components, including: 1) service name; 2) postal address; 3) telephone number; 4) telefax number; 5) e-mail address; 6) AFS address; 7 website address",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-3-3-air-traffic-services"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "GEN 3.4.1 Responsible service Description of the service responsible for the provision of telecommunication and navigation facilities, including: 1) service name; 2) postal address; 3) telephone number; 4) telefax number; 5) e-mail address;",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-3-4communication-and-navigation-services"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of the main types of service and facilities provided, including: 1) radio navigation services; 2) voice and/or data link services; 3) broadcasting service; 4) language(s) used; and 5) an indication of where detailed inform",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-3-4-3-types-of-service"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "GEN 3.5.1 Responsible service Brief description of the meteorological service responsible for the provision of meteorological information, including: 1) service name; 2) postal address; 3) telephone number; 4) telefax number; 5) e-mail addr",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-3-5-meteorological-services"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of the main types of service provided, including details of briefing, consultation, display of meteorological information, flight documentation available for operators and flight crew members, and of the methods and means ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-3-5-4-types-of-services"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "GEN 3.6.1 Responsible service(s) Brief description of service(s) responsible for the provision of Search And Rescue (SAR), including: 1) service/unit name; 2) postal address; 3) telephone number; 4) telefax number; 5) e-mail address; 6 AFS ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-3-6-search-and-rescue"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of area of responsibility within which SAR services are provided. Note: A chart may be included to supplement the description of the area.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-3-6-2-area-of-responsibility"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description and geographical portrayal, where appropriate, of the type of service and facilities provided including indications where SAR aerial coverage is dependent upon significant deployment of aircraft. Brief description of SAR a",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-3-6-3-types-of-service"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of provisions for SAR, including the general conditions under which the service and facilities are available for international use, including an indication of whether a facility available for SAR is specialized in SAR tech",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-3-6-5-conditions-of-availability"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of the procedures and signals employed by rescue aircraft and a table showing the signals to be used by survivors.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-3-6-6-procedures-and-signals-used"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "When SWIM registries are used, the corresponding Uniform Resource Locator (URL) of each registry is provided. Otherwise, a list of the URLs where information service overviews can be found are provided. Note: SWIM registries provide a list ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-3-7-1-swim-registry-s-information-servic"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note: Reference may be made to where details of actual charges may be found, if not itemized in this chapter.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-4-charges-for-aerodromes-heliportsand-ai"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of type of charges which may be applicable at aerodromes/heliports available for international use, including: 1) landing of aircraft; 2) parking, hangarage and long-term storage of aircraft; 3) passenger service; 4) secur",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-4-1-aerodrome-heliport-charges"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of charges which may be applicable to air navigation services provided for international use, including: 1) approach control; 2) route air navigation services; 3) cost basis for air navigation services and exemptions/reduc",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gen-4-2-air-navigation-services-charges"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "If an AIP is produced and made available in more than one volume with each having a separate amendment and supplement service, a separate preface, record of AIP Amendments, record of AIP Supplements, checklist of AIP pagesand list of curren",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-part-2-en-route-enr"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "A list of sections and subsections contained in Part 2 —— En-route. Note: Subsections may be listed alphabetically.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-0-1-table-of-contents-to-part-2"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "ENR 1.1 General rules The requirement is for publication of the general rules as applied within the State. ENR 1.2 Visual flight rules The requirement is for publication of the visual flight rules as applied within the State. ENR 1.3 Instru",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-1-general-rules-and-procedures"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The requirement is to present procedures (conventional or area navigation or both) for arriving flights which are common to flights into or within the same type of airspace. If different procedures apply within a terminal airspace, a note t",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-1-5-2-arriving-flights"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The requirement is to present procedures (conventional or area navigation or both) for departing flights which are common to flights departing from any aerodrome/heliport. ENR 1.5.4 Other relevant information and procedures Brief descriptio",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-1-5-3-departing-flights"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "ENR 1.6.1 Primary radar Description of primary radar services and procedures, including: 1) supplementary services; 2) the application of radar control service; 3) radar and air-ground communication failure procedures; 4 voice and CPDLC pos",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-1-6-ats-surveillance-services-and-proced"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Description of Secondary Surveillance Radar (SSR) operating procedures, including: 1) emergency procedures; 2) air-ground communication failure and unlawful interference procedures; 3) the system of SSR code assignment; 4 voice and CPDLC po",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-1-6-2-secondary-surveillance-radar-ssr"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of additional information and procedures, e.g. radar failure procedures and transponder failureprocedures.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-1-6-4-other-relevant-information-and-pro"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "ent is for a statement of altimeter setting procedures in use, cont 1) brief introduction with a statement concerning the ICAO documents on which the procedures are based together with differences to ICAO provisions, if any; 2) basic altime",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-1-7-altimeter-setting-procedures"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The requirement is for presentation of regional supplementary procedures (SUPPs) affecting the entire area ofresponsibility. Brief description of Air Traffic Flow Management (ATFM) system and airspace management, including: 1) ATFM structur",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-1-8-regional-supplementary-procedures"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The requirement is to indicate any restriction, limitation or advisory information related to the flight planning stagewhich may assist the user in the presentation of the intended flight operation, including: 1) procedures for the submissi",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-1-10-flight-planning"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The requirement is for an indication, in tabular form, of the addresses allocated to flight plans, showing: 1) category of flight (IFR, VFR or both); 2) route (into or via FIR and/or TMA); 3) message address; and 4) if applicable, addressin",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-1-11-addressing-of-flight-plan-messages"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The requirement is for a complete statement of interception procedures and visual signals to be used with a clearindication of whether ICAO provisions are applied and, if not, that differences exist. Note: A list of significant differences ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-1-12-interception-of-civil-aircraft"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The requirement is for presentation of appropriate procedures to be applied in case of unlawful interference.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-1-13-unlawful-interference"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Description of air traffic incidents reporting system, including 1) definition of air traffic incidents; 2) use of the “Air Traffic Incident Reporting Form\"; 3) reporting procedures (including in-flight procedures); and 4) purpose of report",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-1-14-air-traffic-incidents"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# Detailed description of Flight Information Regions (FIR), Upper Flight Information Regions (UIR), and Control Areas (CTA) (including specific CTA such as TMA), including: 1) name, geographical coordinates in degrees and minutes of ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-2-1-fir-uir-tma-and-cta"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Where established, a detailed description of other types of regulated airspace and airspace classification.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-2-2-other-regulated-airspace"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note 1: Bearings, tracks and radials are normally magnetic. In areas of high latitude, where it is determined by the appropriate authority that reference to Magnetic North is impractical, another suitable reference, i.e. True Northor Grid N",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-3-ats-routes"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# Detailed description of conventional navigation routes, including: 1）route designator, designation of the Required Communication Performance (RCP) specification(s), Required Surveillance Performance (RSP) specification(s) applicabl",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-3-1-conventional-navigation-routes"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# Detailed description of PBN (RNAV and RNP) routes, including: 1）route designator, designation of the Required Communication Performance (RCP) specification(s), navigation specification(s) and/or Required Surveillance Performance (R",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-3-2-area-navigation-routes"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# The requirement is to describe other specifically designated routes which are compulsory within specifiedarea(s). Note: Arrival, transit and departure routes which are specified in connection with procedures for traffic to and from",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-3-3-other-routes"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# The requirement is for a detailed description of en-route holding procedures, containing: 1) holding identification (if any) and holding fix (navigation aid) or waypoint with geographical coordinates in degrees, minutes and seconds",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-3-4-en-route-holding"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# A list of stations providing radio navigation services established for en-route purposes and arrangedalphabetically by name of the station, including: 1) name of the station and magnetic variation to the nearest degree and for VOR,",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-4-1-radio-navigation-aids-en-route"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# Description of stations associated with special navigation systems (DECCA, LORAN, etc.), including: 1) name of station or chain; 2) type of service available (master signal, slave signal, colour); 3) frequency (channel number, basi",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-4-2-special-navigation-systems"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "A list and description of elements of the Global Navigation Satellite System (GNSS) providing the navigation serviceestablished for en-route purposes and arranged alphabetically by name of the element, including: 1)the name of the GNSS elem",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-4-3-global-navigation-satellite-system-g"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# A list of alphabetically arranged name-code designators (five-letter pronounceable “name-code\") establishedfor significant points at positions not marked by the site of radio navigation aids, including: 1) name-code designator; 2) ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-4-4-name-code-designators-for-significan"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# A list of aeronautical ground lights and other light beacons designating geographical positions which areselected by the State as being significant, including: 1) name of the city or town or other identification of the beacon; 2) t",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-4-5-aeronautical-ground-lights-en-route"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# Description, supplemented by graphic portrayal where appropriate, of prohibited, restricted and danger areastogether with information regarding their establishment and activation, including: 1) identification, name and geographical",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-5-1-prohibited-restricted-and-danger-are"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# Description, supplemented by charts where appropriate, of other potential hazards that could affect flights(active volcanoes, nuclear power stations, etc.), including: 1) geographical coordinates in degrees and minutes of location ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-5-3-2-other-potential-hazards"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#OBS-DS# A list of obstacles affecting air navigation in Area 1 (the entire State territory), including: 1) obstacle identification or designation; 2) type of obstacle; 3) obstacle position, represented by geographical coordinates in degree",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-5-4-air-navigation-obstacles"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# Brief description, supplemented by graphic portrayal where appropriate, of intensive aerial sporting andrecreational activities together with conditions under which they are carried out, including: 1） designation and geographical c",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-5-5-aerial-sporting-and-recreational-act"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Description, supplemented by charts where practicable, of movements of birds associated with migration, includingmigration routes and permanent resting areas and areas with sensitive fauna.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-5-6-bird-migration-and-areas-with-sensit"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The requirement is for the En-route Chart —- ICAO and index charts to be included in this section.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-enr-6-en-route-charts"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "If an AIP is produced and made available in more than one volume with each having a separate amendment and supplement service, a separate preface, record of AIP Amendments, record of s, checklist of AIP pages and list of current hand amendm",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-part-3-aerodromes-ad"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "A list of sections and subsections contained in Part 3 —— Aerodromes (AD). Note: Subsections may be listed alphabetically.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-ad-0-1-table-of-contents-to-part-3"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "AD 1.1 Aerodrome/heliport availability and conditions of use AD 1.1.1 General conditions Brief description of the State’s designated authority responsible for aerodromes and heliports, including: 1)） the general conditions under which aerod",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-ad-1-aerodromes-heliports-introduction"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "AD 1.2.1 Rescue and firefighting services Brief description of rules governing the establishment of rescue and firefighting services at aerodromes and heliports available for public use together with an indication of rescue and firefighting",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-ad-1-2-rescue-and-firefighting-services-and-"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "A list, supplemented by graphic portrayal, of aerodromes and heliports within a State, including: 1) aerodrome/heliport name and ICAO location indicator; 2) type of traffic permitted to use the aerodrome/heliport (international/national, IF",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-ad1-3-index-to-aerodromes-and-heliports"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of the criteria applied by the State in grouping aerodromes/heliports for production/distribution/provision of information purposes (international/national; primary/secondary; major/other; civil/military; etc.).",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-ad-1-4-grouping-of-aerodromes-heliports"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "A list of aerodromes in the State, indicating the status of certification, including: 1) aerodrome name and ICAO location indicator; 2) date and, if applicable, validity of certification; and 3) remarks, if any.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-ad-1-5-status-of-certification-of-aerodromes"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note 2: Specified subsections may be developed for water aerodromes.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-ad-2-aerodromes"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The requirement is for the ICAO location indicator allocated to the aerodrome and the name of aerodrome. An ICAO location indicator must be an integral part of the referencing system applicable to all subsections in section AD 2.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-1-aerodrome-location-indicator-and-n"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The requirement is for aerodrome geographical and administrative data, including: 1)） aerodrome reference point (geographical coordinates in degrees, minutes and seconds) and its site; 2) direction and distance of aerodrome reference point ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-ad-2-2-aerodrome-geographical-and-administra"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of the hours of operation of services at the aerodrome, including: 1) aerodrome operator; 2) customs and immigration; 3) health and sanitation; 4) AIS briefing office; 5) ATS reporting office (ARO); 6) MET briefing offi",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-3-operational-hours"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of the handling services and facilities available at the aerodrome, including: 1) cargo-handling facilities; 2) fuel and oil types; 3) fuelling facilities and capacity; 4) de-icing facilities; 5) hangar space for visiti",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbfoe-astast-ad-2-4-handling-services-and"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Passenger facilities available at the aerodrome, provided as a brief description or a reference to other",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-5-passenger-facilities"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "informationsources such as a website, including: 1) hotel(s) at or in the vicinity of aerodrome; 2) restaurant(s) at or in the vicinity of aerodrome; 3) transportation possibilities; 4) medical facilities; 5) bank and post office at or in t",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-73"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of the rescue and firefighting services and equipment available at the aerodrome, including: 1) aerodrome category for firefighting; 2) rescue equipment; 3) capability for removal of disabled aircraft; and 4) remarks.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-6-rescue-and-firefighting-services"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of the equipment and operational priorities established for the clearance of aerodrome movementareas, including: 1) type(s) of clearing equipment; 2) clearance priorities; and 3) remarks.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-7seasonal-availability-clearing"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Details related to the physical characteristics of aprons, taxiways and locations/positions of designated checkpoints,including: 1) designation, surface and strength (PCR) of aprons; 2) designation, width, surface and strength (PCR) of taxi",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-8-aprons-taxiways-and-check-location"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of the surface movement guidance and control system and runway and taxiway markings, including: 1) use of aircraft stand identification signs, taxiway guide lines and visual docking/parking guidance system ataircraft stand",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-9-surface-movement-guidance-and-cont"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "4 other runway protection measures; and 5) remarks.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-74"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#OBS-DS# Detailed description of obstacles, including: 1) obstacles in Area 2: a) obstacle identification or designation; b) type of obstacle; c) obstacle position, represented by geographical coordinates in degrees, minutes, seconds and te",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-10-aerodrome-obstacles"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of meteorological information provided at the aerodrome and an indication of whichmeteorological office is responsible for the service enumerated, including: 1) name of the associated meteorological office; 2) hours of ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbfoe-ad-2-11-meteorological-information-"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of runway physical characteristics, for each runway, including: 1) designations; 2) true bearings to one-hundredth of a degree; 3) dimensions of runways to the nearest metre or foot; 4) strength of pavement (PCR and ass",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbfoe-ad-2-12-runway-physical-characteris"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of declared distances to the nearest metre or foot for each direction of each runway, including: 1) runway designator; 2) take-off run available; 3) take-off distance available, and if applicable, alternative reduced de",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-13-declared-distances"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "4 accelerate-stop distance available; 5 landing distance available; and 6 remarks, including runway entry or start point where alternative reduced declared distances have been declared. If a runway direction cannot be used for take-off or l",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-75"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of approach and runway lighting, including: 1) runway designator; 2) type, length and intensity of approach lighting system; 3) runway threshold lights, colour and wing bars; 4) type of visual approach slope indicator s",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-14-approach-and-runway-lighting"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Description of other lighting and secondary power supply, including: 1) location, characteristics and hours of operation of aerodrome beacon/identification beacon (if any); 2) location and lighting (if any) of anemometer/landing direction i",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-15-other-lighting-and-secondary-powe"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "scription of helicopter landing area provided at the aerodrome, i 1) geographical coordinates in degrees, minutes, seconds and hundredths of seconds and, where appropriate, geoid undulation of the geometric centre of Touchdown and Lift-Off ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-16-helicopter-landing-area"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# Detailed description of Air Traffic Services (ATS) airspace organized at the aerodrome, including: 1) airspace designation and geographical coordinates in degrees, minutes and seconds of the lateral limits; 2) vertical limits; 3) a",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-17-air-traffic-services-airspace"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of ATS communication facilities established at the aerodrome, including: 1) service designation; 2) call sign; 3) channel(s); 4) SATVOICE number(s), if available; 5) logon address, as appropriate; 6) hours of operation;",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-18-air-traffic-services-communicatio"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# Detailed description of radio navigation and landing aids associated with the instrument approach and the terminal area procedures at the aerodrome, including: 1) a) type of aids; b) magnetic variation to the nearest degree, as app",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-19-radio-navigation-and-landing-aids"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of regulations applicable to the use of the aerodrome, including the acceptability of training flights,non-radio and microlight aircraft and similar, and to ground manoeuvring and parking but excluding flight procedures",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-20-local-aerodrome-regulations"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "description of noise abatement procedures established at the ael",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-21-noise-abatement-procedures"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of the conditions and flight procedures, including radar and/or ADS-B procedures. established on the basis of airspace organization at the aerodrome. When established, detailed description of the low visibility procedur",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-22-flight-procedures"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Additional information at the aerodrome, such as an indication of bird concentrations at the aerodrome, together withan indication of significant daily movement between resting and feeding areas, to the extent practicable.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-23-additional-information"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The requirement is for charts related to an aerodrome to be included in the following order: 1)Aerodrome/Heliport Chart —- ICAO; 2) Aircraft Parking/Docking Chart — ICAO; 3)Aerodrome Ground Movement Chart — ICAO; 4)Aerodrome Obstacle Chart ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-24-charts-related-to-an-aerodrome"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Visual Segment Surface (VSS) penetration, including procedure and procedure minima affected. Note: Criteria related to the VSS are contained in ICAO PANS-OPS Volume II, Part I, Section 4, Chapter5,paragraph5.4.6.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-2-25-visual-segment-surface-vss-penetr"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "When a helicopter landing area is provided at the aerodrome, associated data must be listed only under OE^** AD2.16. el: OE\\*\\* is to be replaced by the relevant ICAO location indice Note 2: Specified subsections may be developed for water ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-ad-3-heliports"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The requirement is for the ICAO location indicator assigned to the heliport and the name of heliport. An ICAO locationindicator must be an integral part of the referencing system applicable to all subsections in section AD 3.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-1-heliport-location-indicator-and-na"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The requirement is for heliport geographical and administrative data, including: 1） heliport reference point (geographical coordinates in degrees, minutes and seconds) and its site; 2) direction and distance of heliport reference point from",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-2heliport-geographical-and-administr"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of the hours of operation of services at the heliport, including: 1) heliport operator; 2) customs and immigration; 3) health and sanitation; 4) AIS briefing office; 5) ATS reporting office (ARO); 6 MET briefing office;",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-3-operational-hours"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of the handling services and facilities available at the heliport, including: 1) cargo-handling facilities; 2) fuel and oil types; 3) fuelling facilities and capacity; 4) de-icing facilities; 5) hangar space for visitin",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbfoe-astast-ad-3-4-handling-services-and"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Passenger facilities available at the heliport, provided as a brief description or as a reference to other informationsources such as a website, including: 1) hotel(s) at or in the vicinity of the heliport; 2) restaurant(s) at or in the vic",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-5-passenger-facilities"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of the rescue and firefighting services and equipment available at the heliport, including: 1) heliport category for firefighting; 2) rescue equipment; 3) capability for removal of disabled helicopters; and 4) remarks.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-6-rescue-and-firefighting-services"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of the equipment and operational priorities established for the clearance of heliport movementareas, including: 1) type(s) of clearing equipment; 2) clearance priorities; and 3) remarks.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-7seasonal-availability-clearing"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Details related to the physical characteristics of aprons, taxiways and locations/positions of designated checkpoints,including: 1) designation, surface and strength of aprons, helicopter stands; 2) designation, width and surface type of he",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbfoe-astast-ad-3-8-aprons-taxiways-and-c"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Brief description of final approach and take-offarea and taxiway markings and markers,including: 1) final approach and take-off markings; 2) taxiway markings, air taxiway markers and air transit route markers; and 3) remarks.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-9-markings-and-markers"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#OBS-DS# Detailed description of obstacles, including: 1) obstacle identification or designation; 2)type of obstacle; 3) obstacle position, represented by geographical coordinates in degrees, minutes, seconds and tenths of seconds; 4) obsta",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-10-heliport-obstacles"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of meteorological information provided at the heliport and an indication of which meteorologicaloffice is responsible for the service enumerated, including: 1) name of the associated meteorological office; 2) hours of s",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-11-meteorological-information-provid"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of heliport dimensions and related information, including: 1) heliport type (surface-level, elevated or helideck); 2) Touchdown and Lift-Off (TLOF) area dimensions to the nearest metre or foot; 3) true bearings to one-h",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-12-heliport-data"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "7)TLOF and/or FATO slope and elevation: for non-precision approaches, to the nearest metre or foot; and for precision approaches, to the nearest tenth of a metre or tenth of a foot; 8) dimensions of safety area; 9) dimensions, to the neares",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-77"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of declared distances to the nearest metre or foot, where relevant for a heliport, including: 1) take-off distance available, and if applicable, alternative reduced declared distances; 2) rejected take-off distance avai",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-13-declared-distances"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of approach and FATO lighting, including: 1) type, length and intensity of approach lighting system; 2) type of visual approach slope indicator system; 3) characteristics and location of FATO area lights; 4) characteris",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-14-approach-and-fato-lighting"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Description of other lighting and secondary power supply, including: 1) location, characteristics and hours of operation of heliport beacon; 2) location and lighting of Wind Direction Indicator (WDI); 3) taxiway edge and taxiway centre line",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-15-other-lighting-and-secondary-powe"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# Detailed description of Air Traffic Services (ATS) airspace organized at the heliport, including: 1) airspace designation and geographical coordinates in degrees, minutes and seconds of the lateral limits; 2) vertical limits; 3) ai",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-16-air-traffic-services-airspace"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of ATS communication facilities established at the heliport, including: 1) service designation; 2) call sign; 3) channel(s); 4) SATVOICE number(s), if available; 5) logon address, as appropriate; 6) hours of operation; ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-17-air-traffic-services-communicatio"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "#AIP-DS# Detailed description of radio navigation and landing aids associated with the instrument approach and the terminal area procedures at the heliport, including: 1) type of aids, magnetic variation to the nearest degree, as appropriat",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-18-radio-navigation-and-landing-aids"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of regulations applicable to the use of the heliport, including the acceptability of training flights, non-radio and microlight aircraft and similar, and to ground manoeuvring and parking but excluding flight procedures",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-mathbfoe-astast-ad-3-19-local-heliport-regul"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Detailed description of the conditions and flight procedures, including radar and/or ADs-B procedures, established on the basis of airspace organization established at the heliport. When established, detailed",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-21-flight-procedures"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "lescription of the low visibilityprocedures at the heliport, includ 1)） Touchdown and Lift-Off (TLOF) area(s) and associated equipment authorized for use under low visibility procedures; 2) defined meteorological conditions under which init",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-79"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Additional information about the heliport, such as an indication of bird concentrations at the heliport, together with an indication of significant daily movement between resting and feeding areas, to the extent practicable.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-22-additional-information"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The requirement is for charts related to a heliport to be included in the following order: 1) Aerodrome/Heliport Chart ——— ICAO; 2) Area Chart — ICAO (departure and transit routes); 3) Standard Departure Chart —— Instrument —— ICAO; 4) Area",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-oe-ad-3-23-charts-related-to-a-heliport"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note: For NOTAM examples see the Aeronautical Information Services Manual (ICAO Doc 8126) and the Proceduresfor Air Navigation Services — ICAO Abbreviations and Codes (PANS-ABC, ICAO Doc 8400).",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-instructions-for-the-completion-of-the-notam"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "The qualifier line (Item Q) and all identifiers (Items A) to G) inclusive) each followed by a closing parenthesis, as shown in the format, must be transmitted unless there is no entry to be made against a particular identifier.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-1-general"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Each NOTAM must be allocated a series identified by a letter and a four-digit number followed by a stroke and a two- digit number for the year (e.g. A0023/03). Each series must start on 1 January with number 0001.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-2-notam-numbering"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Item Q) is divided into eight fields, each separated by a stroke. An entry must be made in each field. Examples of how fields are to be filled are shown in the Aeronautical Information Services Manual (ICAO Doc 8126). The definition of the ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-3-qualifiers-item-q"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "a)If the subject of the information is located geographically within one FIR, the ICAO location indicator must bethat of the FIR concerned. When an aerodrome is situated within the overlying FIR of another State, the first field of Item Q) ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-1-fir"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "All NOTAM Code groups contain a total of five letters and the first letter is always the letter Q. The second and third letters identify the subject, and the fourth and fifth letters denote the status or condition of the subjectreported upo",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-2-notam-code"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "textit N = NOTAM selected for the immediate attention of flight crew members textbfB= NOTAM of operational significance selected for PIB entry textit O = NOTAM concerning flight operations textbfM= Miscellaneous NOTAM; not subject for a bri",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-4-purpose"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "textit A = Aerodrome textrmtextbfE= En-route textrmW= Nav Warning K= NOTAM is a checklist If the subject is qualified AE, the aerodrome location indicator must be reported in Item A). Note: Depending on the NOTAM subject and content, the qu",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-5-scope"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Insert the ICAO location indicator as contained in Doc 7910 of the aerodrome or FIR in which the facility, airspace, or condition being reported on is located. More than one FIR/UIR may be indicated when appropriate. If there is no availabl",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-4-item-a"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "For date-time group use a ten-figure group, giving year, month, day, hours and minutes in UTC. This entry is the date- time at which the NOTAMN comes into force. In the cases of NOTAMR and NOTAMC, the datetime group is the actual date and t",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-5-item-b"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "With the exception of NOTAMC, a date-time group (a ten-figure group giving year, month, day, hours and minutes in UTC) indicating duration of information must be used unless the information is of a permanent nature in which case theabbrevia",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-6-item-c"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "\"EST”’ must be cancelled or replaced before the date-time specified in Item C)",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-80"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "If the hazard, status of operation or condition of facilities being reported on will be active in accordance with a specific time and date schedule between the dates-times indicated in Items B) and C), insert such information under Item D).",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-7-item-d"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Use decoded NOTAM Code, complemented where necessary by ICAO abbreviations, indicators, identifiers, designators, call signs, frequencies, figures and plain language. When NOTAM is selected for international distribution,English text must b",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-8-item-e"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "These items are normally applicable to navigation warnings or airspace restrictions and are usually part of the PIB entry.Insert both lower and upper height limits of activities or restrictions, clearly indicating only one reference datum a",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-9-items-f-and-g"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note: Origin of data, assessment process and the procedures linked to the surface conditions reporting systemare prescribed in the Procedures for Air Navigation Services —— Aerodromes (PANS-Aerodromes, ICAODoc9981).",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-instructions-for-the-completion-of-the-snowt"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "a) When reporting on more than one runway, repeat Items B to H (aeroplane performance calculation section). b) The letters used to indicate items are only used for reference purpose and must not be included in the messages. The letters, M (",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-1-general-2"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Item A —— Aerodrome location indicator (four-letter location indicator). Item B — Date and time of assessment (eight-figure date/time group giving time of observation as month, day,hour and minute in UTC). Item C — Lower runway designator n",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-2-aeroplane-performance-calculation-section"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Note 1: Elements in the situational awareness section end with a full stop. Note 2: Elements in the situational awareness section for which no information exists, or where the conditionalcircumstances for publication are not fulfiled, are l",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-3-situational-awareness-section"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "SNOW BANKS\" (RWY nn or RWY nn[L] or nn[C] or nn[R] ADJ SNOW BANKS). Item P — Taxiway conditions. When taxiway conditions are reported as poor, insert the taxiway designator followed by a space “POOR\" (TWY [n or nn] POOR or ALL TWYS POOR). I",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-82"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "1. See also Appendix 5 regarding adressee indicators used in predetermined distribution systems. 2. \\*Enter ICAO nationality letter as given in ICAO Doc 7910, Part 2. 3. See paragraph 3.5 below. 4. Advice on the existence, extent and moveme",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-gacar-part-175-aeronautical-information-serv-83"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "1.1 The ASHTAM provides information on the status of activity of a volcano when a change in its activity is, or is expected to be, of operational significance. This information is provided using the volcano level of alert colour code given ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-1-general-3"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "2.1 Following the usual Aeronautical Fixed Telecommunication Network (AFTN) communications header, the abbreviated heading “TT AAi CCCC MMYYGGgg (BBB)\" is included to facilitate the automatic processing of ASHTAM messages in computer data b",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-2-abbreviated-heading"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "3.1 Item A — Flight information region affected, plain-language equivalent of the location indicator given in the abbreviated heading. 3.2Item B — Date and time (UTC) of first eruption. 3.3Item C — Name of volcano, and number of volcano as ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-3-content-of-ashtam"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Table A6-1. Terrain attributes",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-appendix-6-to-gacar-part-175-terrain-and-obs"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "1. The predetermined distribution system provides for incoming NOTAM (including SNOWTAM and ASHTAM) to be channeled through the Aeronautical Fixed Service (AFS) direct to designated addressees predetermined by the receiving State concerned ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-appendix-7-to-gacar-part-175-predetermined-d"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "1. Within the area covered by a 10-km radius from the Aerodrome Reference Point (ARP),terrain data must comply with the Area 2numerical requirements. 2. In the area between 10 km and the Terminal Control Area (TMA) boundary or 45-km radius ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-appendix-8-to-gacar-part-175-terrain-and-obs"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Symbo! No. Approximate contours 2 Aresas not suveyed for contow infommation or relief data incomplete 18 Bhff, cliff or escarpment. 4 Coniferous tees. 15 Contours. 1 Gravel. 8 Highest elevation on chart. 12 Lava flow Levee or esker. Moumtai",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-1-categoryindet"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Abandoned canal Canal. Charted isolated rock Coral reefs and ledges. Danger line (2 m or one fathom line) Dry lake bed. Falle. Glaciers and ice caps Lakes (non-perenmial) Lakes (peremmial). Large river (perenmial). Rapids. Reservoir. Rice f",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-hydr0graphy-19-40"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Basic radio mavigation aid symbol. 99 Collocated VOR and DME radio navigation aids - VOR/DME 103 Collocated VOR and TACAN radio mavigation aids -- VORTAC 107 Compass rose.. 110 Distance measuring equipment —- DME. 102 DME distance.... 104 I",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-radi0-navigati0n-aids-99-110"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Building or large stuchue. Clearway.. Escarpment. Pole, tower, spire, antena, etc. Railroad Stopway. Terrain penetating obstacle plane. Transmission line or overhead cable. Tree or shrub.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-symbols-for-aerodrome-obstacle-charts-type-a"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Collocated DME fix and marker beacon.. 180 Collocated radio navigation aid and marker beacon. 178 Minimum sector alitude. Missed approach track Radio marker beacon. Radio navigation aid. Rumway.... Teminal amival alitude. 172",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-symibols-for-use-on-paper-and-electronig-cha"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Abandoued canal 30 Advisory airspace - ADA. 115 Advisory route ——ADR. 118 Aerodrome data in abbreviated fonm. 96 Aerodrome/Heliport Charts. 145-161 Aerodrome Obstacle Charts. 162-170 Aerodrome reference point. 151 Aerodromes.. 84-98 Abandon",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-a"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Blulff. Boumdaries Interational. 63 Outer.... 64 Building (on Aerodrome Obstacle Charts) 164 Building.. 50",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-b"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Cable, overhead. 166 Canal. 29 Canal, abandoued. 30 Change-over point— COP. 122 Charted isolated rock. 44 Chart, highest elevation on. 12 Chart symbols, electronic 108, 143 171-180 Church. 80 City or large town. 47 Cleaway —CWY. 170 Cliff. ",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-symbo-no"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Dam. 67 Danger area. 128 Danger line. 43 Distance measuring equipment —-DME. 102, 110, 176, 177 DME distance. 104 DME fix. 179 Collocated DME fix and marker beacon. 180 Dry lake bed. 39 Dual highway.. 57 Dumes, sand. 6 Symbo! No.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-d"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Electonic chart symbols 108, 143, 171-180 Elevation (of doubtfil acewracy), spot. 14 Elevation, spot. 13 Escarpment. 4 Escarpment (on Aerodrome Obstacle Charts) 168 Esker. 9",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-e"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Falls. Fence. Femy. Final approach fir — FAF. Flight infonmation region —- FIR. Flight levels. Forest ranger station. Fort.",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-f"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Gas field. 70 Glaciers. 42 Gravel. 8",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-g"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Hard suface nmway... 145 Helicopter alighting area on an aerodrome. 150 Heliport. 94 Highest elevation on chart. 12 Highway, dual. 57 Highways and roads. 57-62 Holding pattem. 173 Hot spot.. 161 Hydrogaphy. 19-46 Intemmediate holding positi",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-h"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Marine light. 142 Mine.. 75 Minimum sector altinde -- MSA 171 Miscellaneoue symbols Air Traffic Senvices. 137-141 Culture. 63-83 Missed approach track. 174 Mosque... 81 Moumtain pa... 11 NDB. 121 Non-directional radio beacon -- NDB. 100 Nuc",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-m"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Pagoda Palms. Parking areas. Pierced steel plank or steel mesh nmway Pipeline.. Point light.. Pole... Power station, nuclear. Primary road. Prohibited area.. Prominent transmission line",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-p"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "Race track. 77 Radio marker beacon. 109, 177 Radio navigation sid. 176 Basic... 99 Collocated radio navigation aid and marker beacon. 178 Collocated VOR and DME. 103 Collocated VoR and TACAN. 107 Radio navigation sids. 99-110. 176, 178 Rail",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-r"
+  },
+  {
+    "d": "Aeronautical Information Services & Aeronautical Charts",
+    "b": "Part 175",
+    "x": "TACAN. 121 TACAN (UHF tactical air navigation aid) 106, 11 Tank famms. 71 Taxiway.. 149 Telegaph or telephone line (when a landmark) 66 Temple. 83 Terminal arival altitude -- TAA. 172 Teain penetating obstacle plane. 167 Tidal flats. 21 Top",
+    "kind": "regulations",
+    "id": "part-175",
+    "anchor": "sec-t"
+  }
+]

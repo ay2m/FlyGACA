@@ -236,12 +236,11 @@ function Runner({ data, pack }: { data: QuizData; pack?: Pack }) {
         <p className={styles.qProgress}>
           {t('study.answered', { n: answered, total: questions.length })}
         </p>
-        <div className={styles.summaryGrid} role="list">
+        <div className={styles.summaryGrid}>
           {questions.map((_, idx) => (
             <button
               key={idx}
               type="button"
-              role="listitem"
               className={`${styles.summaryCell} ${answers[idx] != null ? styles.summaryDone : ''} ${
                 flags[idx] ? styles.summaryFlag : ''
               }`}

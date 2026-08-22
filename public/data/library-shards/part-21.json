@@ -1,0 +1,890 @@
+[
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) This part prescribes (1) Procedural requirements for type certification of imported products by way of type certificate acceptance and type certificate validation; design changes (including repair designs) to type certificated products;",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-1"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "For the purpose of this part , a GACA Recognized Foreign National Aviation Authority (NAA) is any of the following: (a) FAA (b) EASA (c) Any other national aviation authority of an ICAO Contracting State that is accepted by GACA under condi",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gaca-recognized-foreign-national-aviation-au"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) No person must make or cause to be made (1) Any fraudulent or intentionally false statement on any application for a certificate or approval under this part; (2) Any fraudulent or intentionally false entry in any record or report that i",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-3"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "made, or used to show compliance with any requirement for the issuance or the exercise of the privileges of any certificate or approval issued under this part; (3) Any reproduction for a fraudulent purpose of any certificate or approval iss",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) System for Collection, Investigation, and Analysis of Data. The holder of a supplemental type certificate, repair design approval, SAPMA or SATSO authorization must have a system for collecting, investigating, and analyzing reports of a",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-5"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "adjacent aircraft structure, equipment, or components. (3) The accumulation or circulation of toxic or noxious gases in the crew compartment or passenger cabin. (4) A malfunction, failure, or defect of a propeller control system. (5) A prop",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-2"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(2) Failures, malfunctions, or defects in products, parts, or articles manufactured by a foreign manufacturer and exported to the Kingdom of Saudi Arabia under GACAR § 21.263 (f) Each report required by this section (1) Must be made to the ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-3"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) With each airplane or rotorcraft not type certificated with an Airplane or Rotorcraft Flight Manual and having no flight time before March 1, 1979, the holder of a type certificate (including amended or supplemental type certificates) o",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-7"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) The holder of type certificate or a supplemental type certificate for a rotorcraft for which a rotorcraft maintenance manual containing an “Airworthiness Limitations” section has been issued under GACAR § 27.1529 OorGACAR § 29.1529 and ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-9"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "include a list of commercial parts in the instructions for continued airworthiness. Thereafter, the holder of a design approval must make those instructions available to any other person required by the GACAR to comply with any of the terms",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-5"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(d) In any other manner approved by the President",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-6"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) If a person knows or should know that a replacement or modification article is reasonably likely to be installed on a type certificated product, the person may not produce that article unless it is (1) Produced under a SAPMA in accordan",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-15"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) When an AD is issued under GACAR Part 39, the holder of the type certificate or supplemental type certificate for the product must— (1) If the President finds that design changes are necessary to correct the unsafe condition of the prod",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-pmb-21-17-required-design-changes"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "This subpart prescribes procedural requirements for the type certification of aircraft, aircraft engines, and propellers by way of type certificate acceptance or type certificate validation. This subpart applies only for an aircraft type ce",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-pmb-21-31-applicability"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Any person is eligible to apply for a certificate by way of type certificate acceptance if a type certificate or equivalent document has been issued by a GACA Recognized Foreign NAA. This will apply to any aircraft certificated in the p",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-33"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) By way of type certificate acceptance, GACA certificates all eligible aircraft on the basis of their respective GACA Recognized Foreign NAA type certificates, provided that the applicant furnishes to GACA the following:",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-35"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(1) One full set of the required operating and maintenance data for the aircraft and its associated engines and propellers. (2) An undertaking from the holder of foreign type certificate or equivalent document to continue to supply to GACA ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-8"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) By way of type certificate validation, GACA type certificates all eligible aircraft provided that(1) The country in which the product was manufactured certifies that the product has been examined, tested, and found to meet (i) The appli",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-37"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "manufactured and any other requirements the President may prescribe to provide a level of safety equivalent to that provided by the applicable airworthiness requirements as designated in GACAR § 21.41 (2) The applicant has submitted the tec",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-9"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "If the President finds that the airworthiness regulations do not contain adequate or appropriate safety standards for an aircraft, aircraft engine, or propeller because of a novel or unusual design feature of the aircraft, aircraft engine, ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-39"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Except as provided in GACAR §§ 23.2, 25.2, 27.2, and 29.2, and in GACAR Parts 26, 34, and 36, an applicant for type certificate validation must show that the aircraft, aircraft engine, or propeller meets一 (1) Subject to paragraph (c) of",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-pmb-21-41-designation-of-applicable-regulati"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "of application for the original type certificate issued by the state of design unless (i) Otherwise specified by the President. (ii) Compliance with later effective amendments is elected or required under this section. (2) Any special condi",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-10"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(2) The applicable noise standards of GACAR Part 36. (g) For the purposes of this section, \"special purpose operations\" includes(1) Agricultural (spraying, dusting, and seeding, and livestock and predatory animal control); (2) Forest and wi",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-11"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "The applicant for a type certificate validation or a supplemental type certificate validation must (a) Show compliance with all applicable requirements and, upon request by GACA, provide to the GACA the means by which such compliance has be",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-43-compliance-with-applicable-requirement"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "The type design consists of (a) The drawings and specifications, and a listing of those drawings and specifications, necessary to define the configuration and the design features of the product shown to comply with the requirements of that ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-45-type-design"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(c) The airworthiness limitations section of the instructions for continued airworthiness, as required by GACAR Parts 23, 25, 26, 27, 29, 31, 33, and 35, or as otherwise required by the President; and as specified in the applicable airworth",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-12"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "A type certificate is effective until surrendered, suspended, revoked, or a termination date is otherwise established by the President.",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-bf-21-49-duration"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "This subpart prescribes procedural requirements for the approval of changes to type certificates or supplemental type certificates for aircraft type certificate accepted or type certificate validated by the GACA in accordance with Subpart B",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-61-applicability"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(ii) Major changes in the type design may be accepted by GACA if the approved design meets all GACA airworthiness requirements including any other additional airworthiness requirements as applicable. GACA may accept such design change under",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-13"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(ii) Major changes in the type design must be approved by GACA under a method acceptable to the President. GACA approves major changes in type design if the design meets all the applicable requirements of GACAR § 21.65",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-14"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "This regulation applies to design changes for aircraft certificated by way of type certificate validation underGACAR §21.37 . The design change criteria stated in this section also apply to repair designs. (a) Design Changes. GACA must vali",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-64"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(1) Minor changes in the type design may be approved under a method acceptable to the President. (2) Major changes in the type design must be approved by GACA under a method acceptable to the President. GACA approves major changes in type d",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-15"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) General. GACA validates design changes when— (1) It is shown that the design change has been examined, tested, and found to meet The applicable airworthiness requirements as designated in GACAR § 21.67 ,or theapplicable airworthiness re",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-65"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(vi) Showing that the new part(s) conform to the drawings in the design (3) It is shown that no feature or characteristic of the design makes the aircraft, engine or propeller unsafe for its intended use (4) Applicant must allow GACA to car",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-16"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Changes to the type design are classified as minor or major. A \"minor change\" is one that has no appreciable effect on the weight, balance, structural strength, reliability, operational characteristics, or other characteristics affecting th",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-bf3-21-66-classification-of-changes-to-in-th"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Except as provided in paragraph (h) of this section, an applicant for an approval of design change in accordance with GACAR § 21.65 must show that the change and areas affected by the change comply with the airworthiness requirements ap",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-67"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(b) Except as provided in paragraph (g) of this section, if paragraphs (b)(1), (2), or (3) of this section apply, an applicant may show that the change and areas affected by the change comply with an earlier amendment of a regulation requir",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-17"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "design feature, the applicant must also comply with special conditions and amendments to those special conditions to provide a level of safety equal to that established by the regulations in effect on the date of the application for the cha",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-18"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "A design change approval is effective until surrendered, suspended, revoked, or a termination date is otherwise established by the President.",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-bfnabla21-69-duration"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) This subpart prescribes procedural requirements for the issue of STCs other than STCs issued under Subpart C. (b) This subpart only applies to aircraft type certificated under Subpart B.",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-pmb-21-81-applicability"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "The GACA will not accept an application for a STC under this subpart if the President finds that the proposed change in design, power, thrust, or mass is so extensive that a substantially complete investigation of compliance with the applic",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-pmb-21-83-changes-requiring-a-new-type-certi"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Any person, other than the type certificate holder, who alters a product by introducing a major change in type design not great enough to require a new type certificate under GACAR § 21.83 should apply to the President for a STC. The applic",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-85-eligibility-for-a-supplemental-"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Each applicant for a STC must show that the altered product meets applicable requirements specified in GACAR § 21.67 and, in the case of an acoustical change, show compliance with the applicable noise requirements of GACAR Part 36 and, ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-87-applicable-requirements"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Each applicant must allow the President to make any inspection and any flight and ground test necessary to determine compliance with the applicable requirements of the GACAR. However, unless otherwise authorized by the President (1) No ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-89-inspection-and-tests"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "time that compliance with paragraphs (b)(2) through (b)(4) of this section is shown for that aircraft, aircraft engine, propeller, or part thereof and the time that it is presented to the President for test. (b) Each applicant must make all",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-19"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Each applicant for a supplemental type certificate must make the tests listed in GACAR § 21.89 Before making the tests the applicant must show— (1) Compliance with the applicable structural requirements of the applicable airworthiness c",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-pmb-21-91-flight-tests"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(2) Items of noncompliance with requirements are found that may make additional test data meaningless or that would make further testing unduly hazardous.",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-20"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Each applicant for a STC that requires certification flight testing to show compliance with the applicable airworthiness requirements must provide a person holding an appropriate pilot certificate to make the flight tests required by this p",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-93"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Each applicant for a STC that requires certification flight testing to show compliance with the applicable airworthiness requirements must submit a report to the President showing the computations and tests required in connection with t",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-flight-test-instrument-calibration-and-corre"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Each applicant must submit a statement of conformity to the President for each aircraft or part thereof presented to the President for tests. This statement of conformity must include a statement that the applicant has complied with GACAR §",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-97"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "engine configuration upon which the change is made unless the applicant identifies in the necessary descriptive data for inclusion in the type design the other configurations of the same engine type for which approval is requested and shows",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-21"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) An applicant is eligible for a STC if he meets the requirements of GACAR §§ 21.85, 21.87 and 21.99 and the President is satisfied that-- (1) Upon examination of the type design and after completing all tests and inspections, that the ty",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-101"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Each holder of a GACA STC must have a system for retaining the type-design data and all data used to show that their design complies with the airworthiness and environmental requirements specified in the basis of certification. (b) Each",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-107-design-approval-information-re"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(c) The data retained by the holder must be made available to the President upon request.",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-22"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "An STC is effective until surrendered, suspended, revoked, or a termination date is otherwise established by the President.",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-109-duration"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Changes to the type design of the STC are classified as minor or major. A \"minor change\" is one that has no appreciable effect on the weight, balance, structural strength, reliability, operational characteristics, or other characteristi",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-111"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "This subpart prescribes procedural requirements for the issue of RDA for repairs designs other than those approved under Subpart C.",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-121"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Any person, other than the type certificate holder, who alters a product by introducing a design for a repair, may apply to the President for an RDA. The application must be made in a form and manner prescribed by the President. § 21.125 Ap",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-123"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) An applicant is eligible for an RDA if he meets the requirements of GACAR §§ 21.123, 21.131 and 21.135 and the President is satisfied that (1) Upon examination of the type design and after completing all tests and inspections, that the ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-23"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "The holder of an RDA may (a) Obtain approval for installation on applicable certificated aircraft. (b) Obtain a production certificate in accordance with Subpart G of this part. § 21.137 Responsibility of Repair Design Approval Holders to P",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-135-privileges"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Each holder of an RDA must have a system for retaining the type-design data and all data used to show that their design complies with the airworthiness and environmental requirements specified in the basis of certification. (b) Each hol",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-139-design-approval-information-re"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "An RDA is effective until surrendered, suspended, revoked, or a termination date is otherwise established by the President.",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-141-duration"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "This subpart prescribes procedural requirements for the issue of airworthiness certificates. § 21.153 Eligibility. Any registered owner or the agent of the owner of an aircraft registered in the Kingdom of Saudi Arabia may apply for an airw",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-151"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Standard airworthiness certificates are airworthiness certificates issued for aircraft type certificated in the normal, utility, acrobatic, commuter, or transport category; for manned free balloons; and for aircraft designated by the GA",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-155-airworthiness-certificates-cla"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "An airworthiness certificate may be amended or modified only by application according to procedures prescribed by the President. § 21.159 Transferability. An airworthiness certificate is transferred with the aircraft. § 21.161 Duration. (a)",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-157"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(1) Provided the maintenance, preventive maintenance, and alterations are performed in accordance with GACAR Parts 43 and 91 and the aircraft are registered in the Kingdom of Saudi Arabia, and issued standard airworthiness certificates or s",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-24"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Except as provided in paragraph (b) of this section, each applicant for an airworthiness certificate under this subpart must show that the aircraft is identified as prescribed in GACAR § 45.25 (b) Paragraph (a) of this section does not ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-163-aircraft-identification"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "applicable ADs. (2) The aircraft has been inspected in accordance with the performance rules for 10o-hour inspections set forth in GACAR § 43.15 or an equivalent performance standard acceptable to the GACA, and is found airworthy by (i) The",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-25"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Imported aircraft. An applicant for a special airworthiness certificate primary-category for an imported aircraft is eligible for a special airworthiness certificate if (1) The aircraft is type certificated in accordance with Subpart B ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-167"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "purposes of this paragraph, a current standard airworthiness certificate means that the aircraft conforms to its approved normal, utility, or acrobatic type design; complies with all applicable ADs, has been inspected and found airworthy wi",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-26"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(b) Other aircraft. An applicant for a restricted category airworthiness certificate for an aircraft type certificated in the restricted category that was either a surplus aircraft of the military or previously type certificated in another ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-27"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Purpose. The GACA issues a special airworthiness certificate in the light-sport category to operate a light-sport aircraft. (b) Eligibility. To be eligible for a special airworthiness certificate in the light-sport category: (1) An appl",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-17mathbf0-issue-of-special-airwort"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(3) State that the aircraft conforms to the manufacturer's design data, using the manufacturer's quality assurance system that meets the identified consensus standard; (4) State that the manufacturer will make available to any interested pe",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-28"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(2) The aircraft is eligible for an airworthiness certificate, flight authorization, or other similar certification in its country of manufacture.",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-29"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) An applicant for an airworthiness certificate in the restricted category and in one or more other categories is eligible for the certificate if—- (1) The applicant shows compliance with the requirements for each category when the aircra",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-171-issue-of-multiple-airworthines"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Experimental certificates are issued for the following purposes: (a) Research and development. Testing new aircraft design concepts equipment, installations, operating techniques, or uses for aircraft. (b) Showing compliance with regulation",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-173"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "compliance with the GACAR, including flights to show compliance for issuance of type and STCs, flights to substantiate major design changes, and flights to show compliance with the function and reliability requirements of the regulations. (",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-30"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "An applicant for an experimental certificate must submit the following information:",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-175"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) A statement, in a form and manner prescribed by the GACA, setting forth the purpose for which the aircraft is to be used. (b) Enough data (such as photographs) to identify the aircraft. (c) Upon inspection of the aircraft, any pertinent",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-31"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "outside of the United States, evidence that the aircraft kit was manufactured in a country with which the KSA or United States has a Bilateral Airworthiness Agreement concerning airplanes or a Bilateral Aviation Safety Agreement with associ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-32"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) A special flight permit may be issued for an aircraft that may not currently meet applicable airworthiness requirements but is capable of safe flight, for the following purposes: (1) Flying the aircraft to a base where repairs, alterati",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-179-special-flight-permits"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(b) A special flight permit may also be issued to authorize the operation of an aircraft at a mass in excess of its maximum certificated take-off mass for flight beyond the normal range over water or over land areas where adequate landing f",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-33"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Except as provided in GACAR § 21.179(c) , an applicant for a special flight permit must submit a statement in a form and manner prescribed by the GACA indicating (1) The purpose of the flight; (2) The proposed itinerary; (3) The crew re",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-181-issue-of-special-flight-permit"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "requirements; (5) Any restriction the applicant considers necessary for safe operation of the aircraft; and (6) Any other information considered necessary by the GACA for the purpose of prescribing operating limitations. (b) The GACA may ma",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-34"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) The applicant for a SAPMA must apply in a form and manner prescribed by the GACA, and include the following: (1) The identity of the product on which the part is to be installed. (2) The name and address of the manufacturing facilities ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-203"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(1) Compliance with the applicable airworthiness requirements. (2) That materials conform to the specifications in the design. (3) That the part conforms to its approved design. (4) That the manufacturing processes, construction, and assemb",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-35"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Each applicant for or holder of a SAPMA must provide the President with a document describing how its organization will ensure compliance with the provisions of this subpart. At a minimum, the document must describe assigned responsibilitie",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-205"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Each applicant must establish and describe in writing a quality system that ensures that each part conforms to its approved design and is in a condition for safe operation. This quality system must include一 (a) Design data control. Procedur",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-207"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "conforms to its approved design. (f) Inspection, measuring, and test equipment control. Procedures to ensure calibration and control of all inspection, measuring, and test equipment used in determining conformity of each part to its approve",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-36"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(1) Address any in-service problem involving design changes. (2) Determine if any changes to the instructions for continued airworthiness are necessary. (n) Quality escapes. Procedures for identifying, analyzing, and initiating appropriate ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-37"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Each applicant for or holder of a SAPMA must provide a manual describing its quality system to the GACA for approval. The manual must be in the English language and retrievable in a form acceptable to the President. mathbf§ 21.211 Location ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-209"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Each applicant for or holder of a SAPMA must allow the GACA to witness any tests, including any inspections or tests at a supplier facility, and inspect its quality system, facilities, technical data, and any manufactured parts necessar",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-mathbfnabla2mathbf1-2mathbf13-inspect"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "The GACA issues a SAPMA after finding that the applicant complies with the requirements of this subpart and the design complies with the requirements of the GACAR applicable to the product on which the part is to be installed. mathbf§ 21.21",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-mathbfnabla21-215-issuance"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Each holder of a SAPMA must (a) Amend the document required by GACAR § 21.205 as necessary to reflect changes in the organization and provide these amendments to the GACA. (b) Maintain the quality system in compliance with the data and proc",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-221"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(h) Make available to the President information regarding all delegation of authority to suppliers. § 21.223 Design changes. (a) Classification of design changes. (1) A “minor change” to the design of a part produced under a SAPMA is one th",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-39"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "After the issuance of a SAPMA (a) Each change to the quality system is subject to review by the GACA. (b) The holder of the SAPMA must immediately notify the GACA, in writing, of any change that may affect the inspection, conformity, or air",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-225"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "This subpart prescribes (a) Procedural requirements for issuing export airworthiness approvals; and (b) Rules governing the holders of those approvals. § 21.243 Export Airworthiness Approvals. (a) An export airworthiness approval for an air",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-241"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(b) An aircraft need not meet a requirement specified in paragraph (a) of this section, if (1) The importing country or jurisdiction accepts, in a form and manner acceptable to the GACA, a deviation from that requirement; and (2) The export",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-40"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "se agreed to by the importing country or jurisdiction, eac",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-251"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) Forward to the importing country or jurisdiction all documents specified by that country or jurisdiction. (b) Preserve and package products and articles as necessary to protect them against corrosion and damage during transit or storage",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-41"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) This subpart prescribes (1) Procedural requirements for the issue of SATsO authorizations; and (2) Rules governing the holders of a SATSO authorization. (b) For the purpose of this subpart (1) A TsO is a minimum performance standard for",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-271-applicability"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "(a) An applicant for a SATSO authorization must apply to the President in the form and manner prescribed by the GACA. The applicant must include the following documents in the application: (1) A statement of conformance certifying that the ",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-273"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "applicant may set forth in its application the basic model number of the article and the part number of the components followed by open brackets to denote that suffix change letters or numbers (or combinations of them) will be added from ti",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-42"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Each applicant for or holder of a SATSO authorization must provide the GACA with a document describing how the applicant's organization will ensure compliance with the provisions of this subpart. At a minimum, the document must describe ass",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-275"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Each applicant for or holder of a SATSO authorization must establish a quality system that meets the requirements of GACAR § 21.207",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-277-quality-system"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Each applicant for or holder of a SATSO authorization must provide a manual describing its quality system to the GACA for approval. The manual must be in the English language and retrievable in a form acceptable to the President. mathbf§21.",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-279"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Each applicant for or holder of a SATSO authorization must allow the GACA to inspect its quality system, facilities, technical data, and any manufactured articles and witness any tests, including any inspections or tests at a supplier facil",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-43"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "Each holder of a SATSO authorization must (a) Amend the document required by GACAR § 21.275 as necessary to reflect changes in the organization and provide these amendments to the GACA. (b) Maintain a quality system in compliance with the d",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-21-291"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "articles) that leave the manufacturer's facility as GACA-approved with the manufacturer's part number and name, trademark, symbol, or other GAC approved manufacturer's identification. (f) Have access to design data necessary to determine co",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-44"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "the manufacturer who provided the statement of conformance for the article) is eligible for approval under this part unless the person seeking the approval is a manufacturer and applies under GACAR § 21.273(a) for a separate SATSO authoriza",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-gacar-part-21-certification-procedures-for-p-45"
+  },
+  {
+    "d": "Certification Procedures for Products and Articles",
+    "b": "Part 21",
+    "x": "After the issuance of a SATsO authorization— (a) Each change to the quality system is subject to review by the GACA (b) The holder of the SATSO authorization must immediately notify the GACA in writing of any change that may affect the insp",
+    "kind": "regulations",
+    "id": "part-21",
+    "anchor": "sec-mathbf-21-297-changes-in-quality-system"
+  }
+]

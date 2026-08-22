@@ -1,0 +1,466 @@
+[
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) Except as provided in paragraph (c) of this section, this part applies to the registration, airman certification, and operation of civil small unmanned aircraft systems within the Kingdom of Saudi Arabia. (b) This part also, applies to ",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-1"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "The following definitions apply to this part. If there is a conflict between the definitions of this part and definitions specified in GACAR Part 1, the definitions in this part control for purposes of this part: Control station means an in",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-3"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) No person must make or cause to be made (1) Any fraudulent or intentionally false statement on any application for a certificate or approval under this part; (2) Any fraudulent or intentionally false entry in any record or report that i",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-5"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) A remote pilot in command, owner, or person manipulating the flight controls of a small unmanned aircraft system must, upon request, make available to the President: (1) The remote pilot certificate with a small UAS rating; and (2) Any ",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-7"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "No later than 10 calendar days after an operation that meets the criteria of either paragraph (a) or (b) of this section, a remote pilot in command must report to the AIB, and GACA, in a manner acceptable to the President, any operation of ",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-bf-107-9-accident-reporting"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "This subpart applies to the operation of all civil small unmanned aircraft systems subject to this part.",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-11"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) Except as provided in paragraph (c) of this section, no person may manipulate the flight controls of a small unmanned aircraft system unless: (1) That person has a remote pilot certificate with a small UAS rating issued pursuant to subp",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-13"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) No person may operate a civil small unmanned aircraft system unless it is in a condition for safe operation. Prior to each flight, the remote pilot in command must check the small unmanned aircraft system to determine whether it is in a",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-19"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "No person may manipulate the flight controls of a small unmanned aircraft system or act as a remote pilot in command, visual observer, or direct participant in the operation of the small unmanned aircraft if he or she knows or has reason to",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-21"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) A remote pilot in command must be designated before or during the flight of the small unmanned aircraft. (b) The remote pilot in command is directly responsible for and is the final authority as to the operation of the small unmanned ai",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-23"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) In an in-flight emergency requiring immediate action, the remote pilot in command may deviate from any rule of this part to the extent necessary to meet that emergency. (b) Each remote pilot in command who deviates from a rule under par",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-25"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "No person may: (a) Operate a small unmanned aircraft system in a careless or reckless manner so as to endanger the life or property of another; or (b) Allow an object to be dropped from a small unmanned aircraft in a manner that creates an ",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-27"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "No person may operate a small unmanned aircraft system (a) From a moving aircraft; or (b) From a moving land or water-borne vehicle unless the small unmanned aircraft is flown over a sparsely populated area and is not transporting another p",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-29"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "A person manipulating the flight controls of a small unmanned aircraft system or acting as a remote pilot in command or visual observer must comply with the provisions of GACAR § 91.21",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-31-psychoactive-substances"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "Unless otherwise authorized by the President, no person may operate a UAS unless the areas of operation have been identified and within the authorized areas of operations determined by the appropriate GACA Certificated Air Traffic Services ",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-33"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) With vision that is unaided by any device other than corrective lenses, the remote pilot in command, the visual observer (if one is used), and the person manipulating the flight control of the small unmanned aircraft system must be able",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-37"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "If a visual observer is used during the aircraft operation, all of the following requirements must be met: (a) The remote pilot in command, the person manipulating the flight controls of the small unmanned aircraft system, and the visual ob",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-39"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "A person may not operate or act as a remote pilot in command or visual observer in the operation of more than one unmanned aircraft at the same time. s 107.43 Carriage of Dangerous Goods. A small unmanned aircraft may not carry hazardous ma",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-41"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) Each small unmanned aircraft must yield the right of way to all aircraft, airborne vehicles, and launch and reentry vehicles. Yielding the right of way means that the small unmanned aircraft must give way to the aircraft or vehicle and ",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-45"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "No person may operate a small unmanned aircraft in Class B, Class C, or Class D airspace or within the lateral boundaries of the surface area of Class E airspace designated for an airport unless that person has prior authorization from Air ",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-49"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "No person may operate a small unmanned aircraft in a manner that interferes with operations and traffic patterns at any airport, heliport, or seaplane base.",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-51"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "No person may operate a small unmanned aircraft in prohibited or restricted areas unless that person has permission from the using or controlling agency, as appropriate.",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-53"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "A person acting as a remote pilot in command must comply with the provisions of GACAR §91.141 through §91.149 andGACAR §99.9 § 107.57 Preflight familiarization, inspection, and actions for aircraft operation. Prior to flight, the remote pil",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-55"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "A remote pilot in command and the person manipulating the flight controls of the small unmanned aircraft system must comply with all of the following operating limitations when operating a small unmanned aircraft system: (a) The ground spee",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-59-operating-limitations-for-small-unman"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "This subpart prescribes the requirements for issuing a remote pilot certificate with a small UAS rating.",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-61"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) A conviction for the violation of any law relating to the growing, processing, manufacture, sale, disposition, possession, transportation, or importation of psychoactive substances is grounds for: (1) Denial of an application for any li",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf-107-63-offenses-involving-psychoactiv"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "Subject to the provisions of §107.65 , in order to be eligible for a remote pilot certificate with a small UAS rating under this subpart, a person must: (a) Be at least 18 years of age; (b) Be cleared through GACA Aviation Security Division",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf-107-65-eligibility"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "An applicant for a remote pilot certificate with a sUAS rating under this subpart must make the application in a form and manner acceptable to the President. (a) The application must include (1) Evidence showing that the applicant passed an",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-issuance-of-a-remote-pilot-certificate-with-"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "An applicant for a remote pilot certificate with a small UAS rating under this subpart must make the application in a form and manner acceptable to the President. (a) A temporary remote pilot certificate with a small UAS rating is issued fo",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf-107-69-temporary-certificate"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "A person may not operate a small unmanned aircraft system unless that person has completed one of the following, within the previous 24 calendar months: (a) Passed an initial aeronautical knowledge test covering the areas of knowledge speci",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-71"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "An applicant for a knowledge test who fails that test may not reapply for the test for 14 calendar days after failing the test.",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf3mid07-77-retesting-after-failure"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "GACAR PART 107 - NON-RECREATIONAL CIVIL SMALL UNMANNED AIRCRAFT SYSTEMS (a) An initial aeronautical knowledge test covers the following areas of knowledge: (1) Applicable regulations relating to small unmanned aircraft system rating privile",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf-107-79-initial-and-recurrent-knowledg"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) An initial training course covers the following areas of knowledge: (1) Applicable regulations relating to small unmanned aircraft system rating privileges, limitations, and flight operation; (2) Effects of weather on small unmanned air",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf-107-81-initial-and-recurrent-training"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) Change of name. An application to change the name on a certificate issued under this subpart must be accompanied by the applicant's: (1) Remote pilot certificate with small UAS rating; and (2) A copy of the marriage license, court order",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf-107-83-change-of-name-or-address"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) The holder of a certificate issued under this subpart may voluntarily surrender it for cancellation. (b) Any request made under paragraph (a) of this section must include the following signed statement or its equivalent: \\*“I voluntaril",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-85"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) The President may issue a certificate of waiver authorizing a deviation from any regulation specified in §107.89 if the President finds that a proposed small UAS operation can safely be conducted under the terms of that certificate of w",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf-107-87-waiver-policy-and-requirements"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "A certificate of waiver issued pursuant to §107.87 may authorize a deviation from the following regulations of this part: (a) § 107.29 Operation from a moving vehicle or aircraft. However, no waiver of this provision will be issued to allow",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf-107-89-list-of-regulations-subject-to"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) General. The holder of a training center certificate issued under this part may not exercise the privileges of that certificate after it expires. (b) A training center certificate issued under this part is valid (1) Until the date as en",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-93"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) An application for a training center certificate and operations specifications must— (1) Be made on a form and in a manner prescribed by the President and (2) Be made at least 60 working days before the beginning of any proposed trainin",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-bfxi107-95-application-for-issuance-amendmen"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "An applicant for a training center certificate must show on a continuing basis, that (a) For each listed course, the training center has a sufficient number of instructors who are qualified in accordance with instructor's qualification stip",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-97"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) An applicant for, or holder of, a training center certificate must establish and maintain a principal business office physically located at the address shown on its training center certificate. (b) An applicant for, or holder of, a trai",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-bf8107-99-facilities"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) The holder of a training center certificate may conduct training in accordance with an approved training program at a satellite training center if (1) The facilities, equipment, personnel, and course content of the satellite training ce",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-101"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) Each holder of a training center certificate must prominently display that certificate in a place accessible to the public in the principal business office of the training center. (b) A training center certificate and operations specifi",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf-107-103-display-of-certificate"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "Each certificate holder must allow the President to inspect training center facilities, equipment, and records in order to determine compliance with the GACAR, and the training center's certificate and operations specifications.",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf-107-105-inspections"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) A certificate holder may not conduct, and may not advertise to conduct, any training, testing, and checking not approved by the President if that training is designed to satisfy any requirement of the GACAR. (b) A certificate holder who",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf-l07-107-advertising-limitations"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) The training center must provide a training and procedures manual for the use and guidance of personnel concerned. This manual may be issued in separate parts and must contain at least the following information: (1) A general descriptio",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-109-training-and-procedures-manual"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) Each training center must establish a quality assurance system acceptable to the President. Management personnel responsible for the implementation and maintenance of the quality assurance system must be identified by the training cente",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-111"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) Each applicant for, or holder of, a training center certificate must apply to the President for training program approval. (b) Application for training program approval must be made in a form and in a manner acceptable to the President.",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-113-approval-of-training-programs"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "Each training program curriculum submitted to the President for approval must meet the applicable requirements of covering: 1. The areas of knowledge specified in GACAR 107.79§ (a), and 2. practical test specified in GACAR §107.79 (c), and ",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf-107-115-training-program-curriculum-r"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) A certificate holder may not employ a person as an instructor to conduct sUAS training course that is subject to approval by the President unless that person—- (1) Is at least 18 years of age; (2) Be cleared through the GACA Aviation Se",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf-l07-117-training-center-instructor-el"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) An applicant for, or holder of, a training center certificate must ensure that each Small Unmanned Aircraft System used for training meets the following requirements: (1) Is In compliance with requirements of GACAR § 48 (2) IS fully ope",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-119-small-unmanned-aircraft-systems-requ"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "Whenever practical training is conducted, the instructor and students must adhere to the related operational rules of “SUBPART B - OPERATING RULES\" of this part.",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-mathbf-107-121-practical-training-operating-"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) A certificate holder must maintain a record for each trainee that contains (1) The name of the trainee; (2) The course title, duration, start date, end date and test results. (3) The name of the course and the make and model of the sUAS",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-123"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(a) No certificate holder may use an electronic recordkeeping system for any record required by this part unless the electronic recordkeeping system complies with paragraphs (b) through (f) of this section. (b) Storage and Retrieval: A comp",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-107-125"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(The minimum acceptable duration for the theory part is 16 Hours) Applicable Regulations. · GACAR Parts 107, 3, and 13. Airspace Classification, Operating Requirements, and Flight Restrictions. · Introduction · Controlled Airspace · Uncontr",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-aeronautical-knowledge-topics"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "Crew Resource Management. Radio Communication Procedures. · Introduction · Understanding Proper Radio Procedures · Traffic Advisory Practices at Airports without Operating Control Towers Determining the Performance of Small Unmanned Aircraf",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-gacar-part-107-non-recreational-civil-small-"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "·Introduction ·Types of Airports · Sources for Airport Data · Latitude and Longitude (Meridians and Parallels) Maintenance and Preflight Inspection Procedures.",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-airport-operations"
+  },
+  {
+    "d": "Non-Recreational Civil Small Unmanned Aircraft Systems",
+    "b": "Part 107",
+    "x": "(The minimum acceptable duration for the practical part is 8 Hours) 'erform pre- and post-operation actions and procedures Launch and landing areas Explain considerations in locating and setting-up a launch and recovery area. Pre-operation ",
+    "kind": "regulations",
+    "id": "part-107",
+    "anchor": "sec-practical-training-topics"
+  }
+]

@@ -35,11 +35,13 @@ jobs:
       - name: Write build-time config
         run: |
           {
-            # firebase.json now rewrites /api/** to the flygaca-api Cloud Run
+            # firebase.json rewrites /api/** to the flygaca-api Cloud Run
             # service, so this front is same-origin with the API too — same
             # reasoning as deploy.yml (keeps the session cookie same-site and
             # connect-src 'self' in the CSP).
             echo "VITE_API_SAME_ORIGIN=1"
+            echo "VITE_DATA_BASE_URL=${{ vars.DATA_BASE_URL }}"
+            echo "VITE_MOYASAR_PUBLISHABLE_KEY=${{ vars.MOYASAR_PUBLISHABLE_KEY || 'pk_live_wdGkyKmfuRaA1M7nJZDWoUeBAts1aZ4hsuE6b5zF' }}"
             echo "VITE_GA_MEASUREMENT_ID=${{ vars.GA_MEASUREMENT_ID }}"
             # Owner-provisioned repo vars; unset leaves Firebase telemetry off by
             # design (src/lib/firebase-monitoring.ts is inert without an appId).

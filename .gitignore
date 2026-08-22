@@ -59,6 +59,12 @@ server/src/dataconnect-generated/
 # Cloudflare Wrangler (local dev cache + state)
 .wrangler/
 
+# Terraform (local provider cache + state)
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
 # Logs
 npm-debug.log*
 *.log

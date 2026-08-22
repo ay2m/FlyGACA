@@ -1,0 +1,594 @@
+[
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "§ 179.133 Briefing, Consultation and Display. 37 § 179.135 Flight Documentation. ·38 § 179.137 Automated Pre-Flight Information Systems for Briefing, Consultation,..... 39 Flight Planning and Flight Documentation. § 179.139 Information for ",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--2"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "This part prescribes - (a) Rules governing the provision of meteorological (MET) services for air navigation in the Kingdom of Saudi Arabia (KSA) by a MET service provider that holds or is required to hold an Air Navigation Service Certific",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-1"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) The objective of meteorological service for air navigation must be to contribute towards the safety, regularity and efficiency of air navigation. (b) Each MET service provider must achieve this objective by supplying the following users",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-5"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) An operator requiring meteorological service or changes in existing meteorological service must notify, sufficiently in advance, the MET service provider(s) concerned. The minimum amount of advance notice required must be as agreed betw",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--4"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Each MET service provider must establish systems and procedures for ensuring coordination between each of the following agencies (a) General Authority of Civil Aviation (GACA) Safety, Security & Air Transport (SS&AT) Sector; (b) GACA Domest",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-9"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Gj) The Saudi Arabian Armed Forces; and (k) Each domestic and international aerodrome operator in the KSA.",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--5"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Each MET service provider must coordinate with the GACA SS&AT when interacting with foreign States or foreign MET providers and when there are implications for Regional Air Navigation Agreements for which the KSA is a party. mathbf§179.13 A",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-11"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Each MET service provider must ensure that the meteorological information supplied to the users is consistent with Human Factors principles and must be in forms which require a minimum of interpretation by these users. bf8179.17 Site Requir",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-15"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "position to ensure that the facility provides an accurate representation of the local meteorological conditions. bf§179.19 Verification, Periodic Inspection, Testing and Calibration. (a) Each MET service provider must establish procedures f",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--6"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Each MET service provider must allow the President to make any inspections, at any time, in order to allow the President to determine compliance with this part.",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-mathbf-179-20-inspections"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Each MET service provider must employ, contract, or otherwise engage (a) A senior person, identified for the purposes of this part as the Director of meteorological services,who— (1) Has the authority within the organization to ensure that ",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-21"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Each MET service provider must ensure that each person assigned duties as meteorological personnel is competent and holds appropriate qualifications to perform the duties which they are assigned. (b) Each MET service provider must ensur",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-23"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(2) Describes the functions that the person assigned duties as meteorological personnel is authorized to perform; and (3) States the period during which the certificate is effective and valid. (d) Each MET service provider must develop a pe",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--8"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "This subpart prescribes requirements for each MET service provider to prepare and maintain a manual. § 179.33 Manual Contents. (a) Each MET service provider must provide the President with a manual containing (1) A statement signed by the D",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-31"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(c) Each MET service provider must (1) Ensure that its manual is amended, as required, to remain a current description of the MET service provider's organization, services, and facilities; and (2) Ensure that any amendments made to its manu",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--9"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "The objective of the world area forecast system must be to supply meteorological authorities and other users with global aeronautical meteorological en-route forecasts in digital form. This objective must be achieved through a comprehensive",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-41"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Authorized MET service provider having accepted the responsibility for providing a WAFC within the framework of the world area forecast system, must arrange - (a) To prepare for grid points for all required levels global forecasts of: (1) U",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-43"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(c) To issue the forecasts referred to in a) and b) in digital form to meteorological authorities and Other users. (d) To receive information concerning the accidental release of radioactive materials into the atmosphere from its associated",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--10"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(5) Supply other meteorological information to aeronautical users; (6) Display the available meteorological information; (7) Exchange meteorological information with other aerodrome meteorological offices; and (8) Supply information receive",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--11"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "associated air traffic services units; (4) Disseminate SIGMET information; (5) When required by regional air navigation agreements: (i) Prepare AIRMET information related to its area of responsibility; AIRMET information to associated air t",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--12"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Each MET service provider, having accepted the responsibility for providing a VAAC within the framework of the international airways volcano watch, must arrange to respond to a notification that a volcano has erupted, or is expected to ",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-49"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Note.— The numerical model may be its own or, by agreement, that of another VAAC. (3) Issue advisory information regarding the extent and forecast movement of the volcanic ash -cloud to: (i) Meteorological watch offices, area control center",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--13"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Each MET service provider, having accepted the responsibility for providing tropical cyclone advisory centers (TCAC), must arrange to: (a) Monitor the development of tropical cyclones in its area of responsibility, using geostationary",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-51"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "and polar orbiting satellite data, radar data and other meteorological information; (b) Issue advisory information concerning the position of the cyclone center, its direction and speed of movement, central pressure and maximum surface wind",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--14"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Note.— Technical specifications and detailed criteria related to this subpart are contained in Appendix 4 of Annex 3 to the Convention of International Civil Aviation.",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-meteorologicalobservationsandr"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Each MET service provider must establish, at aerodromes in the KSA, such aeronautical meteorological stations as it determines to be necessary. An aeronautical meteorological station may be a separate station or may be combined with a s",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-9-61-aeronautical-meteorological-stations-an"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(f) Unless otherwise approved by the President, at aerodromes with runways intended for Category I instrument approach and landing operations, automated equipment for measuring or assessing, as appropriate, and for monitoring and remote ind",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--15"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "An agreement between the MET service provider and the ATS service provider must be established to cover, amongst other things: (a) The provision in air traffic services units of displays related to integrated automatic systems; (b) The cali",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-mathbf-179-63-agreement-between-the-met-serv"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Note.— Guidance on the subject of coordination between the MET service provider and the ATS service provider is contained in the Manual on Coordination between Air Traffic Services, Aeronautical Information Services and Aeronautical Meteoro",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--16"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) At aerodromes, routine observations must be made throughout the 24 hours each day, except as otherwise agreed between the MET service provider, the ATS service provider and the operators concerned. Such observations must be made at inte",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-mathbf-179-65-routine-observations-and-repor"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) A list of criteria for special observations must be established by the MET service provider, the ATS service provider, operators and others concerned. (b) Reports of special observations must be issued as: (1) Local special reports, onl",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-mathbf-179-67-special-observations-and-repor"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(c) At aerodromes that are not operational throughout 24 hours, following the resumption of the issuance of METAR, SPECI must be issued, as necessary. mathbf§179.69 Contents of Reports. (a) Local routine and special reports and METAR and SP",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--17"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Surface wind. (1) The mean direction and the mean speed of the surface wind must be measured, as well as significant variations of the wind direction and speed, and reported in degrees true and kilometers per hour (or knots), respective",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--18"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(ii) Runways used for takeoff and having high-intensity edge lights and/or center line lights. (3) The runway visual range, assessed in accordance with (c)(2), must be reported in meters throughout periods when either the visibility or the ",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--19"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(1) Cloud amount, cloud type and height of cloud base must be observed and reported as necessary to describe the clouds of operational significance. When the sky is obscured, vertical visibility must be observed and reported, where measured",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--20"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) METAR and SPECI from automatic observing systems must be used, to the maximum extent practicable, during non-operational hours of the aerodrome, and during operational hours of the aerodrome. METAR and SPECI from automatic observing sys",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-73"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(b) METAR and SPECI from automatic observing systems must be identified with the word 一AUTO.",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--21"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "The occurrence of pre-eruption volcanic activity, volcanic eruptions and volcanic ash cloud must be reported without delay to the associated air traffic services unit, aeronautical information services unit and meteorological watch office. ",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-mathbfbeta179-75-observations-and-reports-of"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "§ 179.81 Relay of Air-Reports by ATS Units. Each MET service provider must make arrangements with ATS providers to ensure that, on receipt by the ATS units of: (a) Special air-reports by voice communications, the ATS units relay them withou",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-irtf-aircraftobservationsandrep"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Special aircraft observations of pre-eruption volcanic activity, a volcanic eruption or volcanic ash cloud must be recorded on the special air-report of volcanic activity form. A copy of the form must be included with the flight documentati",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-83"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "The issue of a new forecast by an aerodrome meteorology office, such as a routine aerodrome forecast, must be understood to cancel automatically any forecast of the same type previously issued for the same place and for the same period of v",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-mathbf-179-91-interpretation-and-use-of-fore"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Authorized MET service providers must prepare aerodrome forecasts as prescribed in this subpart. (b) An aerodrome forecast must be issued at a specified time not earlier than one hour prior to the beginning of its validity period and co",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-mathbf-179-93-aerodrome-forecasts"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(9) Weather; (10) Cloud; and (11) Expected significant changes to one or more of these elements during the period of Validity. Optional elements must be included in TAF in accordance with regional air navigation agreement. (d) Authorized ME",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--23"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Authorized MET service providers must prepare a landing forecast; such forecasts are intended to meet the requirements of local users and of aircraft within about one hour's flying time from the aerodrome. (b) Landing forecasts must be ",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-mathbf-179-95-landing-forecasts"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Authorized MET service providers must prepare a takeoff forecast if required by agreement between the MET service provider and operators. (b) The forecast for takeoff must refer to a specified period of time and should contain informati",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--24"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) When the density of traffic operating below flight level 100 (or up to flight level 150 in mountainous areas, or higher, where necessary) warrants the routine issue and dissemination of area forecasts for such operations, the frequency ",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-mathbf-179-99-area-forecasts-for-low-level-f"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) SIGMET information must be issued by meteorological watch office and must give a concise description in abbreviated plain language concerning the occurrence and/or expected occurrence of specified en-route weather phenomena, which may a",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-111"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) AIRMET information must be issued by meteorological watch office in accordance with regional air navigation agreement, taking into account the density of air traffic operating below flight level 100. AIRMET information must give a conci",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-113"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "language concerning the occurrence and/or expected occurrence of specified en-route weather phenomena, which have not been included in Section I of the area forecast for low-level flights issued in accordance with subpart G and which may af",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--25"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Wind shear warnings must be prepared by the aerodrome meteorological office for aerodromes where wind shear is considered a factor, in accordance with local arrangements with the ATS unit and operators concerned. (b) Wind shear warnings",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-117"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "sensing or detection equipment, wind shear alerts generated by these systems must be issued. Wind shear alerts must give concise, up-to-date information related to the observed existence of wind shear involving a headwind/tailwind change of",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--26"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Note.—— Technical specifications and detailed criteria related to this subpart are contained in Appendix 7 of Annex 3 to the Convention of International Civil Aviation.",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-aeronautical-climatologicalinfor"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) In cases where it is impracticable to meet the requirements for aeronautical climatological information on a national basis, the collection, processing and storage of observational data may be effected through computer facilities availa",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-121"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Each MET service provider, on request and to the extent practicable, must make available to operators and to others concerned with the application of meteorology to air navigation, meteorological observational data required for research, in",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-125"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(v) Direction, speed and flight level of maximum wind; : (vi) SIGWX phenomena; Note.— Forecasts of upper-air humidity and geopotential altitude of flight levels are used only in automatic flight planning and need not be displayed. (2) METAR",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--28"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(e) When forecasts are identified as being originated by the WAFCs, no modifications must be made to their meteorological content. (f) Charts generated from the digital forecasts provided by the WAFCs must be made available, as required by ",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--29"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Note.— The requirements for the use of automated pre-flight information systems in providing briefing, consultation and display are given in GACAR § 179.137",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-133"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Briefing and/or consultation must be provided, on request, to flight crew members and/or other flight operations personnel. Its purpose must be to supply the latest available information on existing and expected meteorological condition",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--30"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Note.— The requirements for the use of automated pre-flight information systems in providing flight documentation are given in GACAR § 179.137 (a) Flight documentation to be made available must comprise information listed under GACAR § 179.",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-135"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "re-planning, the operator must be advised immediately and, if practicable, be supplied with the revised information as agreed between the operator and the aerodrome meteorological office concerned. (c) In cases where a need for amendment ar",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--31"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Where the MET service provider uses automated pre-flight information systems to supply and display meteorological information to operators and flight crew members for self-briefing, flight planning and flight documentation purposes, the",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-mathbf-179-137-automated-pre-flight-informat"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Meteorological information for use by aircraft in flight must be supplied by an aerodrome meteorological office or meteorological watch office to its associated air traffic services unit and through D-VOLMET or VOLMET broadcasts as dete",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-139"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Each MET service provider must supply SAR services units with the meteorological information they require in a form established by mutual agreement. For that purpose, each MET service provider must maintain liaison with the search and rescu",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-153"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Each MET service provider must supply up- to-date meteorological information to relevant AIS units, as necessary, for the conduct of their functions.",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-155"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Note.—— Technical specifications and detailed criteria related to this subpart are contained in Appendix 10 of Annex 3 to the Convention of International Civil Aviation.",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-quirements-for-and-use-of-communic"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Suitable telecommunications facilities must be made available to permit aerodrome meteorological offices and, as necessary, aeronautical meteorological stations to supply the required meteorological information to air traffic services u",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-161"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "the aeronautical fixed service must be originated by the appropriate aerodrome meteorological office or aeronautical meteorological station. mathbf§179.165 Use of Aeronautical Fixed Service Communications - WAFS Products. World area forecas",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--32"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Each MET service provider must establish and maintain a properly organized quality assurance system containing procedures, processes and resources necessary to implement quality management for all MET services provided under this part. ",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-181"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "required to be exchanged, and the times of their filing for transmission. The quality system must be capable of detecting excessive transit times of messages and bulletins received. (g) Demonstration of compliance of the quality system appl",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--34"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Each MET service provider must hold an annual forum, consultation or survey with its customers in order to determine the quality of the service provided and to ascertain whether or not it meets their requirements. The GACA S&AT must be info",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-gacar-part-179-meteorology-services-for-air--35"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "Each MET service provider must address and respond to all customer feedback. Customers will have the right to address feedback to the President on issues when an issue raised remains open or not resolved.",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-mathbf-179-185-users-and-customer-feedback"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Each MET service provider must establish procedures for checking the adequacy, accuracy and timeliness of any of their meteorological information that may have been used by an aircraft or an air traffic service involved in an aircraft a",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-logical-information-check-after-aircraft-acc"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Each MET service provider must retain information supplied to flight crew members, either as printed copies or in computer files, for a period of at least 30 days from the date of issue. This information must be made available to the Pr",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-191"
+  },
+  {
+    "d": "Meteorology Services for Air Navigation",
+    "b": "Part 179",
+    "x": "(a) Each MET service provider must submit a promulgated information incident report to the President within 24 hours of the promulgated information incident. (b) The report must include the following information: (1) Date and time of the in",
+    "kind": "regulations",
+    "id": "part-179",
+    "anchor": "sec-179-193"
+  }
+]

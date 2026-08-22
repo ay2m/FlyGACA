@@ -1,0 +1,290 @@
+[
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) This part prescribes rules governing the operation of the following in the Kingdom of Saudi Arabia (KSA): (1) Except as provided for in General Authority of Civil Aviation Regulation (GACAR) § 101.5, any unmanned balloon moored to the s",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-1"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "No person may operate an unmanned balloon, kite, amateur rocket, model aircraft, or UAS in a prohibited or restricted area without permission from the administering authority.",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-bfxi101-3-operations-in-prohibited-or-restri"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) No person may operate any unmanned balloon, kite, amateur rocket, model aircraft, or UAS in a manner that creates a hazard to other persons, or their property. (b) No person operating any unmanned balloon, kite, amateur rocket, model ai",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-bfdelta101-5-hazardous-operations"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) This subpart applies to the operation of unmanned moored balloons and kites. However, a person operating an unmanned moored balloon or kite within a restricted area must comply only withGACAR § 101.29 and with additional limitations imp",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-21"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "No person may operate an unshielded unmanned moored balloon or kite more than 150 ft (50 m) above the surface of the earth unless, at least 24 hours before beginning the operation, he gives the following information to the air traffic contr",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-25"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(c) The location of the operation.; surface of the earth at which the balloon or kite is to be o (e) The date, time, and duration of the operation.",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-gacar-part-101-unmanned-balloons-kites-amate-3"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) No person may operate an unmanned moored balloon or kite, between sunset and sunrise unless the balloon or kite, and its mooring lines, are lighted to give a visual warning. (1) The balloon or kite must be lighted using low-intensity or",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-27"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "No person may operate an unmanned moored balloon unless it has a device that will deflate the balloon automatically and rapidly if it escapes from its moorings. If the device does not function properly, the operator must immediately notify ",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-29"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "This subpart applies to the operation of unmanned free balloons. However, a person operating an unmanned free balloon within a restricted area must comply with only GACAR §§ 101.45(a)(2) and (b) and with any additional limitations imposed b",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-41"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) All unmanned free balloons. No person may operate an unmanned free balloon— (1) Unless otherwise authorized by ATC, below 2 000 ft left(600 mright) above the surface within the",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-45"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "lateral boundaries of the surface areas of Class B, Class C, Class D, or Class E airspace designated for an aerodrome; (2) In such a manner that impact of the balloon, or part thereof including its payload, with the surface creates a hazard",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-gacar-part-101-unmanned-balloons-kites-amate-5"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "horizontal visibility is less than 8 km ,or (4) At any altitude where there are clouds or obscuring phenomena of more than 4 okta coverage.",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-gacar-part-101-unmanned-balloons-kites-amate-6"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "No person may operate an unmanned free balloon carrying a payload unless an identification plate made of fireproof metal or a material of similar durability is securely and conspicuously attached to the payload. The identification plate mus",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-46"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) Prelaunch notice. Except as provided in paragraph (b) of this section, no person may operate a medium or heavy unmanned free balloon unless he gives the following information to the ATC facility nearest the place of intended operation a",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-47"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "standard pressure altitude, whichever is lower; (9) The duration of flight; (10) The forecast time and location of impact with the surface of the earth; and (11) The operator's name and telephone number. (b) Except as provided in paragraph ",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-gacar-part-101-unmanned-balloons-kites-amate-7"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) No person may operate a heavy unmanned free balloon unless(1) It is equipped with at least two payload cut-down systems or devices that operate independently of each other; (2) It employs at least two methods, systems, devices, or combi",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-gacar-part-101-unmanned-balloons-kites-amate-8"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(f) No person may operate a heavy unmanned free balloon in an area where ground-based ADS-B equipment is in use unless it is equipped with an ADS-B transmitter with pressure altitude reporting capability continuously operating.",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-gacar-part-101-unmanned-balloons-kites-amate-9"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) Each person operating a heavy unmanned free balloon must(1) Unless ATC requires otherwise, monitor the course of the balloon and record its position at least一 (i) Every 2 hours while operating at or below 60 000 ft ( left.18 000 mright)",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-51"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) This subpart applies to operating unmanned rockets. However, a person operating an unmanned rocket within a restricted area must comply with only GACAR § 101.67(g)(2) and with any additional limitations imposed by the administering auth",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-61"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) No person may operate an amateur rocket unless (1) It is launched on a suborbital trajectory; (2) It will not cross into the territory of a foreign State when launched unless an agreement is in place between the Kingdom of Saudi Arabia ",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-gacar-part-101-unmanned-balloons-kites-amate-11"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(2) A horizontal distance of 500 m (h) Unless a person at least 18 years old is present, is charged with ensuring the safety of the operation and has final approval authority for initiating high-power rocket flight; and (i) Unless reasonabl",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-gacar-part-101-unmanned-balloons-kites-amate-12"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "No person may operate an unmanned rocket other than a Class 1 Model Rocket unless that person gives the following information to the ATC facility nearest the place of intended operation at least 24 hours before and no more than 3 days befor",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-69"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) Each person requesting relief from any requirement of this subpart to operate a Class 2 High-Power Rocket or a Class 3 Advanced High-Power Rocket must provide the information required by this section to the President at least 45 working",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-71"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(b) Class 2 High-Power Rockets. The information must include for each type of Class 2 rocket expected to be flown: (1) Estimated number of rockets; (2) Type of propulsion (liquid or solid), fuel(s) and oxidizer(s); (4) Description of recove",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-gacar-part-101-unmanned-balloons-kites-amate-13"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(8) Launch commit criteria; (9) Countdown procedures; and (10) Mishap procedures.",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-gacar-part-101-unmanned-balloons-kites-amate-14"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "This subpart applies to the operation of model aircraft. NOTE: By definition, model aircraft may be operated only for the sole purpose of recreation.",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-81"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) Notwithstanding any other section pertaining to certification of aircraft or their parts or equipment, model aircraft and their component parts and equipment are not required to meet the airworthiness certification standards specified f",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-83"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) For all model aircraft. No person may operate a model aircraft (1) Outdoor unless operated within a designated airspace by the appropriate GACA Certificated Air Traffic Services provider under GACAR Part-171. (2) In the presence of spec",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-85"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(12) At night. (13) While under the influence of psychoactive substances. (14) In a careless or reckless manner. (b) For all model aircraft flown under the supervision of an Aviation Recreation Organization certificated under GACAR Part 149",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-gacar-part-101-unmanned-balloons-kites-amate-17"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) No person may operate a model aircraft unless issued a model aircraft operator permit by GACA. Note: A GACA certificated Aviation Recreation Organization under GACAR part 149 may be designated by the President to issue model aircraft op",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-87"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "would interfere with the safe operation of a small unmanned aircraft system; (4) Demonstrate aeronautical knowledge by passing an aeronautical knowledge test prescribed by the President every three years. Note: A GACA certificated Aviation ",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-gacar-part-101-unmanned-balloons-kites-amate-18"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(a) This subpart applies to the operation of unmanned aircraft systems (UAS) within the sovereign area and territorial waters of the Kingdom of Saudi Arabia (KSA), including the waters within 3 NM of the KSA coast. (b) This subpart is not a",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-91"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "Unless otherwise authorized by the President, no person may operate a UAS unless (a) The UAS has been issued an airworthiness certificate under GACAR Part 21; (b) The UAS has been registered under GACAR Part 47 and marked under GACAR Part 4",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-93"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "An application for operating authority for a UAS under this subpart must be made in a form and in a manner acceptable to the President and submitted with (a) Name and contact information of the operator; (b) UAS characteristics (type of air",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-101-95"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(5) Other relevant performance data (e.g. limitations regarding wind, icing, precipitation); and (6) Maximum aircraft endurance; (l) Communications, navigation and surveillance capabilities: (1) Aeronautical safety communications frequencie",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-gacar-part-101-unmanned-balloons-kites-amate-21"
+  },
+  {
+    "d": "Unmanned Balloons, Kites, Amateur Rockets, Model Aircraft, and Unmanned Aircraft Systems",
+    "b": "Part 101",
+    "x": "(r) Payload information/description; (s) Proof of adequate insurance/liability coverage; and (t) Any additional items requested by the President. § 101.97 Operating Rules. (a) Each UAS must be operated in such a manner as to minimize hazard",
+    "kind": "regulations",
+    "id": "part-101",
+    "anchor": "sec-gacar-part-101-unmanned-balloons-kites-amate-22"
+  }
+]

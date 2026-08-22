@@ -1,0 +1,5684 @@
+[
+  {
+    "icao": "EG-0002",
+    "iata": "",
+    "name_en": "El Sheikh Gebeil Airport",
+    "name_ar": "El Sheikh Gebeil Airport",
+    "city_en": "Abu Hammad",
+    "city_ar": "Abu Hammad",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "small",
+    "lat": 30.5947,
+    "lon": 31.66493,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0003",
+    "iata": "",
+    "name_en": "Bilbeis 2 Airfield",
+    "name_ar": "Bilbeis 2 Airfield",
+    "city_en": "Bilbeis",
+    "city_ar": "Bilbeis",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "medium",
+    "lat": 30.4206,
+    "lon": 31.6789,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0004",
+    "iata": "",
+    "name_en": "El Hassana Well Airport",
+    "name_ar": "El Hassana Well Airport",
+    "city_en": "El Hassana",
+    "city_ar": "El Hassana",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "small",
+    "lat": 30.1944,
+    "lon": 33.4128,
+    "elev_ft": 1296,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0005",
+    "iata": "",
+    "name_en": "Difarsuwar Airfield",
+    "name_ar": "Difarsuwar Airfield",
+    "city_en": "Ismailia",
+    "city_ar": "Ismailia",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "small",
+    "lat": 30.42301,
+    "lon": 32.33534,
+    "elev_ft": 30,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0006",
+    "iata": "",
+    "name_en": "Fayed Air Base",
+    "name_ar": "Fayed Air Base",
+    "city_en": "Abo Swir Desert",
+    "city_ar": "Abo Swir Desert",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "small",
+    "lat": 30.3291,
+    "lon": 32.26693,
+    "elev_ft": 52,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0007",
+    "iata": "",
+    "name_en": "Al Omraniya Heliport",
+    "name_ar": "Al Omraniya Heliport",
+    "city_en": "Al Omraniya",
+    "city_ar": "Al Omraniya",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 29.34741,
+    "lon": 31.29848,
+    "elev_ft": 157,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0008",
+    "iata": "",
+    "name_en": "Bani Sweif University Heliport",
+    "name_ar": "Bani Sweif University Heliport",
+    "city_en": "New Bani Sweif",
+    "city_ar": "New Bani Sweif",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 29.0347,
+    "lon": 31.11884,
+    "elev_ft": 157,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0009",
+    "iata": "",
+    "name_en": "New Bani Sweif Heliport",
+    "name_ar": "New Bani Sweif Heliport",
+    "city_en": "New Bani Sweif",
+    "city_ar": "New Bani Sweif",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 29.00758,
+    "lon": 31.15666,
+    "elev_ft": 262,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0011",
+    "iata": "",
+    "name_en": "El Arish Military Hospital Helipad",
+    "name_ar": "El Arish Military Hospital Helipad",
+    "city_en": "El Arish",
+    "city_ar": "El Arish",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 31.1447,
+    "lon": 33.82708,
+    "elev_ft": 52,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0012",
+    "iata": "",
+    "name_en": "Dar Es Salam Heliport",
+    "name_ar": "Dar Es Salam Heliport",
+    "city_en": "Dar Es Salam",
+    "city_ar": "Dar Es Salam",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 26.14304,
+    "lon": 32.16637,
+    "elev_ft": 203,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0013",
+    "iata": "",
+    "name_en": "Maadi Military Hospital Heliport",
+    "name_ar": "Maadi Military Hospital Heliport",
+    "city_en": "Maadi",
+    "city_ar": "Maadi",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 29.96939,
+    "lon": 31.2463,
+    "elev_ft": 72,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0014",
+    "iata": "",
+    "name_en": "Aluminium Heliport",
+    "name_ar": "Aluminium Heliport",
+    "city_en": "Nag Hammadi",
+    "city_ar": "Nag Hammadi",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 26.01157,
+    "lon": 32.31584,
+    "elev_ft": 292,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0015",
+    "iata": "",
+    "name_en": "El Maragha Heliport",
+    "name_ar": "El Maragha Heliport",
+    "city_en": "El Maragha",
+    "city_ar": "El Maragha",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 26.71641,
+    "lon": 31.58357,
+    "elev_ft": 194,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0016",
+    "iata": "",
+    "name_en": "Sheikh Zayed Canal Lift Station Heliport",
+    "name_ar": "Sheikh Zayed Canal Lift Station Heliport",
+    "city_en": "Abu Simbel",
+    "city_ar": "Abu Simbel",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 22.81773,
+    "lon": 31.46269,
+    "elev_ft": 666,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0017",
+    "iata": "",
+    "name_en": "Al Battikh Airfield",
+    "name_ar": "Al Battikh Airfield",
+    "city_en": "El-Reyad",
+    "city_ar": "El-Reyad",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "small",
+    "lat": 31.34512,
+    "lon": 30.97628,
+    "elev_ft": 3,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0018",
+    "iata": "",
+    "name_en": "Borj El Arab Stadium Heliport",
+    "name_ar": "Borj El Arab Stadium Heliport",
+    "city_en": "Iking Maryut",
+    "city_ar": "Iking Maryut",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 30.99648,
+    "lon": 29.72718,
+    "elev_ft": 85,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0019",
+    "iata": "",
+    "name_en": "Kafr el-Sheikh Heliport",
+    "name_ar": "Kafr el-Sheikh Heliport",
+    "city_en": "Kafr el-Sheikh",
+    "city_ar": "Kafr el-Sheikh",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 31.09911,
+    "lon": 30.95668,
+    "elev_ft": 16,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0020",
+    "iata": "",
+    "name_en": "Saudi Arabian Embassy Helipad",
+    "name_ar": "Saudi Arabian Embassy Helipad",
+    "city_en": "Giza",
+    "city_ar": "Giza",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 30.03155,
+    "lon": 31.21808,
+    "elev_ft": 138,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0022",
+    "iata": "",
+    "name_en": "Residential Helipads (3x)",
+    "name_ar": "Residential Helipads (3x)",
+    "city_en": "Farafa Oasis",
+    "city_ar": "Farafa Oasis",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 27.0326,
+    "lon": 28.12657,
+    "elev_ft": 295,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0023",
+    "iata": "",
+    "name_en": "Helipads (4x) runway",
+    "name_ar": "Helipads (4x) runway",
+    "city_en": "Farafa Oasis",
+    "city_ar": "Farafa Oasis",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 27.05664,
+    "lon": 27.99166,
+    "elev_ft": 249,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0024",
+    "iata": "",
+    "name_en": "Toshka Pump Station Heliport",
+    "name_ar": "Toshka Pump Station Heliport",
+    "city_en": "",
+    "city_ar": "",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 22.63762,
+    "lon": 31.85165,
+    "elev_ft": 617,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0025",
+    "iata": "",
+    "name_en": "Temple of Derr Heliport",
+    "name_ar": "Temple of Derr Heliport",
+    "city_en": "",
+    "city_ar": "",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 22.75142,
+    "lon": 32.26982,
+    "elev_ft": 702,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0026",
+    "iata": "",
+    "name_en": "Sadat Resthouse Heliport",
+    "name_ar": "Sadat Resthouse Heliport",
+    "city_en": "",
+    "city_ar": "",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 23.25856,
+    "lon": 32.71406,
+    "elev_ft": 663,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0027",
+    "iata": "",
+    "name_en": "Asyut Heliport",
+    "name_ar": "Asyut Heliport",
+    "city_en": "Asyut",
+    "city_ar": "Asyut",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 27.20344,
+    "lon": 31.18607,
+    "elev_ft": 151,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0028",
+    "iata": "",
+    "name_en": "Taba Heliport",
+    "name_ar": "Taba Heliport",
+    "city_en": "Taba",
+    "city_ar": "Taba",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 29.44798,
+    "lon": 34.84879,
+    "elev_ft": 56,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0029",
+    "iata": "",
+    "name_en": "Saint Catherine Hospital Heliport",
+    "name_ar": "Saint Catherine Hospital Heliport",
+    "city_en": "Saint Catherine",
+    "city_ar": "Saint Catherine",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.5672,
+    "lon": 33.95215,
+    "elev_ft": 5128,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0030",
+    "iata": "",
+    "name_en": "El Tor Sinai Armed Forces Hospital Heliport",
+    "name_ar": "El Tor Sinai Armed Forces Hospital Heliport",
+    "city_en": "El Tor",
+    "city_ar": "El Tor",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.22944,
+    "lon": 33.63996,
+    "elev_ft": 92,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0031",
+    "iata": "",
+    "name_en": "Multinational Force and Observers South Camp Heliport",
+    "name_ar": "Multinational Force and Observers South Camp Heliport",
+    "city_en": "Sharm El Sheikh",
+    "city_ar": "Sharm El Sheikh",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 27.8977,
+    "lon": 34.32271,
+    "elev_ft": 105,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0032",
+    "iata": "",
+    "name_en": "El Gouna Ultralight Airport",
+    "name_ar": "El Gouna Ultralight Airport",
+    "city_en": "El Gouna",
+    "city_ar": "El Gouna",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "small",
+    "lat": 27.42739,
+    "lon": 33.66568,
+    "elev_ft": 16,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0033",
+    "iata": "",
+    "name_en": "Ras Behar Heliport",
+    "name_ar": "Ras Behar Heliport",
+    "city_en": "Ras Gharib",
+    "city_ar": "Ras Gharib",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 27.74896,
+    "lon": 33.5533,
+    "elev_ft": 20,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0034",
+    "iata": "",
+    "name_en": "Ras Behar Water Treatment Plant Heliport",
+    "name_ar": "Ras Behar Water Treatment Plant Heliport",
+    "city_en": "Ras Gharib",
+    "city_ar": "Ras Gharib",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 27.73377,
+    "lon": 33.50923,
+    "elev_ft": 36,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0035",
+    "iata": "",
+    "name_en": "Wadi Dar Al Zaraey Heliport",
+    "name_ar": "Wadi Dar Al Zaraey Heliport",
+    "city_en": "Ras Gharib",
+    "city_ar": "Ras Gharib",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.05026,
+    "lon": 33.33887,
+    "elev_ft": 75,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0036",
+    "iata": "",
+    "name_en": "Ras Shukeir Port Heliport",
+    "name_ar": "Ras Shukeir Port Heliport",
+    "city_en": "Ras Gharib",
+    "city_ar": "Ras Gharib",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.13711,
+    "lon": 33.27775,
+    "elev_ft": 43,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0037",
+    "iata": "",
+    "name_en": "PAS Petroleum Air Services Heliport",
+    "name_ar": "PAS Petroleum Air Services Heliport",
+    "city_en": "Ras Gharib",
+    "city_ar": "Ras Gharib",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.3233,
+    "lon": 33.11003,
+    "elev_ft": 43,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0038",
+    "iata": "",
+    "name_en": "Shoab 2 Platform Heliport",
+    "name_ar": "Shoab 2 Platform Heliport",
+    "city_en": "Ras Gharib",
+    "city_ar": "Ras Gharib",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.39116,
+    "lon": 33.07199,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0039",
+    "iata": "",
+    "name_en": "Shoab 1 Platform Heliport",
+    "name_ar": "Shoab 1 Platform Heliport",
+    "city_en": "Ras Gharib",
+    "city_ar": "Ras Gharib",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.3962,
+    "lon": 133.07133,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0040",
+    "iata": "",
+    "name_en": "Shoab 1 Platform Heliport",
+    "name_ar": "Shoab 1 Platform Heliport",
+    "city_en": "Ras Gharib",
+    "city_ar": "Ras Gharib",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.39621,
+    "lon": 33.07133,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0041",
+    "iata": "",
+    "name_en": "Egyptian General Petroleum Resort Heliport",
+    "name_ar": "Egyptian General Petroleum Resort Heliport",
+    "city_en": "Ras Gharib",
+    "city_ar": "Ras Gharib",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.49013,
+    "lon": 32.97593,
+    "elev_ft": 43,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0042",
+    "iata": "",
+    "name_en": "Ras Bakr Heliport",
+    "name_ar": "Ras Bakr Heliport",
+    "city_en": "Ras Gharib",
+    "city_ar": "Ras Gharib",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.5508,
+    "lon": 32.92708,
+    "elev_ft": 30,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0043",
+    "iata": "",
+    "name_en": "Ras Rawahimi Heliport",
+    "name_ar": "Ras Rawahimi Heliport",
+    "city_en": "Ras Gharib",
+    "city_ar": "Ras Gharib",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.73211,
+    "lon": 32.81604,
+    "elev_ft": 66,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0044",
+    "iata": "",
+    "name_en": "El Galala Marina Heliport",
+    "name_ar": "El Galala Marina Heliport",
+    "city_en": "Attaka",
+    "city_ar": "Attaka",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 29.48154,
+    "lon": 32.44888,
+    "elev_ft": 3,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0045",
+    "iata": "",
+    "name_en": "El Hafair Heliport",
+    "name_ar": "El Hafair Heliport",
+    "city_en": "Attaka",
+    "city_ar": "Attaka",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 29.74756,
+    "lon": 32.37093,
+    "elev_ft": 72,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0046",
+    "iata": "",
+    "name_en": "Adabiya Heliport",
+    "name_ar": "Adabiya Heliport",
+    "city_en": "Attaka",
+    "city_ar": "Attaka",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 29.87089,
+    "lon": 32.47481,
+    "elev_ft": 3,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0047",
+    "iata": "",
+    "name_en": "Mount Attaka Heliport",
+    "name_ar": "Mount Attaka Heliport",
+    "city_en": "Attaka",
+    "city_ar": "Attaka",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 29.96781,
+    "lon": 32.37697,
+    "elev_ft": 1732,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0048",
+    "iata": "",
+    "name_en": "Janifa Heliport",
+    "name_ar": "Janifa Heliport",
+    "city_en": "Kibrit",
+    "city_ar": "Kibrit",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 30.23642,
+    "lon": 32.39243,
+    "elev_ft": 102,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0049",
+    "iata": "",
+    "name_en": "July 3rd Tunnel Heliport",
+    "name_ar": "July 3rd Tunnel Heliport",
+    "city_en": "Awal Al Ganoub",
+    "city_ar": "Awal Al Ganoub",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 31.09078,
+    "lon": 32.27712,
+    "elev_ft": -36,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0050",
+    "iata": "",
+    "name_en": "East Port Said Naval Base Heliport",
+    "name_ar": "East Port Said Naval Base Heliport",
+    "city_en": "Port Fuad",
+    "city_ar": "Port Fuad",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 31.21905,
+    "lon": 32.37619,
+    "elev_ft": 3,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0051",
+    "iata": "",
+    "name_en": "Martyr Ahmed El-Mansy Floating Bridge Heliport",
+    "name_ar": "Martyr Ahmed El-Mansy Floating Bridge Heliport",
+    "city_en": "Al Ganayen",
+    "city_ar": "Al Ganayen",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 30.04307,
+    "lon": 32.58078,
+    "elev_ft": 46,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0052",
+    "iata": "",
+    "name_en": "Suez Oil Heliport",
+    "name_ar": "Suez Oil Heliport",
+    "city_en": "Ras Abu Rudeis",
+    "city_ar": "Ras Abu Rudeis",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.9424,
+    "lon": 33.18593,
+    "elev_ft": 42,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0053",
+    "iata": "",
+    "name_en": "Abu Rudeis Heliport",
+    "name_ar": "Abu Rudeis Heliport",
+    "city_en": "Ras Abu Rudeis",
+    "city_ar": "Ras Abu Rudeis",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.89852,
+    "lon": 33.18131,
+    "elev_ft": 36,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0054",
+    "iata": "",
+    "name_en": "Sinai Oilfields Hospital Heliport",
+    "name_ar": "Sinai Oilfields Hospital Heliport",
+    "city_en": "Ras Abu Rudeis",
+    "city_ar": "Ras Abu Rudeis",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.89156,
+    "lon": 33.18209,
+    "elev_ft": 46,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0055",
+    "iata": "",
+    "name_en": "EDC Heliport",
+    "name_ar": "EDC Heliport",
+    "city_en": "Ras Abu Rudeis",
+    "city_ar": "Ras Abu Rudeis",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.6642,
+    "lon": 33.20473,
+    "elev_ft": 33,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0056",
+    "iata": "",
+    "name_en": "Wadi Firan Heliport",
+    "name_ar": "Wadi Firan Heliport",
+    "city_en": "Ras Abu Rudeis",
+    "city_ar": "Ras Abu Rudeis",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 28.6886,
+    "lon": 33.35797,
+    "elev_ft": 528,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0057",
+    "iata": "",
+    "name_en": "Wadi Firan Airport",
+    "name_ar": "Wadi Firan Airport",
+    "city_en": "Ras Abu Rudeis",
+    "city_ar": "Ras Abu Rudeis",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "small",
+    "lat": 28.67599,
+    "lon": 33.35896,
+    "elev_ft": 528,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0058",
+    "iata": "",
+    "name_en": "Sahra' Muhafadhat al-Jeezah Airfield",
+    "name_ar": "Sahra' Muhafadhat al-Jeezah Airfield",
+    "city_en": "6th of October",
+    "city_ar": "6th of October",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "small",
+    "lat": 29.80037,
+    "lon": 31.08454,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0059",
+    "iata": "",
+    "name_en": "Katameya Air Base",
+    "name_ar": "Katameya Air Base",
+    "city_en": "New Cairo",
+    "city_ar": "New Cairo",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 30.05767,
+    "lon": 31.84559,
+    "elev_ft": 800,
+    "rwys": [
+      {
+        "id": "2H/20H",
+        "len": 10971,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0060",
+    "iata": "",
+    "name_en": "Sheikh Zayed City Military Airstrip",
+    "name_ar": "Sheikh Zayed City Military Airstrip",
+    "city_en": "Sheikh Zayed City",
+    "city_ar": "Sheikh Zayed City",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "small",
+    "lat": 30.03825,
+    "lon": 30.88585,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0061",
+    "iata": "",
+    "name_en": "Sheikh Zayed City Military Heliport",
+    "name_ar": "Sheikh Zayed City Military Heliport",
+    "city_en": "Sheikh Zayed City",
+    "city_ar": "Sheikh Zayed City",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 30.03902,
+    "lon": 30.89352,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0062",
+    "iata": "",
+    "name_en": "Joint Air Defense Training Center Heliport",
+    "name_ar": "Joint Air Defense Training Center Heliport",
+    "city_en": "Al Giza Desert",
+    "city_ar": "Al Giza Desert",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 29.82222,
+    "lon": 31.12127,
+    "elev_ft": 318,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0063",
+    "iata": "",
+    "name_en": "Bir El Baheira Airfield",
+    "name_ar": "Bir El Baheira Airfield",
+    "city_en": "Sallum",
+    "city_ar": "Sallum",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 31.57856,
+    "lon": 25.13052,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0064",
+    "iata": "",
+    "name_en": "Salloum Helipad",
+    "name_ar": "Salloum Helipad",
+    "city_en": "Sallum",
+    "city_ar": "Sallum",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 31.52624,
+    "lon": 25.17973,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0065",
+    "iata": "",
+    "name_en": "Dar al Fouad Hospital Heliport",
+    "name_ar": "Dar al Fouad Hospital Heliport",
+    "city_en": "6th of October",
+    "city_ar": "6th of October",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 29.99773,
+    "lon": 30.96831,
+    "elev_ft": 574,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0066",
+    "iata": "",
+    "name_en": "Western Military Region Stadium Heliport",
+    "name_ar": "Western Military Region Stadium Heliport",
+    "city_en": "Sidi Barrani",
+    "city_ar": "Sidi Barrani",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 31.52446,
+    "lon": 25.894,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0067",
+    "iata": "",
+    "name_en": "21st Armored Division Helipad",
+    "name_ar": "21st Armored Division Helipad",
+    "city_en": "Sidi Barrani",
+    "city_ar": "Sidi Barrani",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 31.4006,
+    "lon": 25.88811,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0068",
+    "iata": "",
+    "name_en": "Sharm International Hospital Heliport",
+    "name_ar": "Sharm International Hospital Heliport",
+    "city_en": "Sharm el-Sheikh",
+    "city_ar": "Sharm el-Sheikh",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 27.8821,
+    "lon": 34.2971,
+    "elev_ft": 160,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0069",
+    "iata": "",
+    "name_en": "Safaga Heliport",
+    "name_ar": "Safaga Heliport",
+    "city_en": "Safaga",
+    "city_ar": "Safaga",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 26.75188,
+    "lon": 33.95167,
+    "elev_ft": 12,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0073",
+    "iata": "",
+    "name_en": "West Cairo Military Hospital Heliport",
+    "name_ar": "West Cairo Military Hospital Heliport",
+    "city_en": "Badrshein",
+    "city_ar": "Badrshein",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 29.81049,
+    "lon": 31.16197,
+    "elev_ft": 295,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0074",
+    "iata": "",
+    "name_en": "Helwan University Heliport",
+    "name_ar": "Helwan University Heliport",
+    "city_en": "Helwan",
+    "city_ar": "Helwan",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 29.86491,
+    "lon": 31.32082,
+    "elev_ft": 131,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0075",
+    "iata": "",
+    "name_en": "Abdeen Palace Helipad",
+    "name_ar": "Abdeen Palace Helipad",
+    "city_en": "Abdeen",
+    "city_ar": "Abdeen",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 30.04331,
+    "lon": 31.24676,
+    "elev_ft": 79,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0076",
+    "iata": "",
+    "name_en": "Octagon Heliport",
+    "name_ar": "Octagon Heliport",
+    "city_en": "Cairo Desert",
+    "city_ar": "Cairo Desert",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 29.92513,
+    "lon": 31.66638,
+    "elev_ft": 1316,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0080",
+    "iata": "",
+    "name_en": "El Alamein Heliport",
+    "name_ar": "El Alamein Heliport",
+    "city_en": "El Alamein",
+    "city_ar": "El Alamein",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 30.84292,
+    "lon": 28.94411,
+    "elev_ft": 48,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-0081",
+    "iata": "",
+    "name_en": "Ismailia Barracks Heliport",
+    "name_ar": "Ismailia Barracks Heliport",
+    "city_en": "Ismailia",
+    "city_ar": "Ismailia",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "heliport",
+    "lat": 30.62321,
+    "lon": 32.25551,
+    "elev_ft": 53,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG-AUE",
+    "iata": "AUE",
+    "name_en": "Abu Rudeis Airport",
+    "name_ar": "Abu Rudeis Airport",
+    "city_en": "Ras Abu Rudeis",
+    "city_ar": "Ras Abu Rudeis",
+    "country_en": "Egypt",
+    "country_ar": "مصر",
+    "region": "MENA",
+    "type": "small",
+    "lat": 28.89969,
+    "lon": 33.20206,
+    "elev_ft": 43,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG34",
+    "iata": "",
+    "name_en": "Ledbury Airfield",
+    "name_ar": "Ledbury Airfield",
+    "city_en": "Dymock, Gloucestershire",
+    "city_ar": "Dymock, Gloucestershire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.0019,
+    "lon": -2.47416,
+    "elev_ft": 150,
+    "rwys": [
+      {
+        "id": "01/19",
+        "len": 2006,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EG3L",
+    "iata": "",
+    "name_en": "Milfield Glider Field",
+    "name_ar": "Milfield Glider Field",
+    "city_en": "",
+    "city_ar": "",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 55.59164,
+    "lon": -2.08723,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EG74",
+    "iata": "",
+    "name_en": "Bruntingthorpe Aerodrome",
+    "name_ar": "Bruntingthorpe Aerodrome",
+    "city_en": "Lutterworth, Leicestershire",
+    "city_ar": "Lutterworth, Leicestershire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.49297,
+    "lon": -1.12509,
+    "elev_ft": 467,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 9842,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "06R/24L",
+        "len": 2953,
+        "surf": "GRE"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.825"
+      }
+    ]
+  },
+  {
+    "icao": "EGAD",
+    "iata": "",
+    "name_en": "Newtownards Airport",
+    "name_ar": "Newtownards Airport",
+    "city_en": "Newtownards, Ards and North Down",
+    "city_ar": "Newtownards, Ards and North Down",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 54.5811,
+    "lon": -5.69194,
+    "elev_ft": 9,
+    "rwys": [
+      {
+        "id": "03/21",
+        "len": 3346,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "08/26",
+        "len": 1824,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "15/33",
+        "len": 2112,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "128.305"
+      }
+    ]
+  },
+  {
+    "icao": "EGAH",
+    "iata": "",
+    "name_en": "Halley Research Station",
+    "name_ar": "Halley Research Station",
+    "city_en": "Halley Research Station",
+    "city_ar": "Halley Research Station",
+    "country_en": "Antarctica",
+    "country_ar": "أنتاركتيكا",
+    "region": "AN",
+    "type": "small",
+    "lat": -75.56741,
+    "lon": -25.51643,
+    "elev_ft": 103,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 3280,
+        "surf": "Snow/Ice"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EGAR",
+    "iata": "",
+    "name_en": "Rothera Research Station",
+    "name_ar": "Rothera Research Station",
+    "city_en": "Rothera Research Station",
+    "city_ar": "Rothera Research Station",
+    "country_en": "Antarctica",
+    "country_ar": "أنتاركتيكا",
+    "region": "AN",
+    "type": "small",
+    "lat": -67.5675,
+    "lon": -68.1274,
+    "elev_ft": 9,
+    "rwys": [
+      {
+        "id": "18/36",
+        "len": 2875,
+        "surf": "Gravel"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EGAT",
+    "iata": "",
+    "name_en": "Sky Blu Airstrip",
+    "name_ar": "Sky Blu Airstrip",
+    "city_en": "Sky Blu",
+    "city_ar": "Sky Blu",
+    "country_en": "Antarctica",
+    "country_ar": "أنتاركتيكا",
+    "region": "AN",
+    "type": "small",
+    "lat": -74.84972,
+    "lon": -71.56667,
+    "elev_ft": 4740,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EGBC",
+    "iata": "",
+    "name_en": "Cheltenham Racecourse Heliport",
+    "name_ar": "Cheltenham Racecourse Heliport",
+    "city_en": "Cheltenham, Gloucestershire",
+    "city_ar": "Cheltenham, Gloucestershire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 51.92563,
+    "lon": -2.05435,
+    "elev_ft": 213,
+    "rwys": [
+      {
+        "id": "14/32",
+        "len": 755,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EGBD",
+    "iata": "",
+    "name_en": "Derby Airfield",
+    "name_ar": "Derby Airfield",
+    "city_en": "Derby, Derbyshire",
+    "city_ar": "Derby, Derbyshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.8597,
+    "lon": -1.6175,
+    "elev_ft": 175,
+    "rwys": [
+      {
+        "id": "05/23",
+        "len": 1794,
+        "surf": "Grass"
+      },
+      {
+        "id": "10/28",
+        "len": 1486,
+        "surf": "Grass"
+      },
+      {
+        "id": "17/35",
+        "len": 1949,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "118.35"
+      }
+    ]
+  },
+  {
+    "icao": "EGBF",
+    "iata": "",
+    "name_en": "Bedford Aerodrome",
+    "name_ar": "Bedford Aerodrome",
+    "city_en": "Bedford, Bedford",
+    "city_ar": "Bedford, Bedford",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.23071,
+    "lon": -0.46382,
+    "elev_ft": 270,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 3592,
+        "surf": "Concrete"
+      },
+      {
+        "id": "11/29",
+        "len": 2788,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "119.025"
+      },
+      {
+        "l": "A/G",
+        "v": "129.8"
+      }
+    ]
+  },
+  {
+    "icao": "EGBG",
+    "iata": "",
+    "name_en": "Leicester Airport",
+    "name_ar": "Leicester Airport",
+    "city_en": "Leicester, Leicestershire",
+    "city_ar": "Leicester, Leicestershire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.60657,
+    "lon": -1.03023,
+    "elev_ft": 469,
+    "rwys": [
+      {
+        "id": "04/22",
+        "len": 1608,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "06/24",
+        "len": 1099,
+        "surf": "Grass"
+      },
+      {
+        "id": "10/28",
+        "len": 3084,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "15/33",
+        "len": 1624,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "16/34",
+        "len": 1371,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.125"
+      }
+    ]
+  },
+  {
+    "icao": "EGBK",
+    "iata": "ORM",
+    "name_en": "Sywell Aerodrome",
+    "name_ar": "Sywell Aerodrome",
+    "city_en": "Northampton, Northamptonshire",
+    "city_ar": "Northampton, Northamptonshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.3053,
+    "lon": -0.79306,
+    "elev_ft": 429,
+    "rwys": [
+      {
+        "id": "03L/21R",
+        "len": 4160,
+        "surf": "Concrete"
+      },
+      {
+        "id": "03R/21L",
+        "len": 2201,
+        "surf": "Grass"
+      },
+      {
+        "id": "05/23",
+        "len": 1975,
+        "surf": "Grass"
+      },
+      {
+        "id": "15/33",
+        "len": 1476,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.7"
+      },
+      {
+        "l": "AFIS",
+        "v": "122.7"
+      }
+    ]
+  },
+  {
+    "icao": "EGBM",
+    "iata": "",
+    "name_en": "Tatenhill Airfield",
+    "name_ar": "Tatenhill Airfield",
+    "city_en": "Burton upon Trent, Staffordshire",
+    "city_ar": "Burton upon Trent, Staffordshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.81431,
+    "lon": -1.76794,
+    "elev_ft": 439,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 3904,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "124.075"
+      }
+    ]
+  },
+  {
+    "icao": "EGBO",
+    "iata": "",
+    "name_en": "Wolverhampton Halfpenny Green Airport",
+    "name_ar": "Wolverhampton Halfpenny Green Airport",
+    "city_en": "Wolverhampton, Staffordshire",
+    "city_ar": "Wolverhampton, Staffordshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.5175,
+    "lon": -2.25944,
+    "elev_ft": 283,
+    "rwys": [
+      {
+        "id": "04/22",
+        "len": 2083,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "10/28",
+        "len": 2624,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "16/34",
+        "len": 3878,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "APP",
+        "v": "123"
+      },
+      {
+        "l": "ATIS",
+        "v": "124.875"
+      },
+      {
+        "l": "TWR",
+        "v": "123"
+      }
+    ]
+  },
+  {
+    "icao": "EGBP",
+    "iata": "GBA",
+    "name_en": "Cotswold Airport",
+    "name_ar": "Cotswold Airport",
+    "city_en": "Cirencester, Gloucestershire",
+    "city_ar": "Cirencester, Gloucestershire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.66853,
+    "lon": -2.0566,
+    "elev_ft": 433,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 6591,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "08L/26R",
+        "len": 1476,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "AFIS",
+        "v": "118.9"
+      }
+    ]
+  },
+  {
+    "icao": "EGBS",
+    "iata": "",
+    "name_en": "Shobdon Airfield",
+    "name_ar": "Shobdon Airfield",
+    "city_en": "Leominster, Herefordshire",
+    "city_ar": "Leominster, Herefordshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.2417,
+    "lon": -2.88111,
+    "elev_ft": 318,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 2743,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "AFIS",
+        "v": "118.155"
+      },
+      {
+        "l": "RDO",
+        "v": "118.155"
+      }
+    ]
+  },
+  {
+    "icao": "EGBT",
+    "iata": "",
+    "name_en": "Turweston Aerodrome",
+    "name_ar": "Turweston Aerodrome",
+    "city_en": "Turweston",
+    "city_ar": "Turweston",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.0408,
+    "lon": -1.09556,
+    "elev_ft": 448,
+    "rwys": [
+      {
+        "id": "03/21",
+        "len": 1607,
+        "surf": "Grass"
+      },
+      {
+        "id": "09/27",
+        "len": 4120,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "09G/27G",
+        "len": 2483,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.18"
+      }
+    ]
+  },
+  {
+    "icao": "EGBV",
+    "iata": "",
+    "name_en": "Silverstone Heliport",
+    "name_ar": "Silverstone Heliport",
+    "city_en": "Silverstone, Buckinghamshire",
+    "city_ar": "Silverstone, Buckinghamshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 52.07017,
+    "lon": -1.01267,
+    "elev_ft": 502,
+    "rwys": [],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "121.075"
+      }
+    ]
+  },
+  {
+    "icao": "EGBW",
+    "iata": "",
+    "name_en": "Wellesbourne Mountford Airfield",
+    "name_ar": "Wellesbourne Mountford Airfield",
+    "city_en": "Warwick, Warwickshire",
+    "city_ar": "Warwick, Warwickshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.18935,
+    "lon": -1.61409,
+    "elev_ft": 159,
+    "rwys": [
+      {
+        "id": "05/23",
+        "len": 1926,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "18/36",
+        "len": 3009,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "AFIS",
+        "v": "124.03"
+      }
+    ]
+  },
+  {
+    "icao": "EGCA",
+    "iata": "",
+    "name_en": "Coal Aston Airfield",
+    "name_ar": "Coal Aston Airfield",
+    "city_en": "Dronfield, Derbyshire",
+    "city_ar": "Dronfield, Derbyshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.30481,
+    "lon": -1.42886,
+    "elev_ft": 750,
+    "rwys": [
+      {
+        "id": "11/29",
+        "len": 2165,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EGCB",
+    "iata": "",
+    "name_en": "Manchester Barton Aerodrome",
+    "name_ar": "Manchester Barton Aerodrome",
+    "city_en": "Manchester, Greater Manchester",
+    "city_ar": "Manchester, Greater Manchester",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.4717,
+    "lon": -2.38972,
+    "elev_ft": 73,
+    "rwys": [
+      {
+        "id": "02/20",
+        "len": 1749,
+        "surf": "Grass"
+      },
+      {
+        "id": "08L/26R",
+        "len": 2103,
+        "surf": "Grass"
+      },
+      {
+        "id": "08R/26L",
+        "len": 2051,
+        "surf": "Grass"
+      },
+      {
+        "id": "14/32",
+        "len": 1305,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "AFIS",
+        "v": "120.25"
+      }
+    ]
+  },
+  {
+    "icao": "EGCF",
+    "iata": "",
+    "name_en": "Sandtoft Airfield",
+    "name_ar": "Sandtoft Airfield",
+    "city_en": "Doncaster, South Yorkshire",
+    "city_ar": "Doncaster, South Yorkshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.55936,
+    "lon": -0.85904,
+    "elev_ft": 11,
+    "rwys": [
+      {
+        "id": "04/22",
+        "len": 2907,
+        "surf": "UNK"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "130.425"
+      }
+    ]
+  },
+  {
+    "icao": "EGCG",
+    "iata": "",
+    "name_en": "Strubby Airfield",
+    "name_ar": "Strubby Airfield",
+    "city_en": "Alford, Lincolnshire",
+    "city_ar": "Alford, Lincolnshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.31096,
+    "lon": 0.17302,
+    "elev_ft": 45,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 2693,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EGCH",
+    "iata": "",
+    "name_en": "Holyhead Heliport",
+    "name_ar": "Holyhead Heliport",
+    "city_en": "",
+    "city_ar": "",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 53.29885,
+    "lon": -4.61686,
+    "elev_ft": 39,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EGCJ",
+    "iata": "",
+    "name_en": "Sherburn-in-Elmet Airfield",
+    "name_ar": "Sherburn-in-Elmet Airfield",
+    "city_en": "Selby, North Yorkshire",
+    "city_ar": "Selby, North Yorkshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.78846,
+    "lon": -1.21688,
+    "elev_ft": 26,
+    "rwys": [
+      {
+        "id": "01/19",
+        "len": 1919,
+        "surf": "Grass"
+      },
+      {
+        "id": "06/24",
+        "len": 2601,
+        "surf": "Grass"
+      },
+      {
+        "id": "11R/29L",
+        "len": 2021,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "126.6"
+      },
+      {
+        "l": "RAD/APP",
+        "v": "126.5"
+      }
+    ]
+  },
+  {
+    "icao": "EGCK",
+    "iata": "",
+    "name_en": "Caernarfon Airport",
+    "name_ar": "Caernarfon Airport",
+    "city_en": "Caernarfon",
+    "city_ar": "Caernarfon",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.10182,
+    "lon": -4.33761,
+    "elev_ft": 1,
+    "rwys": [
+      {
+        "id": "02/20",
+        "len": 3534,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "07/25",
+        "len": 2887,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.225"
+      }
+    ]
+  },
+  {
+    "icao": "EGCL",
+    "iata": "",
+    "name_en": "Fenland Airfield",
+    "name_ar": "Fenland Airfield",
+    "city_en": "Spalding, Lincolnshire",
+    "city_ar": "Spalding, Lincolnshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.7392,
+    "lon": -0.02972,
+    "elev_ft": 8,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 2198,
+        "surf": "Grass"
+      },
+      {
+        "id": "18/36",
+        "len": 1968,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.93"
+      }
+    ]
+  },
+  {
+    "icao": "EGCS",
+    "iata": "",
+    "name_en": "Sturgate Airfield",
+    "name_ar": "Sturgate Airfield",
+    "city_en": "Gainsborough, Lincolnshire",
+    "city_ar": "Gainsborough, Lincolnshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.38124,
+    "lon": -0.6848,
+    "elev_ft": 58,
+    "rwys": [
+      {
+        "id": "09/27",
+        "len": 2691,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "14/32",
+        "len": 1509,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "130.3"
+      }
+    ]
+  },
+  {
+    "icao": "EGCT",
+    "iata": "",
+    "name_en": "Tilstock Airfield",
+    "name_ar": "Tilstock Airfield",
+    "city_en": "Whitchurch, Shropshire",
+    "city_ar": "Whitchurch, Shropshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.93236,
+    "lon": -2.64743,
+    "elev_ft": 301,
+    "rwys": [],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.075"
+      }
+    ]
+  },
+  {
+    "icao": "EGCV",
+    "iata": "",
+    "name_en": "Sleap Airfield",
+    "name_ar": "Sleap Airfield",
+    "city_en": "Shrewsbury, Shropshire",
+    "city_ar": "Shrewsbury, Shropshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.83481,
+    "lon": -2.77031,
+    "elev_ft": 275,
+    "rwys": [
+      {
+        "id": "05/23",
+        "len": 2621,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "18/36",
+        "len": 2542,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.45"
+      }
+    ]
+  },
+  {
+    "icao": "EGCW",
+    "iata": "",
+    "name_en": "Welshpool Airport",
+    "name_ar": "Welshpool Airport",
+    "city_en": "Welshpool, Powys",
+    "city_ar": "Welshpool, Powys",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.6286,
+    "lon": -3.15333,
+    "elev_ft": 233,
+    "rwys": [
+      {
+        "id": "04/22",
+        "len": 3346,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "128"
+      }
+    ]
+  },
+  {
+    "icao": "EGDJ",
+    "iata": "UPV",
+    "name_en": "Upavon Aerodrome",
+    "name_ar": "Upavon Aerodrome",
+    "city_en": "Pewsey, Wiltshire",
+    "city_ar": "Pewsey, Wiltshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.28657,
+    "lon": -1.78224,
+    "elev_ft": 574,
+    "rwys": [
+      {
+        "id": "05/23",
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "Nationwide Glide",
+        "v": "129.975"
+      },
+      {
+        "l": "Ops",
+        "v": "122.75"
+      }
+    ]
+  },
+  {
+    "icao": "EGDN",
+    "iata": "",
+    "name_en": "Netheravon Airfield",
+    "name_ar": "Netheravon Airfield",
+    "city_en": "Salisbury, Wiltshire",
+    "city_ar": "Salisbury, Wiltshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.2472,
+    "lon": -1.75425,
+    "elev_ft": 456,
+    "rwys": [
+      {
+        "id": "04/22",
+        "len": 2099,
+        "surf": "Grass"
+      },
+      {
+        "id": "11/29",
+        "len": 3582,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "128.3"
+      },
+      {
+        "l": "AFIS",
+        "v": "128.3"
+      }
+    ]
+  },
+  {
+    "icao": "EGDO",
+    "iata": "",
+    "name_en": "Predannack Airfield",
+    "name_ar": "Predannack Airfield",
+    "city_en": "Predannack Wollas, Cornwall",
+    "city_ar": "Predannack Wollas, Cornwall",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.0012,
+    "lon": -5.23083,
+    "elev_ft": 295,
+    "rwys": [
+      {
+        "id": "01/19",
+        "len": 4610,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "05/23",
+        "len": 5984,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "10/28",
+        "len": 4295,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "13/31",
+        "len": 3005,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "APP",
+        "v": "134.05"
+      },
+      {
+        "l": "TWR",
+        "v": "122.1"
+      }
+    ]
+  },
+  {
+    "icao": "EGDP",
+    "iata": "",
+    "name_en": "RNAS Portland Heliport",
+    "name_ar": "RNAS Portland Heliport",
+    "city_en": "Portland",
+    "city_ar": "Portland",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 50.5681,
+    "lon": -2.44972,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EGDW",
+    "iata": "",
+    "name_en": "RNAS Merryfield",
+    "name_ar": "RNAS Merryfield",
+    "city_en": "Ilminster, Somerset",
+    "city_ar": "Ilminster, Somerset",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.96428,
+    "lon": -2.93844,
+    "elev_ft": 151,
+    "rwys": [
+      {
+        "id": "03/21",
+        "len": 4245,
+        "surf": "UNK"
+      },
+      {
+        "id": "09/27",
+        "len": 6007,
+        "surf": "UNK"
+      },
+      {
+        "id": "16/34",
+        "len": 3704,
+        "surf": "UNK"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EGEA",
+    "iata": "",
+    "name_en": "Culter Heliport",
+    "name_ar": "Culter Heliport",
+    "city_en": "",
+    "city_ar": "",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 57.11986,
+    "lon": -2.32116,
+    "elev_ft": 300,
+    "rwys": [
+      {
+        "id": "10H/28H",
+        "surf": "Grass"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EGEH",
+    "iata": "WHS",
+    "name_en": "Whalsay Airstrip",
+    "name_ar": "Whalsay Airstrip",
+    "city_en": "Whalsay, Shetlands",
+    "city_ar": "Whalsay, Shetlands",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 60.37684,
+    "lon": -0.92723,
+    "elev_ft": 100,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EGEI",
+    "iata": "SKL",
+    "name_en": "Broadford Airstrip",
+    "name_ar": "Broadford Airstrip",
+    "city_en": "Ashaig, Highland",
+    "city_ar": "Ashaig, Highland",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 57.25313,
+    "lon": -5.82775,
+    "elev_ft": 24,
+    "rwys": [
+      {
+        "id": "07/25",
+        "len": 2529,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EGEZ",
+    "iata": "",
+    "name_en": "Nesscliffe Camp Helipad",
+    "name_ar": "Nesscliffe Camp Helipad",
+    "city_en": "Nesscliffe",
+    "city_ar": "Nesscliffe",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 52.75778,
+    "lon": -2.9275,
+    "elev_ft": 200,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EGFA",
+    "iata": "",
+    "name_en": "Aberporth Airport",
+    "name_ar": "Aberporth Airport",
+    "city_en": "Aberporth",
+    "city_ar": "Aberporth",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.1153,
+    "lon": -4.55694,
+    "elev_ft": 428,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 3031,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "AFIS",
+        "v": "122.15"
+      }
+    ]
+  },
+  {
+    "icao": "EGFC",
+    "iata": "",
+    "name_en": "Cardiff Heliport",
+    "name_ar": "Cardiff Heliport",
+    "city_en": "Cardiff",
+    "city_ar": "Cardiff",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 51.4675,
+    "lon": -3.1375,
+    "elev_ft": 0,
+    "rwys": [
+      {
+        "id": "H02/H20",
+        "len": 984,
+        "surf": "Concrete"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "120.65"
+      }
+    ]
+  },
+  {
+    "icao": "EGFD",
+    "iata": "",
+    "name_en": "Llanbedr Airfield",
+    "name_ar": "Llanbedr Airfield",
+    "city_en": "Llanbedr",
+    "city_ar": "Llanbedr",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.8117,
+    "lon": -4.12358,
+    "elev_ft": 30,
+    "rwys": [
+      {
+        "id": "05/23",
+        "len": 4328,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "15/33",
+        "len": 4207,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "17/35",
+        "len": 7500,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "CAC",
+        "v": "29.252"
+      },
+      {
+        "l": "TWR",
+        "v": "118.93"
+      }
+    ]
+  },
+  {
+    "icao": "EGFP",
+    "iata": "",
+    "name_en": "Pembrey West Wales Airport",
+    "name_ar": "Pembrey West Wales Airport",
+    "city_en": "Pembrey, Carmarthenshire",
+    "city_ar": "Pembrey, Carmarthenshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.7139,
+    "lon": -4.31222,
+    "elev_ft": 15,
+    "rwys": [
+      {
+        "id": "04/22",
+        "len": 2614,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "124.4"
+      },
+      {
+        "l": "RAD/APP",
+        "v": "124.4"
+      },
+      {
+        "l": "TWR",
+        "v": "124.4"
+      }
+    ]
+  },
+  {
+    "icao": "EGHA",
+    "iata": "",
+    "name_en": "Compton Abbas Aerodrome",
+    "name_ar": "Compton Abbas Aerodrome",
+    "city_en": "Shaftesbury, Dorset",
+    "city_ar": "Shaftesbury, Dorset",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.9672,
+    "lon": -2.15361,
+    "elev_ft": 811,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 2621,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.7"
+      }
+    ]
+  },
+  {
+    "icao": "EGHF",
+    "iata": "",
+    "name_en": "Solent Airport",
+    "name_ar": "Solent Airport",
+    "city_en": "Gosport, Hampshire",
+    "city_ar": "Gosport, Hampshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.8142,
+    "lon": -1.20333,
+    "elev_ft": 32,
+    "rwys": [
+      {
+        "id": "05/23",
+        "len": 3375,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "Information",
+        "v": "118.93"
+      }
+    ]
+  },
+  {
+    "icao": "EGHG",
+    "iata": "",
+    "name_en": "Yeovil/Westland Aerodrome",
+    "name_ar": "Yeovil/Westland Aerodrome",
+    "city_en": "Yeovil, Somerset",
+    "city_ar": "Yeovil, Somerset",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.94,
+    "lon": -2.65861,
+    "elev_ft": 202,
+    "rwys": [
+      {
+        "id": "09/27",
+        "len": 3878,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "125.4"
+      },
+      {
+        "l": "RAD/APP",
+        "v": "130.8"
+      },
+      {
+        "l": "TWR",
+        "v": "125.4"
+      }
+    ]
+  },
+  {
+    "icao": "EGHJ",
+    "iata": "BBP",
+    "name_en": "Bembridge Airport",
+    "name_ar": "Bembridge Airport",
+    "city_en": "Bembridge, Isle of Wight",
+    "city_ar": "Bembridge, Isle of Wight",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.6781,
+    "lon": -1.10944,
+    "elev_ft": 53,
+    "rwys": [
+      {
+        "id": "12/30",
+        "len": 2713,
+        "surf": "Concrete"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "123.25"
+      }
+    ]
+  },
+  {
+    "icao": "EGHN",
+    "iata": "",
+    "name_en": "Isle of Wight/Sandown Airport",
+    "name_ar": "Isle of Wight/Sandown Airport",
+    "city_en": "Sandown, Isle of Wight",
+    "city_ar": "Sandown, Isle of Wight",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.6531,
+    "lon": -1.18222,
+    "elev_ft": 55,
+    "rwys": [
+      {
+        "id": "05/23",
+        "len": 2900,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "123.5"
+      }
+    ]
+  },
+  {
+    "icao": "EGHO",
+    "iata": "",
+    "name_en": "Thruxton Aerodrome",
+    "name_ar": "Thruxton Aerodrome",
+    "city_en": "Andover, Hampshire",
+    "city_ar": "Andover, Hampshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.2106,
+    "lon": -1.6,
+    "elev_ft": 319,
+    "rwys": [
+      {
+        "id": "07/25",
+        "len": 3179,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "12/30",
+        "len": 2493,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "130.45"
+      }
+    ]
+  },
+  {
+    "icao": "EGHP",
+    "iata": "",
+    "name_en": "Popham Airfield",
+    "name_ar": "Popham Airfield",
+    "city_en": "Winchester, Hampshire",
+    "city_ar": "Winchester, Hampshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.19469,
+    "lon": -1.23307,
+    "elev_ft": 550,
+    "rwys": [
+      {
+        "id": "03/21",
+        "len": 2953,
+        "surf": "Grass"
+      },
+      {
+        "id": "08/26",
+        "len": 2920,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "129.805"
+      }
+    ]
+  },
+  {
+    "icao": "EGHR",
+    "iata": "QUG",
+    "name_en": "Goodwood Aerodrome",
+    "name_ar": "Goodwood Aerodrome",
+    "city_en": "Chichester, West Sussex",
+    "city_ar": "Chichester, West Sussex",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.85983,
+    "lon": -0.76007,
+    "elev_ft": 98,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 2805,
+        "surf": "Grass"
+      },
+      {
+        "id": "10/28",
+        "len": 2297,
+        "surf": "Grass"
+      },
+      {
+        "id": "14/32",
+        "len": 4140,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "AFIS",
+        "v": "122.455"
+      }
+    ]
+  },
+  {
+    "icao": "EGHS",
+    "iata": "",
+    "name_en": "Henstridge Airfield",
+    "name_ar": "Henstridge Airfield",
+    "city_en": "Templecombe, Somerset",
+    "city_ar": "Templecombe, Somerset",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.985,
+    "lon": -2.35722,
+    "elev_ft": 184,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 2378,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "130.25"
+      }
+    ]
+  },
+  {
+    "icao": "EGHT",
+    "iata": "",
+    "name_en": "Tresco Heliport",
+    "name_ar": "Tresco Heliport",
+    "city_en": "Tresco, Isles of Scilly",
+    "city_ar": "Tresco, Isles of Scilly",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 49.9456,
+    "lon": -6.33139,
+    "elev_ft": 20,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 1187,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "130.25"
+      }
+    ]
+  },
+  {
+    "icao": "EGHU",
+    "iata": "",
+    "name_en": "Eaglescott Airfield",
+    "name_ar": "Eaglescott Airfield",
+    "city_en": "Umberleigh, Devon",
+    "city_ar": "Umberleigh, Devon",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.92865,
+    "lon": -3.98845,
+    "elev_ft": 655,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 1968,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "123"
+      }
+    ]
+  },
+  {
+    "icao": "EGHY",
+    "iata": "",
+    "name_en": "Truro Aerodrome",
+    "name_ar": "Truro Aerodrome",
+    "city_en": "Truro",
+    "city_ar": "Truro",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.2784,
+    "lon": -5.14229,
+    "elev_ft": 127,
+    "rwys": [
+      {
+        "id": "14/32",
+        "len": 1771,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "129.8"
+      }
+    ]
+  },
+  {
+    "icao": "EGKE",
+    "iata": "",
+    "name_en": "Challock Airfield",
+    "name_ar": "Challock Airfield",
+    "city_en": "Ashford, Kent",
+    "city_ar": "Ashford, Kent",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.2083,
+    "lon": 0.82917,
+    "elev_ft": 600,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EGKG",
+    "iata": "",
+    "name_en": "Goodwood Racecourse Heliport",
+    "name_ar": "Goodwood Racecourse Heliport",
+    "city_en": "Chichester, West Sussex",
+    "city_ar": "Chichester, West Sussex",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 50.9006,
+    "lon": -0.73972,
+    "elev_ft": 510,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EGKH",
+    "iata": "",
+    "name_en": "Headcorn Aerodrome",
+    "name_ar": "Headcorn Aerodrome",
+    "city_en": "Ashford, Kent",
+    "city_ar": "Ashford, Kent",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.1569,
+    "lon": 0.64167,
+    "elev_ft": 72,
+    "rwys": [
+      {
+        "id": "03/21",
+        "surf": "Grass"
+      },
+      {
+        "id": "10/28",
+        "len": 4101,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122"
+      }
+    ]
+  },
+  {
+    "icao": "EGKL",
+    "iata": "",
+    "name_en": "Deanland Lewes Airfield",
+    "name_ar": "Deanland Lewes Airfield",
+    "city_en": "Lewes, East Sussex",
+    "city_ar": "Lewes, East Sussex",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.88109,
+    "lon": 0.15435,
+    "elev_ft": 69,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 1499,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "129.73"
+      }
+    ]
+  },
+  {
+    "icao": "EGKR",
+    "iata": "",
+    "name_en": "Redhill Aerodrome",
+    "name_ar": "Redhill Aerodrome",
+    "city_en": "Redhill, Surrey",
+    "city_ar": "Redhill, Surrey",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.2136,
+    "lon": -0.13861,
+    "elev_ft": 222,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 1640,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "07H/25H",
+        "len": 574,
+        "surf": "Grass"
+      },
+      {
+        "id": "07L/25R",
+        "len": 2241,
+        "surf": "Grass"
+      },
+      {
+        "id": "07R/25L",
+        "len": 2943,
+        "surf": "Grass"
+      },
+      {
+        "id": "18/36",
+        "len": 2792,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "ATIS",
+        "v": "125.305"
+      },
+      {
+        "l": "TWR",
+        "v": "119.605"
+      }
+    ]
+  },
+  {
+    "icao": "EGLA",
+    "iata": "",
+    "name_en": "Bodmin Airfield",
+    "name_ar": "Bodmin Airfield",
+    "city_en": "Bodmin",
+    "city_ar": "Bodmin",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.4997,
+    "lon": -4.66583,
+    "elev_ft": 650,
+    "rwys": [
+      {
+        "id": "03/21",
+        "len": 1574,
+        "surf": "Grass"
+      },
+      {
+        "id": "13/31",
+        "len": 2001,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.7"
+      }
+    ]
+  },
+  {
+    "icao": "EGLD",
+    "iata": "",
+    "name_en": "Denham Aerodrome",
+    "name_ar": "Denham Aerodrome",
+    "city_en": "Uxbridge, Greater London",
+    "city_ar": "Uxbridge, Greater London",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.5883,
+    "lon": -0.51306,
+    "elev_ft": 249,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 2543,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "12/30",
+        "len": 1791,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "130.73"
+      },
+      {
+        "l": "AFIS",
+        "v": "130.73"
+      }
+    ]
+  },
+  {
+    "icao": "EGLJ",
+    "iata": "",
+    "name_en": "Chalgrove Airfield",
+    "name_ar": "Chalgrove Airfield",
+    "city_en": "Oxford, Oxfordshire",
+    "city_ar": "Oxford, Oxfordshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.6761,
+    "lon": -1.08083,
+    "elev_ft": 240,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 4229,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "13/31",
+        "len": 5909,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "18/36",
+        "len": 4167,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "RDO",
+        "v": "125.4"
+      }
+    ]
+  },
+  {
+    "icao": "EGLM",
+    "iata": "",
+    "name_en": "White Waltham Airfield",
+    "name_ar": "White Waltham Airfield",
+    "city_en": "Maidenhead, Berkshire",
+    "city_ar": "Maidenhead, Berkshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.5008,
+    "lon": -0.77444,
+    "elev_ft": 131,
+    "rwys": [
+      {
+        "id": "03/21",
+        "len": 3363,
+        "surf": "Grass"
+      },
+      {
+        "id": "07L/25R",
+        "len": 3642,
+        "surf": "Grass"
+      },
+      {
+        "id": "07R/25L",
+        "len": 2585,
+        "surf": "Grass"
+      },
+      {
+        "id": "11/29",
+        "len": 3051,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.6"
+      },
+      {
+        "l": "AFIS",
+        "v": "122.6"
+      }
+    ]
+  },
+  {
+    "icao": "EGLP",
+    "iata": "",
+    "name_en": "Brimpton Airfield",
+    "name_ar": "Brimpton Airfield",
+    "city_en": "Reading, Berkshire",
+    "city_ar": "Reading, Berkshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.38346,
+    "lon": -1.1721,
+    "elev_ft": 210,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 2034,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "Brimpton radio",
+        "v": "135.125"
+      }
+    ]
+  },
+  {
+    "icao": "EGLS",
+    "iata": "",
+    "name_en": "Old Sarum Airfield",
+    "name_ar": "Old Sarum Airfield",
+    "city_en": "Salisbury, Wiltshire",
+    "city_ar": "Salisbury, Wiltshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.0989,
+    "lon": -1.78417,
+    "elev_ft": 285,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 2562,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "123.205"
+      }
+    ]
+  },
+  {
+    "icao": "EGLT",
+    "iata": "",
+    "name_en": "Ascot Racecourse Heliport",
+    "name_ar": "Ascot Racecourse Heliport",
+    "city_en": "Ascot Heath, Berkshire",
+    "city_ar": "Ascot Heath, Berkshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 51.4216,
+    "lon": -0.6598,
+    "elev_ft": 220,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EGLW",
+    "iata": "",
+    "name_en": "London Heliport",
+    "name_ar": "London Heliport",
+    "city_en": "London",
+    "city_ar": "London",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 51.46992,
+    "lon": -0.17954,
+    "elev_ft": 18,
+    "rwys": [
+      {
+        "id": "03/21",
+        "len": 114,
+        "surf": "Concrete"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "RAD/APP",
+        "v": "122.9"
+      },
+      {
+        "l": "TWR",
+        "v": "122.9"
+      }
+    ]
+  },
+  {
+    "icao": "EGMA",
+    "iata": "",
+    "name_en": "Fowlmere Airfield",
+    "name_ar": "Fowlmere Airfield",
+    "city_en": "Fowlmere, Cambridgeshire",
+    "city_ar": "Fowlmere, Cambridgeshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.0775,
+    "lon": 0.06167,
+    "elev_ft": 124,
+    "rwys": [
+      {
+        "id": "07/25",
+        "len": 2309,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "120.925"
+      },
+      {
+        "l": "A/G",
+        "v": "135.7"
+      }
+    ]
+  },
+  {
+    "icao": "EGMF",
+    "iata": "",
+    "name_en": "Farthing Corner / Stoneacre Farm Airfield",
+    "name_ar": "Farthing Corner / Stoneacre Farm Airfield",
+    "city_en": "Sittingbourne, Kent",
+    "city_ar": "Sittingbourne, Kent",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.33279,
+    "lon": 0.60106,
+    "elev_ft": 420,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 1246,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EGMJ",
+    "iata": "",
+    "name_en": "Little Gransden Airfield",
+    "name_ar": "Little Gransden Airfield",
+    "city_en": "Gamlingay, Cambridgeshire",
+    "city_ar": "Gamlingay, Cambridgeshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.16598,
+    "lon": -0.14922,
+    "elev_ft": 250,
+    "rwys": [
+      {
+        "id": "10/28",
+        "len": 1870,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "130.85"
+      }
+    ]
+  },
+  {
+    "icao": "EGML",
+    "iata": "",
+    "name_en": "Damyns Hall Aerodrome",
+    "name_ar": "Damyns Hall Aerodrome",
+    "city_en": "Upminster, Greater London",
+    "city_ar": "Upminster, Greater London",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.52756,
+    "lon": 0.24419,
+    "elev_ft": 59,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EGMT",
+    "iata": "",
+    "name_en": "Thurrock Airfield",
+    "name_ar": "Thurrock Airfield",
+    "city_en": "Orsett, Essex",
+    "city_ar": "Orsett, Essex",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.53751,
+    "lon": 0.36763,
+    "elev_ft": 20,
+    "rwys": [
+      {
+        "id": "07L/25R",
+        "len": 2640,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EGNE",
+    "iata": "",
+    "name_en": "Retford Gamston Airport",
+    "name_ar": "Retford Gamston Airport",
+    "city_en": "Retford, Nottinghamshire",
+    "city_ar": "Retford, Nottinghamshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.2806,
+    "lon": -0.95139,
+    "elev_ft": 91,
+    "rwys": [
+      {
+        "id": "02/20",
+        "len": 3933,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "14/32",
+        "len": 2624,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "130.475"
+      }
+    ]
+  },
+  {
+    "icao": "EGNF",
+    "iata": "",
+    "name_en": "Netherthorpe Airfield",
+    "name_ar": "Netherthorpe Airfield",
+    "city_en": "Worksop, Nottinghamshire",
+    "city_ar": "Worksop, Nottinghamshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.31718,
+    "lon": -1.19557,
+    "elev_ft": 250,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 1847,
+        "surf": "Grass"
+      },
+      {
+        "id": "18/36",
+        "len": 1253,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "123.275"
+      }
+    ]
+  },
+  {
+    "icao": "EGNG",
+    "iata": "",
+    "name_en": "Bagby Thirsk Airfield",
+    "name_ar": "Bagby Thirsk Airfield",
+    "city_en": "Thirsk, North Yorkshire",
+    "city_ar": "Thirsk, North Yorkshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 54.21123,
+    "lon": -1.29242,
+    "elev_ft": 161,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 2329,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "123.25"
+      }
+    ]
+  },
+  {
+    "icao": "EGNI",
+    "iata": "",
+    "name_en": "Skegness (Ingoldmells) Aerodrome",
+    "name_ar": "Skegness (Ingoldmells) Aerodrome",
+    "city_en": "Skegness, Lincolnshire",
+    "city_ar": "Skegness, Lincolnshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.1716,
+    "lon": 0.32938,
+    "elev_ft": 8,
+    "rwys": [
+      {
+        "id": "03/21",
+        "len": 2622,
+        "surf": "G"
+      },
+      {
+        "id": "11/29",
+        "len": 2133,
+        "surf": "G"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "132.425"
+      }
+    ]
+  },
+  {
+    "icao": "EGNP",
+    "iata": "",
+    "name_en": "Leeds Heliport",
+    "name_ar": "Leeds Heliport",
+    "city_en": "",
+    "city_ar": "",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 53.87818,
+    "lon": -1.66248,
+    "elev_ft": 670,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EGNU",
+    "iata": "",
+    "name_en": "Full Sutton Airfield",
+    "name_ar": "Full Sutton Airfield",
+    "city_en": "York, North Yorkshire",
+    "city_ar": "York, North Yorkshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.9806,
+    "lon": -0.86472,
+    "elev_ft": 86,
+    "rwys": [
+      {
+        "id": "04/22",
+        "len": 2533,
+        "surf": "Grass"
+      },
+      {
+        "id": "07/25",
+        "len": 1312,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "16/34",
+        "len": 2460
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "132.325"
+      }
+    ]
+  },
+  {
+    "icao": "EGNW",
+    "iata": "",
+    "name_en": "Wickenby Aerodrome",
+    "name_ar": "Wickenby Aerodrome",
+    "city_en": "Lincoln, Lincolnshire",
+    "city_ar": "Lincoln, Lincolnshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.3167,
+    "lon": -0.34972,
+    "elev_ft": 63,
+    "rwys": [
+      {
+        "id": "03/21",
+        "len": 1738,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "16/34",
+        "len": 1630,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.45"
+      },
+      {
+        "l": "A/G",
+        "v": "122.45"
+      }
+    ]
+  },
+  {
+    "icao": "EGNY",
+    "iata": "",
+    "name_en": "Beverley/Linley Hill Airfield",
+    "name_ar": "Beverley/Linley Hill Airfield",
+    "city_en": "Beverley, East Riding of Yorkshire",
+    "city_ar": "Beverley, East Riding of Yorkshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.89838,
+    "lon": -0.36139,
+    "elev_ft": 3,
+    "rwys": [
+      {
+        "id": "12/30",
+        "len": 2329,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "123.05"
+      }
+    ]
+  },
+  {
+    "icao": "EGOE",
+    "iata": "",
+    "name_en": "Tern Hill Airfield",
+    "name_ar": "Tern Hill Airfield",
+    "city_en": "Market Drayton, Shropshire",
+    "city_ar": "Market Drayton, Shropshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.87278,
+    "lon": -2.53269,
+    "elev_ft": 272,
+    "rwys": [
+      {
+        "id": "05/23",
+        "len": 3215,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "10/28",
+        "len": 3110,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "APP",
+        "v": "28.2"
+      },
+      {
+        "l": "GND",
+        "v": "27.902"
+      },
+      {
+        "l": "TWR",
+        "v": "122.1"
+      }
+    ]
+  },
+  {
+    "icao": "EGOQ",
+    "iata": "",
+    "name_en": "RAF Mona",
+    "name_ar": "RAF Mona",
+    "city_en": "Bodffordd, Anglesey",
+    "city_ar": "Bodffordd, Anglesey",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.2586,
+    "lon": -4.37355,
+    "elev_ft": 202,
+    "rwys": [
+      {
+        "id": "04/22",
+        "len": 5180,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "APP",
+        "v": "122.225"
+      },
+      {
+        "l": "RDO",
+        "v": "118.95"
+      },
+      {
+        "l": "RDR",
+        "v": "125.225"
+      },
+      {
+        "l": "TWR",
+        "v": "119.75"
+      }
+    ]
+  },
+  {
+    "icao": "EGOW",
+    "iata": "",
+    "name_en": "RAF Woodvale",
+    "name_ar": "RAF Woodvale",
+    "city_en": "Southport, Sefton",
+    "city_ar": "Southport, Sefton",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.5816,
+    "lon": -3.05552,
+    "elev_ft": 37,
+    "rwys": [
+      {
+        "id": "03/21",
+        "len": 5405,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "08/26",
+        "len": 3505,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "16/34",
+        "len": 3291
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "121"
+      },
+      {
+        "l": "APP",
+        "v": "121"
+      },
+      {
+        "l": "APP",
+        "v": "282.57"
+      },
+      {
+        "l": "TWR",
+        "v": "119.75"
+      },
+      {
+        "l": "TWR",
+        "v": "278.2"
+      }
+    ]
+  },
+  {
+    "icao": "EGPG",
+    "iata": "",
+    "name_en": "Cumbernauld Airport",
+    "name_ar": "Cumbernauld Airport",
+    "city_en": "Cumbernauld",
+    "city_ar": "Cumbernauld",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 55.9747,
+    "lon": -3.97556,
+    "elev_ft": 350,
+    "rwys": [
+      {
+        "id": "07/25",
+        "len": 2690,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "AFIS",
+        "v": "120.6"
+      }
+    ]
+  },
+  {
+    "icao": "EGPJ",
+    "iata": "",
+    "name_en": "Fife Airport",
+    "name_ar": "Fife Airport",
+    "city_en": "Glenrothes",
+    "city_ar": "Glenrothes",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 56.1833,
+    "lon": -3.22028,
+    "elev_ft": 399,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 2296,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "130.455"
+      }
+    ]
+  },
+  {
+    "icao": "EGPS",
+    "iata": "",
+    "name_en": "Longside Airfield",
+    "name_ar": "Longside Airfield",
+    "city_en": "Peterhead",
+    "city_ar": "Peterhead",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 57.51684,
+    "lon": -1.86459,
+    "elev_ft": 150,
+    "rwys": [
+      {
+        "id": "10/28",
+        "len": 1640,
+        "surf": "Concrete"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "118.28"
+      },
+      {
+        "l": "Info",
+        "v": "130.575"
+      }
+    ]
+  },
+  {
+    "icao": "EGPT",
+    "iata": "PSL",
+    "name_en": "Perth/Scone Airport",
+    "name_ar": "Perth/Scone Airport",
+    "city_en": "Perth, Perth and Kinross",
+    "city_ar": "Perth, Perth and Kinross",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 56.4392,
+    "lon": -3.37222,
+    "elev_ft": 397,
+    "rwys": [
+      {
+        "id": "03/21",
+        "len": 2798,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "09/27",
+        "len": 1998,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "15/33",
+        "len": 2034,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "121.08"
+      }
+    ]
+  },
+  {
+    "icao": "EGPW",
+    "iata": "",
+    "name_en": "Unst Airfield",
+    "name_ar": "Unst Airfield",
+    "city_en": "Baltasound, Shetland Islands",
+    "city_ar": "Baltasound, Shetland Islands",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 60.7472,
+    "lon": -0.85385,
+    "elev_ft": 62,
+    "rwys": [],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "130.35"
+      },
+      {
+        "l": "AFIS",
+        "v": "130.35"
+      }
+    ]
+  },
+  {
+    "icao": "EGSA",
+    "iata": "",
+    "name_en": "Shipdham Airfield",
+    "name_ar": "Shipdham Airfield",
+    "city_en": "Thetford, Norfolk",
+    "city_ar": "Thetford, Norfolk",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.6294,
+    "lon": 0.92806,
+    "elev_ft": 210,
+    "rwys": [
+      {
+        "id": "02/20",
+        "len": 2828,
+        "surf": "UNK"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EGSD",
+    "iata": "",
+    "name_en": "Great Yarmouth - North Denes Heliport",
+    "name_ar": "Great Yarmouth - North Denes Heliport",
+    "city_en": "Great Yarmouth, Norfolk",
+    "city_ar": "Great Yarmouth, Norfolk",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 52.63558,
+    "lon": 1.72302,
+    "elev_ft": 6,
+    "rwys": [
+      {
+        "id": "10H/28H",
+        "len": 1574,
+        "surf": "Grass"
+      },
+      {
+        "id": "18H/36H",
+        "len": 1181,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "123.4"
+      },
+      {
+        "l": "RAD/APP",
+        "v": "123.4"
+      },
+      {
+        "l": "TWR",
+        "v": "123.4"
+      }
+    ]
+  },
+  {
+    "icao": "EGSF",
+    "iata": "",
+    "name_en": "Peterborough Business Airport",
+    "name_ar": "Peterborough Business Airport",
+    "city_en": "Peterborough, Cambridgeshire",
+    "city_ar": "Peterborough, Cambridgeshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.4681,
+    "lon": -0.25111,
+    "elev_ft": 26,
+    "rwys": [
+      {
+        "id": "10/28",
+        "len": 3238,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "129.725"
+      }
+    ]
+  },
+  {
+    "icao": "EGSG",
+    "iata": "",
+    "name_en": "Stapleford Aerodrome",
+    "name_ar": "Stapleford Aerodrome",
+    "city_en": "Romford, Greater London",
+    "city_ar": "Romford, Greater London",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.6525,
+    "lon": 0.15583,
+    "elev_ft": 183,
+    "rwys": [
+      {
+        "id": "03L/21R",
+        "len": 3283,
+        "surf": "Grass"
+      },
+      {
+        "id": "03R/21L",
+        "len": 3475,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "10/28",
+        "len": 2152,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.8"
+      }
+    ]
+  },
+  {
+    "icao": "EGSI",
+    "iata": "",
+    "name_en": "Marshland Airfield",
+    "name_ar": "Marshland Airfield",
+    "city_en": "Wisbech, Cambridgeshire",
+    "city_ar": "Wisbech, Cambridgeshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.64361,
+    "lon": 0.295,
+    "elev_ft": -6,
+    "rwys": [
+      {
+        "id": "03/21",
+        "len": 2624,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EGSJ",
+    "iata": "",
+    "name_en": "Seething Airfield",
+    "name_ar": "Seething Airfield",
+    "city_en": "Mundham, Norfolk",
+    "city_ar": "Mundham, Norfolk",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.511,
+    "lon": 1.41686,
+    "elev_ft": 130,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 2624,
+        "surf": "UNK"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "118.435"
+      }
+    ]
+  },
+  {
+    "icao": "EGSL",
+    "iata": "",
+    "name_en": "Andrewsfield Aerodrome",
+    "name_ar": "Andrewsfield Aerodrome",
+    "city_en": "Braintree, Essex",
+    "city_ar": "Braintree, Essex",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.895,
+    "lon": 0.44917,
+    "elev_ft": 286,
+    "rwys": [
+      {
+        "id": "09/27",
+        "surf": "UNK"
+      },
+      {
+        "id": "09L/27R",
+        "len": 2621,
+        "surf": "Grass"
+      },
+      {
+        "id": "09R/27L",
+        "len": 2621,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "130.555"
+      },
+      {
+        "l": "AFIS",
+        "v": "130.555"
+      }
+    ]
+  },
+  {
+    "icao": "EGSM",
+    "iata": "",
+    "name_en": "Beccles Airfield",
+    "name_ar": "Beccles Airfield",
+    "city_en": "Beccles, Suffolk",
+    "city_ar": "Beccles, Suffolk",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.4353,
+    "lon": 1.61833,
+    "elev_ft": 80,
+    "rwys": [
+      {
+        "id": "09/27",
+        "len": 3169,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "120.375"
+      }
+    ]
+  },
+  {
+    "icao": "EGSO",
+    "iata": "",
+    "name_en": "Crowfield Airfield",
+    "name_ar": "Crowfield Airfield",
+    "city_en": "Ipswich, Suffolk",
+    "city_ar": "Ipswich, Suffolk",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.17305,
+    "lon": 1.11065,
+    "elev_ft": 201,
+    "rwys": [],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.775"
+      },
+      {
+        "l": "APP",
+        "v": "125.8"
+      }
+    ]
+  },
+  {
+    "icao": "EGSP",
+    "iata": "",
+    "name_en": "Peterborough/Sibson Airfield",
+    "name_ar": "Peterborough/Sibson Airfield",
+    "city_en": "Peterborough, Cambridgeshire",
+    "city_ar": "Peterborough, Cambridgeshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.5571,
+    "lon": -0.38698,
+    "elev_ft": 130,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 3067,
+        "surf": "Grass"
+      },
+      {
+        "id": "15/33",
+        "len": 1807,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "120.325"
+      },
+      {
+        "l": "A/G",
+        "v": "122.3"
+      }
+    ]
+  },
+  {
+    "icao": "EGSQ",
+    "iata": "",
+    "name_en": "Clacton Airfield",
+    "name_ar": "Clacton Airfield",
+    "city_en": "Clacton-on-Sea, Essex",
+    "city_ar": "Clacton-on-Sea, Essex",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.785,
+    "lon": 1.13,
+    "elev_ft": 37,
+    "rwys": [
+      {
+        "id": "18/36",
+        "len": 1961,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "118.15"
+      }
+    ]
+  },
+  {
+    "icao": "EGSR",
+    "iata": "",
+    "name_en": "Earls Colne Airfield",
+    "name_ar": "Earls Colne Airfield",
+    "city_en": "Colchester, Essex",
+    "city_ar": "Colchester, Essex",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.9144,
+    "lon": 0.6825,
+    "elev_ft": 226,
+    "rwys": [
+      {
+        "id": "06L/24R",
+        "len": 3080,
+        "surf": "Grass"
+      },
+      {
+        "id": "06R/24L",
+        "len": 2552,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.425"
+      }
+    ]
+  },
+  {
+    "icao": "EGST",
+    "iata": "",
+    "name_en": "Elmsett Airfield",
+    "name_ar": "Elmsett Airfield",
+    "city_en": "Ipswich, Suffolk",
+    "city_ar": "Ipswich, Suffolk",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.07545,
+    "lon": 0.97765,
+    "elev_ft": 246,
+    "rwys": [
+      {
+        "id": "05/23",
+        "len": 2920,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "130.9"
+      }
+    ]
+  },
+  {
+    "icao": "EGSU",
+    "iata": "",
+    "name_en": "Duxford Aerodrome",
+    "name_ar": "Duxford Aerodrome",
+    "city_en": "Duxford, Cambridgeshire",
+    "city_ar": "Duxford, Cambridgeshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.0908,
+    "lon": 0.13194,
+    "elev_ft": 125,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 4750,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "06L/24R",
+        "len": 2887,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "INFO",
+        "v": "122.075"
+      }
+    ]
+  },
+  {
+    "icao": "EGSV",
+    "iata": "",
+    "name_en": "Old Buckenham Airfield",
+    "name_ar": "Old Buckenham Airfield",
+    "city_en": "Old Buckenham, Norfolk",
+    "city_ar": "Old Buckenham, Norfolk",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.4975,
+    "lon": 1.05194,
+    "elev_ft": 194,
+    "rwys": [
+      {
+        "id": "02/20",
+        "len": 1404,
+        "surf": "Grass"
+      },
+      {
+        "id": "07/25",
+        "len": 2618,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "07L/25R",
+        "len": 1335,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "124.405"
+      }
+    ]
+  },
+  {
+    "icao": "EGSW",
+    "iata": "",
+    "name_en": "Newmarket Heath Airfield",
+    "name_ar": "Newmarket Heath Airfield",
+    "city_en": "Newmarket, Suffolk",
+    "city_ar": "Newmarket, Suffolk",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.23515,
+    "lon": 0.35064,
+    "elev_ft": 100,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EGSX",
+    "iata": "",
+    "name_en": "North Weald Airfield",
+    "name_ar": "North Weald Airfield",
+    "city_en": "Epping, Essex",
+    "city_ar": "Epping, Essex",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.7217,
+    "lon": 0.15417,
+    "elev_ft": 321,
+    "rwys": [
+      {
+        "id": "02/20",
+        "len": 6332,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "123.525"
+      }
+    ]
+  },
+  {
+    "icao": "EGTB",
+    "iata": "HYC",
+    "name_en": "Wycombe Air Park",
+    "name_ar": "Wycombe Air Park",
+    "city_en": "Marlow, Buckinghamshire",
+    "city_ar": "Marlow, Buckinghamshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.61177,
+    "lon": -0.80832,
+    "elev_ft": 515,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 2411,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "06G/24G",
+        "len": 2001,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "GND",
+        "v": "121.77"
+      },
+      {
+        "l": "TWR",
+        "v": "126.55"
+      }
+    ]
+  },
+  {
+    "icao": "EGTD",
+    "iata": "",
+    "name_en": "Dunsfold Aerodrome",
+    "name_ar": "Dunsfold Aerodrome",
+    "city_en": "Cranleigh, Surrey",
+    "city_ar": "Cranleigh, Surrey",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.1172,
+    "lon": -0.53583,
+    "elev_ft": 172,
+    "rwys": [
+      {
+        "id": "07/25",
+        "len": 6168,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "CTAF",
+        "v": "119.1"
+      }
+    ]
+  },
+  {
+    "icao": "EGTF",
+    "iata": "",
+    "name_en": "Fairoaks Airport",
+    "name_ar": "Fairoaks Airport",
+    "city_en": "Woking, Surrey",
+    "city_ar": "Woking, Surrey",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.3481,
+    "lon": -0.55889,
+    "elev_ft": 80,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 2667,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "123.43"
+      },
+      {
+        "l": "AFIS",
+        "v": "123.43"
+      }
+    ]
+  },
+  {
+    "icao": "EGTH",
+    "iata": "",
+    "name_en": "Old Warden Airfield",
+    "name_ar": "Old Warden Airfield",
+    "city_en": "Biggleswade, Central Bedfordshire",
+    "city_ar": "Biggleswade, Central Bedfordshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.08459,
+    "lon": -0.3201,
+    "elev_ft": 110,
+    "rwys": [
+      {
+        "id": "02/20",
+        "len": 2621,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EGTO",
+    "iata": "RCS",
+    "name_en": "Rochester Airport",
+    "name_ar": "Rochester Airport",
+    "city_en": "Rochester, Kent",
+    "city_ar": "Rochester, Kent",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.3519,
+    "lon": 0.50333,
+    "elev_ft": 436,
+    "rwys": [
+      {
+        "id": "02L/20R",
+        "len": 2713,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "AFIS",
+        "v": "122.255"
+      }
+    ]
+  },
+  {
+    "icao": "EGTP",
+    "iata": "",
+    "name_en": "Perranporth Airfield",
+    "name_ar": "Perranporth Airfield",
+    "city_en": "Perranporth, Cornwall",
+    "city_ar": "Perranporth, Cornwall",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.33062,
+    "lon": -5.17932,
+    "elev_ft": 330,
+    "rwys": [
+      {
+        "id": "05/23",
+        "len": 3084,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "09/27",
+        "len": 2461,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "119.75"
+      }
+    ]
+  },
+  {
+    "icao": "EGTR",
+    "iata": "",
+    "name_en": "Elstree Airfield",
+    "name_ar": "Elstree Airfield",
+    "city_en": "Borehamwood, Hertfordshire",
+    "city_ar": "Borehamwood, Hertfordshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.6558,
+    "lon": -0.32583,
+    "elev_ft": 332,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 2135,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "122.4"
+      },
+      {
+        "l": "AFIS",
+        "v": "122.4"
+      }
+    ]
+  },
+  {
+    "icao": "EGTU",
+    "iata": "",
+    "name_en": "Dunkeswell Airfield",
+    "name_ar": "Dunkeswell Airfield",
+    "city_en": "Honiton, Devon",
+    "city_ar": "Honiton, Devon",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.86096,
+    "lon": -3.23393,
+    "elev_ft": 839,
+    "rwys": [
+      {
+        "id": "04/22",
+        "len": 3176,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "17/35",
+        "len": 3159,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "123.48"
+      }
+    ]
+  },
+  {
+    "icao": "EGTW",
+    "iata": "",
+    "name_en": "Oaksey Park Airfield",
+    "name_ar": "Oaksey Park Airfield",
+    "city_en": "Malmesbury, Wiltshire",
+    "city_ar": "Malmesbury, Wiltshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.6322,
+    "lon": -2.01472,
+    "elev_ft": 250,
+    "rwys": [
+      {
+        "id": "04/22",
+        "len": 2788,
+        "surf": "Grass"
+      },
+      {
+        "id": "17/35",
+        "len": 2575,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "132.23"
+      }
+    ]
+  },
+  {
+    "icao": "EGUD",
+    "iata": "",
+    "name_en": "RAF Abingdon",
+    "name_ar": "RAF Abingdon",
+    "city_en": "Abingdon, Oxfordshire",
+    "city_ar": "Abingdon, Oxfordshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.69061,
+    "lon": -1.31657,
+    "elev_ft": 259,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 3500,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "18/36",
+        "len": 5911,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "Tower",
+        "v": "121.1"
+      }
+    ]
+  },
+  {
+    "icao": "EGVF",
+    "iata": "",
+    "name_en": "Fleetlands Heliport",
+    "name_ar": "Fleetlands Heliport",
+    "city_en": "Gosport, Hampshire",
+    "city_ar": "Gosport, Hampshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 50.83424,
+    "lon": -1.16998,
+    "elev_ft": 3,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EGVH",
+    "iata": "",
+    "name_en": "Stirling Lines Heliport",
+    "name_ar": "Stirling Lines Heliport",
+    "city_en": "Hereford",
+    "city_ar": "Hereford",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 52.08086,
+    "lon": -2.799,
+    "elev_ft": 240,
+    "rwys": [
+      {
+        "id": "08H/26H",
+        "len": 492,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "EGVL",
+    "iata": "",
+    "name_en": "RAF Little Rissington",
+    "name_ar": "RAF Little Rissington",
+    "city_en": "Cheltenham, Gloucestershire",
+    "city_ar": "Cheltenham, Gloucestershire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.86648,
+    "lon": -1.69498,
+    "elev_ft": 730,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EGVP",
+    "iata": "",
+    "name_en": "Middle Wallop Airfield",
+    "name_ar": "Middle Wallop Airfield",
+    "city_en": "Middle Wallop, Hampshire",
+    "city_ar": "Middle Wallop, Hampshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.14388,
+    "lon": -1.56893,
+    "elev_ft": 297,
+    "rwys": [
+      {
+        "id": "04H/22H",
+        "len": 984,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "09/27",
+        "len": 3596,
+        "surf": "Grass"
+      },
+      {
+        "id": "17/35",
+        "len": 3874,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "APP",
+        "v": "280.62"
+      },
+      {
+        "l": "RAD/APP",
+        "v": "118.275"
+      },
+      {
+        "l": "TWR",
+        "v": "118.275"
+      },
+      {
+        "l": "TWR",
+        "v": "118.6"
+      },
+      {
+        "l": "TWR",
+        "v": "357.02"
+      }
+    ]
+  },
+  {
+    "icao": "EGWA",
+    "iata": "",
+    "name_en": "Marlborough Lines Heliport",
+    "name_ar": "Marlborough Lines Heliport",
+    "city_en": "Andover, Hampshire",
+    "city_ar": "Andover, Hampshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 51.20764,
+    "lon": -1.52937,
+    "elev_ft": 249,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "EGWE",
+    "iata": "",
+    "name_en": "RAF Henlow",
+    "name_ar": "RAF Henlow",
+    "city_en": "Henlow, Central Bedfordshire",
+    "city_ar": "Henlow, Central Bedfordshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.0182,
+    "lon": -0.30385,
+    "elev_ft": 206,
+    "rwys": [
+      {
+        "id": "02/20",
+        "len": 3146,
+        "surf": "Grass"
+      },
+      {
+        "id": "09L/27R",
+        "len": 2500,
+        "surf": "Grass"
+      },
+      {
+        "id": "09R/27L",
+        "len": 3169,
+        "surf": "Grass"
+      },
+      {
+        "id": "13/31",
+        "len": 2624,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "121.1"
+      }
+    ]
+  },
+  {
+    "icao": "EGWN",
+    "iata": "",
+    "name_en": "RAF Halton",
+    "name_ar": "RAF Halton",
+    "city_en": "Halton, Buckinghamshire",
+    "city_ar": "Halton, Buckinghamshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 51.7907,
+    "lon": -0.73797,
+    "elev_ft": 370,
+    "rwys": [
+      {
+        "id": "02/20",
+        "len": 3077,
+        "surf": "Grass"
+      },
+      {
+        "id": "07/25",
+        "len": 2786,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "130.425"
+      }
+    ]
+  },
+  {
+    "icao": "EGXY",
+    "iata": "",
+    "name_en": "RAF Syerston",
+    "name_ar": "RAF Syerston",
+    "city_en": "Newark on Trent, Nottinghamshire",
+    "city_ar": "Newark on Trent, Nottinghamshire",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 53.0228,
+    "lon": -0.91111,
+    "elev_ft": 228,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 5994,
+        "surf": "Asphalt"
+      },
+      {
+        "id": "15/33",
+        "len": 4419,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "125.425"
+      }
+    ]
+  },
+  {
+    "icao": "EGZL",
+    "iata": "",
+    "name_en": "Feshiebridge Glider Field",
+    "name_ar": "Feshiebridge Glider Field",
+    "city_en": "",
+    "city_ar": "",
+    "country_en": "United Kingdom",
+    "country_ar": "المملكة المتحدة",
+    "region": "EU",
+    "type": "small",
+    "lat": 57.10367,
+    "lon": -3.89167,
+    "elev_ft": 873,
+    "rwys": [
+      {
+        "id": "3/21",
+        "len": 2952,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "ET-0002",
+    "iata": "",
+    "name_en": "Kibbish Wells Airport",
+    "name_ar": "Kibbish Wells Airport",
+    "city_en": "Kibbish Wells",
+    "city_ar": "Kibbish Wells",
+    "country_en": "Ethiopia",
+    "country_ar": "إثيوبيا",
+    "region": "AF",
+    "type": "small",
+    "lat": 5.296,
+    "lon": 35.8682,
+    "elev_ft": 1403,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ET-0003",
+    "iata": "",
+    "name_en": "Ganada Airport",
+    "name_ar": "Ganada Airport",
+    "city_en": "",
+    "city_ar": "",
+    "country_en": "Ethiopia",
+    "country_ar": "إثيوبيا",
+    "region": "AF",
+    "type": "small",
+    "lat": 5.33717,
+    "lon": 37.02299,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ET-0005",
+    "iata": "",
+    "name_en": "African Union Heliport",
+    "name_ar": "African Union Heliport",
+    "city_en": "Addis Ababa",
+    "city_ar": "Addis Ababa",
+    "country_en": "Ethiopia",
+    "country_ar": "إثيوبيا",
+    "region": "AF",
+    "type": "heliport",
+    "lat": 8.99948,
+    "lon": 38.7425,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ET-0006",
+    "iata": "",
+    "name_en": "Bameza - Grand Ethiopian Renaissance Dam Airport",
+    "name_ar": "Bameza - Grand Ethiopian Renaissance Dam Airport",
+    "city_en": "Bameza",
+    "city_ar": "Bameza",
+    "country_en": "Ethiopia",
+    "country_ar": "إثيوبيا",
+    "region": "AF",
+    "type": "small",
+    "lat": 11.1269,
+    "lon": 35.04396,
+    "elev_ft": 2047,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ET-0007",
+    "iata": "",
+    "name_en": "Dolo Airport",
+    "name_ar": "Dolo Airport",
+    "city_en": "Dolo",
+    "city_ar": "Dolo",
+    "country_en": "Ethiopia",
+    "country_ar": "إثيوبيا",
+    "region": "AF",
+    "type": "small",
+    "lat": 4.17489,
+    "lon": 42.03296,
+    "elev_ft": 630,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ET-0008",
+    "iata": "",
+    "name_en": "Omorate Airport",
+    "name_ar": "Omorate Airport",
+    "city_en": "Omorate",
+    "city_ar": "Omorate",
+    "country_en": "Ethiopia",
+    "country_ar": "إثيوبيا",
+    "region": "AF",
+    "type": "small",
+    "lat": 4.80059,
+    "lon": 36.12643,
+    "elev_ft": 1243,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ET-GLC",
+    "iata": "GLC",
+    "name_en": "Geladi Airport",
+    "name_ar": "Geladi Airport",
+    "city_en": "Geladi",
+    "city_ar": "Geladi",
+    "country_en": "Ethiopia",
+    "country_ar": "إثيوبيا",
+    "region": "AF",
+    "type": "small",
+    "lat": 6.98444,
+    "lon": 46.4214,
+    "elev_ft": 1383,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ET-SHC",
+    "iata": "SHC",
+    "name_en": "Shire Inda Selassie Airport",
+    "name_ar": "Shire Inda Selassie Airport",
+    "city_en": "Shire Inda Selassie",
+    "city_ar": "Shire Inda Selassie",
+    "country_en": "Ethiopia",
+    "country_ar": "إثيوبيا",
+    "region": "AF",
+    "type": "small",
+    "lat": 14.0757,
+    "lon": 38.27359,
+    "elev_ft": 6207,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ET31",
+    "iata": "",
+    "name_en": "Sheridan Barracks Landing Area",
+    "name_ar": "Sheridan Barracks Landing Area",
+    "city_en": "Garmisch-Partenkirchen",
+    "city_ar": "Garmisch-Partenkirchen",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 47.48278,
+    "lon": 11.06694,
+    "elev_ft": 2362,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ET39",
+    "iata": "",
+    "name_en": "Hohenfels Hospital Army Helipad",
+    "name_ar": "Hohenfels Hospital Army Helipad",
+    "city_en": "Hohenfels",
+    "city_ar": "Hohenfels",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 49.22408,
+    "lon": 11.83481,
+    "elev_ft": 1432,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ETEB",
+    "iata": "",
+    "name_en": "Ansbach Katterbach Army Heliport",
+    "name_ar": "Ansbach Katterbach Army Heliport",
+    "city_en": "Ansbach",
+    "city_ar": "Ansbach",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 49.3082,
+    "lon": 10.6387,
+    "elev_ft": 0,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ETED",
+    "iata": "",
+    "name_en": "Kaiserslautern Depot Army Heliport",
+    "name_ar": "Kaiserslautern Depot Army Heliport",
+    "city_en": "Kaiserslautern",
+    "city_ar": "Kaiserslautern",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 49.44787,
+    "lon": 7.83957,
+    "elev_ft": 950,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ETHA",
+    "iata": "",
+    "name_en": "Altenstadt Army Airfield",
+    "name_ar": "Altenstadt Army Airfield",
+    "city_en": "Altenstadt",
+    "city_ar": "Altenstadt",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "small",
+    "lat": 47.8355,
+    "lon": 10.8712,
+    "elev_ft": 2425,
+    "rwys": [
+      {
+        "id": "09/27",
+        "len": 2297,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "ETHE",
+    "iata": "",
+    "name_en": "Rheine-Bentlage Airfield",
+    "name_ar": "Rheine-Bentlage Airfield",
+    "city_en": "",
+    "city_ar": "",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.2912,
+    "lon": 7.387,
+    "elev_ft": 129,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 1673,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "A/G",
+        "v": "42.4"
+      },
+      {
+        "l": "ACC",
+        "v": "124.65"
+      },
+      {
+        "l": "DIR",
+        "v": "123.3"
+      },
+      {
+        "l": "TWR",
+        "v": "122.1"
+      }
+    ]
+  },
+  {
+    "icao": "ETHH",
+    "iata": "",
+    "name_en": "Bonn-Hardthöhe Air Base",
+    "name_ar": "Bonn-Hardthöhe Air Base",
+    "city_en": "Bonn",
+    "city_ar": "Bonn",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 50.6965,
+    "lon": 7.04511,
+    "elev_ft": 522,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ETHM",
+    "iata": "",
+    "name_en": "Mendig Airfield",
+    "name_ar": "Mendig Airfield",
+    "city_en": "Mendig",
+    "city_ar": "Mendig",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "small",
+    "lat": 50.366,
+    "lon": 7.31533,
+    "elev_ft": 597,
+    "rwys": [
+      {
+        "id": "08/26",
+        "len": 5342,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "AFIS",
+        "v": "123.525"
+      },
+      {
+        "l": "INFO",
+        "v": "135.06"
+      }
+    ]
+  },
+  {
+    "icao": "ETHR",
+    "iata": "",
+    "name_en": "Roth Airfield",
+    "name_ar": "Roth Airfield",
+    "city_en": "Roth",
+    "city_ar": "Roth",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "small",
+    "lat": 49.2175,
+    "lon": 11.1002,
+    "elev_ft": 1268,
+    "rwys": [
+      {
+        "id": "09/27",
+        "len": 1755,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "Info",
+        "v": "123.68"
+      }
+    ]
+  },
+  {
+    "icao": "ETIK",
+    "iata": "ILH",
+    "name_en": "Illesheim Army Heliport",
+    "name_ar": "Illesheim Army Heliport",
+    "city_en": "Illesheim",
+    "city_ar": "Illesheim",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 49.4739,
+    "lon": 10.3881,
+    "elev_ft": 1079,
+    "rwys": [
+      {
+        "id": "6H/24H",
+        "len": 2800,
+        "surf": "Concrete"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "ETIN",
+    "iata": "KZG",
+    "name_en": "Kitzingen Airfield",
+    "name_ar": "Kitzingen Airfield",
+    "city_en": "Kitzingen",
+    "city_ar": "Kitzingen",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "small",
+    "lat": 49.74429,
+    "lon": 10.20731,
+    "elev_ft": 689,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 2625,
+        "surf": "Concrete"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "AFIS",
+        "v": "119.15"
+      },
+      {
+        "l": "INFO",
+        "v": "118.255"
+      }
+    ]
+  },
+  {
+    "icao": "ETIP",
+    "iata": "",
+    "name_en": "Landstuhl Army Heliport",
+    "name_ar": "Landstuhl Army Heliport",
+    "city_en": "Landstuhl",
+    "city_ar": "Landstuhl",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 49.40306,
+    "lon": 7.53611,
+    "elev_ft": 1176,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ETIY",
+    "iata": "",
+    "name_en": "Landstuhl Regional Medical Center Heliport",
+    "name_ar": "Landstuhl Regional Medical Center Heliport",
+    "city_en": "Landstuhl",
+    "city_ar": "Landstuhl",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 49.40248,
+    "lon": 7.55859,
+    "elev_ft": 1136,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ETJB",
+    "iata": "",
+    "name_en": "Schonewald CRC Helipad",
+    "name_ar": "Schonewald CRC Helipad",
+    "city_en": "Cölpin",
+    "city_ar": "Cölpin",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 53.50996,
+    "lon": 13.43567,
+    "elev_ft": 271,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ETOA",
+    "iata": "",
+    "name_en": "Schweinfurt Army Heliport",
+    "name_ar": "Schweinfurt Army Heliport",
+    "city_en": "Geldersheim",
+    "city_ar": "Geldersheim",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "heliport",
+    "lat": 50.04975,
+    "lon": 10.1679,
+    "elev_ft": 738,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ETOI",
+    "iata": "",
+    "name_en": "Vilseck Army Air Field",
+    "name_ar": "Vilseck Army Air Field",
+    "city_en": "Vilseck",
+    "city_ar": "Vilseck",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "small",
+    "lat": 49.63408,
+    "lon": 11.7675,
+    "elev_ft": 1353,
+    "rwys": [
+      {
+        "id": "10/28",
+        "len": 3500,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": [
+      {
+        "l": "MISC",
+        "v": "60"
+      },
+      {
+        "l": "RDO",
+        "v": "30.4"
+      }
+    ]
+  },
+  {
+    "icao": "ETT1",
+    "iata": "",
+    "name_en": "Etting-Adelmannsberg Glider Field",
+    "name_ar": "Etting-Adelmannsberg Glider Field",
+    "city_en": "Ingolstadt",
+    "city_ar": "Ingolstadt",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "small",
+    "lat": 48.81028,
+    "lon": 11.42096,
+    "elev_ft": 1253,
+    "rwys": [],
+    "freqs": []
+  },
+  {
+    "icao": "ETWM",
+    "iata": "",
+    "name_en": "Meppen Air Base",
+    "name_ar": "Meppen Air Base",
+    "city_en": "",
+    "city_ar": "",
+    "country_en": "Germany",
+    "country_ar": "ألمانيا",
+    "region": "EU",
+    "type": "small",
+    "lat": 52.7232,
+    "lon": 7.32633,
+    "elev_ft": 0,
+    "rwys": [
+      {
+        "id": "06/24",
+        "len": 1968,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "HEO",
+    "iata": "HEO",
+    "name_en": "Haelogo Airport",
+    "name_ar": "Haelogo Airport",
+    "city_en": "Haelogo",
+    "city_ar": "Haelogo",
+    "country_en": "Papua New Guinea",
+    "country_ar": "بابوا غينيا الجديدة",
+    "region": "OC",
+    "type": "small",
+    "lat": -9.13658,
+    "lon": 147.59843,
+    "elev_ft": 3217,
+    "rwys": [
+      {
+        "id": "12/30",
+        "len": 1411,
+        "surf": "Grass"
+      }
+    ],
+    "freqs": []
+  },
+  {
+    "icao": "HEY",
+    "iata": "HEY",
+    "name_en": "Hanchey Army (Fort Rucker) Heliport",
+    "name_ar": "Hanchey Army (Fort Rucker) Heliport",
+    "city_en": "Fort Rucker Ozark",
+    "city_ar": "Fort Rucker Ozark",
+    "country_en": "United States",
+    "country_ar": "الولايات المتحدة",
+    "region": "NA",
+    "type": "heliport",
+    "lat": 31.346,
+    "lon": -85.6543,
+    "elev_ft": 317,
+    "rwys": [
+      {
+        "id": "17/35",
+        "len": 476,
+        "surf": "Asphalt"
+      }
+    ],
+    "freqs": []
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "other": {
+    "count": 65545,
+    "bytes": 29950460,
+    "sizeMB": "28.56"
+  },
+  "mena": {
+    "count": 227,
+    "bytes": 119186,
+    "sizeMB": "0.11"
+  },
+  "sa": {
+    "count": 565,
+    "bytes": 269645,
+    "sizeMB": "0.26"
+  },
+  "gulf": {
+    "count": 45,
+    "bytes": 17023,
+    "sizeMB": "0.02"
+  }
+}

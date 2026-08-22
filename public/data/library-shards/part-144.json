@@ -1,0 +1,578 @@
+[
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "This part prescribes the requirements governing-- (a) The certification and operation of air traffic controller training schools; (b) The privileges and limitations applicable to a holder of a certificate issued under this part; and (d) Ope",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-1"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each holder of a certificate issued under this part may not exercise the privileges of that certificate after it expires. (b) A training school certificate issued under this part is valid (1) Until the date as endorsed on the certificat",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-pmb-pmb144-7-duration-of-certificate"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(1) At least 10 working days before the date of any change in ownership of the training school, application is made for an appropriate amendment to the certificate and (2) No change in the facilities, personnel, or approved training courses",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-2"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each holder of a certificate issued under this part must display that certificate in a place in the school that is normally accessible to the public and is not obscured. (b) A certificate must be made available for inspection upon reque",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-9"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "Each holder of a certificate issued under this part must obtain operations specifications containing all of the following: (a) The specific location of the certificate holder's principal operations base and, if different, the",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-13"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "address that will serve as the primary point of contact for correspondence between the GACA and the certificate holder; (b) The type of simulators approved for use for training, if applicable; (c) The type of training authorized, including ",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-3"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) The President may suspend, revoke, amend, or modify any operations specifications issued under this part if (1) The President determines that aviation safety and the public interest require the amendment or (2) The certificate holder ap",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-mathbf-144-15-amending-operations-specificat"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "procedures in GACAR Part 13 apply.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-4"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "Each holder of a certificate issued under this part must allow the President to inspect its personnel, facilities, equipment, and records to determine the certificate holder's compliance with theGACAR. § 144.19 Facilities. (a) An applicant ",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-mathbf-144-17-inspections"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) The holder of a certificate issued under this part may contract with other persons to obtain suitable training devices or equipment as applicable.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-21"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(b) The holder of a certificate issued under this part that is approved to conduct training toward a particular air traffic controller certificate and rating may contract with another party to conduct part of the training required toward th",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-5"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "§ 144.41 Applicability. This subpart prescribes the personnel and training equipment requirements for the holder of a certificate issued under this part offering training toward the issuance of air traffic controller certificates and rating",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-rsonnel-and-training-equipment-rec"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each holder of a certificate issued under this part must appoint an accountable manager who has authority to ensure that all requirements of this part are met by the school. (b) Each holder of a certificate issued under this part must e",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-43"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each holder of a certificate issued under this part, must have and maintain, a sufficient number of instructors that are qualified in accordance with this subpart to perform the duties to which they are assigned. The training school is ",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-45"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "Each holder of a certificate issued under this part must provide procedures to ensure instructors receive initial and recurrent training appropriate to their responsibilities. Training in knowledge and skills related to human factors princi",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-47"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "All training courses are required to indicate the amount of training, if any, that will be conducted on a simulator. The simulator must be approved by the President in coordination with the ATC Unit, as part of the course approval process. ",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-6"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "Each holder of a certificate issued under this part must prepare and maintain a training and procedures manual, acceptable to the President, for the use of the school's personnel. The training school must ensure that (a) The policies and pr",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-51-general"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) The training and procedures manual must contain at least the following information: (1) A general description of the scope of training authorized under the training school's certificate and operations specifications.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-53"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(2) Copies of the certificate holder's operations specifications or appropriate extracted information. (3) The content of the training programs offered including the courseware and training equipment to be used. (4) A description of the qua",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-8"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each holder of a certificate issued under this part must establish a quality assurance system acceptable to the President. Management personnel responsible for the implementation and maintenance of the quality assurance system must be i",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-61"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) When requested by the President, each holder of a certificate issued under this part must allow the GACA to administer any knowledge test, practical test, stage check, or end of course test as applicable to its students. (b) When a stag",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-63-quality-of-training"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "§ 144.71 Applicability. This subpart prescribes the curriculum and course outline requirements for the issuance of training school certificates.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-training-course-outline-and-curri"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) General. An applicant for a certificate issued under this part must obtain the President's approval of the outline of each training course for which the applicant seeks to obtain certification The training of air traffic controllers mus",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-73"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(7) Area control surveillance rating course; and (8) Air traffic controller instructor course. (d) Additional rules for Internet based training courses. An application for an initial or amended training course offered through an Internet ba",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-11"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each training course for which approval is requested must meet the minimum curriculum requirements in accordance with the appropriate appendix to this part. (b) Each training course for which approval is requested must meet the minimum ",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-75"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(1) A description of each room used for classroom training, including the room's size and the maximum number of students that may be trained in the room at one time, unless the course is provided via an Internet based training medium; (2) A",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-12"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) A certificate holder may apply for approval to conduct a course for which a curriculum is not prescribed by this part. (b) The course for which application is made under paragraph (a) of this section may be for airmen, material handlers",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-77"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "certificate holder shows that the course contains a curriculum that will achieve a level of competency equal to, or greater than, that required by the appropriate part of the GACAR for which the training course is to be provided.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-13"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "This subpart prescribes the operating rules applicable to a training school certificated under this part.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-91"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "The holder of a certificate issued under this part may advertise and conduct approved training courses in accordance with the certificate and any ratings that it holds.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-93"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) The holder of a certificate issued under this part may not issue a graduation certificate to a student, or recommend a student for an air traffic controller certificate or rating unless the student has一 oleted the training specified in ",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-95"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each holder of a certificate issued under this part may conduct training in accordance with an",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-99"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "approved training course at a satellite base if (1) The facilities, equipment, personnel, and course content of the satellite base meet the applicable requirements of this part; (2) The instructors at the satellite base are under direct sup",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-15"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each holder of a certificate issued under this part must furnish, at the time a student is enrolled in an approved training course, that student with a copy of the following: (1) A certificate of enrollment containing— (i) The name of t",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-101"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "A student or trainee air traffic controller who fails an approved course of initial training may retake the course. If he fails at the second attempt, he must not be permitted to take another course of initial training in the same rating di",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-103"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each holder of a certificate issued under this part must issue a graduation certificate to each",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-mathbfwidetilde-144-105-graduation-certifica"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "student who completes an approved course of training. (b) The graduation certificate must be issued to the student upon completion of the course of training and contain at least the following information: (1) The business name and the certi",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-16"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "This subpart prescribes the recordkeeping requirements for students enrolled in a training course approved in accordance with Subpart E of this part, and for instructors designated to instruct such courses, as applicable.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-111"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each holder of a certificate issued under this part must maintain a record for each student that contains (1) The name of the student. (2) A copy of the student's medical certificate, if applicable. (3) The name of the course and the ma",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-113"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(c) Each holder of a certificate issued under this part must, upon request, provide the records required by this section to the President, and must keep the records required by paragraph (a) of this section at the training school or satelli",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-18"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "Each holder of a certificate issued under this part must keep a current record of each instructor, must retain the record for at least 2 years after the instructor ceases to perform a function for the training school, and must make each rec",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-mathbfhat-144-115-instructor-records"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) No certificate holder may use an electronic signature for records requiring a certifying statement unless the electronic signature system is approved by the President. (b) No certificate holder may use an electronic recordkeeping system",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-144-117"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "this part unless the electronic recordkeeping system complies with paragraphs (c) through (e) of this section. (c) Storage and Retrieval. A computer hardware and software system must have the capability to store and retrieve the records. Th",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-19"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "transmitted in accordance with the appropriate regulatory requirements. (6) A description of the training procedure and requirements necessary to authorize access to the computer hardware and software system. (7) For electronic record keepi",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-20"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "This appendix prescribes the minimum curriculum required for a basic air traffic controller certification course under this part.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-1-applicability"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each approved course must include classroom training on the knowledge areas listed in paragraph (b) of this section. (b) Classroom training must include the following knowledge areas: ir law - rules and regulations relevant to the air t",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-i1-knowledge-training"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "Each approved course must include not less than three months of practical training with the student engaged in the actual control of air traffic under the supervision of an appropriately rated air traffic controller instructor. The practica",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-ii1-practical-training"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "Each student enrolled in an basic air traffic controller certification course must satisfactorily accomplish the stage checks and end of course tests, in accordance with the school's approved training course. The student must have demonstra",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-iv-stage-checks-and-end-of-course-tests"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "This appendix prescribes the minimum curriculum required for a aerodrome control rating course under this part.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-i-applicability"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each approved course must include classroom training on the knowledge areas listed in paragraph (b) of this section. (b) Classroom training must include the following knowledge areas: (1) Aerodrome layout; physical characteristics and v",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-i1-knowledge-training-2"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each approved course must include practical training for a student, under the supervision of a qualified air traffic controller instructor.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-ii1-practical-training-2"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(b) The training curriculum must include an aerodrome control service, for a period of not less than 90 hours or one month, whichever is greater, at the unit for which the rating is sought.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-gacar-part-144-air-traffic-controller-school-22"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "Each student enrolled in an aerodrome control rating course must satisfactorily accomplish the stage checks and end of course tests, in accordance with the school's approved training course. The student must have demonstrated, at a level ap",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-iv-stage-checks-and-end-of-course-tests-2"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "This appendix prescribes the minimum curriculum required for an approach control procedural rating course under this part.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-1-applicability-2"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each approved course must include classroom training on the knowledge areas listed in paragraph (b) of this section. (b) Classroom training must include the following knowledge areas: (1) Airspace structure; (2) Applicable rules, proced",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-i1-knowledge-training-3"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each approved course must include practical training for a student, under the supervision of a qualified air traffic controller instructor. (b) The training curriculum must include an approach control procedural service for a period of ",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-ii1-practical-training-3"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "Each student enrolled in an aerodrome control rating course must satisfactorily accomplish the stage checks and end of course tests, in accordance with the school's approved training course. The student must have demonstrated, at a level ap",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-iv-stage-checks-and-end-of-course-tests-3"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "This appendix prescribes the minimum curriculum required for an approach control surveillance rating course under this part.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-1-applicability-3"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each approved course must include classroom training on the knowledge areas listed in paragraph (b) of this section. The applicant shall meet the requirements specified in (b)(1) thru (8) in so far as they affect the area of responsibil",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-i1-knowledge-training-4"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each approved course must include practical training for a student, under the supervision of a qualified air traffic controller instructor. (b) The training curriculum must include an approach control surveillance service for a period o",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-ii1-practical-training-4"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "Each student enrolled in an aerodrome control rating course must satisfactorily accomplish the stage checks and end of course tests, in accordance with the school's approved training course. The student must have demonstrated, at a level ap",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-iv-stage-checks-and-end-of-course-tests-4"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "This appendix prescribes the minimum curriculum required for an approach precision radar control rating course under this part.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-1-applicability-4"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each approved course must include classroom training on the knowledge areas listed in paragraph (b) of this section. The applicant shall meet the requirements specified in (b)(1) thru (8) in so far as they affect the area of responsibil",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-i1-knowledge-training-5"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each approved course must include practical training for a student, under the supervision of a qualified air traffic controller instructor. (b) The training curriculum must include not less than 2o0 precision approaches of which not mor",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-ii1-practical-training-5"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "Each student enrolled in an aerodrome control rating course must satisfactorily accomplish the stage checks and end of course tests, in accordance with the school's approved training course. The student must have demonstrated, at a level ap",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-iv-stage-checks-and-end-of-course-tests-5"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "This appendix prescribes the minimum curriculum required for an area control procedural rating course under this part.",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-i-applicability-2"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each approved course must include classroom training on the knowledge areas listed in paragraph (b) of this section. (b) Classroom training must include the following knowledge areas: (1) Airspace structure; (2) Applicable rules, proced",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-i1-knowledge-training-6"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each approved course must include practical training for a student, under the supervision of a qualified air traffic controller instructor. (b) The training curriculum must include an approach control procedural service for a period of ",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-ii1-practical-training-6"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "Each student enrolled in an aerodrome control rating course must satisfactorily accomplish the stage checks and end of course tests, in accordance with the school's approved training course. The student must have demonstrated, at a level ap",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-iv-stage-checks-and-end-of-course-tests-6"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "This appendix prescribes the minimum curriculum required for an area control surveillance rating course under this part. (a) Each approved course must include classroom training on the knowledge areas listed in paragraph (b) of this section",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-1-applicability-5"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "(a) Each approved course must include practical training for a student, under the supervision of a qualified air traffic controller instructor. (b) The training curiculum must include an area control surveillance service for a period of not",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-ii1-practical-training-7"
+  },
+  {
+    "d": "Air Traffic Controller Schools",
+    "b": "Part 144",
+    "x": "Each student enrolled in an aerodrome control rating course must satisfactorily accomplish the stage checks and end of course tests, in accordance with the school's approved training course. The student must have demonstrated, at a level ap",
+    "kind": "regulations",
+    "id": "part-144",
+    "anchor": "sec-iv-stage-checks-and-end-of-course-tests-7"
+  }
+]

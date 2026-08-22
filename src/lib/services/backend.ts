@@ -32,7 +32,13 @@ export function isBackendConfigured(): boolean {
   if (env?.VITEST) {
     return false;
   }
-  return Boolean(API_BASE_URL || SAME_ORIGIN);
+  if (API_BASE_URL || SAME_ORIGIN) {
+    return true;
+  }
+  if (typeof window !== 'undefined' && window.location?.hostname?.includes('flygaca.com')) {
+    return true;
+  }
+  return false;
 }
 
 /** Absolute URL for an API path (`/auth/session` → `https://api.../api/auth/session`). */
