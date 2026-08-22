@@ -11,8 +11,8 @@
 name: Deploy
 
 on:
-  push:
-    branches: [main]
+  # push:
+    # branches: [main]
   workflow_dispatch:
 
 # Never let two deploys race the same buckets. In-flight runs finish rather than

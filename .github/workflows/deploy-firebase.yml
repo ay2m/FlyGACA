@@ -58,7 +58,6 @@ jobs:
       - name: Prerender routes
         env:
           PRERENDER_MAX: '0'
-          AR_CORPUS_MAX: '0'
         run: npm run prerender
 
       - name: Prerender coverage gate
