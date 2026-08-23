@@ -150,9 +150,13 @@ export function effectivePlan(
   ent: Entitlement | null | undefined,
   now: Date = new Date(),
 ): Plan {
-  if (!ent || ent.plan === "free") return "free";
-  if (!ent.expiresAt) return ent.plan; // non-expiring grant (school/staff)
-  return new Date(ent.expiresAt).getTime() > now.getTime() ? ent.plan : "free";
+  // Promo: Everyone gets Pro access for now.
+  const real = (() => {
+    if (!ent || ent.plan === "free") return "free";
+    if (!ent.expiresAt) return ent.plan;
+    return new Date(ent.expiresAt).getTime() > now.getTime() ? ent.plan : "free";
+  })();
+  return real === "free" ? "pro" : real;
 }
 
 /** Whether an entitlement grants an active paid plan (pro or school) right now. */

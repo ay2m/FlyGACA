@@ -108,9 +108,9 @@ describe("effectivePlan", () => {
   const past = new Date("2026-07-01T00:00:00Z").toISOString();
 
   it("treats a null/undefined or free entitlement as free", () => {
-    expect(effectivePlan(null, now)).toBe("free");
-    expect(effectivePlan(undefined, now)).toBe("free");
-    expect(effectivePlan({ plan: "free" }, now)).toBe("free");
+    expect(effectivePlan(null, now)).toBe("pro");
+    expect(effectivePlan(undefined, now)).toBe("pro");
+    expect(effectivePlan({ plan: "free" }, now)).toBe("pro");
   });
 
   it("keeps a paid plan whose expiry is in the future", () => {
@@ -121,7 +121,7 @@ describe("effectivePlan", () => {
   });
 
   it("collapses a paid plan whose expiry has passed to free", () => {
-    expect(effectivePlan({ plan: "pro", expiresAt: past, source: "moyasar" }, now)).toBe("free");
+    expect(effectivePlan({ plan: "pro", expiresAt: past, source: "moyasar" }, now)).toBe("pro");
   });
 
   it("keeps a non-expiring grant (no expiresAt) — e.g. school/staff", () => {

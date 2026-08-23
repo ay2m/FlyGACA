@@ -38,7 +38,7 @@ export function effectivePlan(ent: Entitlement | null | undefined, now?: Date): 
  * way. Deploying this change is the go-live trigger — pair it with the founding launch
  * offer on `/pricing`. Flip back to `true` only to reopen everything.
  */
-export const FREE_FOR_EVERYONE = false;
+export const FREE_FOR_EVERYONE = true;
 
 /**
  * Plan to PRESENT in the UI. Honours the {@link FREE_FOR_EVERYONE} promo; the pure
