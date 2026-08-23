@@ -12,7 +12,6 @@
       "**/rag-chunks.json"
     ],
     "rewrites": [
-      { "source": "/api/**", "run": { "serviceId": "flygaca-api", "region": "me-central2" } },
       { "source": "**", "destination": "/index.html" }
     ],
     "headers": [
