@@ -101,31 +101,34 @@ export function AdelHeroWidget() {
   if (demos.length === 0) return null;
 
   return (
-    <div className={styles.efb} aria-hidden="true">
-      <div className={styles.screen}>
-        <div className={styles.bar}>
-          <CaptainAvatar size="sm" decorative />
-          <span className={styles.dot} />
-          <span className={styles.id}>{t('home.adel.id')}</span>
-          <span className={styles.engine}>{t('home.adel.engine')}</span>
-          <span className={styles.status}>
-            {thinking ? t('home.adel.thinking') : t('home.adel.onDuty')}
-          </span>
-        </div>
-
-        <div className={styles.thread}>
-          <p className={styles.q}>{question}</p>
-          <p className={`${styles.a} ${typing ? styles.cursor : ''}`}>{answer}</p>
-          <div className={styles.cites}>
-            {cites.map((c) => (
-              <span key={c.code} className={styles.cite} data-tip={c.tip} title={c.tip}>
-                §{c.code}
-              </span>
-            ))}
+    <div className={styles.widgetWrapper}>
+      <img src="/img/captain-adel.jpg" alt="Captain Adel" className={styles.adelImage} loading="lazy" />
+      <div className={styles.efb} aria-hidden="true">
+        <div className={styles.screen}>
+          <div className={styles.bar}>
+            <CaptainAvatar size="sm" decorative />
+            <span className={styles.dot} />
+            <span className={styles.id}>{t('home.adel.id')}</span>
+            <span className={styles.engine}>{t('home.adel.engine')}</span>
+            <span className={styles.status}>
+              {thinking ? t('home.adel.thinking') : t('home.adel.onDuty')}
+            </span>
           </div>
-        </div>
 
-        <p className={styles.note}>{t('home.adel.note')}</p>
+          <div className={styles.thread}>
+            <p className={styles.q}>{question}</p>
+            <p className={`${styles.a} ${typing ? styles.cursor : ''}`}>{answer}</p>
+            <div className={styles.cites}>
+              {cites.map((c) => (
+                <span key={c.code} className={styles.cite} data-tip={c.tip} title={c.tip}>
+                  §{c.code}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <p className={styles.note}>{t('home.adel.note')}</p>
+        </div>
       </div>
     </div>
   );
