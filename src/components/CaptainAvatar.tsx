@@ -71,14 +71,11 @@ export function CaptainAvatar({
   const stillSrc =
     pose !== 'default'
       ? poseSrc[pose]
-      : size === 'lg' || size === 'xl'
-        ? '/img/captain/avatar.png'
-        : '/img/captain/avatar-256.png';
+      : '/img/captain-adel.jpg';
 
-  // The animated idle is the neutral portrait, so it overrides the pose still
-  // only when asked for, the surface is live, motion is allowed, and it loads.
-  const playLoop = live && animated && !reduceMotion && !loopFailed;
-  const src = playLoop ? liveSrc : stillSrc;
+  // Disable the cartoon animated idle loop for the new realistic portrait
+  const playLoop = false;
+  const src = stillSrc;
   const alt = decorative ? '' : t('chat.avatarAlt');
 
   const img = (

@@ -58,6 +58,15 @@ h4 {
   text-wrap: balance;
 }
 
+h1,
+h2 {
+  background: linear-gradient(135deg, var(--text) 0%, var(--teal-bright) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 h1 {
   font-size: var(--fs-h1);
   letter-spacing: var(--tracking-heading);
