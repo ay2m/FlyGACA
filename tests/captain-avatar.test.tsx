@@ -30,8 +30,8 @@ describe('<CaptainAvatar />', () => {
     expect(imgOf(container).getAttribute('src')).toBe('/img/captain-adel.jpg');
   });
 
-  it('respects reduced-motion by forcing the still even if animated', () => {
-    vi.mocked(useReducedMotion).mockReturnValue(true);
+  it('honours reduced motion — the still, never the loop', () => {
+    motion.reduce = true;
     const { container } = render(<CaptainAvatar live animated />);
     expect(imgOf(container).getAttribute('src')).toBe('/img/captain-adel.jpg');
   });
