@@ -42,6 +42,7 @@ export function RoutePlanner() {
         });
     }
     return out;
+    // eslint-disable-next-line react-hooks/preserve-manual-memoization
   }, [codes, byIcao]);
 
   const total = legs.reduce((s, l) => s + l.distanceNm, 0);

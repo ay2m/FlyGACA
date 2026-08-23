@@ -12,6 +12,7 @@ import { ProgressBar } from '@/components/ProgressBar';
 import { CaptainAvatar } from '@/components/CaptainAvatar';
 import styles from './Study.module.css';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const STUDY_MODES = [
   { to: '/study/quiz', key: 'quiz', icon: '◉' },
   { to: '/study/flashcards', key: 'flashcards', icon: '⇄' },

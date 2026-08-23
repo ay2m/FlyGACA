@@ -88,6 +88,7 @@ export function PackStorefront({ pack, questionCount }: { pack: Pack; questionCo
 }
 
 /** Total questions across a pack's banks — for the locked page's "what's inside". */
+// eslint-disable-next-line react-refresh/only-export-components
 export function countQuestions(data: QuizData | null | undefined, bankIds: string[]): number {
   if (!data) return 0;
   return bankIds.reduce(

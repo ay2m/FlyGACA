@@ -209,7 +209,6 @@ export function ToolsIndex() {
         chips={popularChips}
         inputRef={searchRef}
       />
-
       <div className={styles.controls}>
         <div className={styles.filters} role="group" aria-label={t('tools.title')}>
           <button
@@ -256,7 +255,7 @@ export function ToolsIndex() {
           </div>
         </div>
       </div>
-
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
       <div
         ref={rootRef}
         onKeyDown={onGridKeyDown}
@@ -354,7 +353,6 @@ export function ToolsIndex() {
           renderGrid(flat)
         )}
       </div>
-
       <div className={styles.footnote}>
         <Disclaimer compact />
       </div>

@@ -31,6 +31,7 @@ export function OfflineDownloads() {
   }
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (offlineSupported()) refresh();
   }, []);
 

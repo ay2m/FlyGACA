@@ -267,12 +267,14 @@ export function CommandPalette() {
   ];
 
   return (
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
     <div
       className={styles.scrim}
       onClick={(e) => {
         if (e.target === e.currentTarget) close();
       }}
     >
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
       <div
         ref={boxRef}
         className={styles.box}

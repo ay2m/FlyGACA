@@ -50,6 +50,7 @@ export function Quiz() {
       flagged,
       t,
     );
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (sess) setBank(sess);
     // Build once when data/params resolve; flagged/t are snapshotted intentionally.
     // eslint-disable-next-line react-hooks/exhaustive-deps

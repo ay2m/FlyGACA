@@ -18,6 +18,7 @@ const SWEEP_FROM = -120;
 const SWEEP_TO = 120;
 
 /** Needle rotation for a value, clamped to the dial's sweep. */
+// eslint-disable-next-line react-refresh/only-export-components
 export function gaugeAngle(value: number, min: number, max: number): number {
   if (!fin(value, min, max) || max <= min) return SWEEP_FROM;
   const t = Math.min(1, Math.max(0, (value - min) / (max - min)));

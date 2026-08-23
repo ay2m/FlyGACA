@@ -89,6 +89,7 @@ export function BentoCard({
   if (to) {
     return (
       <MotionLink
+        // eslint-disable-next-line react-hooks/refs
         ref={glow.ref}
         to={to}
         aria-labelledby={labelledBy}
@@ -97,7 +98,9 @@ export function BentoCard({
         variants={itemVariants}
         whileHover={hover}
         whileTap={reduce ? undefined : { scale: 0.995 }}
+        // eslint-disable-next-line react-hooks/refs
         onPointerMove={glow.onPointerMove}
+        // eslint-disable-next-line react-hooks/refs
         onPointerLeave={glow.onPointerLeave}
       >
         {inner}
@@ -108,11 +111,14 @@ export function BentoCard({
 
   return (
     <motion.div
+      // eslint-disable-next-line react-hooks/refs
       ref={glow.ref}
       className={className}
       variants={itemVariants}
       whileHover={hover}
+      // eslint-disable-next-line react-hooks/refs
       onPointerMove={glow.onPointerMove}
+      // eslint-disable-next-line react-hooks/refs
       onPointerLeave={glow.onPointerLeave}
     >
       {inner}

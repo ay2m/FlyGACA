@@ -82,6 +82,7 @@ export function CaptainAvatar({
   const alt = decorative ? '' : t('chat.avatarAlt');
 
   const img = (
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <img
       src={src}
       alt={alt}

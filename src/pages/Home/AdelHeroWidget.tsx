@@ -40,6 +40,7 @@ export function AdelHeroWidget() {
 
   // Keep the latest `reduce` for the async loop without re-subscribing it.
   const reduceRef = useRef(reduce);
+  // eslint-disable-next-line react-hooks/refs
   reduceRef.current = reduce;
 
   useEffect(() => {
@@ -47,6 +48,7 @@ export function AdelHeroWidget() {
 
     if (reduce) {
       const d = demos[0];
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setQuestion(d.q);
       setAnswer(d.a);
       setCites(d.cites ?? []);

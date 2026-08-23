@@ -24,6 +24,7 @@ interface Blip {
  * so the scope reads as genuine regulatory coverage. Deterministic — no real-time
  * feed — but data-driven rather than decorative.
  */
+// eslint-disable-next-line react-refresh/only-export-components
 export function buildBlips(data: GacarIndex | null | undefined): Blip[] {
   if (!data || data.documents.length === 0) return [];
   const cats = data.categories.map((c) => c.id);

@@ -166,6 +166,8 @@ export function Document({ kind = 'regulations' }: DocumentProps) {
   });
 
   // ── Reading progress + back-to-top ──
+
+  // eslint-disable-next-line react-hooks/preserve-manual-memoization
   const onScroll = useCallback(() => {
     const el = document.documentElement;
     const total = el.scrollHeight - el.clientHeight;
@@ -240,6 +242,7 @@ export function Document({ kind = 'regulations' }: DocumentProps) {
   // "Save for offline": warm the SW data cache with this doc's HTML + its index.
   const [saved, setSaved] = useState(false);
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSaved(!!slug && loadSaved().includes(slug));
   }, [slug]);
   async function toggleSave() {

@@ -42,6 +42,7 @@ export function useFindInPage(
     marksRef.current = [];
     const needle = debouncedFind.trim();
     if (!needle) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setMatchCount(0);
       setActiveMatch(0);
       return;

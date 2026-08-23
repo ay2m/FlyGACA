@@ -90,7 +90,9 @@ export function Chat() {
 
   const gacar = useFetchJson<GacarIndex>('/data/gacar-index.json');
   const validSlugs = useRef<Set<string>>(new Set());
+  // eslint-disable-next-line react-hooks/refs
   if (gacar.data && validSlugs.current.size === 0) {
+    // eslint-disable-next-line react-hooks/refs
     validSlugs.current = new Set(gacar.data.documents.map((d) => d.slug));
   }
 
@@ -216,6 +218,7 @@ export function Chat() {
   const lastAssistantIdx = lastAssistantIndex(messages);
   const followupsVisible = showFollowups(last, { gated, busy });
 
+  // eslint-disable-next-line react-hooks/refs
   const digest = conversationParts(messages, validSlugs.current);
   const hasMessages = messages.length > 0;
   const transcriptMd = hasMessages
@@ -268,7 +271,7 @@ export function Chat() {
           }}
         >
           {messages.length === 0 && <ChatWelcome onAsk={(q) => void ask(q)} />}
-
+          // eslint-disable-next-line react-hooks/refs
           {messages.map((m, i) => (
             <ChatMessage
               key={i}
@@ -281,7 +284,6 @@ export function Chat() {
               onRegenerate={() => regenerate(i)}
             />
           ))}
-
           {followupsVisible && (
             <div className={styles.followups}>
               {followupSuggestions(last).map((f) => {

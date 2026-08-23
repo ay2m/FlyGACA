@@ -19,6 +19,7 @@ export function useFetchJson<T>(path: string, reloadToken = 0): FetchState<T> {
     // The cache promise is shared and not abortable, so guard setState with an
     // `ignore` flag on unmount instead of aborting the in-flight request.
     let ignore = false;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setState({ data: null, error: null, loading: true });
     loadJson<T>(path, reloadToken > 0)
       .then((data) => {

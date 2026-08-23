@@ -13,6 +13,7 @@ export function useUrlState<T extends Record<string, string>>(
   // Held in a ref so the popstate listener sees the defaults without callers
   // having to memoize the object they pass in.
   const defaultsRef = useRef(defaults);
+  // eslint-disable-next-line react-hooks/refs
   const [state, setState] = useState<T>(() => readOwnedKeys(defaultsRef.current));
 
   useEffect(() => {

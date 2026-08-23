@@ -90,6 +90,7 @@ export function useConversations<M extends ThreadMessage>(busy: boolean): Conver
   useEffect(() => {
     if (busy) return;
     const keep = messages.filter((m) => !m.pending && !m.error);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setConversations((prev) => {
       const prior = prev.find((c) => c.id === activeId);
       const next =

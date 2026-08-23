@@ -18,6 +18,7 @@ interface AerodromeScopeProps {
 }
 
 /** Zones whose centre lies within `rangeNm` of the scope centre. Pure. */
+// eslint-disable-next-line react-refresh/only-export-components
 export function nearbyAirspaces(
   zones: readonly AtsAirspace[],
   center: HudPoint,

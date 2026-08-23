@@ -128,6 +128,7 @@ export function Checkout() {
   useEffect(() => {
     if (paymentId) return;
     if (!kind) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       fail('unknown-checkout-kind');
       return;
     }

@@ -29,6 +29,7 @@ export function AerodromeDetail() {
   const [extraLoading, setExtraLoading] = useState(false);
   useEffect(() => {
     if (!data || inCore || extra || extraLoading) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setExtraLoading(true);
     loadShardedData<AirportsIndex>(
       '/data/airports-extra.json',

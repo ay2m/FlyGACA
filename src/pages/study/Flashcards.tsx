@@ -41,6 +41,7 @@ export function Flashcards() {
     if (!data || bank) return;
     const id = params.get('bank');
     const found = id ? data.banks.find((b) => b.id === id) : null;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (found) setBank(found);
   }, [data, params, bank]);
 

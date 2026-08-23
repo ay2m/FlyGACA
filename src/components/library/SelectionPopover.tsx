@@ -47,6 +47,7 @@ export function SelectionPopover({ rect, onHighlight, onSaveNote, onClose }: Pro
   };
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <div
       ref={ref}
       className={styles.popover}

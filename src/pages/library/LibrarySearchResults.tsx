@@ -34,6 +34,7 @@ export function LibrarySearchResults({
   // Reset the visible window whenever the search scope changes (an effect, not
   // a key-remount, so an in-progress focus inside the list is preserved).
   const [visible, setVisible] = useState(PAGE);
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setVisible(PAGE), [q, kind, category]);
   const shownHits = hits.slice(0, visible);
   const hitRefs = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -65,6 +66,7 @@ export function LibrarySearchResults({
             {t('library.showing', { shown: shownHits.length, total: hits.length })}
             {hits.length >= cap && ` · ${t('library.capHint', { max: cap })}`}
           </p>
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
           <ul className={styles.hitList} onKeyDown={onHitKeyDown}>
             {shownHits.map((e, i) => {
               const href = searchHref(searchEntryLink(e), q);

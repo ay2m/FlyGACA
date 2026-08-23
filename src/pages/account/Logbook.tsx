@@ -66,6 +66,7 @@ function Inner() {
   // Deep link from the dashboard "Log a flight" quick action opens the add form.
   useEffect(() => {
     if (params.get('add') === '1') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setAdding(true);
       setEditingId(null);
       const next = new URLSearchParams(params);

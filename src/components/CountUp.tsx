@@ -24,6 +24,7 @@ export function CountUp({ to, duration = 1300, decimals = 0 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
   // Latest rendered value, so a re-run (when `to` changes) eases from where we are.
   const valueRef = useRef(value);
+  // eslint-disable-next-line react-hooks/refs
   valueRef.current = value;
   // True once the readout has scrolled into view and run its first count.
   const seen = useRef(reduce);
@@ -31,6 +32,7 @@ export function CountUp({ to, duration = 1300, decimals = 0 }: CountUpProps) {
 
   useEffect(() => {
     if (reduce) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setValue(to);
       return;
     }

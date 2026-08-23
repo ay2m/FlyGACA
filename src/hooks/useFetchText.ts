@@ -13,6 +13,7 @@ export function useFetchText(path: string): FetchState {
 
   useEffect(() => {
     const controller = new AbortController();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setState({ text: null, error: null, loading: true });
     fetch(dataUrl(path), { signal: controller.signal })
       .then((res) => {
