@@ -101,10 +101,12 @@ export function AdelHeroWidget() {
   if (demos.length === 0) return null;
 
   return (
-    <div className={styles.widgetWrapper}>
-      <img src="/img/captain-adel.jpg" alt="Captain Adel" className={styles.adelImage} loading="lazy" />
-      <div className={styles.efb} aria-hidden="true">
-        <div className={styles.screen}>
+    <div className={styles.efb} aria-hidden="true">
+      <div className={styles.screen}>
+        <div className={styles.heroImageContainer}>
+          <img src="/img/captain-adel.jpg" alt="Captain Adel" className={styles.adelImage} loading="lazy" />
+        </div>
+        <div className={styles.contentContainer}>
           <div className={styles.bar}>
             <CaptainAvatar size="sm" decorative />
             <span className={styles.dot} />
