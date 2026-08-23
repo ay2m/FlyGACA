@@ -6,10 +6,14 @@ import styles from './Disclaimer.module.css';
  * copy — it must appear on every surface. Keep it as a single shared component
  * so the wording can never drift.
  *
- * TODO(legal): the `disclaimer.strong` / `disclaimer.body` copy mirrors The Office's
- * Disclaimer-and-Educational-Use-Notice-DRAFT (2026-06-14), which is still marked
- * DRAFT and pending review by Saudi-licensed counsel. Re-confirm the wording once
- * the legal opinion lands.
+ * LEGAL REVIEW PENDING: The `disclaimer.strong` and `disclaimer.body` keys in
+ * src/i18n/en.json and ar.json currently mirror The Office's
+ * Disclaimer-and-Educational-Use-Notice-DRAFT (2026-06-14), pending final review
+ * by Saudi-licensed counsel. When the legal opinion is received:
+ * 1. Update the i18n strings with the approved wording
+ * 2. Run tests/disclaimer.test.tsx to validate both languages render correctly
+ * 3. Verify the component displays on all surfaces (footer, tools, flavor modes)
+ * Do not modify the component itself — only the i18n strings need to change.
  */
 export function Disclaimer({ compact = false }: { compact?: boolean }) {
   const { t } = useTranslation();

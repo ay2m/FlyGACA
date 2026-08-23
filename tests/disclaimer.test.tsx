@@ -28,4 +28,34 @@ describe('<Disclaimer /> bilingual rendering', () => {
     expect(document.documentElement.dir).toBe('rtl');
     expect(document.documentElement.lang).toBe('ar');
   });
+
+  it('supports compact mode and applies the correct CSS class', () => {
+    const { container: compactContainer } = render(<Disclaimer compact />);
+    const compactNote = compactContainer.querySelector('[role="note"]');
+    expect(compactNote?.className).toMatch(/_compact/);
+
+    cleanup();
+    const { container: normalContainer } = render(<Disclaimer compact={false} />);
+    const normalNote = normalContainer.querySelector('[role="note"]');
+    expect(normalNote?.className).not.toMatch(/_compact/);
+  });
+
+  it('ensures the strong element is always present', () => {
+    const { container } = render(<Disclaimer />);
+    const strong = container.querySelector('strong');
+    expect(strong).toBeInTheDocument();
+    expect(strong?.textContent).toContain('Fly GACA is an independent educational platform.');
+  });
+
+  it('includes reference to GACA official resources in both languages', async () => {
+    render(<Disclaimer />);
+    expect(screen.getByText(/gaca\.gov\.sa/)).toBeInTheDocument();
+
+    await act(async () => {
+      await i18n.changeLanguage('ar');
+    });
+    cleanup();
+    render(<Disclaimer />);
+    expect(screen.getByText(/gaca\.gov\.sa/)).toBeInTheDocument();
+  });
 });
