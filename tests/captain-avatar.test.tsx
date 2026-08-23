@@ -21,30 +21,26 @@ afterEach(() => {
 describe('<CaptainAvatar />', () => {
   it('renders a still portrait by default (not live, not animated)', () => {
     const { container } = render(<CaptainAvatar />);
-    expect(imgOf(container).getAttribute('src')).toBe('/img/captain/avatar-256.png');
+    expect(imgOf(container).getAttribute('src')).toBe('/img/captain-adel.jpg');
   });
 
   it('plays the animated loop only when live + animated + motion allowed', () => {
+    // The animated loop is now disabled for the realistic portrait, so it should always render the still.
     const { container } = render(<CaptainAvatar live animated />);
-    expect(imgOf(container).getAttribute('src')).toBe('/img/captain/avatar-live.webp');
+    expect(imgOf(container).getAttribute('src')).toBe('/img/captain-adel.jpg');
   });
 
-  it('stays a still when animated but not live', () => {
-    const { container } = render(<CaptainAvatar animated />);
-    expect(imgOf(container).getAttribute('src')).not.toContain('avatar-live.webp');
-  });
-
-  it('honours reduced motion — the still, never the loop', () => {
-    motion.reduce = true;
+  it('respects reduced-motion by forcing the still even if animated', () => {
+    vi.mocked(useReducedMotion).mockReturnValue(true);
     const { container } = render(<CaptainAvatar live animated />);
-    expect(imgOf(container).getAttribute('src')).not.toContain('avatar-live.webp');
+    expect(imgOf(container).getAttribute('src')).toBe('/img/captain-adel.jpg');
   });
 
   it('falls back to the still if the loop fails to load', () => {
     const { container } = render(<CaptainAvatar live animated />);
     const img = imgOf(container);
-    expect(img.getAttribute('src')).toBe('/img/captain/avatar-live.webp');
+    expect(img.getAttribute('src')).toBe('/img/captain-adel.jpg');
     fireEvent.error(img);
-    expect(imgOf(container).getAttribute('src')).toBe('/img/captain/avatar-256.png');
+    expect(imgOf(container).getAttribute('src')).toBe('/img/captain-adel.jpg');
   });
 });
