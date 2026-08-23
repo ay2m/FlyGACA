@@ -2129,8 +2129,14 @@
         "coverage": "Coverage",
         "exam": "Mock Exam",
         "readyCol": "Ready",
-        "active": "Last active"
+        "active": "Last active",
+        "actions": "Actions"
       },
+      "healthScore": "Health Score (H)",
+      "passProb": "Pass Probability",
+      "pendingConsent": "Pending PDPL Consent",
+      "revoke": "Revoke",
+      "confirmRevoke": "Are you sure you want to revoke this seat?",
       "addSeats": "Add seats",
       "provisionResults": "Invitation results",
       "done": "Done",

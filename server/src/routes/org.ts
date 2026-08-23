@@ -81,13 +81,14 @@ orgRouter.get(
     const rows = await query<{
       email: string;
       pdpl_consent: boolean | null;
+      status: string;
       plan: string | null;
       expires_at: Date | null;
       source: string | null;
       summary: ProgressSummaryLike | null;
       progress_updated_at: Date | null;
     }>(
-      `SELECT s.email, s.pdpl_consent,
+      `SELECT s.email, s.pdpl_consent, s.status,
               e.plan, e.expires_at, e.source,
               sp.summary, sp.updated_at AS progress_updated_at
          FROM org_seats s
@@ -98,6 +99,10 @@ orgRouter.get(
         ORDER BY s.email`,
       [org.id],
     );
+
+    let totalHealth = 0;
+    let totalProb = 0;
+    const now = new Date().getTime();
 
     const cohort = rows.map((r) => {
       const entitlement: Entitlement | null = r.plan
@@ -111,11 +116,49 @@ orgRouter.get(
         ? { ...r.summary, updatedAt: r.progress_updated_at?.toISOString() }
         : null;
       
+      // If status is explicitly revoked, the user should be shown as revoked
+      const baseRow = cohortRow({ email: r.email, entitlement, hasInvite: r.status !== 'revoked', summary }, banks, threshold);
+      const row = {
+        ...baseRow,
+        status: r.status === 'revoked' ? 'revoked' : baseRow.status,
         pdplConsent: !!r.pdpl_consent,
       };
+      // 5-Factor Health Score
+      const f1Exam = (row.examBest || 0) / 100;
+      const f2Coverage = row.totalBanks > 0 ? row.coveredBanks / row.totalBanks : 0;
+      
+      let f3Recency = 0;
+      if (r.progress_updated_at) {
+        const daysSince = (now - r.progress_updated_at.getTime()) / (1000 * 3600 * 24);
+        if (daysSince <= 7) f3Recency = 1;
+        else if (daysSince <= 30) f3Recency = 0.5;
+      }
+      
+      const f4Consent = row.pdplConsent ? 1 : 0;
+      const f5Active = row.status === 'active' ? 1 : 0;
 
+      const health = (0.3 * f1Exam) + (0.3 * f2Coverage) + (0.2 * f3Recency) + (0.1 * f4Consent) + (0.1 * f5Active);
+      totalHealth += health;
+
+      // Pass Probability (Logistic approximation based on exam score and coverage)
+      const prob = (f1Exam * 0.7) + (f2Coverage * 0.3);
+      totalProb += prob;
+
+      return row;
+    });
 
     const cohortHealthScore = cohort.length > 0 ? Math.round((totalHealth / cohort.length) * 100) : 0;
+    const cohortPassProbability = cohort.length > 0 ? Math.round((totalProb / cohort.length) * 100) : 0;
+
+    // Fire-and-forget: cache the pre-aggregated summary to the database (for B2B reporting pipelines)
+    query(
+      `INSERT INTO org_analytics_summary (org_id, health_score, pass_probability, updated_at) 
+       VALUES ($1, $2, $3, NOW()) 
+       ON CONFLICT (org_id) DO UPDATE SET health_score = EXCLUDED.health_score, pass_probability = EXCLUDED.pass_probability, updated_at = NOW()`,
+      [org.id, cohortHealthScore, cohortPassProbability]
+    ).catch(err => console.error("Failed to update org_analytics_summary", err));
+
+    return res.json({
       orgId: org.id,
       name: org.name,
       threshold,
@@ -172,5 +215,46 @@ orgRouter.post(
     );
 
     return res.json({ results });
+  }),
+);
+
+orgRouter.post(
+  "/:orgId/revoke-seat",
+  handler(async (req, res) => {
+    const user = requireUser(req);
+    const orgId = param(req.params.orgId);
+    const rawEmail = req.body?.email;
+    const email = inviteKeyForEmail(typeof rawEmail === "string" ? rawEmail : "");
+
+    if (!email) throw badRequest("invalid-email");
+
+    const org = await ownedOrg(orgId, user.uid);
+
+    // Get the seat to find if it's claimed
+    const seat = await queryOne<{ claimed_by: string | null }>(
+      "SELECT claimed_by FROM org_seats WHERE org_id = $1 AND email = $2",
+      [org.id, email],
+    );
+
+    if (!seat) {
+      throw new HttpError(404, "not-found", "Seat not found");
+    }
+
+    // Begin transaction? We can just run queries, they are sequential.
+    // If it's claimed, remove the school entitlement
+    if (seat.claimed_by) {
+      await query(
+        "DELETE FROM entitlements WHERE user_id = $1 AND plan = 'school' AND source IN ('school', 'invite')",
+        [seat.claimed_by]
+      );
+    }
+
+    // Update seat status to revoked
+    await query(
+      "UPDATE org_seats SET status = 'revoked', claimed_by = NULL WHERE org_id = $1 AND email = $2",
+      [org.id, email]
+    );
+
+    return res.json({ success: true });
   }),
 );

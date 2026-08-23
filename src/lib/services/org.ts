@@ -10,7 +10,7 @@ import { apiTry } from '@/lib/services/backend';
 /** One cohort member row — seat status + study readiness (mirrors school-core.CohortRow). */
 export interface CohortRow {
   email: string;
-  status: 'active' | 'expired' | 'invited' | 'none';
+  status: 'active' | 'expired' | 'invited' | 'none' | 'revoked';
   source: string;
   coverage: string; // "covered/total"
   coveredBanks: number;
@@ -66,4 +66,14 @@ export async function provisionSeats(
     { method: 'POST', body: { emails, expiresAt } },
     null,
   );
+}
+
+/** Revoke a seat license from an email in the roster. */
+export async function revokeSeat(orgId: string, email: string): Promise<boolean> {
+  const result = await apiTry<{ success: boolean }>(
+    `/org/${encodeURIComponent(orgId)}/revoke-seat`,
+    { method: 'POST', body: { email } },
+    { success: false }
+  );
+  return result.success;
 }

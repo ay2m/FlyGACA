@@ -2129,8 +2129,14 @@
         "coverage": "التغطية",
         "exam": "الامتحان التجريبي",
         "readyCol": "جاهز",
-        "active": "آخر نشاط"
+        "active": "آخر نشاط",
+        "actions": "إجراءات"
       },
+      "healthScore": "درجة الصحة (H)",
+      "passProb": "احتمالية النجاح",
+      "pendingConsent": "في انتظار موافقة PDPL",
+      "revoke": "إلغاء",
+      "confirmRevoke": "هل أنت متأكد من أنك تريد إلغاء هذا المقعد؟",
       "addSeats": "إضافة مقاعد",
       "provisionResults": "نتائج الدعوات",
       "done": "تم",

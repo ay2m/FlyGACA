@@ -12,6 +12,7 @@ import { useNoindexMeta } from '@/hooks/usePageMeta';
 import {
   getMyOrgs,
   getCohortReadiness,
+  revokeSeat,
   type OrgSummary,
   type CohortReadiness,
   type CohortRow,
@@ -96,6 +97,17 @@ function Inner() {
     }
   };
 
+  const handleRevoke = async (email: string) => {
+    if (!window.confirm(t('business.admin.confirmRevoke', 'Are you sure you want to revoke this seat?'))) return;
+    const success = await revokeSeat(org.id, email);
+    if (success) {
+      const updated = await getCohortReadiness(org.id);
+      if (updated) {
+        setState({ kind: 'ready', orgs, data: updated });
+      }
+    }
+  };
+
   return (
     <section className={`container ${styles.page}`}>
       <header className={styles.head}>
@@ -126,6 +138,7 @@ function Inner() {
                 <th>{t('business.admin.col.exam')}</th>
                 <th>{t('business.admin.col.readyCol')}</th>
                 <th>{t('business.admin.col.active')}</th>
+                <th>{t('business.admin.col.actions', 'Actions')}</th>
               </tr>
             </thead>
             <tbody>
@@ -149,6 +162,18 @@ function Inner() {
                       {t('business.admin.pendingConsent', 'Pending PDPL Consent')}
                     </td>
                   )}
+                  <td>
+                    {r.status !== 'revoked' && (
+                      <button 
+                        type="button" 
+                        className={styles.linkBtn} 
+                        style={{ color: 'var(--fg-danger, red)' }}
+                        onClick={() => handleRevoke(r.email)}
+                      >
+                        {t('business.admin.revoke', 'Revoke')}
+                      </button>
+                    )}
+                  </td>
                 </tr>
               ))}
             </tbody>
