@@ -21,8 +21,6 @@ export const NAV: NavItem[] = [
   { to: '/chat', key: 'nav.captainAdel' },
   { to: '/tools', key: 'nav.tools' },
   { to: '/learn', key: 'nav.learn' },
-  { to: '/pricing', key: 'nav.pricing' },
-  { to: '/about', key: 'nav.about' },
   { to: '/account', key: 'nav.account' },
 ];
 

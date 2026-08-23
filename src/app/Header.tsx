@@ -104,6 +104,11 @@ export function Header() {
                 </NavLink>
               ),
             )}
+            {!isPro && (
+              <NavLink viewTransition to="/pricing" className={({ isActive }) => (isActive ? styles.active : undefined)}>
+                {t('nav.pricing')}
+              </NavLink>
+            )}
           </nav>
 
           <div className={styles.actions}>
@@ -129,9 +134,15 @@ export function Header() {
                 ⌘K
               </kbd>
             </button>
-            <ThemeToggle className={styles.langToggle} />
-            <LangToggle className={styles.langToggle} />
-            <InstallButton />
+            
+            {/* Show standalone utilities only if logged out; else they live in AccountMenu/MobileDock */}
+            {!signedIn && (
+              <>
+                <ThemeToggle className={styles.langToggle} />
+                <LangToggle className={styles.langToggle} />
+              </>
+            )}
+            
             <ButtonLink className={styles.cta} to={ctaTo} viewTransition icon={ctaIcon}>
               {ctaLabel}
             </ButtonLink>
