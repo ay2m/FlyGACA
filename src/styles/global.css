@@ -65,7 +65,6 @@ h2 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 24px color-mix(in srgb, var(--teal-bright) 25%, transparent));
 }
 
 h1 {
@@ -261,14 +260,10 @@ main {
   border-radius: var(--clay-radius);
   box-shadow: var(--clay-shadow);
   font-weight: var(--fw-semibold);
-  transition: all var(--dur) var(--ease);
 }
 .btn-clay-primary:hover {
   background: var(--brand-hover);
   box-shadow: 
-    var(--clay-shadow-hover),
-    0 0 24px color-mix(in srgb, var(--brand-hover) 40%, transparent);
-  transform: translateY(-2px) scale(1.01);
 }
 .btn-clay-primary:active {
   box-shadow: var(--clay-shadow-press);
@@ -392,9 +387,6 @@ main {
 .card-clay {
   background: color-mix(in srgb, var(--surface) 85%, transparent);
   backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: var(--clay-border);
-  border-radius: var(--clay-radius);
   box-shadow: var(--clay-shadow);
   transition:
     box-shadow var(--dur) var(--ease),

@@ -1,42 +1,26 @@
 .nav {
   position: sticky;
-  inset-block-start: 0;
+  inset-block-start: var(--space-4);
   z-index: var(--z-sticky);
-  block-size: var(--nav-h);
-  padding-block-start: var(--safe-top);
+  block-size: 64px;
   display: flex;
   align-items: center;
-  background: color-mix(in srgb, var(--bg) 72%, transparent);
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
-  border-block-end: 1px solid transparent;
-  transition:
-    background var(--dur) var(--ease),
-    box-shadow var(--dur) var(--ease),
-    border-color var(--dur) var(--ease);
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid color-mix(in srgb, var(--border-bright) 40%, transparent);
+  border-radius: var(--radius-pill);
+  margin-inline: auto;
+  max-width: var(--container);
+  width: calc(100% - var(--space-6));
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--shade) 30%, transparent);
+  transition: all var(--dur) var(--ease);
 }
-/* Elevated state — firmer surface, hairline + a quiet shadow once scrolled. */
+/* Elevated state — firmer surface and brighter border once scrolled. */
 .nav.scrolled {
-  background: var(--surface-overlay);
-  border-block-end-color: var(--border);
-  box-shadow: var(--elev-1);
-}
-/* Brand-gradient hairline along the bottom edge; reveals on scroll. The mask
-   fades it out at both ends so it reads as a jeweled edge, not a stripe. */
-.nav::after {
-  content: '';
-  position: absolute;
-  inset-block-end: 0;
-  inset-inline: 0;
-  block-size: 1px;
-  background: var(--grad-brand);
-  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-  opacity: 0;
-  transition: opacity var(--dur) var(--ease);
-}
-.nav.scrolled::after {
-  opacity: 0.6;
+  background: color-mix(in srgb, var(--surface) 75%, transparent);
+  border-color: color-mix(in srgb, var(--border-bright) 80%, transparent);
+  box-shadow: var(--elev-2);
 }
 
 .inner {
@@ -44,6 +28,7 @@
   align-items: center;
   gap: var(--space-4);
   inline-size: 100%;
+  padding-inline: var(--space-4);
 }
 
 /* --- Brand lockup: mark + wordmark --- */
@@ -127,25 +112,14 @@
   background: var(--brand-tint);
   text-decoration: none;
 }
-/* Active state: soft brand-tint pill, semibold (not bold) — mirrors in RTL. */
+/* Active state: frosted glass pill with brand text. */
 .links a.active {
-  color: var(--brand-hover);
-  background: var(--brand-tint);
-  font-weight: var(--fw-semibold);
-}
-/* Glowing underline dot inside the active pill (inset-inline + margin-inline
-   auto centers it in both directions, so no physical transforms). */
-.links a.active::after {
-  content: '';
-  position: absolute;
-  inset-block-end: 5px;
-  inset-inline: 0;
-  margin-inline: auto;
-  inline-size: 14px;
-  block-size: 2px;
-  border-radius: var(--radius-pill);
-  background: var(--brand-hover);
-  box-shadow: 0 0 8px color-mix(in srgb, var(--brand-hover) 70%, transparent);
+  color: var(--text-on-brand);
+  background: var(--brand);
+  font-weight: var(--fw-bold);
+  box-shadow: 
+    0 4px 12px color-mix(in srgb, var(--brand) 30%, transparent),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 /* --- Desktop account dropdown (signed-in) --- */
@@ -420,7 +394,7 @@
   /* --- Floating bottom dock --- */
   .dock {
     position: fixed;
-    inset-block-end: calc(var(--space-3) + var(--safe-bottom));
+    inset-block-end: calc(var(--space-4) + var(--safe-bottom));
     inset-inline: var(--space-4);
     z-index: var(--z-sticky);
     display: flex;
@@ -430,12 +404,12 @@
     max-inline-size: 30rem;
     margin-inline: auto;
     padding: var(--space-2);
-    background: var(--surface-overlay);
-    backdrop-filter: blur(18px) saturate(150%);
-    -webkit-backdrop-filter: blur(18px) saturate(150%);
-    border: var(--hairline-bright);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--elev-3);
+    background: color-mix(in srgb, var(--bg) 55%, transparent);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid color-mix(in srgb, var(--border-bright) 40%, transparent);
+    border-radius: var(--radius-pill);
+    box-shadow: 0 12px 32px color-mix(in srgb, var(--shade) 40%, transparent);
   }
 
   .dockItem {
