@@ -19,6 +19,7 @@ export interface CohortRow {
   ready: boolean;
   hasProgress: boolean;
   lastActive: string;
+  pdplConsent: boolean;
 }
 
 export interface OrgSummary {
@@ -34,6 +35,8 @@ export interface CohortReadiness {
   threshold: number;
   banks: string[];
   counts: { total: number; active: number; ready: number };
+  healthScore: number;
+  passProbability: number;
   rows: CohortRow[];
 }
 

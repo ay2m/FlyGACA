@@ -110,6 +110,8 @@ function Inner() {
           { value: data.counts.total, label: t('business.admin.seats') },
           { value: data.counts.active, label: t('business.admin.active') },
           { value: data.counts.ready, label: t('business.admin.ready') },
+          { value: `${data.healthScore}%`, label: t('business.admin.healthScore', 'Health Score (H)') },
+          { value: `${data.passProbability}%`, label: t('business.admin.passProb', 'Pass Probability') },
         ]}
       />
 
@@ -133,12 +135,20 @@ function Inner() {
                     <bdi dir="ltr">{r.email}</bdi>
                   </td>
                   <td>{statusCell(r, t)}</td>
-                  <td>{r.coverage}</td>
-                  <td>{r.hasProgress ? `${r.examBest}%` : '—'}</td>
-                  <td>{readyCell(r, t)}</td>
-                  <td>
-                    <bdi dir="ltr">{r.lastActive || '—'}</bdi>
-                  </td>
+                  {r.pdplConsent ? (
+                    <>
+                      <td>{r.coverage}</td>
+                      <td>{r.hasProgress ? `${r.examBest}%` : '—'}</td>
+                      <td>{readyCell(r, t)}</td>
+                      <td>
+                        <bdi dir="ltr">{r.lastActive || '—'}</bdi>
+                      </td>
+                    </>
+                  ) : (
+                    <td colSpan={4} className={styles.muted} style={{ textAlign: 'center' }}>
+                      {t('business.admin.pendingConsent', 'Pending PDPL Consent')}
+                    </td>
+                  )}
                 </tr>
               ))}
             </tbody>

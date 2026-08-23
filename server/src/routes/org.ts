@@ -80,19 +80,20 @@ orgRouter.get(
     // join is outer and the nulls are meaningful.
     const rows = await query<{
       email: string;
+      pdpl_consent: boolean | null;
       plan: string | null;
       expires_at: Date | null;
       source: string | null;
       summary: ProgressSummaryLike | null;
       progress_updated_at: Date | null;
     }>(
-      `SELECT s.email,
+      `SELECT s.email, s.pdpl_consent,
               e.plan, e.expires_at, e.source,
               sp.summary, sp.updated_at AS progress_updated_at
          FROM org_seats s
          LEFT JOIN users u  ON u.email = s.email
          LEFT JOIN entitlements e   ON e.user_id = u.id
-         LEFT JOIN study_progress sp ON sp.user_id = u.id
+         LEFT JOIN study_progress sp ON sp.user_id = u.id AND s.pdpl_consent = true
         WHERE s.org_id = $1
         ORDER BY s.email`,
       [org.id],
@@ -109,10 +110,12 @@ orgRouter.get(
       const summary = r.summary
         ? { ...r.summary, updatedAt: r.progress_updated_at?.toISOString() }
         : null;
-      return cohortRow({ email: r.email, entitlement, hasInvite: true, summary }, banks, threshold);
-    });
+      
+        pdplConsent: !!r.pdpl_consent,
+      };
 
-    return res.json({
+
+    const cohortHealthScore = cohort.length > 0 ? Math.round((totalHealth / cohort.length) * 100) : 0;
       orgId: org.id,
       name: org.name,
       threshold,
@@ -122,7 +125,7 @@ orgRouter.get(
         active: cohort.filter((c) => c.status === "active").length,
         ready: cohort.filter((c) => c.ready).length,
       },
-      rows: cohort,
+      healthScore: cohortHealthScore,
     });
   }),
 );

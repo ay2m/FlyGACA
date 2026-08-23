@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 const PORT = 4173;
-const BASE_URL = `http://localhost:${PORT}`;
+const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
 
 /**
  * E2E smoke + critical-flow + a11y checks against a production preview build.
@@ -29,7 +29,7 @@ export default defineConfig({
     reducedMotion: 'reduce',
   },
   projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
-  webServer: {
+  webServer: process.env.BASE_URL ? undefined : {
     command: `VITE_API_BASE_URL= npm run build && npm run preview -- --port=${PORT} --strictPort`,
     url: BASE_URL,
     reuseExistingServer: !process.env.CI,
