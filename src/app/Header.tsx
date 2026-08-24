@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { LangToggle } from '@/components/LangToggle';
 import { ThemeToggle } from '@/components/ThemeToggle';
-import { InstallButton } from '@/components/pwa/InstallButton';
 import { openCommandPalette } from '@/components/CommandPalette/openCommandPalette';
 import { ButtonLink } from '@/components/ui/Button';
 import { useAccount } from '@/lib/services/account';
