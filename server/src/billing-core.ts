@@ -141,6 +141,17 @@ export function amountForCheckout(
 }
 
 /**
+ * The ACTUAL plan (without promo) — a paid plan whose `expiresAt` has passed
+ * collapses to `free`, and a non-expiring grant (school/staff) stands. Used for
+ * quota/billing enforcement where we need the true account state, not the UI promo.
+ */
+function actualPlan(ent: Entitlement | null | undefined, now: Date = new Date()): Plan {
+  if (!ent || ent.plan === "free") return "free";
+  if (!ent.expiresAt) return ent.plan;
+  return new Date(ent.expiresAt).getTime() > now.getTime() ? ent.plan : "free";
+}
+
+/**
  * The plan actually in force for an entitlement `now`: a paid plan whose `expiresAt`
  * has passed collapses to `free`, and a non-expiring grant (school/staff) stands.
  * Mirrors `effectivePlan` in src/lib/services/entitlements.ts so the gateway gates on
@@ -151,20 +162,17 @@ export function effectivePlan(
   now: Date = new Date(),
 ): Plan {
   // Promo: Everyone gets Pro access for now.
-  const real = (() => {
-    if (!ent || ent.plan === "free") return "free";
-    if (!ent.expiresAt) return ent.plan;
-    return new Date(ent.expiresAt).getTime() > now.getTime() ? ent.plan : "free";
-  })();
+  const real = actualPlan(ent, now);
   return real === "free" ? "pro" : real;
 }
 
-/** Whether an entitlement grants an active paid plan (pro or school) right now. */
+/** Whether an entitlement grants an active paid plan (pro or school) right now.
+ * Uses the ACTUAL plan (not the promo) for quota/billing enforcement. */
 export function isPaidActive(
   ent: Entitlement | null | undefined,
   now: Date = new Date(),
 ): boolean {
-  return effectivePlan(ent, now) !== "free";
+  return actualPlan(ent, now) !== "free";
 }
 
 /** Days of Pro access granted by one Exam Season Pass purchase. */
@@ -468,8 +476,13 @@ export function renewalBaseDate(currentExpiresAt: string | undefined, now: Date)
  * fulfilment and the grant routes alike — has to be able to reach it.
  */
 export function mergeUpward(current: Entitlement | null, next: Entitlement): Entitlement {
-  const activeNow = current ? effectivePlan(current) : "free";
-  if (!current || activeNow === "free") return next;
+  // Check the actual plan, not the effective plan (which applies the promo).
+  // If there's no current entitlement or it's explicitly free, just take the new grant.
+  if (!current || current.plan === "free") return next;
+
+  const activeNow = effectivePlan(current);
+  // Also treat lapsed entitlements as free — not a downgrade to protect.
+  if (activeNow === "free") return next;
 
   const expiryOf = (e: Entitlement): number =>
     e.expiresAt ? Date.parse(e.expiresAt) : Infinity;
