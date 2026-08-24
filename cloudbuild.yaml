@@ -18,7 +18,7 @@
 # first-time provisioning of the Artifact Registry repo, secrets and Cloud SQL.
 
 substitutions:
-  _REGION: me-central2
+  _REGION: us-central1
   _REPO: flygaca
   _SERVICE: flygaca-api
   _TAG: latest

@@ -146,8 +146,14 @@ grantsRouter.post(
 
     const current = await getEntitlement(user.uid);
     // The comp is for free accounts only — never touch an active paid/staff/school
-    // plan or a still-running founding window.
-    if (effectivePlan(current) !== "free") return res.json({ granted: false, already: true });
+    // plan or a still-running founding window. Check for actual conflicting sources,
+    // not effectivePlan which includes the promo.
+    if (current && current.source && ["staff", "school", "founding"].includes(current.source)) {
+      return res.json({ granted: false, already: true });
+    }
+    if (current?.source === "moyasar" && current.expiresAt && new Date(current.expiresAt) > new Date()) {
+      return res.json({ granted: false, already: true });
+    }
 
     // One founding grant per account, ever. The PRIMARY KEY conflict is the lock,
     // so a retry or a second device can't stack days or re-grant after it lapses.

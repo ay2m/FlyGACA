@@ -117,10 +117,10 @@ orgRouter.get(
         : null;
       
       // If status is explicitly revoked, the user should be shown as revoked
-      const baseRow = cohortRow({ email: r.email, entitlement, hasInvite: r.status !== 'revoked', summary }, banks, threshold);
+      const baseRow = cohortRow({ email: r.email, entitlement, hasInvite: r.status !== "revoked", summary }, banks, threshold);
       const row = {
         ...baseRow,
-        status: r.status === 'revoked' ? 'revoked' : baseRow.status,
+        status: r.status === "revoked" ? "revoked" : baseRow.status,
         pdplConsent: !!r.pdpl_consent,
       };
       // 5-Factor Health Score
@@ -135,7 +135,7 @@ orgRouter.get(
       }
       
       const f4Consent = row.pdplConsent ? 1 : 0;
-      const f5Active = row.status === 'active' ? 1 : 0;
+      const f5Active = row.status === "active" ? 1 : 0;
 
       const health = (0.3 * f1Exam) + (0.3 * f2Coverage) + (0.2 * f3Recency) + (0.1 * f4Consent) + (0.1 * f5Active);
       totalHealth += health;
@@ -169,6 +169,7 @@ orgRouter.get(
         ready: cohort.filter((c) => c.ready).length,
       },
       healthScore: cohortHealthScore,
+      rows: cohort,
     });
   }),
 );

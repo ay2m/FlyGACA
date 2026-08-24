@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { LangToggle } from '@/components/LangToggle';
 import { ThemeToggle } from '@/components/ThemeToggle';
-import { InstallButton } from '@/components/pwa/InstallButton';
 import { openCommandPalette } from '@/components/CommandPalette/openCommandPalette';
 import { ButtonLink } from '@/components/ui/Button';
 import { useAccount } from '@/lib/services/account';
@@ -105,7 +104,11 @@ export function Header() {
               ),
             )}
             {!isPro && (
-              <NavLink viewTransition to="/pricing" className={({ isActive }) => (isActive ? styles.active : undefined)}>
+              <NavLink
+                viewTransition
+                to="/pricing"
+                className={({ isActive }) => (isActive ? styles.active : undefined)}
+              >
                 {t('nav.pricing')}
               </NavLink>
             )}
@@ -134,7 +137,7 @@ export function Header() {
                 ⌘K
               </kbd>
             </button>
-            
+
             {/* Show standalone utilities only if logged out; else they live in AccountMenu/MobileDock */}
             {!signedIn && (
               <>
@@ -142,7 +145,7 @@ export function Header() {
                 <LangToggle className={styles.langToggle} />
               </>
             )}
-            
+
             <ButtonLink className={styles.cta} to={ctaTo} viewTransition icon={ctaIcon}>
               {ctaLabel}
             </ButtonLink>

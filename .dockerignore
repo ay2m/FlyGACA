@@ -20,9 +20,9 @@ ios
 apple
 archive
 e2e
-src
-tests
-scripts
+/src
+/tests
+/scripts
 docs
 screenshots
 supabase
@@ -30,5 +30,7 @@ worker
 *.log
 
 # public/ is 64 MB and only one file is needed; re-include it explicitly.
-public
+public/
+!public/
+!public/data/
 !public/data/rag-chunks.json
