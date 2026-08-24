@@ -409,3 +409,93 @@ describe("POST /org/:orgId/provision-seats", () => {
     expect(res.status).toBe(401);
   });
 });
+
+describe("POST /org/:orgId/revoke-seat", () => {
+  beforeEach(() => {
+    currentUser = user();
+  });
+
+  it("revokes an unclaimed seat", async () => {
+    queryOne
+      .mockResolvedValueOnce({ id: "o1", name: "Riyadh Wings", seat_limit: null })
+      .mockResolvedValueOnce({ claimed_by: null });
+
+    const res = await request(app)
+      .post("/api/org/o1/revoke-seat")
+      .send({ email: "cadet@example.com" });
+
+    expect(res.status).toBe(200);
+    expect(res.body.success).toBe(true);
+    // Should not call delete since seat was not claimed
+    expect(query).toHaveBeenCalledWith(
+      expect.stringContaining("UPDATE org_seats SET status = 'revoked'"),
+      expect.arrayContaining(["o1", "cadet@example.com"]),
+    );
+  });
+
+  it("revokes a claimed seat and deletes the entitlement", async () => {
+    queryOne
+      .mockResolvedValueOnce({ id: "o1", name: "Riyadh Wings", seat_limit: null })
+      .mockResolvedValueOnce({ claimed_by: "user-123" });
+
+    const res = await request(app)
+      .post("/api/org/o1/revoke-seat")
+      .send({ email: "cadet@example.com" });
+
+    expect(res.status).toBe(200);
+    expect(res.body.success).toBe(true);
+    // Should delete the entitlement first
+    expect(query).toHaveBeenCalledWith(
+      expect.stringContaining("DELETE FROM entitlements"),
+      ["user-123"],
+    );
+    // Then update the seat
+    expect(query).toHaveBeenCalledWith(
+      expect.stringContaining("UPDATE org_seats SET status = 'revoked'"),
+      expect.arrayContaining(["o1", "cadet@example.com"]),
+    );
+  });
+
+  it("403s for an org the caller does not own", async () => {
+    queryOne.mockResolvedValue(null);
+
+    const res = await request(app)
+      .post("/api/org/o1/revoke-seat")
+      .send({ email: "cadet@example.com" });
+
+    expect(res.status).toBe(403);
+    expect(res.body.error).toBe("permission-denied");
+  });
+
+  it("404s when the seat does not exist", async () => {
+    queryOne
+      .mockResolvedValueOnce({ id: "o1", name: "Riyadh Wings", seat_limit: null })
+      .mockResolvedValueOnce(null); // seat not found
+
+    const res = await request(app)
+      .post("/api/org/o1/revoke-seat")
+      .send({ email: "nonexistent@example.com" });
+
+    expect(res.status).toBe(404);
+    expect(res.body.error).toBe("not-found");
+  });
+
+  it("400s on an invalid email", async () => {
+    const res = await request(app)
+      .post("/api/org/o1/revoke-seat")
+      .send({ email: "not-an-email" });
+
+    expect(res.status).toBe(400);
+    expect(res.body.error).toBe("invalid-email");
+    // Should not proceed to ownership check
+    expect(queryOne).not.toHaveBeenCalled();
+  });
+
+  it("requires a session", async () => {
+    currentUser = null;
+    const res = await request(app)
+      .post("/api/org/o1/revoke-seat")
+      .send({ email: "cadet@example.com" });
+    expect(res.status).toBe(401);
+  });
+});
