@@ -68,10 +68,7 @@ export function CaptainAvatar({
   // If the loop ever fails to load (missing/oversized), drop to the still for good.
   const [loopFailed, setLoopFailed] = useState(false);
 
-  const stillSrc =
-    pose !== 'default'
-      ? poseSrc[pose]
-      : '/img/captain-adel.jpg';
+  const stillSrc = pose !== 'default' ? poseSrc[pose] : '/img/captain-adel.jpg';
 
   // Disable the cartoon animated idle loop for the new realistic portrait
   const playLoop = false;

@@ -263,7 +263,7 @@ main {
 }
 .btn-clay-primary:hover {
   background: var(--brand-hover);
-  box-shadow: 
+  box-shadow:;
 }
 .btn-clay-primary:active {
   box-shadow: var(--clay-shadow-press);

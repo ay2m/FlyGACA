@@ -27,7 +27,11 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 0%, color-mix(in srgb, var(--bg) 88%, var(--shade)) 100%);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    color-mix(in srgb, var(--bg) 88%, var(--shade)) 100%
+  );
   pointer-events: none;
 }
 

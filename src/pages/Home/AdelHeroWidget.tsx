@@ -104,7 +104,12 @@ export function AdelHeroWidget() {
     <div className={styles.efb} aria-hidden="true">
       <div className={styles.screen}>
         <div className={styles.heroImageContainer}>
-          <img src="/img/captain-adel.jpg" alt="Captain Adel" className={styles.adelImage} loading="lazy" />
+          <img
+            src="/img/captain-adel.jpg"
+            alt="Captain Adel"
+            className={styles.adelImage}
+            loading="lazy"
+          />
         </div>
         <div className={styles.contentContainer}>
           <div className={styles.bar}>
