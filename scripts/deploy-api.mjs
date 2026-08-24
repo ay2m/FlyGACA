@@ -18,7 +18,7 @@
 import { spawnSync } from 'node:child_process';
 import { shellQuote } from './deploy-web.mjs';
 
-const REGION = process.env.REGION ?? 'me-central2';
+const REGION = process.env.REGION ?? 'us-central1';
 const REPO = process.env.ARTIFACT_REPO ?? 'flygaca';
 const SERVICE = process.env.CLOUD_RUN_SERVICE ?? 'flygaca-api';
 const TAG = process.env.TAG ?? 'latest';
