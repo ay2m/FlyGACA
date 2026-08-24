@@ -117,7 +117,7 @@
   color: var(--text-on-brand);
   background: var(--brand);
   font-weight: var(--fw-bold);
-  box-shadow: 
+  box-shadow:
     0 4px 12px color-mix(in srgb, var(--brand) 30%, transparent),
     inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }

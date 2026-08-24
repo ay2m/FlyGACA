@@ -98,7 +98,12 @@ function Inner() {
   };
 
   const handleRevoke = async (email: string) => {
-    if (!window.confirm(t('business.admin.confirmRevoke', 'Are you sure you want to revoke this seat?'))) return;
+    if (
+      !window.confirm(
+        t('business.admin.confirmRevoke', 'Are you sure you want to revoke this seat?'),
+      )
+    )
+      return;
     const success = await revokeSeat(org.id, email);
     if (success) {
       const updated = await getCohortReadiness(org.id);
@@ -122,8 +127,14 @@ function Inner() {
           { value: data.counts.total, label: t('business.admin.seats') },
           { value: data.counts.active, label: t('business.admin.active') },
           { value: data.counts.ready, label: t('business.admin.ready') },
-          { value: `${data.healthScore}%`, label: t('business.admin.healthScore', 'Health Score (H)') },
-          { value: `${data.passProbability}%`, label: t('business.admin.passProb', 'Pass Probability') },
+          {
+            value: `${data.healthScore}%`,
+            label: t('business.admin.healthScore', 'Health Score (H)'),
+          },
+          {
+            value: `${data.passProbability}%`,
+            label: t('business.admin.passProb', 'Pass Probability'),
+          },
         ]}
       />
 
@@ -164,9 +175,9 @@ function Inner() {
                   )}
                   <td>
                     {r.status !== 'revoked' && (
-                      <button 
-                        type="button" 
-                        className={styles.linkBtn} 
+                      <button
+                        type="button"
+                        className={styles.linkBtn}
                         style={{ color: 'var(--fg-danger, red)' }}
                         onClick={() => handleRevoke(r.email)}
                       >

@@ -73,7 +73,7 @@ export async function revokeSeat(orgId: string, email: string): Promise<boolean>
   const result = await apiTry<{ success: boolean }>(
     `/org/${encodeURIComponent(orgId)}/revoke-seat`,
     { method: 'POST', body: { email } },
-    { success: false }
+    { success: false },
   );
   return result.success;
 }
