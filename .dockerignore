@@ -20,18 +20,14 @@ ios
 apple
 archive
 e2e
-src
-tests
-scripts
+/src
+/tests
+/scripts
 docs
 screenshots
 supabase
 worker
 *.log
-
-# Explicitly include server source and scripts — the Dockerfile needs these.
-!server/src
-!server/scripts
 
 # public/ is 64 MB and only one file is needed; re-include it explicitly.
 public
