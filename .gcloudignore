@@ -38,5 +38,6 @@ worker
 # public/ is 64 MB and the image needs exactly one file from it.
 # To re-include a file in an excluded directory, must re-include the directory path first.
 public/
+!public/
 !public/data/
 !public/data/rag-chunks.json
