@@ -30,5 +30,6 @@ worker
 *.log
 
 # public/ is 64 MB and only one file is needed; re-include it explicitly.
-public
+public/
+!public/data/
 !public/data/rag-chunks.json
