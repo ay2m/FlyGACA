@@ -169,6 +169,7 @@ orgRouter.get(
         ready: cohort.filter((c) => c.ready).length,
       },
       healthScore: cohortHealthScore,
+      rows: cohort,
     });
   }),
 );

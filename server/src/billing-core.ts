@@ -141,6 +141,17 @@ export function amountForCheckout(
 }
 
 /**
+ * The true plan in force for an entitlement `now`, without promo: a paid plan
+ * whose `expiresAt` has passed collapses to `free`, and a non-expiring grant
+ * (school/staff) stands. Used for quota enforcement and grant eligibility.
+ */
+function actualPlan(ent: Entitlement | null | undefined, now: Date = new Date()): Plan {
+  if (!ent || ent.plan === "free") return "free";
+  if (!ent.expiresAt) return ent.plan;
+  return new Date(ent.expiresAt).getTime() > now.getTime() ? ent.plan : "free";
+}
+
+/**
  * The plan actually in force for an entitlement `now`: a paid plan whose `expiresAt`
  * has passed collapses to `free`, and a non-expiring grant (school/staff) stands.
  * Mirrors `effectivePlan` in src/lib/services/entitlements.ts so the gateway gates on
@@ -151,20 +162,18 @@ export function effectivePlan(
   now: Date = new Date(),
 ): Plan {
   // Promo: Everyone gets Pro access for now.
-  const real = (() => {
-    if (!ent || ent.plan === "free") return "free";
-    if (!ent.expiresAt) return ent.plan;
-    return new Date(ent.expiresAt).getTime() > now.getTime() ? ent.plan : "free";
-  })();
+  const real = actualPlan(ent, now);
   return real === "free" ? "pro" : real;
 }
 
-/** Whether an entitlement grants an active paid plan (pro or school) right now. */
+/** Whether an entitlement grants an active paid plan (pro or school) right now.
+ * Uses actualPlan so quota enforcement correctly identifies free accounts
+ * even when a promo would make effectivePlan return "pro". */
 export function isPaidActive(
   ent: Entitlement | null | undefined,
   now: Date = new Date(),
 ): boolean {
-  return effectivePlan(ent, now) !== "free";
+  return actualPlan(ent, now) !== "free";
 }
 
 /** Days of Pro access granted by one Exam Season Pass purchase. */
@@ -468,15 +477,21 @@ export function renewalBaseDate(currentExpiresAt: string | undefined, now: Date)
  * fulfilment and the grant routes alike — has to be able to reach it.
  */
 export function mergeUpward(current: Entitlement | null, next: Entitlement): Entitlement {
-  const activeNow = current ? effectivePlan(current) : "free";
-  if (!current || activeNow === "free") return next;
+  // Use actual plan (not promo-affected) to preserve ability to detect lapsed plans
+  // and prevent comps from clobbering paid users
+  if (!current || current.plan === "free") return next;
+
+  // Check if current plan has lapsed
+  if (current.expiresAt && new Date(current.expiresAt).getTime() <= new Date().getTime()) {
+    return next;
+  }
 
   const expiryOf = (e: Entitlement): number =>
     e.expiresAt ? Date.parse(e.expiresAt) : Infinity;
   const longest = expiryOf(current) > expiryOf(next) ? current : next;
 
   const merged: Entitlement = {
-    plan: activeNow === "school" ? "school" : next.plan,
+    plan: current.plan === "school" ? "school" : next.plan,
     source: longest.source,
   };
   if (longest.expiresAt) merged.expiresAt = longest.expiresAt;
