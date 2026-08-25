@@ -1,56 +1,53 @@
 import { useState } from 'react';
-import { Link } from 'react-router';
+import { useNavigate } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { CaptainAvatar } from '@/components/CaptainAvatar';
-import { loadConversations } from '@/lib/adelConversations';
 import styles from './dashboard-widgets.module.css';
 
-const MAX_THREADS = 3;
-
 /**
- * Recent Captain Adel conversations. The chat page owns the archive; this
- * reads it once on mount (writes only happen on /chat, so there is nothing to
- * subscribe to here) and links back into the chat, which restores threads.
+ * A direct line to Captain Adel from the dashboard.
+ * Since the chat is now powered by the official captadel.com iframe,
+ * we provide a quick input to jump straight into a conversation.
  */
 export function AdelThreadsWidget() {
   const { t } = useTranslation();
-  const [threads] = useState(() => loadConversations().slice(0, MAX_THREADS));
+  const navigate = useNavigate();
+  const [query, setQuery] = useState('');
+
+  const handleAsk = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!query.trim()) return;
+    navigate(`/chat?q=${encodeURIComponent(query.trim())}`);
+  };
 
   return (
     <>
       <div className={styles.head}>
         <h2>{t('dashboard.widgets.adel.title')}</h2>
-        <Link to="/chat" className={styles.headLink}>
-          {t('dashboard.widgets.adel.open')}
-        </Link>
       </div>
-      {threads.length > 0 ? (
-        <ul className={styles.rowList}>
-          {threads.map((c) => (
-            <li key={c.id}>
-              <Link to="/chat" className={styles.rowLink}>
-                <span className={styles.rowTitle}>
-                  {c.title || t('dashboard.widgets.adel.untitled')}
-                </span>
-                {c.updatedAt > 0 && (
-                  <span className={styles.rowMeta}>
-                    {/* ISO date, matching the logbook rows — locale-formatted
-                        dates embed bidi marks that scramble inside bdi. */}
-                    <bdi dir="ltr">{new Date(c.updatedAt).toISOString().slice(0, 10)}</bdi>
-                  </span>
-                )}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p className={styles.empty}>
-          <CaptainAvatar size="sm" pose="wave" decorative /> {t('dashboard.widgets.adel.empty')}{' '}
-          <Link to="/chat" className={styles.emptyCta}>
-            {t('dashboard.widgets.adel.open')}
-          </Link>
-        </p>
-      )}
+      
+      <div className={styles.adelQuickAsk}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+          <CaptainAvatar size="md" glow pose="default" />
+          <p className={styles.empty} style={{ margin: 0, textAlign: 'left' }}>
+            {t('dashboard.widgets.adel.empty', 'Ask Captain Adel anything about GACAR regulations.')}
+          </p>
+        </div>
+        
+        <form onSubmit={handleAsk} style={{ display: 'flex', gap: '0.5rem' }}>
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder={t('chat.inputPlaceholder', 'Ask a question...')}
+            className="form-input"
+            style={{ flex: 1, borderRadius: 'var(--radius-pill)', padding: '0.5rem 1rem' }}
+          />
+          <button type="submit" className="btn-clay-primary" style={{ borderRadius: 'var(--radius-pill)', padding: '0.5rem 1.5rem' }}>
+            {t('chat.send', 'Ask')}
+          </button>
+        </form>
+      </div>
     </>
   );
 }

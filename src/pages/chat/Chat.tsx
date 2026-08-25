@@ -45,6 +45,11 @@ import {
 } from './chatLocal';
 import styles from './Chat.module.css';
 
+import { BentoGrid } from '@/components/bento/BentoGrid';
+import { BentoCard } from '@/components/bento/BentoCard';
+import { AmbientGlow } from '@/components/AmbientGlow';
+import { CaptainAvatar } from '@/components/CaptainAvatar';
+
 export function Chat() {
   const { t } = useTranslation();
   usePageMeta(t('meta.chat'), t('metaDesc.chat'));
@@ -78,10 +83,6 @@ export function Chat() {
 
   const { entitlement, session, chatCredits } = useAccount();
   const isPro = hasFeature(entitlement, 'adel-unlimited');
-  // Anonymous visitors get a smaller daily "taste" before the sign-in nudge; a
-  // signed-in free account gets the full free allowance, and purchased credits
-  // lift the gate past it (the server enforces the same split and spends the
-  // credit — this stays a UI nudge). All derived in one pure step.
   const { dailyLimit, left, gated } = quotaGate(usage, {
     signedIn: !!session,
     isPro,
@@ -90,19 +91,15 @@ export function Chat() {
 
   const gacar = useFetchJson<GacarIndex>('/data/gacar-index.json');
   const validSlugs = useRef<Set<string>>(new Set());
-  // eslint-disable-next-line react-hooks/refs
   if (gacar.data && validSlugs.current.size === 0) {
-    // eslint-disable-next-line react-hooks/refs
     validSlugs.current = new Set(gacar.data.documents.map((d) => d.slug));
   }
 
-  /** Resolve a Part number cited in prose to an in-app Library link (or null). */
   function resolveCitation(partNumber: string): string | null {
     const slug = partSlug(validSlugs.current, partNumber);
     return slug ? `/library/${slug}` : null;
   }
 
-  /** Persisted toggle for the higher-quality "Pro" model (Pro/School plans only). */
   function togglePro() {
     setUsePro((prev) => {
       const next = !prev;
@@ -115,9 +112,6 @@ export function Chat() {
     const q = question.trim();
     if (!q || busy) return;
 
-    // No sign-in required — anonymous visitors can ask Captain Adel. The daily gate
-    // below (UI nudge only; the server is the source of truth) holds them to the
-    // anonymous allowance and nudges them to sign in once it's spent.
     if (!isPro) {
       const u = currentUsage(usage);
       if (isExhausted(u, dailyLimit)) return;
@@ -137,9 +131,6 @@ export function Chat() {
 
     const controller = new AbortController();
     abortRef.current = controller;
-    // What a failed turn says depends on why it failed: an unconfigured model is
-    // an honest "being connected" message, a 429 is the upsell, everything else
-    // is the transient fallback.
     const failureText = (f: ChatFailure) => t(FAILURE_I18N_KEY[f]);
     const notReady = failureText('transient');
 
@@ -163,11 +154,9 @@ export function Chat() {
           ),
         );
       }
-      // A stream that closed without ever leaving the pending state → not connected.
       setMessages((prev) => finalizeStream(prev, notReady));
     } catch (e) {
       if ((e as Error)?.name === 'AbortError') {
-        // User stopped the stream: keep whatever arrived; drop an empty bubble.
         setMessages((prev) => abortCleanup(prev));
       } else {
         const text = failureText(failureFromCode((e as ChatRequestError)?.code));
@@ -179,7 +168,6 @@ export function Chat() {
     }
   }
 
-  /** Re-ask the user turn that produced the assistant message at `idx`. */
   function regenerate(idx: number) {
     const userMsg = messages[idx - 1];
     if (!userMsg || userMsg.role !== 'user' || busy) return;
@@ -195,7 +183,6 @@ export function Chat() {
     if (el) el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
   }
 
-  // Prefill + auto-send from ?q= (e.g. the "Ask Captain Adel" deep link).
   useEffect(() => {
     const q = params.get('q');
     if (q && !sentInitial.current) {
@@ -203,10 +190,8 @@ export function Chat() {
       setParams({}, { replace: true });
       void ask(q);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Auto-scroll only when the reader is already near the bottom.
   useEffect(() => {
     if (atBottomRef.current) {
       logRef.current?.scrollTo({ top: logRef.current.scrollHeight });
@@ -214,11 +199,8 @@ export function Chat() {
   }, [messages]);
 
   const last = messages[messages.length - 1];
-  // Only the newest reply animates his portrait — one focal loop, never a wall of them.
   const lastAssistantIdx = lastAssistantIndex(messages);
   const followupsVisible = showFollowups(last, { gated, busy });
-
-  // eslint-disable-next-line react-hooks/refs
   const digest = conversationParts(messages, validSlugs.current);
   const hasMessages = messages.length > 0;
   const transcriptMd = hasMessages
@@ -232,14 +214,21 @@ export function Chat() {
     : '';
 
   return (
-    <section className={`container-narrow ${styles.page}`}>
-      <header className={styles.head}>
-        <div>
-          <h1>{t('chat.title')}</h1>
-          <p className={styles.status}>
-            <span className={styles.statusDot} aria-hidden="true" />
-            {t('chat.status')}
-          </p>
+    <section className={`container ${styles.page}`} style={{ position: 'relative' }}>
+      <AmbientGlow variant="dashboard" style={{ position: 'absolute', top: '-100px', left: 0, right: 0, bottom: 0, zIndex: -1, opacity: 0.8 }} />
+      
+      <header className={styles.head} style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <CaptainAvatar size="sm" live glow pose="default" />
+          <div>
+            <h1 style={{ margin: 0, fontSize: '1.5rem', fontWeight: 600, color: 'var(--text)' }}>
+              {t('chat.title', 'Captain Adel')}
+            </h1>
+            <p className={styles.status} style={{ margin: 0 }}>
+              <span className={styles.statusDot} aria-hidden="true" />
+              {t('chat.status', 'System Nominal')}
+            </p>
+          </div>
         </div>
         <div className={styles.headActions}>
           {hasMessages && (
@@ -257,92 +246,128 @@ export function Chat() {
         </div>
       </header>
 
-      <div className={styles.logWrap}>
-        <div
-          className={styles.log}
-          ref={logRef}
-          role="log"
-          aria-live="polite"
-          onScroll={(e) => {
-            const el = e.currentTarget;
-            const near = el.scrollHeight - el.scrollTop - el.clientHeight < 80;
-            atBottomRef.current = near;
-            setAtBottom(near);
-          }}
-        >
-          {messages.length === 0 && <ChatWelcome onAsk={(q) => void ask(q)} />}
-          // eslint-disable-next-line react-hooks/refs
-          {messages.map((m, i) => (
-            <ChatMessage
-              key={i}
-              m={m}
-              animate={i === lastAssistantIdx}
-              resolveCitation={resolveCitation}
-              validSlugs={validSlugs.current}
-              rating={m.error ? undefined : getFeedback(feedback, feedbackKey(m.text))}
-              onFeedback={m.error ? undefined : (r) => rateAnswer(i, r)}
-              onRegenerate={() => regenerate(i)}
-            />
-          ))}
-          {followupsVisible && (
-            <div className={styles.followups}>
-              {followupSuggestions(last).map((f) => {
-                const label = t(`chat.followups.${f.id}`, { cite: f.cite, part: f.part });
-                return (
-                  <button
-                    key={f.id}
-                    type="button"
-                    className={styles.followup}
-                    onClick={() => void ask(label)}
-                  >
-                    {label}
-                  </button>
-                );
-              })}
+      <BentoGrid>
+        {/* Main Chat Area */}
+        <BentoCard className={`card-clay ${styles.chatMainCard}`} style={{ display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden' }}>
+          <div className={styles.logWrap} style={{ flex: 1, position: 'relative' }}>
+            <div
+              className={styles.log}
+              ref={logRef}
+              role="log"
+              aria-live="polite"
+              style={{ padding: '2rem', height: '100%', overflowY: 'auto', border: 'none', borderRadius: 0, background: 'transparent', boxShadow: 'none' }}
+              onScroll={(e) => {
+                const el = e.currentTarget;
+                const near = el.scrollHeight - el.scrollTop - el.clientHeight < 80;
+                atBottomRef.current = near;
+                setAtBottom(near);
+              }}
+            >
+              {messages.length === 0 && <ChatWelcome onAsk={(q) => void ask(q)} />}
+              {messages.map((m, i) => (
+                <ChatMessage
+                  key={i}
+                  m={m}
+                  animate={i === lastAssistantIdx}
+                  resolveCitation={resolveCitation}
+                  validSlugs={validSlugs.current}
+                  rating={m.error ? undefined : getFeedback(feedback, feedbackKey(m.text))}
+                  onFeedback={m.error ? undefined : (r) => rateAnswer(i, r)}
+                  onRegenerate={() => regenerate(i)}
+                />
+              ))}
+              {followupsVisible && (
+                <div className={styles.followups}>
+                  {followupSuggestions(last).map((f) => {
+                    const label = t(`chat.followups.${f.id}`, { cite: f.cite, part: f.part });
+                    return (
+                      <button
+                        key={f.id}
+                        type="button"
+                        className="btn-clay"
+                        style={{ fontSize: '0.8rem', padding: '0.5rem 1rem' }}
+                        onClick={() => void ask(label)}
+                      >
+                        {label}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
             </div>
-          )}
-        </div>
 
-        {!atBottom && messages.length > 0 && (
-          <button
-            type="button"
-            className={styles.scrollDown}
-            onClick={scrollToLatest}
-            aria-label={t('chat.scrollToLatest')}
-          >
-            <span aria-hidden="true">↓</span>
-          </button>
-        )}
-      </div>
+            {!atBottom && messages.length > 0 && (
+              <button
+                type="button"
+                className={styles.scrollDown}
+                onClick={scrollToLatest}
+                aria-label={t('chat.scrollToLatest')}
+                style={{ bottom: '1rem', right: '1rem', zIndex: 10 }}
+              >
+                <span aria-hidden="true">↓</span>
+              </button>
+            )}
+          </div>
 
-      {hasMessages && <SourcesDigest parts={digest} />}
+          <div style={{ padding: '1.5rem', borderTop: 'var(--clay-border)', background: 'var(--surface-raised)' }}>
+            {gated ? (
+              <ChatGate signedIn={!!session} />
+            ) : (
+              <>
+                <ChatComposer
+                  input={input}
+                  busy={busy}
+                  onInput={setInput}
+                  onSubmit={() => void ask(input)}
+                  onStop={stop}
+                />
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '0.75rem' }}>
+                  {isPro ? (
+                    <label className={styles.proToggle}>
+                      <input type="checkbox" checked={usePro} onChange={togglePro} />
+                      <span>{t('chat.proModel')}</span>
+                      <span className={styles.proHint}>{t('chat.proModelHint')}</span>
+                    </label>
+                  ) : chatCredits > 0 && isExhausted(currentUsage(usage)) ? (
+                    <p className={styles.quota}>{t('chat.quota.credits', { n: chatCredits })}</p>
+                  ) : (
+                    <p className={styles.quota}>{t('chat.quota.left', { n: left, limit: dailyLimit })}</p>
+                  )}
+                  <p className={styles.note} style={{ margin: 0 }}>{t('chat.disclaimer')}</p>
+                </div>
+              </>
+            )}
+          </div>
+        </BentoCard>
 
-      {gated ? (
-        <ChatGate signedIn={!!session} />
-      ) : (
-        <>
-          <ChatComposer
-            input={input}
-            busy={busy}
-            onInput={setInput}
-            onSubmit={() => void ask(input)}
-            onStop={stop}
-          />
-          {isPro ? (
-            <label className={styles.proToggle}>
-              <input type="checkbox" checked={usePro} onChange={togglePro} />
-              <span>{t('chat.proModel')}</span>
-              <span className={styles.proHint}>{t('chat.proModelHint')}</span>
-            </label>
-          ) : chatCredits > 0 && isExhausted(currentUsage(usage)) ? (
-            <p className={styles.quota}>{t('chat.quota.credits', { n: chatCredits })}</p>
-          ) : (
-            <p className={styles.quota}>{t('chat.quota.left', { n: left, limit: dailyLimit })}</p>
-          )}
-        </>
-      )}
+        {/* Side Panel for Citations / Status */}
+        <BentoCard className={`card-clay ${styles.chatSideCard}`} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div>
+            <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem', color: 'var(--brand-hover)' }}>
+            </h3>
+            {hasMessages && digest.length > 0 ? (
+              <SourcesDigest parts={digest} />
+            ) : (
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                {t('chat.noSourcesYet', 'As Captain Adel cites GACAR regulations, they will appear here.')}
+              </p>
+            )}
+          </div>
+          
+          <div style={{ flex: 1 }} />
+          
+          <div style={{ padding: '1rem', borderRadius: 'var(--radius-lg)', background: 'rgba(0,0,0,0.2)', border: 'var(--clay-border)' }}>
+            <h4 style={{ fontSize: '0.9rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span style={{ display: 'inline-block', width: 8, height: 8, borderRadius: '50%', background: 'var(--neon-green)', boxShadow: '0 0 6px var(--neon-green)' }}></span>
+              {t('chat.engineStatus', 'Engine Status')}
+            </h4>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', margin: 0 }}>
+              {isPro && usePro ? t('chat.proActive', 'Pro Model Active') : t('chat.standardActive', 'Standard Model Active')}
+            </p>
+          </div>
+        </BentoCard>
+      </BentoGrid>
 
-      <p className={styles.note}>{t('chat.disclaimer')}</p>
       <Disclaimer compact />
     </section>
   );

@@ -477,8 +477,8 @@ export function renewalBaseDate(currentExpiresAt: string | undefined, now: Date)
  * fulfilment and the grant routes alike — has to be able to reach it.
  */
 export function mergeUpward(current: Entitlement | null, next: Entitlement): Entitlement {
-  // Use actual plan (not promo-affected) to preserve ability to detect lapsed plans
-  // and prevent comps from clobbering paid users
+  // Check the actual stored plan, not the promo-boosted effective plan,
+  // to decide whether there's a real entitlement worth protecting.
   if (!current || current.plan === "free") return next;
 
   // Check if current plan has lapsed

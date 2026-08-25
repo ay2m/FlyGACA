@@ -3,6 +3,8 @@ import { NavLink, useLocation } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { DockIcon } from './DockIcons';
 import { SIGNED_IN } from './nav';
+import { ThemeToggle } from '@/components/ThemeToggle';
+import { LangToggle } from '@/components/LangToggle';
 import styles from './Header.module.css';
 
 /** Desktop account dropdown — a native <details> (keyboard/AT-friendly, mirrors
@@ -75,6 +77,7 @@ export function AccountMenu() {
           </NavLink>
         ))}
         <div className={styles.accountMenuDivider} aria-hidden="true" />
+        <div className={styles.accountMenuDivider} aria-hidden="true" />
         <NavLink
           viewTransition
           to="/account"
@@ -89,6 +92,16 @@ export function AccountMenu() {
           </span>
           {t('nav.manageAccount')}
         </NavLink>
+        
+        <div className={styles.accountMenuDivider} aria-hidden="true" />
+        <div style={{ display: 'flex', gap: '8px', padding: '8px 12px' }}>
+          <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+            <ThemeToggle className={styles.langToggle} />
+          </div>
+          <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+            <LangToggle className={styles.langToggle} />
+          </div>
+        </div>
       </div>
     </details>
   );

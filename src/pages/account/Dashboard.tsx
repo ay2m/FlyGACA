@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { RequireSession } from './RequireSession';
 import { BrandMark } from '@/components/BrandMark';
+import { AmbientGlow } from '@/components/AmbientGlow';
 import { CurrencyBoard } from '@/components/CurrencyBoard';
 import { SetupChecklist } from './SetupChecklist';
 import { UpsellCard } from '@/components/UpsellCard';
@@ -274,23 +275,41 @@ function Inner() {
   return (
     <section className={`container ${styles.page}`}>
       <header className={styles.hero}>
-        <BrandMark />
-        <div className={styles.heroText}>
-          <p className={styles.eyebrow}>{t('dashboard.eyebrow')}</p>
-          <h1>{t('dashboard.greeting', { name })}</h1>
-          <p className={styles.sub}>
-            <span className={styles.planBadge} data-plan={plan}>
-              {t(`account.plan.${plan}`)}
-            </span>
-            {isUserRole(profile.role) && (
-              <span className={styles.roleBadge}>{t(`account.roles.${profile.role}`)}</span>
-            )}
-            <span className={`${styles.status} ${needs ? styles.statusWarn : styles.statusOk}`}>
-              {needs ? t('dashboard.actionNeeded') : t('dashboard.allCurrent')}
-            </span>
-          </p>
+        <AmbientGlow variant="dashboard" className={styles.heroAmbient} />
+        <div className={styles.heroContent}>
+          <BrandMark />
+          <div className={styles.heroText}>
+            <p className={styles.eyebrow}>{t('dashboard.eyebrow')}</p>
+            <h1>{t('dashboard.greeting', { name })}</h1>
+            <p className={styles.sub}>
+              <span className={styles.planBadge} data-plan={plan}>
+                {t(`account.plan.${plan}`)}
+              </span>
+              {isUserRole(profile.role) && (
+                <span className={styles.roleBadge}>{t(`account.roles.${profile.role}`)}</span>
+              )}
+            </p>
+          </div>
         </div>
       </header>
+
+      {needs && (
+        <div className={styles.alertCardWrapper}>
+          <BentoCard span="wide" tone="clay" className={styles.alertBentoCard}>
+            <div className={styles.alertContent}>
+              <span className={styles.alertIcon}>⚠️</span>
+              <div className={styles.alertText}>
+                <h3>{t('dashboard.actionNeeded')}</h3>
+                <p>{t('dashboard.currencyExpiring')}</p>
+              </div>
+              <Link to="/currency" className="btn-clay-primary" viewTransition>
+                {t('dashboard.viewAll')}
+              </Link>
+            </div>
+          </BentoCard>
+        </div>
+      )}
+
 
       {setup.percent < 100 && (
         <div className={styles.setupCard}>

@@ -230,3 +230,81 @@
   opacity: 0;
   transform: translateY(4px);
 }
+
+/* 2027 Split Screen Layout */
+.splitScreenPage {
+  position: relative;
+  min-height: calc(100vh - var(--nav-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6) 0;
+  overflow: hidden;
+}
+
+.splitScreenContent {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
+}
+
+.authColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 480px;
+}
+
+.authHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.authTitle {
+  font-size: var(--fs-h1);
+  letter-spacing: var(--tracking-tight);
+}
+
+.authIntro {
+  font-size: var(--fs-lg);
+  color: var(--text-muted);
+}
+
+.benefitsColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  position: relative;
+}
+
+.heroAvatar {
+  width: 256px;
+  height: 256px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@media (max-width: 900px) {
+  .splitScreenContent {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  .benefitsColumn {
+    display: none; /* Hide on mobile to keep focus on auth */
+  }
+  .authColumn {
+    margin: 0 auto;
+  }
+}

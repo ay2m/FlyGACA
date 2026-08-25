@@ -5,15 +5,16 @@
   block-size: 64px;
   display: flex;
   align-items: center;
-  background: color-mix(in srgb, var(--bg) 55%, transparent);
-  backdrop-filter: blur(24px) saturate(200%);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  background: color-mix(in srgb, var(--bg) 65%, transparent);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
   border: 1px solid color-mix(in srgb, var(--border-bright) 40%, transparent);
   border-radius: var(--radius-pill);
   margin-inline: auto;
-  max-width: var(--container);
-  width: calc(100% - var(--space-6));
-  box-shadow: 0 8px 32px color-mix(in srgb, var(--shade) 30%, transparent);
+  /* Make it a compact Dynamic Island instead of full width */
+  width: fit-content;
+  max-width: calc(100% - var(--space-6));
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--shade) 40%, transparent), inset 0 1px 0 rgba(255,255,255,0.1);
   transition: all var(--dur) var(--ease);
 }
 /* Elevated state — firmer surface and brighter border once scrolled. */
@@ -27,8 +28,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-4);
-  inline-size: 100%;
-  padding-inline: var(--space-4);
+  padding-inline: var(--space-2);
 }
 
 /* --- Brand lockup: mark + wordmark --- */

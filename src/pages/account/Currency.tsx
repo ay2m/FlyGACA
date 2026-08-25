@@ -55,19 +55,19 @@ function Inner() {
 
       <div className={styles.linkRow}>
         {icsEvents.length > 0 && (
-          <button type="button" className={styles.btn} onClick={exportIcs}>
+          <button type="button" className={`${styles.btn} btn-clay`} onClick={exportIcs}>
             {t('currency.addCalendar')}
             {!isPro && <span className={styles.proTag}>{t('upsell.proOnly')}</span>}
           </button>
         )}
-        <Link to="/settings" className={styles.btn}>
+        <Link to="/settings" className={`${styles.btn} btn-clay`} viewTransition>
           {t('account.settings')}
         </Link>
-        <Link to="/logbook" className={styles.btn}>
+        <Link to="/logbook" className={`${styles.btn} btn-clay`} viewTransition>
           {t('account.logbook')}
         </Link>
         {adelHref && (
-          <Link to={adelHref} className={styles.btn}>
+          <Link to={adelHref} className={`${styles.btn} btn-clay-primary`} viewTransition>
             {t('currency.askAdel')}
           </Link>
         )}

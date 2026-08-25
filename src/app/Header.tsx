@@ -89,20 +89,16 @@ export function Header() {
           {/* Desktop inline nav (hidden ≤860px, where the bottom dock takes over).
               When signed in, /account becomes a dropdown surfacing the daily pages. */}
           <nav className={styles.links} aria-label={t('nav.primary')}>
-            {NAV.map((item) =>
-              item.to === '/account' && signedIn ? (
-                <AccountMenu key={item.to} />
-              ) : (
-                <NavLink
-                  viewTransition
-                  key={item.to}
-                  to={item.to}
-                  className={({ isActive }) => (isActive ? styles.active : undefined)}
-                >
-                  {t(item.key)}
-                </NavLink>
-              ),
-            )}
+            {NAV.filter(item => item.to !== '/account').map((item) => (
+              <NavLink
+                viewTransition
+                key={item.to}
+                to={item.to}
+                className={({ isActive }) => (isActive ? styles.active : undefined)}
+              >
+                {t(item.key)}
+              </NavLink>
+            ))}
             {!isPro && (
               <NavLink
                 viewTransition
@@ -138,13 +134,9 @@ export function Header() {
               </kbd>
             </button>
 
-            {/* Show standalone utilities only if logged out; else they live in AccountMenu/MobileDock */}
-            {!signedIn && (
-              <>
-                <ThemeToggle className={styles.langToggle} />
-                <LangToggle className={styles.langToggle} />
-              </>
-            )}
+            <div className={styles.accountMenu} style={{ marginLeft: '8px' }}>
+              <AccountMenu />
+            </div>
 
             <ButtonLink className={styles.cta} to={ctaTo} viewTransition icon={ctaIcon}>
               {ctaLabel}

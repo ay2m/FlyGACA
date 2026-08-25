@@ -70,6 +70,9 @@ npm-debug.log*
 *.log
 .vercel
 
+# Generated reports
+eslint-report.json
+
 # GACA sync — fetched source HTML/PDF assets (regenerated on demand)
 sync-input/assets/
 

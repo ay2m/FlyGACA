@@ -157,7 +157,7 @@ function Inner() {
       <div className={styles.actions}>
         <button
           type="button"
-          className={`${styles.btn} ${styles.btnPrimary}`}
+          className={`${styles.btn} btn-clay-primary`}
           onClick={() => {
             setEditingId(null);
             setAdding((a) => !a);

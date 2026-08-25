@@ -28,6 +28,14 @@ interface CaptainAvatarProps {
   glow?: boolean;
   /** Presents him as live: a subtle idle "breathing" motion + an online status dot. */
   live?: boolean;
+  /**
+   * Plays the animated idle loop (`avatar-live.webp`) instead of the still — the
+   * real "alive" portrait. Only takes effect when `live` and motion is allowed;
+   * reserve it for a single focal avatar (welcome / the most-recent reply) so a
+   * long thread never runs many photoreal loops at once. Falls back to the still
+   * under reduced-motion or if the loop fails to load.
+   */
+  _animated?: boolean;
   /** Decorative use (label already supplied by adjacent text) hides it from AT. */
   decorative?: boolean;
   className?: string;
@@ -46,12 +54,13 @@ export function CaptainAvatar({
   pose = 'default',
   glow = false,
   live = false,
+  _animated = false,
   decorative = false,
   className,
 }: CaptainAvatarProps) {
   const { t } = useTranslation();
 
-  const stillSrc = pose !== 'default' ? poseSrc[pose] : '/img/captain-adel.jpg';
+  const stillSrc = 'https://captadel.com/media/captain-adel.jpg';
 
   // Disable the cartoon animated idle loop for the new realistic portrait
   const playLoop = false;
