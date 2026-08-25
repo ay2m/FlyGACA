@@ -1,6 +1,19 @@
 # FlyGACA iOS App Screenshots
 
-Marketing and promotional screenshots for the FlyGACA iOS app family (PPL, ELPT, AIP, CPL, IR, ATPL).
+Marketing and promotional screenshots for the Fly GACA iOS app family.
+
+> [!IMPORTANT]
+> **The iOS project is not in this repo — the capture instructions below cannot be run here.**
+> There is no `apple/` tree and no `project.yml` in any commit of `ay2m/FlyGACA`; the Swift side
+> lives in **[`ay2m/FlyGACA-ios`](https://github.com/ay2m/FlyGACA-ios)**. Everything below about
+> `xcodegen`, schemes and simulators applies to *that* checkout. What lives here is the committed
+> output: 26 PNGs under `raw/`, kept alongside the content pipeline that feeds the apps.
+>
+> **Module status:** **ELPT** and **AIP** ship. **PPL, CPL, IR and ATPL are parked** — their
+> modules were removed from the iOS repo in 2026-08 pending a strategic decision, while their
+> *web* study packs keep selling. Screenshots for the parked four are historical.
+>
+> `device-frames/` in the tree below does not exist yet; only `raw/` and `INDEX.md` do.
 
 ## Directory Structure
 
