@@ -313,6 +313,34 @@ the go-live sequence (headers, corpus offload, CI/CD, launch checklist, rollback
 `docs/DATA-HOSTING.md` for how the corpus bucket is served. `supabase/migrations/` holds the pgvector
 schema for RAG embeddings; the app's own schema lives in `server/migrations/`.
 
+## The family contract (`contracts/flygaca-family.json`)
+
+One versioned artifact committed **byte-identically** to this repo, `ay2m/Office` and
+`ay2m/Captain-Adel`. It exists because the family's cross-repo claims used to live only in prose
+and drifted without anything failing. Two blocks concern this repo:
+
+- **`chat` — we own it.** `server/src/contract.ts` is the definition: the response shape, the
+  grounding verdicts, the stream/error codes, the tenant enum. Captain Adel's `/v1/chat` is a
+  superset of it.
+- **`entity` — `ay2m/Office` owns it**, in `01-governance/company-facts.md`. We are a consumer:
+  the legal name, CR and VAT number must keep appearing verbatim in `src/lib/seo/jsonld.ts` and in
+  `footer.legalEntity` + `legal.*` in **both** i18n bundles.
+
+`tests/family-contract.test.ts` asserts both directions and verifies the manifest's self-hash; it
+runs in `npm test`, so it is already inside `npm run verify` and `ci.yml`. To change the manifest:
+edit the owning repo's copy, bump `version`, re-stamp with Office's
+`tools/contracts/stamp-manifest.mjs`, copy it verbatim to the other two repos, and open all three
+PRs together.
+
+> **There are two Captain Adel brains.** This repo's (`server/src/captain-adel.ts` + `corpus.ts` +
+> `grounding-core.ts`) and the standalone one in `ay2m/Captain-Adel`. Older prose in both repos
+> claimed they were one brain called server-to-server with `X-Adel-Api-Key`; that was never true.
+> `server/src/brain.ts` is the seam where consolidating them would happen — it resolves to the
+> local flow unless `ADEL_REMOTE_BASE_URL` is set, which it is on no revision, so `/api/chat`
+> behaves exactly as before. The trade-offs, above all that the two decide grounding at different
+> points in the request, are in `docs/DESIGN-brain-consolidation.md`. Do not describe the two as
+> one brain.
+
 ## Conventions (enforced)
 
 - **Bilingual + RTL is first-class.** New copy → a key in **both** `src/i18n/en.json` and
@@ -392,9 +420,13 @@ dashboard, study-progress-sync design, curriculum and sales material) and `docs/
 > deliberately NOT restored (`RUNBOOK-firebase.md`, `APP-CHECK-BACKEND.md`): they document a
 > stack that no longer exists.
 
-Still genuinely absent, and cited nowhere any more: `archive/` (parked material — vendored
-references, finished-work docs, investor material — it lives only in `ay2m/FlyGACA-app`),
-the `RUNBOOK-ios-*` set, and `THE-BOOK-OF-FLY-GACA.md`. Sibling repos
+Still genuinely absent: `archive/` (parked material — vendored references, finished-work docs,
+investor material — it lives only in `ay2m/FlyGACA-app`), the `RUNBOOK-ios-*` set, and
+`THE-BOOK-OF-FLY-GACA.md`. The last of those *was* still cited: `ay2m/Office` and
+`ay2m/Captain-Adel` both opened their `CLAUDE.md` with a "Family context" link to
+`FlyGACA/blob/main/THE-BOOK-OF-FLY-GACA.md`, which has never existed here and 404s. Those links
+now point at `ay2m/Office`'s `00-strategy/the-book-of-fly-gaca.html`, which is where the canon
+actually lives — do not restore a copy here. Sibling repos
 (`ay2m/FlyGACA-app` — the 1,005-commit predecessor, and `ay2m/FlyGACA-ios`) are separate
 checkouts, not subtrees of this one.
 

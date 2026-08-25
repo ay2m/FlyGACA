@@ -26,7 +26,10 @@ linked doc disagree, **the linked doc wins**; open a PR to fix this one.
 - App Store strategy & pricing → [`docs/STORE-SUITE.md`](./STORE-SUITE.md)
 - Billing / entitlements → [`docs/BILLING.md`](./BILLING.md)
 - Deploy / hosting → [`docs/RUNBOOK-deploy.md`](./RUNBOOK-deploy.md) · [`docs/DATA-HOSTING.md`](./DATA-HOSTING.md)
-- The standalone brain (captadel.com + Fly GACA API) → the **Captain-Adel** repo
+- The standalone brain (captadel.com) → the **Captain-Adel** repo. It does **not** serve this
+  product's API today, despite older prose in both repos saying so — see
+  [`docs/DESIGN-brain-consolidation.md`](./DESIGN-brain-consolidation.md)
+- What the two repos genuinely share → `contracts/flygaca-family.json`
 
 ---
 
@@ -140,9 +143,19 @@ data under PDPL) inside the in-Kingdom backend.
    pilot back to the exact rule / their CFI / GACA — never a speculative answer on
    safety-critical material.
 
-The standalone **Captain-Adel** repo is the same brain packaged independently
-(captadel.com + a server-to-server API); it and this backend share the retrieve →
-ground → cite contract so answers can't diverge between products.
+The standalone **Captain-Adel** repo is a **second implementation** of this same
+retrieve → ground → cite contract, serving captadel.com. The two are not one brain
+packaged twice, and the shared contract does not, on its own, stop answers
+diverging — it already had. What is genuinely shared is pinned in
+`contracts/flygaca-family.json` (the response shape, the grounding verdicts, the
+tenant enum) and asserted by `tests/family-contract.test.ts` here and
+`test/family-contract.test.js` there. Where they still differ — retrieval depth,
+Arabic provider routing, compute tools, and above all *when* grounding is decided
+(we gate before the model on retrieval confidence; Captain Adel classifies the
+answer afterwards) — is written up in
+[`docs/DESIGN-brain-consolidation.md`](./DESIGN-brain-consolidation.md), together
+with what consolidating onto one brain would cost. `server/src/brain.ts` is the
+seam that consolidation would flip; it is off on every revision.
 
 ---
 

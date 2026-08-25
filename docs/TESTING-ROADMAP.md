@@ -32,7 +32,7 @@ The rest of the family, same date:
 | --- | --- | --- | --- |
 | `functions/` (339 tests) | 98.0% | 90.2% | ratchet 95/89/95/97 (stmt/branch/func/line); **Phase 5 complete** — founding + billing wrappers, gateway + corpus |
 | Firestore rules (`tests/rules/`, emulator) | — | — | comprehensive — every collection has allow + deny cases |
-| Captain-Adel (`FlyGACA/Captain-Adel`) | 96.3% | 89.9% | `node --test` coverage, report-only; holes → **Phase 9** |
+| Captain-Adel (`ay2m/Captain-Adel`) | 96.3% | 89.9% | `node --test` coverage, report-only; holes → **Phase 9** |
 | iOS `FlyGACAKit` (`ay2m/FlyGACA`) | — | — | engines/models/store tested; `FeatureUI` + 2 decoders untested → **Phase 9** |
 
 (The `functions/` and Firestore-rules rows describe the retired Firebase stack. Today's backend is
@@ -271,10 +271,13 @@ the gaps:
       all seven `FeatureUI` views (incl. `ModuleHomeView`, `QuizView`, `ExamTimerView`) have zero
       coverage. (iOS lives in the `ay2m/FlyGACA` repo; this monorepo only generates its content.)
 
-**`FlyGACA/Captain-Adel` — retired stack.** The standalone Captain Adel service this block
-audited (its `evals/checks/citation-faithfulness.js` judge, the `public/assets/js/` page scripts,
-`src/billing/routes.js`) was superseded by this repo's `server/` in the Cloud Run rebuild; its
-coverage holes are no longer tracked here.
+**`ay2m/Captain-Adel` — separate repo, not retired.** The standalone Captain Adel service this
+block audited (its `evals/checks/citation-faithfulness.js` judge, the `public/assets/js/` page
+scripts, `src/billing/routes.js`) is live and maintained behind captadel.com, with its own CI. It
+is not superseded by this repo's `server/`: the two are parallel implementations of the same
+answer contract, which is the drift `docs/DESIGN-brain-consolidation.md` exists to close. What is
+true is that its coverage is tracked in its own repo rather than here. (The path above previously
+read `FlyGACA/Captain-Adel`; that org does not exist — see `CLAUDE.md`.)
 
 **App Store metadata repos (ELPT · AIP shipping; PPL · CPL · IR · ATPL parked)**
 
