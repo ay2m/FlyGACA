@@ -1,8 +1,14 @@
 /**
  * HTTP gateway for `/api/chat` (DESIGN §3 D1, §4). A router mounted by
  * `index.ts`, preserving the frontend SSE contract verbatim. It owns auth and
- * quota, then drives the protocol-agnostic `captainAdelFlow` and translates its
+ * quota, then drives the protocol-agnostic `brain` and translates its
  * stream/result into either the legacy SSE frames or a buffered `ChatResponse`.
+ *
+ * `brain` (brain.ts) is the seam between this service's own Captain Adel
+ * implementation and the standalone one in `ay2m/Captain-Adel`. It resolves to
+ * the local flow unless `ADEL_REMOTE_BASE_URL` is set, which it is on no
+ * revision — so this route behaves exactly as it did when it called
+ * `captainAdelFlow` directly.
  *
  * Ported off Cloud Functions: the Firebase session-cookie/App Check checks became
  * this service's own session verification, and every Firestore transaction became
@@ -12,7 +18,7 @@ import { createHash } from "node:crypto";
 import express from "express";
 import rateLimit from "express-rate-limit";
 import type { NextFunction, Request, Response } from "express";
-import { captainAdelFlow } from "./captain-adel.js";
+import { brain } from "./brain.js";
 import { createRateLimiter } from "./rate-limit-core.js";
 import { isPaidActive, type Entitlement } from "./billing-core.js";
 import { dayKey, secondsUntilUtcReset, ANON_DAILY_LIMIT } from "./chat-quota-core.js";
@@ -241,7 +247,7 @@ app.post(["/chat", "/api/chat"], async (req: Request, res: Response): Promise<vo
   if (!streaming) {
     // Buffered path — same flow, single JSON result.
     try {
-      const out = await captainAdelFlow(parsed);
+      const out = await brain(parsed);
       res.json({
         answer: out.answer,
         sources: out.sources,
@@ -273,7 +279,7 @@ app.post(["/chat", "/api/chat"], async (req: Request, res: Response): Promise<vo
   });
 
   try {
-    const { stream, output } = captainAdelFlow.stream(parsed);
+    const { stream, output } = brain.stream(parsed);
     for await (const delta of stream) {
       if (aborted) return; // client gone — stop consuming
       if (delta) res.write(frame({ type: "token", delta }));
@@ -391,7 +397,7 @@ app.post(["/v1/ask", "/api/v1/ask"], async (req: Request, res: Response): Promis
   if (remaining !== null) res.setHeader("X-Quota-Remaining", String(remaining));
 
   try {
-    const out = await captainAdelFlow(parsed);
+    const out = await brain(parsed);
     res.json({
       answer: out.answer,
       sources: out.sources,
