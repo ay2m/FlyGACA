@@ -26,16 +26,19 @@ per-person consumer Pro.
 5. **[`DELIVERY-PLAYBOOK.md`](./DELIVERY-PLAYBOOK.md)** — how to run a cohort, incl. the manual
    path for cohort #1 before the admin dashboard ships.
 6. **[`DESIGN-study-progress-sync.md`](./DESIGN-study-progress-sync.md)** — design for the readiness
-   prerequisite (persisting per-user study scores to Firestore). *Signed off + built.*
+   prerequisite (persisting per-user study scores). *Signed off + built* — now upload-only sync to
+   Postgres via `src/lib/services/studyProgressSync.ts`, not Firestore as the doc says.
 7. **[`DESIGN-admin-dashboard.md`](./DESIGN-admin-dashboard.md)** — design for the `/business/admin`
-   cohort dashboard + the `orgs/{id}` ownership model. *Awaiting sign-off.*
+   cohort dashboard + the org ownership model. *Built* — the route is live in `src/router.tsx`,
+   served by `server/src/routes/org.ts` + `org-core.ts`.
 
 ## The one-line version
 
 The content already exists (the `aip` pack: `aip-ais` + `airspace` banks, bilingual study
 sheets, the AIM reader, the eAIP GEN/ENR reading path, and the Mock Exam), and so does seat
-provisioning (`functions/scripts/grant-school-seats.mjs` grants the invoiced `school`
-entitlement from a roster). B2B wraps it in **seats + an admin + a readiness report** and sells
+provisioning — that script survived the rebuild and now lives at
+`server/scripts/grant-school-seats.mjs`, granting the invoiced `school` entitlement from a
+roster (alongside `grant-org.mjs` and `school-cohort-report.mjs`). B2B wraps it in **seats + an admin + a readiness report** and sells
 it to the organisation. Cohort #1 can be delivered today — provisioning and self-serve seat claim
 both ship; the near-term build is a minimal admin view and a CSV report (`PLAN.md` §8).
 

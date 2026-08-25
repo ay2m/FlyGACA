@@ -13,7 +13,8 @@
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/tests-1%2C744%20passing-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="1,744 tests passing" />
+  <a href="../../actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/ay2m/FlyGACA/ci.yml?branch=main&style=for-the-badge&label=CI&labelColor=0a0e12&color=8fc9a8" alt="CI status" /></a>
+  <img src="https://img.shields.io/badge/tests-2%2C388-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="2,388 tests" />
   <img src="https://img.shields.io/badge/bundle-160%20kB%20gz-2d6e8a?style=for-the-badge&labelColor=0a0e12" alt="160 kB gzipped" />
   <img src="https://img.shields.io/badge/i18n-EN%20%E2%87%84%20AR-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="English and Arabic" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-c9a86a?style=for-the-badge&labelColor=0a0e12" alt="MIT" /></a>
@@ -61,28 +62,55 @@ The Saudi regulatory corpus, made searchable — plus the tools you'd otherwise 
 
 ---
 
-## For Saudi Investors
+## Where this is
 
-Fly GACA is built **in Saudi Arabia, for Saudi Arabia** — a homegrown EdTech platform that serves the Kingdom's aviation industry with regulatory excellence and local expertise.
+Fly GACA is **pre-launch**, and the README says so in the same words the engineering docs
+do — a diligence process finds the deployment state in an afternoon, so there is nothing to
+gain by writing it any other way.
 
-### Why Invest
+**What exists and works today:** the whole product, locally and in CI. The corpus, the
+library, the 55 tools, study, the logbook, Captain Adel's retrieval and grounding, billing
+logic, entitlements, the B2B dashboard — all built, all tested, all bilingual.
+
+**What is not true yet:**
 
 | | |
 |---|---|
-| 🇸🇦 **In-Kingdom Data Residency** | All personal data (logbooks, study progress, accounts, transactions) stays in the Kingdom via `me-central2` (Dammam) Cloud Run and SQL instances — **full PDPL compliance by architecture**. |
-| 📋 **Regulatory Authority** | The only digital platform with the complete, indexed GACAR corpus (74 Parts + 211 reference docs). Trusted reference for 40,000+ pilots and aircraft operators across the GCC. |
-| 🧑‍✈️ **Proven User Base** | 40K+ monthly active users, 1M+ flights logged, 5K+ exam-prep pack subscribers — established product-market fit in Kingdom aviation. |
-| 🏆 **Quality-First Engineering** | 1,744 passing tests, strict TypeScript, zero production incidents since launch. Bilingual, RTL-native, accessibility-first. |
-| 💰 **B2B Revenue Stream** | School seats, exam-prep packs, metered API (`/v1/ask` — Captain Adel for third-party apps). Direct contracts with flight schools and operators. |
-| 🛡️ **Security & Compliance** | CSRF hardening, password policy enforcement, JWT claims, end-to-end encryption for sensitive data. SOC 2 Type II ready. |
-| 🌍 **Bilingual Product** | English ↔ Arabic on every surface, with 50%+ traffic from Arabic-speaking markets — uniquely positioned for Kingdom expansion. |
-| ⚡ **Modern Stack** | React 19, Vite, Cloud Run, Postgres — built for scale, with sub-100ms average response times and 99.9% uptime SLA. |
+| 🌐 **flygaca.com is down** | The domain serves a Firebase "Site Not Found" on every path — the apex TXT record still names the old Hosting site. The build itself is healthy and current. |
+| ☁️ **Nothing is deployed** | The Express service in `server/` has never run in production. The live remnants are the previous Firebase Functions stack. |
+| 🇸🇦 **Data is not in-Kingdom** | `me-central2` (Dammam) is the target for PDPL residency and is **not granted to this account**. The blocker is commercial, not technical — see below. |
+| 👥 **There are no users** | No production datastore holds user data. Any traction figure for this platform would be a projection, so none appears here. |
+
+**The residency blocker, precisely.** Dammam is sold **only through CNTXT**, Google's
+exclusive KSA reseller, to registered **organizations** on Invoiced Billing; individuals get
+an open-ended waiting list. So it needs a KSA legal entity and a billing migration — a
+corporate step, not an engineering one. Measured from Riyadh, Dammam would be 17 ms away;
+the fastest region actually available is Milan at 83 ms. **No available fallback is
+in-Kingdom, so the in-Kingdom claim is made nowhere in the product** — the privacy notice
+states the opposite, correctly, and names the actual regions.
+
+### What is genuinely defensible
+
+Not traction — engineering and content depth, both verifiable from this repository in
+minutes:
+
+| | |
+|---|---|
+| 📋 **The corpus** | 74 GACAR Parts and 211 reference documents, indexed, full-text searchable and deep-linkable to the section. This is the moat, and it is real and committed. |
+| 🧪 **2,388 tests** | Across the frontend and the API, with a coverage ratchet that fails the build on regression, an e2e/a11y suite, and parity tests that pin client mirrors to their server cores. |
+| 🔒 **Entitlements are structural** | There is simply **no route** that lets a client write its own plan, credits or pack ownership. Grants only ever upgrade. Enforcement lives in the gateway, never the app. |
+| 🌍 **Bilingual to the URL** | Every route has an `/ar` twin, RTL via logical properties, and CI fails on any i18n key present in one language but not the other. Not a translation layer bolted on. |
+| 🧮 **Pure, testable math** | 55 calculators as DOM-free modules, state in the URL so any result is a shareable link. |
+| 🔁 **Provider independence** | Captain Adel generates over an OpenAI-compatible endpoint chosen by config. Swapping Gemini for an in-Kingdom ALLaM is an env change, not a rewrite — which is what makes the residency fix tractable once the region is granted. |
+
+Commercial material — the model, pricing and projections — lives in `ay2m/Office` under
+`09-investor-relations/`, access-controlled, where it belongs. This file is for engineers.
 
 ---
 
 ## Quick start
 
-**Node 26 · npm 11.** No backend needed — with no API configured the app runs entirely local-first out of `localStorage`.
+**Node 24** (`engines` in `package.json`; CI runs the same). No backend needed — with no API configured the app runs entirely local-first out of `localStorage`.
 
 ```bash
 git clone https://github.com/ay2m/FlyGACA.git
@@ -151,22 +179,23 @@ flowchart TB
     EXP -.-> ADEL
 ```
 
-**The shape of it.** Business rules live in pure, dependency-free `*-core.ts` modules so policy is unit-testable in isolation; the Express routes stay thin and all SQL sits in one file. Calculator math is DOM-free in `src/calc/`, one module per tool. The heavy corpus (64 MB) never enters the JS bundle — it's fetched at runtime and served network-first from a bucket. Entitlements are server-owned: there is simply no route that lets a client write its own plan.
+**The shape of it.** Business rules live in pure, dependency-free `*-core.ts` modules so policy is unit-testable in isolation; the Express routes stay thin and all SQL sits in one file. Calculator math is DOM-free in `src/calc/`, one module per tool. The heavy corpus (114 MB) never enters the JS bundle — it's fetched at runtime and served network-first from a bucket. Entitlements are server-owned: there is simply no route that lets a client write its own plan.
 
-In-Kingdom **by design, not yet in fact.** The target is Cloud Run and Cloud SQL both in
-`me-central2` (Dammam) for PDPL data residency. As of 2026-08-20 none of it is deployed: the
-live stack is still the previous Firebase Functions services in **`me-central1` (Doha, Qatar)**,
-with the billed stack's Firestore in **`us-central1` (Iowa)** and Cloud SQL in **`us-east4`
-(Northern Virginia)**.
+**Two Captain Adels, one contract.** This repo implements Captain Adel in `server/src/`
+(`captain-adel.ts` + `corpus.ts` + `grounding-core.ts`); the sibling repo `ay2m/Captain-Adel`
+implements it again for captadel.com. They are parallel implementations, not one brain shared —
+older docs in both repos claimed otherwise and were wrong. What they genuinely share is pinned in
+[`contracts/flygaca-family.json`](contracts/flygaca-family.json) and asserted by
+`tests/family-contract.test.ts` in CI. `server/src/brain.ts` is the seam where consolidating them
+would happen: it resolves to the local flow unless `ADEL_REMOTE_BASE_URL` is set, which it is on no
+revision. The cost of flipping it — chiefly that the two decide grounding at different points in
+the request — is specced in [`docs/DESIGN-brain-consolidation.md`](docs/DESIGN-brain-consolidation.md).
 
-`me-central2` has not been granted to the account, and the blocker is commercial rather than
-technical: Dammam is sold **only through CNTXT**, Google's exclusive KSA reseller, to registered
-**organizations** on Invoiced Billing — individuals get an open-ended waiting list. Measured from
-Riyadh, Dammam would be 17 ms away; the fastest region actually available is Milan at 83 ms, and
-today's Doha stack is the slowest realistic option at 158 ms. No available fallback is
-in-Kingdom, **so the in-Kingdom claim is made nowhere in the product** — the privacy notice
-states the opposite, correctly, and names the actual regions. See the caution in
-[`CLAUDE.md`](CLAUDE.md#hosting--deploy).
+**Where it actually runs.** The diagram above is the target. Nothing in the `api` box is
+deployed: the live remnants are the previous Firebase Functions stack in `me-central1` (Doha),
+with the billed project's Firestore in `us-central1` (Iowa) and Cloud SQL in `us-east4`
+(Northern Virginia). The `me-central2` blocker is covered under [Where this is](#where-this-is);
+the full audit is the caution in [`CLAUDE.md`](CLAUDE.md#hosting--deploy).
 
 ---
 
@@ -178,7 +207,7 @@ states the opposite, correctly, and names the actual regions. See the caution in
 | `npm run build` | sitemap → `tsc -b` → vite → prerender `<head>` → SEO gates |
 | `npm run build:deploy` | **what a deploy runs**: `build` + full-body prerender + coverage gate + IndexNow |
 | `npm run verify` | **the gate**: typecheck · lint · format · test · build · bundle + perf budgets |
-| `npm test` / `npm run server:test` | 1,497 frontend · 243 server |
+| `npm test` / `npm run server:test` | 1,787 frontend · 601 server |
 | `npm run test:e2e` | Playwright smoke + axe accessibility |
 | `npm run server:dev` | API with watch-rebuild |
 | `npm run sync:gaca` / `data:normalize` | pull and normalise the regulatory corpus |
@@ -229,8 +258,29 @@ execute JavaScript, so a head-only deploy is invisible to them below the `<head>
 | [`docs/BILLING.md`](docs/BILLING.md) · [`docs/LICENSED-API.md`](docs/LICENSED-API.md) | Checkout and the metered `/v1/ask` surface |
 | [`docs/b2b/`](docs/b2b/) | Cohort dashboard, study-progress sync, curriculum |
 | [`GUIDE_AUTHORING.md`](GUIDE_AUTHORING.md) · [`FIGMA_DESIGN_SYSTEM.md`](FIGMA_DESIGN_SYSTEM.md) | Writing guides · the Falcon design system |
+| [`docs/DESIGN-brain-consolidation.md`](docs/DESIGN-brain-consolidation.md) | The two Captain Adel brains, and what merging them would cost |
+| [`contracts/flygaca-family.json`](contracts/flygaca-family.json) | The cross-repo family contract — shared with `ay2m/Office` and `ay2m/Captain-Adel` |
 
 Most of `docs/` was restored from this project's predecessor repo and predates the Cloud Run rebuild — those files carry a banner saying so. `CLAUDE.md` is the authority on how the system works today.
+
+---
+
+## The Fly GACA family
+
+Everything lives under the **`ay2m`** account. This roster is the `repos` block of
+[`contracts/flygaca-family.json`](contracts/flygaca-family.json) in prose — that file is the
+machine-readable version, and it is committed byte-identically to all three active repos.
+
+| Repo | | What it is |
+|---|---|---|
+| [`ay2m/FlyGACA`](https://github.com/ay2m/FlyGACA) | private | **This repo.** The web app and its Express backend, plus the regulatory corpus and content pipelines. |
+| [`ay2m/Captain-Adel`](https://github.com/ay2m/Captain-Adel) | private | The standalone AI flight instructor behind captadel.com. |
+| [`ay2m/Office`](https://github.com/ay2m/Office) | private | The operating-documents repo — strategy, governance, legal, finance, HR, GTM, brand. Owns the legal-entity facts this repo restates. |
+| [`ay2m/FlyGACA-ios`](https://github.com/ay2m/FlyGACA-ios) | public | The native SwiftUI family — one App Store app per exam module. ELPT and AIP ship; PPL, CPL, IR and ATPL are parked. |
+| [`ay2m/FlyGACA-app`](https://github.com/ay2m/FlyGACA-app) | archived | The retired predecessor of this repo, kept for its 1,005-commit history. Never cite it as current. |
+
+There is no `FlyGACA/…` organisation and there are no per-module App Store repos — older
+documents reference both, and every such path 404s.
 
 ---
 

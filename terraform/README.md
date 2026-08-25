@@ -2,6 +2,19 @@
 
 Infrastructure-as-code for Firebase Hosting monitoring, alerting, and dashboards.
 
+> [!WARNING]
+> **Read this before applying.** Two things do not line up with the rest of the repo:
+>
+> - It targets project **`flygaca-prod`** (`main.tf`, `gcp_project_id` default). That project id
+>   appears nowhere else in the family — `CLAUDE.md` documents `flygaca-sa`, `flygaca-app` and
+>   `flygaca-dev`. Confirm the project before running `terraform apply`.
+> - The uptime check monitors **`www.flygaca.com`, which is currently down** — the domain serves a
+>   Firebase "Site Not Found" on every path. Applying this as-is would page continuously on a known
+>   outage rather than a new one.
+>
+> Whether this configuration has ever been applied is not recorded here. Run
+> `terraform plan` first and read the diff.
+
 ## What's included
 
 - **Uptime checks** — Monitors www.flygaca.com from 3 global regions every 60 seconds

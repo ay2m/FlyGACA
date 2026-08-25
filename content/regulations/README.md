@@ -1,11 +1,19 @@
 # Regulatory Markdown source
 
 This directory is the **authoring source-of-truth** for Fly GACA's regulatory corpus. One Markdown
-file per GACAR Part (`part-<n>.md`). On merge to `main`, the
-[`docs-parser` workflow](../../.github/workflows/docs-parser.yml) lints these files, extracts their
-internal cross-references, compiles a single lookup dictionary
-(`public/data/regulations-lookup.json`) for instant frontend rendering, and upserts vector
-embeddings to Supabase pgvector for the Captain Adel RAG service.
+file per GACAR Part (`part-<n>.md`). The pipeline lints these files, extracts their internal
+cross-references and compiles a single lookup dictionary (`public/data/regulations-lookup.json`)
+for instant frontend rendering. A separate step upserts vector embeddings to Supabase pgvector.
+
+> [!NOTE]
+> **These steps are run by hand, not by CI.** This README used to point at a `docs-parser`
+> workflow; no such workflow exists — the repo's only workflows are `ci.yml`, `deploy.yml`,
+> `deploy-firebase.yml` and `prerender.yml`, and none of them runs the commands below. Run them
+> yourself after editing a Part, and commit the regenerated lookup.
+>
+> Note also that pgvector embeddings are **not** what serves Captain Adel today: the live
+> retrieval path is BM25 in-process over `data/rag-chunks.json` (`server/src/corpus.ts`). The
+> embeddings are for the hybrid-retrieval design, not the shipped one.
 
 > Fly GACA is **not affiliated with GACA**. These files are educational summaries that help you
 > find and study the regulation — they never replace the official GACAR. Keep that framing in copy.
@@ -38,6 +46,9 @@ GACAR registry, not against the files in this folder.
 ## Local checks
 
 ```bash
-npm run lint:md           # markdownlint over this directory
+npm run lint:md           # markdownlint-cli2 over this directory
 npm run parse:regulations # compile + validate cross-references → public/data/regulations-lookup.json
+npm run embeddings:upsert # optional: push embeddings to Supabase pgvector
 ```
+
+Run the first two after any edit here — nothing else will.
