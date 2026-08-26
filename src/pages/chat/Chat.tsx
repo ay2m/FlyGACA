@@ -215,9 +215,23 @@ export function Chat() {
 
   return (
     <section className={`container ${styles.page}`} style={{ position: 'relative' }}>
-      <AmbientGlow variant="dashboard" style={{ position: 'absolute', top: '-100px', left: 0, right: 0, bottom: 0, zIndex: -1, opacity: 0.8 }} />
-      
-      <header className={styles.head} style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+      <AmbientGlow
+        variant="dashboard"
+        style={{
+          position: 'absolute',
+          top: '-100px',
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: -1,
+          opacity: 0.8,
+        }}
+      />
+
+      <header
+        className={styles.head}
+        style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}
+      >
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <CaptainAvatar size="sm" live glow pose="default" />
           <div>
@@ -248,14 +262,25 @@ export function Chat() {
 
       <BentoGrid>
         {/* Main Chat Area */}
-        <BentoCard className={`card-clay ${styles.chatMainCard}`} style={{ display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden' }}>
+        <BentoCard
+          className={`card-clay ${styles.chatMainCard}`}
+          style={{ display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden' }}
+        >
           <div className={styles.logWrap} style={{ flex: 1, position: 'relative' }}>
             <div
               className={styles.log}
               ref={logRef}
               role="log"
               aria-live="polite"
-              style={{ padding: '2rem', height: '100%', overflowY: 'auto', border: 'none', borderRadius: 0, background: 'transparent', boxShadow: 'none' }}
+              style={{
+                padding: '2rem',
+                height: '100%',
+                overflowY: 'auto',
+                border: 'none',
+                borderRadius: 0,
+                background: 'transparent',
+                boxShadow: 'none',
+              }}
               onScroll={(e) => {
                 const el = e.currentTarget;
                 const near = el.scrollHeight - el.scrollTop - el.clientHeight < 80;
@@ -309,7 +334,13 @@ export function Chat() {
             )}
           </div>
 
-          <div style={{ padding: '1.5rem', borderTop: 'var(--clay-border)', background: 'var(--surface-raised)' }}>
+          <div
+            style={{
+              padding: '1.5rem',
+              borderTop: 'var(--clay-border)',
+              background: 'var(--surface-raised)',
+            }}
+          >
             {gated ? (
               <ChatGate signedIn={!!session} />
             ) : (
@@ -321,7 +352,14 @@ export function Chat() {
                   onSubmit={() => void ask(input)}
                   onStop={stop}
                 />
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '0.75rem' }}>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginTop: '0.75rem',
+                  }}
+                >
                   {isPro ? (
                     <label className={styles.proToggle}>
                       <input type="checkbox" checked={usePro} onChange={togglePro} />
@@ -331,9 +369,13 @@ export function Chat() {
                   ) : chatCredits > 0 && isExhausted(currentUsage(usage)) ? (
                     <p className={styles.quota}>{t('chat.quota.credits', { n: chatCredits })}</p>
                   ) : (
-                    <p className={styles.quota}>{t('chat.quota.left', { n: left, limit: dailyLimit })}</p>
+                    <p className={styles.quota}>
+                      {t('chat.quota.left', { n: left, limit: dailyLimit })}
+                    </p>
                   )}
-                  <p className={styles.note} style={{ margin: 0 }}>{t('chat.disclaimer')}</p>
+                  <p className={styles.note} style={{ margin: 0 }}>
+                    {t('chat.disclaimer')}
+                  </p>
                 </div>
               </>
             )}
@@ -341,28 +383,61 @@ export function Chat() {
         </BentoCard>
 
         {/* Side Panel for Citations / Status */}
-        <BentoCard className={`card-clay ${styles.chatSideCard}`} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+        <BentoCard
+          className={`card-clay ${styles.chatSideCard}`}
+          style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
+        >
           <div>
             <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem', color: 'var(--brand-hover)' }}>
+              {t('chat.sourcesLabel')}
             </h3>
             {hasMessages && digest.length > 0 ? (
               <SourcesDigest parts={digest} />
             ) : (
               <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                {t('chat.noSourcesYet', 'As Captain Adel cites GACAR regulations, they will appear here.')}
+                {t(
+                  'chat.noSourcesYet',
+                  'As Captain Adel cites GACAR regulations, they will appear here.',
+                )}
               </p>
             )}
           </div>
-          
+
           <div style={{ flex: 1 }} />
-          
-          <div style={{ padding: '1rem', borderRadius: 'var(--radius-lg)', background: 'rgba(0,0,0,0.2)', border: 'var(--clay-border)' }}>
-            <h4 style={{ fontSize: '0.9rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ display: 'inline-block', width: 8, height: 8, borderRadius: '50%', background: 'var(--neon-green)', boxShadow: '0 0 6px var(--neon-green)' }}></span>
+
+          <div
+            style={{
+              padding: '1rem',
+              borderRadius: 'var(--radius-lg)',
+              background: 'rgba(0,0,0,0.2)',
+              border: 'var(--clay-border)',
+            }}
+          >
+            <h4
+              style={{
+                fontSize: '0.9rem',
+                marginBottom: '0.5rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+              }}
+            >
+              <span
+                style={{
+                  display: 'inline-block',
+                  width: 8,
+                  height: 8,
+                  borderRadius: '50%',
+                  background: 'var(--neon-green)',
+                  boxShadow: '0 0 6px var(--neon-green)',
+                }}
+              ></span>
               {t('chat.engineStatus', 'Engine Status')}
             </h4>
             <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', margin: 0 }}>
-              {isPro && usePro ? t('chat.proActive', 'Pro Model Active') : t('chat.standardActive', 'Standard Model Active')}
+              {isPro && usePro
+                ? t('chat.proActive', 'Pro Model Active')
+                : t('chat.standardActive', 'Standard Model Active')}
             </p>
           </div>
         </BentoCard>

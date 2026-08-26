@@ -478,7 +478,8 @@
 }
 
 @media (max-width: 960px) {
-  .chatMainCard, .chatSideCard {
+  .chatMainCard,
+  .chatSideCard {
     grid-column: 1 / -1 !important;
     height: auto;
     min-height: 400px;
