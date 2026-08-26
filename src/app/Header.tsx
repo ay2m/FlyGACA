@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import { useTranslation } from 'react-i18next';
-import { LangToggle } from '@/components/LangToggle';
-import { ThemeToggle } from '@/components/ThemeToggle';
 import { openCommandPalette } from '@/components/CommandPalette/openCommandPalette';
 import { ButtonLink } from '@/components/ui/Button';
 import { useAccount } from '@/lib/services/account';
@@ -89,7 +87,7 @@ export function Header() {
           {/* Desktop inline nav (hidden ≤860px, where the bottom dock takes over).
               When signed in, /account becomes a dropdown surfacing the daily pages. */}
           <nav className={styles.links} aria-label={t('nav.primary')}>
-            {NAV.filter(item => item.to !== '/account').map((item) => (
+            {NAV.filter((item) => item.to !== '/account').map((item) => (
               <NavLink
                 viewTransition
                 key={item.to}

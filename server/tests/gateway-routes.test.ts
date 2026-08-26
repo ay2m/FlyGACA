@@ -206,7 +206,7 @@ describe("POST /api/chat — anonymous callers", () => {
 });
 
 describe("POST /api/chat — signed-in callers", () => {
-  it("gives a free account Pro access under FREE_FOR_EVERYONE promo — no quota, Pro model allowed", async () => {
+  it("holds a free account to the daily allowance and off the Pro model", async () => {
     const uid = nextUid();
     signedIn(uid);
     getEntitlement.mockResolvedValue({ plan: "free" });
@@ -216,10 +216,10 @@ describe("POST /api/chat — signed-in callers", () => {
       .set("X-Forwarded-For", nextIp())
       .send({ message: "hi", provider: "pro" });
 
-    // Promo mode makes free accounts effectively paid, so they can use the Pro model
-    expect(captainAdelFlow).toHaveBeenCalledWith(expect.objectContaining({ provider: "pro" }));
-    // No quota is consumed for effectively paid accounts
-    expect(consumeDailyQuotaRow).not.toHaveBeenCalled();
+    expect(captainAdelFlow).toHaveBeenCalledWith(expect.objectContaining({ provider: undefined }));
+    const [key, , limit] = consumeDailyQuotaRow.mock.calls[0];
+    expect(key).toBe(uid);
+    expect(limit).toBe(5); // CHAT_FREE_DAILY_LIMIT
   });
 
   it("lets a paid account through untouched — no quota, and the Pro model stands", async () => {
@@ -239,9 +239,11 @@ describe("POST /api/chat — signed-in callers", () => {
     expect(captainAdelFlow).toHaveBeenCalledWith(expect.objectContaining({ provider: "pro" }));
   });
 
-  it("succeeds for free accounts under promo mode — no credit spending", async () => {
+  it("spends a purchased credit once the free allowance is gone", async () => {
     signedIn(nextUid());
     getEntitlement.mockResolvedValue({ plan: "free" });
+    consumeDailyQuotaRow.mockResolvedValue(null);
+    spendOneChatCredit.mockResolvedValue(true);
 
     const res = await request(app)
       .post("/api/chat")
@@ -249,29 +251,28 @@ describe("POST /api/chat — signed-in callers", () => {
       .send({ message: "hi" });
 
     expect(res.status).toBe(200);
-    // Free accounts are treated as paid under promo, so no credit is spent
-    expect(spendOneChatCredit).not.toHaveBeenCalled();
+    expect(spendOneChatCredit).toHaveBeenCalled();
   });
 
-  it("does not 429 free accounts under promo mode", async () => {
+  it("429s only when neither free questions nor credits remain", async () => {
     signedIn(nextUid());
     getEntitlement.mockResolvedValue({ plan: "free" });
+    consumeDailyQuotaRow.mockResolvedValue(null);
+    spendOneChatCredit.mockResolvedValue(false);
 
     const res = await request(app)
       .post("/api/chat")
       .set("X-Forwarded-For", nextIp())
       .send({ message: "hi" });
 
-    // Promo mode treats free as paid, so they never hit quota limits
-    expect(res.status).toBe(200);
-    expect(captainAdelFlow).toHaveBeenCalled();
+    expect(res.status).toBe(429);
+    expect(res.body).toEqual({ error: "quota_exceeded" });
+    expect(captainAdelFlow).not.toHaveBeenCalled();
   });
 
-  it("treats an entitlement read failure as Pro under promo mode", async () => {
-    // With FREE_FOR_EVERYONE promo, null entitlements are treated as Pro.
-    // An error returning null is indistinguishable from no entitlement, so it also
-    // gets Pro access (trade-off: database errors hand out Pro access rather than
-    // applying quota; the safer behavior would distinguish errors from free users).
+  it("treats an entitlement read failure as free rather than as Pro", async () => {
+    // Failing toward the cheap path: a transient blip must not hand out
+    // unlimited chat on the expensive model.
     const spy = vi.spyOn(console, "error").mockImplementation(() => {});
     signedIn(nextUid());
     getEntitlement.mockRejectedValue(new Error("db down"));
@@ -281,9 +282,8 @@ describe("POST /api/chat — signed-in callers", () => {
       .set("X-Forwarded-For", nextIp())
       .send({ message: "hi", provider: "pro" });
 
-    // Error path returns null, which is treated as Pro under promo
-    expect(consumeDailyQuotaRow).not.toHaveBeenCalled();
-    expect(captainAdelFlow).toHaveBeenCalledWith(expect.objectContaining({ provider: "pro" }));
+    expect(consumeDailyQuotaRow).toHaveBeenCalled();
+    expect(captainAdelFlow).toHaveBeenCalledWith(expect.objectContaining({ provider: undefined }));
     spy.mockRestore();
   });
 

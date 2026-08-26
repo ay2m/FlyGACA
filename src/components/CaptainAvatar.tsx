@@ -60,7 +60,7 @@ export function CaptainAvatar({
 }: CaptainAvatarProps) {
   const { t } = useTranslation();
 
-  const stillSrc = 'https://captadel.com/media/captain-adel.jpg';
+  const stillSrc = pose !== 'default' ? poseSrc[pose] : '/img/captain-adel.jpg';
 
   // Disable the cartoon animated idle loop for the new realistic portrait
   const playLoop = false;

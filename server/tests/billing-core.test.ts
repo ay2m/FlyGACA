@@ -135,11 +135,10 @@ describe("isPaidActive", () => {
   const future = new Date("2026-08-01T00:00:00Z").toISOString();
   const past = new Date("2026-07-01T00:00:00Z").toISOString();
 
-  it("is true for all entitlements under FREE_FOR_EVERYONE promo", () => {
-    // Promo mode gives Pro access to everyone, including null/free/lapsed entitlements
-    expect(isPaidActive(null, now)).toBe(true);
-    expect(isPaidActive({ plan: "free" }, now)).toBe(true);
-    expect(isPaidActive({ plan: "pro", expiresAt: past, source: "moyasar" }, now)).toBe(true);
+  it("is false for free / null / lapsed entitlements", () => {
+    expect(isPaidActive(null, now)).toBe(false);
+    expect(isPaidActive({ plan: "free" }, now)).toBe(false);
+    expect(isPaidActive({ plan: "pro", expiresAt: past, source: "moyasar" }, now)).toBe(false);
   });
 
   it("is true for an active or non-expiring paid entitlement", () => {
