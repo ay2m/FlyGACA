@@ -397,6 +397,14 @@ for that.
 
 ## Where to look
 
+`.claude/` holds this repo's Claude Code tooling (not shipped): `skills/run-flygaca/` (build, run
+and drive the app), `settings.json` (registers the `flygaca-family` marketplace — registering
+installs nothing), and `plugins/flygaca-product/`, this repo's distributable plugin: five agents
+(`react-surface`, `express-api`, `corpus-pipeline`, `sql-schema`, `rag-grounding`) and four
+commands (`/verify`, `/server-gate`, `/new-tool`, `/family-contract`). `ay2m/Office` hosts the
+marketplace and points here with a `git-subdir` source; install with
+`/plugin install flygaca-product@flygaca-family`.
+
 Root: `MIGRATION.md` (rebuild log), `ROADMAP.md`, `README.md` (getting started),
 `GUIDE_AUTHORING.md` (learn content), `FIGMA_DESIGN_SYSTEM.md` (design system),
 `SEO-PLAN.md`, `CONTRIBUTING.md`, `SECURITY.md`.
