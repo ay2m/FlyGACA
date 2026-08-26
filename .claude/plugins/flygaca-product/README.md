@@ -35,6 +35,17 @@ directory with a `git-subdir` source.
 | `/server-gate` | The `server/` package gate on its own, because root `verify` does not cover it |
 | `/new-tool` | Adds a catalog tool end to end: registry → pure math → page → both i18n bundles → route |
 | `/family-contract` | Changes `contracts/flygaca-family.json` the only way that passes all three repos' gates |
+| `/feature-launch` | Sequences a feature across schema → API → corpus → surface, with the right gate at each step |
+
+**Skills** (procedures the agents defer to; loaded on demand):
+
+| Skill | Covers |
+| --- | --- |
+| `react-typescript-strict` | The four strict flags beyond `strict`, i18n parity, tokens, logical properties, URL-held input state, the `verify` chain |
+| `express-security-patterns` | Where a rule may live, server-owned entitlement, the helmet/rate-limit/session primitives already in place, what must never reach a client |
+| `gacar-corpus-policy` | Which pipeline to run, labelling and licensing, AIRAC as actually implemented, the prerender and JSON-LD gates |
+| `postgresql-migrations` | Which of the two schemas, numbering, additive-first, named-query indexes, money/time, the PDPL erasure path |
+| `gemini-rag-patterns` | Provider-as-config, refuse-rather-than-guess, the two-brain seam, the contract change that forces three PRs |
 
 ## What it deliberately does not duplicate
 
@@ -42,6 +53,15 @@ directory with a `git-subdir` source.
 loaded automatically for sessions here and does not need packaging. The plugin
 carries the knowledge that a session outside this checkout would otherwise
 lack.
+
+The skills carry **procedures**; the agents carry **role context**. Where both
+touch a subject, the skill states the steps and defers the "why it is shaped
+this way" to the named agent, so the two do not drift into two accounts of the
+same thing.
+
+`/security-hardening` and `/perf-sprint` are **family-level** workflows and live
+in `ay2m/Office` (`family-orchestrators`), not here — a security or performance
+pass that stops at this repo's boundary is not the pass those commands promise.
 
 ## Editing it
 

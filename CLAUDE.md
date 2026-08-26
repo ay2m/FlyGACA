@@ -11,20 +11,49 @@ Guidance for Claude Code in the FlyGACA product repo (React 19 web app + Express
 
 Governance, strategy, financial, legal, and HR material live in the separate `ay2m/Office` repo — not here.
 
-## Shared Agents (from ay2m/Office)
+## Agents
 
-All agents below are defined in `ay2m/Office/.claude/agents/` and available to this repo via the family contract
-(`contracts/flygaca-family.json`, byte-identical across ay2m/Office, ay2m/FlyGACA, ay2m/Captain-Adel).
+**Where they actually come from.** The family contract
+(`contracts/flygaca-family.json`) carries entity facts, the chat contract and the
+repo roster — it distributes **no agents**, so an agent is never "available via
+the contract". Agents reach a session by one of three routes, and it is worth
+knowing which:
+
+| Route | What it gives you | Where it lives |
+| --- | --- | --- |
+| **This repo's own agents** | Loaded automatically in any session here | `.claude/agents/` |
+| **The `flygaca-product` plugin** | The five product-engineering agents, five skills and the workflow commands — install it to get them in a session outside this checkout | `.claude/plugins/flygaca-product/` |
+| **`ay2m/Office`'s agents** | Governance and compliance roles. They are **not** loaded by a session in this repo — they need the Office checkout, or the `office-governance` plugin from the family marketplace | `ay2m/Office/.claude/agents/` |
+
+Install the marketplace plugins with:
+
+```
+/plugin marketplace add ay2m/Office
+/plugin install flygaca-product@flygaca-family
+```
+
+The tables below name the roles by their canonical names. Where a role is served
+by this repo's plugin, the plugin agent's own name is given in brackets.
 
 ### Product Engineering Agents
 
 | Agent | Use it for | Tools |
 | --- | --- | --- |
-| `react-19-architect` | React 19, Vite, TypeScript strict, RTL/i18n, component design, performance optimization | Read, Grep, Bash |
-| `express-backend-pro` | Express 5 API design, Cloud Run deployment, security (parameterized queries, HttpOnly JWT, me-central2 data residency) | Read, Grep, Bash |
-| `regulatory-corpus-keeper` | GACAR indexing, corpus policy (3 tiers), AIRAC freshness (28d + 7d buffer), citation verification | Read, Grep, Bash |
-| `sql-migrator` | PostgreSQL schema design, forward-only migrations, index optimization, immutable audit trail | Read, Grep, Bash |
-| `genkit-rag-specialist` | Gemini integration, RAG pipeline, Captain Adel grounding, inference safety (US/EU risk documented) | Read, Grep, Bash |
+| `react-19-architect` [`react-surface`] | React 19, Vite, TypeScript strict, RTL/i18n, component design, performance optimization | Read, Grep, Bash |
+| `express-backend-pro` [`express-api`] | Express 5 API design, Cloud Run deployment, security (parameterized queries, HttpOnly JWT, me-central2 data residency) | Read, Grep, Bash |
+| `regulatory-corpus-keeper` [`corpus-pipeline`] | GACAR indexing, corpus policy, AIRAC freshness (28-day cycle, 7-day due window), citation verification | Read, Grep, Bash |
+| `sql-migrator` [`sql-schema`] | PostgreSQL schema design, forward-only migrations, index optimization, immutable audit trail | Read, Grep, Bash |
+| `genkit-rag-specialist` [`rag-grounding`] | Gemini integration, RAG pipeline, Captain Adel grounding, inference safety (US/EU risk documented) | Read, Grep, Bash |
+
+### This repo's own agents
+
+Loaded automatically here, no install needed — they are not in the tables above
+because they are FlyGACA's, not the family's:
+
+| Agent | Use it for |
+| --- | --- |
+| `schools-product-champion` | The Schools B2B motion as it lands in the product |
+| `defensible-differentiation` | Competitive positioning and the defensible wedges |
 
 ### Cross-Repo Coordination Agents
 
@@ -41,9 +70,13 @@ All agents below are defined in `ay2m/Office/.claude/agents/` and available to t
 | `ksa-compliance` | PDPL, ZATCA, data residency, breach procedures — for regulatory review before shipping | Read, Write, Edit, Glob, Grep, Bash |
 | `family-warden` | Family contract byte-identity, repo roster, drift sweeps across three repos | Read, Edit, Glob, Grep, Bash |
 
-## Workflows (from ay2m/Office/.claude/skills/operations/)
+## Workflows
 
-Triggered via slash commands from any repo; coordinate across all three:
+These are **Office-hosted**: the workflow definitions live in
+`ay2m/Office/.claude/skills/operations/`, and the installable commands ship in
+Office's `family-orchestrators` plugin. A session in this repo gets them only by
+installing that plugin (`/plugin install family-orchestrators@flygaca-family`) —
+they are not ambiently available "from any repo".
 
 | Workflow | Trigger | Participants | Purpose |
 | --- | --- | --- | --- |
@@ -64,11 +97,18 @@ Triggered via slash commands from any repo; coordinate across all three:
 
 ### Regulatory Corpus
 - **GACAR alignment:** Every question cites GACAR section; never fabricate regulations
-- **Corpus tiers:**
+- **Corpus tiers** — *stated policy, not yet a mechanism.* These three identifiers
+  appear nowhere in the code or the corpus data; apply them as editorial policy
+  when deciding what to host, and do not write comments or docs implying a tier
+  field exists:
   - **HOST_SAFE_CORE:** Can appear on learning interface and exam (vetted, approved)
   - **HOST_ORIGINAL:** Can appear in study materials but not public (proprietary content)
   - **DO_NOT_HOST:** Cite only (external links, reference books, instructor notes)
-- **AIRAC freshness:** Effective date + 28 days for content staleness; 7-day buffer for updates (35-day threshold)
+- **AIRAC freshness:** `src/calc/airac.ts` implements **28-day cycles** anchored to
+  AIRAC 2001 (effective 2020-01-02); `airacStatus()` in
+  `src/calc/library/changeTracking.ts` marks a source due when the next cycle is
+  within **7 days** (`withinDays`, default 7). Quote those two numbers, not a
+  combined threshold.
 - **Curriculum review:** Draft → SME review → Publish (three-step gate)
 
 ### API Security
@@ -98,7 +138,7 @@ Triggered via slash commands from any repo; coordinate across all three:
 
 - **Building a React component?** → `react-19-architect` for strict TS, RTL, i18n patterns
 - **Adding an API endpoint?** → `express-backend-pro` for parameterized queries, security, me-central2 compliance
-- **Indexing GACAR content?** → `regulatory-corpus-keeper` for citation verification, tier enforcement, AIRAC staleness
+- **Indexing GACAR content?** → `regulatory-corpus-keeper` for citation verification, hosting-tier policy, AIRAC staleness
 - **Database migration or query?** → `sql-migrator` for schema safety, forward-only migrations
 - **Gemini/RAG integration?** → `genkit-rag-specialist` for grounding, inference safety, Captain Adel consistency
 - **Cross-repo feature?** → `cross-repo-sync` + `operations-orchestrator` for three-way coordination
