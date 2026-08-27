@@ -127,7 +127,7 @@ jobs:
           kill $PREVIEW_PID 2>/dev/null || true
 
       # Only on failure: a green run's report is noise, and artifacts are billed.
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: playwright-report
