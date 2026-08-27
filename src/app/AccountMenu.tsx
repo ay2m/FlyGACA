@@ -92,7 +92,7 @@ export function AccountMenu() {
           </span>
           {t('nav.manageAccount')}
         </NavLink>
-        
+
         <div className={styles.accountMenuDivider} aria-hidden="true" />
         <div style={{ display: 'flex', gap: '8px', padding: '8px 12px' }}>
           <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>

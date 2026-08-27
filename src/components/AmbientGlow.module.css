@@ -6,7 +6,9 @@
   pointer-events: none;
 }
 
-.blob1, .blob2, .blob3 {
+.blob1,
+.blob2,
+.blob3 {
   position: absolute;
   filter: blur(80px);
   opacity: 0.6;
@@ -17,7 +19,10 @@
 .blob1 {
   width: 50vw;
   height: 50vw;
-  background: var(--glow-teal, radial-gradient(circle, rgba(45, 110, 138, 0.5) 0%, transparent 70%));
+  background: var(
+    --glow-teal,
+    radial-gradient(circle, rgba(45, 110, 138, 0.5) 0%, transparent 70%)
+  );
   top: -10%;
   left: -10%;
   animation-delay: 0s;
@@ -26,7 +31,10 @@
 .blob2 {
   width: 40vw;
   height: 40vw;
-  background: var(--glow-sage, radial-gradient(circle, rgba(143, 201, 168, 0.4) 0%, transparent 70%));
+  background: var(
+    --glow-sage,
+    radial-gradient(circle, rgba(143, 201, 168, 0.4) 0%, transparent 70%)
+  );
   bottom: -20%;
   right: -10%;
   animation-delay: -5s;
@@ -35,15 +43,25 @@
 .blob3 {
   width: 30vw;
   height: 30vw;
-  background: var(--glow-neon-cyan, radial-gradient(circle, rgba(63, 224, 255, 0.3) 0%, transparent 70%));
+  background: var(
+    --glow-neon-cyan,
+    radial-gradient(circle, rgba(63, 224, 255, 0.3) 0%, transparent 70%)
+  );
   top: 40%;
   left: 50%;
   animation-delay: -10s;
 }
 
-.auth .blob1 { opacity: 0.8; }
-.dashboard .blob2 { opacity: 0.5; width: 60vw; }
-.chat .blob3 { opacity: 0.7; }
+.auth .blob1 {
+  opacity: 0.8;
+}
+.dashboard .blob2 {
+  opacity: 0.5;
+  width: 60vw;
+}
+.chat .blob3 {
+  opacity: 0.7;
+}
 
 .noise {
   position: absolute;
@@ -54,12 +72,24 @@
 }
 
 @keyframes drift {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(5%, 10%) scale(1.1); }
-  66% { transform: translate(-5%, 5%) scale(0.9); }
-  100% { transform: translate(10%, -5%) scale(1.05); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(5%, 10%) scale(1.1);
+  }
+  66% {
+    transform: translate(-5%, 5%) scale(0.9);
+  }
+  100% {
+    transform: translate(10%, -5%) scale(1.05);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .blob1, .blob2, .blob3 { animation: none; }
+  .blob1,
+  .blob2,
+  .blob3 {
+    animation: none;
+  }
 }

@@ -14,7 +14,9 @@
   /* Make it a compact Dynamic Island instead of full width */
   width: fit-content;
   max-width: calc(100% - var(--space-6));
-  box-shadow: 0 12px 40px color-mix(in srgb, var(--shade) 40%, transparent), inset 0 1px 0 rgba(255,255,255,0.1);
+  box-shadow:
+    0 12px 40px color-mix(in srgb, var(--shade) 40%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all var(--dur) var(--ease);
 }
 /* Elevated state — firmer surface and brighter border once scrolled. */

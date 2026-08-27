@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { PageHero } from '@/components/PageHero';
 import { Card } from '@/components/ui/Card';
 import { CaptainAvatar } from '@/components/CaptainAvatar';
 import { BrandMark } from '@/components/BrandMark';
@@ -20,7 +19,7 @@ export function AccountSignedOut() {
   return (
     <section className={`container ${styles.splitScreenPage}`}>
       <AmbientGlow variant="auth" />
-      
+
       <div className={styles.splitScreenContent}>
         {/* Left side: The Auth Forms floating on glass */}
         <div className={styles.authColumn}>
@@ -29,7 +28,7 @@ export function AccountSignedOut() {
             <h1 className={styles.authTitle}>{t('account.signInTitle')}</h1>
             <p className={styles.authIntro}>{t('account.signInIntro')}</p>
           </div>
-          
+
           <Card variant="raised" className={`${styles.authCard} card-clay`}>
             {isAuthAvailable() ? (
               <BackendSignIn />
@@ -39,7 +38,7 @@ export function AccountSignedOut() {
               <AuthUnavailable />
             )}
           </Card>
-          
+
           <div className={styles.disclaimerWrapper}>
             <Disclaimer compact />
           </div>
@@ -48,8 +47,13 @@ export function AccountSignedOut() {
         {/* Right side: Benefits and Captain Adel in 3D-like space */}
         <div className={styles.benefitsColumn}>
           <CaptainAvatar size="xl" glow pose="wave" decorative className={styles.heroAvatar} />
-          
-          <Card as="aside" variant="accent" accent="var(--falcon-mist)" className={`${styles.benefitsCard} card-clay`}>
+
+          <Card
+            as="aside"
+            variant="accent"
+            accent="var(--falcon-mist)"
+            className={`${styles.benefitsCard} card-clay`}
+          >
             <p className={styles.asideEyebrow}>{t('account.benefits.eyebrow')}</p>
             <h2 className={styles.asideTitle}>{t('account.benefits.title')}</h2>
             <ul className={styles.benefitList}>

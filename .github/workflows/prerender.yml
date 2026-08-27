@@ -48,6 +48,8 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v7
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v5
         with:
           # Match ci.yml/deploy.yml (and server/'s engines pin) — this workflow
           # was the odd one out on Node 22.

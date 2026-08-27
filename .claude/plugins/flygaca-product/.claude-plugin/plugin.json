@@ -1,0 +1,23 @@
+{
+  "name": "flygaca-product",
+  "displayName": "Fly GACA — Product Engineering",
+  "version": "0.2.0",
+  "description": "Product-engineering agents, skills and workflow commands for ay2m/FlyGACA: the React/Vite bilingual app, the Express + Cloud SQL backend, the regulatory corpus pipelines, the Postgres schema, and the Captain Adel RAG flow.",
+  "author": {
+    "name": "Fly GACA",
+    "url": "https://github.com/ay2m"
+  },
+  "homepage": "https://github.com/ay2m/FlyGACA/tree/main/.claude/plugins/flygaca-product",
+  "repository": "https://github.com/ay2m/FlyGACA",
+  "license": "UNLICENSED",
+  "keywords": [
+    "flygaca",
+    "react",
+    "express",
+    "postgres",
+    "rag",
+    "gacar",
+    "bilingual",
+    "rtl"
+  ]
+}

@@ -707,6 +707,10 @@
     },
     "proModel": "Pro model",
     "proModelHint": "Higher-quality answers",
+    "noSourcesYet": "As Captain Adel cites GACAR regulations, they will appear here.",
+    "engineStatus": "Engine Status",
+    "proActive": "Pro Model Active",
+    "standardActive": "Standard Model Active",
     "suggestions": {
       "s1": "What are the VFR weather minima in controlled airspace?",
       "s2": "What's required for a GACAR commercial pilot licence?",
@@ -4664,6 +4668,7 @@
       "more": "Achievements & actions"
     },
     "actionNeeded": "Some items need attention",
+    "currencyExpiring": "Some currency items are expiring soon — check the currency board.",
     "allCurrent": "You're all current",
     "currencyBoard": "Currency board",
     "logbookSummary": "Logbook",

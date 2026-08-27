@@ -7,7 +7,10 @@ interface AmbientGlowProps {
 
 export function AmbientGlow({ className = '', variant = 'auth' }: AmbientGlowProps) {
   return (
-    <div className={`${styles.ambientContainer} ${styles[variant]} ${className}`} aria-hidden="true">
+    <div
+      className={`${styles.ambientContainer} ${styles[variant]} ${className}`}
+      aria-hidden="true"
+    >
       <div className={styles.blob1} />
       <div className={styles.blob2} />
       <div className={styles.blob3} />

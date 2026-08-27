@@ -310,7 +310,6 @@ function Inner() {
         </div>
       )}
 
-
       {setup.percent < 100 && (
         <div className={styles.setupCard}>
           <SetupChecklist completeness={setup} />
