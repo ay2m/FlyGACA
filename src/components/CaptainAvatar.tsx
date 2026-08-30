@@ -35,7 +35,7 @@ interface CaptainAvatarProps {
    * long thread never runs many photoreal loops at once. Falls back to the still
    * under reduced-motion or if the loop fails to load.
    */
-  _animated?: boolean;
+  animated?: boolean;
   /** Decorative use (label already supplied by adjacent text) hides it from AT. */
   decorative?: boolean;
   className?: string;
@@ -54,7 +54,7 @@ export function CaptainAvatar({
   pose = 'default',
   glow = false,
   live = false,
-  _animated = false,
+  animated: _animated = false,
   decorative = false,
   className,
 }: CaptainAvatarProps) {

@@ -189,19 +189,8 @@ making that production footprint fully trustworthy.
 Verified during the repo cleanup and left outside its low-risk scope. None is a bug; recorded so
 the findings are not re-derived.
 
-- **[platform]** **`loadRegulationsLookup` has no callers.** `src/lib/content.ts` exposes it, but
-  nothing calls it. The JSON itself is no longer orphaned — `/library/map` (motions round 2) reads
-  `public/data/regulations-lookup.json` directly via `useFetchJson` for the constellation edges,
-  so the `parse-regulations` pipeline output has a reader again. Remaining decision: point
-  `LibraryMap` at the shared loader/type (or retire the loader), and optionally wire the
-  cross-reference lookup into the library reader too.
-- **[platform]** **~64 dead i18n keys.** Verified unreferenced across all source files. Cleanest
-  cluster is the entire `command.*` namespace (superseded by `cmdk.*`, which is what
-  `CommandPalette.tsx` reads) plus `home.*` leftovers from the bento redesign. **A future sweep must
-  not be automated naively:** ~400+ further keys resolve only through template literals
-  (`guides.items.**`, `wx.code.*`, `notam.abbr.*` via `returnObjects`, `tools.items.*`, the bare
-  `account.${key}` in `LogbookTable.tsx`) and a literal-match pass will call all of them dead.
-  Re-run against current `main` first — the Moyasar work added a live `checkout.*` namespace.
+- **[platform]** ~~**`loadRegulationsLookup` has no callers.**~~ **Done.** Unused loader retired; `/library/map` reads `public/data/regulations-lookup.json` directly via typed `useFetchJson<RegulationsLookup>` for constellation edges.
+- **[platform]** ~~**~64 dead i18n keys.**~~ **Done.** Deprecated `command.*` namespace purged and replaced with `cmdk.*` consumed by `CommandPalette.tsx`, with `tests/i18n-parity.test.ts` maintaining 100% key parity across EN and AR bundles.
 - **[platform]** ~~**`functions/src/gateway.ts` (578 lines) holds pure logic that belongs in a `*-core`.**
   `parseCookies`, `parseRequest` + the message/history caps, and the security-sensitive
   `isAllowedOrigin` CORS policy have no Firebase deps; `functions/tests/gateway.test.ts` has to mock

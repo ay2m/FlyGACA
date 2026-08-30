@@ -31,6 +31,7 @@ import { readFileSync, mkdirSync, writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { get } from 'node:http';
+import { cpus } from 'node:os';
 
 if (process.env.SKIP_PRERENDER) {
   console.log('prerender: skipped (SKIP_PRERENDER set)');
@@ -269,22 +270,10 @@ try {
   await waitForServer();
 
   browser = await launchChromium(chromium);
-  const page = await browser.newPage();
 
   // Drive one route to a hydrated snapshot on disk. Waits for a real-app element
   // the static shell never contains, then dumps the live DOM.
-  // Navigate + capture the hydrated document to `file` (a real-app <footer> is
-  // the signal the app rendered over the static shell).
-  //
-  // `lang` is the language the finished document must be in. A <footer> is not a
-  // sufficient signal on its own: i18next applies <html lang/dir> asynchronously,
-  // so an /ar route can reach "footer rendered" while the root element still says
-  // lang="en". Serializing there writes an English-bodied file to dist/ar/... and
-  // `check:prerender` rejects it — which is exactly how the deploy failed, on a
-  // *different* route each run (ar/tools/vfr-minima, ar/library/part-138), the
-  // signature of a race rather than a broken page. Waiting for the language to
-  // land removes the race at its source.
-  async function snapshot(url, file, lang = 'en') {
+  async function snapshot(page, url, file, lang = 'en') {
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
     await page.waitForSelector('footer, article, main, [data-testid="reader-body"]', {
       timeout: 15000,
@@ -297,6 +286,10 @@ try {
       lang,
       { timeout: 15000 },
     );
+    const isContent = /\/(?:guides|library|tools|study\/packs)\/[^/]+/.test(url);
+    if (isContent) {
+      await page.waitForSelector('script[data-managed-ld]', { timeout: 4000 }).catch(() => {});
+    }
     const html = sanitizeSnapshot(
       `<!doctype html>\n${await page.evaluate(() => document.documentElement.outerHTML)}`,
     );
@@ -307,37 +300,61 @@ try {
   // One transient stall on a busy runner (networkidle, the footer, or the async
   // <html lang/dir> flip timing out) must not fail the coverage gate: retry the
   // route once on a fresh navigation before it falls back to head-only HTML.
-  async function snapshotWithRetry(url, file, lang = 'en') {
+  async function snapshotWithRetry(page, url, file, lang = 'en') {
     try {
-      await snapshot(url, file, lang);
+      await snapshot(page, url, file, lang);
     } catch (err) {
       console.warn(`  prerender: retrying ${url} — ${err.message}`);
-      await snapshot(url, file, lang);
+      await snapshot(page, url, file, lang);
     }
   }
 
-  let done = 0;
-  for (const route of routeList) {
-    try {
-      await snapshotWithRetry(`${BASE}${route}`, outPath(route));
-      done++;
-    } catch (err) {
-      console.warn(`  prerender: skipped ${route} — ${err.message}`);
+  const CONCURRENCY =
+    Number(process.env.PRERENDER_CONCURRENCY) || Math.min(4, Math.max(2, cpus().length || 4));
+
+  async function runTaskQueue(tasks) {
+    let index = 0;
+    let completed = 0;
+    async function worker(page) {
+      while (index < tasks.length) {
+        const item = tasks[index++];
+        try {
+          await snapshotWithRetry(page, item.url, item.file, item.lang);
+          completed++;
+        } catch (err) {
+          console.warn(`  prerender: skipped ${item.url} — ${err.message}`);
+        }
+      }
     }
+    const workerCount = Math.min(CONCURRENCY, tasks.length);
+    const pages = await Promise.all(
+      Array.from({ length: workerCount }, () => browser.newPage()),
+    );
+    await Promise.all(pages.map((p) => worker(p)));
+    await Promise.all(pages.map((p) => p.close().catch(() => {})));
+    return completed;
   }
+
+  const enTasks = routeList.map((route) => ({
+    url: `${BASE}${route}`,
+    file: outPath(route),
+    lang: 'en',
+  }));
+  const done = await runTaskQueue(enTasks);
+
   // Arabic bodies: visit the real `/ar<route>` URL (the router mounts under
   // basename `/ar` and hydrates in Arabic with a self-canonical `/ar` head) and
   // write the distinct dist/ar/<route> file.
-  let doneAr = 0;
-  for (const route of arRouteList) {
+  const arTasks = arRouteList.map((route) => {
     const arRoute = route === '/' ? '/ar' : `/ar${route}`;
-    try {
-      await snapshotWithRetry(`${BASE}${arRoute}`, outPathAr(route), 'ar');
-      doneAr++;
-    } catch (err) {
-      console.warn(`  prerender: skipped ar ${route} — ${err.message}`);
-    }
-  }
+    return {
+      url: `${BASE}${arRoute}`,
+      file: outPathAr(route),
+      lang: 'ar',
+    };
+  });
+  const doneAr = await runTaskQueue(arTasks);
+
   console.log(
     `prerender: wrote ${done}/${routeList.length} en + ${doneAr}/${arRouteList.length} ar routes`,
   );

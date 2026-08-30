@@ -66,7 +66,7 @@ export function SignUpFormBody({
       )}
       <Button
         type="submit"
-        variant="clay"
+        variant="clayPrimary"
         className={styles.fullWidth}
         aria-busy={busy || undefined}
         disabled={

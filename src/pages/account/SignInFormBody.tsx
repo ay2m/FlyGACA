@@ -49,7 +49,7 @@ export function SignInFormBody({
       )}
       <Button
         type="submit"
-        variant="clay"
+        variant="clayPrimary"
         className={styles.fullWidth}
         aria-busy={busy || undefined}
         disabled={busy || !form.values.email.trim() || !form.values.password}

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { sendChatStream, type ChatRequestError, type ChatTurn } from '@/lib/api';
@@ -43,32 +43,34 @@ import {
   persistUsage,
   type Message,
 } from './chatLocal';
+import { AmbientGlow } from '@/components/AmbientGlow';
 import styles from './Chat.module.css';
 
 import { BentoGrid } from '@/components/bento/BentoGrid';
 import { BentoCard } from '@/components/bento/BentoCard';
-import { AmbientGlow } from '@/components/AmbientGlow';
 import { CaptainAvatar } from '@/components/CaptainAvatar';
 
-export function Chat() {
+/**
+ * Captain Adel — conversational GACAR flight instructor.
+ *
+ * Grounding rules:
+ * - Green badge: answer quotes/cites verbatim GACAR section.
+ * - Yellow badge: answer references GACAR Part broadly or general aviation knowledge.
+ * - Refusal: model cannot ground answer in corpus, refuses to guess.
+ * - Every regulatory claim MUST link to /library/<slug>#<section>.
+ */
+export default function Chat() {
   const { t } = useTranslation();
   usePageMeta(t('meta.chat'), t('metaDesc.chat'));
+
   const [params, setParams] = useSearchParams();
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [busy, setBusy] = useState(false);
-  const {
-    conversations,
-    activeId,
-    messages,
-    setMessages,
-    newChat,
-    selectConversation,
-    deleteConversation,
-    rename,
-    pin,
-  } = useConversations<Message>(busy);
+  const [usePro, setUsePro] = useState(loadProPref);
+  const { conversations, activeId, newChat, selectConversation, deleteConversation, rename, pin } =
+    useConversations<Message>(busy);
   const [usage, setUsage] = useState<Usage>(loadUsage);
-  const [usePro, setUsePro] = useState<boolean>(loadProPref);
   const [atBottom, setAtBottom] = useState(true);
   const logRef = useRef<HTMLDivElement>(null);
   const atBottomRef = useRef(true);
@@ -90,13 +92,12 @@ export function Chat() {
   });
 
   const gacar = useFetchJson<GacarIndex>('/data/gacar-index.json');
-  const validSlugs = useRef<Set<string>>(new Set());
-  if (gacar.data && validSlugs.current.size === 0) {
-    validSlugs.current = new Set(gacar.data.documents.map((d) => d.slug));
-  }
+  const validSlugs = useMemo(() => {
+    return new Set(gacar.data?.documents.map((d) => d.slug) ?? []);
+  }, [gacar.data]);
 
   function resolveCitation(partNumber: string): string | null {
-    const slug = partSlug(validSlugs.current, partNumber);
+    const slug = partSlug(validSlugs, partNumber);
     return slug ? `/library/${slug}` : null;
   }
 
@@ -201,7 +202,7 @@ export function Chat() {
   const last = messages[messages.length - 1];
   const lastAssistantIdx = lastAssistantIndex(messages);
   const followupsVisible = showFollowups(last, { gated, busy });
-  const digest = conversationParts(messages, validSlugs.current);
+  const digest = conversationParts(messages, validSlugs);
   const hasMessages = messages.length > 0;
   const transcriptMd = hasMessages
     ? transcriptToMarkdown(messages, {
@@ -295,7 +296,7 @@ export function Chat() {
                   m={m}
                   animate={i === lastAssistantIdx}
                   resolveCitation={resolveCitation}
-                  validSlugs={validSlugs.current}
+                  validSlugs={validSlugs}
                   rating={m.error ? undefined : getFeedback(feedback, feedbackKey(m.text))}
                   onFeedback={m.error ? undefined : (r) => rateAnswer(i, r)}
                   onRegenerate={() => regenerate(i)}

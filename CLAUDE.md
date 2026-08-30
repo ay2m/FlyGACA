@@ -155,14 +155,33 @@ they are not ambiently available "from any repo".
 - `migrations/` — PostgreSQL schemas (forward-only)
 - Tests, linting, type-checking via `npm run`
 
-### Files Out of Scope
-- Governance, strategy, financial, legal, HR material → see `ay2m/Office`
-- Captain Adel AI instructor → see `ay2m/Captain-Adel`
-
 ### CI Gates
-- Linting & TypeScript strict mode (`npm run lint`, `npm run type-check`)
+- Linting & TypeScript strict mode (`npm run lint`, `npm run typecheck`)
 - Unit tests (`npm test`)
 - Family contract parity (`tests/family-contract.test.ts`)
+
+## Agent roster (`.claude/agents/`)
+
+Subagents for this repo live in `.claude/agents/` — 25 definitions, each baking in the slice of
+this file relevant to its territory. Delegate to them (or let their `description` trigger
+proactive delegation) instead of rediscovering conventions per task:
+
+- **Engineering:** `flygaca-frontend` (src/ SPA), `flygaca-backend` (server/ API),
+  `flygaca-code-reviewer`, `flygaca-test-writer`, `flygaca-e2e-playwright`,
+  `flygaca-accessibility`, `flygaca-perf-budget`, `flygaca-security`,
+  `flygaca-db-migrations`.
+- **Domain:** `flygaca-calc-engineer` (calculators), `flygaca-study-srs` (study/packs/iOS
+  contract), `flygaca-rag-chat` (Captain Adel RAG), `flygaca-billing` (Moyasar money paths),
+  `flygaca-b2b-org` (org/school/seats), `flygaca-corpus-pipeline` (public/data indexes),
+  `flygaca-i18n-arabic` (ar.json + RTL), `flygaca-pwa-offline` (SW/offline).
+- **Platform & content:** `flygaca-devops` (Cloud Run/CI), `flygaca-capacitor-native`
+  (flavors/sibling iOS repo), `flygaca-content-seo` (guides/JSON-LD/prerender),
+  `flygaca-seo-analyst`, `flygaca-docs-curator`.
+- **Product:** `flygaca-product-designer`, `flygaca-release-manager`, `flygaca-qa-driver`
+  (runs the app via the run-flygaca skill).
+
+When adding or renaming an agent, update this list. Agents are documentation too — keep both
+truthful.
 
 ## See Also
 

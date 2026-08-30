@@ -21,6 +21,7 @@ export const NAV: NavItem[] = [
   { to: '/chat', key: 'nav.captainAdel' },
   { to: '/tools', key: 'nav.tools' },
   { to: '/learn', key: 'nav.learn' },
+  { to: '/account', key: 'nav.account' },
 ];
 
 // The four destinations surfaced as quick-access tabs in the mobile bottom dock;

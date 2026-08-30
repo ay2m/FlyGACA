@@ -113,8 +113,10 @@ export function Guide() {
 
   if (!valid) return <NotFound />;
   const guideSlug = slug as GuideSlug;
-  const sections = t(`${base}.sections`, { returnObjects: true }) as unknown as Section[];
-  const takeaways = t(`${base}.takeaways`, { returnObjects: true }) as unknown as string[];
+  const sectionsRaw = t(`${base}.sections`, { returnObjects: true });
+  const sections = Array.isArray(sectionsRaw) ? (sectionsRaw as unknown as Section[]) : [];
+  const takeawaysRaw = t(`${base}.takeaways`, { returnObjects: true });
+  const takeaways = Array.isArray(takeawaysRaw) ? (takeawaysRaw as unknown as string[]) : [];
   const keyFactsRaw = t(`${base}.keyFacts`, { returnObjects: true });
   const keyFacts = Array.isArray(keyFactsRaw) ? (keyFactsRaw as unknown as KeyFact[]) : [];
   const intro = t(`${base}.intro`);
