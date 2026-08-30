@@ -536,3 +536,25 @@ html:active-view-transition .page-enter {
     translate: none !important;
   }
 }
+
+/* --- Night Vision Cockpit Red-Light Mode (EFB / Dark Adaptation) --- */
+:root[data-cockpit-mode='red'] {
+  --bg: #0d0000;
+  --surface: #1a0000;
+  --surface-raised: #2a0000;
+  --surface-sunken: #050000;
+  --text: #ff4d4d;
+  --text-muted: #cc2929;
+  --text-dim: #991f1f;
+  --border: #4d0000;
+  --border-bright: #800000;
+  --brand: #cc0000;
+  --brand-hover: #ff1a1a;
+  --text-on-brand: #ffffff;
+  --accent: #ff3333;
+  --accent-bright: #ff6666;
+  --link: #ff4d4d;
+  --focus: #ff1a1a;
+  --clay-shadow: 0 4px 12px rgba(255, 0, 0, 0.15);
+  --clay-border: 1px solid rgba(255, 51, 51, 0.3);
+}

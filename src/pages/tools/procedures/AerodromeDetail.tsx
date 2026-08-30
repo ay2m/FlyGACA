@@ -12,6 +12,14 @@ import { AirportTypeIcon } from '@/components/aerodrome/AirportTypeIcon';
 import { RunwayDiagram } from '@/components/aerodrome/RunwayDiagram';
 import { PositionMarker } from '@/components/aerodrome/PositionMarker';
 import { DaylightStrip } from '@/components/aerodrome/DaylightStrip';
+import {
+  fetchLiveMetar,
+  fetchLiveTaf,
+  type LiveMetarResult,
+  type LiveTafResult,
+} from '@/lib/services/weather';
+import { computeRunwayWind } from '@/calc/metar';
+import { describeWind, describeVisibility, describeWeather, describeClouds } from '@/lib/wxText';
 import styles from './Aerodromes.module.css';
 
 export function AerodromeDetail() {
@@ -27,6 +35,10 @@ export function AerodromeDetail() {
   // look there only when the core misses (so most lookups stay on the core file).
   const [extra, setExtra] = useState<Airport[] | null>(null);
   const [extraLoading, setExtraLoading] = useState(false);
+  const [liveMetar, setLiveMetar] = useState<LiveMetarResult | null>(null);
+  const [liveTaf, setLiveTaf] = useState<LiveTafResult | null>(null);
+  const [wxLoading, setWxLoading] = useState(false);
+
   useEffect(() => {
     if (!data || inCore || extra || extraLoading) return;
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -40,6 +52,23 @@ export function AerodromeDetail() {
       .catch(() => setExtra([]))
       .finally(() => setExtraLoading(false));
   }, [data, inCore, extra, extraLoading]);
+
+  useEffect(() => {
+    if (!code) return;
+    let live = true;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setWxLoading(true);
+    Promise.all([fetchLiveMetar(code), fetchLiveTaf(code)]).then(([m, taf]) => {
+      if (live) {
+        setLiveMetar(m);
+        setLiveTaf(taf);
+        setWxLoading(false);
+      }
+    });
+    return () => {
+      live = false;
+    };
+  }, [code]);
 
   const airport = inCore ?? extra?.find((a) => a.icao === code);
 
@@ -70,8 +99,8 @@ export function AerodromeDetail() {
 
   const adelPrompt = () =>
     ar
-      ? `أخبرني عن مطار ${name} (${a.icao}): المدارج والترددات والخدمات.`
-      : `Tell me about ${name} (${a.icao}): runways, frequencies and services.`;
+      ? `أخبرني عن مطار ${name} (${a.icao}): المدارج والترددات والخدمات والطقس.`
+      : `Tell me about ${name} (${a.icao}): runways, frequencies, services and weather.`;
 
   return (
     <CalcShell
@@ -179,6 +208,108 @@ export function AerodromeDetail() {
           </dl>
         </section>
       )}
+
+      {/* Live Aviation Weather (METAR / TAF) */}
+      <section className={styles.detailSection}>
+        <div className={styles.wxHeader}>
+          <h2 className={styles.detailH2} style={{ border: 'none', margin: 0, padding: 0 }}>
+            {t('aerodromesTool.weather')}
+          </h2>
+          {liveMetar && (
+            <span className={`${styles.wxCategory} ${styles[`cat${liveMetar.category}`]}`}>
+              {liveMetar.category}
+            </span>
+          )}
+        </div>
+
+        {wxLoading && <p className={styles.meta}>{t('common.loading')}</p>}
+
+        {liveMetar ? (
+          <div className={styles.wxCard}>
+            <pre className={styles.wxRaw}>{liveMetar.raw}</pre>
+            <dl className={styles.facts}>
+              <div className={styles.fact}>
+                <dt>{t('wx.wind')}</dt>
+                <dd>{describeWind(liveMetar.report.wind, t)}</dd>
+              </div>
+              <div className={styles.fact}>
+                <dt>{t('wx.visibility')}</dt>
+                <dd>
+                  {liveMetar.report.cavok
+                    ? t('wx.cavok')
+                    : describeVisibility(liveMetar.report.visibilityM, t)}
+                </dd>
+              </div>
+              <div className={styles.fact}>
+                <dt>{t('wx.temp')}</dt>
+                <dd>{liveMetar.report.tempC != null ? `${liveMetar.report.tempC} °C` : '—'}</dd>
+              </div>
+              <div className={styles.fact}>
+                <dt>{t('wx.qnh')}</dt>
+                <dd>
+                  {liveMetar.report.qnhHpa != null
+                    ? `${liveMetar.report.qnhHpa} hPa`
+                    : liveMetar.report.altimInHg != null
+                      ? `${liveMetar.report.altimInHg.toFixed(2)} inHg`
+                      : '—'}
+                </dd>
+              </div>
+              {liveMetar.report.weather.length > 0 && (
+                <div className={styles.fact}>
+                  <dt>{t('wx.weather')}</dt>
+                  <dd>{describeWeather(liveMetar.report.weather, t)}</dd>
+                </div>
+              )}
+              {liveMetar.report.clouds.length > 0 && (
+                <div className={styles.fact}>
+                  <dt>{t('wx.clouds')}</dt>
+                  <dd>{describeClouds(liveMetar.report.clouds, t)}</dd>
+                </div>
+              )}
+            </dl>
+
+            {/* Runway Crosswind Breakdown */}
+            {a.rwys.length > 0 &&
+              liveMetar.report.wind &&
+              typeof liveMetar.report.wind.dir === 'number' && (
+                <div className={styles.rowSection}>
+                  <span className={styles.rowLabel}>{t('aerodromesTool.rwyWindAnalysis')}</span>
+                  <ul className={styles.rwyList}>
+                    {a.rwys.map((r, i) => {
+                      const comp = computeRunwayWind(r.id, liveMetar.report.wind);
+                      if (!comp) return null;
+                      const isFavorable = comp.headwindKt >= 0;
+                      return (
+                        <li key={i} className={styles.rwyRow}>
+                          <span className={styles.rwyId}>{r.id}</span>
+                          <span className={isFavorable ? styles.rwyWindBest : styles.rwyMeta}>
+                            {comp.headwindKt >= 0
+                              ? `Headwind: ${comp.headwindKt} kt`
+                              : `Tailwind: ${Math.abs(comp.headwindKt)} kt`}
+                          </span>
+                          <span className={styles.rwyMeta}>
+                            {comp.crosswindKt > 0
+                              ? `Crosswind: ${comp.crosswindKt} kt (${comp.crosswindSide})`
+                              : 'Direct wind'}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+
+            {liveTaf && (
+              <div className={styles.rowSection} style={{ marginBlockStart: 'var(--space-2)' }}>
+                <span className={styles.rowLabel}>{t('tools.items.taf.name')}</span>
+                <pre className={styles.wxRaw}>{liveTaf.raw}</pre>
+              </div>
+            )}
+          </div>
+        ) : (
+          !wxLoading && <p className={styles.meta}>{t('aerodromesTool.noLiveWx')}</p>
+        )}
+      </section>
 
       <AerodromeScope
         center={{ lat: a.lat, lon: a.lon }}

@@ -1,0 +1,103 @@
+.cockpitFloatingBar {
+  position: fixed;
+  inset-block-end: var(--space-4);
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  color: var(--text, #fff);
+  font-family: var(--font-mono, monospace);
+  font-size: var(--fs-xs);
+  user-select: none;
+  transition: all var(--dur) var(--ease);
+}
+
+:global([data-cockpit-mode='red']) .cockpitFloatingBar {
+  background: rgba(30, 0, 0, 0.95);
+  border-color: #ff3333;
+  box-shadow: 0 0 20px rgba(255, 51, 51, 0.3);
+  color: #ff3333;
+}
+
+.zuluClock {
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.05em;
+  color: var(--accent-bright, #38bdf8);
+}
+
+:global([data-cockpit-mode='red']) .zuluClock {
+  color: #ff3333;
+}
+
+.divider {
+  inline-size: 1px;
+  block-size: 14px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+:global([data-cockpit-mode='red']) .divider {
+  background: rgba(255, 51, 51, 0.4);
+}
+
+.cockpitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  color: inherit;
+  font: inherit;
+  font-size: var(--fs-xs);
+  cursor: pointer;
+  padding: 2px 8px;
+  transition: all var(--dur) var(--ease);
+}
+
+.cockpitBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+:global([data-cockpit-mode='red']) .cockpitBtn:hover {
+  background: rgba(255, 51, 51, 0.2);
+  border-color: #ff3333;
+}
+
+.activeMode {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.popover {
+  position: absolute;
+  inset-block-end: calc(100% + var(--space-3));
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-3);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+  min-inline-size: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+:global([data-cockpit-mode='red']) .popover {
+  background: rgba(25, 0, 0, 0.98);
+  border-color: #ff3333;
+  color: #ff3333;
+}

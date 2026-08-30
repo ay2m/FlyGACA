@@ -142,3 +142,79 @@ export function parseMetar(raw: string): MetarReport {
   }
   return r;
 }
+
+export type FlightCategory = 'VFR' | 'MVFR' | 'IFR' | 'LIFR';
+
+/** Determines FAA/ICAO flight category from ceiling and visibility. */
+export function computeFlightCategory(r: MetarReport): FlightCategory {
+  if (r.cavok) return 'VFR';
+
+  const ceilingLayers = r.clouds.filter(
+    (c) => (c.cover === 'BKN' || c.cover === 'OVC' || c.cover === 'VV') && c.baseFt != null,
+  );
+  const ceilingFt =
+    ceilingLayers.length > 0 ? Math.min(...ceilingLayers.map((c) => c.baseFt as number)) : Infinity;
+
+  const visM = r.visibilityM ?? Infinity;
+
+  // LIFR: Ceiling < 500 ft and/or visibility < 1 statute mile (~1600m)
+  if (ceilingFt < 500 || visM < 1600) return 'LIFR';
+  // IFR: Ceiling 500 to < 1000 ft and/or visibility 1 to < 3 statute miles (~4800m)
+  if (ceilingFt < 1000 || visM < 4800) return 'IFR';
+  // MVFR: Ceiling 1000 to 3000 ft and/or visibility 3 to 5 statute miles (~8000m)
+  if (ceilingFt <= 3000 || visM <= 8000) return 'MVFR';
+  // VFR: Ceiling > 3000 ft and visibility > 5 statute miles
+  return 'VFR';
+}
+
+export interface RunwayWindComponent {
+  rwyId: string;
+  rwyHeading: number;
+  headwindKt: number; // positive = headwind, negative = tailwind
+  crosswindKt: number; // positive magnitude
+  crosswindSide: 'left' | 'right' | 'head' | 'tail';
+}
+
+/** Parses numeric heading from runway designator (e.g. "33L" -> 330°, "05" -> 50°). */
+export function parseRwyHeading(rwyId: string): number | null {
+  const m = String(rwyId || '')
+    .trim()
+    .toUpperCase()
+    .match(/^(\d{1,2})([LCR])?$/);
+  if (!m) return null;
+  const num = parseInt(m[1], 10);
+  if (num < 1 || num > 36) return null;
+  return num * 10;
+}
+
+/** Calculates headwind and crosswind components for a runway given current wind. */
+export function computeRunwayWind(rwyId: string, wind: Wind | null): RunwayWindComponent | null {
+  const rwyHeading = parseRwyHeading(rwyId);
+  if (rwyHeading == null || !wind || typeof wind.dir !== 'number' || wind.speedKt == null) {
+    return null;
+  }
+
+  const speed = wind.speedKt;
+  const diffRad = ((wind.dir - rwyHeading) * Math.PI) / 180;
+
+  const headwindKt = Math.round(speed * Math.cos(diffRad));
+  const rawCrosswind = Math.round(speed * Math.sin(diffRad));
+  const crosswindKt = Math.abs(rawCrosswind);
+
+  let crosswindSide: RunwayWindComponent['crosswindSide'];
+  if (crosswindKt === 0) {
+    crosswindSide = headwindKt >= 0 ? 'head' : 'tail';
+  } else if (rawCrosswind > 0) {
+    crosswindSide = 'right';
+  } else {
+    crosswindSide = 'left';
+  }
+
+  return {
+    rwyId,
+    rwyHeading,
+    headwindKt,
+    crosswindKt,
+    crosswindSide,
+  };
+}

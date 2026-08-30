@@ -341,3 +341,62 @@
 .back:hover {
   text-decoration: underline;
 }
+
+/* ── Live Weather section ────────────────────────────────────────────── */
+.wxCard {
+  border: var(--clay-border);
+  border-radius: var(--clay-radius);
+  background: color-mix(in srgb, var(--brand) 4%, var(--surface));
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.wxHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.wxCategory {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.catVFR {
+  background: color-mix(in srgb, #22c55e 15%, transparent);
+  color: #22c55e;
+  border: 1px solid #22c55e;
+}
+.catMVFR {
+  background: color-mix(in srgb, #3b82f6 15%, transparent);
+  color: #3b82f6;
+  border: 1px solid #3b82f6;
+}
+.catIFR {
+  background: color-mix(in srgb, #ef4444 15%, transparent);
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+.catLIFR {
+  background: color-mix(in srgb, #ec4899 15%, transparent);
+  color: #ec4899;
+  border: 1px solid #ec4899;
+}
+.wxRaw {
+  font-family: var(--font-mono, monospace);
+  font-size: var(--fs-sm);
+  background: var(--surface-sunken, rgba(0, 0, 0, 0.2));
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm, 6px);
+  overflow-x: auto;
+  word-break: break-all;
+}
+.rwyWindBest {
+  color: #22c55e;
+  font-weight: var(--fw-bold);
+}

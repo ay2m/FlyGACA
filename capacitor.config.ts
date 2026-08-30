@@ -1,5 +1,5 @@
 import type { CapacitorConfig } from '@capacitor/cli';
-import { FLAVORS, toFlavorId } from './src/flavors/registry';
+import { FLAVORS, toFlavorId } from './src/flavors/registry.ts';
 
 // APP_FLAVOR selects a standalone prep app (set by scripts/flavor-ios.mjs /
 // build-flavor.mjs); unset resolves to `main` — the full Fly GACA shell.

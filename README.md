@@ -14,8 +14,8 @@
 
 <p>
   <a href="../../actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/ay2m/FlyGACA/ci.yml?branch=main&style=for-the-badge&label=CI&labelColor=0a0e12&color=8fc9a8" alt="CI status" /></a>
-  <img src="https://img.shields.io/badge/tests-2%2C388-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="2,388 tests" />
-  <img src="https://img.shields.io/badge/bundle-160%20kB%20gz-2d6e8a?style=for-the-badge&labelColor=0a0e12" alt="160 kB gzipped" />
+  <img src="https://img.shields.io/badge/tests-2%2C392-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="2,392 tests" />
+  <img src="https://img.shields.io/badge/bundle-146.8%20kB%20gz-2d6e8a?style=for-the-badge&labelColor=0a0e12" alt="146.8 kB gzipped" />
   <img src="https://img.shields.io/badge/i18n-EN%20%E2%87%84%20AR-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="English and Arabic" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-c9a86a?style=for-the-badge&labelColor=0a0e12" alt="MIT" /></a>
 </p>
@@ -46,10 +46,13 @@ The Saudi regulatory corpus, made searchable — plus the tools you'd otherwise 
 |---|---|
 | 📚 **Regulatory library** | 74 GACAR Parts and 211 reference documents, full-text searchable, deep-linkable to the section. Offline-capable. |
 | <img src="public/img/captain/avatar-256.png" width="72" alt="Captain Adel — the Fly GACA AI pilot assistant" /><br />🤖 **Captain Adel** | RAG over the corpus, generated over an OpenAI-compatible endpoint (**Gemini** by default; provider is config, so an in-Kingdom ALLaM is a drop-in swap). Answers cite the Part/section they came from, and refuse when retrieval comes up empty. |
-| 🧮 **55 flight tools** | Crosswind, ISA, TAS, holding entries, runway performance, weight & balance, METAR/TAF decoding — pure, tested math, state in the URL so any result is a link. |
+| 🧮 **55+ flight tools & Live NOAA Wx** | Real-time NOAA METAR/TAF weather feed for 61 Saudi aerodromes (`OE**`), flight categories (`VFR/MVFR/IFR/LIFR`), runway crosswind resolvers, ISA, TAS, holding entries, runway performance, weight & balance. |
+| 🛂 **License conversion wizard** | Interactive 5-step GACAR Part 61/67 foreign license conversion pathway calculator (FAA, EASA, UK CAA, ICAO → GACA PPL/CPL/ATPL). |
+| 🏫 **Flight school admin dashboard** | Real-time cohort health score, weak-area analytics by GACAR subject, cadet drill-down modal, and stage-check readiness tracking for Part 141 ATOs. |
+| 📱 **iPadOS EFB cockpit mode** | Red-light night vision theme (`data-cockpit-mode="red"`), floating cockpit bar with live UTC/Zulu clock, emergency frequencies (`121.500 MHz` / squawk `7500/7600/7700`), and screen wake-lock. |
+| 🧾 **ZATCA Phase 2 e-invoicing** | Production UBL 2.1 XML generation, SHA-256 canonical hashing, and Phase 2 TLV QR code encoding for B2B flight academy billing. |
 | 🎓 **Study** | 1,000 questions across 26 banks, flashcards with spaced repetition, ground school, timed mock exams, and per-certificate prep packs. |
 | 🛩️ **Logbook & currency** | Flights, landings, ratings and medicals — with the calendar-month maths the regulation actually specifies. |
-| 🗺️ **Aerodrome radar scope** | A per-aerodrome scope with the field's nearby control zones, drawn from a deterministic training scenario. Pure sim logic, no live data. |
 | 🌐 **Bilingual, RTL-first** | English ⇄ Arabic across every surface, with the whole route tree mirrored under `/ar`. |
 
 <div align="center">
@@ -207,7 +210,7 @@ the full audit is the caution in [`CLAUDE.md`](CLAUDE.md#hosting--deploy).
 | `npm run build` | sitemap → `tsc -b` → vite → prerender `<head>` → SEO gates |
 | `npm run build:deploy` | **what a deploy runs**: `build` + full-body prerender + coverage gate + IndexNow |
 | `npm run verify` | **the gate**: typecheck · lint · format · test · build · bundle + perf budgets |
-| `npm test` / `npm run server:test` | 1,787 frontend · 601 server |
+| `npm test` / `npm run server:test` | 1,787 frontend · 605 server |
 | `npm run test:e2e` | Playwright smoke + axe accessibility |
 | `npm run server:dev` | API with watch-rebuild |
 | `npm run sync:gaca` / `data:normalize` | pull and normalise the regulatory corpus |

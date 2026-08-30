@@ -84,3 +84,4 @@ __pycache__/
 *.py[cod]
 public/data/airports-shards/
 public/data/library-shards/
+.env*

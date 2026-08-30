@@ -262,3 +262,106 @@
   flex-direction: column;
   gap: 2px;
 }
+
+/* ── GACAR Subject Breakdown & Weak Area Metrics ── */
+.subjectSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-block: var(--space-3);
+}
+
+.subjectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-3);
+}
+
+.subjectCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--clay-radius);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.subjectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+}
+
+.progressBar {
+  block-size: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-subtle, rgba(255, 255, 255, 0.1));
+  overflow: hidden;
+  inline-size: 100%;
+}
+
+.progressFill {
+  block-size: 100%;
+  border-radius: var(--radius-pill);
+  transition: inline-size var(--dur) var(--ease);
+}
+
+.fillGood {
+  background: #22c55e;
+}
+
+.fillWarning {
+  background: #f59e0b;
+}
+
+.fillDanger {
+  background: #ef4444;
+}
+
+.weakAlert {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  font-size: var(--fs-xs);
+  color: var(--text);
+}
+
+.clickableRow {
+  cursor: pointer;
+  transition: background var(--dur) var(--ease);
+}
+
+.clickableRow:hover {
+  background: color-mix(in srgb, var(--brand) 5%, var(--surface));
+}
+
+.filterStrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block-end: var(--space-2);
+}
+
+.filterBtn {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-bright);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+}
+
+.filterBtnActive {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: var(--text-on-brand);
+}

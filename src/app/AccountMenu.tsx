@@ -87,7 +87,7 @@ export function AccountMenu() {
           <span className={styles.accountItemIcon}>
             <DockIcon route="/account" />
           </span>
-          </NavLink>
+        </NavLink>
       </div>
     </details>
   );

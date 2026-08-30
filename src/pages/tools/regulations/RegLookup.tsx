@@ -97,14 +97,4 @@ export const FuelReserves = () => (
   />
 );
 
-export const ConversionChecker = () => (
-  <RegLookup
-    id="conversion-checker"
-    base="conversion"
-    columns={[
-      { field: 'title', labelKey: 'conversion.stepCol' },
-      { field: 'desc', labelKey: 'reg.detailCol' },
-    ]}
-    adelPrompt="What are the steps to convert a foreign pilot licence to a GACA licence?"
-  />
-);
+export { ConversionWizard as ConversionChecker } from './ConversionWizard';
