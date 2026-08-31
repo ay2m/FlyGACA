@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import { Warning } from '@phosphor-icons/react';
 import { RequireSession } from './RequireSession';
 import { BrandMark } from '@/components/BrandMark';
 import { AmbientGlow } from '@/components/AmbientGlow';
@@ -297,7 +298,9 @@ function Inner() {
         <div className={styles.alertCardWrapper}>
           <BentoCard span="wide" tone="clay" className={styles.alertBentoCard}>
             <div className={styles.alertContent}>
-              <span className={styles.alertIcon}>⚠️</span>
+              <span className={styles.alertIcon}>
+                <Warning size={22} weight="fill" aria-hidden="true" />
+              </span>
               <div className={styles.alertText}>
                 <h3>{t('dashboard.actionNeeded')}</h3>
                 <p>{t('dashboard.currencyExpiring')}</p>

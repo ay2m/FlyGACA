@@ -64,12 +64,14 @@ export function Metar() {
               style={{
                 padding: 'var(--space-1) var(--space-3)',
                 borderRadius: 'var(--radius-pill)',
-                border: '1px solid var(--border-bright)',
-                background: 'var(--surface)',
+                border: '1px solid color-mix(in srgb, var(--border-bright) 40%, transparent)',
+                background: 'color-mix(in srgb, var(--surface-raised) 70%, transparent)',
                 color: 'var(--text)',
+                font: 'inherit',
                 fontSize: 'var(--fs-xs)',
                 fontWeight: 'var(--fw-semibold)',
                 cursor: 'pointer',
+                transition: 'all var(--dur) var(--ease)',
               }}
             >
               {loadingStation === st.icao ? '...' : `${st.icao} (${ar ? st.nameAr : st.iata})`}
