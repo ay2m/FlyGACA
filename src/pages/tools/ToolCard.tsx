@@ -79,12 +79,30 @@ export function ToolCard({
       >
         <span className={styles.catBar} aria-hidden="true" />
         <span className={styles.cardHead}>
-          <CategoryIcon cat={tool.category} size={18} className={styles.cardIcon} />
+          <span className={styles.iconWell}>
+            <CategoryIcon cat={tool.category} size={20} className={styles.cardIcon} />
+          </span>
           <h3 className={styles.cardTitle}>{highlight(name, query)}</h3>
           {tool.badge === 'new' && <span className={styles.badge}>{t('tools.new')}</span>}
         </span>
         <p className={styles.blurb}>{highlight(blurb, query)}</p>
-        <span className={styles.cta}>{t('tools.open')}</span>
+        <span className={styles.cta}>
+          <span>{t('tools.open')}</span>
+          <svg
+            className={styles.ctaArrow}
+            viewBox="0 0 24 24"
+            width="15"
+            height="15"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </span>
       </Link>
     </li>
   );

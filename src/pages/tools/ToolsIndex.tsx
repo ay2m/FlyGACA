@@ -218,7 +218,8 @@ export function ToolsIndex() {
             aria-pressed={unfiltered}
             onClick={() => setCategory('all')}
           >
-            {t('tools.allCategories')}
+            <span>{t('tools.allCategories')}</span>
+            <span className={styles.filterCount}>{matches.length}</span>
           </button>
           {TOOL_CATEGORIES.filter((cat) => (catCount.get(cat) ?? 0) > 0).map((cat) => (
             <button
@@ -230,7 +231,8 @@ export function ToolsIndex() {
               style={{ '--cat-color': catTone(cat) } as CSSProperties}
             >
               <CategoryIcon cat={cat} size={16} />
-              {t(`tools.categories.${cat}`)}
+              <span>{t(`tools.categories.${cat}`)}</span>
+              <span className={styles.filterCount}>{catCount.get(cat) ?? 0}</span>
             </button>
           ))}
         </div>
