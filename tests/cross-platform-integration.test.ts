@@ -12,7 +12,7 @@
  * the same business logic (SRS intervals, exam scoring, mastery detection).
  */
 
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 
 // ============================================================================
 // Mock API & Firestore
@@ -66,7 +66,7 @@ const sessions = new Map<string, { userId: string; refreshToken: string; expires
 let tokenCounter = 0;
 
 // Mock API server responses
-async function mockSignUp(email: string, password: string): Promise<AuthResponse> {
+async function mockSignUp(email: string, _password: string): Promise<AuthResponse> {
   const uid = `user_${Date.now()}_${tokenCounter++}`;
   const now = new Date();
   users.set(uid, { uid, email, createdAt: now.toISOString() });
@@ -89,7 +89,7 @@ async function mockSignUp(email: string, password: string): Promise<AuthResponse
   };
 }
 
-async function mockSignIn(email: string, password: string): Promise<AuthResponse> {
+async function mockSignIn(email: string, _password: string): Promise<AuthResponse> {
   const user = Array.from(users.values()).find((u) => u.email === email);
   if (!user) {
     throw new Error('User not found');
@@ -212,16 +212,9 @@ async function mockFetchEntitlements(userId: string): Promise<EntitlementGrant[]
 
 describe('Cross-Platform Integration', () => {
   let testUserId: string;
-  let testTokens: AuthToken;
 
   beforeEach(() => {
     testUserId = '';
-    testTokens = {
-      idToken: '',
-      refreshToken: '',
-      expiresIn: 0,
-      issuedAt: 0,
-    };
   });
 
   afterEach(() => {
@@ -236,7 +229,6 @@ describe('Cross-Platform Integration', () => {
       // iOS: sign up
       const signUpResp = await mockSignUp('alice@example.com', 'password123');
       testUserId = signUpResp.user.uid;
-      testTokens = signUpResp.tokens;
 
       expect(signUpResp.user.uid).toBeDefined();
       expect(signUpResp.tokens.idToken).toBeDefined();
@@ -249,7 +241,7 @@ describe('Cross-Platform Integration', () => {
 
     it('iOS & web both sign in, get independent tokens', async () => {
       // Sign up first
-      const signUpResp = await mockSignUp('bob@example.com', 'password123');
+      await mockSignUp('bob@example.com', 'password123');
 
       // iOS signs in
       const iosSignIn = await mockSignIn('bob@example.com', 'password123');

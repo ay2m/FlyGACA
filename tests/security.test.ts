@@ -11,7 +11,7 @@
  * - HttpOnly JWT (never in localStorage, cookies only)
  */
 
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 
 // ============================================================================
 // Security test utilities
@@ -38,14 +38,14 @@ interface JWTPayload {
   iss: string; // issuer
 }
 
-function validateJWT(token: string, secret: string): JWTPayload {
+function validateJWT(token: string, _secret: string): JWTPayload {
   // Simulate JWT validation
   const parts = token.split('.');
   if (parts.length !== 3) {
     throw new Error('Invalid JWT structure: must have 3 parts');
   }
 
-  const [headerB64, payloadB64, signatureB64] = parts;
+  const payloadB64 = parts[1];
 
   // Validate base64 encoding
   try {
@@ -69,7 +69,7 @@ function validateJWT(token: string, secret: string): JWTPayload {
 
     return payload as JWTPayload;
   } catch (e) {
-    throw new Error(`JWT validation failed: ${(e as Error).message}`);
+    throw new Error(`JWT validation failed: ${(e as Error).message}`, { cause: e });
   }
 }
 
@@ -257,6 +257,7 @@ describe('Security Tests', () => {
       // In actual code, this would be: connection.query(query, params)
       // The parameter is never concatenated into the query string
       expect(query).not.toContain(userId);
+      expect(params).toEqual([userId]); // the payload rides in params, not the SQL
       reportSecurityTest('SQL injection prevention via parameterized queries', true);
     });
 
