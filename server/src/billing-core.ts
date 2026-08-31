@@ -173,7 +173,7 @@ export function isPaidActive(
   ent: Entitlement | null | undefined,
   now: Date = new Date(),
 ): boolean {
-  return effectivePlan(ent, now) !== "free";
+  return actualPlan(ent, now) !== "free";
 }
 
 /** Days of Pro access granted by one Exam Season Pass purchase. */
