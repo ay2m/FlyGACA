@@ -1,14 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
+import { AirTrafficControl, ClipboardText, Compass, Sparkle } from '@phosphor-icons/react';
 import { CaptainAvatar } from '@/components/CaptainAvatar';
 import { StatusPill } from '@/components/StatusPill';
 import styles from './Chat.module.css';
 
 /** Topic-grouped starter prompts shown on the empty-state welcome. */
-const GROUPS: { id: string; items: string[] }[] = [
-  { id: 'airspace', items: ['s1', 's5'] },
-  { id: 'licensing', items: ['s2', 's6'] },
-  { id: 'operations', items: ['s3', 's4'] },
+const GROUPS = [
+  { id: 'airspace', Icon: AirTrafficControl, items: ['s1', 's5'] },
+  { id: 'licensing', Icon: ClipboardText, items: ['s2', 's6'] },
+  { id: 'operations', Icon: Compass, items: ['s3', 's4'] },
 ];
 const SUGGESTION_KEYS = ['s1', 's2', 's3', 's4', 's5', 's6'];
 /** Capability chips on the welcome screen (label key → StatusPill tone). */
@@ -33,18 +34,24 @@ export function ChatWelcome({ onAsk }: { onAsk: (q: string) => void }) {
         ))}
       </div>
       <div className={styles.groups}>
-        {GROUPS.map((g) => (
-          <div key={g.id} className={styles.group}>
-            <span className={styles.groupLabel}>{t(`chat.groups.${g.id}`)}</span>
+        {GROUPS.map(({ id, Icon, items }) => (
+          <div key={id} className={styles.group}>
+            <span className={styles.groupLabel}>
+              <Icon size={14} className={styles.groupIcon} aria-hidden="true" />
+              <span>{t(`chat.groups.${id}`)}</span>
+            </span>
             <div className={styles.suggestions}>
-              {g.items.map((s) => (
+              {items.map((s) => (
                 <button
                   key={s}
                   type="button"
                   className={styles.suggestion}
                   onClick={() => onAsk(t(`chat.suggestions.${s}`))}
                 >
-                  {t(`chat.suggestions.${s}`)}
+                  <span>{t(`chat.suggestions.${s}`)}</span>
+                  <span className={styles.suggestionArrow} aria-hidden="true">
+                    →
+                  </span>
                 </button>
               ))}
             </div>
@@ -60,7 +67,8 @@ export function ChatWelcome({ onAsk }: { onAsk: (q: string) => void }) {
             onAsk(t(`chat.suggestions.${k}`));
           }}
         >
-          {t('chat.surprise')}
+          <Sparkle size={16} weight="fill" aria-hidden="true" />
+          <span>{t('chat.surprise')}</span>
         </button>
         <Link to="/library" className={styles.welcomeLink}>
           {t('chat.exploreLibrary')}

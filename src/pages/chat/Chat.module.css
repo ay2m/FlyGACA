@@ -149,41 +149,65 @@
   gap: var(--space-2);
 }
 .groupLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
   font-size: var(--fs-xs);
   font-weight: var(--fw-semibold);
   text-transform: uppercase;
   letter-spacing: var(--tracking-caps);
   color: var(--text-dim);
 }
+.groupIcon {
+  color: var(--brand-hover);
+  flex: none;
+}
 
 .suggestions {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: var(--space-2);
-  justify-content: center;
   margin-block-start: var(--space-1);
 }
 
 .suggestion {
   min-height: 44px;
-  padding: var(--space-2) var(--space-4);
-  border: var(--hairline-bright);
-  border-radius: var(--radius-pill);
-  background: var(--surface-raised);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid color-mix(in srgb, var(--border-bright) 35%, transparent);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--surface-raised) 70%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--text);
   font-size: var(--fs-sm);
   text-align: start;
-  transition: var(--transition-interactive);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  cursor: pointer;
+  transition: all var(--dur) var(--ease);
 }
 .suggestion:hover {
   border-color: var(--brand-hover);
   color: var(--brand-hover);
-  box-shadow: var(--clay-shadow-hover);
+  background: color-mix(in srgb, var(--brand) 12%, transparent);
+  box-shadow: 0 4px 16px -2px color-mix(in srgb, var(--brand) 20%, transparent);
   transform: translateY(-1px);
 }
 .suggestion:active {
-  transform: scale(0.97);
-  box-shadow: var(--clay-shadow-press);
+  transform: scale(0.985);
+}
+.suggestionArrow {
+  color: var(--brand-hover);
+  font-weight: var(--fw-bold);
+  transition: transform var(--dur) var(--ease);
+}
+.suggestion:hover .suggestionArrow {
+  transform: translateX(3px);
+}
+:global(html[dir='rtl']) .suggestion:hover .suggestionArrow {
+  transform: translateX(-3px) scaleX(-1);
 }
 
 /* Welcome footer: "Surprise me" + quick links out to Library / Tools. */
@@ -192,24 +216,27 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: var(--space-2) var(--space-3);
-  margin-block-start: var(--space-1);
+  gap: var(--space-3);
+  margin-block-start: var(--space-2);
 }
 .surprise {
   min-height: 40px;
   padding: var(--space-2) var(--space-5);
-  border: 1px solid var(--brand-hover);
+  border: 1px solid color-mix(in srgb, var(--brand) 60%, transparent);
   border-radius: var(--radius-pill);
-  background: color-mix(in srgb, var(--brand) 10%, transparent);
+  background: color-mix(in srgb, var(--brand) 12%, transparent);
   color: var(--brand-hover);
   font-size: var(--fs-sm);
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-bold);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   cursor: pointer;
-  transition: var(--transition-interactive);
+  transition: all var(--dur) var(--ease);
 }
 .surprise:hover {
-  background: color-mix(in srgb, var(--brand) 18%, transparent);
-  box-shadow: var(--clay-shadow-hover);
+  background: color-mix(in srgb, var(--brand) 22%, transparent);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--brand) 25%, transparent);
   transform: translateY(-1px);
 }
 .surprise:active {
@@ -217,7 +244,13 @@
 }
 .welcomeLink {
   font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
   color: var(--link);
+  transition: color var(--dur) var(--ease);
+}
+.welcomeLink:hover {
+  color: var(--brand-hover);
+  text-decoration: underline;
 }
 
 /* ── Message bubbles ── */
@@ -467,14 +500,14 @@
 /* Chat Bento custom columns */
 .chatMainCard {
   grid-column: span 8 !important;
-  height: calc(100vh - 180px);
-  min-height: 600px;
+  height: clamp(520px, calc(100dvh - 170px), 760px);
+  min-height: 520px;
 }
 
 .chatSideCard {
   grid-column: span 4 !important;
-  height: calc(100vh - 180px);
-  min-height: 600px;
+  height: clamp(520px, calc(100dvh - 170px), 760px);
+  min-height: 520px;
 }
 
 @media (max-width: 960px) {
@@ -482,7 +515,7 @@
   .chatSideCard {
     grid-column: 1 / -1 !important;
     height: auto;
-    min-height: 400px;
+    min-height: 440px;
   }
   .chatSideCard {
     min-height: auto;
