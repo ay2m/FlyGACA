@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import { Star } from '@phosphor-icons/react';
 import { CORPUS } from '@/lib/content';
 import type { CorpusDoc, LibraryKind } from '@/lib/content';
 import styles from './Library.module.css';
@@ -55,7 +56,7 @@ export function LibraryDocItem({
           aria-label={t(marked ? 'library.unbookmark' : 'library.bookmark')}
           onClick={onToggleBookmark}
         >
-          {marked ? '★' : '☆'}
+          <Star size={18} weight={marked ? 'fill' : 'regular'} aria-hidden="true" />
         </button>
       </li>
     );
@@ -70,7 +71,7 @@ export function LibraryDocItem({
         aria-label={t(marked ? 'library.unbookmark' : 'library.bookmark')}
         onClick={onToggleBookmark}
       >
-        {marked ? '★' : '☆'}
+        <Star size={18} weight={marked ? 'fill' : 'regular'} aria-hidden="true" />
       </button>
       <Link
         to={`${CORPUS[kind].base}/${d.slug}`}
@@ -87,7 +88,10 @@ export function LibraryDocItem({
         <span className={styles.cardTitle}>{d.title}</span>
         <span className={styles.cardFoot}>
           <span className={styles.cat}>{categoryLabel(d.category)}</span>
-          <span className={styles.open}>{t('common.open')} →</span>
+          <span className={styles.open}>
+            <span>{t('common.open')}</span>
+            <span aria-hidden="true"> →</span>
+          </span>
         </span>
       </Link>
     </li>
