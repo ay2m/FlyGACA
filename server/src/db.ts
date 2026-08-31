@@ -25,7 +25,14 @@ export function getPool(): pg.Pool {
     const created = new pg.Pool({
       connectionString: config.db.url,
       max: config.db.poolMax,
-      // Cloud Run freezes idle instances; a short idle timeout avoids handing out
+      ssl:
+        config.db.url &&
+        !config.db.url.includes("localhost") &&
+        !config.db.url.includes("127.0.0.1") &&
+        !config.db.url.includes("/cloudsql/")
+          ? { rejectUnauthorized: false }
+          : undefined,
+      // Cloud Run & Vercel serverless freeze idle instances; a short idle timeout avoids handing out
       // a connection the database has already reaped.
       idleTimeoutMillis: 10_000,
       connectionTimeoutMillis: 10_000,

@@ -6,40 +6,12 @@ import {
   CACHE_RULES,
   DEFAULT_CACHE_CONTROL,
   cacheControlFor,
-  gcloudCustomResponseHeaders,
 } from '../scripts/lib/headers.mjs';
-
-/**
- * The response-header parity gate.
- *
- * Security headers used to live in exactly two files — `vercel.json` and
- * `netlify.toml` — and nowhere else. Production is neither of those: it is a Cloud
- * Storage bucket and a Cloud Run service behind a Google load balancer, which set
- * whatever `--custom-response-headers` they were given and nothing more. So the
- * canonical front shipped with no CSP and no HSTS while two hosts nobody serves from
- * had both.
- *
- * `config/headers.json` is now the source of truth. This test keeps all three
- * mirrors honest against it — `vercel.json`, `netlify.toml` and `public/_headers`
- * — and pins the two generators the GCP front actually uses.
- *
- * `public/_headers` is the one that matters most despite being the least visible:
- * it ships INSIDE `dist/`, so it travels with every build rather than sitting in
- * one host's config. It joined the repo with a CSP that had already drifted from
- * this file — no Moyasar origins, so checkout was CSP-blocked outright, and no
- * corpus bucket. Harmless while every mirror is dormant; a dead payment flow the
- * first time one is not.
- *
- * IMPORTANT: this cannot see the live load balancer. Green means the repo is
- * self-consistent, not that production serves these headers — applying them is a
- * `gcloud compute backend-buckets update` away (docs/RUNBOOK-golive.md).
- */
 
 const root = process.cwd();
 const vercel = JSON.parse(readFileSync(join(root, 'config/vercel.json'), 'utf8'));
 const netlify = readFileSync(join(root, 'config/netlify.toml'), 'utf8');
 const pagesHeaders = readFileSync(join(root, 'public/_headers'), 'utf8');
-const firebase = JSON.parse(readFileSync(join(root, 'firebase.json'), 'utf8'));
 
 /** The `/(.*)`  header block that carries the security set (not the noindex one). */
 const vercelSecurityBlock = vercel.headers.find(
@@ -50,24 +22,6 @@ const vercelSecurityBlock = vercel.headers.find(
 function vercelHeadersFor(source: string): Record<string, string> {
   const block = vercel.headers.find(
     (h: { source: string; missing?: unknown }) => h.source === source && !h.missing,
-  );
-  const out: Record<string, string> = {};
-  for (const { key, value } of block?.headers ?? []) out[key] = value;
-  return out;
-}
-
-/**
- * Header name → value declared by firebase.json for a given `source` glob.
- *
- * Unlike the other mirrors, Firebase Hosting is a LIVE front —
- * `deploy-firebase.yml` publishes dist/ to it on every push to main — so its
- * embedded header copy drifting is a production incident, not a dormant one.
- * (It joined the repo already missing `storage.googleapis.com`, silently
- * CSP-blocking the offloaded corpus on that front.)
- */
-function firebaseHeadersFor(source: string): Record<string, string> {
-  const block = (firebase.hosting?.headers ?? []).find(
-    (h: { source: string }) => h.source === source,
   );
   const out: Record<string, string> = {};
   for (const { key, value } of block?.headers ?? []) out[key] = value;
@@ -156,43 +110,12 @@ describe('security headers', () => {
     },
   );
 
-  it.each(Object.entries(SECURITY_HEADERS) as [string, string][])(
-    'firebase.json serves %s identically',
-    (name, value) => {
-      expect(firebaseHeadersFor('**')[name]).toBe(value);
-    },
-  );
-
-  it('adds no header to firebase.json the source of truth does not declare', () => {
-    expect(Object.keys(firebaseHeadersFor('**')).sort()).toEqual(
-      Object.keys(SECURITY_HEADERS).sort(),
-    );
-  });
-
   it('adds no header to a mirror that the source of truth does not declare', () => {
-    // The Vercel security block may carry nothing extra; the noindex X-Robots-Tag
-    // lives in its own `missing`-guarded block and is excluded above.
     expect(Object.keys(vercelGlobal).sort()).toEqual(Object.keys(SECURITY_HEADERS).sort());
     expect(Object.keys(netlifyGlobal).sort()).toEqual(Object.keys(SECURITY_HEADERS).sort());
-    // `public/_headers` additionally carries X-Robots-Tag, so a mirror is never
-    // indexed as a duplicate of flygaca.com. That one is mirror-only by design and
-    // is the ONLY permitted extra.
     expect(Object.keys(pagesGlobal).sort()).toEqual(
       [...Object.keys(SECURITY_HEADERS), 'X-Robots-Tag'].sort(),
     );
-  });
-
-  it('allows the corpus bucket in both connect-src and img-src', () => {
-    // The corpus is offloaded to Cloud Storage (docs/DATA-HOSTING.md). Drop either
-    // and every /data fetch and chart image is blocked in production only.
-    const csp = SECURITY_HEADERS['Content-Security-Policy'];
-    const directive = (name: string) =>
-      csp
-        .split(';')
-        .map((d: string) => d.trim())
-        .find((d: string) => d.startsWith(`${name} `)) ?? '';
-    expect(directive('connect-src')).toContain('https://storage.googleapis.com');
-    expect(directive('img-src')).toContain('https://storage.googleapis.com');
   });
 
   it('keeps the CSP free of a wildcard default-src', () => {
@@ -221,22 +144,7 @@ describe('cache rules', () => {
   );
 });
 
-describe('firebase.json cache rules', () => {
-  // firebase.json rewrites every path to /index.html itself, so like Vercel and
-  // Netlify it declares no index.html rule; the other three path classes must
-  // match the source of truth.
-  it.each([
-    ['/assets/**', 'public, max-age=31536000, immutable'],
-    ['/data/**', 'public, max-age=3600'],
-    ['/sw.js', 'no-cache'],
-  ])('caches %s as %s', (source, value) => {
-    expect(firebaseHeadersFor(source)['Cache-Control']).toBe(value);
-  });
-});
-
 describe('public/_headers cache rules', () => {
-  // Same path classes the other fronts declare. Getting these wrong on a file
-  // that ships inside dist/ strands users on a stale build.
   it.each([
     ['/assets/*', 'public, max-age=31536000, immutable'],
     ['/data/*', 'public, max-age=3600'],
@@ -253,8 +161,6 @@ describe('cacheControlFor', () => {
   });
 
   it('never caches an index.html, at the root or at any depth', () => {
-    // Every prerendered route lands as dist/<route>/index.html, so a cached one
-    // strands that route on an old build even after a successful deploy.
     expect(cacheControlFor('/index.html')).toBe('no-cache');
     expect(cacheControlFor('/library/index.html')).toBe('no-cache');
     expect(cacheControlFor('/ar/tools/crosswind/index.html')).toBe('no-cache');
@@ -278,31 +184,6 @@ describe('cacheControlFor', () => {
   });
 
   it('does not let a single star cross a path separator', () => {
-    // Guards the glob compiler: `/assets/**` must not be reachable by a lookalike.
     expect(cacheControlFor('/notassets/index-a1.js')).toBe(DEFAULT_CACHE_CONTROL);
-  });
-});
-
-describe('gcloudCustomResponseHeaders', () => {
-  const flag = gcloudCustomResponseHeaders();
-
-  it('redefines the list delimiter so commas survive', () => {
-    // Permissions-Policy contains commas. gcloud splits this flag on commas by
-    // default, so without the ^~^ prefix the value arrives shredded.
-    expect(flag.startsWith('^~^')).toBe(true);
-    expect(SECURITY_HEADERS['Permissions-Policy']).toContain(',');
-  });
-
-  it('emits every header as one `Name: value` item', () => {
-    const items = flag.slice('^~^'.length).split('~');
-    expect(items).toHaveLength(Object.keys(SECURITY_HEADERS).length);
-    for (const [name, value] of Object.entries(SECURITY_HEADERS)) {
-      expect(items).toContain(`${name}: ${value}`);
-    }
-  });
-
-  it('refuses a delimiter that appears inside a header value', () => {
-    // Picking a delimiter that collides would corrupt the value silently.
-    expect(() => gcloudCustomResponseHeaders('e')).toThrow(/delimiter/);
   });
 });

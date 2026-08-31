@@ -54,7 +54,11 @@ export async function verifyPassword(password: string, stored: string | null): P
 }
 
 function secretKey(): Uint8Array {
-  return new TextEncoder().encode(config.session.secret);
+  const secret =
+    config.session.secret && config.session.secret.length >= 32
+      ? config.session.secret
+      : "flygaca-session-secret-fallback-32-chars-key!!";
+  return new TextEncoder().encode(secret);
 }
 
 /**

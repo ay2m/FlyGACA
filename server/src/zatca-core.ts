@@ -3,7 +3,7 @@
  * Generates UBL 2.1 compliant XML, SHA-256 canonical hashing, and Phase 2 TLV QR codes.
  */
 
-import { createHash, createSign } from 'node:crypto';
+import { createHash } from 'node:crypto';
 
 export interface ZatcaSellerInfo {
   name: string;
