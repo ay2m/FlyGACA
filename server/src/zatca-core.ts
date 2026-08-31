@@ -3,7 +3,7 @@
  * Generates UBL 2.1 compliant XML, SHA-256 canonical hashing, and Phase 2 TLV QR codes.
  */
 
-import { createHash, createSign } from 'node:crypto';
+import { createHash } from "node:crypto";
 
 export interface ZatcaSellerInfo {
   name: string;
@@ -17,14 +17,14 @@ export interface ZatcaSellerInfo {
 }
 
 export const BDA_SELLER_INFO: ZatcaSellerInfo = {
-  name: 'BDA Company International',
-  vatNumber: '311415259500003',
-  crNumber: '7030976893',
-  buildingNumber: '2816',
-  streetName: 'King Fahd Rd',
-  district: 'Al Sahafah Dist.',
-  city: 'Riyadh',
-  postalCode: '13321-6548',
+  name: "BDA Company International",
+  vatNumber: "311415259500003",
+  crNumber: "7030976893",
+  buildingNumber: "2816",
+  streetName: "King Fahd Rd",
+  district: "Al Sahafah Dist.",
+  city: "Riyadh",
+  postalCode: "13321-6548",
 };
 
 export interface ZatcaInvoiceLineItem {
@@ -40,8 +40,8 @@ export interface ZatcaInvoiceInput {
   uuid: string;
   issueDate: string; // YYYY-MM-DD
   issueTime: string; // HH:MM:SS
-  invoiceType: '388'; // Standard Tax Invoice (B2B) or Simplified (B2C)
-  subtype: '0100000' | '0200000'; // Standard (01) or Simplified (02)
+  invoiceType: "388"; // Standard Tax Invoice (B2B) or Simplified (B2C)
+  subtype: "0100000" | "0200000"; // Standard (01) or Simplified (02)
   buyerName: string;
   buyerVatNumber?: string;
   buyerAddress?: string;
@@ -63,7 +63,7 @@ export interface ZatcaQrParams {
 
 /** Encodes a Tag-Length-Value (TLV) field per ZATCA Phase 2 specification. */
 export function encodeTlvField(tag: number, value: string | Buffer): Buffer {
-  const buf = typeof value === 'string' ? Buffer.from(value, 'utf8') : value;
+  const buf = typeof value === "string" ? Buffer.from(value, "utf8") : value;
   const tagBuf = Buffer.from([tag]);
   const lenBuf = Buffer.from([buf.length]);
   return Buffer.concat([tagBuf, lenBuf, buf]);
@@ -93,12 +93,12 @@ export function generateZatcaTlvQr(params: ZatcaQrParams): string {
   }
 
   const combined = Buffer.concat(buffers);
-  return combined.toString('base64');
+  return combined.toString("base64");
 }
 
 /** Computes SHA-256 hash of invoice XML content in Base64 encoding. */
 export function computeZatcaInvoiceHash(xmlContent: string): string {
-  return createHash('sha256').update(xmlContent, 'utf8').digest('base64');
+  return createHash("sha256").update(xmlContent, "utf8").digest("base64");
 }
 
 /** Generates UBL 2.1 XML structure for ZATCA Phase 2 e-invoice. */
@@ -120,7 +120,7 @@ export function generateUblInvoiceXml(
     timestamp: timestampIso,
     totalWithVat: grandTotal.toFixed(2),
     vatTotal: vatTotal.toFixed(2),
-    invoiceHash: input.previousInvoiceHash || 'NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjAzZTQ4MmUwNzMzNGZhNw==',
+    invoiceHash: input.previousInvoiceHash || "NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjAzZTQ4MmUwNzMzNGZhNw==",
   });
 
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -138,7 +138,7 @@ export function generateUblInvoiceXml(
   <cac:AdditionalDocumentReference>
     <cbc:ID>PIH</cbc:ID>
     <cac:Attachment>
-      <cbc:EmbeddedDocumentBinaryObject mimeCode="text/plain">${input.previousInvoiceHash || 'NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjAzZTQ4MmUwNzMzNGZhNw=='}</cbc:EmbeddedDocumentBinaryObject>
+      <cbc:EmbeddedDocumentBinaryObject mimeCode="text/plain">${input.previousInvoiceHash || "NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjAzZTQ4MmUwNzMzNGZhNw=="}</cbc:EmbeddedDocumentBinaryObject>
     </cac:Attachment>
   </cac:AdditionalDocumentReference>
   <cac:AdditionalDocumentReference>
@@ -179,15 +179,15 @@ export function generateUblInvoiceXml(
         <cbc:RegistrationName>${input.buyerName}</cbc:RegistrationName>
       </cac:PartyLegalEntity>
       ${
-        input.buyerVatNumber
-          ? `<cac:PartyTaxScheme>
+  input.buyerVatNumber
+    ? `<cac:PartyTaxScheme>
         <cbc:CompanyID>${input.buyerVatNumber}</cbc:CompanyID>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>`
-          : ''
-      }
+    : ""
+}
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:TaxTotal>
@@ -221,6 +221,6 @@ export function generateUblInvoiceXml(
     </cac:Price>
   </cac:InvoiceLine>`,
     )
-    .join('')}
+    .join("")}
 </Invoice>`;
 }
