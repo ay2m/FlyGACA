@@ -7,5 +7,8 @@
         "repo": "ay2m/Office"
       }
     }
+  },
+  "enabledPlugins": {
+    "flygaca-growth@flygaca-family": true
   }
 }
