@@ -1,6 +1,14 @@
 import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import {
+  Flag,
+  CheckCircle,
+  XCircle,
+  SquaresFour,
+  CaretLeft,
+  CaretRight,
+} from '@phosphor-icons/react';
 import { useFetchJson } from '@/hooks/useFetchJson';
 import type { QuizData, QuizQuestion } from '@/lib/content';
 import { setExamResult, useStudyProgress } from '@/lib/studyProgress';
@@ -209,10 +217,14 @@ function Runner({ data, pack }: { data: QuizData; pack?: Pack }) {
                   <p className={styles.reviewQ}>
                     {idx + 1}. {item.q}
                   </p>
-                  <p className={styles.reviewA}>✓ {item.options[item.answer]}</p>
+                  <p className={styles.reviewA}>
+                    <CheckCircle size={16} weight="fill" style={{ color: 'var(--success)', verticalAlign: 'middle', marginInlineEnd: '4px' }} />
+                    {item.options[item.answer]}
+                  </p>
                   {!ok && (
                     <p className={styles.reviewYours}>
-                      {a == null ? t('study.noAnswer') : `✗ ${item.options[a]}`}
+                      <XCircle size={16} weight="fill" style={{ color: 'var(--danger)', verticalAlign: 'middle', marginInlineEnd: '4px' }} />
+                      {a == null ? t('study.noAnswer') : item.options[a]}
                     </p>
                   )}
                 </li>
@@ -272,10 +284,19 @@ function Runner({ data, pack }: { data: QuizData; pack?: Pack }) {
   return (
     <section className={`container-narrow ${styles.page}`}>
       <div className={styles.examBar}>
-        <span>
-          {t('study.question', { n: i + 1, total: questions.length })} ·{' '}
-          {t('study.answered', { n: answered, total: questions.length })}
-        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+          <button
+            type="button"
+            className={styles.flagBtn}
+            onClick={() => setSummary(true)}
+            aria-label={t('study.summaryTitle')}
+            title={t('study.summaryTitle')}
+          >
+            <SquaresFour size={16} weight="bold" style={{ marginInlineEnd: '4px', verticalAlign: 'middle' }} />
+            <span>{t('study.question', { n: i + 1, total: questions.length })}</span>
+          </button>
+          <span>· {t('study.answered', { n: answered, total: questions.length })}</span>
+        </div>
         <span
           className={`${styles.timer} ${timerClass}`}
           role="timer"
@@ -301,7 +322,8 @@ function Runner({ data, pack }: { data: QuizData; pack?: Pack }) {
           aria-pressed={flags[i]}
           onClick={() => setFlags((f) => f.map((v, idx) => (idx === i ? !v : v)))}
         >
-          ⚑ {flags[i] ? t('study.flagged') : t('study.flag')}
+          <Flag size={16} weight={flags[i] ? 'fill' : 'regular'} style={{ marginInlineEnd: '4px', verticalAlign: 'middle' }} />
+          <span>{flags[i] ? t('study.flagged') : t('study.flag')}</span>
         </button>
       </div>
       <ul className={styles.options}>
@@ -323,14 +345,21 @@ function Runner({ data, pack }: { data: QuizData; pack?: Pack }) {
             type="button"
             className={styles.option}
             onClick={() => setI(i - 1)}
-            style={{ inlineSize: 'auto' }}
+            style={{ inlineSize: 'auto', display: 'inline-flex', alignItems: 'center', gap: 'var(--space-1)' }}
           >
-            ←
+            <CaretLeft size={16} weight="bold" />
+            <span>{t('study.back')}</span>
           </button>
         )}
         {i + 1 < questions.length ? (
-          <button type="button" className={styles.primary} onClick={() => setI(i + 1)}>
-            {t('study.next')}
+          <button
+            type="button"
+            className={styles.primary}
+            onClick={() => setI(i + 1)}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-1)' }}
+          >
+            <span>{t('study.next')}</span>
+            <CaretRight size={16} weight="bold" />
           </button>
         ) : (
           <button type="button" className={styles.primary} onClick={() => setSummary(true)}>

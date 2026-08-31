@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Star, CaretLeft, CaretRight } from '@phosphor-icons/react';
 import type { QuizBank, QuizQuestion } from '@/lib/content';
 import { useStudyProgress, setQuizBest, toggleFlag } from '@/lib/studyProgress';
 import { ProgressBar } from '@/components/ProgressBar';
@@ -146,7 +147,8 @@ export function Runner({ bank, onBack }: { bank: QuizBank; onBack: () => void })
                 aria-pressed={isFlagged}
                 onClick={() => toggleFlag(bank.id, qIdx)}
               >
-                {isFlagged ? '★' : '☆'} {t(isFlagged ? 'study.flagged' : 'study.flag')}
+                <Star size={16} weight={isFlagged ? 'fill' : 'regular'} style={{ marginInlineEnd: '4px', verticalAlign: 'middle' }} />
+                <span>{t(isFlagged ? 'study.flagged' : 'study.flag')}</span>
               </button>
             );
           })()}
@@ -261,16 +263,20 @@ function ReviewWalkthrough({
           className={styles.secondary}
           onClick={() => setI((n) => Math.max(n - 1, 0))}
           disabled={i === 0}
+          style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-1)' }}
         >
-          ← {t('study.prev')}
+          <CaretLeft size={16} weight="bold" />
+          <span>{t('study.prev')}</span>
         </button>
         <button
           type="button"
           className={styles.primary}
           onClick={() => setI((n) => Math.min(n + 1, queue.length - 1))}
           disabled={i + 1 >= queue.length}
+          style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-1)' }}
         >
-          {t('study.next')} →
+          <span>{t('study.next')}</span>
+          <CaretRight size={16} weight="bold" />
         </button>
       </div>
     </Shell>
