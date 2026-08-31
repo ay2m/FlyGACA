@@ -1,22 +1,47 @@
 {
   "other": {
-    "count": 65545,
-    "bytes": 29950460,
-    "sizeMB": "28.56"
+    "count": 18648,
+    "bytes": 6205702,
+    "sizeMB": "5.92"
+  },
+  "oceania": {
+    "count": 6125,
+    "bytes": 2037753,
+    "sizeMB": "1.94"
+  },
+  "namerica": {
+    "count": 9780,
+    "bytes": 3397173,
+    "sizeMB": "3.24"
+  },
+  "africa": {
+    "count": 5671,
+    "bytes": 1760485,
+    "sizeMB": "1.68"
+  },
+  "europe": {
+    "count": 9547,
+    "bytes": 3119562,
+    "sizeMB": "2.98"
   },
   "mena": {
-    "count": 227,
-    "bytes": 119186,
-    "sizeMB": "0.11"
+    "count": 456,
+    "bytes": 160263,
+    "sizeMB": "0.15"
   },
-  "sa": {
-    "count": 565,
-    "bytes": 269645,
-    "sizeMB": "0.26"
+  "samerica": {
+    "count": 11922,
+    "bytes": 3803247,
+    "sizeMB": "3.63"
+  },
+  "asia": {
+    "count": 4110,
+    "bytes": 1275486,
+    "sizeMB": "1.22"
   },
   "gulf": {
-    "count": 45,
-    "bytes": 17023,
-    "sizeMB": "0.02"
+    "count": 123,
+    "bytes": 39540,
+    "sizeMB": "0.04"
   }
 }

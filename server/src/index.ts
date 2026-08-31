@@ -103,14 +103,14 @@ app.get(
   }),
 );
 
-app.use(["/api/auth", "/auth"], csrfGuard, withSession, authRouter);
-app.use(["/api/account", "/account"], csrfGuard, withSession, accountRouter);
-app.use(["/api/grants", "/grants"], csrfGuard, withSession, grantsRouter);
-app.use(["/api/billing", "/billing"], csrfGuard, withSession, billingRouter);
-app.use(["/api/org", "/org"], csrfGuard, withSession, orgRouter);
+app.use("/api/auth", csrfGuard, withSession, authRouter);
+app.use("/api/account", csrfGuard, withSession, accountRouter);
+app.use("/api/grants", csrfGuard, withSession, grantsRouter);
+app.use("/api/billing", csrfGuard, withSession, billingRouter);
+app.use("/api/org", csrfGuard, withSession, orgRouter);
 
 app.post(
-  ["/api/waitlist", "/waitlist"],
+  "/api/waitlist",
   handler(async (req, res) => {
     const email = String((req.body as { email?: unknown })?.email ?? "")
       .trim()

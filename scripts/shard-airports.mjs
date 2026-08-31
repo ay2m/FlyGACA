@@ -1,13 +1,17 @@
 #!/usr/bin/env node
 /**
- * Shard airports-extra.json by ICAO prefix region (2-letter prefix groups).
- * Produces public/data/airports-shards/{region}.json so mobile clients fetch
- * only the aerodromes they need instead of downloading the full 21 MB index.
+ * Shard airports-extra.json by ICAO prefix region.
+ * Produces public/data/airports-shards/{region}.json with minified JSON so that:
+ * 1. Assets remain well under Cloudflare's 25 MiB asset limit.
+ * 2. Mobile clients download smaller, regional chunks on demand.
  *
- * Regions: SA (Saudi), AE/OM/QA/KW/BH (Gulf), Others (EG, ET, etc.).
+ * Regions: sa (Saudi), gulf (GCC), mena (Middle East/North Africa),
+ * europe (Europe), namerica (North America), samerica (South America),
+ * africa (Sub-Saharan Africa), asia (Asia/Far East), oceania (Pacific/Australia), other.
+ *
  * Run after corpus update: `node scripts/shard-airports.mjs`
  */
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -15,28 +19,34 @@ const root = dirname(fileURLToPath(import.meta.url)) + '/..';
 const INPUT = join(root, 'public/data/airports-extra.json');
 const SHARD_DIR = join(root, 'public/data/airports-shards');
 
-// ICAO prefix → shard region mapping
-const PREFIX_TO_REGION = {
-  // Saudi Arabia
-  O: 'sa',
-  // Gulf neighbors (UAE, Oman, Qatar, Kuwait, Bahrain)
-  OM: 'gulf',
-  UR: 'gulf', // deprecated, included for compat
-  // Middle East / Africa
-  EG: 'mena',
-  ET: 'mena',
-  HE: 'mena',
-  // Default
-  _default: 'other',
-};
-
 function getRegionForAirport(icaoCode) {
-  if (!icaoCode || icaoCode.length < 1) return PREFIX_TO_REGION._default;
+  if (!icaoCode || icaoCode.length < 1) return 'other';
 
-  const twoLetter = icaoCode.substring(0, 2);
-  const oneLetter = icaoCode.substring(0, 1);
+  const p1 = icaoCode[0].toUpperCase();
+  const p2 = icaoCode.substring(0, 2).toUpperCase();
 
-  return PREFIX_TO_REGION[twoLetter] || PREFIX_TO_REGION[oneLetter] || PREFIX_TO_REGION._default;
+  // Saudi Arabia
+  if (p2 === 'OE' || (p1 === 'O' && !['OM', 'OB', 'OK', 'OT', 'OO', 'OJ', 'OR', 'OS', 'OI'].includes(p2))) {
+    if (p2 === 'OE') return 'sa';
+  }
+  // Gulf neighbors (UAE, Oman, Qatar, Kuwait, Bahrain)
+  if (['OM', 'OB', 'OK', 'OT', 'OO', 'UR'].includes(p2)) return 'gulf';
+  // MENA (Egypt, Jordan, Iraq, Syria, Iran, etc.)
+  if (['EG', 'ET', 'HE', 'LL', 'OJ', 'OR', 'OS', 'OI'].includes(p2)) return 'mena';
+  // Africa
+  if (['H', 'D', 'F', 'G'].includes(p1)) return 'africa';
+  // Europe
+  if (['E', 'L', 'U'].includes(p1)) return 'europe';
+  // North America (US, Canada, Pacific US)
+  if (['K', 'C', 'P'].includes(p1)) return 'namerica';
+  // South & Central America / Caribbean
+  if (['S', 'M', 'T'].includes(p1)) return 'samerica';
+  // Asia
+  if (['R', 'V', 'W', 'Z', 'O'].includes(p1)) return 'asia';
+  // Oceania
+  if (['Y', 'A', 'N'].includes(p1)) return 'oceania';
+
+  return 'other';
 }
 
 try {
@@ -55,17 +65,19 @@ try {
     shardedCount++;
   }
 
-  // Write shard index (list of available regions + their sizes)
+  // Clean and recreate shard directory
+  rmSync(SHARD_DIR, { recursive: true, force: true });
   mkdirSync(SHARD_DIR, { recursive: true });
 
   const index = {};
-  for (const [region, airports] of Object.entries(shards)) {
+  for (const [region, list] of Object.entries(shards)) {
     const shardPath = join(SHARD_DIR, `${region}.json`);
-    writeFileSync(shardPath, JSON.stringify(airports, null, 2) + '\n');
+    // Minify JSON to ensure compact transfer & Cloudflare Workers 25MB compliance
+    writeFileSync(shardPath, JSON.stringify(list));
 
     const bytes = readFileSync(shardPath).length;
     index[region] = {
-      count: Object.keys(airports).length,
+      count: list.length,
       bytes,
       sizeMB: (bytes / 1024 / 1024).toFixed(2),
     };
@@ -78,7 +90,7 @@ try {
 
   console.log(`Sharded ${shardedCount} airports into ${Object.keys(shards).length} regions:`);
   for (const [region, info] of Object.entries(index)) {
-    console.log(`  ${region.padEnd(6)} ${info.count.toString().padStart(4)} airports  ${info.sizeMB} MB`);
+    console.log(`  ${region.padEnd(10)} ${info.count.toString().padStart(5)} airports  ${info.sizeMB} MB`);
   }
   console.log(`\nTotal sharded size: ${Object.values(index).reduce((sum, r) => sum + parseFloat(r.sizeMB), 0).toFixed(1)} MB`);
   console.log(`Original: ${(readFileSync(INPUT).length / 1024 / 1024).toFixed(1)} MB`);
