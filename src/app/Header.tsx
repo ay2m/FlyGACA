@@ -69,22 +69,23 @@ export function Header() {
 
   return (
     <>
-      <header className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
-        <div className={`container ${styles.inner}`}>
-          <Link className={styles.lockup} to="/" aria-label={t('nav.home')} viewTransition>
-            <img
-              className={styles.mark}
-              src="/img/flygaca-mark.png"
-              alt=""
-              width={36}
-              height={36}
-              decoding="async"
-            />
-            <span className={styles.wordmark} aria-hidden="true">
-              <span className={styles.wmFly}>Fly</span>
-              <span className={styles.wmGaca}>GACA</span>
-            </span>
-          </Link>
+      <header className={`${styles.headerSticky} ${scrolled ? styles.scrolled : ''}`}>
+        <div className={styles.nav}>
+          <div className={styles.inner}>
+            <Link className={styles.lockup} to="/" aria-label={t('nav.home')} viewTransition>
+              <img
+                className={styles.mark}
+                src="/img/flygaca-mark.png"
+                alt=""
+                width={34}
+                height={34}
+                decoding="async"
+              />
+              <span className={styles.wordmark} aria-hidden="true">
+                <span className={styles.wmFly}>Fly</span>
+                <span className={styles.wmGaca}>GACA</span>
+              </span>
+            </Link>
 
           {/* Desktop inline nav (hidden ≤860px, where the bottom dock takes over).
               When signed in, /account becomes a dropdown surfacing the daily pages. */}
@@ -144,7 +145,8 @@ export function Header() {
             </ButtonLink>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
 
       <MobileDock signedIn={signedIn} ctaTo={ctaTo} ctaLabel={ctaLabel} ctaIcon={ctaIcon} />
     </>

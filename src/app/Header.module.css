@@ -1,46 +1,59 @@
-.nav {
+.headerSticky {
   position: sticky;
-  inset-block-start: var(--space-4);
-  z-index: var(--z-sticky);
-  block-size: 64px;
+  inset-block-start: 0;
+  z-index: var(--z-sticky, 50);
+  padding-block: var(--space-3) var(--space-2);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  pointer-events: none;
+  transition: all var(--dur) var(--ease);
+}
+
+.nav {
+  pointer-events: auto;
   display: flex;
   align-items: center;
-  background: color-mix(in srgb, var(--bg) 65%, transparent);
-  backdrop-filter: blur(32px) saturate(200%);
-  -webkit-backdrop-filter: blur(32px) saturate(200%);
-  border: 1px solid color-mix(in srgb, var(--border-bright) 40%, transparent);
+  background: color-mix(in srgb, var(--falcon-night, #0a0e12) 82%, transparent);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid color-mix(in srgb, var(--border-bright) 35%, transparent);
   border-radius: var(--radius-pill);
+  padding: 0.35rem 0.6rem;
   margin-inline: auto;
-  /* Make it a compact Dynamic Island instead of full width */
   width: fit-content;
   max-width: calc(100% - var(--space-6));
   box-shadow:
-    0 12px 40px color-mix(in srgb, var(--shade) 40%, transparent),
+    0 12px 36px -4px rgba(0, 0, 0, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all var(--dur) var(--ease);
 }
+
 /* Elevated state — firmer surface and brighter border once scrolled. */
-.nav.scrolled {
-  background: color-mix(in srgb, var(--surface) 75%, transparent);
-  border-color: color-mix(in srgb, var(--border-bright) 80%, transparent);
-  box-shadow: var(--elev-2);
+.headerSticky.scrolled .nav {
+  background: color-mix(in srgb, var(--surface, #0f1a24) 92%, transparent);
+  border-color: color-mix(in srgb, var(--border-bright) 70%, transparent);
+  box-shadow:
+    0 16px 44px -4px rgba(0, 0, 0, 0.65),
+    0 4px 12px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .inner {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
-  padding-inline: var(--space-2);
+  gap: var(--space-3);
 }
 
 /* --- Brand lockup: mark + wordmark --- */
 .lockup {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-3);
-  min-block-size: 44px;
-  padding-inline-end: var(--space-2);
-  border-radius: var(--radius-md);
+  gap: var(--space-2);
+  min-block-size: 38px;
+  padding-inline: var(--space-2);
+  border-radius: var(--radius-pill);
   transition:
     opacity var(--dur) var(--ease),
     transform var(--dur) var(--ease);
@@ -55,9 +68,9 @@
 }
 
 .mark {
-  inline-size: 36px;
-  block-size: 36px;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
+  inline-size: 32px;
+  block-size: 32px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
 }
 
 /* Cockpit / Night-Ops: the mark is a fixed teal/sage raster, so recolor it to the
@@ -72,8 +85,8 @@
 .wordmark {
   font-family: var(--font-sans);
   font-weight: var(--fw-black);
-  font-size: 1.25rem;
-  letter-spacing: -0.01em;
+  font-size: 1.18rem;
+  letter-spacing: -0.015em;
   line-height: 1;
   white-space: nowrap;
 }
@@ -92,36 +105,39 @@
 .links {
   display: flex;
   align-items: center;
-  gap: var(--space-1);
-  margin-inline: var(--space-3) auto;
+  gap: 3px;
+  margin-inline: var(--space-1) auto;
+  padding: 3px;
+  background: color-mix(in srgb, var(--bg) 40%, transparent);
+  border-radius: var(--radius-pill);
 }
 
 .links a {
   position: relative;
-  color: color-mix(in srgb, var(--text-muted) 35%, var(--text));
+  color: color-mix(in srgb, var(--text-muted) 40%, var(--text));
   font-size: var(--fs-sm);
   font-weight: var(--fw-medium);
-  padding-block: var(--space-2);
-  padding-inline: var(--space-3);
-  min-block-size: 44px;
+  padding-block: 0.35rem;
+  padding-inline: 0.85rem;
+  min-block-size: 36px;
   display: inline-flex;
   align-items: center;
   border-radius: var(--radius-pill);
-  transition: var(--transition-color);
+  transition: all var(--dur) var(--ease);
+  text-decoration: none;
 }
 .links a:hover {
   color: var(--text);
-  background: var(--brand-tint);
-  text-decoration: none;
+  background: color-mix(in srgb, var(--brand) 15%, transparent);
 }
-/* Active state: frosted glass pill with brand text. */
+/* Active state: gradient pill with brand glow. */
 .links a.active {
   color: var(--text-on-brand);
-  background: var(--brand);
+  background: var(--grad-brand);
   font-weight: var(--fw-bold);
   box-shadow:
-    0 4px 12px color-mix(in srgb, var(--brand) 30%, transparent),
-    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    0 2px 10px color-mix(in srgb, var(--brand) 35%, transparent),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
 }
 
 /* --- Desktop account dropdown (signed-in) --- */
@@ -132,17 +148,17 @@
   list-style: none;
   cursor: pointer;
   /* Match the sibling nav links' pill affordance. */
-  color: color-mix(in srgb, var(--text-muted) 35%, var(--text));
+  color: color-mix(in srgb, var(--text-muted) 40%, var(--text));
   font-size: var(--fs-sm);
   font-weight: var(--fw-medium);
-  padding-block: var(--space-2);
-  padding-inline: var(--space-3);
-  min-block-size: 44px;
+  padding-block: 0.35rem;
+  padding-inline: 0.85rem;
+  min-block-size: 36px;
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-1);
   border-radius: var(--radius-pill);
-  transition: var(--transition-color);
+  transition: all var(--dur) var(--ease);
 }
 .accountMenu > summary::-webkit-details-marker {
   display: none;
@@ -228,9 +244,7 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  /* Anchor to the inline-end edge even when the nav is pulled out of flow
-     (mobile drawer is position: fixed, so its margin-end:auto no longer applies). */
+  gap: var(--space-2);
   margin-inline-start: auto;
 }
 
@@ -239,7 +253,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  min-block-size: 44px;
+  min-block-size: 38px;
   padding-inline: var(--space-3);
   border: 1px solid var(--border-bright);
   border-radius: var(--radius-pill);
@@ -276,37 +290,36 @@
     display: none;
   }
   .search {
-    inline-size: 44px;
+    inline-size: 38px;
     justify-content: center;
     padding-inline: 0;
   }
 }
 
-/* Flat hairline pill — shares the calm, borderless look of the footer controls. */
+/* Flat hairline pill for toggles */
 .langToggle {
-  inline-size: 44px;
-  block-size: 44px;
+  inline-size: 38px;
+  block-size: 38px;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--border-bright);
-  background: transparent;
-  color: var(--text);
+  border: 1px solid color-mix(in srgb, var(--border-bright) 40%, transparent);
+  background: color-mix(in srgb, var(--bg) 40%, transparent);
+  color: var(--text-muted);
   font-weight: var(--fw-bold);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: var(--transition-interactive);
+  transition: all var(--dur) var(--ease);
 }
 .langToggle:hover {
   transform: translateY(-1px);
-  border-color: color-mix(in srgb, var(--brand) 60%, transparent);
-  color: var(--brand-hover);
-  background: var(--brand-tint);
+  border-color: var(--brand-hover);
+  color: var(--text);
+  background: color-mix(in srgb, var(--brand) 15%, transparent);
 }
 .langToggle:active {
   transform: scale(0.95);
-  background: var(--brand-tint);
 }
 
 /* --- ⌘K search pill --- */
@@ -314,35 +327,42 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  block-size: 44px;
-  padding-inline: var(--space-3);
+  block-size: 38px;
+  padding-inline: 0.75rem;
   border-radius: var(--radius-pill);
-  border: var(--hairline-bright);
-  background: var(--surface-sunken); /* reads as an input well, not a card */
+  border: 1px solid color-mix(in srgb, var(--border-bright) 40%, transparent);
+  background: color-mix(in srgb, var(--bg) 40%, transparent);
   color: var(--text-muted);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--fs-xs);
-  letter-spacing: 0.03em;
   cursor: pointer;
-  transition: var(--transition-interactive);
+  transition: all var(--dur) var(--ease);
 }
 .searchPill:hover {
   color: var(--text);
-  border-color: color-mix(in srgb, var(--brand) 60%, transparent);
-  background: var(--brand-tint);
+  border-color: var(--brand-hover);
+  background: color-mix(in srgb, var(--brand) 12%, transparent);
+  transform: translateY(-1px);
 }
 .searchPill:active {
   transform: scale(0.97);
 }
 .searchPill svg {
-  inline-size: 16px;
-  block-size: 16px;
+  inline-size: 15px;
+  block-size: 15px;
   flex: none;
 }
-/* Go Pro CTA — sparkle glyph sizing (ties the header CTA to the mobile menu's). */
+/* Go Pro CTA — sparkle glyph sizing */
+.cta {
+  min-block-size: 38px;
+  padding-inline: 1rem;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  border-radius: var(--radius-pill);
+}
 .cta svg {
-  inline-size: 16px;
-  block-size: 16px;
+  inline-size: 15px;
+  block-size: 15px;
   flex: none;
 }
 .searchPillKbd {
