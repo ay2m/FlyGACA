@@ -1,6 +1,16 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import {
+  CaretLeft,
+  CaretRight,
+  LinkSimple,
+  Check,
+  DownloadSimple,
+  ArrowsOut,
+  ArrowsIn,
+  ArrowSquareOut,
+} from '@phosphor-icons/react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useFetchJson } from '@/hooks/useFetchJson';
@@ -212,7 +222,7 @@ export function Charts() {
                   onClick={() => go(-1)}
                   aria-label={t('charts.prevSheet')}
                 >
-                  ←
+                  <CaretLeft size={16} weight="bold" />
                 </button>
                 <span className={styles.activeLabel}>{active?.label}</span>
                 <button
@@ -221,21 +231,33 @@ export function Charts() {
                   onClick={() => go(1)}
                   aria-label={t('charts.nextSheet')}
                 >
-                  →
+                  <CaretRight size={16} weight="bold" />
                 </button>
               </div>
               <div className={styles.toolbarActions}>
                 <button type="button" className={styles.toolBtn} onClick={copyLink}>
-                  {copied ? t('charts.copied') : t('charts.copyLink')}
+                  {copied ? (
+                    <>
+                      <Check size={16} weight="bold" />
+                      <span>{t('charts.copied')}</span>
+                    </>
+                  ) : (
+                    <>
+                      <LinkSimple size={16} />
+                      <span>{t('charts.copyLink')}</span>
+                    </>
+                  )}
                 </button>
                 {active && (
                   <a className={styles.toolBtn} href={chartSrc(active)} download>
-                    {t('charts.download')}
+                    <DownloadSimple size={16} />
+                    <span>{t('charts.download')}</span>
                   </a>
                 )}
                 {active && (
                   <ExternalLink className={styles.toolBtn} href={chartSrc(active)}>
-                    {t('charts.openImage')}
+                    <ArrowSquareOut size={16} />
+                    <span>{t('charts.openImage')}</span>
                   </ExternalLink>
                 )}
                 <button
@@ -244,7 +266,17 @@ export function Charts() {
                   onClick={() => setFullscreen((f) => !f)}
                   aria-pressed={fullscreen}
                 >
-                  {fullscreen ? t('charts.exitFullscreen') : t('charts.fullscreen')}
+                  {fullscreen ? (
+                    <>
+                      <ArrowsIn size={16} />
+                      <span>{t('charts.exitFullscreen')}</span>
+                    </>
+                  ) : (
+                    <>
+                      <ArrowsOut size={16} />
+                      <span>{t('charts.fullscreen')}</span>
+                    </>
+                  )}
                 </button>
               </div>
             </div>
