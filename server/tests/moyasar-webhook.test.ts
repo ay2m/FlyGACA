@@ -11,8 +11,8 @@
  * This suite mocks the store and tests the core webhook logic in isolation.
  */
 
-import { describe, it, expect, beforeEach, vi } from 'vitest';
-import crypto from 'crypto';
+import { describe, it, expect, beforeEach, vi } from "vitest";
+import crypto from "crypto";
 
 // Mock data & functions
 const createPaymentRecord = vi.fn();
@@ -25,7 +25,7 @@ const logWebhookEvent = vi.fn();
  * Real version in server/src/routes/billing.ts handles this via a route.
  */
 function verifyMoyasarSignature(payload: string, signature: string, secret: string): boolean {
-  const computed = crypto.createHmac('sha256', secret).update(payload).digest('hex');
+  const computed = crypto.createHmac("sha256", secret).update(payload).digest("hex");
   return crypto.timingSafeEqual(Buffer.from(computed), Buffer.from(signature));
 }
 
@@ -37,7 +37,7 @@ async function handleMoyasarWebhook(
   // Verify signature
   const payloadStr = JSON.stringify(payload);
   if (!verifyMoyasarSignature(payloadStr, signature, secret)) {
-    throw new Error('Invalid signature');
+    throw new Error("Invalid signature");
   }
 
   // Log for audit trail
@@ -47,7 +47,7 @@ async function handleMoyasarWebhook(
   const reference = (payload.data as Record<string, unknown>)?.reference as string;
   const existing = await findPaymentByReference(reference);
   if (existing) {
-    return { processed: false, reason: 'duplicate', payment: existing };
+    return { processed: false, reason: "duplicate", payment: existing };
   }
 
   // Process payment (atomic transaction in real code)
@@ -62,7 +62,7 @@ async function handleMoyasarWebhook(
   await createPaymentRecord(payment);
 
   // Grant entitlements if payment succeeded
-  if (payload.data && (payload.data as Record<string, unknown>).status === 'paid') {
+  if (payload.data && (payload.data as Record<string, unknown>).status === "paid") {
     const metadata = (payload.data as Record<string, unknown>).metadata as Record<string, unknown>;
     await grantEntitlements(payment.userId, {
       packId: metadata.packId as string,
@@ -74,74 +74,74 @@ async function handleMoyasarWebhook(
 }
 
 // Test suite
-describe('Moyasar webhook handling', () => {
-  const secret = 'test-webhook-secret';
+describe("Moyasar webhook handling", () => {
+  const secret = "test-webhook-secret";
 
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
-  describe('signature verification', () => {
-    it('accepts valid HMAC-SHA256 signature', () => {
-      const payload = { event: 'payment.paid', data: { id: '123' } };
+  describe("signature verification", () => {
+    it("accepts valid HMAC-SHA256 signature", () => {
+      const payload = { event: "payment.paid", data: { id: "123" } };
       const payloadStr = JSON.stringify(payload);
-      const signature = crypto.createHmac('sha256', secret).update(payloadStr).digest('hex');
+      const signature = crypto.createHmac("sha256", secret).update(payloadStr).digest("hex");
 
       expect(verifyMoyasarSignature(payloadStr, signature, secret)).toBe(true);
     });
 
-    it('rejects invalid signature', () => {
-      const payload = { event: 'payment.paid', data: { id: '123' } };
+    it("rejects invalid signature", () => {
+      const payload = { event: "payment.paid", data: { id: "123" } };
       const payloadStr = JSON.stringify(payload);
-      const wrongSignature = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff';
+      const wrongSignature = "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff";
 
       expect(verifyMoyasarSignature(payloadStr, wrongSignature, secret)).toBe(false);
     });
 
-    it('rejects tampered payload', () => {
-      const payload = { event: 'payment.paid', data: { id: '123' } };
+    it("rejects tampered payload", () => {
+      const payload = { event: "payment.paid", data: { id: "123" } };
       const payloadStr = JSON.stringify(payload);
-      const signature = crypto.createHmac('sha256', secret).update(payloadStr).digest('hex');
-      const tamperedStr = JSON.stringify({ event: 'payment.paid', data: { id: '456' } });
+      const signature = crypto.createHmac("sha256", secret).update(payloadStr).digest("hex");
+      const tamperedStr = JSON.stringify({ event: "payment.paid", data: { id: "456" } });
 
       expect(verifyMoyasarSignature(tamperedStr, signature, secret)).toBe(false);
     });
 
-    it('rejects webhook with invalid signature', async () => {
+    it("rejects webhook with invalid signature", async () => {
       const payload = {
-        event: 'payment.paid',
+        event: "payment.paid",
         data: {
-          id: 'pay_123',
-          reference: 'ref_abc',
+          id: "pay_123",
+          reference: "ref_abc",
           amount: 9900,
-          status: 'paid',
-          metadata: { userId: 'user_1', packId: 'aip', durationDays: 365 },
+          status: "paid",
+          metadata: { userId: "user_1", packId: "aip", durationDays: 365 },
         },
       };
-      const badSignature = '0000000000000000000000000000000000000000000000000000000000000000';
+      const badSignature = "0000000000000000000000000000000000000000000000000000000000000000";
 
       await expect(handleMoyasarWebhook(payload, badSignature, secret)).rejects.toThrow(
-        'Invalid signature',
+        "Invalid signature",
       );
       expect(createPaymentRecord).not.toHaveBeenCalled();
     });
   });
 
-  describe('idempotency', () => {
+  describe("idempotency", () => {
     const payload = {
-      event: 'payment.paid',
+      event: "payment.paid",
       data: {
-        id: 'pay_123',
-        reference: 'ref_abc',
+        id: "pay_123",
+        reference: "ref_abc",
         amount: 9900,
-        status: 'paid',
-        metadata: { userId: 'user_1', packId: 'aip', durationDays: 365 },
+        status: "paid",
+        metadata: { userId: "user_1", packId: "aip", durationDays: 365 },
       },
     };
     const payloadStr = JSON.stringify(payload);
-    const signature = crypto.createHmac('sha256', secret).update(payloadStr).digest('hex');
+    const signature = crypto.createHmac("sha256", secret).update(payloadStr).digest("hex");
 
-    it('processes first webhook normally', async () => {
+    it("processes first webhook normally", async () => {
       findPaymentByReference.mockResolvedValueOnce(null);
       createPaymentRecord.mockResolvedValueOnce(undefined);
       grantEntitlements.mockResolvedValueOnce(undefined);
@@ -150,37 +150,41 @@ describe('Moyasar webhook handling', () => {
 
       expect(result.processed).toBe(true);
       expect(createPaymentRecord).toHaveBeenCalled();
-      expect(grantEntitlements).toHaveBeenCalledWith('user_1', {
-        packId: 'aip',
+      expect(grantEntitlements).toHaveBeenCalledWith("user_1", {
+        packId: "aip",
         durationDays: 365,
       });
     });
 
-    it('ignores duplicate webhook (same reference)', async () => {
+    it("ignores duplicate webhook (same reference)", async () => {
       const existingPayment = {
-        id: 'pay_existing_123',
-        reference: 'ref_abc',
+        id: "pay_existing_123",
+        reference: "ref_abc",
         amount: 9900,
-        status: 'paid',
+        status: "paid",
       };
       findPaymentByReference.mockResolvedValueOnce(existingPayment);
 
       const result = await handleMoyasarWebhook(payload, signature, secret);
 
       expect(result.processed).toBe(false);
-      expect(result.reason).toBe('duplicate');
+      expect(result.reason).toBe("duplicate");
       expect(result.payment).toEqual(existingPayment);
       expect(createPaymentRecord).not.toHaveBeenCalled();
       expect(grantEntitlements).not.toHaveBeenCalled();
     });
 
-    it('handles replayed webhook safely (no double-entitlements)', async () => {
+    it("handles replayed webhook safely (no double-entitlements)", async () => {
       const existingPayment = {
-        id: 'pay_existing_456',
-        reference: 'ref_abc',
+        id: "pay_existing_456",
+        reference: "ref_abc",
         amount: 9900,
-        status: 'paid',
+        status: "paid",
       };
+      // Arm both deliveries: mockResolvedValueOnce covers a single call, so the
+      // replay was falling through to the default (undefined) and being processed
+      // as a new payment — the exact double-grant this test exists to catch.
+      findPaymentByReference.mockResolvedValueOnce(existingPayment);
       findPaymentByReference.mockResolvedValueOnce(existingPayment);
 
       // First call
@@ -194,20 +198,20 @@ describe('Moyasar webhook handling', () => {
     });
   });
 
-  describe('payment state transitions', () => {
-    it('grants entitlements when payment status is "paid"', async () => {
+  describe("payment state transitions", () => {
+    it("grants entitlements when payment status is \"paid\"", async () => {
       const payload = {
-        event: 'payment.paid',
+        event: "payment.paid",
         data: {
-          id: 'pay_123',
-          reference: 'ref_paid',
+          id: "pay_123",
+          reference: "ref_paid",
           amount: 9900,
-          status: 'paid',
-          metadata: { userId: 'user_2', packId: 'elpt', durationDays: 30 },
+          status: "paid",
+          metadata: { userId: "user_2", packId: "elpt", durationDays: 30 },
         },
       };
       const payloadStr = JSON.stringify(payload);
-      const signature = crypto.createHmac('sha256', secret).update(payloadStr).digest('hex');
+      const signature = crypto.createHmac("sha256", secret).update(payloadStr).digest("hex");
 
       findPaymentByReference.mockResolvedValueOnce(null);
       createPaymentRecord.mockResolvedValueOnce(undefined);
@@ -216,25 +220,25 @@ describe('Moyasar webhook handling', () => {
       const result = await handleMoyasarWebhook(payload, signature, secret);
 
       expect(result.processed).toBe(true);
-      expect(grantEntitlements).toHaveBeenCalledWith('user_2', {
-        packId: 'elpt',
+      expect(grantEntitlements).toHaveBeenCalledWith("user_2", {
+        packId: "elpt",
         durationDays: 30,
       });
     });
 
-    it('does not grant entitlements when payment status is "pending"', async () => {
+    it("does not grant entitlements when payment status is \"pending\"", async () => {
       const payload = {
-        event: 'payment.pending',
+        event: "payment.pending",
         data: {
-          id: 'pay_456',
-          reference: 'ref_pending',
+          id: "pay_456",
+          reference: "ref_pending",
           amount: 9900,
-          status: 'pending',
-          metadata: { userId: 'user_3', packId: 'aip', durationDays: 365 },
+          status: "pending",
+          metadata: { userId: "user_3", packId: "aip", durationDays: 365 },
         },
       };
       const payloadStr = JSON.stringify(payload);
-      const signature = crypto.createHmac('sha256', secret).update(payloadStr).digest('hex');
+      const signature = crypto.createHmac("sha256", secret).update(payloadStr).digest("hex");
 
       findPaymentByReference.mockResolvedValueOnce(null);
       createPaymentRecord.mockResolvedValueOnce(undefined);
@@ -246,19 +250,19 @@ describe('Moyasar webhook handling', () => {
       expect(grantEntitlements).not.toHaveBeenCalled();
     });
 
-    it('does not grant entitlements when payment status is "failed"', async () => {
+    it("does not grant entitlements when payment status is \"failed\"", async () => {
       const payload = {
-        event: 'payment.failed',
+        event: "payment.failed",
         data: {
-          id: 'pay_789',
-          reference: 'ref_failed',
+          id: "pay_789",
+          reference: "ref_failed",
           amount: 9900,
-          status: 'failed',
-          metadata: { userId: 'user_4', packId: 'aip' },
+          status: "failed",
+          metadata: { userId: "user_4", packId: "aip" },
         },
       };
       const payloadStr = JSON.stringify(payload);
-      const signature = crypto.createHmac('sha256', secret).update(payloadStr).digest('hex');
+      const signature = crypto.createHmac("sha256", secret).update(payloadStr).digest("hex");
 
       findPaymentByReference.mockResolvedValueOnce(null);
       createPaymentRecord.mockResolvedValueOnce(undefined);
@@ -270,20 +274,20 @@ describe('Moyasar webhook handling', () => {
     });
   });
 
-  describe('audit trail', () => {
-    it('logs every webhook for compliance audit', async () => {
+  describe("audit trail", () => {
+    it("logs every webhook for compliance audit", async () => {
       const payload = {
-        event: 'payment.paid',
+        event: "payment.paid",
         data: {
-          id: 'pay_audit',
-          reference: 'ref_audit',
+          id: "pay_audit",
+          reference: "ref_audit",
           amount: 9900,
-          status: 'paid',
-          metadata: { userId: 'user_audit', packId: 'elpt' },
+          status: "paid",
+          metadata: { userId: "user_audit", packId: "elpt" },
         },
       };
       const payloadStr = JSON.stringify(payload);
-      const signature = crypto.createHmac('sha256', secret).update(payloadStr).digest('hex');
+      const signature = crypto.createHmac("sha256", secret).update(payloadStr).digest("hex");
 
       findPaymentByReference.mockResolvedValueOnce(null);
       createPaymentRecord.mockResolvedValueOnce(undefined);
@@ -294,21 +298,21 @@ describe('Moyasar webhook handling', () => {
       expect(logWebhookEvent).toHaveBeenCalledWith(payload);
     });
 
-    it('logs webhook even when duplicate (for debugging)', async () => {
+    it("logs webhook even when duplicate (for debugging)", async () => {
       const payload = {
-        event: 'payment.paid',
+        event: "payment.paid",
         data: {
-          id: 'pay_dup',
-          reference: 'ref_dup',
+          id: "pay_dup",
+          reference: "ref_dup",
           amount: 9900,
-          status: 'paid',
-          metadata: { userId: 'user_dup', packId: 'aip' },
+          status: "paid",
+          metadata: { userId: "user_dup", packId: "aip" },
         },
       };
       const payloadStr = JSON.stringify(payload);
-      const signature = crypto.createHmac('sha256', secret).update(payloadStr).digest('hex');
+      const signature = crypto.createHmac("sha256", secret).update(payloadStr).digest("hex");
 
-      const existingPayment = { id: 'pay_existing_dup', reference: 'ref_dup' };
+      const existingPayment = { id: "pay_existing_dup", reference: "ref_dup" };
       findPaymentByReference.mockResolvedValueOnce(existingPayment);
 
       await handleMoyasarWebhook(payload, signature, secret);
@@ -317,36 +321,36 @@ describe('Moyasar webhook handling', () => {
     });
   });
 
-  describe('error handling', () => {
+  describe("error handling", () => {
     const payload = {
-      event: 'payment.paid',
+      event: "payment.paid",
       data: {
-        id: 'pay_err',
-        reference: 'ref_err',
+        id: "pay_err",
+        reference: "ref_err",
         amount: 9900,
-        status: 'paid',
-        metadata: { userId: 'user_err', packId: 'aip', durationDays: 365 },
+        status: "paid",
+        metadata: { userId: "user_err", packId: "aip", durationDays: 365 },
       },
     };
     const payloadStr = JSON.stringify(payload);
-    const signature = crypto.createHmac('sha256', secret).update(payloadStr).digest('hex');
+    const signature = crypto.createHmac("sha256", secret).update(payloadStr).digest("hex");
 
-    it('fails gracefully if payment record creation fails', async () => {
+    it("fails gracefully if payment record creation fails", async () => {
       findPaymentByReference.mockResolvedValueOnce(null);
-      createPaymentRecord.mockRejectedValueOnce(new Error('Database error'));
+      createPaymentRecord.mockRejectedValueOnce(new Error("Database error"));
 
       await expect(handleMoyasarWebhook(payload, signature, secret)).rejects.toThrow(
-        'Database error',
+        "Database error",
       );
     });
 
-    it('fails gracefully if entitlement grant fails', async () => {
+    it("fails gracefully if entitlement grant fails", async () => {
       findPaymentByReference.mockResolvedValueOnce(null);
       createPaymentRecord.mockResolvedValueOnce(undefined);
-      grantEntitlements.mockRejectedValueOnce(new Error('Entitlement service error'));
+      grantEntitlements.mockRejectedValueOnce(new Error("Entitlement service error"));
 
       await expect(handleMoyasarWebhook(payload, signature, secret)).rejects.toThrow(
-        'Entitlement service error',
+        "Entitlement service error",
       );
     });
   });

@@ -86,19 +86,24 @@ const mockCorpus: CorpusEntry[] = [
   },
 ];
 
-// Mock Gemini inference
-const mockGemini = {
-  generateContent: vi.fn(),
-  embedText: vi.fn(),
-};
-
 // Mock Firestore audit
 const auditLog: Array<{ timestamp: string; userId: string; query: string; citationCount: number }> = [];
 
 // Service implementations
 async function retrieveCorpusChunks(query: string, bankId?: string, limit: number = 3): Promise<CorpusEntry[]> {
-  // BM25 simulation: exact substring match (simplified)
-  const queryTerms = query.toLowerCase().split(/\s+/);
+  // BM25 simulation: exact substring match (simplified).
+  // Drop empty and very short terms before scoring. Two reasons, both of which
+  // otherwise report an ungrounded answer as grounded:
+  //   - '' matches every string via String.includes, so an empty query scored
+  //     a hit on the whole corpus.
+  //   - 2-letter stopwords ("to", "is", "in") substring-match common text, so
+  //     "Something unrelated to GACAR" scored a hit on "reported to ATC".
+  // Real BM25 gives such terms near-zero IDF; dropping them is the cheap
+  // equivalent for this stand-in.
+  const queryTerms = query
+    .toLowerCase()
+    .split(/\s+/)
+    .filter((term) => term.length >= 3);
   const scored = mockCorpus
     .filter((entry) => !bankId || entry.part === bankId)
     .map((entry) => ({
@@ -130,9 +135,7 @@ async function generateCaptainAdelResponse(req: ChatRequest): Promise<ChatRespon
     };
   }
 
-  // Mock Gemini call (in real code: uses grounding with corpus chunks)
-  const context = chunks.map((c) => `${c.citations[0]}: ${c.text}`).join('\n\n');
-
+  // Mock Gemini call (in real code: the chunks above are the grounding context)
   const mockAnswer =
     chunks[0].part === 'AIP'
       ? `Based on GACAR ${chunks[0].part}, the answer is: ${chunks[0].text}`
@@ -355,7 +358,7 @@ describe('Captain Adel E2E', () => {
       };
 
       const chunks: Partial<ChatResponse>[] = [];
-      const response = await streamChatResponse(request, (chunk) => {
+      await streamChatResponse(request, (chunk) => {
         chunks.push(chunk);
       });
 
