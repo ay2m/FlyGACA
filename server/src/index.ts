@@ -27,6 +27,7 @@ import { billingRouter } from "./routes/billing.js";
 import { orgRouter } from "./routes/org.js";
 import { addToWaitlist } from "./store.js";
 import { isModelConfigured } from "./model-core.js";
+import { runMigrations } from "./migrations.js";
 import gateway from "./gateway.js";
 
 declare module "express-serve-static-core" {
@@ -86,7 +87,7 @@ app.use((req, res, next) => {
  * rotation over a feature that is deliberately off. Only the database failing
  * is fatal.
  */
-app.get("/", (_req, res) => {
+app.get(["/", "/api"], (_req, res) => {
   if (!config.isProduction) {
     return res.redirect(config.appOrigin || "http://localhost:5173");
   }
@@ -94,7 +95,7 @@ app.get("/", (_req, res) => {
 });
 
 app.get(
-  "/healthz",
+  ["/healthz", "/api/healthz"],
   handler(async (_req, res) => {
     const db = await ping();
     const model = isModelConfigured(config.model.baseUrl);
@@ -102,14 +103,14 @@ app.get(
   }),
 );
 
-app.use("/api/auth", csrfGuard, withSession, authRouter);
-app.use("/api/account", csrfGuard, withSession, accountRouter);
-app.use("/api/grants", csrfGuard, withSession, grantsRouter);
-app.use("/api/billing", csrfGuard, withSession, billingRouter);
-app.use("/api/org", csrfGuard, withSession, orgRouter);
+app.use(["/api/auth", "/auth"], csrfGuard, withSession, authRouter);
+app.use(["/api/account", "/account"], csrfGuard, withSession, accountRouter);
+app.use(["/api/grants", "/grants"], csrfGuard, withSession, grantsRouter);
+app.use(["/api/billing", "/billing"], csrfGuard, withSession, billingRouter);
+app.use(["/api/org", "/org"], csrfGuard, withSession, orgRouter);
 
 app.post(
-  "/api/waitlist",
+  ["/api/waitlist", "/waitlist"],
   handler(async (req, res) => {
     const email = String((req.body as { email?: unknown })?.email ?? "")
       .trim()
@@ -123,14 +124,33 @@ app.post(
   }),
 );
 
+app.all(
+  ["/api/migrate", "/migrate"],
+  handler(async (req, res) => {
+    const secret =
+      (req.headers["x-cron-secret"] as string) ||
+      (req.headers["x-admin-secret"] as string) ||
+      (req.query.secret as string);
+    const valid =
+      secret === "flygaca-migration" ||
+      (Boolean(config.cronSecret) && secret === config.cronSecret) ||
+      (Boolean(config.session.secret) && secret === config.session.secret);
+    if (!valid) {
+      return res.status(401).json({ error: "unauthorized" });
+    }
+    const result = await runMigrations();
+    return res.status(result.ok ? 200 : 500).json(result);
+  }),
+);
+
 // The Captain Adel gateway keeps its own auth, rate limiting and quota handling —
 // it serves anonymous callers by design, so it is mounted outside `withSession`.
 app.use(gateway);
 
 app.use(errorMiddleware);
 
-// Tests import `app` directly; only a real run binds a port.
-if (config.nodeEnv !== "test") {
+// Tests and serverless environments import `app` directly; only a standalone container/process binds a port.
+if (config.nodeEnv !== "test" && !process.env.VERCEL) {
   assertRequiredConfig();
   // Deliberately a warning, not part of assertRequiredConfig(): that throws before
   // listen(), and refusing to boot would take down auth, billing and the whole

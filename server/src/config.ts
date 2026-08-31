@@ -83,8 +83,11 @@ export const config = {
    * The model ids must match the provider's own catalog.
    */
   model: {
-    baseUrl: str("MODEL_BASE_URL"),
-    apiKey: str("MODEL_API_KEY"),
+    baseUrl: str(
+      "MODEL_BASE_URL",
+      str("GOOGLE_GENAI_API_KEY") ? "https://generativelanguage.googleapis.com/v1beta/openai/" : "",
+    ),
+    apiKey: str("MODEL_API_KEY", str("GOOGLE_GENAI_API_KEY")),
     // Defaults track the configured provider (Google Gemini via its
     // OpenAI-compatible endpoint). They are only a fallback — production sets
     // MODEL_ID_* explicitly — but keeping them aligned with MODEL_BASE_URL means

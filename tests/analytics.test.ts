@@ -48,15 +48,6 @@ describe('initializeGoogleAnalytics', () => {
     expect(w.gtag).toBeUndefined();
   });
 
-  it('skips gtag entirely when Firebase Analytics is configured — one GA4 pipeline per host', () => {
-    vi.stubEnv('PROD', true);
-    vi.stubEnv('VITE_GA_MEASUREMENT_ID', 'G-TEST');
-    vi.stubEnv('VITE_FIREBASE_APP_ID', '1:123:web:abc');
-    initializeGoogleAnalytics();
-    expect(w.gtag).toBeUndefined();
-    expect(document.querySelector('script[src*="googletagmanager"]')).toBeNull();
-  });
-
   it('installs the command queue synchronously and loads gtag.js for the measurement id', () => {
     vi.stubEnv('PROD', true);
     vi.stubEnv('VITE_GA_MEASUREMENT_ID', 'G-TEST');

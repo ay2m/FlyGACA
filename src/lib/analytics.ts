@@ -113,16 +113,13 @@ export function reportWebVitals(): void {
 
 /**
  * Initialize Google Analytics (gtag) on the non-Vercel production fronts.
- * Exactly one GA4 pipeline runs per host: Vercel hosts use the Vercel beacon,
- * and when Firebase Analytics is configured (`VITE_FIREBASE_APP_ID`) it loads
- * its own gtag under the Firebase stream — loading a second copy here would
- * double-count every hit. The command queue (`dataLayer` + `window.gtag`) is
- * installed synchronously so events buffer from t0, but the gtag.js network
- * fetch is deferred past window load so it never competes with the app boot.
+ * Exactly one GA4 pipeline runs per host: Vercel hosts use the Vercel beacon.
+ * The command queue (`dataLayer` + `window.gtag`) is installed synchronously
+ * so events buffer from t0, but the gtag.js network fetch is deferred past
+ * window load so it never competes with the app boot.
  */
 export function initializeGoogleAnalytics(): void {
   if (!isAnalyticsEnabled() || isVercelAnalyticsEnabled()) return; // Vercel has its own analytics
-  if (import.meta.env.VITE_FIREBASE_APP_ID) return; // Firebase Analytics IS GA4
   const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
   if (!measurementId) return;
 
