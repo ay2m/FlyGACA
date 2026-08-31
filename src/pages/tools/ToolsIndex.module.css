@@ -269,7 +269,6 @@
   flex: 1;
 }
 
-
 /* ── "Start here" featured row — larger, richer cards above the dense category
    grids, so the most-reached-for tools have clear visual priority. ── */
 .featuredGrid {
@@ -403,7 +402,9 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
-  transition: gap var(--dur) var(--ease), color var(--dur) var(--ease);
+  transition:
+    gap var(--dur) var(--ease),
+    color var(--dur) var(--ease);
 }
 .ctaArrow {
   transition: transform var(--dur) var(--ease);
