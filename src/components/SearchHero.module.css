@@ -12,7 +12,7 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: start;
-  max-inline-size: 760px;
+  max-inline-size: 100%;
 }
 
 /* Instrument-label eyebrow: uppercase kicker with a short leading hairline rule

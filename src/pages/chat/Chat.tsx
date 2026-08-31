@@ -59,7 +59,7 @@ import { CaptainAvatar } from '@/components/CaptainAvatar';
  * - Refusal: model cannot ground answer in corpus, refuses to guess.
  * - Every regulatory claim MUST link to /library/<slug>#<section>.
  */
-export default function Chat() {
+export function Chat() {
   const { t } = useTranslation();
   usePageMeta(t('meta.chat'), t('metaDesc.chat'));
 
@@ -448,3 +448,6 @@ export default function Chat() {
     </section>
   );
 }
+
+export default Chat;
+

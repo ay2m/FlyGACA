@@ -34,13 +34,14 @@ function TitleWithIcon({ icon, children }: { icon: ReactNode; children: ReactNod
   );
 }
 
-/** Quick-pick categories surfaced as chips in the hero. */
-const POPULAR_CATS: ToolCategoryId[] = [
-  'performance',
-  'navigation',
-  'weight-fuel',
-  'atmosphere-weather',
-  'regulations',
+/** Quick-search suggestions surfaced as chips in the hero. */
+const SUGGESTIONS = [
+  'Crosswind',
+  'Density altitude',
+  'Wind triangle',
+  'METAR',
+  'Weight & balance',
+  'Fuel reserves',
 ];
 
 /** Curated flagship tools surfaced in the "Start here" row at the top of the
@@ -142,11 +143,11 @@ export function ToolsIndex() {
     ];
   }, [t, liveCount]);
 
-  // Quick-pick category chips for the hero; toggle the matching category filter.
-  const popularChips = POPULAR_CATS.map((c) => ({
-    label: t(`tools.categories.${c}`),
-    onClick: () => setCategory((cur) => (cur === c ? 'all' : c)),
-    active: category === c,
+  // Quick-search suggestion chips for the hero.
+  const suggestionChips = SUGGESTIONS.map((s) => ({
+    label: s,
+    onClick: () => setQuery(s),
+    active: q.toLowerCase() === s.toLowerCase(),
   }));
 
   // Press "/" anywhere (outside a field) to focus the search box.
@@ -205,8 +206,8 @@ export function ToolsIndex() {
         query={query}
         onQueryChange={setQuery}
         stats={stats}
-        chipsLabel={t('tools.popular')}
-        chips={popularChips}
+        chipsLabel={t('tools.popular', 'Quick searches')}
+        chips={suggestionChips}
         inputRef={searchRef}
       />
       <div className={styles.controls}>
@@ -255,7 +256,6 @@ export function ToolsIndex() {
           </div>
         </div>
       </div>
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
       <div
         ref={rootRef}
         onKeyDown={onGridKeyDown}
