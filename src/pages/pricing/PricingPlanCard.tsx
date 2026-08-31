@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import type { ReactNode } from 'react';
+import { CheckCircle } from '@phosphor-icons/react';
 import styles from './Pricing.module.css';
 
 export interface PricingPlanCardProps {
@@ -61,7 +62,10 @@ export function PricingPlanCard({
       </div>
       <ul className={styles.features}>
         {features.map((x) => (
-          <li key={x}>{x}</li>
+          <li key={x}>
+            <CheckCircle size={16} weight="fill" className={styles.featureIcon} aria-hidden="true" />
+            <span>{x}</span>
+          </li>
         ))}
       </ul>
       {ctaHref ? (

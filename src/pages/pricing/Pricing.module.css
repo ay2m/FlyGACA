@@ -183,12 +183,10 @@
   gap: var(--space-2);
   line-height: var(--lh-snug);
 }
-.features li::before {
-  content: '✓';
+.featureIcon {
+  color: var(--brand-hover);
   flex-shrink: 0;
-  color: var(--accent-bright);
-  font-weight: var(--fw-bold);
-  margin-block-start: 1px;
+  margin-block-start: 2px;
 }
 .highlight .features {
   border-block-start-color: color-mix(in srgb, var(--brand) 28%, transparent);

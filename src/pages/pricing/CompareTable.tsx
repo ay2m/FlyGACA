@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Check, X } from '@phosphor-icons/react';
 import { SectionHeader } from '@/components/SectionHeader';
 import { classifyCompareCell } from '@/calc/app/pricingView';
 import styles from './Pricing.module.css';
@@ -23,14 +24,14 @@ export function CompareTable() {
     if (kind === 'yes')
       return (
         <span className={styles.cmpYes}>
-          <span aria-hidden="true">✓</span>
+          <Check size={18} weight="bold" aria-hidden="true" />
           <span className="sr-only">{t('pricing.cmpYes')}</span>
         </span>
       );
     if (kind === 'no')
       return (
         <span className={styles.cmpNo}>
-          <span aria-hidden="true">✕</span>
+          <X size={16} weight="bold" aria-hidden="true" />
           <span className="sr-only">{t('pricing.cmpNo')}</span>
         </span>
       );
