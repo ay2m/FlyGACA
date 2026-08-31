@@ -13,58 +13,6 @@
 
 import { describe, it, expect } from 'vitest';
 
-// Types from TypeScript client (src/lib/types.ts equivalent)
-interface StudyState {
-  quizBest: Record<string, number>;
-  gsDone: Record<string, boolean>;
-  fcKnown: Record<string, number[]>;
-  fcSrs: Record<string, SrsBox[]>;
-  pathDone: Record<string, boolean>;
-  streak: Streak;
-  exam: ExamResult | null;
-  examHistory: ExamResult[];
-  flagged: Record<string, number[]>;
-  lastBank: string | null;
-}
-
-interface ExamResult {
-  pct: number;
-  passed: boolean;
-  date: string; // ISO yyyy-mm-dd, UTC
-}
-
-interface Streak {
-  day: string; // ISO yyyy-mm-dd
-  count: number;
-}
-
-interface SrsBox {
-  box: number; // 0–5
-  due: string; // ISO yyyy-mm-dd
-}
-
-interface QuizSessionResult {
-  bankID: string;
-  moduleID: string;
-  correct: number;
-  total: number;
-  answers: Record<number, number>; // index -> choice index
-  finishedAt: string; // ISO 8601 timestamp
-}
-
-interface ServerCoreModels {
-  SrsBox: { box: number; due: string };
-  ExamResult: { percent: number; passed: boolean; date: string };
-  Streak: { day: string; count: number };
-  QuizSessionResult: {
-    bankID: string;
-    moduleID: string;
-    correct: number;
-    total: number;
-    finishedAt: string;
-  };
-}
-
 describe('Cross-repo parity', () => {
   describe('SRS contract', () => {
     it('client SrsBox matches server box enum (0–5)', () => {
