@@ -63,7 +63,12 @@ export function PricingPlanCard({
       <ul className={styles.features}>
         {features.map((x) => (
           <li key={x}>
-            <CheckCircle size={16} weight="fill" className={styles.featureIcon} aria-hidden="true" />
+            <CheckCircle
+              size={16}
+              weight="fill"
+              className={styles.featureIcon}
+              aria-hidden="true"
+            />
             <span>{x}</span>
           </li>
         ))}

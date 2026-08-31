@@ -87,66 +87,66 @@ export function Header() {
               </span>
             </Link>
 
-          {/* Desktop inline nav (hidden ≤860px, where the bottom dock takes over).
+            {/* Desktop inline nav (hidden ≤860px, where the bottom dock takes over).
               When signed in, /account becomes a dropdown surfacing the daily pages. */}
-          <nav className={styles.links} aria-label={t('nav.primary')}>
-            {NAV.map((item) =>
-              item.to === '/account' && signedIn ? (
-                <AccountMenu key={item.to} />
-              ) : (
+            <nav className={styles.links} aria-label={t('nav.primary')}>
+              {NAV.map((item) =>
+                item.to === '/account' && signedIn ? (
+                  <AccountMenu key={item.to} />
+                ) : (
+                  <NavLink
+                    viewTransition
+                    key={item.to}
+                    to={item.to}
+                    className={({ isActive }) => (isActive ? styles.active : undefined)}
+                  >
+                    {t(item.key)}
+                  </NavLink>
+                ),
+              )}
+              {!isPro && (
                 <NavLink
                   viewTransition
-                  key={item.to}
-                  to={item.to}
+                  to="/pricing"
                   className={({ isActive }) => (isActive ? styles.active : undefined)}
                 >
-                  {t(item.key)}
+                  {t('nav.pricing')}
                 </NavLink>
-              ),
-            )}
-            {!isPro && (
-              <NavLink
-                viewTransition
-                to="/pricing"
-                className={({ isActive }) => (isActive ? styles.active : undefined)}
-              >
-                {t('nav.pricing')}
-              </NavLink>
-            )}
-          </nav>
+              )}
+            </nav>
 
-          <div className={styles.actions}>
-            <button
-              className={styles.searchPill}
-              type="button"
-              onClick={openCommandPalette}
-              aria-label={t('cmdk.label')}
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                aria-hidden="true"
+            <div className={styles.actions}>
+              <button
+                className={styles.searchPill}
+                type="button"
+                onClick={openCommandPalette}
+                aria-label={t('cmdk.label')}
               >
-                <circle cx="11" cy="11" r="8" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              </svg>
-              <span className={styles.searchPillText}>{t('cmdk.search')}</span>
-              <kbd className={styles.searchPillKbd} aria-hidden="true">
-                ⌘K
-              </kbd>
-            </button>
-            <ThemeToggle className={styles.langToggle} />
-            <LangToggle className={styles.langToggle} />
-            <ButtonLink className={styles.cta} to={ctaTo} viewTransition icon={ctaIcon}>
-              {ctaLabel}
-            </ButtonLink>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                <span className={styles.searchPillText}>{t('cmdk.search')}</span>
+                <kbd className={styles.searchPillKbd} aria-hidden="true">
+                  ⌘K
+                </kbd>
+              </button>
+              <ThemeToggle className={styles.langToggle} />
+              <LangToggle className={styles.langToggle} />
+              <ButtonLink className={styles.cta} to={ctaTo} viewTransition icon={ctaIcon}>
+                {ctaLabel}
+              </ButtonLink>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
 
       <MobileDock signedIn={signedIn} ctaTo={ctaTo} ctaLabel={ctaLabel} ctaIcon={ctaIcon} />
     </>

@@ -8,7 +8,7 @@
  * error-copy layer survived the backend swap untouched.
  */
 import type { NextFunction, Request, RequestHandler, Response } from "express";
-import { parse as parseCookie } from "cookie";
+import { parseCookie } from "cookie";
 import { config } from "./config.js";
 import { verifySession } from "./session.js";
 import { isAllowedOrigin } from "./gateway-core.js";
