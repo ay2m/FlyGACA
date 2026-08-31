@@ -218,12 +218,28 @@ function Runner({ data, pack }: { data: QuizData; pack?: Pack }) {
                     {idx + 1}. {item.q}
                   </p>
                   <p className={styles.reviewA}>
-                    <CheckCircle size={16} weight="fill" style={{ color: 'var(--success)', verticalAlign: 'middle', marginInlineEnd: '4px' }} />
+                    <CheckCircle
+                      size={16}
+                      weight="fill"
+                      style={{
+                        color: 'var(--success)',
+                        verticalAlign: 'middle',
+                        marginInlineEnd: '4px',
+                      }}
+                    />
                     {item.options[item.answer]}
                   </p>
                   {!ok && (
                     <p className={styles.reviewYours}>
-                      <XCircle size={16} weight="fill" style={{ color: 'var(--danger)', verticalAlign: 'middle', marginInlineEnd: '4px' }} />
+                      <XCircle
+                        size={16}
+                        weight="fill"
+                        style={{
+                          color: 'var(--danger)',
+                          verticalAlign: 'middle',
+                          marginInlineEnd: '4px',
+                        }}
+                      />
                       {a == null ? t('study.noAnswer') : item.options[a]}
                     </p>
                   )}
@@ -292,7 +308,11 @@ function Runner({ data, pack }: { data: QuizData; pack?: Pack }) {
             aria-label={t('study.summaryTitle')}
             title={t('study.summaryTitle')}
           >
-            <SquaresFour size={16} weight="bold" style={{ marginInlineEnd: '4px', verticalAlign: 'middle' }} />
+            <SquaresFour
+              size={16}
+              weight="bold"
+              style={{ marginInlineEnd: '4px', verticalAlign: 'middle' }}
+            />
             <span>{t('study.question', { n: i + 1, total: questions.length })}</span>
           </button>
           <span>· {t('study.answered', { n: answered, total: questions.length })}</span>
@@ -322,7 +342,11 @@ function Runner({ data, pack }: { data: QuizData; pack?: Pack }) {
           aria-pressed={flags[i]}
           onClick={() => setFlags((f) => f.map((v, idx) => (idx === i ? !v : v)))}
         >
-          <Flag size={16} weight={flags[i] ? 'fill' : 'regular'} style={{ marginInlineEnd: '4px', verticalAlign: 'middle' }} />
+          <Flag
+            size={16}
+            weight={flags[i] ? 'fill' : 'regular'}
+            style={{ marginInlineEnd: '4px', verticalAlign: 'middle' }}
+          />
           <span>{flags[i] ? t('study.flagged') : t('study.flag')}</span>
         </button>
       </div>
@@ -345,7 +369,12 @@ function Runner({ data, pack }: { data: QuizData; pack?: Pack }) {
             type="button"
             className={styles.option}
             onClick={() => setI(i - 1)}
-            style={{ inlineSize: 'auto', display: 'inline-flex', alignItems: 'center', gap: 'var(--space-1)' }}
+            style={{
+              inlineSize: 'auto',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 'var(--space-1)',
+            }}
           >
             <CaretLeft size={16} weight="bold" />
             <span>{t('study.back')}</span>
