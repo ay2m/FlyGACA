@@ -4,6 +4,13 @@
 **Scope:** ay2m/FlyGACA, ay2m/FlyGACA-ios, ay2m/Office  
 **Status:** Initial Analysis
 
+> **What has since been built:** the cross-platform slice of the Phase 1–3 recommendations below
+> now exists as five suites (89 tests) across this repo and `ay2m/FlyGACA-ios`. See
+> [`CROSS-PLATFORM-TEST-SUITE.md`](./CROSS-PLATFORM-TEST-SUITE.md) for the inventory, the run
+> commands, and — importantly — the three limitations that bound what a green run proves. The ✅
+> marks in §6 below are the *plan's* proposed sequencing, not a record of completed work; §5 of
+> that companion doc carries the real status.
+
 ---
 
 ## Executive Summary
