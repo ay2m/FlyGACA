@@ -9,7 +9,7 @@
  * - Concurrent users (10 simultaneous syncs): <2s total
  */
 
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 
 // ============================================================================
 // Mock API with performance tracking
@@ -63,7 +63,7 @@ interface AuthToken {
   issuedAt: number;
 }
 
-async function mockAuthFlow(email: string): Promise<AuthToken> {
+async function mockAuthFlow(_email: string): Promise<AuthToken> {
   await simulateNetworkDelay();
   return {
     idToken: `id_${Date.now()}`,
@@ -73,17 +73,30 @@ async function mockAuthFlow(email: string): Promise<AuthToken> {
   };
 }
 
-async function mockProgressSync(userId: string, questionCount: number): Promise<{ synced: boolean }> {
+interface ProgressEntry {
+  box: number;
+  dueDate: string;
+}
+
+interface EntitlementEntry {
+  packId: string;
+  expiresAt: string;
+}
+
+async function mockProgressSync(
+  _userId: string,
+  _questionCount: number
+): Promise<{ synced: boolean }> {
   await simulateNetworkDelay();
   return { synced: true };
 }
 
-async function mockFetchProgress(userId: string): Promise<any[]> {
+async function mockFetchProgress(_userId: string): Promise<ProgressEntry[]> {
   await simulateNetworkDelay();
   return Array(100).fill({ box: 1, dueDate: '2026-09-02' });
 }
 
-async function mockEntitlementsFetch(userId: string, count: number): Promise<any[]> {
+async function mockEntitlementsFetch(_userId: string, count: number): Promise<EntitlementEntry[]> {
   await simulateNetworkDelay();
   return Array(count).fill({ packId: 'ppl', expiresAt: '2027-08-31' });
 }
@@ -136,7 +149,7 @@ describe('Performance & Load Tests', () => {
     });
 
     it('token refresh should complete in <50ms', async () => {
-      const result = await measurePerformance(
+      await measurePerformance(
         'Token Refresh',
         async () => {
           await simulateNetworkDelay(20); // Faster operation
@@ -293,7 +306,7 @@ describe('Performance & Load Tests', () => {
     });
 
     it('merge 3 conflicting updates should be instant (<10ms)', async () => {
-      const result = await measurePerformance(
+      await measurePerformance(
         'Merge Conflicts (3 updates)',
         async () => {
           // Simulate merge logic (no network, local only)
@@ -388,7 +401,6 @@ describe('Performance & Load Tests', () => {
 
     it('throughput benchmark: sync 5K questions should be >100 Q/ms', async () => {
       const questionCount = 5000;
-      const dataSize = questionCount * 40;
 
       const startTime = Date.now();
       await mockProgressSync('perf_user', questionCount);
