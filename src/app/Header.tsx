@@ -6,7 +6,9 @@ import { ButtonLink } from '@/components/ui/Button';
 import { useAccount } from '@/lib/services/account';
 import { uiIsPro } from '@/lib/services/entitlements';
 import { AccountMenu } from './AccountMenu';
+import { LangToggle } from '@/components/LangToggle';
 import { MobileDock } from './MobileDock';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { NAV } from './nav';
 import styles from './Header.module.css';
 
