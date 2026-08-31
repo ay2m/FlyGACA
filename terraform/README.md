@@ -8,9 +8,8 @@ Infrastructure-as-code for Firebase Hosting monitoring, alerting, and dashboards
 > - It targets project **`flygaca-prod`** (`main.tf`, `gcp_project_id` default). That project id
 >   appears nowhere else in the family — `CLAUDE.md` documents `flygaca-sa`, `flygaca-app` and
 >   `flygaca-dev`. Confirm the project before running `terraform apply`.
-> - The uptime check monitors **`www.flygaca.com`, which is currently down** — the domain serves a
->   Firebase "Site Not Found" on every path. Applying this as-is would page continuously on a known
->   outage rather than a new one.
+> - The uptime check monitors **`flygaca.com`**, currently served by Vercel edge infrastructure
+>   with automated deployments from `main`.
 >
 > Whether this configuration has ever been applied is not recorded here. Run
 > `terraform plan` first and read the diff.

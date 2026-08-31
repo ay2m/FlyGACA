@@ -7,8 +7,8 @@ for instant frontend rendering. A separate step upserts vector embeddings to Sup
 
 > [!NOTE]
 > **These steps are run by hand, not by CI.** This README used to point at a `docs-parser`
-> workflow; no such workflow exists — the repo's only workflows are `ci.yml`, `deploy.yml`,
-> `deploy-firebase.yml` and `prerender.yml`, and none of them runs the commands below. Run them
+> workflow; no such workflow exists — the repo's active workflows are `ci.yml`, `ios-testflight.yml`,
+> `deploy.yml`, `deploy-firebase.yml` and `prerender.yml`, and none of them runs the commands below. Run them
 > yourself after editing a Part, and commit the regenerated lookup.
 >
 > Note also that pgvector embeddings are **not** what serves Captain Adel today: the live

@@ -2,61 +2,29 @@
 
 Marketing and promotional screenshots for the Fly GACA iOS app family.
 
-> [!IMPORTANT]
-> **The iOS project is not in this repo — the capture instructions below cannot be run here.**
-> There is no `apple/` tree and no `project.yml` in any commit of `ay2m/FlyGACA`; the Swift side
-> lives in **[`ay2m/FlyGACA-ios`](https://github.com/ay2m/FlyGACA-ios)**. Everything below about
-> `xcodegen`, schemes and simulators applies to *that* checkout. What lives here is the committed
-> output: 26 PNGs under `raw/`, kept alongside the content pipeline that feeds the apps.
+> [!NOTE]
+> **Two iOS targets exist in the family:**
+> 1. **Capacitor 8 iOS App (in this repo):** The full Fly GACA unified app lives directly in `ios/App/App.xcodeproj` and builds with `npm run cap:sync && npm run cap:open`.
+> 2. **Standalone SwiftUI modules:** Live in **[`ay2m/FlyGACA-ios`](https://github.com/ay2m/FlyGACA-ios)**.
 >
 > **Module status:** **ELPT** and **AIP** ship. **PPL, CPL, IR and ATPL are parked** — their
-> modules were removed from the iOS repo in 2026-08 pending a strategic decision, while their
+> modules were removed from the standalone iOS repo in 2026-08 pending a strategic decision, while their
 > *web* study packs keep selling. Screenshots for the parked four are historical.
->
-> `device-frames/` in the tree below does not exist yet; only `raw/` and `INDEX.md` do.
 
-## Directory Structure
-
-```
-screenshots/
-├── README.md                 # This file
-├── INDEX.md                  # Detailed screenshot inventory
-├── raw/                      # Original simulator captures
-│   ├── iPhone15Pro/
-│   │   ├── portrait/         # iPhone screenshots (portrait)
-│   │   └── landscape/        # iPhone screenshots (landscape)
-│   └── iPadPro/
-│       ├── portrait/         # iPad screenshots (portrait)
-│       └── landscape/        # iPad screenshots (landscape)
-└── device-frames/            # Marketing-ready with device bezels (optional)
-    ├── iPhone/
-    └── iPad/
-```
-
-## Quick Start: Capturing Screenshots
-
-### Prerequisites
-
-- macOS with Xcode 16+
-- Brew: `brew install xcodegen`
-- iOS simulators: iPhone 15 Pro, iPad Pro 12.9"
-
-### Step 1: Generate Project
+## Capturing Screenshots via Capacitor iOS
 
 ```bash
-cd apple
-npm run ios:generate  # or: xcodegen generate
-```
+# 1. Sync latest web build to the iOS shell
+npm run cap:sync
 
-### Step 2: Run Screenshot Capture
+# 2. Boot iOS Simulator (e.g. iPhone 17 Pro)
+xcrun simctl boot "iPhone 17 Pro"
 
-Choose one of these methods:
+# 3. Build & launch app
+npm run cap:open
 
-#### Option A: Automated Shell Script (Recommended)
-
-```bash
-cd apple
-bash Scripts/capture-screenshots.sh
+# 4. Capture screenshot from simulator
+xcrun simctl io booted screenshot screenshots/raw/iPhone17Pro/01-home.png
 ```
 
 This script:

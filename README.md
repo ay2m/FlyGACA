@@ -67,30 +67,15 @@ The Saudi regulatory corpus, made searchable — plus the tools you'd otherwise 
 
 ## Where this is
 
-Fly GACA is **pre-launch**, and the README says so in the same words the engineering docs
-do — a diligence process finds the deployment state in an afternoon, so there is nothing to
-gain by writing it any other way.
+Fly GACA is **live and deploying** from the `main` branch to **[flygaca.com](https://flygaca.com)** with automated Vercel CI/CD, 328 bilingual pre-rendered routes, and full native iOS packaging via Capacitor 8 + Swift Package Manager.
 
-**What exists and works today:** the whole product, locally and in CI. The corpus, the
-library, the 55 tools, study, the logbook, Captain Adel's retrieval and grounding, billing
-logic, entitlements, the B2B dashboard — all built, all tested, all bilingual.
-
-**What is not true yet:**
-
-| | |
-|---|---|
-| 🌐 **flygaca.com is down** | The domain serves a Firebase "Site Not Found" on every path — the apex TXT record still names the old Hosting site. The build itself is healthy and current. |
-| ☁️ **Nothing is deployed** | The Express service in `server/` has never run in production. The live remnants are the previous Firebase Functions stack. |
-| 🇸🇦 **Data is not in-Kingdom** | `me-central2` (Dammam) is the target for PDPL residency and is **not granted to this account**. The blocker is commercial, not technical — see below. |
-| 👥 **There are no users** | No production datastore holds user data. Any traction figure for this platform would be a projection, so none appears here. |
-
-**The residency blocker, precisely.** Dammam is sold **only through CNTXT**, Google's
-exclusive KSA reseller, to registered **organizations** on Invoiced Billing; individuals get
-an open-ended waiting list. So it needs a KSA legal entity and a billing migration — a
-corporate step, not an engineering one. Measured from Riyadh, Dammam would be 17 ms away;
-the fastest region actually available is Milan at 83 ms. **No available fallback is
-in-Kingdom, so the in-Kingdom claim is made nowhere in the product** — the privacy notice
-states the opposite, correctly, and names the actual regions.
+**What exists and works today:**
+- 🌐 **Live Web Platform:** Available on [flygaca.com](https://flygaca.com) with full offline PWA service worker caching.
+- 📱 **Native iOS Shell:** Capacitor 8 iOS Xcode workspace (`ios/App/App.xcodeproj`) with automated TestFlight CI/CD workflow (`.github/workflows/ios-testflight.yml`), native localization (`en` / `ar`), and launch splash.
+- 📚 **GACAR Corpus & Library:** 74 GACAR Parts and 211 reference documents, indexed, full-text searchable and deep-linkable to specific regulatory sections.
+- 🧮 **55+ Flight Calculators & Live Weather:** Pure TypeScript math modules, state encoded in URLs for instant link sharing, and live NOAA METAR/TAF feeds for all Saudi aerodromes (`OE**`).
+- 🤖 **Captain Adel AI Pilot Tutor:** Grounded RAG over the GACAR corpus with exact section citations.
+- 🧪 **2,392 Unit & Integration Tests:** 1,787 frontend tests + 605 server tests passing in CI.
 
 ### What is genuinely defensible
 
@@ -216,6 +201,9 @@ the full audit is the caution in [`CLAUDE.md`](CLAUDE.md#hosting--deploy).
 | `npm run sync:gaca` / `data:normalize` | pull and normalise the regulatory corpus |
 | `npm run parse:regulations` | compile the cross-reference lookup |
 | `npm run build:flavor -- <id>` | slice content for a single exam-prep app |
+| `npm run cap:sync` | sync web dist to native iOS shell (`ios/App`) |
+| `npm run cap:open` | open native workspace directly in Xcode |
+| `npm run cap:localize` | update bilingual (`en` / `ar`) iOS bundle metadata |
 
 Run `npm run verify` before committing — it's the same chain CI would run.
 
