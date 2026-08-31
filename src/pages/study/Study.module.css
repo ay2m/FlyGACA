@@ -83,13 +83,22 @@
   font-size: var(--fs-lg);
 }
 .modeIcon {
-  font-size: 1.25rem;
-  line-height: 1;
-  background: var(--grad-brand);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin-block-end: var(--space-1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 42px;
+  block-size: 42px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--brand) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--brand) 25%, transparent);
+  color: var(--brand-hover);
+  margin-block-end: var(--space-2);
+  transition: all var(--dur) var(--ease);
+}
+.mode:hover .modeIcon {
+  background: color-mix(in srgb, var(--brand) 22%, transparent);
+  border-color: var(--brand-hover);
+  transform: scale(1.05);
 }
 .mode p,
 .bankDesc {

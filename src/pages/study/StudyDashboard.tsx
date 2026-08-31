@@ -1,5 +1,14 @@
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import {
+  GraduationCap,
+  Cards,
+  Books,
+  Target,
+  Compass,
+  Package,
+  FileText,
+} from '@phosphor-icons/react';
 import { useFetchJson } from '@/hooks/useFetchJson';
 import type { GroundSchoolData, QuizData } from '@/lib/content';
 import { useStudyProgress } from '@/lib/studyProgress';
@@ -14,13 +23,13 @@ import styles from './Study.module.css';
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const STUDY_MODES = [
-  { to: '/study/quiz', key: 'quiz', icon: '◉' },
-  { to: '/study/flashcards', key: 'flashcards', icon: '⇄' },
-  { to: '/study/groundschool', key: 'groundschool', icon: '◈' },
-  { to: '/study/exam', key: 'exam', icon: '◎' },
-  { to: '/study/paths', key: 'paths', icon: '▷' },
-  { to: '/study/packs', key: 'packs', icon: '⊞' },
-  { to: '/study/sheets', key: 'sheets', icon: '▤' },
+  { to: '/study/quiz', key: 'quiz', Icon: GraduationCap },
+  { to: '/study/flashcards', key: 'flashcards', Icon: Cards },
+  { to: '/study/groundschool', key: 'groundschool', Icon: Books },
+  { to: '/study/exam', key: 'exam', Icon: Target },
+  { to: '/study/paths', key: 'paths', Icon: Compass },
+  { to: '/study/packs', key: 'packs', Icon: Package },
+  { to: '/study/sheets', key: 'sheets', Icon: FileText },
 ] as const;
 
 /**
@@ -184,11 +193,12 @@ export function StudyDashboard() {
       <ul className={`${styles.modes} stagger-grid`}>
         {STUDY_MODES.map((m) => {
           const prog = progressFor(m.key);
+          const Icon = m.Icon;
           return (
             <li key={m.key}>
               <Link to={m.to} className={styles.mode}>
                 <span className={styles.modeIcon} aria-hidden="true">
-                  {m.icon}
+                  <Icon size={24} weight="regular" />
                 </span>
                 <h2>{t(`study.${m.key}`)}</h2>
                 <p>{t(`study.${m.key}Desc`)}</p>
