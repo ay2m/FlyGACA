@@ -117,15 +117,18 @@
 /* Proof strip — corpus + product facts, once, between hairlines (deliberately
    not the clay card the conversion band uses, so the two read as distinct). */
 .proof {
-  margin-block-start: var(--space-8);
+  margin-block: var(--space-8);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-4);
-  padding-block: var(--space-5);
-  border-block: 1px solid var(--border);
-  /* Quiet instrument panel — a whisper of surface between the hairlines. */
-  background: color-mix(in srgb, var(--surface) 40%, transparent);
+  padding: var(--space-6) var(--space-6);
+  border: 1px solid color-mix(in srgb, var(--border-bright) 35%, transparent);
+  border-radius: var(--radius-xl);
+  background: color-mix(in srgb, var(--surface) 60%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .stats {
