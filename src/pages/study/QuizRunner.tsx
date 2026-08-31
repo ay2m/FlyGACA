@@ -147,7 +147,11 @@ export function Runner({ bank, onBack }: { bank: QuizBank; onBack: () => void })
                 aria-pressed={isFlagged}
                 onClick={() => toggleFlag(bank.id, qIdx)}
               >
-                <Star size={16} weight={isFlagged ? 'fill' : 'regular'} style={{ marginInlineEnd: '4px', verticalAlign: 'middle' }} />
+                <Star
+                  size={16}
+                  weight={isFlagged ? 'fill' : 'regular'}
+                  style={{ marginInlineEnd: '4px', verticalAlign: 'middle' }}
+                />
                 <span>{t(isFlagged ? 'study.flagged' : 'study.flag')}</span>
               </button>
             );
