@@ -18,7 +18,13 @@
 import { spawnSync } from 'node:child_process';
 import { shellQuote } from './deploy-web.mjs';
 
-const REGION = process.env.REGION ?? 'us-central1';
+// me-central2 (Dammam), never a US or me-central1 default: REGION picks the
+// Artifact Registry host, the Cloud Build region and the Cloud Run region in one
+// go, so an unset REGION would stand the API — and every request carrying learner
+// data through it — up outside the Kingdom. Data residency is me-central2 only
+// (CLAUDE.md, docs/RUNBOOK-golive.md §"Data residency"). deploy.yml passes REGION
+// explicitly; this default is what a hand-run inherits.
+const REGION = process.env.REGION ?? 'me-central2';
 const REPO = process.env.ARTIFACT_REPO ?? 'flygaca';
 const SERVICE = process.env.CLOUD_RUN_SERVICE ?? 'flygaca-api';
 const TAG = process.env.TAG ?? 'latest';
