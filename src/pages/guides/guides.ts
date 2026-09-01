@@ -128,12 +128,19 @@ export const GUIDE_STATUS: Record<GuideSlug, GuideStatus> = {
  * sitemap and prerender scripts read this table by regex, not by importing it.
  */
 export const GUIDE_UPDATED: Partial<Record<GuideSlug, string>> = {
-  'how-to-become-a-pilot-in-saudi-arabia': '2026-08-19',
-  'gacar-explained': '2026-08-19',
-  'saudi-cpl-requirements': '2026-08-19',
-  'saudi-instrument-rating': '2026-08-19',
-  'atpl-requirements': '2026-08-19',
-  'drone-uas-rules-in-ksa': '2026-08-19',
+  'how-to-become-a-pilot-in-saudi-arabia': '2026-09-01',
+  'gacar-explained': '2026-09-01',
+  'saudi-ppl-requirements': '2026-09-01',
+  'saudi-cpl-requirements': '2026-09-01',
+  'saudi-instrument-rating': '2026-09-01',
+  'atpl-requirements': '2026-09-01',
+  'drone-uas-rules-in-ksa': '2026-09-01',
+  'foreign-license-conversion-to-gaca': '2026-09-01',
+  'gaca-medical-class-1': '2026-09-01',
+  'gaca-medical-class-2': '2026-09-01',
+  'pilot-currency-and-recency': '2026-09-01',
+  'vfr-weather-minimums': '2026-09-01',
+  'airspace-explained': '2026-09-01',
 };
 
 const isLiveGuide = (slug: GuideSlug): boolean => GUIDE_STATUS[slug] === 'live';
