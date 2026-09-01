@@ -3611,7 +3611,7 @@
       "reading-metar-taf": {
         "name": "Reading METAR & TAF",
         "blurb": "Decode aviation weather reports and forecasts.",
-        "intro": "METARs and TAFs pack the weather into a compact code. Once you know the pattern they read quickly.",
+        "intro": "METAR and TAF reports pack aviation weather into a compact code—but once you learn the structure, they become quick and reliable. A METAR is an observation of current conditions: wind, visibility, weather, cloud layers, temperature, and pressure. A TAF forecasts the weather over 24 to 30 hours, issued four to six times daily. Both reports follow a fixed field order. The groups FM (from), BECMG (becoming) and TEMPO (temporary) mark when conditions shift in a TAF. Learning to decode them is essential under GACAR Part 91, which governs VFR operations and weather minimums. The field order never changes—whether you're reading from Riyadh or elsewhere, once you recognize the structure, even unfamiliar reports decode systematically. Practice with real observations in a METAR or TAF decoder to build speed and confidence.",
         "sections": [
           {
             "h": "METAR",
