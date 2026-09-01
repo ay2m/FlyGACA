@@ -3,8 +3,8 @@
 <img src="public/img/flygaca-mark.png" alt="Fly GACA Logo" width="128" />
 
 # ✈️ Fly GACA
-### The Independent Flight Deck for Saudi Civil Aviation
-#### مكتبة الطيران المدني السعودي · أدوات الطيران · أكاديمية التدريب
+### The Independent Web Platform & Flight Deck for Saudi Civil Aviation
+#### مكتبة الطيران المدني السعودي · أدوات الطيران · أكاديمية التدريب · الفوترة الإلكترونية
 
 <p align="center">
   <img src="https://img.shields.io/badge/Made%20in-Saudi%20Arabia-006C35?style=for-the-badge&labelColor=0a0e12" alt="صنع في السعودية" />
@@ -24,20 +24,18 @@
   <img src="https://img.shields.io/badge/Gemini-Genkit-8E75B2?style=flat-square&logo=googlegemini&logoColor=white&labelColor=0a0e12" alt="Gemini AI" />
 </p>
 
-[**🌐 Live Application (flygaca.com)**](https://flygaca.com) · [**🤖 Ask Captain Adel**](https://flygaca.com/chat) · [**📚 Regulatory Library**](https://flygaca.com/library) · [**🧮 55+ Flight Tools**](https://flygaca.com/tools)
+[**🌐 Live Application (flygaca.com)**](https://flygaca.com) · [**🤖 Ask Captain Adel**](https://flygaca.com/chat) · [**📚 Regulatory Library**](https://flygaca.com/library) · [**🧮 55+ Flight Tools**](https://flygaca.com/tools) · [**🎓 Ground School**](https://flygaca.com/study)
 
 </div>
 
 ---
 
 > [!IMPORTANT]
-> **Fly GACA is not affiliated with GACA.** It helps you *find, study, and calculate* regulations — it never replaces the official source. Every AI response and study guide cites the exact GACAR Part and section number. **Always verify against official publications at [gaca.gov.sa](https://gaca.gov.sa).**
+> **Independent Educational Platform.** Fly GACA is an independent platform and is not affiliated with or endorsed by the General Authority of Civil Aviation (GACA). It helps pilots, students, and dispatchers *find, study, and calculate* regulations — it never replaces the official source. Every AI response and study guide cites the exact GACAR Part and section number. **Always verify flight operations against official publications at [gaca.gov.sa](https://gaca.gov.sa).**
 
 ---
 
-## 🌟 Key Capabilities
-
-<div align="center">
+## 🌟 Platform Capabilities
 
 ```
 ┌───────────────────────────────────────┬───────────────────────────────────────┐
@@ -49,23 +47,27 @@
 ├───────────────────────────────────────┼───────────────────────────────────────┤
 │ 🎓 Part 141 Ground School & Exams     │ 📱 iPadOS Cockpit EFB Mode            │
 │ 1,000+ questions across 26 banks      │ Red-light night vision & Zulu toolbar │
+├───────────────────────────────────────┼───────────────────────────────────────┤
+│ 🏫 Flight School B2B Portal           │ 🧾 ZATCA Phase 2 E-Invoicing          │
+│ Cohort readiness & analytics tracking │ UBL 2.1 XML, SHA-256 hash & TLV QR    │
 └───────────────────────────────────────┴───────────────────────────────────────┘
 ```
 
-</div>
+---
 
-### ✨ Feature Highlights
+## 🧮 Comprehensive Aviation Calculators (55+ Pure Tools)
 
-- **📖 Complete Open GACAR Corpus:** 74 GACAR Parts and 211 official advisory circulars and manuals, indexed with client-side full-text search and permanent URL anchors (e.g. `/library/gacar-part-91#91.155`).
-- **🤖 Captain Adel RAG Assistant:** An AI tutor with strict *cite-or-refuse* discipline. Arabic queries route to in-Kingdom models (ALLaM) while English queries use Gemini with sub-second streaming.
-- **🛩️ Flight Operations Calculators:** 55 URL-state encoded tools for crosswind resolver, weight & balance CG envelope, fuel burn & reserve compliance (§91.151), and density altitude.
-- **🛂 Foreign License Conversion Wizard:** 5-step interactive pathway calculator converting FAA, EASA, or ICAO pilot certificates to Saudi GACA PPL/CPL/ATPL under Part 61.
-- **🏫 Flight Academy Admin Portal:** Real-time cohort health tracking, weak-area analytics by GACAR subject, and stage-check readiness for Part 141 approved training organizations (ATOs).
-- **🧾 ZATCA Phase 2 E-Invoicing:** Production-ready UBL 2.1 XML generation with SHA-256 canonical hashing and TLV QR code encoding for Saudi flight school B2B billing.
+All calculators are implemented in pure, mathematically verified TypeScript with zero runtime side effects and URL-state encoding:
+
+1. **Aerodynamics & Atmosphere:** Pressure Altitude, Density Altitude, True Airspeed (TAS), Calibrated Airspeed (CAS), Mach Number, International Standard Atmosphere (ISA) Deviations.
+2. **Wind & Navigation:** Crosswind and Headwind/Tailwind Resolver, Wind Correction Angle, Ground Speed, Heading & Track, Great Circle Distance, Magnetic Variation.
+3. **Weight & Balance:** Center of Gravity (CG) Envelope Visualizer, Station Arm & Moment Calculator, Forward/Aft Limit Warnings, Fuel Burn CG Shift.
+4. **Performance & Fuel Planning:** GACAR §91.151 Day/Night Fuel Reserves, Climb/Descent Gradient, Top of Descent (TOD), Rate of Turn & Radius, Hydroplaning Speed.
+5. **Regulatory Compliance:** Foreign License Conversion Pathway Calculator (Part 61), Pilot Flight Duty Time Limitations (Part 121/135), Oxygen Requirements (§91.211).
 
 ---
 
-## ⚡ Quickstart
+## ⚡ Quickstart & Local Setup
 
 ### Prerequisites
 - **Node.js ≥ 20.x**
@@ -94,8 +96,6 @@ npm run dev
 
 ## 🧪 Testing & Quality Gates
 
-Fly GACA enforces strict quality gates across both frontend and backend:
-
 ```bash
 # Run unit & integration test suite (2,392 tests)
 npm test
@@ -112,18 +112,19 @@ npm run audit:ai
 
 ---
 
-## 📂 Project Structure
+## 📂 Architecture & Directory Structure
 
 ```
 FlyGACA/
 ├── 📁 src/
-│   ├── 📁 components/     # UI components (BentoCard, CockpitToolbar, etc.)
+│   ├── 📁 components/     # UI components (BentoCard, CockpitToolbar, Nav, Footer)
 │   ├── 📁 calc/           # 55 pure TypeScript aviation calculation modules
 │   ├── 📁 i18n/           # Bilingual translations (en.json & ar.json)
-│   ├── 📁 lib/            # SEO helpers, JSON-LD builders, backend services
+│   ├── 📁 lib/            # SEO helpers, JSON-LD builders, backend API services
 │   └── 📁 pages/          # 30+ application routes (Library, Tools, Chat, Ground School)
-├── 📁 server/             # Express API backend, auth & billing services
+├── 📁 server/             # Express API backend, auth & ZATCA billing services
 ├── 📁 public/             # Static assets, manifests, and llms.txt
+├── 📁 content/            # Regulatory Markdown corpus (74 GACAR Parts)
 ├── 📁 scripts/            # Prerendering, sitemap generation, and validation scripts
 └── 📁 tests/              # 232 test suites covering parity, math, and accessibility
 ```
@@ -132,4 +133,12 @@ FlyGACA/
 
 ## 🛡️ License
 
-Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more information.
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
+
+---
+
+<div align="center">
+
+<sub>🇸🇦 صنع في السعودية · Made in Saudi Arabia</sub>
+
+</div>

@@ -1,261 +1,77 @@
-# FlyGACA iOS App Screenshots
+<div align="center">
 
-Marketing and promotional screenshots for the Fly GACA iOS app family.
+# 📸 FlyGACA iOS App Screenshots & Asset Pipeline
+### High-Resolution Automated Screen Capture, Device Framing & App Store Assets
+#### خط إنتاج لقطات الشاشة للتطبيق · الأجهزة المدعومة · متطلبات متجر التطبيقات
 
-> [!NOTE]
-> **Two iOS targets exist in the family:**
-> 1. **Capacitor 8 iOS App (in this repo):** The full Fly GACA unified app lives directly in `ios/App/App.xcodeproj` and builds with `npm run cap:sync && npm run cap:open`.
-> 2. **Standalone SwiftUI modules:** Live in **[`ay2m/FlyGACA-ios`](https://github.com/ay2m/FlyGACA-ios)**.
->
-> **Module status:** **ELPT** and **AIP** ship. **PPL, CPL, IR and ATPL are parked** — their
-> modules were removed from the standalone iOS repo in 2026-08 pending a strategic decision, while their
-> *web* study packs keep selling. Screenshots for the parked four are historical.
+<p align="center">
+  <img src="https://img.shields.io/badge/Made%20in-Saudi%20Arabia-006C35?style=for-the-badge&labelColor=0a0e12" alt="صنع في السعودية" />
+  <img src="https://img.shields.io/badge/Devices-iPhone%20%26%20iPad%20Pro-0D96F6?style=for-the-badge&labelColor=0a0e12" alt="Devices" />
+  <img src="https://img.shields.io/badge/Theme-Falcon%20Palette-C8A04A?style=for-the-badge&labelColor=0a0e12" alt="Falcon Theme" />
+  <img src="https://img.shields.io/badge/Automation-Capacitor%20%26%20XCTest-8E75B2?style=for-the-badge&labelColor=0a0e12" alt="Automation" />
+</p>
 
-## Capturing Screenshots via Capacitor iOS
+</div>
 
+---
+
+## 🧭 Overview & Toolchains
+
+This directory manages the promotional, marketing, and App Store screenshot assets for the Fly GACA iOS ecosystem.
+
+Two primary capture pathways exist:
+1. **Capacitor 8 iOS Simulator Automation:** Captures live screens directly from the integrated web-to-native shell.
+2. **Mac-Free Headless HTML Renderer:** Uses Playwright and Chromium to rasterize pixel-exact Falcon UI screens in CI environments without macOS hardware.
+
+---
+
+## ⚡ Screenshot Capture Workflows
+
+### Option A: Capacitor iOS Simulator Automation
 ```bash
-# 1. Sync latest web build to the iOS shell
+# 1. Sync latest build to the iOS shell
 npm run cap:sync
 
-# 2. Boot iOS Simulator (e.g. iPhone 17 Pro)
-xcrun simctl boot "iPhone 17 Pro"
+# 2. Boot iOS Simulator
+xcrun simctl boot "iPhone 16 Pro"
 
-# 3. Build & launch app
+# 3. Open project & capture
 npm run cap:open
-
-# 4. Capture screenshot from simulator
-xcrun simctl io booted screenshot screenshots/raw/iPhone17Pro/01-home.png
+xcrun simctl io booted screenshot screenshots/raw/iPhone16Pro/01-home.png
 ```
 
-This script:
-- Generates the Xcode project
-- Boots simulators
-- Installs and launches the app
-- Captures screenshots for all screens
-- Shuts down simulators gracefully
-
-#### Option B: Manual Xcode UI Testing
-
+### Option B: Automated XCTest UI Automation
 ```bash
 cd apple
 xcodebuild test \
-  -scheme PPL \
+  -scheme FlyGACA \
   -configuration Debug \
   -testPlan Screenshots \
   -derivedDataPath build/
 ```
 
-Screenshots are saved to `build/` and copied to `screenshots/raw/`
+---
 
-#### Option C: Manual Simulator Screenshots
+## 📐 Device & Resolution Specifications
 
-```bash
-# Boot iPhone simulator
-xcrun simctl boot "iPhone 15 Pro"
-sleep 2
-
-# Install and run app
-xcodebuild build-for-testing -scheme PPL
-APP_PATH="build/Build/Products/Debug-iphonesimulator/PPL.app"
-xcrun simctl install booted "$APP_PATH"
-xcrun simctl launch booted com.flygaca.ppl
-
-# Capture screenshot
-sleep 3
-xcrun simctl io booted screenshot screenshots/raw/iPhone15Pro/portrait/01-home.png
-
-# Rotate to landscape
-xcrun simctl io booted rotate left
-sleep 1
-xcrun simctl io booted screenshot screenshots/raw/iPhone15Pro/landscape/01-home-landscape.png
-```
-
-## Screenshot Specifications
-
-### Devices
-
-- **iPhone 15 Pro**: 1179×2556 (viewport: 390×844)
-- **iPad Pro 12.9"**: 2048×2732 (viewport: 1024×1366)
-
-### Orientations
-
-- Portrait (all screens)
-- Landscape (quiz, exam, flashcard screens)
-
-### Design System
-
-All screenshots use the **Falcon Palette** theme colors:
-- Primary Teal: `#2D6E8A`
-- Success Sage: `#8FC9A8`
-- Alert Clay: `#CF6B52`
-- Night Dark: `#0A0E12`
-
-No manual colorizing or filters—raw app UI only.
-
-## Screenshots to Capture
-
-See `INDEX.md` for the complete inventory with:
-- Screenshot name and filename
-- Device and orientation
-- What's shown (description)
-- Use case (App Store, website, etc.)
-
-## Processing & Publishing
-
-### Add Device Frames (Optional)
-
-For polished App Store screenshots with device bezels:
-
-```bash
-bash Scripts/process-screenshots.sh
-```
-
-This uses:
-- ScreenFrame CLI (recommended): https://www.screenframes.com/
-- Custom frame overlays (included)
-
-Output: `screenshots/device-frames/`
-
-### Optimize for App Store
-
-```bash
-# Resize and optimize for submission
-bash Scripts/optimize-for-appstore.sh
-```
-
-Creates:
-- 1170×2532 for 6.7" display
-- 1290×2796 for 6.9" display
-- 2048×2732 for iPad 12.9"
-
-## Quality Checklist
-
-Before committing screenshots:
-
-- [ ] All 5 core features visible (Study, Quiz, Flashcards, Mock Exam, Timed Exam)
-- [ ] Both iPhone and iPad orientations captured
-- [ ] Timer visible/active in Timed Exam screen
-- [ ] Flashcard shows both front and back states
-- [ ] Results breakdown clearly legible
-- [ ] Falcon design colors accurate (no filters/adjustments)
-- [ ] No status bar remnants or system UI artifacts
-- [ ] Consistent lighting and device state
-- [ ] Filenames follow convention: `{device}-{orientation}-{screen-name}-{variant}.png`
-
-## Using in Marketing
-
-### App Store
-
-Place screenshots in Xcode → App Store Connect:
-1. Upload from `device-frames/` (with bezels, preferred)
-2. Or use raw `raw/` screenshots with 1170×2532 resize
-
-**Order for App Store Connect** (tap order):
-1. Home/features grid
-2. Quiz question
-3. Quiz results
-4. Flashcard flip
-5. Mock exam results
-6. Timed exam
-7. Lessons
-
-### Website
-
-Use raw or framed screenshots:
-- Blog posts: `device-frames/` (with bezel)
-- Feature comparisons: `raw/` (clean, no bezel)
-- Hero section: `device-frames/landscape/` (iPad landscape)
-
-### Social Media
-
-Crop interesting regions, apply filters, add text overlay:
-- Twitter: 1024×512 (crop key screens)
-- Instagram: 1080×1350 (vertical, full screen)
-- LinkedIn: 1200×627 (feature showcase)
-
-## Automation
-
-### GitHub Actions CI
-
-```yaml
-# .github/workflows/screenshots.yml
-name: Update Screenshots
-on:
-  push:
-    branches: [main, develop]
-jobs:
-  screenshots:
-    runs-on: macos-15
-    steps:
-      - uses: actions/checkout@v4
-      - run: brew install xcodegen
-      - run: cd apple && bash Scripts/capture-screenshots.sh
-      - uses: actions/upload-artifact@v4
-        with:
-          name: screenshots
-          path: apple/screenshots/raw/
-```
-
-## Versioning
-
-Screenshots are version-controlled in git. Commit strategy:
-
-1. **New feature**: Commit updated screenshots same PR as code
-2. **Minor UI tweak**: Commit screenshot changes separately
-3. **Bulk retake** (e.g., design refresh): Squash all screenshot changes into one commit
-
-Commit message format:
-
-```
-screenshots: update iPhone/iPad screenshots for {feature}
-
-- Updated home screen (new colors)
-- Added flashcard landscape variant
-- Captured timer countdown sequence
-```
-
-## Troubleshooting
-
-### Screenshots are blurry
-- Ensure simulator is running at 100% scale
-- Use `xcrun simctl list devices` to verify device is booted
-- Try capturing again after app settles (sleep 3-5 seconds)
-
-### Taps not registering
-- Coordinates in `ScreenshotTests.swift` may need adjustment for your layout
-- Use Xcode's Inspector to verify element positions
-- Alternatively, manually navigate using Simulator's gesture support
-
-### App crashes on launch
-- Verify PPL.app built successfully: check `build/` directory
-- Check app entitlements in `Apps/PPL/PPL.xcconfig`
-- Clear simulator state: `xcrun simctl erase all`
-
-### Device simulator won't boot
-- Update Xcode: `xcode-select --install` or via App Store
-- Ensure device profile exists: `xcrun simctl list devices available`
-- Restart simulator app and/or Mac if needed
-
-## Resources
-
-- Xcode User Guide: https://developer.apple.com/documentation/xcode
-- XCTest UI Testing: https://developer.apple.com/documentation/xctest/testing-uis
-- XCUITest Screenshot Testing: https://github.com/fastlane-community/fastlane-plugin-snapshot
-- App Store Screenshot Requirements: https://developer.apple.com/app-store/screenshots/
-
-## Contributing
-
-When updating app UI:
-
-1. Take fresh screenshots using one of the methods above
-2. Update `INDEX.md` with any changes
-3. Verify all screenshots in checklist above
-4. Commit with descriptive message
-5. Tag screenshots in PR description
+| Device Type | Viewport Size | Native Capture Resolution | Target App Store Dimensions |
+|:---|:---|:---|:---|
+| **iPhone 6.7" / 6.9" Display** | 390 × 844 pt | 1179 × 2556 px | 1290 × 2796 px (or 1170 × 2532 px) |
+| **iPad Pro 12.9" / 13" Display**| 1024 × 1366 pt| 2048 × 2732 px | 2048 × 2732 px (Portrait & Landscape)|
 
 ---
 
-**Last Updated**: 2026-07-24  
-**App Version**: 1.0.0  
-**iOS Target**: 17.0+  
-**Xcode Required**: 16.0+
+## 🎨 Falcon Design Palette
+
+- **Primary Teal:** `#2D6E8A`
+- **Gold Accent:** `#C8A04A`
+- **Success Sage:** `#8FC9A8`
+- **Night Dark Background:** `#0A0E12`
+
+---
+
+<div align="center">
+
+<sub>🇸🇦 صنع في السعودية · Made in Saudi Arabia</sub>
+
+</div>

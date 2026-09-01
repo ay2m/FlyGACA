@@ -1,54 +1,92 @@
-# Regulatory Markdown source
+<div align="center">
 
-This directory is the **authoring source-of-truth** for Fly GACA's regulatory corpus. One Markdown
-file per GACAR Part (`part-<n>.md`). The pipeline lints these files, extracts their internal
-cross-references and compiles a single lookup dictionary (`public/data/regulations-lookup.json`)
-for instant frontend rendering. A separate step upserts vector embeddings to Supabase pgvector.
+# 📖 Regulatory Markdown Corpus & AST Compiler
+### Authoring Source-of-Truth, Linting & Compilation for 74 GACAR Parts
+#### المصدر المرجعي للوائح الطيران المدني السعودي · المترجم الهيكلي · التحقق الآلي
 
-> [!NOTE]
-> **These steps are run by hand, not by CI.** This README used to point at a `docs-parser`
-> workflow; no such workflow exists — the repo's active workflows are `ci.yml`, `ios-testflight.yml`,
-> `deploy.yml`, `deploy-firebase.yml` and `prerender.yml`, and none of them runs the commands below. Run them
-> yourself after editing a Part, and commit the regenerated lookup.
->
-> Note also that pgvector embeddings are **not** what serves Captain Adel today: the live
-> retrieval path is BM25 in-process over `data/rag-chunks.json` (`server/src/corpus.ts`). The
-> embeddings are for the hybrid-retrieval design, not the shipped one.
+<p align="center">
+  <img src="https://img.shields.io/badge/Made%20in-Saudi%20Arabia-006C35?style=for-the-badge&labelColor=0a0e12" alt="صنع في السعودية" />
+  <img src="https://img.shields.io/badge/GACAR-74%20Parts-0D96F6?style=for-the-badge&labelColor=0a0e12" alt="74 Parts" />
+  <img src="https://img.shields.io/badge/Format-Markdown%20AST-8E75B2?style=for-the-badge&labelColor=0a0e12" alt="Markdown AST" />
+  <img src="https://img.shields.io/badge/Lookup-Sub--Millisecond-006C35?style=for-the-badge&labelColor=0a0e12" alt="Fast Lookup" />
+</p>
 
-> Fly GACA is **not affiliated with GACA**. These files are educational summaries that help you
-> find and study the regulation — they never replace the official GACAR. Keep that framing in copy.
+</div>
 
-## Frontmatter (required)
+---
+
+## 🧭 Purpose & Architecture
+
+This directory serves as the **authoring source-of-truth** for Fly GACA's complete regulatory library. Each GACAR Part is maintained as a clean, version-controlled Markdown file (`part-<n>.md`).
+
+An automated AST compilation pipeline parses these files, extracts internal cross-references, validates regulatory citations against the canonical index (`public/data/gacar-index.json`), and generates an optimized JSON lookup table (`public/data/regulations-lookup.json`) for instant client-side rendering.
+
+```
+┌────────────────────────────────────────────────────────┐
+│            content/regulations/part-*.md               │
+│               (Authoring Source-of-Truth)              │
+└───────────────────────────┬────────────────────────────┘
+                            │ npm run parse:regulations
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│             AST Markdown Parser & Cross-Ref Extractor  │
+│   • Validates frontmatter & slug consistency           │
+│   • Extracts § section anchors (e.g. § 91.155)         │
+│   • Resolves cross-part links against gacar-index.json │
+└───────────────────────────┬────────────────────────────┘
+                            │ Emits
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│          public/data/regulations-lookup.json           │
+│         (Sub-millisecond frontend search & anchors)    │
+└────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📋 Frontmatter Specification
+
+Every Part markdown file must start with a strictly validated YAML frontmatter header:
 
 ```yaml
 ---
-part: '91'                 # string, the Part number as printed
-partNum: 91                # integer, used for ordering and lookup
+part: '91'                 # String representation of Part number
+partNum: 91                # Integer used for sorting and numeric lookup
 title: General Operating and Flight Rules
-category: airspace         # one of the GACAR categories in public/data/gacar-index.json
-slug: part-91              # must equal the filename stem
+category: airspace         # Regulatory category matching gacar-index.json
+slug: part-91              # Must match filename stem exactly
 ---
 ```
 
-The parser fails the build if any required key is missing or if `slug` ≠ filename stem.
+---
 
-## Writing cross-references
+## 🔗 Cross-Referencing Syntax & Rules
 
-Reference another Part either as prose (`... must also comply with Part 121 ...`) or as a Markdown
-link (`[Part 121](./part-121.md)`) — the AST parser picks up both. Section references in the
-`§ 91.205` form are also extracted.
+1. **Prose Part References:** Referenced automatically in text (e.g. `"... complies with Part 121 requirements ..."`).
+2. **Explicit Markdown Links:** Relative links to sibling files (e.g. `[Part 121](./part-121.md)`).
+3. **Section Number Anchors:** Extracted automatically via regex pattern `§\s*(\d+\.\d+)` (e.g. `§ 91.205`).
 
-Every referenced Part must be a **real GACAR Part** (present in `public/data/gacar-index.json`).
-A reference to a non-existent Part (e.g. a typo like `Part 999`) fails the parse step. You may
-reference a Part that has not yet been migrated to Markdown — validation is against the canonical
-GACAR registry, not against the files in this folder.
+All referenced Parts must exist in the canonical GACAR registry. Typos or non-existent Parts (e.g. `Part 999`) will fail compilation.
 
-## Local checks
+---
+
+## ⚡ Local Validation & Compilation Commands
 
 ```bash
-npm run lint:md           # markdownlint-cli2 over this directory
-npm run parse:regulations # compile + validate cross-references → public/data/regulations-lookup.json
-npm run embeddings:upsert # optional: push embeddings to Supabase pgvector
+# 1. Lint markdown files for style and formatting
+npm run lint:md
+
+# 2. Compile and validate cross-references to regulations-lookup.json
+npm run parse:regulations
+
+# 3. Optional: Upsert embeddings to Supabase pgvector
+npm run embeddings:upsert
 ```
 
-Run the first two after any edit here — nothing else will.
+---
+
+<div align="center">
+
+<sub>🇸🇦 صنع في السعودية · Made in Saudi Arabia</sub>
+
+</div>

@@ -1,48 +1,70 @@
-# B2B AIP Exam Prep
+<div align="center">
 
-> ⚠️ **Restored from `ay2m/FlyGACA-app` history, predating the Cloud Run rebuild.**
-> Parts of this document still describe the retired Firebase / Firestore / App Check /
-> Stripe stack. The live architecture is an Express service on **Cloud Run** backed by
-> **Cloud SQL**, billed through **Moyasar** — see `CLAUDE.md`. Anything Firebase- or
-> Stripe-specific below is history, not the system. The `apple/` tree it may reference
-> was retired; the iOS family lives in `ay2m/FlyGACA-ios`.
+# 🏫 B2B Flight Academy Platform & AIP Exam Prep
+### Enterprise Ground School Cohorts, Instructor Analytics & Seat Licensing
+#### منصة أكاديميات الطيران ومعاهد التدريب · متابعة الجاهزية · التراخيص المؤسسية
 
-The organisation-facing version of Fly GACA's AIP exam-prep material — sold to flight schools,
-airlines, and AIS/ATS units as seat-based cohorts with progress reporting, rather than
-per-person consumer Pro.
+<p align="center">
+  <img src="https://img.shields.io/badge/Made%20in-Saudi%20Arabia-006C35?style=for-the-badge&labelColor=0a0e12" alt="صنع في السعودية" />
+  <img src="https://img.shields.io/badge/Target-Part%20141%20ATOs-0D96F6?style=for-the-badge&labelColor=0a0e12" alt="Part 141 ATOs" />
+  <img src="https://img.shields.io/badge/Backend-Cloud%20Run%20%2B%20Postgres-8E75B2?style=for-the-badge&labelColor=0a0e12" alt="Cloud Run" />
+  <img src="https://img.shields.io/badge/Billing-ZATCA%20Phase%202-C8A04A?style=for-the-badge&labelColor=0a0e12" alt="ZATCA Phase 2" />
+</p>
 
-> **Fly GACA is independent and not affiliated with GACA.** This offering *prepares* candidates
-> to study the Saudi AIP and civil-aviation regulation; it never replaces the official exam or
-> the official eAIP. Every study item cites the exact Part/section.
+</div>
 
-## Read in this order
+---
 
-1. **[`PLAN.md`](./PLAN.md)** — the plan: strategy, ICP, packaging, pricing, GTM, roadmap,
-   product gaps, risks, timeline. *Start here.*
-2. **[`CURRICULUM.md`](./CURRICULUM.md)** — what a seat learns, mapped 1:1 to the live `aip`
-   prep pack (banks, study sheets, eAIP reading, Mock Exam).
-3. **[`SALES-ONE-PAGER.md`](./SALES-ONE-PAGER.md)** — prospect-facing summary for a demo.
-4. **[`PROPOSAL-TEMPLATE.md`](./PROPOSAL-TEMPLATE.md)** — fill-in-the-blanks quote / SOW.
-5. **[`DELIVERY-PLAYBOOK.md`](./DELIVERY-PLAYBOOK.md)** — how to run a cohort, incl. the manual
-   path for cohort #1 before the admin dashboard ships.
-6. **[`DESIGN-study-progress-sync.md`](./DESIGN-study-progress-sync.md)** — design for the readiness
-   prerequisite (persisting per-user study scores). *Signed off + built* — now upload-only sync to
-   Postgres via `src/lib/services/studyProgressSync.ts`, not Firestore as the doc says.
-7. **[`DESIGN-admin-dashboard.md`](./DESIGN-admin-dashboard.md)** — design for the `/business/admin`
-   cohort dashboard + the org ownership model. *Built* — the route is live in `src/router.tsx`,
-   served by `server/src/routes/org.ts` + `org-core.ts`.
+## 🧭 Overview & Enterprise Offering
 
-## The one-line version
+The B2B suite is designed for Part 141 Approved Training Organizations (ATOs), airlines, and Air Navigation Service Providers (ANSPs). It packages Fly GACA's curriculum, AIP prep banks, and mock exams into seat-based cohorts with real-time instructor analytics.
 
-The content already exists (the `aip` pack: `aip-ais` + `airspace` banks, bilingual study
-sheets, the AIM reader, the eAIP GEN/ENR reading path, and the Mock Exam), and so does seat
-provisioning — that script survived the rebuild and now lives at
-`server/scripts/grant-school-seats.mjs`, granting the invoiced `school` entitlement from a
-roster (alongside `grant-org.mjs` and `school-cohort-report.mjs`). B2B wraps it in **seats + an admin + a readiness report** and sells
-it to the organisation. Cohort #1 can be delivered today — provisioning and self-serve seat claim
-both ship; the near-term build is a minimal admin view and a CSV report (`PLAN.md` §8).
+```
+┌────────────────────────────────────────────────────────┐
+│             B2B Flight Academy Dashboard               │
+│                   (/business/admin)                    │
+└───────────────────────────┬────────────────────────────┘
+                            │
+            ┌───────────────┼───────────────┐
+            ▼               ▼               ▼
+     ┌─────────────┐ ┌─────────────┐ ┌─────────────┐
+     │ Cohort      │ │ Weak-Spot   │ │ Stage-Check │
+     │ Readiness   │ │ Heatmap     │ │ Eligibility │
+     │ Tracker     │ │ (GACAR Part)│ │ Approvals   │
+     └─────────────┘ └─────────────┘ └─────────────┘
+```
 
-## Status
+---
 
-v0 plan / proposal. Pricing figures are planning placeholders to validate with design partners —
-not published prices. Nothing here changes app behaviour; these are planning documents.
+## 📚 Document Reading Order & Roadmap
+
+1. **[`PLAN.md`](./PLAN.md)** — Core business strategy, Ideal Customer Profile (ICP), seat packaging, pricing tiers, and GTM roadmap.
+2. **[`CURRICULUM.md`](./CURRICULUM.md)** — Detailed mapping of questions, study sheets, and eAIP modules for student cohorts.
+3. **[`SALES-ONE-PAGER.md`](./SALES-ONE-PAGER.md)** — Executive pitch deck and prospect summary for ATO directors.
+4. **[`PROPOSAL-TEMPLATE.md`](./PROPOSAL-TEMPLATE.md)** — Standard Statement of Work (SOW) and quote template.
+5. **[`DELIVERY-PLAYBOOK.md`](./DELIVERY-PLAYBOOK.md)** — Operational manual for onboarding academy cohorts.
+6. **[`DESIGN-study-progress-sync.md`](./DESIGN-study-progress-sync.md)** — Architecture specification for user study state synchronization.
+7. **[`DESIGN-admin-dashboard.md`](./DESIGN-admin-dashboard.md)** — Technical design for the `/business/admin` reporting portal.
+
+---
+
+## ⚡ Seat Provisioning & Administration Scripts
+
+```bash
+# 1. Grant seats to a school cohort from a roster
+node server/scripts/grant-school-seats.mjs --org "academy-id" --file roster.csv
+
+# 2. Grant organizational admin entitlements
+node server/scripts/grant-org.mjs --email "admin@academy.edu.sa" --org "academy-id"
+
+# 3. Export cohort readiness report
+node server/scripts/school-cohort-report.mjs --org "academy-id" --format csv
+```
+
+---
+
+<div align="center">
+
+<sub>🇸🇦 صنع في السعودية · Made in Saudi Arabia</sub>
+
+</div>

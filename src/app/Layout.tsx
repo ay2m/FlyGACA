@@ -15,9 +15,6 @@ import { useTourOpen } from '@/lib/prefs/onboardingPrefs';
 // Lazy so the modal + its CSS stay out of the initial bundle (160 kB budget) —
 // only fetched on a genuine first visit to the home route.
 const OnboardingTour = lazy(() => import('@/components/onboarding/OnboardingTour'));
-const CockpitToolbar = lazy(() =>
-  import('@/components/CockpitToolbar').then((m) => ({ default: m.CockpitToolbar })),
-);
 import { useOfflineBookmarkSync } from '@/hooks/useOfflineSync';
 
 /** The shared chrome: header + routed page + footer. Replaces the legacy
@@ -61,9 +58,6 @@ export function Layout() {
           <OnboardingTour />
         </Suspense>
       )}
-      <Suspense fallback={null}>
-        <CockpitToolbar />
-      </Suspense>
     </>
   );
 }
