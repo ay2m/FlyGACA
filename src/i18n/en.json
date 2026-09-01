@@ -3561,6 +3561,51 @@
           "ICAO classes A-G set who may fly and the service provided.",
           "Controlled airspace needs clearances and separation; uncontrolled gives information only.",
           "Check VFR minima and the AIP for Saudi sector specifics."
+        ],
+        "keyFacts": [
+          {
+            "label": "Governing rules",
+            "value": "GACAR Part 71 defines airspace in Saudi Arabia; Part 91 governs the operating rules.",
+            "ref": "GACAR Part 71"
+          },
+          {
+            "label": "ICAO classes",
+            "value": "Classes A through G define who may fly, the service provided, and the weather minima.",
+            "ref": "GACAR Part 71"
+          },
+          {
+            "label": "Controlled airspace",
+            "value": "ATC separation and clearances required; includes Class A, B, C, D and E above 1,200 feet.",
+            "ref": "GACAR §71.3"
+          },
+          {
+            "label": "Uncontrolled airspace",
+            "value": "Class F and G; ATC provides information only, no separation service.",
+            "ref": "GACAR §71.3"
+          },
+          {
+            "label": "VFR minimums",
+            "value": "Part 91 sets the visibility and cloud-clearance rules for VFR flight in each airspace class.",
+            "ref": "GACAR Part 91"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "What are the airspace classes in Saudi Arabia?",
+            "a": "GACAR Part 71 defines airspace in the Kingdom as Classes A through G. Class A is below FL 600 only; Class B surrounds major airports; Class C is around medium airports; Class D is around smaller airports; Class E is general controlled airspace; Class F is for when ATC provides no separation; Class G is uncontrolled airspace. GACAR §71.3 sets the characteristics and operating rules for each. Fly GACA is an independent educational reference — verify the current airspace structure against GACAR Part 71 at gaca.gov.sa."
+          },
+          {
+            "q": "What is the difference between controlled and uncontrolled airspace?",
+            "a": "In controlled airspace (Classes A, B, C, D and E), GACAR Part 91 requires you to have a clearance before entering and ATC provides separation from other traffic. In uncontrolled airspace (Classes F and G), ATC gives information only; separation is your responsibility. The airspace classification on your sectional chart or in the AIP shows which class applies to your flight route. Fly GACA is educational — confirm the airspace classification for your planned route with an ATC facility or the AIP."
+          },
+          {
+            "q": "Do I need a clearance to fly in Class E airspace?",
+            "a": "GACAR §91.3 makes Class E airspace controlled, so you need a clearance from ATC to enter. Class E is the general controlled airspace found above 1,200 feet outside the control zones of Class A, B, C or D airspace and above 700 feet in certain areas. Fly GACA is not affiliated with GACA — confirm the clearance requirement for your departure aerodrome and route with the local ATC facility."
+          },
+          {
+            "q": "What VFR weather minima apply in Saudi airspace?",
+            "a": "GACAR Part 91 sets VFR minima by airspace class. Class G below 1,000 feet requires 1,500 m visibility and clear of cloud; above 1,000 feet, 5,000 m visibility and 300 m cloud clearance. Class E minima are 5,000 m visibility and 1,000 feet separation from cloud. Classes B, C and D have tighter minima. Exact minima are on your sectional or in GACAR §91.175. Fly GACA is independent — verify the current minima against GACAR Part 91 before your flight."
+          }
         ]
       },
       "reading-metar-taf": {
@@ -3586,6 +3631,51 @@
           "A METAR observes current conditions; a TAF forecasts them over a period.",
           "Learn the fixed field order, wind, visibility, weather, cloud, temp, pressure.",
           "FM, BECMG and TEMPO mark forecast changes in a TAF."
+        ],
+        "keyFacts": [
+          {
+            "label": "METAR format",
+            "value": "Observation of wind, visibility, weather, cloud layers, temperature, dew point and altimeter setting.",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "TAF format",
+            "value": "Forecast issued 4 or 6 times daily, valid for 24 or 30 hours, with change groups FM, BECMG and TEMPO.",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "Wind notation",
+            "value": "Three digits for direction, two or three for speed in knots, optional gust group. VRB for variable below 3 knots.",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "Cloud layers",
+            "value": "SKC (sky clear), FEW (1/8–2/8), SCT (3/4–4/8), BKN (5/8–7/8), OVC (8/8).",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "Weather code",
+            "value": "Intensity, descriptor, precipitation, obscuration and other phenomena are coded concisely.",
+            "ref": "GACAR Part 91"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "What is a METAR and how do you read it?",
+            "a": "A METAR is an aerodrome meteorological report issued regularly (usually hourly) that observes current conditions. It follows a fixed order: station, time, wind (direction and speed), visibility in metres, weather phenomena, cloud layers with ceiling, temperature, dew point and altimeter setting. GACAR Part 91 requires you to be familiar with this format before VFR flight. The Fly GACA METAR decoder translates the code into plain language — use it to practice. Fly GACA is an independent educational reference; verify any report against the original source."
+          },
+          {
+            "q": "What does a TAF tell you?",
+            "a": "A Terminal Aerodrome Forecast (TAF) is a forecast of weather at an aerodrome issued 4 or 6 times daily, valid for 24 or 30 hours ahead. It uses the same format as a METAR but adds change groups: FM (from) marks an abrupt change, BECMG (becoming) marks gradual change, and TEMPO (temporary) marks a brief fluctuation. GACAR Part 91 requires you to understand TAF format before flight planning. Fly GACA is educational; use the Fly GACA TAF decoder and verify the current forecast at your destination."
+          },
+          {
+            "q": "What do the cloud abbreviations in METAR and TAF mean?",
+            "a": "Cloud cover is coded by coverage: SKC (sky clear), FEW (1/8 to 2/8 coverage), SCT (scattered, 3/4 to 4/8), BKN (broken, 5/8 to 7/8), OVC (overcast, 8/8). Each layer also carries a height in hundreds of feet, e.g. 'BKN025' means broken cloud at 2,500 feet. Understanding these codes is essential for VFR flight planning under GACAR Part 91. Fly GACA is not affiliated with GACA — confirm the current cloud forecast against the official report at your aerodrome."
+          },
+          {
+            "q": "How often is a METAR issued?",
+            "a": "METARs are typically issued every hour at major and medium aerodromes, and every 30 minutes during hazardous conditions. Special METARs (SPECI) may be issued outside the regular cycle when conditions change significantly. GACAR Part 91 requires you to use current weather reports for flight planning. Check the METAR age before you rely on it — reports more than 3 hours old should be treated cautiously. Fly GACA is independent; verify the currency of any METAR with ATC or the aerodrome."
+          }
         ]
       },
       "decoding-notams": {
@@ -3611,6 +3701,51 @@
           "Fields A) aerodrome, B) start, C) end and E) the plain text carry the message.",
           "The Q-code summarises the subject and condition (ICAO Doc 8126).",
           "Use the NOTAM decoder to expand the abbreviations."
+        ],
+        "keyFacts": [
+          {
+            "label": "NOTAM purpose",
+            "value": "Alerts pilots to changes in facilities, services, procedures or hazards affecting operations.",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "Key fields",
+            "value": "A) ICAO code of the aerodrome, B) effective date/time, C) end date/time, E) the plain-language description.",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "Q-code",
+            "value": "A concise 8-character code (ICAO Doc 8126) summarizing the subject and condition.",
+            "ref": "ICAO Doc 8126"
+          },
+          {
+            "label": "Examples",
+            "value": "QWFLW (low-level wind shear), QWPXX (parking/apron open), QPMCA (maintenance closed).",
+            "ref": "ICAO Doc 8126"
+          },
+          {
+            "label": "Validity",
+            "value": "Always check the effective and end times; expired NOTAMs no longer apply.",
+            "ref": "GACAR Part 91"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "What is a NOTAM and why are they important?",
+            "a": "A NOTAM (Notice to Airmen) is an alert to pilots about changes to facilities, services, procedures or hazards that affect a flight. It might warn of a runway closure, navigation aid outage, airspace restriction, or hazard like wind shear. GACAR Part 91 requires you to check NOTAMs for your departure, destination and alternate aerodromes as part of flight planning. Every NOTAM carries an effective date/time and end date/time, so always verify it is current before your flight. Fly GACA is independent; check the real NOTAM service at your aerodrome or the AIP."
+          },
+          {
+            "q": "What does a Q-code in a NOTAM mean?",
+            "a": "The Q-code is a compact 8-character summary of the NOTAM subject and condition, defined by ICAO Doc 8126. The first letter codes the subject (e.g. Q for air navigation facilities, L for lighting, P for parking/apron), and the remaining letters code the condition (e.g. WLY for work on level, CAL for calibration, UU for unserviceable). A Q-code like 'QWFLW' stands for wind shear forecast; 'QPLFM' stands for lighting failure-MALS. Understanding Q-codes saves time in flight planning. Fly GACA is educational; use the NOTAM decoder to expand any unfamiliar code."
+          },
+          {
+            "q": "How do I know if a NOTAM still applies?",
+            "a": "Every NOTAM has an effective date and time (field B) and an end date and time (field C). If the current date and time fall outside that window, the NOTAM is expired and no longer applies. GACAR Part 91 requires you to check NOTAMs as part of preflight planning, so always verify the effective times match your intended flight time. Expired NOTAMs should be disregarded, and any NOTAM you cannot verify as current should be treated as unreliable. Fly GACA is not affiliated with GACA; confirm active NOTAMs with ATC or your flight service."
+          },
+          {
+            "q": "What are the main NOTAM abbreviations I need to know?",
+            "a": "Common NOTAM abbreviations include: CAT (category), FAC (facility), UNSVCE (unserviceable), OPR (operational), CLG (closed), CAL (calibration), MAINT (maintenance), WIP (work in progress), RWY (runway), NVD (navigation), LGT (lighting), MALS (medium-intensity approach lights), PAPI (precision approach path indicator). Most NOTAMs will use a mix of these and other standard abbreviations. Use the Fly GACA NOTAM decoder or ICAO Doc 8126 to look up unfamiliar abbreviations. Fly GACA is independent; check the authoritative NOTAM service for your flight."
+          }
         ]
       },
       "the-airac-cycle": {
@@ -3636,6 +3771,51 @@
           "Aeronautical data updates worldwide on fixed dates 28 days apart.",
           "Everyone switches together, so charts and procedures stay consistent.",
           "Use the AIRAC tool for the current cycle and the next effective date."
+        ],
+        "keyFacts": [
+          {
+            "label": "AIRAC cycle length",
+            "value": "28 days — the same worldwide, every cycle 28 days after the last effective date.",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "Effective dates",
+            "value": "Fixed on Thursdays worldwide; charts, procedures and navigation data change together.",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "What changes",
+            "value": "Charts, instrument procedures, instrument departures and arrivals, runway configurations, navigation aids status.",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "Why 28 days",
+            "value": "Allows time for aeronautical data production, notification and implementation globally.",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "Your responsibility",
+            "value": "Always use current charts and procedures in flight; outdated ones do not reflect the current system.",
+            "ref": "GACAR §91.105"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "What is the AIRAC cycle?",
+            "a": "AIRAC (Aeronautical Information Regulation and Control) is the worldwide schedule on which aeronautical information is published. A new AIRAC cycle begins every 28 days, always on a Thursday, and every chart, procedure, and navigation aid update is effective on the same date worldwide. GACAR Part 91 requires you to use current information, so you must switch to the new cycle on its effective date. The Fly GACA AIRAC tool shows the current cycle number and the date of the next effective publication. Fly GACA is independent; verify the current AIRAC cycle at your aerodrome or with ATC."
+          },
+          {
+            "q": "Why is the AIRAC cycle exactly 28 days?",
+            "a": "The 28-day interval allows time for all the world's aeronautical information producers — chart makers, procedure designers, navigation service providers — to collect changes, coordinate them, and publish updates that all take effect on the same date. This synchronization keeps the global system consistent and prevents pilots from trying to reconcile old and new data. GACAR Part 91 assumes you are using current publications; flying with outdated charts or procedures is a violation. Fly GACA is educational; check the current AIRAC cycle before your flight."
+          },
+          {
+            "q": "What happens if I use an old chart after a new AIRAC cycle takes effect?",
+            "a": "Navigation aids, instrument departures and arrivals, runway configurations, and other critical information change on each AIRAC effective date. If you fly with an out-of-date chart, you may have wrong altitude restrictions, wrong procedure turns, or wrong navigation aid information — all of which create safety risks. GACAR Part 91 requires use of current information; flying with superseded charts is a regulatory violation. Always carry the current edition of your sectional chart or approach plate and confirm the AIRAC cycle before departure. Fly GACA is not affiliated with GACA; confirm publication currency with ATC."
+          },
+          {
+            "q": "How often do I need to update my charts?",
+            "a": "Charts are typically issued every 56 days (two AIRAC cycles), so each chart covers two cycles. However, some details like low-level wind shear warnings, runway status or special procedures may be published more frequently. The best practice is to check the AIRAC cycle the night before your flight and verify that your paper charts or electronic charts are current. GACAR Part 91 requires current information; running out of chart currency before your flight is your responsibility as pilot in command. Fly GACA is independent; use the AIRAC tool to check if your current publications are still valid."
+          }
         ]
       },
       "night-rating": {
@@ -3661,7 +3841,52 @@
           "Training covers night takeoffs, circuits, landings and navigation.",
           "Recent-experience rules apply before carrying passengers at night."
         ],
-        "adel": "What does GACAR Part 61 require for night flying privileges? Cite the section."
+        "adel": "What does GACAR Part 61 require for night flying privileges? Cite the section.",
+        "keyFacts": [
+          {
+            "label": "Governing rules",
+            "value": "GACAR §61.209 requires training, experience and examination for night privileges.",
+            "ref": "GACAR §61.209"
+          },
+          {
+            "label": "Without night rating",
+            "value": "A private or commercial pilot without night training may only fly between sunrise and sunset.",
+            "ref": "GACAR §61.3"
+          },
+          {
+            "label": "Training requirement",
+            "value": "At least 10 hours of night instruction including 5 hours of night navigation and 10 landings to a full stop.",
+            "ref": "GACAR §61.209"
+          },
+          {
+            "label": "Currency rule",
+            "value": "To carry passengers at night, complete 3 full-stop landings between 1 hour after sunset and 1 hour before sunrise.",
+            "ref": "GACAR §61.57"
+          },
+          {
+            "label": "Night definition",
+            "value": "1 hour after official sunset to 1 hour before official sunrise the following day.",
+            "ref": "GACAR Part 1"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "Can I fly at night without a night rating under GACAR?",
+            "a": "No. GACAR §61.3 restricts a private or commercial pilot without night training to flight only during daylight hours — no flight is permitted between sunset and sunrise. To fly at night, you must have completed the training required by §61.209 and obtained the night endorsement. Fly GACA is an independent educational reference; confirm the exact daylight limits with GACA before planning a night flight."
+          },
+          {
+            "q": "What training is required for night flying in Saudi Arabia?",
+            "a": "GACAR §61.209 requires at least 10 hours of night flight instruction, of which at least 5 hours must be night navigation including cross-country flight, and at least 10 takeoffs and landings to a full stop at an aerodrome during the period between 1 hour after sunset and 1 hour before sunrise the following day. You must then pass a knowledge test and a practical skill test. Fly GACA is educational; contact an approved training organisation in the Kingdom for current night training requirements."
+          },
+          {
+            "q": "What is the currency requirement for night flying with passengers?",
+            "a": "GACAR §61.57 requires that to carry passengers on a flight at night, you must have completed at least 3 full-stop landings at an aerodrome between 1 hour after sunset and 1 hour before sunrise within the preceding 90 days. If you have not flown three night landings in 90 days, you lose the privilege to carry passengers at night until you restore your currency. Fly GACA is not affiliated with GACA; verify the current recency requirement in GACAR Part 61."
+          },
+          {
+            "q": "What time of day counts as night for flying purposes?",
+            "a": "GACAR Part 1 defines night as the period between 1 hour after official sunset and 1 hour before official sunrise the following day, determined by the position of the sun relative to the aerodrome location. It is not 'whenever it is dark' — the rules use the sunset/sunrise times for your location. Check official sunset and sunrise times for your departure and destination aerodromes before planning your flight. Fly GACA is independent; use official weather or aerodrome data for accurate sunset/sunrise times."
+          }
+        ]
       },
       "atpl-requirements": {
         "name": "ATPL requirements",
@@ -3765,7 +3990,52 @@
           "Training covers lesson planning, briefing and right-seat flying.",
           "The skill test assesses your ability to teach, not just to fly."
         ],
-        "adel": "What does GACAR Part 61 require to become a flight instructor?"
+        "adel": "What does GACAR Part 61 require to become a flight instructor?",
+        "keyFacts": [
+          {
+            "label": "Governing rules",
+            "value": "GACAR §61.215 sets requirements for a flight instructor certificate.",
+            "ref": "GACAR §61.215"
+          },
+          {
+            "label": "Prerequisite",
+            "value": "Hold a current commercial pilot certificate or airline transport pilot certificate.",
+            "ref": "GACAR §61.215"
+          },
+          {
+            "label": "Knowledge test",
+            "value": "Pass the flight instructor knowledge test covering instructional techniques and procedures.",
+            "ref": "GACAR §61.215"
+          },
+          {
+            "label": "Aeronautical experience",
+            "value": "At least 250 hours of flight time as pilot in command, including 100 hours in the category and class you intend to teach.",
+            "ref": "GACAR §61.215"
+          },
+          {
+            "label": "Skill test",
+            "value": "Pass an oral and practical test demonstrating instructional ability and knowledge of fundamentals of instruction.",
+            "ref": "GACAR §61.215"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "What are the requirements for a flight instructor certificate in Saudi Arabia?",
+            "a": "GACAR §61.215 requires you to hold a current commercial pilot certificate or airline transport pilot certificate, pass a knowledge test on flight instructor topics, accumulate at least 250 hours of flight time as pilot in command, have at least 100 hours in the category and class you intend to teach, and pass an oral and practical skill test that assesses your knowledge of fundamentals of instruction and your ability to teach. Fly GACA is an independent educational reference; confirm the current requirements with GACA."
+          },
+          {
+            "q": "Can you be a flight instructor with only a private pilot certificate?",
+            "a": "No. GACAR §61.215 requires an applicant for a flight instructor certificate to hold at least a commercial pilot certificate. A private pilot cannot give flight instruction for compensation or as part of a training programme under Part 141 or 142, although limited instruction without compensation to family or friends may be permitted. Fly GACA is educational; verify what instruction is allowed by law with GACA before you teach any student."
+          },
+          {
+            "q": "How many hours do you need to become a flight instructor in Saudi Arabia?",
+            "a": "GACAR §61.215 requires a minimum of 250 hours of total flight time as pilot in command, including at least 100 hours in the category and class of aircraft you intend to teach (e.g. single-engine piston aeroplanes). Beyond those minimums, you must also pass a knowledge test and a practical skill test. Fly GACA is not affiliated with GACA; get your current flight time requirements from an approved training organisation or GACA directly."
+          },
+          {
+            "q": "What is tested in a flight instructor practical test?",
+            "a": "GACAR §61.215 requires the practical test to assess your knowledge of fundamentals of instruction and your ability to teach. You will be examined orally on instructional technique, flight fundamentals, student assessment, and how to correct common errors. The practical component usually involves demonstrating your teaching from the right seat, planning a lesson, and delivering instruction on a manoeuvre or procedure. Fly GACA is independent; ask an approved examiner for the exact test standards."
+          }
+        ]
       },
       "radiotelephony-phraseology": {
         "name": "Radiotelephony phraseology",
@@ -3790,7 +4060,52 @@
           "The phonetic alphabet prevents confusion over letters and codes.",
           "Read back clearances so the controller can confirm them."
         ],
-        "adel": "Why is standard radiotelephony phraseology important and where is it defined?"
+        "adel": "Why is standard radiotelephony phraseology important and where is it defined?",
+        "keyFacts": [
+          {
+            "label": "Governing rules",
+            "value": "GACAR Part 91 requires standard radiotelephony phraseology; ICAO Annex 10 defines it.",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "Phonetic alphabet",
+            "value": "Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliet, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu.",
+            "ref": "ICAO Annex 10"
+          },
+          {
+            "label": "Standard words",
+            "value": "Roger (message received), Wilco (will comply), Say again (repeat), Read back (confirm), Affirmative/Negative.",
+            "ref": "ICAO Annex 10"
+          },
+          {
+            "label": "Numbers",
+            "value": "Speak clearly and individually; hundreds and thousands separately. '5,000' = five thousand, '600' = six hundred.",
+            "ref": "ICAO Annex 10"
+          },
+          {
+            "label": "Readback",
+            "value": "Always read back clearances for altitude, heading, speed and transponder codes so the controller can verify.",
+            "ref": "GACAR Part 91"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "Why is standard radiotelephony phraseology important?",
+            "a": "Standard phraseology prevents misunderstandings on the radio. A non-standard call may not be understood, or the listener may interpret it differently than you intended, creating safety risks. GACAR Part 91 requires you to use standard phraseology, defined by ICAO Annex 10. Using the phonetic alphabet for letters (Alpha, Bravo, Charlie) and specific words with precise meanings (Roger, Wilco, Say again) ensures every call is unambiguous and clear. Fly GACA is independent; learn the full standard phraseology from an approved flight school or the GACA radio operator handbook."
+          },
+          {
+            "q": "What does 'Roger' mean in aviation radio?",
+            "a": "Roger means 'I have received your last transmission and understand it.' It does not mean you will comply with a clearance — that is 'Wilco' (will comply). Roger simply confirms you heard and understood. GACAR Part 91 requires use of standard words, so never say 'Copy' or 'OK' instead of Roger — the controller expects the standard term. Fly GACA is educational; use only the standard phraseology defined by ICAO Annex 10."
+          },
+          {
+            "q": "Do I have to use the phonetic alphabet on the radio?",
+            "a": "Yes. GACAR Part 91 requires that when spelling call signs, aircraft registration or codes where clarity is critical, you use the ICAO phonetic alphabet (Alpha, Bravo, Charlie, etc.). This prevents confusion — the letter B and D sound similar on a crackling radio, but Bravo and Delta are unmistakable. Always use the phonetic alphabet for your aircraft registration and any numbers that might be misheard. Fly GACA is not affiliated with GACA; memorize the phonetic alphabet before your first flight."
+          },
+          {
+            "q": "What clearances must you always read back?",
+            "a": "GACAR Part 91 and ICAO Annex 10 require you to read back all clearances involving altitude, heading, speed, transponder code, and any other clearance that could create safety issues if misunderstood. The controller will confirm your readback. Never assume you understood correctly — always read back to give the controller a chance to catch any errors. If the controller doesn't correct your readback, the clearance has been confirmed. Fly GACA is independent; use standard readback format to avoid confusion."
+          }
+        ]
       },
       "drone-uas-rules-in-ksa": {
         "name": "Drone & UAS rules in KSA",
@@ -3894,7 +4209,52 @@
           "An out-of-limits CG changes stability and stall behaviour.",
           "Run the numbers before any flight that loads near the limits."
         ],
-        "adel": "Why must a flight stay within its weight and centre-of-gravity limits?"
+        "adel": "Why must a flight stay within its weight and centre-of-gravity limits?",
+        "keyFacts": [
+          {
+            "label": "Governing rules",
+            "value": "GACAR Part 91 requires the pilot to ensure the aircraft is loaded within weight and CG limits.",
+            "ref": "GACAR §91.9"
+          },
+          {
+            "label": "Weight limits",
+            "value": "Maximum takeoff weight (MTOW) and maximum landing weight (MLW) — never exceed these or performance and controllability are compromised.",
+            "ref": "GACAR §91.9"
+          },
+          {
+            "label": "Centre of gravity",
+            "value": "The CG must remain between the forward and aft limits published for the aircraft; an aft CG reduces stability.",
+            "ref": "GACAR §91.9"
+          },
+          {
+            "label": "Computation",
+            "value": "Use the aircraft loading chart or the weight-and-balance tool to calculate total weight and CG location before flight.",
+            "ref": "GACAR §91.9"
+          },
+          {
+            "label": "Responsibility",
+            "value": "The pilot in command is responsible for ensuring the aircraft is loaded within limits before takeoff.",
+            "ref": "GACAR §91.3"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "Why does weight and balance matter in an aircraft?",
+            "a": "Weight affects how fast the aircraft accelerates, climbs and descends; centre of gravity affects how it handles and stalls. If the total weight exceeds the maximum takeoff weight, the aircraft may not fly, or may run out of runway during takeoff. If the CG is too far aft, the aircraft becomes unstable and difficult to control. If the CG is too far forward, the controls become heavy. GACAR §91.9 requires the pilot in command to ensure the aircraft is loaded within both weight and CG limits. Fly GACA is independent; use the aircraft's loading chart to calculate weight and balance for every flight."
+          },
+          {
+            "q": "What happens if you load an aircraft beyond its maximum weight?",
+            "a": "An overweight aircraft will take longer to accelerate, may not reach flying speed before running out of runway, and may have poor climb performance even if it does fly. Its handling may feel sluggish, and its stall speed is higher, requiring a longer landing distance. GACAR §91.9 prohibits operating an aircraft beyond its maximum takeoff or landing weight. Flying overweight violates the regulation and creates safety risks. Fly GACA is educational; always calculate the total weight including fuel, passengers and baggage before departing."
+          },
+          {
+            "q": "What is the centre of gravity and why does it matter?",
+            "a": "The centre of gravity (CG) is the point where all the aircraft's weight is balanced. An aft CG (toward the tail) reduces longitudinal stability and raises the stall speed; a forward CG (toward the nose) makes the controls heavy but provides stability. GACAR §91.9 requires loading within the manufacturer's CG envelope, published in the aircraft's weight-and-balance document. Loading outside this envelope creates dangerous handling characteristics. Use the loading chart to verify CG before every flight, especially when carrying heavy baggage or passengers. Fly GACA is not affiliated with GACA; use the Fly GACA weight-and-balance tool for calculations."
+          },
+          {
+            "q": "How do you calculate weight and balance?",
+            "a": "Use the aircraft's loading chart or the Fly GACA weight-and-balance tool: list the empty weight and CG of the aircraft, add each person's weight times their arm (distance from reference point), add fuel weight times its arm, add baggage weight times its arm, total the weights and moments, then divide total moments by total weight to find the CG location. Plot this on the CG envelope graph to verify it falls within limits. GACAR §91.9 requires this calculation before flight; if your calculation shows the CG is outside limits, you must reposition the load or remove weight. Fly GACA is independent; an approved flight school can teach you the calculation method."
+          }
+        ]
       },
       "density-altitude-and-performance": {
         "name": "Density altitude & performance",
@@ -3919,7 +4279,52 @@
           "It lengthens the take-off run and reduces climb performance.",
           "Use performance charts and fly in cooler conditions to manage it."
         ],
-        "adel": "How does density altitude affect take-off and climb performance?"
+        "adel": "How does density altitude affect take-off and climb performance?",
+        "keyFacts": [
+          {
+            "label": "Definition",
+            "value": "Pressure altitude corrected for temperature; the altitude at which the air has that density.",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "Causes",
+            "value": "High temperature, high altitude, high humidity all increase density altitude.",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "Effect on takeoff",
+            "value": "Longer takeoff distance required; the engine produces less power and the wing generates less lift in thinner air.",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "Effect on climb",
+            "value": "Climb performance is degraded; the climb rate decreases significantly at high density altitude.",
+            "ref": "GACAR Part 91"
+          },
+          {
+            "label": "Planning",
+            "value": "Always use performance charts entered with temperature, altitude and weight to determine required runway and climb capability.",
+            "ref": "GACAR §91.105"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "What is density altitude?",
+            "a": "Density altitude is the altitude at which the air has the density you are experiencing. It is calculated from pressure altitude and temperature: as temperature rises or pressure drops (altitude increases), the air becomes thinner and density altitude increases. GACAR Part 91 requires you to understand density altitude for flight planning. At the same elevation, a 30-degree day has much higher density altitude than a 10-degree day, so performance is worse. Use the Fly GACA density altitude tool or the aircraft's performance charts to calculate the density altitude for your planned flight."
+          },
+          {
+            "q": "Why does density altitude affect aircraft performance?",
+            "a": "Aircraft engines produce power and wings generate lift based on the density of the air they are moving through. In thinner air (high density altitude), the engine produces less power, the propeller is less efficient, and the wing needs higher speed to produce the same lift. This means longer takeoff distance, reduced climb rate, and longer landing distance. GACAR Part 91 requires flight planning that accounts for density altitude and available runway/field length. In Saudi Arabia's hot climate, density altitude can be dramatically higher than field elevation, especially on summer afternoons. Fly GACA is independent; use the aircraft's performance charts to plan conservatively."
+          },
+          {
+            "q": "How do you calculate density altitude?",
+            "a": "Use the Fly GACA density altitude calculator or the aircraft's performance charts. Enter the aerodrome elevation (pressure altitude if altitude is set to 29.92 inches), the outside air temperature, and dew point. The calculator shows the density altitude and its effect on takeoff and climb performance. Some charts use a slide rule or table method. GACAR §91.105 requires flight planning that includes performance, so calculate density altitude before every flight, especially on hot days or from high aerodromes. Fly GACA is educational; learn both methods so you can calculate DA without a calculator if needed."
+          },
+          {
+            "q": "What can you do to improve performance on a high-density-altitude day?",
+            "a": "Reduce aircraft weight by carrying less fuel (but maintain legal reserves), reducing baggage, or carrying fewer passengers. Depart early in the day when temperature is lower and density altitude is reduced. Use a longer runway if available. If the aircraft cannot meet the performance required, delay the flight until conditions improve. GACAR §91.105 requires flight planning that ensures the aircraft can safely depart and arrive at planned aerodromes, so never attempt to force an overloaded aircraft to depart on a high-DA day. Fly GACA is not affiliated with GACA; use conservative performance estimates and never exceed published limits."
+          }
+        ]
       },
       "fuel-planning-and-reserves": {
         "name": "Fuel planning & reserves",
@@ -3944,7 +4349,52 @@
           "IFR and commercial operations carry alternate and holding fuel.",
           "Final-reserve fuel is a floor you should never plan to use."
         ],
-        "adel": "What are the minimum fuel reserve requirements under GACAR Part 91?"
+        "adel": "What are the minimum fuel reserve requirements under GACAR Part 91?",
+        "keyFacts": [
+          {
+            "label": "VFR reserves",
+            "value": "30 minutes of fuel reserve after reaching destination, or 45 minutes if flight is not direct route.",
+            "ref": "GACAR §91.167"
+          },
+          {
+            "label": "IFR reserves",
+            "value": "45 minutes of fuel reserve after landing at alternate aerodrome, plus fuel to climb to cruise altitude.",
+            "ref": "GACAR §91.167"
+          },
+          {
+            "label": "Trip fuel",
+            "value": "Calculated from planned route, expected fuel burn, headwind/tailwind correction, weight and temperature.",
+            "ref": "GACAR §91.105"
+          },
+          {
+            "label": "Alternate aerodrome",
+            "value": "IFR flights must carry fuel to reach and land at a suitable alternate, plus 45 minutes reserve.",
+            "ref": "GACAR §91.167"
+          },
+          {
+            "label": "Commercial operations",
+            "value": "GACAR Part 121 and 135 set higher reserve requirements for air transport and charter flights.",
+            "ref": "GACAR Part 121"
+          }
+        ],
+        "faqs": [
+          {
+            "q": "How much fuel reserves must you carry for a VFR flight?",
+            "a": "GACAR §91.167 requires you to carry at least 30 minutes of fuel reserve after reaching your destination aerodrome, or 45 minutes if the intended route is not a direct route to the destination. This means you must arrive at the destination with at least that much usable fuel remaining in the tanks. This reserve is separate from the trip fuel calculated for your planned route. Fly GACA is an independent educational reference; always calculate reserves conservatively and account for headwind and deteriorating conditions."
+          },
+          {
+            "q": "What fuel reserves are required for an IFR flight?",
+            "a": "GACAR §91.167 requires you to carry fuel to reach the destination, then to climb to cruise altitude and fly to a suitable alternate aerodrome, then to land at the alternate with at least 45 minutes of fuel remaining. You must identify the alternate aerodrome and plan that it meets the weather minima for landing when you arrive. If no suitable alternate is available, you cannot depart. Commercial IFR flights (Part 121 and 135) carry higher reserves. Fly GACA is educational; check the fuel requirements with ATC or a flight planner before departing."
+          },
+          {
+            "q": "What is 'trip fuel' and how is it different from reserves?",
+            "a": "Trip fuel is the fuel needed to fly from departure to destination, including taxi, takeoff, climb, cruise, descent and landing. Reserves are fuel that remains in the tanks after landing, a legal minimum that you carry but do not plan to burn except in an emergency. GACAR §91.105 requires flight planning that calculates trip fuel accurately, and §91.167 sets the minimum reserves. Always plan with conservative assumptions about wind and fuel burn. Fly GACA is not affiliated with GACA; use aircraft performance charts and weather forecasts to calculate trip fuel realistically."
+          },
+          {
+            "q": "When is an alternate aerodrome required?",
+            "a": "GACAR §91.167 requires an alternate aerodrome for IFR flights unless the destination forecast is above minimums for the entire flight time plus 1 hour. The alternate must be within a reasonable distance (usually 30-60 minutes) and forecast to be above minimums when you arrive. VFR flights do not require an alternate by regulation, but good planning means knowing where you can land if weather deteriorates or an emergency occurs. Fly GACA is independent; always identify at least one suitable alternate and plan your fuel load to reach it safely."
+          }
+        ]
       }
     },
     "searchPlaceholder": "Search guides…",
