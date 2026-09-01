@@ -242,4 +242,6 @@ MIT © BDA Company International, operating as Fly GACA
 
 [Report an Issue](https://github.com/ay2m/FlyGACA/issues) · [Star us ⭐](https://github.com/ay2m/FlyGACA) · [Follow us on 𝕏](https://x.com/flygaca)
 
+🇸🇦 صنع في السعودية · Made in Saudi Arabia
+
 </div>
