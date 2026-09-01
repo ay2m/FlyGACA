@@ -3681,7 +3681,7 @@
       "decoding-notams": {
         "name": "Decoding NOTAMs",
         "blurb": "Make sense of NOTAMs and their Q-codes.",
-        "intro": "A NOTAM warns of something that affects a flight. Its fields and abbreviations follow a fixed pattern.",
+        "intro": "A NOTAM—Notices to Airmen—alerts pilots to conditions that affect flight safety, operations or airspace. Every NOTAM follows a fixed structure with five key fields: the airport (A), effective date and time (B), expiry date and time (C), the coded alert subject and nature (E and the Q-code), and the plain-language description. The Q-code is a three-part compressed identifier per ICAO Doc 8126 that encodes the issue type (navigation aid status, runway closure, aerodrome hazard), its status, and severity. Reading NOTAMs is required under GACAR Part 91 for flight planning—a missing or misread NOTAM can mean operating into a closed runway or an airfield with a hazard. The field order never changes, which means once you recognize the pattern—even unfamiliar NOTAMs decode systematically. Most importantly, every NOTAM in your planned flight area must be reviewed before departure. Use the NOTAM tool here to expand abbreviations and extract the plain text from the coded format.",
         "sections": [
           {
             "h": "Structure",
