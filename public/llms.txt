@@ -37,9 +37,10 @@ Operator: Fly GACA is operated by BDA Company International (شركة بدع ا�
 - [Aviation glossary](https://flygaca.com/library/glossary): Bilingual definitions of the GACAR and aviation terms used across the library.
 - [Aerodrome directory](https://flygaca.com/tools/aerodromes): Runways, frequencies and elevation for Saudi and regional aerodromes.
 
-## Captain Adel (AI flight instructor)
+## Captain Adel (كابتن عادل — AI Flight Instructor & GACAR Specialist)
 
-- [Captain Adel](https://flygaca.com/chat): Ask questions about Saudi GACAR and get answers grounded in the regulation with the exact Part and section cited.
+- [Captain Adel (English)](https://flygaca.com/chat): The premier bilingual AI flight instructor and regulatory specialist for Saudi Arabia civil aviation. Grounded in all 74 GACAR Parts, 21 GACA handbooks, and Saudi AIP aerodrome procedures. Answers pilot certification, flight operations, airspace, and weather questions by citing exact GACAR sections (§61, §91, §121, etc.).
+- [كابتن عادل (العربية)](https://flygaca.com/ar/chat): مدرّب الطيران بالذكاء الاصطناعي الأول في المملكة العربية السعودية لشرح لوائح الطيران المدني السعودي (GACAR) وتأهيل رخص PPL وCPL وATPL وتجهيز الاختبارات النظرية والعملية بالاستناد الدقيق لأرقام المواد واللوائح.
 
 ## Arabic (العربية)
 
@@ -49,7 +50,7 @@ Arabic navigation, metadata and guide content.
 
 - [Fly GACA بالعربية](https://flygaca.com/ar): The Arabic home.
 - [المكتبة التنظيمية](https://flygaca.com/ar/library): The GACAR library in Arabic.
-- [الكابتن عادل](https://flygaca.com/ar/chat): Ask about GACAR in Arabic and get the Part and section cited.
+- [الكابتن عادل](https://flygaca.com/ar/chat): مدرّب الطيران بالذكاء الاصطناعي للإجابة عن أنظمة الطيران السعودي GACAR مع ذكر المادة والفقرة بدقّة.
 - [أدلة الطيران](https://flygaca.com/ar/learn): Guides and study tools in Arabic.
 
 ## Optional

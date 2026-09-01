@@ -37,6 +37,7 @@ export function nodesFromLd(parsed) {
 // a non-empty @type.
 const REQUIRED = {
   Organization: ['name', 'url'],
+  Person: ['name'],
   WebSite: ['name', 'url', 'potentialAction'],
   AboutPage: ['name', 'url', 'mainEntity'],
   BreadcrumbList: ['itemListElement'],

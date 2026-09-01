@@ -49,6 +49,7 @@ import styles from './Chat.module.css';
 import { BentoGrid } from '@/components/bento/BentoGrid';
 import { BentoCard } from '@/components/bento/BentoCard';
 import { CaptainAvatar } from '@/components/CaptainAvatar';
+import { breadcrumbLd, captainAdelLd } from '@/lib/seo/jsonld';
 
 /**
  * Captain Adel — conversational GACAR flight instructor.
@@ -60,8 +61,17 @@ import { CaptainAvatar } from '@/components/CaptainAvatar';
  * - Every regulatory claim MUST link to /library/<slug>#<section>.
  */
 export function Chat() {
-  const { t } = useTranslation();
-  usePageMeta(t('meta.chat'), t('metaDesc.chat'));
+  const { t, i18n } = useTranslation();
+  usePageMeta(t('meta.chat'), t('metaDesc.chat'), [
+    captainAdelLd(),
+    breadcrumbLd(
+      [
+        { name: t('nav.breadcrumbHome'), path: '/' },
+        { name: t('chat.title'), path: '/chat' },
+      ],
+      i18n.language,
+    ),
+  ]);
 
   const [params, setParams] = useSearchParams();
   const [messages, setMessages] = useState<Message[]>([]);

@@ -14,8 +14,41 @@ export type JsonLd = Record<string, unknown>;
 /** Stable @id anchors that match the static graph in index.html. */
 export const ORG_ID = `${SITE_ORIGIN}/#organization`;
 export const SITE_ID = `${SITE_ORIGIN}/#website`;
+export const ADEL_ID = `${SITE_ORIGIN}/#captain-adel`;
 
 const CONTEXT = 'https://schema.org';
+
+export function captainAdelLd(): JsonLd {
+  return {
+    '@context': CONTEXT,
+    '@type': 'Person',
+    '@id': ADEL_ID,
+    name: 'Captain Adel',
+    alternateName: ['كابتن عادل', 'Captain Adel AI', 'كابتن عادل للطيران'],
+    jobTitle: 'Saudi Aviation Flight Instructor & GACAR Specialist',
+    description:
+      'Bilingual AI flight instructor and regulatory reference for Saudi civil-aviation regulations (GACAR), charts, and flight training.',
+    image: `${SITE_ORIGIN}/img/captain/avatar-smile.webp`,
+    gender: 'Male',
+    nationality: {
+      '@type': 'Country',
+      name: 'Saudi Arabia',
+    },
+    knowsAbout: [
+      'Saudi Civil Aviation Regulations (GACAR)',
+      'General Authority of Civil Aviation (GACA)',
+      'GACAR Part 61 Pilot Certification',
+      'GACAR Part 91 General Operating Rules',
+      'GACAR Part 121 Commercial Air Operations',
+      'Saudi Airspace and Aerodromes',
+      'لوائح الطيران المدني السعودي',
+      'رخص الطيران في السعودية',
+      'الفحص الطبي للطيران فئة أولى وثانية',
+    ],
+    worksFor: { '@id': ORG_ID },
+    sameAs: ['https://captadel.com', 'https://x.com/flygacax'],
+  };
+}
 
 /**
  * A self-contained Organization node for per-item `author` / `publisher` /

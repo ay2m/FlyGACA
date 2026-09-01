@@ -136,8 +136,11 @@ Current output: **542 EN + 175 AR head snapshots; 715/715 sitemap URLs body-prer
 - [x] **6.2 Provenance component (S).** `src/components/Provenance.tsx` in the library reader.
 - [ ] **6.3 Off-site presence programme (recurring, human-led).** Reddit / PPRuNe ME / X / flight
       schools; school + instructor partnerships; original-data releases. No astroturfing.
-- [ ] **6.4 Entity grounding (S).** Consistent naming/profiles; Wikidata entry; Wikipedia only if
-      genuinely notable.
+- [x] **6.4 Entity grounding (S).** *2026-09-01:* Added Captain Adel (`Person`) to schema.org Knowledge Graph
+      in `src/lib/seo/jsonld.ts`, `index.html` static graph, `prerender-head.mjs`, and `src/pages/chat/Chat.tsx`.
+      Attributed Saudi nationality, GACAR specialization, bilingual names (كابتن عادل / Captain Adel), and worksFor
+      Fly GACA organization link. Passed static graph parity and JSON-LD schema validation. Updated `llms.txt` and
+      bilingual `meta.chat`/`metaDesc.chat` for high-intent Saudi aviation queries.
 
 ---
 

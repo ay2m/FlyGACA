@@ -1,15 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { organizationLd, webSiteLd, ORG_ID, SITE_ID } from '@/lib/seo/jsonld';
+import { organizationLd, webSiteLd, captainAdelLd, ORG_ID, SITE_ID, ADEL_ID } from '@/lib/seo/jsonld';
 import { SITE_ORIGIN } from '@/lib/seo/seo';
 
 /**
- * index.html ships the site-wide Organization + WebSite graph as literal JSON so
- * it is present for crawlers that never run our JS. `organizationLd()` and
- * `webSiteLd()` build the same two nodes for runtime use. Nothing linked the two
- * copies, so an edit to one silently drifted from the other — this pins them
- * together. When a builder changes, update index.html in the same commit.
+ * index.html ships the site-wide Organization + WebSite + Person (Captain Adel)
+ * graph as literal JSON so it is present for crawlers that never run our JS.
+ * `organizationLd()`, `webSiteLd()`, and `captainAdelLd()` build the same nodes
+ * for runtime use. Nothing linked the copies, so an edit to one silently
+ * drifted from the other — this pins them together. When a builder changes,
+ * update index.html in the same commit.
  */
 const graph = (() => {
   const html = readFileSync(join(process.cwd(), 'index.html'), 'utf8');
@@ -48,6 +49,27 @@ describe('static index.html graph matches the runtime builders', () => {
       expect(stat[key], `Organization.${key} drifted from organizationLd()`).toEqual(built[key]);
     }
     expect(stat['@id']).toBe(ORG_ID);
+  });
+
+  it('Captain Adel Person entity matches captainAdelLd()', () => {
+    const stat = nodeOfType('Person');
+    const built = captainAdelLd();
+    for (const key of [
+      '@id',
+      'name',
+      'alternateName',
+      'jobTitle',
+      'description',
+      'image',
+      'gender',
+      'nationality',
+      'knowsAbout',
+      'worksFor',
+      'sameAs',
+    ]) {
+      expect(stat[key], `Person.${key} drifted from captainAdelLd()`).toEqual(built[key]);
+    }
+    expect(stat['@id']).toBe(ADEL_ID);
   });
 
   it('WebSite identity and the site-search action agree', () => {

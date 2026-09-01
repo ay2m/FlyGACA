@@ -71,6 +71,7 @@ const esc = (s) =>
 // --- JSON-LD builders (mirror src/lib/seo/jsonld.ts) -------------------------------
 const ORG_ID = `${SITE}/#organization`;
 const SITE_ID = `${SITE}/#website`;
+const ADEL_ID = `${SITE}/#captain-adel`;
 const CTX = 'https://schema.org';
 const orgNode = () => ({
   '@type': 'Organization',
@@ -79,6 +80,35 @@ const orgNode = () => ({
   legalName: 'BDA Company International',
   url: SITE,
   logo: { '@type': 'ImageObject', url: `${SITE}/img/icon-512.png` },
+});
+const captainAdelLd = () => ({
+  '@context': CTX,
+  '@type': 'Person',
+  '@id': ADEL_ID,
+  name: 'Captain Adel',
+  alternateName: ['كابتن عادل', 'Captain Adel AI', 'كابتن عادل للطيران'],
+  jobTitle: 'Saudi Aviation Flight Instructor & GACAR Specialist',
+  description:
+    'Bilingual AI flight instructor and regulatory reference for Saudi civil-aviation regulations (GACAR), charts, and flight training.',
+  image: `${SITE}/img/captain/avatar-smile.webp`,
+  gender: 'Male',
+  nationality: {
+    '@type': 'Country',
+    name: 'Saudi Arabia',
+  },
+  knowsAbout: [
+    'Saudi Civil Aviation Regulations (GACAR)',
+    'General Authority of Civil Aviation (GACA)',
+    'GACAR Part 61 Pilot Certification',
+    'GACAR Part 91 General Operating Rules',
+    'GACAR Part 121 Commercial Air Operations',
+    'Saudi Airspace and Aerodromes',
+    'لوائح الطيران المدني السعودي',
+    'رخص الطيران في السعودية',
+    'الفحص الطبي للطيران فئة أولى وثانية',
+  ],
+  worksFor: { '@id': ORG_ID },
+  sameAs: ['https://captadel.com', 'https://x.com/flygacax'],
 });
 const articleLd = (type, { title, description, path, dateModified, lang = 'en' }) => {
   const url = canonicalUrl(path, lang);
@@ -223,6 +253,7 @@ function contentDescriptors(bundle, lang) {
     put(norm, {
       title,
       description,
+      ...(norm === '/chat' ? { jsonLd: captainAdelLd() } : {}),
       ...(COURSE_ROUTES.has(norm)
         ? { jsonLd: courseLd({ title, description, path: norm, lang }) }
         : {}),

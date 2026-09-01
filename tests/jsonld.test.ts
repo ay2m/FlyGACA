@@ -3,10 +3,12 @@ import { SITE_ORIGIN } from '@/lib/seo/seo';
 import {
   ORG_ID,
   SITE_ID,
+  ADEL_ID,
   aboutPageLd,
   airportLd,
   articleLd,
   breadcrumbLd,
+  captainAdelLd,
   courseLd,
   definedTermSetLd,
   faqLd,
@@ -17,11 +19,21 @@ import {
   webSiteLd,
 } from '@/lib/seo/jsonld';
 
-describe('organization + website', () => {
+describe('organization + website + captain adel', () => {
   it('uses stable @id anchors matching the static graph', () => {
     expect(ORG_ID).toBe(`${SITE_ORIGIN}/#organization`);
     expect(SITE_ID).toBe(`${SITE_ORIGIN}/#website`);
+    expect(ADEL_ID).toBe(`${SITE_ORIGIN}/#captain-adel`);
     expect(organizationLd()['@id']).toBe(ORG_ID);
+    expect(captainAdelLd()['@id']).toBe(ADEL_ID);
+  });
+  it('defines Captain Adel as a Person entity grounded in Saudi aviation', () => {
+    const ld = captainAdelLd();
+    expect(ld['@type']).toBe('Person');
+    expect(ld.name).toBe('Captain Adel');
+    expect(ld.alternateName).toContain('كابتن عادل');
+    expect(ld.nationality).toEqual({ '@type': 'Country', name: 'Saudi Arabia' });
+    expect(ld.worksFor).toEqual({ '@id': ORG_ID });
   });
   it('website exposes a SearchAction into the library', () => {
     const ld = webSiteLd();
