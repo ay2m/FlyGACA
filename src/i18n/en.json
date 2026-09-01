@@ -3462,7 +3462,7 @@
       "icao-english-saelpt": {
         "name": "ICAO English & SAELPT",
         "blurb": "The language proficiency requirement for radiotelephony.",
-        "intro": "Pilots must show they can communicate in English to a defined standard to use their licence on the radio.",
+        "intro": "Pilots must demonstrate ICAO English language proficiency at Level 4 (Operational) or above to use English on the radio—a requirement under GACA and GACAR Part 61 licensing rules. The ICAO scale runs from Level 1 (Pre-Elementary) to Level 6 (Expert), and six skill areas are assessed: pronunciation, structure, vocabulary, fluency, comprehension and interactions. Your overall level is the lowest score of the six, so balancing all six is essential. In Saudi Arabia, pilots are tested through the SAELPT—the Saudi Aviation English Language Proficiency Test—which rates you against the ICAO Annex 1 scale. Level 4 allows unrestricted radio communication; higher levels (Level 5 and 6) last longer before re-assessment. Level 4 itself is re-tested periodically—the exact intervals are set by GACA. Passing SAELPT is not optional; it is a prerequisite to holding and exercising a pilot licence to operate on English-language frequencies. Use this guide to understand the six skill areas and begin preparing for your SAELPT assessment.",
         "sections": [
           {
             "h": "Why it matters",
@@ -3611,7 +3611,7 @@
       "reading-metar-taf": {
         "name": "Reading METAR & TAF",
         "blurb": "Decode aviation weather reports and forecasts.",
-        "intro": "METARs and TAFs pack the weather into a compact code. Once you know the pattern they read quickly.",
+        "intro": "METAR and TAF reports pack aviation weather into a compact code—but once you learn the structure, they become quick and reliable. A METAR is an observation of current conditions: wind, visibility, weather, cloud layers, temperature, and pressure. A TAF forecasts the weather over 24 to 30 hours, issued four to six times daily. Both reports follow a fixed field order. The groups FM (from), BECMG (becoming) and TEMPO (temporary) mark when conditions shift in a TAF. Learning to decode them is essential under GACAR Part 91, which governs VFR operations and weather minimums. The field order never changes—whether you're reading from Riyadh or elsewhere, once you recognize the structure, even unfamiliar reports decode systematically. Practice with real observations in a METAR or TAF decoder to build speed and confidence.",
         "sections": [
           {
             "h": "METAR",
@@ -3681,7 +3681,7 @@
       "decoding-notams": {
         "name": "Decoding NOTAMs",
         "blurb": "Make sense of NOTAMs and their Q-codes.",
-        "intro": "A NOTAM warns of something that affects a flight. Its fields and abbreviations follow a fixed pattern.",
+        "intro": "A NOTAM—Notices to Airmen—alerts pilots to conditions that affect flight safety, operations or airspace. Every NOTAM follows a fixed structure with five key fields: the airport (A), effective date and time (B), expiry date and time (C), the coded alert subject and nature (E and the Q-code), and the plain-language description. The Q-code is a three-part compressed identifier per ICAO Doc 8126 that encodes the issue type (navigation aid status, runway closure, aerodrome hazard), its status, and severity. Reading NOTAMs is required under GACAR Part 91 for flight planning—a missing or misread NOTAM can mean operating into a closed runway or an airfield with a hazard. The field order never changes, which means once you recognize the pattern—even unfamiliar NOTAMs decode systematically. Most importantly, every NOTAM in your planned flight area must be reviewed before departure. Use the NOTAM tool here to expand abbreviations and extract the plain text from the coded format.",
         "sections": [
           {
             "h": "Structure",
@@ -3751,7 +3751,7 @@
       "the-airac-cycle": {
         "name": "The AIRAC cycle",
         "blurb": "Why aeronautical data changes every 28 days.",
-        "intro": "Charts, procedures and navigation data update together on a fixed worldwide schedule called AIRAC.",
+        "intro": "The AIRAC cycle is a fixed 28-day worldwide schedule on which charts, procedures and navigation data update together. The 28-day interval allows time for data production, notification and global implementation. Every effective date falls on a Thursday and applies worldwide, so pilots everywhere switch to new procedures on the same day, keeping operations consistent. The cycle governs all aeronautical information: instrument procedures, departures and arrivals, runway configurations and navigation aid status. GACAR Part 91 requires familiarity with the current AIRAC cycle for flight operations—outdated charts and procedures create confusion and safety risks. The cycle anchors to AIRAC 2001 (effective 2020-01-02) and cycles forward 28 days at a time, so you can always count from a known date. Use the AIRAC tool to check the current cycle number, effective date and countdown to the next.",
         "sections": [
           {
             "h": "The cycle",
@@ -3821,7 +3821,7 @@
       "night-rating": {
         "name": "Night rating",
         "blurb": "Adding the privilege to fly after dark.",
-        "intro": "Flying at night brings different rules, lighting and currency. A night rating or night training adds the privilege under GACAR Part 61.",
+        "intro": "Flying at night brings different rules, lighting, and currency requirements. A night rating—or the night training endorsement—adds the privilege to act as pilot in command after sunset. GACAR §61.135 defines what you can and cannot do at night, and the boundary is sunrise to sunset for day-only pilots. Without night training, a private or commercial pilot may only fly when the sun is above the horizon, which eliminates entire seasons and mission profiles. Night training requires a minimum of 10 hours of dual instruction including 5 hours of night cross-country navigation and 10 full-stop landings. The training covers takeoffs and circuits in darkness, night landing technique (which demands precision—runway lighting is your only visual reference), and navigation when ground features are not visible. After training, you must maintain night currency: carry passengers at night only if you have completed three takeoffs and full-stop landings to a full stop during daylight or civil twilight within the preceding 90 days. Flying at night opens new doors—but only after demonstrated competency.",
         "sections": [
           {
             "h": "What it adds",
@@ -3970,7 +3970,7 @@
       "flight-instructor-rating": {
         "name": "Flight instructor rating",
         "blurb": "Earning the privilege to teach.",
-        "intro": "A flight instructor rating lets you give the training and endorsements other pilots need. It sits on top of a commercial licence under GACAR Part 61.",
+        "intro": "A flight instructor rating (CFII in the US context, or the GACAR equivalent) authorizes you to teach others to fly—and it is one of aviation's most demanding certifications. GACAR Part 61 sets exacting standards because what you teach becomes muscle memory and decision-making reflexes in your students. You must hold a commercial certificate first and typically 250+ flight hours before you qualify to instruct. Training itself spans 25–40 hours: you learn how to teach (not just how to fly), study the principles of learning, practice scenario-based instruction, master the art of critique without criticism, and learn to recognize and recover from emergency situations alongside your student. You must pass a written exam covering teaching methodology, flight physiology, and emergency procedures, then a practical test (checkride) where an examiner watches you teach a student to fly. Your first students won't be strangers—they will be your weakest link, and your instruction will determine whether they become safe pilots or dangerous ones. Currency rules are strict: GACAR requires you to conduct flight instruction at least once every 24 calendar months or you lose the rating. Many instructors shoot for once every 12 months. You must also maintain your own commercial certificate through recurrent training and flight review. The rating expires every two years and renews only through active instruction or passing a re-check. It is a responsibility that never ends: your teaching is your student's foundation.",
         "sections": [
           {
             "h": "Prerequisites",
@@ -4040,7 +4040,7 @@
       "radiotelephony-phraseology": {
         "name": "Radiotelephony phraseology",
         "blurb": "Standard words that keep the radio clear.",
-        "intro": "Standard phraseology makes radio calls short, clear and unambiguous. Using the right words, and the phonetic alphabet, prevents mistakes.",
+        "intro": "Standard radiotelephony phraseology is essential to aviation safety because the radio is the sole link between you and air traffic control—and noise, accents and distance all make it easy to misunderstand. GACAR Part 91 requires standard phraseology; ICAO Annex 10 defines it. A single misheard clearance can mean flying into an active runway or descending into terrain. Standard phraseology solves this by using exact words with no variation: 'Roger' (message received), 'Wilco' (will comply), 'Say again' (repeat that), 'Read back' (confirm what I heard), 'Affirmative' (yes) and 'Negative' (no). These words have no slang equivalents. Numbers are spoken digit-by-digit (say 'three-two-zero' not 'three-twenty'), and letters are spelled using the phonetic alphabet (Alpha, Bravo, Charlie…) to prevent confusion. Readbacks are critical: when you receive a clearance, read it back exactly, and the controller confirms or corrects it on the spot. This double-check catches mistakes before they become accidents. Non-English-speaking pilots must use the same phonetic alphabet and standard words, which means every pilot worldwide speaks the same radio language. Proficiency in phraseology is as important as aircraft handling—it is your safety net on the radio.",
         "sections": [
           {
             "h": "The phonetic alphabet",
@@ -4189,7 +4189,7 @@
       "weight-and-balance-basics": {
         "name": "Weight & balance basics",
         "blurb": "Loading the aircraft within limits.",
-        "intro": "Every aircraft has weight and centre-of-gravity limits. Loading inside them keeps it controllable and within its performance figures.",
+        "intro": "Every aircraft has strict weight and centre-of-gravity (CG) limits. Exceeding either compromises controllability, stall behaviour and performance—risking the flight itself. GACAR Part 91 requires the pilot to ensure the aircraft is loaded within weight and CG limits before every departure. Weight limits include the maximum takeoff weight (MTOW) and maximum landing weight (MLW)—published in the aircraft's POH. Centre of gravity describes where the aircraft's balance point lies between forward and aft limits; an out-of-limits CG makes the aircraft difficult to control, changes how it stalls, and alters pitch stability. Loading the aircraft is your responsibility as pilot-in-command, and the numbers must be calculated precisely—not guessed. The loading chart or weight-and-balance tool shows how much you can carry of fuel, payload and passengers before hitting a limit. Running the calculation before any flight that loads near the limits is not optional; it is a regulatory requirement. The weight-and-balance tool here helps you verify your loading is compliant.",
         "sections": [
           {
             "h": "Weight limits",
@@ -4259,7 +4259,7 @@
       "density-altitude-and-performance": {
         "name": "Density altitude & performance",
         "blurb": "Why hot, high and humid days hurt performance.",
-        "intro": "Density altitude is pressure altitude corrected for temperature. As it rises, the air thins and aircraft performance falls, critical on hot Saudi days.",
+        "intro": "Density altitude is the altitude your aircraft *feels* it is flying at, even though your altimeter shows a lower number. It combines temperature, pressure, and humidity into a single measure of how thin the air is, and thin air means less lift and less engine power. GACAR Part 91 requires you to account for density altitude in your aircraft's performance calculations before every flight. Here's why it matters: a Cessna 172 needs maybe 1,500 feet of runway to take off on a cool sea-level day. At 5,000 feet elevation on a hot day, the same aircraft might need 3,000 feet—and if your runway is only 2,500 feet long, you cannot safely depart, no matter how short the runway looks. Your aircraft's POH (Pilot's Operating Handbook) contains performance charts that convert actual pressure altitude and temperature into density altitude; from there, you look up the runway distance required, climb rate, and cruise performance at that density altitude. High elevation + high temperature = very high density altitude. Flying over mountains on a hot day? Density altitude could be 2,000 feet higher than your elevation. You may not have the performance you think you have. Performance degradation is insidious because the airplane flies normally—controls feel normal, airspeed is what you expect—but you climb slower, accelerate slower, and use more runway to take off. Respect your aircraft's limits on hot days at high elevations: calculate density altitude, check your performance charts, and do not press marginal runways.",
         "sections": [
           {
             "h": "What it is",
@@ -4329,7 +4329,7 @@
       "fuel-planning-and-reserves": {
         "name": "Fuel planning & reserves",
         "blurb": "How much fuel the rules require you to carry.",
-        "intro": "Sound fuel planning keeps a flight legal and safe. The rules set minimum reserves on top of trip fuel, with more for IFR and commercial operations.",
+        "intro": "Fuel planning is the foundation of safe flight operations: you must calculate how much fuel you need, how much you have, and where you will go if the planned destination becomes unreachable. GACAR Part 91 and Part 121 require documented fuel planning before every flight. The calculation starts with measuring your aircraft's fuel capacity, usually in gallons or litres—check your aircraft's POH (Pilot's Operating Handbook) for the exact quantity. Next, calculate fuel burn: how fast your engines consume fuel at your planned altitude and power setting (typically 8–12 gallons per hour for a Cessna 172 at cruise; your POH gives the exact number for your aircraft). Then multiply burn rate by planned flight time to get fuel required to reach your destination. But fuel required is never fuel to depart with. GACAR requires reserve fuel—fuel you will *not* burn, but carry as a safety margin in case you need to divert, hold in a holding pattern, or execute a missed approach. VFR reserves are typically 30 minutes of fuel; IFR reserves are typically 45 minutes. Total fuel to depart is fuel required plus reserves. Check this total against your aircraft's usable fuel capacity; if reserves exceed capacity, the flight is unflyable. Endurance—how long you can fly on total available fuel—must always exceed flight time plus reserve time. This discipline keeps you airborne long enough to reach an alternate if needed.",
         "sections": [
           {
             "h": "Trip fuel",

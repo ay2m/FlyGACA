@@ -141,6 +141,16 @@ export const GUIDE_UPDATED: Partial<Record<GuideSlug, string>> = {
   'pilot-currency-and-recency': '2026-09-01',
   'vfr-weather-minimums': '2026-09-01',
   'airspace-explained': '2026-09-01',
+  'reading-metar-taf': '2026-09-01',
+  'the-airac-cycle': '2026-09-01',
+  'decoding-notams': '2026-09-01',
+  'icao-english-saelpt': '2026-09-01',
+  'weight-and-balance-basics': '2026-09-01',
+  'night-rating': '2026-09-01',
+  'radiotelephony-phraseology': '2026-09-01',
+  'fuel-planning-and-reserves': '2026-09-01',
+  'flight-instructor-rating': '2026-09-01',
+  'density-altitude-and-performance': '2026-09-01',
 };
 
 const isLiveGuide = (slug: GuideSlug): boolean => GUIDE_STATUS[slug] === 'live';
