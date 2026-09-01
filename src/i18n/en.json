@@ -3751,7 +3751,7 @@
       "the-airac-cycle": {
         "name": "The AIRAC cycle",
         "blurb": "Why aeronautical data changes every 28 days.",
-        "intro": "Charts, procedures and navigation data update together on a fixed worldwide schedule called AIRAC.",
+        "intro": "The AIRAC cycle is a fixed 28-day worldwide schedule on which charts, procedures and navigation data update together. The 28-day interval allows time for data production, notification and global implementation. Every effective date falls on a Thursday and applies worldwide, so pilots everywhere switch to new procedures on the same day, keeping operations consistent. The cycle governs all aeronautical information: instrument procedures, departures and arrivals, runway configurations and navigation aid status. GACAR Part 91 requires familiarity with the current AIRAC cycle for flight operations—outdated charts and procedures create confusion and safety risks. The cycle anchors to AIRAC 2001 (effective 2020-01-02) and cycles forward 28 days at a time, so you can always count from a known date. Use the AIRAC tool to check the current cycle number, effective date and countdown to the next.",
         "sections": [
           {
             "h": "The cycle",
