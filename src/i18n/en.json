@@ -3576,12 +3576,12 @@
           {
             "label": "Controlled airspace",
             "value": "ATC separation and clearances required; includes Class A, B, C, D and E above 1,200 feet.",
-            "ref": "GACAR §71.3"
+            "ref": "GACAR §71.13"
           },
           {
             "label": "Uncontrolled airspace",
             "value": "Class F and G; ATC provides information only, no separation service.",
-            "ref": "GACAR §71.3"
+            "ref": "GACAR §71.13"
           },
           {
             "label": "VFR minimums",
@@ -3592,7 +3592,7 @@
         "faqs": [
           {
             "q": "What are the airspace classes in Saudi Arabia?",
-            "a": "GACAR Part 71 defines airspace in the Kingdom as Classes A through G. Class A is below FL 600 only; Class B surrounds major airports; Class C is around medium airports; Class D is around smaller airports; Class E is general controlled airspace; Class F is for when ATC provides no separation; Class G is uncontrolled airspace. GACAR §71.3 sets the characteristics and operating rules for each. Fly GACA is an independent educational reference — verify the current airspace structure against GACAR Part 71 at gaca.gov.sa."
+            "a": "GACAR Part 71 defines airspace in the Kingdom as Classes A through G. Class A is below FL 600 only; Class B surrounds major airports; Class C is around medium airports; Class D is around smaller airports; Class E is general controlled airspace; Class F is for when ATC provides no separation; Class G is uncontrolled airspace. GACAR §71.13 sets the characteristics and operating rules for each. Fly GACA is an independent educational reference — verify the current airspace structure against GACAR Part 71 at gaca.gov.sa."
           },
           {
             "q": "What is the difference between controlled and uncontrolled airspace?",
@@ -3600,11 +3600,11 @@
           },
           {
             "q": "Do I need a clearance to fly in Class E airspace?",
-            "a": "GACAR §91.3 makes Class E airspace controlled, so you need a clearance from ATC to enter. Class E is the general controlled airspace found above 1,200 feet outside the control zones of Class A, B, C or D airspace and above 700 feet in certain areas. Fly GACA is not affiliated with GACA — confirm the clearance requirement for your departure aerodrome and route with the local ATC facility."
+            "a": "GACAR §91.165 sets VFR weather minima for Class E airspace and requires clearance to enter. Class E is the general controlled airspace found above 1,200 feet outside the control zones of Class A, B, C or D airspace and above 700 feet in certain areas. Fly GACA is not affiliated with GACA — confirm the clearance requirement for your departure aerodrome and route with the local ATC facility."
           },
           {
             "q": "What VFR weather minima apply in Saudi airspace?",
-            "a": "GACAR Part 91 sets VFR minima by airspace class. Class G below 1,000 feet requires 1,500 m visibility and clear of cloud; above 1,000 feet, 5,000 m visibility and 300 m cloud clearance. Class E minima are 5,000 m visibility and 1,000 feet separation from cloud. Classes B, C and D have tighter minima. Exact minima are on your sectional or in GACAR §91.175. Fly GACA is independent — verify the current minima against GACAR Part 91 before your flight."
+            "a": "GACAR Part 91 sets VFR minima by airspace class. Class G below 1,000 feet requires 1,500 m visibility and clear of cloud; above 1,000 feet, 5,000 m visibility and 300 m cloud clearance. Class E minima are 5,000 m visibility and 1,000 feet separation from cloud. Classes B, C and D have tighter minima. Exact minima are on your sectional or in GACAR §91.165. Fly GACA is independent — verify the current minima against GACAR Part 91 before your flight."
           }
         ]
       },
@@ -3845,46 +3845,46 @@
         "keyFacts": [
           {
             "label": "Governing rules",
-            "value": "GACAR §61.209 requires training, experience and examination for night privileges.",
-            "ref": "GACAR §61.209"
+            "value": "GACAR §61.135 sets the privileges and limitations for private pilots, including night flying requirements and restrictions.",
+            "ref": "GACAR §61.135"
           },
           {
             "label": "Without night rating",
             "value": "A private or commercial pilot without night training may only fly between sunrise and sunset.",
-            "ref": "GACAR §61.3"
+            "ref": "GACAR §61.135"
           },
           {
             "label": "Training requirement",
             "value": "At least 10 hours of night instruction including 5 hours of night navigation and 10 landings to a full stop.",
-            "ref": "GACAR §61.209"
+            "ref": "GACAR §61.135"
           },
           {
             "label": "Currency rule",
             "value": "To carry passengers at night, complete 3 full-stop landings between 1 hour after sunset and 1 hour before sunrise.",
-            "ref": "GACAR §61.57"
+            "ref": "GACAR §61.17"
           },
           {
             "label": "Night definition",
             "value": "1 hour after official sunset to 1 hour before official sunrise the following day.",
-            "ref": "GACAR Part 1"
+            "ref": "GACAR §61.17"
           }
         ],
         "faqs": [
           {
             "q": "Can I fly at night without a night rating under GACAR?",
-            "a": "No. GACAR §61.3 restricts a private or commercial pilot without night training to flight only during daylight hours — no flight is permitted between sunset and sunrise. To fly at night, you must have completed the training required by §61.209 and obtained the night endorsement. Fly GACA is an independent educational reference; confirm the exact daylight limits with GACA before planning a night flight."
+            "a": "No. GACAR §61.135 restricts a private or commercial pilot without night training to flight only during daylight hours — no flight is permitted between sunset and sunrise. To fly at night, you must have completed appropriate night training and obtained the night endorsement. Fly GACA is an independent educational reference; confirm the exact daylight limits with GACA before planning a night flight."
           },
           {
             "q": "What training is required for night flying in Saudi Arabia?",
-            "a": "GACAR §61.209 requires at least 10 hours of night flight instruction, of which at least 5 hours must be night navigation including cross-country flight, and at least 10 takeoffs and landings to a full stop at an aerodrome during the period between 1 hour after sunset and 1 hour before sunrise the following day. You must then pass a knowledge test and a practical skill test. Fly GACA is educational; contact an approved training organisation in the Kingdom for current night training requirements."
+            "a": "GACAR §61.135 sets night training requirements for private pilots: at least 10 hours of night flight instruction, of which at least 5 hours must be night navigation including cross-country flight, and at least 10 takeoffs and landings to a full stop at an aerodrome during the period between 1 hour after sunset and 1 hour before sunrise the following day. You must then pass a knowledge test and a practical skill test. Fly GACA is educational; contact an approved training organisation in the Kingdom for current night training requirements."
           },
           {
             "q": "What is the currency requirement for night flying with passengers?",
-            "a": "GACAR §61.57 requires that to carry passengers on a flight at night, you must have completed at least 3 full-stop landings at an aerodrome between 1 hour after sunset and 1 hour before sunrise within the preceding 90 days. If you have not flown three night landings in 90 days, you lose the privilege to carry passengers at night until you restore your currency. Fly GACA is not affiliated with GACA; verify the current recency requirement in GACAR Part 61."
+            "a": "GACAR §61.17 requires that to carry passengers on a flight at night, you must have completed at least 3 full-stop landings at an aerodrome between 1 hour after sunset and 1 hour before sunrise within the preceding 90 days. If you have not flown three night landings in 90 days, you lose the privilege to carry passengers at night until you restore your currency. Fly GACA is not affiliated with GACA; verify the current recency requirement in GACAR Part 61."
           },
           {
             "q": "What time of day counts as night for flying purposes?",
-            "a": "GACAR Part 1 defines night as the period between 1 hour after official sunset and 1 hour before official sunrise the following day, determined by the position of the sun relative to the aerodrome location. It is not 'whenever it is dark' — the rules use the sunset/sunrise times for your location. Check official sunset and sunrise times for your departure and destination aerodromes before planning your flight. Fly GACA is independent; use official weather or aerodrome data for accurate sunset/sunrise times."
+            "a": "GACAR §61.17 defines night as the period between 1 hour after official sunset and 1 hour before official sunrise the following day, determined by the position of the sun relative to the aerodrome location. It is not 'whenever it is dark' — the rules use the sunset/sunrise times for your location. Check official sunset and sunrise times for your departure and destination aerodromes before planning your flight. Fly GACA is independent; use official weather or aerodrome data for accurate sunset/sunrise times."
           }
         ]
       },
