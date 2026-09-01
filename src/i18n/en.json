@@ -3821,7 +3821,7 @@
       "night-rating": {
         "name": "Night rating",
         "blurb": "Adding the privilege to fly after dark.",
-        "intro": "Flying at night brings different rules, lighting and currency. A night rating or night training adds the privilege under GACAR Part 61.",
+        "intro": "Flying at night brings different rules, lighting, and currency requirements. A night rating—or the night training endorsement—adds the privilege to act as pilot in command after sunset. GACAR §61.135 defines what you can and cannot do at night, and the boundary is sunrise to sunset for day-only pilots. Without night training, a private or commercial pilot may only fly when the sun is above the horizon, which eliminates entire seasons and mission profiles. Night training requires a minimum of 10 hours of dual instruction including 5 hours of night cross-country navigation and 10 full-stop landings. The training covers takeoffs and circuits in darkness, night landing technique (which demands precision—runway lighting is your only visual reference), and navigation when ground features are not visible. After training, you must maintain night currency: carry passengers at night only if you have completed three takeoffs and full-stop landings to a full stop during daylight or civil twilight within the preceding 90 days. Flying at night opens new doors—but only after demonstrated competency.",
         "sections": [
           {
             "h": "What it adds",
