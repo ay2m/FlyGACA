@@ -3576,12 +3576,12 @@
           {
             "label": "Controlled airspace",
             "value": "ATC separation and clearances required; includes Class A, B, C, D and E above 1,200 feet.",
-            "ref": "GACAR §71.13"
+            "ref": "GACAR Part 71"
           },
           {
             "label": "Uncontrolled airspace",
             "value": "Class F and G; ATC provides information only, no separation service.",
-            "ref": "GACAR §71.13"
+            "ref": "GACAR Part 71"
           },
           {
             "label": "VFR minimums",
@@ -3592,7 +3592,7 @@
         "faqs": [
           {
             "q": "What are the airspace classes in Saudi Arabia?",
-            "a": "GACAR Part 71 defines airspace in the Kingdom as Classes A through G. Class A is below FL 600 only; Class B surrounds major airports; Class C is around medium airports; Class D is around smaller airports; Class E is general controlled airspace; Class F is for when ATC provides no separation; Class G is uncontrolled airspace. GACAR §71.13 sets the characteristics and operating rules for each. Fly GACA is an independent educational reference — verify the current airspace structure against GACAR Part 71 at gaca.gov.sa."
+            "a": "GACAR Part 71 defines airspace in the Kingdom as Classes A through G. Class A is below FL 600 only; Class B surrounds major airports; Class C is around medium airports; Class D is around smaller airports; Class E is general controlled airspace; Class F is for when ATC provides no separation; Class G is uncontrolled airspace. Part 71 details the designation and classification of each airspace area. Fly GACA is an independent educational reference — verify the current airspace structure against GACAR Part 71 at gaca.gov.sa."
           },
           {
             "q": "What is the difference between controlled and uncontrolled airspace?",
