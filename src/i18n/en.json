@@ -3462,7 +3462,7 @@
       "icao-english-saelpt": {
         "name": "ICAO English & SAELPT",
         "blurb": "The language proficiency requirement for radiotelephony.",
-        "intro": "Pilots must show they can communicate in English to a defined standard to use their licence on the radio.",
+        "intro": "Pilots must demonstrate ICAO English language proficiency at Level 4 (Operational) or above to use English on the radio—a requirement under GACA and GACAR Part 61 licensing rules. The ICAO scale runs from Level 1 (Pre-Elementary) to Level 6 (Expert), and six skill areas are assessed: pronunciation, structure, vocabulary, fluency, comprehension and interactions. Your overall level is the lowest score of the six, so balancing all six is essential. In Saudi Arabia, pilots are tested through the SAELPT—the Saudi Aviation English Language Proficiency Test—which rates you against the ICAO Annex 1 scale. Level 4 allows unrestricted radio communication; higher levels (Level 5 and 6) last longer before re-assessment. Level 4 itself is re-tested periodically—the exact intervals are set by GACA. Passing SAELPT is not optional; it is a prerequisite to holding and exercising a pilot licence to operate on English-language frequencies. Use this guide to understand the six skill areas and begin preparing for your SAELPT assessment.",
         "sections": [
           {
             "h": "Why it matters",
