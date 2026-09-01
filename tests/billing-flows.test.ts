@@ -151,6 +151,43 @@ describe('startPackCheckout', () => {
   });
 });
 
+describe('startCohortCheckout', () => {
+  it('routes to native and requires sign-in just like Pro checkout', async () => {
+    h.native = true;
+    await expect((await load()).startCohortCheckout('Riyadh Flight School')).rejects.toThrow(
+      'native-billing',
+    );
+
+    h.native = false;
+    h.currentUser = null;
+    await expect((await load()).startCohortCheckout('Riyadh Flight School')).rejects.toThrow(
+      'sign-in-required',
+    );
+  });
+
+  it('navigates to /checkout with kind=cohort and the org name', async () => {
+    h.currentUser = { uid: 'u1' };
+    const assign = stubAssign();
+
+    await (await load()).startCohortCheckout('Riyadh Flight School');
+
+    // The org name is user input and rides in the query string, so it has to be
+    // encoded rather than concatenated.
+    expect(assign).toHaveBeenCalledWith('/checkout?kind=cohort&orgName=Riyadh+Flight+School');
+  });
+
+  it('carries the referral and promo codes through', async () => {
+    h.currentUser = { uid: 'u1' };
+    const assign = stubAssign();
+
+    await (await load()).startCohortCheckout('Jeddah Aviation', { ref: 'ABCD2345', promo: 'EID20' });
+
+    expect(assign).toHaveBeenCalledWith(
+      '/checkout?kind=cohort&orgName=Jeddah+Aviation&ref=ABCD2345&promo=EID20',
+    );
+  });
+});
+
 describe('startBundleCheckout', () => {
   it('routes to native and requires sign-in just like Pro checkout', async () => {
     h.native = true;

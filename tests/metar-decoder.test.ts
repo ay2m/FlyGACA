@@ -62,4 +62,53 @@ describe('metarDecoder & runway flight category computations', () => {
       expect(res.crosswindKt).toBe(0);
     }
   });
+
+  it('parses a variable wind direction range', () => {
+    // dddVddd appears whenever the direction varies by 60° or more at 3kt+, so
+    // it rides along with a normal wind group rather than replacing it.
+    const r = parseMetar('OERK 121200Z 32012KT 280V350 9999 FEW040 30/10 Q1011');
+
+    expect(r.wind?.dir).toBe(320);
+    expect(r.wind?.speedKt).toBe(12);
+    expect(r.wind?.variableFrom).toBe(280);
+    expect(r.wind?.variableTo).toBe(350);
+  });
+
+  it('reports a pure headwind with no crosswind side bias', () => {
+    // Wind exactly down the runway: crosswind is 0, so the side is decided by
+    // the sign of the headwind rather than by which way the wind is skewed.
+    const res = computeRunwayWind('33', { dir: 330, speedKt: 18, gustKt: null });
+
+    expect(res?.crosswindKt).toBe(0);
+    expect(res?.headwindKt).toBe(18);
+    expect(res?.crosswindSide).toBe('head');
+  });
+
+  it('reports a crosswind from the right', () => {
+    // Wind from 360 onto runway 33 (330°) sits 30° clockwise of the centreline,
+    // so it pushes from the right — the mirror of the 300/20KT case above.
+    const res = computeRunwayWind('33', { dir: 360, speedKt: 20, gustKt: null });
+
+    expect(res?.crosswindKt).toBe(10);
+    expect(res?.crosswindSide).toBe('right');
+  });
+
+  it('reports a pure tailwind as the tail side', () => {
+    const res = computeRunwayWind('15', { dir: 330, speedKt: 18, gustKt: null });
+
+    expect(res?.crosswindKt).toBe(0);
+    expect(res?.headwindKt).toBe(-18);
+    expect(res?.crosswindSide).toBe('tail');
+  });
+
+  it('returns null when the runway wind cannot be computed', () => {
+    const wind = { dir: 300, speedKt: 20, gustKt: null };
+
+    expect(computeRunwayWind('99', wind)).toBeNull(); // unparseable runway
+    expect(computeRunwayWind('33L', null)).toBeNull(); // no wind group
+    // A variable-direction METAR reports VRB, which carries no numeric heading
+    // to resolve components against.
+    expect(computeRunwayWind('33L', { dir: null, speedKt: 20, gustKt: null })).toBeNull();
+    expect(computeRunwayWind('33L', { dir: 300, speedKt: null, gustKt: null })).toBeNull();
+  });
 });
