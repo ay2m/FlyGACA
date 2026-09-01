@@ -145,6 +145,7 @@ export const GUIDE_UPDATED: Partial<Record<GuideSlug, string>> = {
   'the-airac-cycle': '2026-09-01',
   'decoding-notams': '2026-09-01',
   'icao-english-saelpt': '2026-09-01',
+  'weight-and-balance-basics': '2026-09-01',
 };
 
 const isLiveGuide = (slug: GuideSlug): boolean => GUIDE_STATUS[slug] === 'live';

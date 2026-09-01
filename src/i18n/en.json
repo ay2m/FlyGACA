@@ -4189,7 +4189,7 @@
       "weight-and-balance-basics": {
         "name": "Weight & balance basics",
         "blurb": "Loading the aircraft within limits.",
-        "intro": "Every aircraft has weight and centre-of-gravity limits. Loading inside them keeps it controllable and within its performance figures.",
+        "intro": "Every aircraft has strict weight and centre-of-gravity (CG) limits. Exceeding either compromises controllability, stall behaviour and performance—risking the flight itself. GACAR Part 91 requires the pilot to ensure the aircraft is loaded within weight and CG limits before every departure. Weight limits include the maximum takeoff weight (MTOW) and maximum landing weight (MLW)—published in the aircraft's POH. Centre of gravity describes where the aircraft's balance point lies between forward and aft limits; an out-of-limits CG makes the aircraft difficult to control, changes how it stalls, and alters pitch stability. Loading the aircraft is your responsibility as pilot-in-command, and the numbers must be calculated precisely—not guessed. The loading chart or weight-and-balance tool shows how much you can carry of fuel, payload and passengers before hitting a limit. Running the calculation before any flight that loads near the limits is not optional; it is a regulatory requirement. The weight-and-balance tool here helps you verify your loading is compliant.",
         "sections": [
           {
             "h": "Weight limits",
