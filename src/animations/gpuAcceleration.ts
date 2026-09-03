@@ -26,4 +26,3 @@ export function getHardwareAcceleration(enableWillChange = false): CSSProperties
     ...(enableWillChange ? WILL_CHANGE_TRANSFORM : {}),
   };
 }
-

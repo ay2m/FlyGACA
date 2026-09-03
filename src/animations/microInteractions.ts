@@ -135,4 +135,3 @@ export function getCursorTrackingStyle(
     transition: SPRING_GENTLE,
   };
 }
-

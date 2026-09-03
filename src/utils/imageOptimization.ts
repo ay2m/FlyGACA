@@ -36,4 +36,3 @@ export function generateSrcSet(basePath: string, widths: number[] = [320, 640, 9
 
   return widths.map((w) => `${stem}-${w}w.${ext} ${w}w`).join(', ');
 }
-

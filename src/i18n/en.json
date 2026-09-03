@@ -345,6 +345,19 @@
         "guides": "guides",
         "questions": "questions",
         "cta": "Start learning"
+      },
+      "progress": {
+        "eyebrow": "Your learning journey",
+        "title": "Study progress",
+        "srsBoxes": "SRS boxes",
+        "srsProgress": "{{box}} / 5",
+        "boxCaption": "Box",
+        "streak": "Streak",
+        "streakAria": "Days studied in a row",
+        "streakDays": "days",
+        "mastery": "Mastery",
+        "masteryAria": "Percentage of concepts mastered",
+        "cta": "Continue studying"
       }
     }
   },

@@ -22,7 +22,15 @@ export function ExamSimCard({
       <p className={styles.body}>
         Timed GACA mock examination simulation under official exam room constraints.
       </p>
-      <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem', fontSize: '0.85rem', color: 'var(--text-dim)' }}>
+      <div
+        style={{
+          display: 'flex',
+          gap: '1rem',
+          marginTop: '0.5rem',
+          fontSize: '0.85rem',
+          color: 'var(--text-dim)',
+        }}
+      >
         <span>{questionCount} Questions</span>
         <span>•</span>
         <span>{timeLimitMinutes} Mins</span>
@@ -32,4 +40,3 @@ export function ExamSimCard({
 }
 
 export default ExamSimCard;
-

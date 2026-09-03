@@ -16,7 +16,9 @@ let lastFpsUpdate = 0;
 let droppedFrames = 0;
 let totalFrameTime = 0;
 
-export function startPerformanceMonitoring(callback?: (metrics: PerformanceMetrics) => void): () => void {
+export function startPerformanceMonitoring(
+  callback?: (metrics: PerformanceMetrics) => void,
+): () => void {
   if (isMonitoring || typeof window === 'undefined') {
     return () => {};
   }
@@ -56,7 +58,9 @@ export function startPerformanceMonitoring(callback?: (metrics: PerformanceMetri
         callback(metrics);
       } else if (import.meta.env?.DEV) {
         if (currentFps < 50) {
-          console.warn(`[FlyGACA Perf] Low FPS detected: ${currentFps} fps (${droppedFrames} dropped frames)`);
+          console.warn(
+            `[FlyGACA Perf] Low FPS detected: ${currentFps} fps (${droppedFrames} dropped frames)`,
+          );
         }
       }
 
@@ -82,4 +86,3 @@ export function startPerformanceMonitoring(callback?: (metrics: PerformanceMetri
 export function stopPerformanceMonitoring(): void {
   isMonitoring = false;
 }
-

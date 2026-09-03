@@ -77,8 +77,14 @@ export function RegulatoryOmnibar({ isOpen, onClose, onSearch }: RegulatoryOmnib
               overflow: 'hidden',
             }}
           >
-            <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'center', padding: '1rem' }}>
-              <MagnifyingGlass size={20} style={{ color: 'var(--teal-bright, #4a9cb8)', marginRight: '0.75rem' }} />
+            <form
+              onSubmit={handleSubmit}
+              style={{ display: 'flex', alignItems: 'center', padding: '1rem' }}
+            >
+              <MagnifyingGlass
+                size={20}
+                style={{ color: 'var(--teal-bright, #4a9cb8)', marginRight: '0.75rem' }}
+              />
               <input
                 type="text"
                 autoFocus
@@ -118,4 +124,3 @@ export function RegulatoryOmnibar({ isOpen, onClose, onSearch }: RegulatoryOmnib
 }
 
 export default RegulatoryOmnibar;
-

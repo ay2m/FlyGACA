@@ -131,6 +131,6 @@ describe('HomeDashboard', () => {
     renderWithRouter(<HomeDashboard />);
     expect(screen.getByRole('region', { name: 'Fly GACA dashboard' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
-    expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(7);
+    expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(8);
   });
 });
