@@ -1,0 +1,57 @@
+/* GrundingBadge: citation status indicator (grounded/partial/refusal) */
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid;
+}
+
+.dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+.label {
+  color: inherit;
+  white-space: nowrap;
+}
+
+/* Grounded: full citation, green */
+.root.grounded {
+  background: var(--grounding-grounded-bg, rgba(16, 185, 129, 0.1));
+  border-color: var(--hud-emerald, #10b981);
+  color: var(--hud-emerald, #10b981);
+}
+
+.root.grounded .dot {
+  background-color: var(--hud-emerald, #10b981);
+}
+
+/* Partial: some citations but gaps, yellow */
+.root.partial {
+  background: var(--grounding-partial-bg, rgba(245, 158, 11, 0.1));
+  border-color: var(--hud-amber, #f59e0b);
+  color: var(--hud-amber, #f59e0b);
+}
+
+.root.partial .dot {
+  background-color: var(--hud-amber, #f59e0b);
+}
+
+/* Refusal: cite-or-refuse rejected, gray */
+.root.refusal {
+  background: var(--grounding-refusal-bg, rgba(107, 114, 128, 0.1));
+  border-color: var(--text-secondary, #9ca3af);
+  color: var(--text-secondary, #9ca3af);
+}
+
+.root.refusal .dot {
+  background-color: var(--text-secondary, #9ca3af);
+}
