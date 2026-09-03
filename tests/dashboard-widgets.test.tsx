@@ -54,6 +54,7 @@ const { BookmarksWidget } = await import('@/components/dashboard/BookmarksWidget
 const { AdelThreadsWidget } = await import('@/components/dashboard/AdelThreadsWidget');
 const { OfflineWidget } = await import('@/components/dashboard/OfflineWidget');
 const { RolePickerCard } = await import('@/components/dashboard/RolePickerCard');
+const { UpdatesWatchWidget } = await import('@/components/dashboard/UpdatesWatchWidget');
 
 describe('StudyWidget', () => {
   it('shows streak, due-card count and last exam score from storage', () => {
@@ -151,6 +152,14 @@ describe('RolePickerCard', () => {
     renderWithRouter(<RolePickerCard />);
     await user.click(screen.getByRole('button', { name: /dismiss/i }));
     expect(localStorage.getItem('flygaca:dashboard-role-dismissed')).toBe('1');
+  });
+});
+
+describe('UpdatesWatchWidget', () => {
+  it('renders watched source count and links to /updates', () => {
+    renderWithRouter(<UpdatesWatchWidget />);
+    expect(screen.getByRole('link', { name: /open/i })).toHaveAttribute('href', '/updates');
+    expect(screen.getByText('2')).toBeInTheDocument(); // two watched sources from fixtures
   });
 });
 

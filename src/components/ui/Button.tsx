@@ -1,7 +1,5 @@
-import type { ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { Link, type LinkProps } from 'react-router';
-import { motion, type HTMLMotionProps } from 'framer-motion';
-import { buttonPressVariants } from '@/animations/microInteractions';
 
 /**
  * Typed wrappers over the global `.btn*` classes (styled in global.css, which
@@ -20,8 +18,6 @@ const VARIANT_CLASS: Record<ButtonVariant, string> = {
   clayPrimary: 'btn btn-clay-primary',
 };
 
-const MotionLink = motion.create(Link);
-
 interface BaseProps {
   variant?: ButtonVariant;
   /** Leading glyph — sized and gapped by the `.btn` flex layout. */
@@ -39,20 +35,12 @@ export function Button({
   className,
   children,
   ...rest
-}: BaseProps & HTMLMotionProps<'button'>) {
+}: BaseProps & ComponentPropsWithoutRef<'button'>) {
   return (
-    <motion.button
-      variants={buttonPressVariants}
-      whileHover={{ scale: 1.02 }}
-      whileTap="pressed"
-      initial="idle"
-      animate="idle"
-      className={btnClass(variant, className)}
-      {...rest}
-    >
+    <button className={btnClass(variant, className)} {...rest}>
       {icon}
       {children}
-    </motion.button>
+    </button>
   );
 }
 
@@ -64,17 +52,9 @@ export function ButtonLink({
   ...rest
 }: BaseProps & LinkProps) {
   return (
-    <MotionLink
-      variants={buttonPressVariants}
-      whileHover={{ scale: 1.02 }}
-      whileTap="pressed"
-      initial="idle"
-      animate="idle"
-      className={btnClass(variant, className)}
-      {...rest}
-    >
+    <Link className={btnClass(variant, className)} {...rest}>
       {icon}
       {children}
-    </MotionLink>
+    </Link>
   );
 }

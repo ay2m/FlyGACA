@@ -28,6 +28,10 @@
     "jose": "^6.2.10",
     "pg": "^8.16.3"
   },
+  "overrides": {
+    "uuid": ">=11.1.1",
+    "qs": ">=6.16.0"
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/express": "^5.0.6",

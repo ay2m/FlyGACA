@@ -1,6 +1,5 @@
 import { lazy, Suspense, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
 import { Disclaimer } from '@/components/Disclaimer';
 import { CountUp } from '@/components/CountUp';
 import { SyncedStamp } from './SyncedStamp';
@@ -77,10 +76,12 @@ export function Home() {
           start side, the live Captain Adel demo as the real product visual. */}
       <section className={styles.hero} onMouseMove={handleMouseMove}>
         <HeroAmbient />
-        <motion.div
+        <div
           ref={heroRef}
-          animate={cursorOffset}
-          transition={{ type: 'spring', stiffness: 100, damping: 30 }}
+          style={{
+            transform: `translate3d(${cursorOffset.x}px, ${cursorOffset.y}px, 0)`,
+            transition: 'transform 0.2s cubic-bezier(0.25, 1, 0.5, 1)',
+          }}
           className={`container ${styles.heroGrid}`}
         >
           <div className={`${styles.heroCopy} page-enter`}>
@@ -99,7 +100,7 @@ export function Home() {
           <div className={styles.heroAside}>
             <AdelHeroWidget />
           </div>
-        </motion.div>
+        </div>
       </section>
 
       <div className="container">

@@ -101,3 +101,5 @@ export function StudyStatsCard() {
     </BentoCard>
   );
 }
+
+export default StudyStatsCard;
