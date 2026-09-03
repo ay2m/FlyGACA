@@ -1,0 +1,162 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-lg) 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+/* SRS Box Grid (0-5 boxes) */
+.boxGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-xs);
+}
+
+.box {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  border: 1px solid var(--color-glass-border);
+}
+
+.boxEmpty {
+  background-color: var(--color-void-900);
+}
+
+.boxFilled {
+  background-color: var(--color-neon-cyan);
+  border-color: var(--color-neon-cyan);
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.3);
+}
+
+.boxCaption {
+  font-size: 0.65rem;
+  color: var(--color-text-secondary);
+  margin-inline-start: 0;
+  margin: 0;
+}
+
+/* Streak Counter */
+.streakBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-md);
+  background-color: var(--color-void-900);
+  border: 1px solid var(--color-glass-border);
+  border-radius: var(--radius-sm);
+}
+
+.streakNumber {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-neon-green);
+  line-height: 1;
+}
+
+.streakLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+/* Mastery Gauge */
+.gaugeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.gaugeTrack {
+  position: relative;
+  width: 100%;
+  height: 12px;
+  background-color: var(--color-void-900);
+  border: 1px solid var(--color-glass-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.gaugeFill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-neon-cyan) 0%,
+    var(--color-neon-green) 100%
+  );
+  border-radius: 6px;
+  will-change: width;
+}
+
+.masteryPercent {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.percentSymbol {
+  font-size: 0.9em;
+  color: var(--color-text-secondary);
+  margin-inline-start: 0.25em;
+}
+
+/* Responsive: Tablet (600–980px) */
+@media (max-width: 980px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .streakNumber {
+    font-size: 1.875rem;
+  }
+
+  .box {
+    aspect-ratio: 1;
+  }
+}
+
+/* Responsive: Mobile (<600px) */
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .boxGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .streakBox {
+    padding: var(--space-md);
+  }
+
+  .streakNumber {
+    font-size: 1.75rem;
+  }
+
+  .masteryPercent {
+    font-size: 1.125rem;
+  }
+
+  .gaugeTrack {
+    height: 10px;
+  }
+}
