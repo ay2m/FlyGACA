@@ -20,6 +20,8 @@ interface StatusPillProps extends HTMLAttributes<HTMLSpanElement> {
   cite?: ReactNode;
   /** Kept as a styling/test hook (e.g. the chat grounding verdict). */
   'data-state'?: string;
+  /** Descriptive label for screen readers (e.g. "Grounded response"). */
+  'aria-label'?: string;
   children: ReactNode;
 }
 
