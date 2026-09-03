@@ -69,6 +69,9 @@ export default defineConfig(({ mode }) => {
             ) {
               return 'vendor-react';
             }
+            if (/node_modules[\\/]framer-motion[\\/]/.test(id)) {
+              return 'vendor-framer';
+            }
             if (
               /node_modules[\\/](i18next|react-i18next|html-parse-stringify|void-elements)[\\/]/.test(
                 id,
@@ -78,6 +81,12 @@ export default defineConfig(({ mode }) => {
             }
             if (/node_modules[\\/](firebase|@firebase)[\\/]/.test(id)) {
               return 'vendor-firebase';
+            }
+            if (/src[\\/](components[\\/]quiz|pages[\\/]study[\\/](Quiz|QuizRunner))[\\/]/.test(id)) {
+              return 'feature-exam';
+            }
+            if (/src[\\/](components[\\/]chat|pages[\\/]chat)[\\/]/.test(id)) {
+              return 'feature-chat';
             }
           },
         },

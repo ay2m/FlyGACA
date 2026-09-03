@@ -1,5 +1,7 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { Link, type LinkProps } from 'react-router';
+import { motion } from 'framer-motion';
+import { buttonPressVariants } from '@/animations/microInteractions';
 
 /**
  * Typed wrappers over the global `.btn*` classes (styled in global.css, which
@@ -17,6 +19,8 @@ const VARIANT_CLASS: Record<ButtonVariant, string> = {
   clay: 'btn btn-clay',
   clayPrimary: 'btn btn-clay-primary',
 };
+
+const MotionLink = motion.create(Link);
 
 interface BaseProps {
   variant?: ButtonVariant;
@@ -37,10 +41,18 @@ export function Button({
   ...rest
 }: BaseProps & ComponentPropsWithoutRef<'button'>) {
   return (
-    <button className={btnClass(variant, className)} {...rest}>
+    <motion.button
+      variants={buttonPressVariants}
+      whileHover={{ scale: 1.02 }}
+      whileTap="pressed"
+      initial="idle"
+      animate="idle"
+      className={btnClass(variant, className)}
+      {...(rest as any)}
+    >
       {icon}
       {children}
-    </button>
+    </motion.button>
   );
 }
 
@@ -52,9 +64,17 @@ export function ButtonLink({
   ...rest
 }: BaseProps & LinkProps) {
   return (
-    <Link className={btnClass(variant, className)} {...rest}>
+    <MotionLink
+      variants={buttonPressVariants}
+      whileHover={{ scale: 1.02 }}
+      whileTap="pressed"
+      initial="idle"
+      animate="idle"
+      className={btnClass(variant, className)}
+      {...(rest as any)}
+    >
       {icon}
       {children}
-    </Link>
+    </MotionLink>
   );
 }

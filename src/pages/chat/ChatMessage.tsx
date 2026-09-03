@@ -34,7 +34,8 @@ export function ChatMessage({
   // His expression tracks the reply's state: thinking while pending,
   // a calm "hold" when the answer isn't grounded, neutral otherwise.
   const pose = m.pending ? 'thinking' : m.kind === 'refusal' ? 'hold' : 'default';
-  const truncateMsg = (text: string, len: number) => text.length > len ? text.slice(0, len) + '…' : text;
+  const truncateMsg = (text: string, len: number) =>
+    text.length > len ? text.slice(0, len) + '…' : text;
   const messageSender = isAdel ? t('chat.assistant') : t('chat.you');
   const messagePreview = truncateMsg(m.text, 30);
   return (
