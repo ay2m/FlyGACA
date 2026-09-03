@@ -34,19 +34,20 @@ export function GroundingBadge({
   if (!key) return null;
 
   return (
-    <StatusPill
-      tone={TONE[kind]}
-      role="status"
-      data-state={kind}
-      cite={
-        kind === 'refusal' && refusalClass ? (
-          <bdi dir="ltr" lang="en">
-            §{refusalClass}
-          </bdi>
-        ) : undefined
-      }
-    >
-      {t(key)}
-    </StatusPill>
+    <div aria-live="polite" role="status">
+      <StatusPill
+        tone={TONE[kind]}
+        data-state={kind}
+        cite={
+          kind === 'refusal' && refusalClass ? (
+            <bdi dir="ltr" lang="en">
+              §{refusalClass}
+            </bdi>
+          ) : undefined
+        }
+      >
+        {t(key)}
+      </StatusPill>
+    </div>
   );
 }

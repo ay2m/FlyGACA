@@ -16,9 +16,29 @@ import { linkifyCitations } from '@/calc/chat/chatSources';
 
 /** A site-relative href (`/library/…`) routes in-app; everything else opens out. */
 function LinkSpan({ href, children }: { href: string; children: string }) {
-  if (href.startsWith('/')) return <Link to={href}>{children}</Link>;
+  // Detect GACAR citations (e.g., "Part 91", "§91.155", "91.155(a)") and build descriptive aria-label
+  let ariaLabel: string | undefined;
+  const partMatch = /Part\s+(\d+)|§?\s*(\d+)/.exec(children);
+  if (partMatch) {
+    const partNum = partMatch[1] ?? partMatch[2];
+    const sectionMatch = /(?:§\s*)?(\d+)\.(\d+)(?:\(([a-z0-9]+)\))?/.exec(children);
+    if (sectionMatch) {
+      const [, part, section, subsection] = sectionMatch;
+      ariaLabel = `GACAR Part ${part}, Section ${section}${subsection ? ` (${subsection})` : ''}`;
+    } else {
+      ariaLabel = `GACAR Part ${partNum}`;
+    }
+  }
+
+  if (href.startsWith('/')) {
+    return (
+      <Link to={href} aria-label={ariaLabel}>
+        {children}
+      </Link>
+    );
+  }
   return (
-    <a href={href} target="_blank" rel="noopener">
+    <a href={href} target="_blank" rel="noopener" aria-label={ariaLabel}>
       {children}
     </a>
   );
@@ -59,7 +79,7 @@ export function RichText({
   if (blocks.length === 0) return <span className={className}>{text}</span>;
 
   return (
-    <div className={className}>
+    <div className={className} role="article">
       {blocks.map((b, i) => {
         switch (b.type) {
           case 'heading': {

@@ -13,6 +13,7 @@ export function SourceList({ sources, valid }: { sources: ChatSource[]; valid: S
   return (
     <div className={styles.sourcesWrap}>
       <span className={styles.sourcesLabel}>{t('chat.sourcesLabel')}</span>
+      <h3 className="sr-only">{t('chat.sourcesLabel')}</h3>
       <ul className={styles.sources}>
         {sources.map((s, j) => {
           const slug = partSlug(valid, s.part, s.section, s.citation);
