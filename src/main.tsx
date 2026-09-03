@@ -28,6 +28,11 @@ import { reportWebVitals, initializeGoogleAnalytics } from '@/lib/analytics';
 import { captureReferral } from '@/lib/share';
 import { canonicalRedirect, isMirrorHost, localeRedirect } from '@/lib/seo/seo';
 import { applyTheme, readTheme } from '@/lib/theme';
+import { startPerformanceMonitoring } from '@/animations/performanceMonitor';
+
+if (import.meta.env.DEV) {
+  startPerformanceMonitoring();
+}
 
 // Reflect the persisted theme on <html> before first paint. The inline script in
 // index.html already does this for the cockpit case to avoid a colour flash; this

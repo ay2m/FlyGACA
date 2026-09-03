@@ -1,5 +1,6 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import { Disclaimer } from '@/components/Disclaimer';
 import { CountUp } from '@/components/CountUp';
 import { SyncedStamp } from './SyncedStamp';
@@ -55,6 +56,17 @@ export function Home() {
   const steps = t('home.how.steps', { returnObjects: true }) as unknown as Step[];
   const demos = t('home.adel.demos', { returnObjects: true }) as unknown as Demo[];
 
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [cursorOffset, setCursorOffset] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!heroRef.current) return;
+    const rect = heroRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    setCursorOffset({ x: x * 0.04, y: y * 0.04 });
+  };
+
   // Organization + WebSite already ship statically in index.html; only the FAQ
   // (built from Captain Adel's demo Q&A) is new, non-duplicative structured data.
   usePageMeta(t('meta.home'), t('metaDesc.home'), faqLd(demos.map((d) => ({ q: d.q, a: d.a }))));
@@ -63,9 +75,14 @@ export function Home() {
     <>
       {/* Hero — an asymmetric split: the value prop + primary actions on the
           start side, the live Captain Adel demo as the real product visual. */}
-      <section className={styles.hero}>
+      <section className={styles.hero} onMouseMove={handleMouseMove}>
         <HeroAmbient />
-        <div className={`container ${styles.heroGrid}`}>
+        <motion.div
+          ref={heroRef}
+          animate={cursorOffset}
+          transition={{ type: 'spring', stiffness: 100, damping: 30 }}
+          className={`container ${styles.heroGrid}`}
+        >
           <div className={`${styles.heroCopy} page-enter`}>
             <p className={styles.eyebrow}>{t('home.eyebrow')}</p>
             <h1 className={styles.title}>{t('home.title')}</h1>
@@ -82,7 +99,7 @@ export function Home() {
           <div className={styles.heroAside}>
             <AdelHeroWidget />
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <div className="container">
