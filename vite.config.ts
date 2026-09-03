@@ -82,7 +82,9 @@ export default defineConfig(({ mode }) => {
             if (/node_modules[\\/](firebase|@firebase)[\\/]/.test(id)) {
               return 'vendor-firebase';
             }
-            if (/src[\\/](components[\\/]quiz|pages[\\/]study[\\/](Quiz|QuizRunner))[\\/]/.test(id)) {
+            if (
+              /src[\\/](components[\\/]quiz|pages[\\/]study[\\/](Quiz|QuizRunner))[\\/]/.test(id)
+            ) {
               return 'feature-exam';
             }
             if (/src[\\/](components[\\/]chat|pages[\\/]chat)[\\/]/.test(id)) {

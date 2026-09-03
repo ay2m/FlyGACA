@@ -31,4 +31,3 @@ export function sanitizeAndCacheMarkdown(raw: string): string {
 export function clearMarkdownRenderCache(): void {
   markdownCache.clear();
 }
-

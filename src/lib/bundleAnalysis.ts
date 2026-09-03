@@ -44,4 +44,3 @@ export function evaluateBundle(chunks: Array<{ name: string; sizeBytes: number }
     allPassed,
   };
 }
-

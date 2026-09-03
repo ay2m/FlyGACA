@@ -40,7 +40,11 @@ export function StudyStatsCard() {
         {/* Section 1: SRS Box Progress (0-5) */}
         <div className={styles.section}>
           <p className={styles.sectionLabel}>{t('home.dashboard.progress.srsBoxes')}</p>
-          <div className={styles.boxGrid} role="img" aria-label={t('home.dashboard.progress.srsProgress', { box: stats.currentBox })}>
+          <div
+            className={styles.boxGrid}
+            role="img"
+            aria-label={t('home.dashboard.progress.srsProgress', { box: stats.currentBox })}
+          >
             {[0, 1, 2, 3, 4, 5].map((box) => (
               <div
                 key={box}
@@ -58,7 +62,10 @@ export function StudyStatsCard() {
         <div className={styles.section}>
           <p className={styles.sectionLabel}>{t('home.dashboard.progress.streak')}</p>
           <div className={styles.streakBox}>
-            <span className={styles.streakNumber} aria-label={t('home.dashboard.progress.streakAria', { days: stats.streak })}>
+            <span
+              className={styles.streakNumber}
+              aria-label={t('home.dashboard.progress.streakAria', { days: stats.streak })}
+            >
               {stats.streak}
             </span>
             <span className={styles.streakLabel}>{t('home.dashboard.progress.streakDays')}</span>
@@ -83,7 +90,8 @@ export function StudyStatsCard() {
               />
             </div>
             <p className={styles.masteryPercent}>
-              {masteryPercent}<span className={styles.percentSymbol}>%</span>
+              {masteryPercent}
+              <span className={styles.percentSymbol}>%</span>
             </p>
           </div>
         </div>
