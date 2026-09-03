@@ -1,6 +1,6 @@
-import type { ComponentPropsWithoutRef, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Link, type LinkProps } from 'react-router';
-import { motion } from 'framer-motion';
+import { motion, type HTMLMotionProps } from 'framer-motion';
 import { buttonPressVariants } from '@/animations/microInteractions';
 
 /**
@@ -39,7 +39,7 @@ export function Button({
   className,
   children,
   ...rest
-}: BaseProps & ComponentPropsWithoutRef<'button'>) {
+}: BaseProps & HTMLMotionProps<'button'>) {
   return (
     <motion.button
       variants={buttonPressVariants}
@@ -48,7 +48,7 @@ export function Button({
       initial="idle"
       animate="idle"
       className={btnClass(variant, className)}
-      {...(rest as any)}
+      {...rest}
     >
       {icon}
       {children}
@@ -71,7 +71,7 @@ export function ButtonLink({
       initial="idle"
       animate="idle"
       className={btnClass(variant, className)}
-      {...(rest as any)}
+      {...rest}
     >
       {icon}
       {children}
