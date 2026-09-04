@@ -85,3 +85,6 @@ __pycache__/
 public/data/airports-shards/
 public/data/library-shards/
 .env*
+
+# Metrics collection (git-ignored)
+.stats.json
