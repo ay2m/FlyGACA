@@ -54,7 +54,7 @@ function parseMarkdown(text: string, headingLevel: 2 | 3 | 4): ReactNode[] {
       elements.push(
         <HeadingTag key={`h-${i}`} className={styles.heading}>
           {parseInline(headingMatch[2])}
-        </HeadingTag>
+        </HeadingTag>,
       );
       i++;
       continue;
@@ -65,15 +65,13 @@ function parseMarkdown(text: string, headingLevel: 2 | 3 | 4): ReactNode[] {
       const listItems = [];
       while (i < lines.length && lines[i].match(/^[-*]\s/)) {
         const itemText = lines[i].replace(/^[-*]\s/, '').trim();
-        listItems.push(
-          <li key={`li-${i}`}>{parseInline(itemText)}</li>
-        );
+        listItems.push(<li key={`li-${i}`}>{parseInline(itemText)}</li>);
         i++;
       }
       elements.push(
         <ul key={`ul-${elements.length}`} className={styles.list}>
           {listItems}
-        </ul>
+        </ul>,
       );
       continue;
     }
@@ -83,22 +81,19 @@ function parseMarkdown(text: string, headingLevel: 2 | 3 | 4): ReactNode[] {
       const listItems = [];
       while (i < lines.length && lines[i].match(/^\d+\.\s/)) {
         const itemText = lines[i].replace(/^\d+\.\s/, '').trim();
-        listItems.push(
-          <li key={`li-${i}`}>{parseInline(itemText)}</li>
-        );
+        listItems.push(<li key={`li-${i}`}>{parseInline(itemText)}</li>);
         i++;
       }
       elements.push(
         <ol key={`ol-${elements.length}`} className={styles.list}>
           {listItems}
-        </ol>
+        </ol>,
       );
       continue;
     }
 
     // Code blocks: ```
     if (line.startsWith('```')) {
-      const lang = line.slice(3).trim();
       const codeLines = [];
       i++;
       while (i < lines.length && !lines[i].startsWith('```')) {
@@ -108,7 +103,7 @@ function parseMarkdown(text: string, headingLevel: 2 | 3 | 4): ReactNode[] {
       elements.push(
         <pre key={`code-${elements.length}`} className={styles.codeBlock}>
           <code>{codeLines.join('\n')}</code>
-        </pre>
+        </pre>,
       );
       i++; // skip closing ```
       continue;
@@ -118,7 +113,7 @@ function parseMarkdown(text: string, headingLevel: 2 | 3 | 4): ReactNode[] {
     elements.push(
       <p key={`p-${i}`} className={styles.paragraph}>
         {parseInline(line)}
-      </p>
+      </p>,
     );
     i++;
   }
@@ -137,59 +132,80 @@ function parseInline(text: string): ReactNode {
   let key = 0;
 
   while (remaining) {
-    // Bold: **text**
+    // Find all pattern matches and their positions
+    const citationMatch = remaining.match(/§([\d.]+)/);
     const boldMatch = remaining.match(/\*\*([^*]+)\*\*/);
-    if (boldMatch) {
-      const beforeBold = remaining.slice(0, boldMatch.index);
-      if (beforeBold) parts.push(beforeBold);
-      parts.push(
-        <strong key={key++}>{boldMatch[1]}</strong>
-      );
-      remaining = remaining.slice((boldMatch.index || 0) + boldMatch[0].length);
-      continue;
-    }
-
-    // Italic: *text* (non-greedy, avoid ** matching)
     const italicMatch = remaining.match(/(?<!\*)\*([^*]+)\*(?!\*)/);
-    if (italicMatch) {
-      const beforeItalic = remaining.slice(0, italicMatch.index);
-      if (beforeItalic) parts.push(beforeItalic);
-      parts.push(
-        <em key={key++}>{italicMatch[1]}</em>
-      );
-      remaining = remaining.slice((italicMatch.index || 0) + italicMatch[0].length);
-      continue;
-    }
-
-    // Links: [text](url)
     const linkMatch = remaining.match(/\[([^\]]+)\]\(([^)]+)\)/);
-    if (linkMatch) {
-      const beforeLink = remaining.slice(0, linkMatch.index);
-      if (beforeLink) parts.push(beforeLink);
-      parts.push(
-        <a key={key++} href={linkMatch[2]} target="_blank" rel="noopener noreferrer" className={styles.link}>
-          {linkMatch[1]}
-        </a>
-      );
-      remaining = remaining.slice((linkMatch.index || 0) + linkMatch[0].length);
-      continue;
-    }
-
-    // Inline code: `code`
     const codeMatch = remaining.match(/`([^`]+)`/);
-    if (codeMatch) {
-      const beforeCode = remaining.slice(0, codeMatch.index);
-      if (beforeCode) parts.push(beforeCode);
-      parts.push(
-        <code key={key++} className={styles.inlineCode}>{codeMatch[1]}</code>
-      );
-      remaining = remaining.slice((codeMatch.index || 0) + codeMatch[0].length);
-      continue;
+
+    // Find the earliest match
+    const matches = [
+      { match: citationMatch, type: 'citation' },
+      { match: boldMatch, type: 'bold' },
+      { match: italicMatch, type: 'italic' },
+      { match: linkMatch, type: 'link' },
+      { match: codeMatch, type: 'code' },
+    ].filter((m) => m.match && m.match.index !== undefined);
+
+    if (matches.length === 0) {
+      // No more patterns; push the rest and exit
+      parts.push(remaining);
+      break;
     }
 
-    // No more patterns; push the rest and exit
-    parts.push(remaining);
-    break;
+    // Sort by index to find the earliest match
+    matches.sort((a, b) => (a.match?.index ?? Infinity) - (b.match?.index ?? Infinity));
+    const { match, type } = matches[0];
+
+    if (!match || match.index === undefined) {
+      parts.push(remaining);
+      break;
+    }
+
+    const beforeMatch = remaining.slice(0, match.index);
+    if (beforeMatch) parts.push(beforeMatch);
+
+    if (type === 'citation') {
+      const citationText = match[0];
+      parts.push(
+        <span
+          key={key++}
+          role="doc-biblioref"
+          className={styles.citation}
+          data-testid="citation"
+          aria-label={`GACAR section ${citationText}`}
+          dir="auto"
+        >
+          {citationText}
+        </span>,
+      );
+    } else if (type === 'bold') {
+      parts.push(<strong key={key++}>{match[1]}</strong>);
+    } else if (type === 'italic') {
+      parts.push(<em key={key++}>{match[1]}</em>);
+    } else if (type === 'link') {
+      parts.push(
+        <a
+          key={key++}
+          href={match[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.link}
+          data-testid="link"
+        >
+          {match[1]}
+        </a>,
+      );
+    } else if (type === 'code') {
+      parts.push(
+        <code key={key++} className={styles.inlineCode} data-testid="inline-code">
+          {match[1]}
+        </code>,
+      );
+    }
+
+    remaining = remaining.slice(match.index + match[0].length);
   }
 
   return parts.length === 0 ? null : parts.length === 1 ? parts[0] : parts;
