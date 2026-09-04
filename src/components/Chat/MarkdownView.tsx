@@ -136,12 +136,42 @@ function parseInline(text: string): ReactNode {
   let key = 0;
 
   while (remaining) {
-    // GACAR citations: § followed by digits (e.g., §91.155)
+    // Find all pattern matches and their positions
     const citationMatch = remaining.match(/§([\d.]+)/);
-    if (citationMatch && citationMatch.index !== undefined) {
-      const beforeCitation = remaining.slice(0, citationMatch.index);
-      if (beforeCitation) parts.push(beforeCitation);
-      const citationText = citationMatch[0];
+    const boldMatch = remaining.match(/\*\*([^*]+)\*\*/);
+    const italicMatch = remaining.match(/(?<!\*)\*([^*]+)\*(?!\*)/);
+    const linkMatch = remaining.match(/\[([^\]]+)\]\(([^)]+)\)/);
+    const codeMatch = remaining.match(/`([^`]+)`/);
+
+    // Find the earliest match
+    const matches = [
+      { match: citationMatch, type: 'citation' },
+      { match: boldMatch, type: 'bold' },
+      { match: italicMatch, type: 'italic' },
+      { match: linkMatch, type: 'link' },
+      { match: codeMatch, type: 'code' },
+    ].filter(m => m.match && m.match.index !== undefined);
+
+    if (matches.length === 0) {
+      // No more patterns; push the rest and exit
+      parts.push(remaining);
+      break;
+    }
+
+    // Sort by index to find the earliest match
+    matches.sort((a, b) => (a.match?.index ?? Infinity) - (b.match?.index ?? Infinity));
+    const { match, type } = matches[0];
+
+    if (!match || match.index === undefined) {
+      parts.push(remaining);
+      break;
+    }
+
+    const beforeMatch = remaining.slice(0, match.index);
+    if (beforeMatch) parts.push(beforeMatch);
+
+    if (type === 'citation') {
+      const citationText = match[0];
       parts.push(
         <span
           key={key++}
@@ -154,70 +184,34 @@ function parseInline(text: string): ReactNode {
           {citationText}
         </span>
       );
-      remaining = remaining.slice((citationMatch.index || 0) + citationMatch[0].length);
-      continue;
-    }
-
-    // Bold: **text**
-    const boldMatch = remaining.match(/\*\*([^*]+)\*\*/);
-    if (boldMatch && boldMatch.index !== undefined) {
-      const beforeBold = remaining.slice(0, boldMatch.index);
-      if (beforeBold) parts.push(beforeBold);
+    } else if (type === 'bold') {
       parts.push(
-        <strong key={key++}>{boldMatch[1]}</strong>
+        <strong key={key++}>{match[1]}</strong>
       );
-      remaining = remaining.slice((boldMatch.index || 0) + boldMatch[0].length);
-      continue;
-    }
-
-    // Italic: *text* (non-greedy, avoid ** matching)
-    const italicMatch = remaining.match(/(?<!\*)\*([^*]+)\*(?!\*)/);
-    if (italicMatch && italicMatch.index !== undefined) {
-      const beforeItalic = remaining.slice(0, italicMatch.index);
-      if (beforeItalic) parts.push(beforeItalic);
+    } else if (type === 'italic') {
       parts.push(
-        <em key={key++}>{italicMatch[1]}</em>
+        <em key={key++}>{match[1]}</em>
       );
-      remaining = remaining.slice((italicMatch.index || 0) + italicMatch[0].length);
-      continue;
-    }
-
-    // Links: [text](url)
-    const linkMatch = remaining.match(/\[([^\]]+)\]\(([^)]+)\)/);
-    if (linkMatch && linkMatch.index !== undefined) {
-      const beforeLink = remaining.slice(0, linkMatch.index);
-      if (beforeLink) parts.push(beforeLink);
+    } else if (type === 'link') {
       parts.push(
         <a
           key={key++}
-          href={linkMatch[2]}
+          href={match[2]}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.link}
           data-testid="link"
         >
-          {linkMatch[1]}
+          {match[1]}
         </a>
       );
-      remaining = remaining.slice((linkMatch.index || 0) + linkMatch[0].length);
-      continue;
-    }
-
-    // Inline code: `code`
-    const codeMatch = remaining.match(/`([^`]+)`/);
-    if (codeMatch && codeMatch.index !== undefined) {
-      const beforeCode = remaining.slice(0, codeMatch.index);
-      if (beforeCode) parts.push(beforeCode);
+    } else if (type === 'code') {
       parts.push(
-        <code key={key++} className={styles.inlineCode} data-testid="inline-code">{codeMatch[1]}</code>
+        <code key={key++} className={styles.inlineCode} data-testid="inline-code">{match[1]}</code>
       );
-      remaining = remaining.slice((codeMatch.index || 0) + codeMatch[0].length);
-      continue;
     }
 
-    // No more patterns; push the rest and exit
-    parts.push(remaining);
-    break;
+    remaining = remaining.slice(match.index + match[0].length);
   }
 
   return parts.length === 0 ? null : parts.length === 1 ? parts[0] : parts;

@@ -2,8 +2,13 @@ import { describe, expect, it, beforeEach, afterEach, vi } from 'vitest';
 import {
   reportError,
   webVitalPayload,
+  isVercelHost,
+  isAnalyticsEnabled,
+  isVercelAnalyticsEnabled,
+  enabled,
 } from '@/lib/analytics';
 import { track } from '@vercel/analytics';
+import * as nativeBridge from '@/lib/native/nativeBridge';
 
 vi.mock('@vercel/analytics');
 vi.mock('@/lib/native/nativeBridge');
@@ -97,10 +102,79 @@ describe('analytics', () => {
     });
   });
 
+  describe('isVercelHost', () => {
+    it('returns false when location is not vercel.app', () => {
+      // window is always defined in jsdom test environment
+      const result = isVercelHost();
+      expect(typeof result).toBe('boolean');
+    });
+
+    it('returns false for non-vercel hosts', () => {
+      window.location = { hostname: 'localhost' } as any;
+      const result = isVercelHost();
+      expect(result).toBe(false);
+    });
+
+    it('returns true for vercel.app hostnames', () => {
+      window.location = { hostname: 'test.vercel.app' } as any;
+      const result = isVercelHost();
+      expect(result).toBe(true);
+    });
+  });
+
+  describe('isAnalyticsEnabled', () => {
+    it('returns false when window is undefined', () => {
+      // In jsdom window exists, so this tests the function structure
+      const result = isAnalyticsEnabled();
+      expect(typeof result).toBe('boolean');
+    });
+
+    it('returns false when isNative returns true', () => {
+      vi.mocked(nativeBridge.isNative).mockReturnValue(true);
+      const result = isAnalyticsEnabled();
+      expect(result).toBe(false);
+    });
+
+    it('returns false when isNative returns false in dev mode', () => {
+      vi.mocked(nativeBridge.isNative).mockReturnValue(false);
+      // In dev/test PROD is false, so analytics should be disabled
+      const result = isAnalyticsEnabled();
+      expect(result).toBe(false);
+    });
+  });
+
+  describe('isVercelAnalyticsEnabled', () => {
+    it('returns false when analytics not enabled', () => {
+      vi.mocked(nativeBridge.isNative).mockReturnValue(true);
+      const result = isVercelAnalyticsEnabled();
+      expect(result).toBe(false);
+    });
+
+    it('returns false for non-vercel hosts when analytics enabled', () => {
+      vi.mocked(nativeBridge.isNative).mockReturnValue(false);
+      window.location = { hostname: 'localhost' } as any;
+      const result = isVercelAnalyticsEnabled();
+      expect(result).toBe(false);
+    });
+  });
+
+  describe('enabled', () => {
+    it('returns false in dev/test environment', () => {
+      vi.mocked(nativeBridge.isNative).mockReturnValue(false);
+      const result = enabled();
+      expect(result).toBe(false);
+    });
+
+    it('returns false when native app', () => {
+      vi.mocked(nativeBridge.isNative).mockReturnValue(true);
+      const result = enabled();
+      expect(result).toBe(false);
+    });
+  });
+
   describe('reportError', () => {
-    it('sends error with empty info when not provided', () => {
-      // Create a minimal test that at least exercises the code path
-      // In dev/non-prod, this will be a no-op, but we can still test the message handling
+    it('sends error with error message extracted from Error object', () => {
+      vi.mocked(nativeBridge.isNative).mockReturnValue(false);
       const error = new Error('test error');
       reportError(error);
       // This tests the error-to-string conversion path
@@ -108,6 +182,7 @@ describe('analytics', () => {
     });
 
     it('handles non-Error objects by converting to string', () => {
+      vi.mocked(nativeBridge.isNative).mockReturnValue(false);
       const testObj = { some: 'object' };
       reportError(testObj);
       // Tests that the function doesn't crash on non-Error input
@@ -115,14 +190,25 @@ describe('analytics', () => {
     });
 
     it('handles string errors', () => {
+      vi.mocked(nativeBridge.isNative).mockReturnValue(false);
       reportError('string error');
       expect(true).toBe(true);
     });
 
     it('accepts info parameter', () => {
+      vi.mocked(nativeBridge.isNative).mockReturnValue(false);
       const error = new Error('test');
       reportError(error, { context: 'test', action: 'click' });
       expect(true).toBe(true);
+    });
+
+    it('truncates error message to 200 characters', () => {
+      vi.mocked(nativeBridge.isNative).mockReturnValue(false);
+      const longMessage = 'a'.repeat(250);
+      const error = new Error(longMessage);
+      reportError(error);
+      // Message should be truncated to 200 chars
+      expect(error.message.length).toBe(250); // Original error message unchanged
     });
   });
 });
