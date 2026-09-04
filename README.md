@@ -12,6 +12,38 @@
 
 </div>
 
+## 🏗 Fly GACA Family
+
+[📚 FlyGACA Web & API](https://github.com/ay2m/FlyGACA) • 
+[🤖 Captain Adel AI](https://github.com/ay2m/Captain-Adel) • 
+[📱 FlyGACA iOS](https://github.com/ay2m/FlyGACA-ios) • 
+[🏢 Office & Governance](https://github.com/ay2m/Office)
+
+<!-- 
+  README ENHANCEMENT AUDIT — ay2m/FlyGACA
+  Last audit: 2026-09-04 by claude-readme-supervisor
+  Status: READY for phase 1 (family links + audit blocks added)
+  
+  DRIFT RISKS IDENTIFIED:
+  - Line 47: Test count (2,392) hardcoded — updates only on manual bump
+  - Line 48: Bundle size (146.8 kB) hardcoded — drifts with each Vite optimization
+  - Line 52–54: Quickstart commands verified ✓ (no drift risk)
+  - No CLAUDE.md link — users unaware of repo conventions
+  - No bilingual indicator — AR.json completeness not visible
+  
+  PHASE 2 TASKS:
+  - Inject `scripts/collect-stats.sh` to auto-extract test count from vitest summary
+  - Extract bundle size from `npm run verify` output via regex
+  - Add CLAUDE.md link in intro section
+  - Wire stats via placeholder comments: <!-- stats:test-count -->
+  
+  PHASE 3 TASKS:
+  - Create `.github/workflows/readme-supervisor.yml` weekly trigger
+  - Implement `readme-supervisor.mjs` stat replacement + auto-commit logic
+  
+  CROSS-REPO SYNC CHECK: Family contract parity ✓ (ay2m/Office, ay2m/Captain-Adel aligned)
+-->
+
 ---
 
 ## 🎯 What's this?
