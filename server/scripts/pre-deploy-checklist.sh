@@ -11,6 +11,7 @@ NC='\033[0m' # No Color
 
 check_passed=0
 check_failed=0
+check_warned=0
 
 function pass() {
   echo -e "${GREEN}✓${NC} $1"
@@ -24,6 +25,7 @@ function fail() {
 
 function warn() {
   echo -e "${YELLOW}⚠${NC} $1"
+  ((check_warned++))
 }
 
 echo "=== Fly GACA Express Backend Pre-Deployment Checklist ==="
@@ -227,7 +229,7 @@ echo ""
 echo "=== Summary ==="
 echo -e "Passed: ${GREEN}$check_passed${NC}"
 echo -e "Failed: ${RED}$check_failed${NC}"
-echo "Warnings: $(($check_failed + $(grep -c "⚠" <<< "$(history)" 2>/dev/null || echo 0)))"
+echo -e "Warnings: ${YELLOW}$check_warned${NC}"
 
 if [ $check_failed -eq 0 ]; then
   echo ""
