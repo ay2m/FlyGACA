@@ -7,7 +7,6 @@ import {
   isVercelAnalyticsEnabled,
   enabled,
 } from '@/lib/analytics';
-import { track } from '@vercel/analytics';
 import * as nativeBridge from '@/lib/native/nativeBridge';
 
 vi.mock('@vercel/analytics');
@@ -110,13 +109,13 @@ describe('analytics', () => {
     });
 
     it('returns false for non-vercel hosts', () => {
-      window.location = { hostname: 'localhost' } as any;
+      window.location = { hostname: 'localhost' } as unknown as Location;
       const result = isVercelHost();
       expect(result).toBe(false);
     });
 
     it('returns true for vercel.app hostnames', () => {
-      window.location = { hostname: 'test.vercel.app' } as any;
+      window.location = { hostname: 'test.vercel.app' } as unknown as Location;
       const result = isVercelHost();
       expect(result).toBe(true);
     });
@@ -152,7 +151,7 @@ describe('analytics', () => {
 
     it('returns false for non-vercel hosts when analytics enabled', () => {
       vi.mocked(nativeBridge.isNative).mockReturnValue(false);
-      window.location = { hostname: 'localhost' } as any;
+      window.location = { hostname: 'localhost' } as unknown as Location;
       const result = isVercelAnalyticsEnabled();
       expect(result).toBe(false);
     });
