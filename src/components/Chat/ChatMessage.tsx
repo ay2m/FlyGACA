@@ -35,11 +35,7 @@ export function ChatMessage({
   const Container = role === 'assistant' ? 'article' : 'div';
 
   return (
-    <Container
-      className={cls}
-      data-role={role}
-      data-testid={`chat-message-${role}`}
-    >
+    <Container className={cls} data-role={role} data-testid={`chat-message-${role}`}>
       <div className={styles.bubble}>
         <div className={styles.content}>{children}</div>
         {isLoading && (

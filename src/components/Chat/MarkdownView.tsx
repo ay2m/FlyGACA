@@ -54,7 +54,7 @@ function parseMarkdown(text: string, headingLevel: 2 | 3 | 4): ReactNode[] {
       elements.push(
         <HeadingTag key={`h-${i}`} className={styles.heading}>
           {parseInline(headingMatch[2])}
-        </HeadingTag>
+        </HeadingTag>,
       );
       i++;
       continue;
@@ -65,15 +65,13 @@ function parseMarkdown(text: string, headingLevel: 2 | 3 | 4): ReactNode[] {
       const listItems = [];
       while (i < lines.length && lines[i].match(/^[-*]\s/)) {
         const itemText = lines[i].replace(/^[-*]\s/, '').trim();
-        listItems.push(
-          <li key={`li-${i}`}>{parseInline(itemText)}</li>
-        );
+        listItems.push(<li key={`li-${i}`}>{parseInline(itemText)}</li>);
         i++;
       }
       elements.push(
         <ul key={`ul-${elements.length}`} className={styles.list}>
           {listItems}
-        </ul>
+        </ul>,
       );
       continue;
     }
@@ -83,15 +81,13 @@ function parseMarkdown(text: string, headingLevel: 2 | 3 | 4): ReactNode[] {
       const listItems = [];
       while (i < lines.length && lines[i].match(/^\d+\.\s/)) {
         const itemText = lines[i].replace(/^\d+\.\s/, '').trim();
-        listItems.push(
-          <li key={`li-${i}`}>{parseInline(itemText)}</li>
-        );
+        listItems.push(<li key={`li-${i}`}>{parseInline(itemText)}</li>);
         i++;
       }
       elements.push(
         <ol key={`ol-${elements.length}`} className={styles.list}>
           {listItems}
-        </ol>
+        </ol>,
       );
       continue;
     }
@@ -107,7 +103,7 @@ function parseMarkdown(text: string, headingLevel: 2 | 3 | 4): ReactNode[] {
       elements.push(
         <pre key={`code-${elements.length}`} className={styles.codeBlock}>
           <code>{codeLines.join('\n')}</code>
-        </pre>
+        </pre>,
       );
       i++; // skip closing ```
       continue;
@@ -117,7 +113,7 @@ function parseMarkdown(text: string, headingLevel: 2 | 3 | 4): ReactNode[] {
     elements.push(
       <p key={`p-${i}`} className={styles.paragraph}>
         {parseInline(line)}
-      </p>
+      </p>,
     );
     i++;
   }
@@ -150,7 +146,7 @@ function parseInline(text: string): ReactNode {
       { match: italicMatch, type: 'italic' },
       { match: linkMatch, type: 'link' },
       { match: codeMatch, type: 'code' },
-    ].filter(m => m.match && m.match.index !== undefined);
+    ].filter((m) => m.match && m.match.index !== undefined);
 
     if (matches.length === 0) {
       // No more patterns; push the rest and exit
@@ -182,16 +178,12 @@ function parseInline(text: string): ReactNode {
           dir="auto"
         >
           {citationText}
-        </span>
+        </span>,
       );
     } else if (type === 'bold') {
-      parts.push(
-        <strong key={key++}>{match[1]}</strong>
-      );
+      parts.push(<strong key={key++}>{match[1]}</strong>);
     } else if (type === 'italic') {
-      parts.push(
-        <em key={key++}>{match[1]}</em>
-      );
+      parts.push(<em key={key++}>{match[1]}</em>);
     } else if (type === 'link') {
       parts.push(
         <a
@@ -203,11 +195,13 @@ function parseInline(text: string): ReactNode {
           data-testid="link"
         >
           {match[1]}
-        </a>
+        </a>,
       );
     } else if (type === 'code') {
       parts.push(
-        <code key={key++} className={styles.inlineCode} data-testid="inline-code">{match[1]}</code>
+        <code key={key++} className={styles.inlineCode} data-testid="inline-code">
+          {match[1]}
+        </code>,
       );
     }
 

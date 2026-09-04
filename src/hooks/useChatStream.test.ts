@@ -33,7 +33,7 @@ describe('useChatStream', () => {
         useChatStream({
           apiUrl: '/api/chat',
           onToken,
-        })
+        }),
       );
 
       const encoder = new TextEncoder();
@@ -42,12 +42,8 @@ describe('useChatStream', () => {
       });
 
       // Simulate SSE events
-      controller.enqueue(
-        encoder.encode('data: {"type":"token","content":"Hello"}\n\n')
-      );
-      controller.enqueue(
-        encoder.encode('data: {"type":"token","content":" world"}\n\n')
-      );
+      controller.enqueue(encoder.encode('data: {"type":"token","content":"Hello"}\n\n'));
+      controller.enqueue(encoder.encode('data: {"type":"token","content":" world"}\n\n'));
       controller.enqueue(encoder.encode('data: {"type":"done"}\n\n'));
       controller.close();
 
@@ -66,7 +62,7 @@ describe('useChatStream', () => {
         useChatStream({
           apiUrl: '/api/chat',
           onEvent,
-        })
+        }),
       );
 
       const encoder = new TextEncoder();
@@ -74,9 +70,7 @@ describe('useChatStream', () => {
         message: 'Hello',
       });
 
-      controller.enqueue(
-        encoder.encode('data: {"type":"token","content":"test"}\n\n')
-      );
+      controller.enqueue(encoder.encode('data: {"type":"token","content":"test"}\n\n'));
       controller.enqueue(encoder.encode('data: {"type":"done"}\n\n'));
       controller.close();
 
@@ -98,7 +92,7 @@ describe('useChatStream', () => {
         useChatStream({
           apiUrl: '/api/chat',
           onDone,
-        })
+        }),
       );
 
       const encoder = new TextEncoder();
@@ -123,7 +117,7 @@ describe('useChatStream', () => {
         useChatStream({
           apiUrl: '/api/chat',
           onEvent,
-        })
+        }),
       );
 
       const encoder = new TextEncoder();
@@ -154,7 +148,7 @@ describe('useChatStream', () => {
         useChatStream({
           apiUrl: '/api/chat',
           onEvent,
-        })
+        }),
       );
 
       const encoder = new TextEncoder();
@@ -162,9 +156,7 @@ describe('useChatStream', () => {
         message: 'Hello',
       });
 
-      controller.enqueue(
-        encoder.encode('\n\ndata: {"type":"token","content":"test"}\n\n\n\n')
-      );
+      controller.enqueue(encoder.encode('\n\ndata: {"type":"token","content":"test"}\n\n\n\n'));
       controller.enqueue(encoder.encode('data: {"type":"done"}\n\n'));
       controller.close();
 
@@ -185,7 +177,7 @@ describe('useChatStream', () => {
         useChatStream({
           apiUrl: '/api/chat',
           onEvent,
-        })
+        }),
       );
 
       const encoder = new TextEncoder();
@@ -202,9 +194,7 @@ describe('useChatStream', () => {
         },
       };
 
-      controller.enqueue(
-        encoder.encode(`data: ${JSON.stringify(citationEvent)}\n\n`)
-      );
+      controller.enqueue(encoder.encode(`data: ${JSON.stringify(citationEvent)}\n\n`));
       controller.enqueue(encoder.encode('data: {"type":"done"}\n\n'));
       controller.close();
 
@@ -231,7 +221,7 @@ describe('useChatStream', () => {
         useChatStream({
           apiUrl: '/api/chat',
           onError,
-        })
+        }),
       );
 
       await result.current.stream({ message: 'Hello' });
@@ -254,7 +244,7 @@ describe('useChatStream', () => {
         useChatStream({
           apiUrl: '/api/chat',
           onError,
-        })
+        }),
       );
 
       await result.current.stream({ message: 'Hello' });
@@ -272,7 +262,7 @@ describe('useChatStream', () => {
           apiUrl: '/api/chat',
           onEvent,
           onError,
-        })
+        }),
       );
 
       const encoder = new TextEncoder();
@@ -306,7 +296,7 @@ describe('useChatStream', () => {
           apiUrl: '/api/chat',
           onToken,
           onError,
-        })
+        }),
       );
 
       const streamPromise = result.current.stream({ message: 'Hello' });
@@ -314,9 +304,7 @@ describe('useChatStream', () => {
       result.current.abort();
 
       const encoder = new TextEncoder();
-      controller.enqueue(
-        encoder.encode('data: {"type":"token","content":"test"}\n\n')
-      );
+      controller.enqueue(encoder.encode('data: {"type":"token","content":"test"}\n\n'));
       controller.close();
 
       await streamPromise;
@@ -331,7 +319,7 @@ describe('useChatStream', () => {
         useChatStream({
           apiUrl: '/api/chat',
           onEvent,
-        })
+        }),
       );
 
       setTimeout(() => {
@@ -369,7 +357,7 @@ describe('useChatStream', () => {
         useChatStream({
           apiUrl: '/api/chat',
           conversationId: 'conv-123',
-        })
+        }),
       );
 
       const encoder = new TextEncoder();
@@ -390,7 +378,7 @@ describe('useChatStream', () => {
         useChatStream({
           apiUrl: '/api/chat',
           tenantId: 'tenant-123',
-        })
+        }),
       );
 
       const encoder = new TextEncoder();
@@ -413,7 +401,7 @@ describe('useChatStream', () => {
         useChatStream({
           apiUrl: '/api/chat',
           onToken,
-        })
+        }),
       );
 
       // First stream
@@ -470,7 +458,7 @@ describe('useChatStream', () => {
           apiUrl: '/api/chat',
           onToken,
           onEvent,
-        })
+        }),
       );
 
       const encoder = new TextEncoder();
@@ -478,12 +466,8 @@ describe('useChatStream', () => {
         message: 'Hello',
       });
 
-      controller.enqueue(
-        encoder.encode('data: {"type":"token","content":"Hello"}\n\n')
-      );
-      controller.enqueue(
-        encoder.encode('data: {"type":"citation","data":{}}\n\n')
-      );
+      controller.enqueue(encoder.encode('data: {"type":"token","content":"Hello"}\n\n'));
+      controller.enqueue(encoder.encode('data: {"type":"citation","data":{}}\n\n'));
       controller.enqueue(encoder.encode('data: {"type":"done"}\n\n'));
       controller.close();
 

@@ -115,7 +115,7 @@ export function useChatStream(options: UseChatStreamOptions) {
         }
       }
     },
-    [options]
+    [options],
   );
 
   const abort = useCallback(() => {

@@ -81,7 +81,9 @@
   border-radius: 0.25rem;
   border-bottom: 1px solid var(--hud-emerald, #10b981);
   cursor: help;
-  transition: background-color 0.2s, outline 0.2s;
+  transition:
+    background-color 0.2s,
+    outline 0.2s;
 }
 
 .citation:focus {
