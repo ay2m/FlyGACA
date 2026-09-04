@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { renderHook, waitFor } from '@testing-library/react';
-import { useChatStream, type ChatStreamEvent } from './useChatStream';
+import { useChatStream } from './useChatStream';
 
 describe('useChatStream', () => {
   let fetchMock: ReturnType<typeof vi.fn>;
@@ -418,7 +418,7 @@ describe('useChatStream', () => {
 
       // First stream
       let controller1: ReadableStreamDefaultController<Uint8Array>;
-      let mockStream1 = new ReadableStream<Uint8Array>((c) => {
+      const mockStream1 = new ReadableStream<Uint8Array>((c) => {
         controller1 = c;
       });
       fetchMock.mockResolvedValueOnce({
@@ -438,7 +438,7 @@ describe('useChatStream', () => {
 
       // Second stream
       let controller2: ReadableStreamDefaultController<Uint8Array>;
-      let mockStream2 = new ReadableStream<Uint8Array>((c) => {
+      const mockStream2 = new ReadableStream<Uint8Array>((c) => {
         controller2 = c;
       });
       fetchMock.mockResolvedValueOnce({

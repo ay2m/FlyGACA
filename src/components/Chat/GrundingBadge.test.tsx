@@ -144,7 +144,7 @@ describe('GrundingBadge', () => {
     });
 
     it('maintains proper semantic structure with dot visibility toggle', () => {
-      const { container, getByRole } = render(
+      const { getByRole } = render(
         <GrundingBadge status="grounded" label="Grounded" />
       );
 

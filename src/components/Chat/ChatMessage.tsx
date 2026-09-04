@@ -32,10 +32,11 @@ export function ChatMessage({
   const roleClass = role === 'user' ? styles.user : styles.assistant;
   const cls = [styles.root, roleClass, className].filter(Boolean).join(' ');
 
+  const Container = role === 'assistant' ? 'article' : 'div';
+
   return (
-    <div
+    <Container
       className={cls}
-      role={role === 'assistant' ? 'article' : 'complementary'}
       data-role={role}
       data-testid={`chat-message-${role}`}
     >
@@ -50,6 +51,6 @@ export function ChatMessage({
         )}
       </div>
       {timestamp && <div className={styles.timestamp}>{timestamp}</div>}
-    </div>
+    </Container>
   );
 }

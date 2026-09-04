@@ -98,7 +98,6 @@ function parseMarkdown(text: string, headingLevel: 2 | 3 | 4): ReactNode[] {
 
     // Code blocks: ```
     if (line.startsWith('```')) {
-      const lang = line.slice(3).trim();
       const codeLines = [];
       i++;
       while (i < lines.length && !lines[i].startsWith('```')) {

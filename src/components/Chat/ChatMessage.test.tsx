@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/aria-role */
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/react';
 import { ChatMessage } from './ChatMessage';
@@ -34,22 +35,23 @@ describe('ChatMessage', () => {
   });
 
   describe('accessibility roles', () => {
-    it('sets article role for assistant messages', () => {
+    it('renders article element for assistant messages', () => {
       const { container } = render(
         <ChatMessage role="assistant">Content</ChatMessage>
       );
 
-      const message = container.querySelector('[role="article"]');
+      const message = container.querySelector('article');
       expect(message).toBeTruthy();
     });
 
-    it('sets complementary role for user messages', () => {
+    it('renders div wrapper for user messages', () => {
       const { container } = render(
         <ChatMessage role="user">Content</ChatMessage>
       );
 
-      const message = container.querySelector('[role="complementary"]');
+      const message = container.querySelector('[data-role="user"]');
       expect(message).toBeTruthy();
+      expect(message?.tagName).toBe('DIV');
     });
   });
 
@@ -163,7 +165,7 @@ describe('ChatMessage', () => {
 
   describe('semantic structure', () => {
     it('maintains proper semantic hierarchy', () => {
-      const { container, getByTestId } = render(
+      const { getByTestId } = render(
         <ChatMessage role="assistant" isLoading={true} timestamp="2:30 PM">
           <span>Content</span>
         </ChatMessage>
