@@ -33,14 +33,19 @@ export function ChatMessage({
   const cls = [styles.root, roleClass, className].filter(Boolean).join(' ');
 
   return (
-    <div className={cls} role={role === 'assistant' ? 'article' : 'complementary'}>
+    <div
+      className={cls}
+      role={role === 'assistant' ? 'article' : 'complementary'}
+      data-role={role}
+      data-testid={`chat-message-${role}`}
+    >
       <div className={styles.bubble}>
         <div className={styles.content}>{children}</div>
         {isLoading && (
           <div className={styles.loading} aria-live="polite" aria-label="Message streaming">
-            <span className={styles.dot} />
-            <span className={styles.dot} />
-            <span className={styles.dot} />
+            <span className={styles.dot} data-testid="typing-dot" />
+            <span className={styles.dot} data-testid="typing-dot" />
+            <span className={styles.dot} data-testid="typing-dot" />
           </div>
         )}
       </div>

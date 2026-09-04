@@ -137,9 +137,31 @@ function parseInline(text: string): ReactNode {
   let key = 0;
 
   while (remaining) {
+    // GACAR citations: § followed by digits (e.g., §91.155)
+    const citationMatch = remaining.match(/§([\d.]+)/);
+    if (citationMatch && citationMatch.index !== undefined) {
+      const beforeCitation = remaining.slice(0, citationMatch.index);
+      if (beforeCitation) parts.push(beforeCitation);
+      const citationText = citationMatch[0];
+      parts.push(
+        <span
+          key={key++}
+          role="doc-biblioref"
+          className={styles.citation}
+          data-testid="citation"
+          aria-label={`GACAR section ${citationText}`}
+          dir="auto"
+        >
+          {citationText}
+        </span>
+      );
+      remaining = remaining.slice((citationMatch.index || 0) + citationMatch[0].length);
+      continue;
+    }
+
     // Bold: **text**
     const boldMatch = remaining.match(/\*\*([^*]+)\*\*/);
-    if (boldMatch) {
+    if (boldMatch && boldMatch.index !== undefined) {
       const beforeBold = remaining.slice(0, boldMatch.index);
       if (beforeBold) parts.push(beforeBold);
       parts.push(
@@ -151,7 +173,7 @@ function parseInline(text: string): ReactNode {
 
     // Italic: *text* (non-greedy, avoid ** matching)
     const italicMatch = remaining.match(/(?<!\*)\*([^*]+)\*(?!\*)/);
-    if (italicMatch) {
+    if (italicMatch && italicMatch.index !== undefined) {
       const beforeItalic = remaining.slice(0, italicMatch.index);
       if (beforeItalic) parts.push(beforeItalic);
       parts.push(
@@ -163,11 +185,18 @@ function parseInline(text: string): ReactNode {
 
     // Links: [text](url)
     const linkMatch = remaining.match(/\[([^\]]+)\]\(([^)]+)\)/);
-    if (linkMatch) {
+    if (linkMatch && linkMatch.index !== undefined) {
       const beforeLink = remaining.slice(0, linkMatch.index);
       if (beforeLink) parts.push(beforeLink);
       parts.push(
-        <a key={key++} href={linkMatch[2]} target="_blank" rel="noopener noreferrer" className={styles.link}>
+        <a
+          key={key++}
+          href={linkMatch[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.link}
+          data-testid="link"
+        >
           {linkMatch[1]}
         </a>
       );
@@ -177,11 +206,11 @@ function parseInline(text: string): ReactNode {
 
     // Inline code: `code`
     const codeMatch = remaining.match(/`([^`]+)`/);
-    if (codeMatch) {
+    if (codeMatch && codeMatch.index !== undefined) {
       const beforeCode = remaining.slice(0, codeMatch.index);
       if (beforeCode) parts.push(beforeCode);
       parts.push(
-        <code key={key++} className={styles.inlineCode}>{codeMatch[1]}</code>
+        <code key={key++} className={styles.inlineCode} data-testid="inline-code">{codeMatch[1]}</code>
       );
       remaining = remaining.slice((codeMatch.index || 0) + codeMatch[0].length);
       continue;
