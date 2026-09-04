@@ -3,8 +3,8 @@ import { renderHook } from '@testing-library/react';
 import { useHoverCapable } from '@/hooks/useHoverCapable';
 
 describe('useHoverCapable', () => {
-  let matchMediaMock: any;
-  let mqlMock: any;
+  let matchMediaMock: ReturnType<typeof vi.fn>;
+  let mqlMock: MediaQueryList;
 
   beforeEach(() => {
     mqlMock = {

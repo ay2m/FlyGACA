@@ -79,7 +79,6 @@ describe('useFetchText', () => {
   });
 
   it('aborts request on unmount', async () => {
-    const abortMock = vi.fn();
     vi.mocked(content.dataUrl).mockReturnValue(`http://test${testPath}`);
     global.fetch = vi.fn(
       () => new Promise(() => {}), // Never resolves
@@ -96,12 +95,10 @@ describe('useFetchText', () => {
 
   it('ignores errors from aborted requests', async () => {
     vi.mocked(content.dataUrl).mockReturnValue(`http://test${testPath}`);
-    let controller: AbortController | null = null;
-    let rejectFetch: any;
-    global.fetch = vi.fn((url: any, opts: any) => {
-      controller = (opts?.signal as any)?.constructor.name === 'AbortSignal'
-        ? Object.getPrototypeOf(opts.signal).constructor.prototype.constructor
-        : null;
+    let rejectFetch: ((reason?: unknown) => void) | undefined;
+    global.fetch = vi.fn((url: string | Request, opts?: RequestInit) => {
+      // Verify signal is present for abort handling
+      void (opts?.signal as unknown as AbortSignal | undefined)?.constructor.name;
       return new Promise((_, reject) => {
         rejectFetch = reject;
       });

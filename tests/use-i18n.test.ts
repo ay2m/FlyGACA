@@ -48,7 +48,7 @@ describe('useI18n hooks', () => {
     });
 
     it('uses default translation namespace when undefined', () => {
-      const { result } = renderHook(() => useI18n(undefined));
+      renderHook(() => useI18n(undefined));
 
       expect(vi.mocked(i18n.useTranslation)).toHaveBeenCalledWith('translation');
     });

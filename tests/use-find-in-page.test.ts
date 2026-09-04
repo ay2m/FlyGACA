@@ -86,7 +86,7 @@ describe('useFindInPage', () => {
     vi.mocked(readerMarks.clearHighlights).mockImplementation(() => {});
     vi.mocked(readerMarks.highlightMatches).mockImplementation(() => {});
 
-    const { result } = renderHook(() => useFindInPage(containerRef, testHtml, 'test'));
+    renderHook(() => useFindInPage(containerRef, testHtml, 'test'));
 
     expect(vi.mocked(readerMarks.clearHighlights)).toHaveBeenCalled();
     expect(vi.mocked(readerMarks.highlightMatches)).toHaveBeenCalled();

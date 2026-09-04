@@ -62,11 +62,11 @@ describe('useFetchJson', () => {
   });
 
   it('ignores setState when component unmounts before load completes', async () => {
-    let resolveLoad: any;
-    const loadPromise = new Promise((resolve) => {
+    let resolveLoad: ((value: TestData) => void) | undefined;
+    const loadPromise = new Promise<TestData>((resolve) => {
       resolveLoad = resolve;
     });
-    vi.mocked(content.loadJson).mockReturnValue(loadPromise as any);
+    vi.mocked(content.loadJson).mockReturnValue(loadPromise);
 
     const { unmount, result } = renderHook(() => useFetchJson<TestData>(testPath));
 
@@ -85,11 +85,11 @@ describe('useFetchJson', () => {
   });
 
   it('ignores setState error when component unmounts before error occurs', async () => {
-    let rejectLoad: any;
-    const loadPromise = new Promise((_, reject) => {
+    let rejectLoad: ((reason?: Error) => void) | undefined;
+    const loadPromise = new Promise<TestData>((_, reject) => {
       rejectLoad = reject;
     });
-    vi.mocked(content.loadJson).mockReturnValue(loadPromise as any);
+    vi.mocked(content.loadJson).mockReturnValue(loadPromise);
 
     const { unmount } = renderHook(() => useFetchJson<TestData>(testPath));
 
