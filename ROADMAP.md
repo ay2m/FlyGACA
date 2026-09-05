@@ -23,17 +23,17 @@ behind the load balancer.
 ## Recently shipped (post-rebuild)
 
 - **Interactive features round 7 — chat motion**
-  ([#444](https://github.com/FlyGACA/FlyGACA-app/pull/444)): Captain Adel's source citations
+  ([#444](https://github.com/iflygaca/FlyGACA/pull/444)): Captain Adel's source citations
   stagger in as an answer lands (`SourceList`, shared `--dur-stagger` cadence), and a small shared
   `Waveform` equalizer plays on the voice controls — while the mic is listening (`VoiceButton`) and
   while an answer is read aloud (`SpeakButton`). Decorative, reduced-motion safe.
 - **Interactive features round 6 — ambient & time**
-  ([#441](https://github.com/FlyGACA/FlyGACA-app/pull/441)): a sun-path arc on `sun-times`, a live
+  ([#441](https://github.com/iflygaca/FlyGACA/pull/441)): a sun-path arc on `sun-times`, a live
   analog Zulu dial on `zulu-clock`, an AIRAC cycle progress ring on `airac`, and a today's-daylight
   band on the aerodrome detail page. Backed by additive pure helpers — `daylight()` (`src/calc/sun.ts`),
   `clockAngles()` (`src/calc/zulu.ts`), `cycleProgress()` (`src/calc/airac.ts`).
 - **Interactive features round 5 — account pack**
-  ([#438](https://github.com/FlyGACA/FlyGACA-app/pull/438)): radial currency rings on `CurrencyBoard`
+  ([#438](https://github.com/iflygaca/FlyGACA/pull/438)): radial currency rings on `CurrencyBoard`
   (status by shape + hue, shared across `/currency` · `/records` · dashboard), a reusable
   `ProgressRing` on the library offline-download button, and count-ups on the logbook summary tiles
   (`CountUp` gained a `decimals` prop). Pure `currencyRingFraction` on the currency engine.

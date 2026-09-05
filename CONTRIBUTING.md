@@ -26,8 +26,8 @@ change. Also useful: [`README.md`](README.md) (getting started),
 ## Getting started
 
 ```bash
-git clone https://github.com/FlyGACA/FlyGACA-app.git
-cd FlyGACA-app
+git clone https://github.com/iflygaca/FlyGACA.git
+cd FlyGACA
 npm install
 cp .env.example .env.local   # optional — the app runs local-first without an API
 npm run dev                  # http://localhost:5173
