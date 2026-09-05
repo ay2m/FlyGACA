@@ -62,13 +62,18 @@ Current output: **542 EN + 175 AR head snapshots; 715/715 sitemap URLs body-prer
 - [x] **1.1 KeyFacts component (M).** `src/components/KeyFacts.tsx`, rendered by `Guide.tsx`.
 - [x] **1.2 FAQ component + FAQPage schema (M).** `src/components/Faq.tsx` + `faqLd`. *2026-08-19:
       FAQPage now also reaches the no-JS floor (it was runtime-only, i.e. invisible to AI crawlers).*
-- [~] **1.3 Answer-first rewrite of money pages (L).** *2026-08-19:* bilingual, corpus-cited
-      `keyFacts` + `faqs` added to 6 guides — `how-to-become-a-pilot-in-saudi-arabia`,
-      `gacar-explained`, `saudi-cpl-requirements`, `saudi-instrument-rating`, `atpl-requirements`,
-      `drone-uas-rules-in-ksa`. Every answer is self-contained, cites its GACAR section
-      (§61.133, §61.153, §61.173, §61.181, §61.89, §67.3, §107.37/59/65) and carries its own
-      verify-against-GACA caveat. *Remaining: the other 10 thin guides, and a full intro/body rewrite
-      of the money pages (this pass added blocks, it did not restructure the prose).*
+- [x] **1.3a Thin guides answer-first intros (L).** *2026-09-01:* Bilingual answer-first rewrites
+      for 10 guides: `reading-metar-taf`, `the-airac-cycle`, `decoding-notams`, `icao-english-saelpt`,
+      `weight-and-balance-basics`, `night-rating`, `radiotelephony-phraseology`, `fuel-planning-and-reserves`,
+      `flight-instructor-rating`, `density-altitude-and-performance`. Each expanded from 98–151 characters
+      to 150–200 words, answer-first structure, verified GACAR Part citations (Part 91 ops primary,
+      Part 61/67 licensing, Part 71/101/107 specialized). Bilingual parity with Saudi MSA. `GUIDE_UPDATED`
+      tracking added. Flow to JSON-LD `dateModified`, sitemap `lastmod`, page "last reviewed" display.
+- [~] **1.3b Full intro/body rewrite of money pages (L).** *Deferred:* 6 guides already have bilingual
+      `keyFacts` + `faqs` (2026-08-19). This pass is a full prose restructure of intro+sections+takeaways,
+      same answer-first discipline as 1.3a, for `how-to-become-a-pilot-in-saudi-arabia`, `gacar-explained`,
+      `saudi-cpl-requirements`, `saudi-instrument-rating`, `atpl-requirements`, `drone-uas-rules-in-ksa`.
+      Not yet scheduled.
 - [ ] **1.4 Part landing summaries (L).** Each GACAR Part landing gets a human summary (what it
       covers, who it applies to, most-referenced sections), derived from the Part's own text.
       Top-15 by traffic first. `Document.tsx` renders machine-extracted corpus only today.

@@ -2,6 +2,7 @@ import { describe, expect, it, vi, afterEach } from 'vitest';
 import { render, screen, cleanup, fireEvent } from '@testing-library/react';
 import { NumberField } from '@/components/calc/NumberField';
 import { TextField } from '@/components/calc/TextField';
+import { SelectField } from '@/components/calc/SelectField';
 import { ResultStat } from '@/components/calc/ResultStat';
 import { FieldGrid, OutputGrid } from '@/components/calc/Grids';
 
@@ -62,6 +63,47 @@ describe('<TextField />', () => {
     render(<TextField label="Name" value="" onChange={onChange} />);
     fireEvent.change(screen.getByRole('textbox'), { target: { value: 'Adel' } });
     expect(onChange).toHaveBeenCalledWith('Adel');
+  });
+});
+
+describe('<SelectField />', () => {
+  it('renders label, placeholder, options and reports change', () => {
+    const onChange = vi.fn();
+    render(
+      <SelectField
+        label="Runway Surface"
+        value="paved"
+        placeholder="Choose surface"
+        hint="Select primary runway type"
+        options={[
+          { value: 'paved', label: 'Paved / Asphalt' },
+          { value: 'grass', label: 'Grass / Turf' },
+        ]}
+        onChange={onChange}
+      />,
+    );
+    expect(screen.getByText('Runway Surface')).toBeInTheDocument();
+    expect(screen.getByText('Choose surface')).toBeInTheDocument();
+    expect(screen.getByText('Select primary runway type')).toBeInTheDocument();
+
+    const select = screen.getByRole('combobox');
+    expect(select).toHaveValue('paved');
+
+    fireEvent.change(select, { target: { value: 'grass' } });
+    expect(onChange).toHaveBeenCalledWith('grass');
+  });
+
+  it('displays error message when provided', () => {
+    render(
+      <SelectField
+        label="Runway"
+        value=""
+        error="Please select a runway"
+        options={[{ value: '15L', label: '15L' }]}
+        onChange={() => {}}
+      />,
+    );
+    expect(screen.getByRole('alert')).toHaveTextContent('Please select a runway');
   });
 });
 

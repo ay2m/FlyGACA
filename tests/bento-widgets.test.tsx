@@ -15,6 +15,8 @@ import { LearnWidget } from '@/components/bento/widgets/LearnWidget';
 import { RegStreamWidget } from '@/components/bento/widgets/RegStreamWidget';
 import { ComplianceWidget } from '@/components/bento/widgets/ComplianceWidget';
 import { RadarWidget } from '@/components/bento/widgets/RadarWidget';
+import { ExamSimCard } from '@/components/bento/widgets/ExamSimCard';
+import { StudyStatsCard } from '@/components/bento/widgets/StudyStatsCard';
 import HomeDashboard from '@/components/bento/HomeDashboard';
 import shared from '@/components/bento/widgets/widgets.module.css';
 import { TOOLS } from '@/lib/tools';
@@ -131,6 +133,26 @@ describe('HomeDashboard', () => {
     renderWithRouter(<HomeDashboard />);
     expect(screen.getByRole('region', { name: 'Fly GACA dashboard' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
-    expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(7);
+    expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(8);
   });
 });
+
+describe('ExamSimCard', () => {
+  it('renders exam heading and link to /study/exam', () => {
+    renderWithRouter(<ExamSimCard examName="GACA Private Pilot" questionCount={60} timeLimitMinutes={120} />);
+    expect(screen.getByRole('heading', { level: 3, name: 'GACA Private Pilot' })).toBeInTheDocument();
+    expect(screen.getByText('60 Questions')).toBeInTheDocument();
+    expect(screen.getByText('120 Mins')).toBeInTheDocument();
+    expect(screen.getByRole('link')).toHaveAttribute('href', '/study/exam');
+  });
+});
+
+describe('StudyStatsCard', () => {
+  it('renders study progress tile and links to /dashboard', () => {
+    renderWithRouter(<StudyStatsCard />);
+    expect(screen.getByRole('link')).toHaveAttribute('href', '/dashboard');
+    expect(screen.getByText('7')).toBeInTheDocument();
+  });
+});
+
+

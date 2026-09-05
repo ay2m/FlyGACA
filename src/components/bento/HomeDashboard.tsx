@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { BentoGrid } from './BentoGrid';
 import { AdelFeatureWidget } from './widgets/AdelFeatureWidget';
 import { SearchFeatureWidget } from './widgets/SearchFeatureWidget';
+import { StudyStatsCard } from './widgets/StudyStatsCard';
 import { RadarWidget } from './widgets/RadarWidget';
 import { RegStreamWidget } from './widgets/RegStreamWidget';
 import { ComplianceWidget } from './widgets/ComplianceWidget';
@@ -27,6 +28,7 @@ export default function HomeDashboard() {
       <BentoGrid label={t('home.dashboard.region')}>
         <AdelFeatureWidget />
         <SearchFeatureWidget />
+        <StudyStatsCard />
         <RadarWidget />
         <RegStreamWidget />
         <ComplianceWidget />

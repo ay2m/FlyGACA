@@ -45,7 +45,18 @@ export default defineConfig({
       // PwaPrompts imports the build-only `virtual:pwa-register/react` module,
       // which the Vitest config (no vite-plugin-pwa) can't resolve, so v8 fails
       // to instrument it as an uncovered file. It's app chrome covered by E2E.
-      exclude: [path.join(projectRoot, 'src/components/pwa/PwaPrompts.tsx')],
+      exclude: [
+        path.join(projectRoot, 'src/components/pwa/PwaPrompts.tsx'),
+        // Colocated specs, as a guard. `include` above sweeps whole directories,
+        // so a `*.test.ts` sitting next to its module would be instrumented as if
+        // it were production source and reported at 0% — permanently, since a
+        // spec is never the *subject* of coverage. Two had drifted in that way
+        // (conversionWizard, metarDecoder) and cost ~1.1 points of statements,
+        // lines and functions between them; both now live in tests/ where the
+        // runner's own `include` can actually execute them. This keeps the next
+        // one from silently costing the same.
+        path.join(projectRoot, 'src/**/*.{test,spec}.{ts,tsx,js,jsx}'),
+      ],
       // A ratchet, not a target: set just below the current numbers so coverage
       // can't silently regress, while today's run still passes. Raise as cover
       // grows. (`npm run test:coverage` prints the live figures.)

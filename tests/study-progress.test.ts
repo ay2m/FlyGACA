@@ -1,14 +1,20 @@
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { freshModule } from './helpers/freshModule';
 import {
   dayStr,
   nextStreak,
   pushHistory,
   toggleIndex,
   toProgressSummary,
+  subscribeStudyProgress,
+  getStudyState,
+  recordStudyDay,
   EXAM_HISTORY_MAX,
   type ExamResult,
   type StudyState,
 } from '@/lib/studyProgress';
+
+type StudyProgress = typeof import('@/lib/studyProgress');
 
 describe('pushHistory', () => {
   const mk = (pct: number): ExamResult => ({ pct, passed: pct >= 75, date: '2026-06-21' });
@@ -105,5 +111,49 @@ describe('toProgressSummary', () => {
     const s = toProgressSummary({ ...base, exam: null, examHistory: [] }, now);
     expect(s.examBest).toBe(0);
     expect(s.exam).toBeNull();
+  });
+});
+
+describe('store access for the progress-sync writer', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+    vi.resetModules();
+    localStorage.clear();
+  });
+
+  it('getStudyState returns the live snapshot', () => {
+    const state = getStudyState();
+
+    expect(state).toBeDefined();
+    expect(state.streak).toBeDefined();
+    expect(getStudyState()).toBe(state); // same object until a write replaces it
+  });
+
+  it('subscribeStudyProgress fires on a write and stops after unsubscribe', () => {
+    const cb = vi.fn();
+    const unsubscribe = subscribeStudyProgress(cb);
+
+    recordStudyDay(new Date('2026-06-21T09:00:00Z'));
+    expect(cb).toHaveBeenCalled();
+
+    const seen = cb.mock.calls.length;
+    unsubscribe();
+    recordStudyDay(new Date('2026-06-22T09:00:00Z'));
+    expect(cb).toHaveBeenCalledTimes(seen);
+  });
+
+  it('falls back to defaults when stored JSON is corrupt', async () => {
+    // A half-written localStorage value must not take the study surface down —
+    // this is the catch in readJson, which nothing had exercised.
+    localStorage.setItem('flygaca:study:srs', '{not json');
+    localStorage.setItem('flygaca:study:flashcards', '[[[');
+    localStorage.setItem('flygaca:study:exam-history', 'undefined');
+
+    const mod = await freshModule<StudyProgress>(() => import('@/lib/studyProgress'));
+    const state = mod.getStudyState();
+
+    expect(state.fcSrs).toEqual({});
+    expect(state.fcKnown).toEqual({});
+    expect(state.examHistory).toEqual([]);
   });
 });

@@ -1,11 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import {
+  actionNeeded,
   computeCurrency,
   currencyRingFraction,
   recordCurrency,
   rollingLandingExpiry,
   statusFromValidity,
   EXPIRING_SOON_DAYS,
+  type CurrencyItem,
 } from '@/calc/pilot/currency';
 import { recencyByDays, validityByMonths, parseISO } from '@/calc/recency';
 import type { Flight, Profile } from '@/lib/services/account';
@@ -195,5 +197,27 @@ describe('currencyRingFraction', () => {
   it('reads empty for a lapsed or unassessable item', () => {
     expect(currencyRingFraction({ daysLeft: -5 })).toBe(0);
     expect(currencyRingFraction({ daysLeft: null })).toBe(0);
+  });
+});
+
+describe('actionNeeded', () => {
+  const item = (status: CurrencyItem['status']): CurrencyItem => ({
+    id: `i-${status}`,
+    labelKey: 'x',
+    status,
+    expiry: null,
+    daysLeft: null,
+    detailKey: 'x',
+    fixTo: '/tools',
+  });
+
+  it('is true when anything has expired or is expiring soon', () => {
+    expect(actionNeeded([item('current'), item('expired')])).toBe(true);
+    expect(actionNeeded([item('current'), item('expiring')])).toBe(true);
+  });
+
+  it('is false when everything is current, and for an empty list', () => {
+    expect(actionNeeded([item('current'), item('current')])).toBe(false);
+    expect(actionNeeded([])).toBe(false);
   });
 });

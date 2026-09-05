@@ -36,8 +36,9 @@ export function GroundingBadge({
   return (
     <StatusPill
       tone={TONE[kind]}
-      role="status"
       data-state={kind}
+      role="status"
+      aria-live="polite"
       cite={
         kind === 'refusal' && refusalClass ? (
           <bdi dir="ltr" lang="en">
