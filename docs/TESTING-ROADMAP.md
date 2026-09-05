@@ -1,11 +1,11 @@
 # Testing Roadmap
 
-> ⚠️ **Restored from `ay2m/FlyGACA-app` history, predating the Cloud Run rebuild.**
+> ⚠️ **Restored from `iflygaca/FlyGACA-app` history, predating the Cloud Run rebuild.**
 > Parts of this document still describe the retired Firebase / Firestore / App Check /
 > Stripe stack. The live architecture is an Express service on **Cloud Run** backed by
 > **Cloud SQL**, billed through **Moyasar** — see `CLAUDE.md`. Anything Firebase- or
 > Stripe-specific below is history, not the system. The `apple/` tree it may reference
-> was retired; the iOS family lives in `ay2m/FlyGACA-ios`.
+> was retired; the iOS family lives in `iflygaca/FlyGACA-ios`.
 
 A phased plan for raising unit-test coverage where it protects the highest-risk code first.
 Companion to `ROADMAP.md` (product) — this one tracks the **test suite**.
@@ -33,7 +33,7 @@ The rest of the family, same date:
 | `functions/` (339 tests) | 98.0% | 90.2% | ratchet 95/89/95/97 (stmt/branch/func/line); **Phase 5 complete** — founding + billing wrappers, gateway + corpus |
 | Firestore rules (`tests/rules/`, emulator) | — | — | comprehensive — every collection has allow + deny cases |
 | Captain-Adel (`ay2m/Captain-Adel`) | 96.3% | 89.9% | `node --test` coverage, report-only; holes → **Phase 9** |
-| iOS `FlyGACAKit` (`ay2m/FlyGACA`) | — | — | engines/models/store tested; `FeatureUI` + 2 decoders untested → **Phase 9** |
+| iOS `FlyGACAKit` (`iflygaca/FlyGACA`) | — | — | engines/models/store tested; `FeatureUI` + 2 decoders untested → **Phase 9** |
 
 (The `functions/` and Firestore-rules rows describe the retired Firebase stack. Today's backend is
 `server/` — Express on Cloud Run — with its own coverage ratchet in `server/vitest.config.ts`, and
@@ -257,7 +257,7 @@ The Playwright suite (`e2e/`) covers the public surfaces — `smoke.spec.ts` (ro
 Tracked here the way `docs/APPS-FAMILY-ROADMAP.md` tracks the app family; the commits belong in
 each repo.
 
-**`ay2m/FlyGACA` (FlyGACAKit)** — engines/models/store are tested (incl. the SRS parity vectors);
+**`iflygaca/FlyGACA` (FlyGACAKit)** — engines/models/store are tested (incl. the SRS parity vectors);
 the gaps:
 
 - [ ] Decode tests for `GroundSchool.swift` and `ReadingPaths.swift` — `quiz.json` and the module
@@ -266,10 +266,10 @@ the gaps:
 - [ ] Exam-scoring parity vectors mirroring the web contract (`percent = round(correct/total ×
       100)`, `passed = percent ≥ passMark`, unanswered = wrong, auto-submit at 0:00) — same
       pattern as `LeitnerTests`' SRS vectors.
-- [ ] Wire a UI-test target — every target in `ay2m/FlyGACA`'s `apple/project.yml` has
+- [ ] Wire a UI-test target — every target in `iflygaca/FlyGACA`'s `apple/project.yml` has
       `testTargets: []`, so the documented `AppleTests/ScreenshotTests.swift` flow cannot run and
       all seven `FeatureUI` views (incl. `ModuleHomeView`, `QuizView`, `ExamTimerView`) have zero
-      coverage. (iOS lives in the `ay2m/FlyGACA` repo; this monorepo only generates its content.)
+      coverage. (iOS lives in the `iflygaca/FlyGACA` repo; this monorepo only generates its content.)
 
 **`ay2m/Captain-Adel` — separate repo, not retired.** The standalone Captain Adel service this
 block audited (its `evals/checks/citation-faithfulness.js` judge, the `public/assets/js/` page
@@ -302,7 +302,7 @@ Verified in the August 2026 audit; future coverage passes should skip them:
 - Backend: `cd server && npm run test:coverage`. Per-function hit counts (how the Phase 5
   zero-hit list was produced): add `--coverage.reporter=json` and read `fnMap`/`f` in
   `coverage/coverage-final.json`.
-- iOS (in `ay2m/FlyGACA`): `cd apple/FlyGACAKit && swift test` — no coverage tooling wired; the Phase 9 gaps are
+- iOS (in `iflygaca/FlyGACA`): `cd apple/FlyGACAKit && swift test` — no coverage tooling wired; the Phase 9 gaps are
   file-level (sources with no referencing test).
 
 Numbers in this doc were measured 2026-08-03 on `main` @ `c93c2c3` (app, functions) and the
