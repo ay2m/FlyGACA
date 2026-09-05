@@ -9,8 +9,12 @@
  * Enumeration posture: `/login` answers `auth/invalid-credential` for both an
  * unknown address and a wrong password, and `/password-reset` always answers 200.
  * Neither reveals whether an account exists.
+ *
+ * Audit trail: All authentication events (register, login, password reset, email verify)
+ * are logged for PDPL compliance and brute-force detection. Failed login attempts trigger
+ * account lockout after N failures within a time window.
  */
-import { Router, type Response } from "express";
+import { Router, type Response, type Request } from "express";
 import { randomBytes } from "node:crypto";
 import rateLimit from "express-rate-limit";
 import { config } from "../config.js";
@@ -36,9 +40,21 @@ import {
   setEmailVerified,
   setPasswordHash,
   toAuthedUser,
+  logAuthEvent,
+  recordAuthFailure,
+  countRecentLoginFailures,
+  isAccountLocked,
+  lockAccount,
+  recordLastLogin,
   type UserRow,
 } from "../store.js";
 import { mayLinkGoogleToExistingAccount } from "../auth-core.js";
+import {
+  defaultBruteForcePolicy,
+  shouldLockAccount,
+  getClientIp,
+  getUserAgent,
+} from "../audit-core.js";
 import { sendVerificationEmail, sendPasswordResetEmail } from "../mail.js";
 import { handler, requireUser, HttpError } from "../http.js";
 import { meetsPasswordPolicy } from "../auth-core.js";
@@ -111,8 +127,20 @@ authRouter.get(
 
 authRouter.post(
   "/logout",
-  handler(async (_req, res) => {
+  handler(async (req, res) => {
+    const clientIp = getClientIp(req);
+    const userAgent = getUserAgent(req);
+    const userId = req.user?.uid;
+
     res.clearCookie(config.session.cookieName, { ...sessionCookieOptions(), maxAge: undefined });
+
+    await logAuthEvent({
+      userId,
+      eventType: "logout",
+      result: "success",
+      clientIp,
+      userAgent,
+    });
     return res.json({ ok: true });
   }),
 );
@@ -126,13 +154,42 @@ authRouter.post(
     const email = normalizeEmail(req.body?.email);
     const password = typeof req.body?.password === "string" ? req.body.password : "";
     const displayName = typeof req.body?.displayName === "string" ? req.body.displayName : "";
+    const clientIp = getClientIp(req);
+    const userAgent = getUserAgent(req);
 
-    if (!EMAIL_RE.test(email)) throw new HttpError(400, "auth/invalid-email");
+    if (!EMAIL_RE.test(email)) {
+      await logAuthEvent({
+        eventType: "register",
+        result: "failed",
+        reason: "invalid-email",
+        clientIp,
+        userAgent,
+      });
+      throw new HttpError(400, "auth/invalid-email");
+    }
     // The full four-rule policy, not just length — the client form enforces the
     // same rules, but only this check binds callers that skip the form.
-    if (!meetsPasswordPolicy(password)) throw new HttpError(400, "auth/weak-password");
+    if (!meetsPasswordPolicy(password)) {
+      await logAuthEvent({
+        eventType: "register",
+        result: "failed",
+        reason: "weak-password",
+        clientIp,
+        userAgent,
+      });
+      throw new HttpError(400, "auth/weak-password");
+    }
 
-    if (await findUserByEmail(email)) throw new HttpError(409, "auth/email-already-in-use");
+    if (await findUserByEmail(email)) {
+      await logAuthEvent({
+        eventType: "register",
+        result: "failed",
+        reason: "email-already-in-use",
+        clientIp,
+        userAgent,
+      });
+      throw new HttpError(409, "auth/email-already-in-use");
+    }
 
     const row = await createUser({
       email,
@@ -145,6 +202,13 @@ authRouter.post(
     await sendVerificationEmail(email, token);
 
     await establishSession(res, row.id);
+    await logAuthEvent({
+      userId: row.id,
+      eventType: "register",
+      result: "success",
+      clientIp,
+      userAgent,
+    });
     return res.status(201).json({ user: publicUser(row) });
   }),
 );
@@ -155,15 +219,54 @@ authRouter.post(
   handler(async (req, res) => {
     const email = normalizeEmail(req.body?.email);
     const password = typeof req.body?.password === "string" ? req.body.password : "";
+    const clientIp = getClientIp(req);
+    const userAgent = getUserAgent(req);
+
     if (!email || !password) throw new HttpError(400, "auth/invalid-credential");
 
     const row = await findUserByEmail(email);
     // Same code for "no such account" and "wrong password" — no enumeration.
     if (!row || !(await verifyPassword(password, row.password_hash))) {
+      // Log failed login attempt for brute-force detection
+      if (clientIp) {
+        await recordAuthFailure({
+          email,
+          eventType: "login",
+          clientIp,
+        });
+      }
+      await logAuthEvent({
+        eventType: "login",
+        result: "failed",
+        reason: row ? "invalid-password" : "user-not-found",
+        clientIp,
+        userAgent,
+      });
       throw new HttpError(401, "auth/invalid-credential");
     }
 
+    // Check if account is locked due to too many failed attempts
+    if (await isAccountLocked(row.id)) {
+      await logAuthEvent({
+        userId: row.id,
+        eventType: "login",
+        result: "blocked",
+        reason: "account-locked",
+        clientIp,
+        userAgent,
+      });
+      throw new HttpError(429, "auth/too-many-requests");
+    }
+
     await establishSession(res, row.id);
+    await recordLastLogin(row.id);
+    await logAuthEvent({
+      userId: row.id,
+      eventType: "login",
+      result: "success",
+      clientIp,
+      userAgent,
+    });
     return res.json({ user: publicUser(row) });
   }),
 );
@@ -173,13 +276,42 @@ authRouter.post(
   credentialLimiter,
   handler(async (req, res) => {
     const email = normalizeEmail(req.body?.email);
-    if (!EMAIL_RE.test(email)) throw new HttpError(400, "auth/invalid-email");
+    const clientIp = getClientIp(req);
+    const userAgent = getUserAgent(req);
+
+    if (!EMAIL_RE.test(email)) {
+      // Log invalid email for audit, but never disclose it
+      await logAuthEvent({
+        eventType: "password-reset-request",
+        result: "failed",
+        reason: "invalid-email",
+        clientIp,
+        userAgent,
+      });
+      return res.json({ ok: true });
+    }
 
     const row = await findUserByEmail(email);
     if (row) {
       const { token, digest } = generateOpaqueToken();
       await createAuthToken(digest, row.id, "reset", RESET_TTL_MIN);
       await sendPasswordResetEmail(email, token);
+      await logAuthEvent({
+        userId: row.id,
+        eventType: "password-reset-request",
+        result: "success",
+        clientIp,
+        userAgent,
+      });
+    } else {
+      // Log failed attempt for audit, but don't disclose
+      await logAuthEvent({
+        eventType: "password-reset-request",
+        result: "failed",
+        reason: "user-not-found",
+        clientIp,
+        userAgent,
+      });
     }
     // Always 200 — whether the address exists is not disclosed.
     return res.json({ ok: true });
@@ -192,17 +324,54 @@ authRouter.post(
   handler(async (req, res) => {
     const token = typeof req.body?.token === "string" ? req.body.token : "";
     const password = typeof req.body?.password === "string" ? req.body.password : "";
-    if (!token) throw new HttpError(400, "auth/invalid-action-code");
+    const clientIp = getClientIp(req);
+    const userAgent = getUserAgent(req);
+
+    if (!token) {
+      await logAuthEvent({
+        eventType: "password-reset-confirm",
+        result: "failed",
+        reason: "invalid-action-code",
+        clientIp,
+        userAgent,
+      });
+      throw new HttpError(400, "auth/invalid-action-code");
+    }
     // Same four-rule policy as /register: a reset must not weaken the account.
-    if (!meetsPasswordPolicy(password)) throw new HttpError(400, "auth/weak-password");
+    if (!meetsPasswordPolicy(password)) {
+      await logAuthEvent({
+        eventType: "password-reset-confirm",
+        result: "failed",
+        reason: "weak-password",
+        clientIp,
+        userAgent,
+      });
+      throw new HttpError(400, "auth/weak-password");
+    }
 
     const userId = await consumeAuthToken(hashToken(token), "reset");
-    if (!userId) throw new HttpError(400, "auth/invalid-action-code");
+    if (!userId) {
+      await logAuthEvent({
+        eventType: "password-reset-confirm",
+        result: "failed",
+        reason: "invalid-action-code",
+        clientIp,
+        userAgent,
+      });
+      throw new HttpError(400, "auth/invalid-action-code");
+    }
 
     await setPasswordHash(userId, await hashPassword(password));
     // A reset proves control of the mailbox, so it also verifies the address.
     await setEmailVerified(userId);
     await establishSession(res, userId);
+    await logAuthEvent({
+      userId,
+      eventType: "password-reset-confirm",
+      result: "success",
+      clientIp,
+      userAgent,
+    });
     return res.json({ ok: true });
   }),
 );
@@ -212,11 +381,32 @@ authRouter.post(
   credentialLimiter,
   handler(async (req, res) => {
     const user = requireUser(req);
-    if (user.emailVerified) return res.json({ ok: true });
+    const clientIp = getClientIp(req);
+    const userAgent = getUserAgent(req);
+
+    if (user.emailVerified) {
+      await logAuthEvent({
+        userId: user.uid,
+        eventType: "email-verify-request",
+        result: "success",
+        reason: "already-verified",
+        clientIp,
+        userAgent,
+      });
+      return res.json({ ok: true });
+    }
 
     const { token, digest } = generateOpaqueToken();
     await createAuthToken(digest, user.uid, "verify", VERIFY_TTL_MIN);
     await sendVerificationEmail(user.email, token);
+
+    await logAuthEvent({
+      userId: user.uid,
+      eventType: "email-verify-request",
+      result: "success",
+      clientIp,
+      userAgent,
+    });
     return res.json({ ok: true });
   }),
 );
@@ -225,12 +415,29 @@ authRouter.get(
   "/verify-email/confirm",
   handler(async (req, res) => {
     const token = typeof req.query.token === "string" ? req.query.token : "";
+    const clientIp = getClientIp(req);
+    const userAgent = getUserAgent(req);
+
     const userId = token ? await consumeAuthToken(hashToken(token), "verify") : null;
     if (!userId) {
+      await logAuthEvent({
+        eventType: "email-verify-confirm",
+        result: "failed",
+        reason: "invalid-action-code",
+        clientIp,
+        userAgent,
+      });
       return res.redirect(`${config.appOrigin}/account?verify=invalid`);
     }
     await setEmailVerified(userId);
     await establishSession(res, userId);
+    await logAuthEvent({
+      userId,
+      eventType: "email-verify-confirm",
+      result: "success",
+      clientIp,
+      userAgent,
+    });
     return res.redirect(`${config.appOrigin}/account?verify=success`);
   }),
 );
@@ -292,7 +499,17 @@ authRouter.get(
     const code = typeof req.query.code === "string" ? req.query.code : "";
     const state = typeof req.query.state === "string" ? req.query.state : "";
     const returnTo = state ? await consumeOAuthState(state) : null;
+    const clientIp = getClientIp(req);
+    const userAgent = getUserAgent(req);
+
     if (!code || !returnTo) {
+      await logAuthEvent({
+        eventType: "oauth-google-signin",
+        result: "failed",
+        reason: "invalid-state",
+        clientIp,
+        userAgent,
+      });
       return res.redirect(`${config.appOrigin}/account?signin=failed`);
     }
 
@@ -309,19 +526,53 @@ authRouter.get(
     });
     if (!tokenRes.ok) {
       console.error("Google token exchange failed:", await tokenRes.text());
+      await logAuthEvent({
+        eventType: "oauth-google-signin",
+        result: "failed",
+        reason: "token-exchange-failed",
+        clientIp,
+        userAgent,
+      });
       return res.redirect(`${config.appOrigin}/account?signin=failed`);
     }
     const { access_token: accessToken } = (await tokenRes.json()) as { access_token?: string };
-    if (!accessToken) return res.redirect(`${config.appOrigin}/account?signin=failed`);
+    if (!accessToken) {
+      await logAuthEvent({
+        eventType: "oauth-google-signin",
+        result: "failed",
+        reason: "no-access-token",
+        clientIp,
+        userAgent,
+      });
+      return res.redirect(`${config.appOrigin}/account?signin=failed`);
+    }
 
     const infoRes = await fetch(GOOGLE_USERINFO_URL, {
       headers: { Authorization: `Bearer ${accessToken}` },
     });
-    if (!infoRes.ok) return res.redirect(`${config.appOrigin}/account?signin=failed`);
+    if (!infoRes.ok) {
+      await logAuthEvent({
+        eventType: "oauth-google-signin",
+        result: "failed",
+        reason: "userinfo-failed",
+        clientIp,
+        userAgent,
+      });
+      return res.redirect(`${config.appOrigin}/account?signin=failed`);
+    }
     const info = (await infoRes.json()) as GoogleUserInfo;
 
     const email = normalizeEmail(info.email);
-    if (!info.sub || !email) return res.redirect(`${config.appOrigin}/account?signin=failed`);
+    if (!info.sub || !email) {
+      await logAuthEvent({
+        eventType: "oauth-google-signin",
+        result: "failed",
+        reason: "missing-email-or-sub",
+        clientIp,
+        userAgent,
+      });
+      return res.redirect(`${config.appOrigin}/account?signin=failed`);
+    }
 
     // Match on the Google subject first (stable across email changes), then fall
     // back to the address so an existing password account links rather than
@@ -338,9 +589,24 @@ authRouter.get(
             existingHasPassword: existing.password_hash !== null,
           })
         ) {
+          await logAuthEvent({
+            userId: existing.id,
+            eventType: "google-link",
+            result: "blocked",
+            reason: "email-mismatch",
+            clientIp,
+            userAgent,
+          });
           return res.redirect(`${config.appOrigin}/account?signin=link-blocked`);
         }
         row = await linkGoogleAccount(existing.id, info.sub, true);
+        await logAuthEvent({
+          userId: existing.id,
+          eventType: "google-link",
+          result: "success",
+          clientIp,
+          userAgent,
+        });
       }
     }
 
@@ -353,6 +619,14 @@ authRouter.get(
     });
 
     await establishSession(res, row.id);
+    await recordLastLogin(row.id);
+    await logAuthEvent({
+      userId: row.id,
+      eventType: "oauth-google-signin",
+      result: "success",
+      clientIp,
+      userAgent,
+    });
     return res.redirect(returnTo);
   }),
 );

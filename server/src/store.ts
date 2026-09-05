@@ -560,3 +560,121 @@ export async function recordAnswerFeedback(input: {
     ],
   );
 }
+
+// --------------------------------------------------------- auth audit --
+
+/** Log an authentication event for audit trail and brute-force detection. */
+export async function logAuthEvent(input: {
+  userId?: string;
+  eventType:
+    | "register"
+    | "login"
+    | "logout"
+    | "password-reset-request"
+    | "password-reset-confirm"
+    | "email-verify-request"
+    | "email-verify-confirm"
+    | "google-link"
+    | "apple-link"
+    | "oauth-google-signin"
+    | "oauth-apple-signin";
+  result: "success" | "failed" | "blocked";
+  reason?: string;
+  clientIp?: string;
+  userAgent?: string;
+}): Promise<void> {
+  await query(
+    `INSERT INTO auth_events (user_id, event_type, result, reason, client_ip, user_agent)
+     VALUES ($1, $2, $3, $4, $5::inet, $6)`,
+    [
+      input.userId ?? null,
+      input.eventType,
+      input.result,
+      input.reason ?? null,
+      input.clientIp ?? null,
+      input.userAgent ?? null,
+    ],
+  );
+}
+
+/** Record a failed authentication attempt for brute-force detection. */
+export async function recordAuthFailure(input: {
+  email?: string;
+  userId?: string;
+  clientIp: string;
+  eventType: string;
+}): Promise<void> {
+  await query(
+    `INSERT INTO auth_failures (email, user_id, client_ip, event_type)
+     VALUES ($1, $2, $3::inet, $4)`,
+    [input.email ?? null, input.userId ?? null, input.clientIp, input.eventType],
+  );
+}
+
+/**
+ * Count recent failed login attempts for an account (within the last `windowMs`).
+ * Used to decide if the account should be locked.
+ */
+export async function countRecentLoginFailures(
+  userId: string,
+  windowMs: number = 15 * 60 * 1000,
+): Promise<number> {
+  const res = await query(
+    `SELECT COUNT(*) as count FROM auth_failures
+     WHERE user_id = $1 AND event_type = 'login' AND attempt_at > now() - $2::interval`,
+    [userId, `${Math.ceil(windowMs / 1000)} seconds`],
+  );
+  return res.rows[0]?.count ?? 0;
+}
+
+/**
+ * Count recent failed registration attempts from an IP (within the last `windowMs`).
+ * Used to rate-limit spam registration.
+ */
+export async function countRecentRegistrationAttempts(
+  clientIp: string,
+  windowMs: number = 15 * 60 * 1000,
+): Promise<number> {
+  const res = await query(
+    `SELECT COUNT(*) as count FROM auth_failures
+     WHERE client_ip = $1::inet AND event_type = 'register' AND attempt_at > now() - $2::interval`,
+    [clientIp, `${Math.ceil(windowMs / 1000)} seconds`],
+  );
+  return res.rows[0]?.count ?? 0;
+}
+
+/** Lock an account temporarily due to too many failed login attempts. */
+export async function lockAccount(userId: string, until: Date): Promise<void> {
+  await query(
+    `INSERT INTO account_security (user_id, locked_until)
+     VALUES ($1, $2)
+     ON CONFLICT (user_id) DO UPDATE SET locked_until = EXCLUDED.locked_until`,
+    [userId, until.toISOString()],
+  );
+}
+
+/** Check if an account is currently locked. */
+export async function isAccountLocked(userId: string): Promise<boolean> {
+  const res = await query(
+    `SELECT locked_until FROM account_security WHERE user_id = $1`,
+    [userId],
+  );
+  if (!res.rows.length) return false;
+  const lockedUntil = res.rows[0].locked_until;
+  return lockedUntil ? new Date(lockedUntil) > new Date() : false;
+}
+
+/** Unlock an account when the lockout period expires. */
+export async function unlockAccount(userId: string): Promise<void> {
+  await query(`UPDATE account_security SET locked_until = NULL WHERE user_id = $1`, [userId]);
+}
+
+/** Record the last successful login time for an account. */
+export async function recordLastLogin(userId: string): Promise<void> {
+  await query(
+    `INSERT INTO account_security (user_id, last_login_at)
+     VALUES ($1, now())
+     ON CONFLICT (user_id) DO UPDATE SET last_login_at = now()`,
+    [userId],
+  );
+}
