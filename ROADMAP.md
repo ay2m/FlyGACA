@@ -23,41 +23,41 @@ behind the load balancer.
 ## Recently shipped (post-rebuild)
 
 - **Interactive features round 7 — chat motion**
-  ([#444](https://github.com/iflygaca/FlyGACA/pull/444)): Captain Adel's source citations
+  ([#444](https://github.com/ay2m/FlyGACA/pull/444)): Captain Adel's source citations
   stagger in as an answer lands (`SourceList`, shared `--dur-stagger` cadence), and a small shared
   `Waveform` equalizer plays on the voice controls — while the mic is listening (`VoiceButton`) and
   while an answer is read aloud (`SpeakButton`). Decorative, reduced-motion safe.
 - **Interactive features round 6 — ambient & time**
-  ([#441](https://github.com/iflygaca/FlyGACA/pull/441)): a sun-path arc on `sun-times`, a live
+  ([#441](https://github.com/ay2m/FlyGACA/pull/441)): a sun-path arc on `sun-times`, a live
   analog Zulu dial on `zulu-clock`, an AIRAC cycle progress ring on `airac`, and a today's-daylight
   band on the aerodrome detail page. Backed by additive pure helpers — `daylight()` (`src/calc/sun.ts`),
   `clockAngles()` (`src/calc/zulu.ts`), `cycleProgress()` (`src/calc/airac.ts`).
 - **Interactive features round 5 — account pack**
-  ([#438](https://github.com/iflygaca/FlyGACA/pull/438)): radial currency rings on `CurrencyBoard`
+  ([#438](https://github.com/ay2m/FlyGACA/pull/438)): radial currency rings on `CurrencyBoard`
   (status by shape + hue, shared across `/currency` · `/records` · dashboard), a reusable
   `ProgressRing` on the library offline-download button, and count-ups on the logbook summary tiles
   (`CountUp` gained a `decimals` prop). Pure `currencyRingFraction` on the currency engine.
 - **Interactive features round 4 — instrument pack**
-  ([#437](https://github.com/iflygaca/FlyGACA/pull/437)): a CG-envelope plot on `weight-balance`
+  ([#437](https://github.com/ay2m/FlyGACA/pull/437)): a CG-envelope plot on `weight-balance`
   (`cgEnvelopeStatus`), a shared climb/descent `ProfileRamp` across the four TOD/VDP/climb-gradient/
   top-of-climb tools, `GaugeDial` on `mach` + `pivotal-altitude` (with a fractional-readout fix),
   `E6b` reusing `WindTriangleDiagram`, an ISA thermometer, an altimeter dial, and an ETP/PNR route
   diagram on `route-critical-points`.
 - **Interactive features round 3 — study motion**
-  ([#435](https://github.com/iflygaca/FlyGACA/pull/435)): graded flashcards fly out with the next
+  ([#435](https://github.com/ay2m/FlyGACA/pull/435)): graded flashcards fly out with the next
   card entering, an SRS "glide path" strip shows the deck's spread across Leitner boxes (pure
   `src/calc/study/glidePath.ts` + `GlidePathStrip`), the mock exam gains a depleting fuel-gauge timer
   and an animated PASS/FAIL stamp, and the dashboard gains achievement stamps. Visual layer only —
   the `srs` engine and exam scoring stay untouched as cross-platform contracts.
 - **Interactive features round 2**
-  ([#433](https://github.com/iflygaca/FlyGACA/pull/433)): the holding tool's animated
+  ([#433](https://github.com/ay2m/FlyGACA/pull/433)): the holding tool's animated
   entry-procedure racetrack (CSS `offset-path`), a shared `GaugeDial` needle on the TAS and
   density-altitude outputs, staggered wind-triangle vector construction, the GACAR constellation
   map at `/library/map` (`src/calc/library/constellation.ts` — Parts as stars sized by real
   inbound cross-references), and a per-aerodrome radar scope
   (`src/components/aerodrome/AerodromeScope.tsx`) sharing the `src/calc/hud/` training scenario.
 - **Kingdom Airspace HUD (`/hud`) — since REMOVED**
-  ([#432](https://github.com/iflygaca/FlyGACA/pull/432)): a deterministic, SIM-labelled
+  ([#432](https://github.com/ay2m/FlyGACA/pull/432)): a deterministic, SIM-labelled
   Kingdom airspace simulation — pure engine under `src/calc/hud/` (seeded scenario, closed-form
   kinematics, day/night terminator via `src/calc/sun.ts`), canvas globe, vector list + flight
   detail card, and a home bento teaser. **The page was retired**: it showed invented traffic and
@@ -66,14 +66,14 @@ behind the load balancer.
   the per-aerodrome radar scope uses it. See `docs/DESIGN-airspace-hud-v2.md` for the reasoning
   and the bar a v2 would have to clear.
 - **Role-aware dashboard + sign-in redesign**
-  ([#254](https://github.com/iflygaca/FlyGACA/pull/254)): an operational role
+  ([#254](https://github.com/ay2m/FlyGACA/pull/254)): an operational role
   (pilot / student / instructor) on the profile — synced via `PROFILE_FIELDS` and accepted by the
   deployed Firestore rules unchanged — drives per-role widget ordering through the pure layout
   engine `src/calc/app/dashboardLayout.ts`. Five new widgets surface existing local-first data (study
   progress, tool favourites, library/guide bookmarks, Captain Adel threads, regulatory watch), and
   show/hide widget customization persists via `src/lib/dashboardPrefs.ts`. Signed-out `/account`
   became a split-panel sign-in with per-audience value props and a password show/hide toggle.
-- **Backend hardening** ([#253](https://github.com/iflygaca/FlyGACA/pull/253)): `/api/feedback`
+- **Backend hardening** ([#253](https://github.com/ay2m/FlyGACA/pull/253)): `/api/feedback`
   routing fix, region drift resolved to `me-central1`, per-uid + per-IP rate limiting, input size
   caps, JSON error handling, and a new `functions` CI job.
 - **Captain Adel archive search.** The saved-conversation archive now searches titles and message
@@ -143,7 +143,7 @@ making that production footprint fully trustworthy.
   `flygaca`, while the repo's Worker is named `flygaca-app` (`wrangler.toml`). This
   is a **dashboard-side** fix — repoint the integration at `flygaca-app` or disconnect it
   (nothing in this repo deploys the Worker today; it is a dormant mirror). Diagnosed in
-  [#253](https://github.com/iflygaca/FlyGACA/pull/253).
+  [#253](https://github.com/ay2m/FlyGACA/pull/253).
 - **[platform]** **Dependency hygiene.** Clear the open Dependabot alerts on `main` (2 high, 4
   moderate at last check). The recurring cadence is now automated — `.github/dependabot.yml`
   schedules dependency-update PRs — so security debt no longer accrues silently between

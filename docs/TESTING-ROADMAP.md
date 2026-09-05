@@ -277,7 +277,7 @@ scripts, `src/billing/routes.js`) is live and maintained behind captadel.com, wi
 is not superseded by this repo's `server/`: the two are parallel implementations of the same
 answer contract, which is the drift `docs/DESIGN-brain-consolidation.md` exists to close. What is
 true is that its coverage is tracked in its own repo rather than here. (The path above previously
-read `FlyGACA/Captain-Adel`; that org does not exist — see `CLAUDE.md`.)
+read `FlyGACA/Captain-Adel`; the current canonical repo is `ay2m/Captain-Adel` — see `CLAUDE.md`.)
 
 **App Store metadata repos (ELPT · AIP shipping; PPL · CPL · IR · ATPL parked)**
 
